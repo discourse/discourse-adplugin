@@ -19,7 +19,7 @@ ln -s ~/whereever_your_cloned_ad_plugin_path_is .
 For example: ln -s ~/discourse-plugin-test .
 
 ```
-Now you are done.
+Now you are done.  See 'Usage' heading for sample ad codes that you can input.
 
 
 ### Non-docker installation
@@ -54,8 +54,17 @@ git pull
 ## Usage
 
 * Go to Admin > Settings > Ad Plugin
-* Add DFP link into code boxes, input width and height based on Google Ad Ad units
-* If you wish to disable the ad, tick ad disabling box
+* Add DFP link into code boxes, input width and height based on Google Ad Ad units.  Here are some sample ad codes that you can put in the input into the settings.  But remember:
+⋅⋅* Each slot requires a different sample ad code.  That means, you cannot put the same ad sample ad codes multiple times in different slots.  They won't appear.  
+⋅⋅* Don't click on the ad.  
+⋅⋅* On the last stroke of midnight, the magic will wear off. Make sure you leave the ball before then. 
+
+### Sample DFP Ad Codes:
+1. /142953540/PostandCourier/Postandcourier.com/News/Leaderboard_Bottom
+2. /6355419/Travel/Europe/France/Paris
+3. /1047893/kv_home_bigbox1
+
+* Finally, if you wish to disable the ad, tick ad disabling box
 
 # Ad Providers Supported
 
