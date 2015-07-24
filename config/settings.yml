@@ -1,0 +1,37 @@
+ad_plugin:
+  dfp_topic_list_top_code:
+    client: true
+    default: ''
+  dfp_size_topic_list_top_width_code:
+    client: true
+    default: ''
+  dfp_size_topic_list_top_height_code:
+    client: true
+    default: ''
+  dfp_show_topic_list_top:
+    client: true
+    default: false
+  dfp_topic_above_post_stream_code:
+    client: true
+    default: ''
+  dfp_size_topic_above_post_stream_width_code:
+    client: true
+    default: ''
+  dfp_size_topic_above_post_stream_height_code:
+    client: true
+    default: ''
+  dfp_show_topic_above_post_stream:
+    client: true
+    default: false
+  dfp_topic_above_suggested_code:
+    client: true
+    default: ''
+  dfp_size_topic_above_suggested_width_code:
+    client: true
+    default: ''
+  dfp_size_topic_above_suggested_height_code:
+    client: true
+    default: ''
+  dfp_show_topic_above_suggested:
+    client: true
+    default: false
