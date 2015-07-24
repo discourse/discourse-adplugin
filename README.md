@@ -6,6 +6,22 @@ Ad plugin for Discourse forum.
 
 * Supported Discourse version: v1.4
 
+### Special Intallation Instructions for RGSoC Coaches
+
+* You would have already gotten the discourse to load locally.  If not, do that first.  You can find instructions [here](https://github.com/team-melbourne-rgsoc2015/discoursetest-avn).
+* Then clone this repo in a new local folder.
+* In the terminal, go into your discourse folder and then into plugins.  Example ```cd ~/code/discourse/plugins```
+* Create a symlink in this folder and do that by doing:
+
+```
+ln -s ~/whereever_your_cloned_ad_plugin_path_is .
+
+For example: ln -s ~/discourse-plugin-test .
+
+```
+Now you are done.
+
+
 ### Non-docker installation
 
 * Run `bundle exec rake plugin:install repo=http://github.com/team-melbourne-rgsoc2015/discourse-adplugin` in your discourse directory
