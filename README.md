@@ -66,21 +66,21 @@ git pull
 
 This is how it looks like when you put it in site settings.
 
-![](https://www.dropbox.com/s/cyouv2pis3o4gx4/ad-codes-p1.png?dl=0)
+![](https://www.dropbox.com/sc/cyouv2pis3o4gx4/ad-codes-p1.png?dl=1)
 
-![](https://www.dropbox.com/s/5z7sl2hdmtzv1ho/ad-codes-p2.png?dl=0)
+![](https://www.dropbox.com/sc/5z7sl2hdmtzv1ho/ad-codes-p2.png?dl=1)
 
 This is how the ads should display is all is working fine.... (ads also change so don't worry if your ads look different).
 
 **Location: Topic list top**
-![](https://www.dropbox.com/s/cbu0otlt2zl5kdw/ad-display-1-discovery-list.png?dl=0)
+![](https://www.dropbox.com/sc/cbu0otlt2zl5kdw/ad-display-1-discovery-list.png?dl=1)
 
 **Location: Topic top**
-![](https://www.dropbox.com/s/cdx0duqkco7rs8s/ad-display-2-topic-top.png?dl=0)
+![](https://www.dropbox.com/sc/cdx0duqkco7rs8s/ad-display-2-topic-top.png?dl=1)
 
 
 **Location: Above Suggested Topic**
-![](https://www.dropbox.com/s/cnkialxmcfust55/ad-display-3-above-suggested.png?dl=0)
+![](https://www.dropbox.com/sc/cnkialxmcfust55/ad-display-3-above-suggested.png?dl=1)
 
 
 
