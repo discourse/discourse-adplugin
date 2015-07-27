@@ -64,6 +64,26 @@ git pull
 2. /6355419/Travel/Europe/France/Paris
 3. /1047893/kv_home_bigbox1
 
+This is how it looks like when you put it in site settings.
+
+![](https://www.dropbox.com/s/cyouv2pis3o4gx4/ad-codes-p1.png?dl=0)
+
+![](https://www.dropbox.com/s/5z7sl2hdmtzv1ho/ad-codes-p2.png?dl=0)
+
+This is how the ads should display is all is working fine.... (ads also change so don't worry if your ads look different).
+
+**Location: Topic list top**
+![](https://www.dropbox.com/s/cbu0otlt2zl5kdw/ad-display-1-discovery-list.png?dl=0)
+
+**Location: Topic top**
+![](https://www.dropbox.com/s/cdx0duqkco7rs8s/ad-display-2-topic-top.png?dl=0)
+
+
+**Location: Above Suggested Topic**
+![](https://www.dropbox.com/s/cnkialxmcfust55/ad-display-3-above-suggested.png?dl=0)
+
+
+
 * Finally, if you wish to disable the ad, tick ad disabling box
 
 # Ad Providers Supported
