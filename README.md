@@ -6,7 +6,7 @@ Ad plugin for Discourse forum.
 
 * Supported Discourse version: v1.4
 
-### Special Intallation Instructions for RGSoC Coaches
+### Special Installation Instructions for RGSoC Coaches
 
 * You would have already gotten the discourse to load locally.  If not, do that first.  You can find instructions [here](https://github.com/team-melbourne-rgsoc2015/discoursetest-avn).
 * Then clone this repo in a new local folder.
@@ -99,4 +99,4 @@ TO-DO:
 * Publisher ID support 
 * Add size restrictions in ad slot inventory + size input fields
 * Trust levels
-* More ad providers 
+* More ad providers!
