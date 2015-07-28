@@ -78,7 +78,6 @@ This is how the ads should display is all is working fine.... (ads also change s
 **Location: Topic top**
 ![](https://www.dropbox.com/sc/cdx0duqkco7rs8s/ad-display-2-topic-top.png?dl=1)
 
-
 **Location: Above Suggested Topic**
 ![](https://www.dropbox.com/sc/cnkialxmcfust55/ad-display-3-above-suggested.png?dl=1)
 
@@ -96,6 +95,7 @@ GPL v2
 
 TO-DO:
 
+* Fix up the image loading issue in Readme.
 * Publisher ID support 
 * Add size restrictions in ad slot inventory + size input fields
 * Trust levels
