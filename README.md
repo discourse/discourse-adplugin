@@ -65,6 +65,7 @@ git pull
 3. /1047893/kv_home_bigbox1
 
 This is how it looks like when you put it in site settings.
+(Images here aren't showing atm - but you can go to [this link to see the ad codes and what the ads look like when they're loaded](https://meta.discourse.org/t/rails-girls-soc-banter/26875/53)).
 
 ![](https://www.dropbox.com/sc/cyouv2pis3o4gx4/ad-codes-p1.png?dl=1)
 
