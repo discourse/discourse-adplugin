@@ -90,6 +90,31 @@ This is how the ads should display is all is working fine.... (ads also change s
 
 * Google DFP
 
+# Potential Ad Sizes
+
+Restricted container:
+Max H: 300 or lower of ad,  W: 1000 left align.
+
+Topic list top, Topic top, Above Suggested
+-	728*90
+-	336*280
+-	300*250
+-	960*90
+-	468*60
+-	234*60
+-	125*125
+-	180*150
+-	200*200
+-	250*250
+
+Post Bottom
+Max H: 90 or lower of ad,  W: 1000 left align.
+
+-	728*90
+-	960*90
+-	468*60
+-	234*60
+
 ## License
 
 GPL v2
@@ -98,6 +123,5 @@ TO-DO:
 
 * Fix up the image loading issue in Readme.
 * Publisher ID support 
-* Add size restrictions in ad slot inventory + size input fields
 * Trust levels
 * More ad providers!
