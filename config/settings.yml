@@ -35,3 +35,15 @@ ad_plugin:
   dfp_show_topic_above_suggested:
     client: true
     default: false
+  dfp_post_bottom_code:
+    client: true
+    default: ''
+  dfp_size_post_bottom_width_code:
+    client: true
+    default: ''
+  dfp_size_post_bottom_height_code:
+    client: true
+    default: ''
+  dfp_show_post_bottom:
+    client: true
+    default: false
