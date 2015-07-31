@@ -60,7 +60,6 @@ export default Ember.Component.extend({
     return "div-gpt-ad-" + this.get('placement');
   }.property('placement'),
 
-
   _initGoogleDFP: function() {
     var self = this;
     loadGoogle(this.siteSettings).then(function() {
