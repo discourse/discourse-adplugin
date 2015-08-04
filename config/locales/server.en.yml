@@ -16,6 +16,7 @@ en:
     dfp_size_topic_above_suggested_height_code: "Put your ad topic above suggested size height!"
     dfp_size_post_bottom_width_code: "Put your ad post bottom size width!"
     dfp_size_post_bottom_height_code: "Put your ad post bottom size height!"
+    dfp_nth_post_code: "Choose the Nth position for your ad to show"
     dfp_show_size_1_example: "leaderboard 728x90"
     dfp_show_size_2_example: "large rectangle 336x280"
     dfp_show_size_3_example: "medium rectangle 300x250"
