@@ -36,7 +36,7 @@ function loadGoogle(settings) {
         googletag.defineSlot(settings.dfp_topic_above_suggested_code, [parseInt(settings.dfp_size_topic_above_suggested_width_code), parseInt(settings.dfp_size_topic_above_suggested_height_code)], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
       }
       if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom) {
-          googletag.defineSlot(settings.dfp_post_bottom_code, [parseInt(settings.dfp_size_post_bottom_width_code), parseInt(settings.dfp_size_post_bottom_height_code)], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
+        googletag.defineSlot(settings.dfp_post_bottom_code, [parseInt(settings.dfp_size_post_bottom_width_code), parseInt(settings.dfp_size_post_bottom_height_code)], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
       }
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
