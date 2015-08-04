@@ -5,7 +5,7 @@ export default {
   initialize() {
   	PostModel.reopen({
   	  postSpecificCount: function() {
-   	    return this.get('post_number') % 2 === 0; 
+   	    return this.get('post_number') === parseInt(Discourse.SiteSettings.dfp_nth_post_code); 
   	  }.property('post_number')
   	});
   }

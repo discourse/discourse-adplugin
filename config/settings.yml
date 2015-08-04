@@ -47,6 +47,9 @@ ad_plugin:
   dfp_show_post_bottom:
     client: true
     default: false
+  dfp_nth_post_code:
+    client: true
+    default: ''
   dfp_show_size_1_example:
     client: true
     default: false
