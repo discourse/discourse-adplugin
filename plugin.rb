@@ -5,22 +5,22 @@
 
 register_css <<CSS
 
-.google-dfp-ad {
+.discourse-google-dfp {
   padding: 3px;
   margin-bottom: 10px;
   clear: both;
 }
 
-.google-dfp-ad  .dfp-ad-unit {
+.discourse-google-dfp  .dfp-ad-unit {
   margin: 0 auto;
 }
 
-.google-dfp-ad .google-dfp-ad-label {
+.discourse-google-dfp .google-dfp-ad-label {
   width: 728px;
   margin: 0 auto;
 }
 
-.google-dfp-ad .google-dfp-ad-label h2 {
+.discourse-google-dfp .google-dfp-ad-label h2 {
   margin: 4px 0 !important;
   color: #858a8c;
   text-transform: uppercase;
