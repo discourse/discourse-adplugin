@@ -59,6 +59,25 @@ git pull
 ⋅⋅* Don't click on the ad.  
 ⋅⋅* On the last stroke of midnight, the magic will wear off. Make sure you leave the ball before then. 
 
+*Please test both plugins individually* - don't symlink both together, instead test them in isolation. 
+
+Input 4 parts - publisher id (topmost box), ad code, width, height. And be sure to untick the disable box. Then, refresh the page for the inputs to take effect, and go to the ad location.
+
+Usually google sizes to input are (width*height) 300*250 or 728*90 (best) respectively. Input your pub_id and ad_code.
+
+The namings in settings are with reference to the plugin outlets created by Discourse.
+
+`adsense_topic_list_top_code`: ad will appear at the header of Discourse homepage
+
+`adsense_topic_above_post_stream_code`: ad will appear at the header of all Discourse forum topics
+
+`adsense_topic_above_suggested_code`: ad will appear at the footer above suggested topics of all Discourse forum topics
+
+`adsense_post_bottom_code`: ad will appear on the Nth post (be sure to input N in the bottom-most box called 
+
+`adsense_nth_post_code` and ensure your total number of posts in topic >=N. For example, if you input N = 4, the forum should have at least 4 replies/posts)
+
+
 ### Sample DFP Ad Codes:
 1. /142953540/PostandCourier/Postandcourier.com/News/Leaderboard_Bottom
 2. /6355419/Travel/Europe/France/Paris
