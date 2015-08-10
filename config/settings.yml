@@ -2,30 +2,6 @@ ad_plugin:
   dfp_topic_list_top_code:
     client: true
     default: ''
-  dfp_show_topic_list_top:
-    client: true
-    default: false
-  dfp_topic_above_post_stream_code:
-    client: true
-    default: ''
-  dfp_show_topic_above_post_stream:
-    client: true
-    default: false
-  dfp_topic_above_suggested_code:
-    client: true
-    default: ''
-  dfp_show_topic_above_suggested:
-    client: true
-    default: false
-  dfp_post_bottom_code:
-    client: true
-    default: ''
-  dfp_show_post_bottom:
-    client: true
-    default: false
-  dfp_nth_post_code:
-    client: true
-    default: ''
   topic_list_top_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -41,6 +17,12 @@ ad_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+  dfp_show_topic_list_top:
+    client: true
+    default: false
+  dfp_topic_above_post_stream_code:
+    client: true
+    default: ''
   topic_above_post_stream_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -56,6 +38,12 @@ ad_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+  dfp_show_topic_above_post_stream:
+    client: true
+    default: false
+  dfp_topic_above_suggested_code:
+    client: true
+    default: ''
   topic_above_suggested_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -71,6 +59,15 @@ ad_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+  dfp_show_topic_above_suggested:
+    client: true
+    default: false
+  dfp_post_bottom_code:
+    client: true
+    default: ''
+  dfp_nth_post_code:
+    client: true
+    default: ''
   post_bottom_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -86,3 +83,6 @@ ad_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+  dfp_show_post_bottom:
+    client: true
+    default: false
