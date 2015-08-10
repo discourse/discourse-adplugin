@@ -2,82 +2,87 @@ ad_plugin:
   dfp_topic_list_top_code:
     client: true
     default: ''
-  dfp_size_topic_list_top_width_code:
+  topic_list_top_ad_sizes:
     client: true
-    default: ''
-  dfp_size_topic_list_top_height_code:
-    client: true
-    default: ''
+    default: '728*90 - leaderboard'
+    type: enum
+    choices:
+      - 728*90 - leaderboard
+      - 336*280 - large rectangle 
+      - 300*250 - medium rectangle
+      - 970*90 - large leaderboard
+      - 468*60 - banner 
+      - 234*60 - half banner 
+      - 125*125 - button 
+      - 180*150 - small rectangle
+      - 200*200 - small square
+      - 250*250 - square
   dfp_show_topic_list_top:
     client: true
     default: false
   dfp_topic_above_post_stream_code:
     client: true
     default: ''
-  dfp_size_topic_above_post_stream_width_code:
+  topic_above_post_stream_ad_sizes:
     client: true
-    default: ''
-  dfp_size_topic_above_post_stream_height_code:
-    client: true
-    default: ''
+    default: '728*90 - leaderboard'
+    type: enum
+    choices:
+      - 728*90 - leaderboard
+      - 336*280 - large rectangle 
+      - 300*250 - medium rectangle
+      - 970*90 - large leaderboard
+      - 468*60 - banner 
+      - 234*60 - half banner 
+      - 125*125 - button 
+      - 180*150 - small rectangle
+      - 200*200 - small square
+      - 250*250 - square
   dfp_show_topic_above_post_stream:
     client: true
     default: false
   dfp_topic_above_suggested_code:
     client: true
     default: ''
-  dfp_size_topic_above_suggested_width_code:
+  topic_above_suggested_ad_sizes:
     client: true
-    default: ''
-  dfp_size_topic_above_suggested_height_code:
-    client: true
-    default: ''
+    default: '728*90 - leaderboard'
+    type: enum
+    choices:
+      - 728*90 - leaderboard
+      - 336*280 - large rectangle 
+      - 300*250 - medium rectangle
+      - 970*90 - large leaderboard
+      - 468*60 - banner 
+      - 234*60 - half banner 
+      - 125*125 - button 
+      - 180*150 - small rectangle
+      - 200*200 - small square
+      - 250*250 - square
   dfp_show_topic_above_suggested:
     client: true
     default: false
   dfp_post_bottom_code:
     client: true
     default: ''
-  dfp_size_post_bottom_width_code:
-    client: true
-    default: ''
-  dfp_size_post_bottom_height_code:
-    client: true
-    default: ''
-  dfp_show_post_bottom:
-    client: true
-    default: false
   dfp_nth_post_code:
     client: true
     default: ''
-  dfp_show_size_1_example:
+  post_bottom_ad_sizes:
+    client: true
+    default: '728*90 - leaderboard'
+    type: enum
+    choices:
+      - 728*90 - leaderboard
+      - 336*280 - large rectangle 
+      - 300*250 - medium rectangle
+      - 970*90 - large leaderboard
+      - 468*60 - banner 
+      - 234*60 - half banner 
+      - 125*125 - button 
+      - 180*150 - small rectangle
+      - 200*200 - small square
+      - 250*250 - square
+  dfp_show_post_bottom:
     client: true
     default: false
-  dfp_show_size_2_example:
-    client: true
-    default: false
-  dfp_show_size_3_example:
-    client: true
-    default: false
-  dfp_show_size_4_example:
-    client: true
-    default: false
-  dfp_show_size_5_example:
-    client: true
-    default: false
-  dfp_show_size_6_example:
-    client: true
-    default: false
-  dfp_show_size_7_example:
-    client: true
-    default: false
-  dfp_show_size_8_example:
-    client: true
-    default: false
-  dfp_show_size_9_example:
-    client: true
-    default: false
-  dfp_show_size_10_example:
-    client: true
-    default: false
-
