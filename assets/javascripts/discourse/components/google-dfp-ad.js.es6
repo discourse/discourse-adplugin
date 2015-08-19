@@ -6,7 +6,6 @@ var const_height = '';
 var _loaded = false,
     _promise = null;
 
-
 function splitWidthInt(value) {
     var str = value.substring(0, 3);
     return str.trim();
@@ -77,6 +76,10 @@ export default Ember.Component.extend({
   divId: function() {
     return "div-gpt-ad-" + this.get('placement');
   }.property('placement'),
+
+  adWrapperStyle: function() {
+    return `width: ${this.get('const_width')}px; height: ${this.get('const_height')}px;`.htmlSafe();
+  }.property('const_width', 'const_height'),
 
   _initGoogleDFP: function() {
     var self = this;
