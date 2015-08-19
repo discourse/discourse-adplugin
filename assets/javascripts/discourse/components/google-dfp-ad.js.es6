@@ -35,15 +35,14 @@ function loadGoogle(settings) {
     }
 
     // Define our ad units - extend for mobile view.
+    // Inventory or slot level custom targeting goes here for each of the defined ad units - needs input and injection.
+    // For each ad slot, if there is  set target, then don't put semicolon in after addService, if so, then add it in to close off function.
+    // Need to add something to the actual site itself... on the page googletag.pubads().setTargeting(‘publisher’, ‘affiliate1′);:
     googletag.cmd.push(function() {
       if (settings.dfp_topic_list_top_code && !settings.dfp_show_topic_list_top && settings.topic_list_top_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_list_top_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_list_top_ad_sizes));
-        googletag.defineSlot(settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').
-    
-      // Inventory level custom targeting goes here for each of the defined ad units.
-        setTargeting('location', ['melbourne']).
-        addService(googletag.pubads());
+        googletag.defineSlot(settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes));
@@ -53,17 +52,18 @@ function loadGoogle(settings) {
       if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes));
-        googletag.defineSlot(settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
+        googletag.defineSlot(settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested')
+        .addService(googletag.pubads());
       }
       if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.post_bottom_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.post_bottom_ad_sizes));
-        googletag.defineSlot(settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
+        googletag.defineSlot(settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom')
+        .addService(googletag.pubads());
       }
 
-    // Page Level custom targeting goes here.
-      googletag.pubads().setTargeting('gender', ['male']); 
-      
+    // Page Level custom targeting goes here - needs an input section and also ad tags on the relevant pages      
+    //  googletag.pubads().setTargeting("gender","female");
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
