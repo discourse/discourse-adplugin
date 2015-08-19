@@ -1,8 +1,21 @@
 <div class="google-dfp-ad-label"><h2>Google Ad Plugin Display</h2></div>
+
+{{#if site.mobileView}} 
+
+  <div id={{divId}} style={{adWrapperStyleMobile}} class="dfp-ad-unit" align=center> 
+  	{{#if loadedGoogletag}}
+    <script type='text/javascript'>
+    googletag.cmd.push(function() { googletag.display('{{divId}}'); });
+    </script>
+
+{{else}}
+
   <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center> 
   	{{#if loadedGoogletag}}
     <script type='text/javascript'>
     googletag.cmd.push(function() { googletag.display('{{divId}}'); });
     </script>
-  {{/if}}
+
+{{/if}}
+
 </div>

@@ -81,6 +81,10 @@ export default Ember.Component.extend({
     return `width: ${this.get('const_width')}px; height: ${this.get('const_height')}px;`.htmlSafe();
   }.property('const_width', 'const_height'),
 
+  adWrapperStyleMobile: function() {
+    return `width: 320px; height: 50px;`.htmlSafe();
+  },
+
   _initGoogleDFP: function() {
     var self = this;
     loadGoogle(this.siteSettings).then(function() {
