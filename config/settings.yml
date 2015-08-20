@@ -1,4 +1,7 @@
 ad_plugin:
+  dfp_publisher_id:
+    client: true
+    default: ''
   dfp_topic_list_top_code:
     client: true
     default: ''
