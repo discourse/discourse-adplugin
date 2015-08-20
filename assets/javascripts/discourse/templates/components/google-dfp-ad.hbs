@@ -1,21 +1,20 @@
 <div class="google-dfp-ad-label"><h2>Google Ad Plugin Display</h2></div>
 
-{{#if site.mobileView}} 
-
-  <div id={{divId}} style={{adWrapperStyleMobile}} class="dfp-ad-unit" align=center> 
-  	{{#if loadedGoogletag}}
-    <script type='text/javascript'>
-    googletag.cmd.push(function() { googletag.display('{{divId}}'); });
-    </script>
+{{#if site.mobileView}}
+  {{#if loadedGoogletag}}
+    <div id={{divId}} style={{adWrapperStyleMobile}} class="dfp-ad-unit" align=center> 
+      <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('{{divId}}'); });
+      </script>
+  </div>
+  {{/if}}
 
 {{else}}
-
-  <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center> 
-  	{{#if loadedGoogletag}}
-    <script type='text/javascript'>
-    googletag.cmd.push(function() { googletag.display('{{divId}}'); });
-    </script>
-
+  {{#if loadedGoogletag}}
+    <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center> 
+      <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('{{divId}}'); });
+      </script>
+  </div>
+  {{/if}}
 {{/if}}
-
-</div>
