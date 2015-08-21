@@ -16,7 +16,7 @@ function splitHeightInt(value) {
     var str = value.substring(4, 7);
     return str.trim();
 }
-
+  
 function loadGoogle(settings) {
   if (_loaded) {
     return Ember.RSVP.resolve();
@@ -35,14 +35,16 @@ function loadGoogle(settings) {
     }
 
     // Define our ad units - extend for mobile view.
-    // Inventory or slot level custom targeting goes here for each of the defined ad units - needs input and injection.
-    // For each ad slot, if there is  set target, then don't put semicolon in after addService, if so, then add it in to close off function.
-    // Need to add something to the actual site itself... on the page googletag.pubads().setTargeting(‘publisher’, ‘affiliate1′);:
+    // if statement?  the code should be able to run without the custom targeting settings
     googletag.cmd.push(function() {
       if (settings.dfp_topic_list_top_code && !settings.dfp_show_topic_list_top && settings.topic_list_top_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_list_top_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_list_top_ad_sizes));
-        googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').setTargeting('gender', ['female']).addService(googletag.pubads());
+        googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
+        // Inventory or slot level custom targeting goes here for each of the defined ad units - needs input and injection.
+        // The ad runs with .setTargeting('gender', ['female'])
+        .settings.dfp_topic_list_top_custom_targeting_code
+        .addService(googletag.pubads());
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes));
@@ -61,7 +63,6 @@ function loadGoogle(settings) {
       }
 
     // Page Level custom targeting goes here - needs an input section and also ad tags on the relevant pages      
-    //  googletag.pubads().setTargeting("gender","female");
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -84,6 +85,7 @@ export default Ember.Component.extend({
     return "div-gpt-ad-" + this.get('placement');
   }.property('placement'),
 
+//settings.dfp_topic_list_top_custom_targeting_code
   _initGoogleDFP: function() {
     var self = this;
     loadGoogle(this.siteSettings).then(function() {
