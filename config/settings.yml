@@ -23,9 +23,6 @@ ad_plugin:
   dfp_show_topic_list_top:
     client: true
     default: false
-  dfp_topic_list_top_custom_targeting_code:
-    client: true
-    default: ''
   dfp_topic_above_post_stream_code:
     client: true
     default: ''
