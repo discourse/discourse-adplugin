@@ -15,7 +15,7 @@ function splitHeightInt(value) {
     var str = value.substring(4, 7);
     return str.trim();
 }
-
+  
 function loadGoogle(settings) {
   if (_loaded) {
     return Ember.RSVP.resolve();
@@ -34,6 +34,7 @@ function loadGoogle(settings) {
     }
 
     // Define our ad units - extend for mobile view.
+    // if statement?  the code should be able to run without the custom targeting settings
     googletag.cmd.push(function() {
       if (settings.dfp_topic_list_top_code && !settings.dfp_show_topic_list_top && settings.topic_list_top_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_list_top_ad_sizes));
@@ -42,8 +43,11 @@ function loadGoogle(settings) {
           googletag.defineSlot(settings.dfp_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot(settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
-        }
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
+        // Inventory or slot level custom targeting goes here for each of the defined ad units - needs input and injection.
+        // The ad runs with .setTargeting('gender', ['female'])
+        .settings.dfp_topic_list_top_custom_targeting_code
+        .addService(googletag.pubads());
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes));
@@ -52,8 +56,7 @@ function loadGoogle(settings) {
           googletag.defineSlot(settings.dfp_topic_above_post_stream_code, [320,50], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot(settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
-        }
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
       }
       if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes));
@@ -62,8 +65,7 @@ function loadGoogle(settings) {
           googletag.defineSlot(settings.dfp_topic_above_suggested_code, [320,50], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot(settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
-        }
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
       }
       if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.post_bottom_ad_sizes));
@@ -72,9 +74,10 @@ function loadGoogle(settings) {
           googletag.defineSlot(settings.dfp_post_bottom_code, [320,50], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot(settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
-        }
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
       }
+
+    // Page Level custom targeting goes here - needs an input section and also ad tags on the relevant pages      
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
