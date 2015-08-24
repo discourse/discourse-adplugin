@@ -47,6 +47,7 @@ function loadGoogle(settings) {
         // Inventory or slot level custom targeting goes here for each of the defined ad units - needs input and injection.
         // The ad runs with .setTargeting('gender', ['female'])
         .addService(googletag.pubads());
+        }
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes));
@@ -56,6 +57,7 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
+        }
       }
       if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes));
@@ -65,6 +67,7 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
+        }
       }
       if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.post_bottom_ad_sizes));
@@ -74,6 +77,7 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
+        }
       }
 
     // Page Level custom targeting goes here - needs an input section and also ad tags on the relevant pages      
