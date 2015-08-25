@@ -1,0 +1,30 @@
+{{#if site.mobileView}} 
+<div style={{adWrapperStyleMobile}}>
+    <ins class="adsbygoogle"
+         style={{adInsStyleMobile}}
+         data-ad-client="ca-pub-{{publisher_id}}"
+         data-ad-slot={{ad_code}}>
+    </ins>
+    
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+{{else}}
+<div class="google-adsense-label"><h2>Google Adsense</h2></div>
+<div style={{adWrapperStyle}}>
+    <ins class="adsbygoogle"
+         style={{adInsStyle}}
+         data-ad-client="ca-pub-{{publisher_id}}"
+         data-ad-slot={{ad_code}}>
+    </ins>
+
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+{{/if}}
+
+

@@ -43,11 +43,9 @@ function loadGoogle(settings) {
           googletag.defineSlot(settings.dfp_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
-        // Inventory or slot level custom targeting goes here for each of the defined ad units - needs input and injection.
-        // The ad runs with .setTargeting('gender', ['female'])
-        .addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
         }
+        console.log('working');
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes));
