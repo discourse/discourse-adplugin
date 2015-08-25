@@ -1,4 +1,5 @@
 import loadScript from 'discourse/lib/load-script';
+//import PageTracker from 'discourse/lib/page-tracker';
 
 var const_width = '';
 var const_height = '';
@@ -16,6 +17,7 @@ function splitHeightInt(value) {
     return str.trim();
 }
   
+//PageTracker.current().on('change', function(url) {
 function loadGoogle(settings) {
   if (_loaded) {
     return Ember.RSVP.resolve();
