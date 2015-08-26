@@ -17,7 +17,16 @@ function splitHeightInt(value) {
     return str.trim();
 }
 
-  
+// This creates an array for the values of the custom targeting key
+function valueParse(value) {
+  var final = value.replace(/ /g,'');
+  final = final.replace(/['"]+/g, '');
+  final = final.split(',');
+  return final;
+}
+
+
+
 //PageTracker.current().on('change', function(url) {
 function loadGoogle(settings) {
   if (_loaded) {
@@ -47,8 +56,11 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
-          .setTargeting(settings.dfp_target_topic_list_top_key_code, [settings.dfp_target_topic_list_top_value_code])
+          .setTargeting(settings.dfp_target_topic_list_top_key_code, valueParse(settings.dfp_target_topic_list_top_value_code))
+          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
           .addService(googletag.pubads());
+
+          console.log(typeof(valueParse(settings.dfp_target_topic_list_top_value_code)));
         }
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
