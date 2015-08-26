@@ -4,6 +4,8 @@ var ad_width = '';
 var ad_height = '';
 var ad_code = '';
 var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
+var preGoogleVars = null;
+var postGoogleVars = null;
 
 function splitWidthInt(value) {
     var str = value.substring(0, 3);
@@ -23,15 +25,34 @@ PageTracker.current().on('change', function(url) {
     // clear the old element and its state
     //ads.remove();
     ads.parentNode.removeChild(ads);
-    for (var key in window) {
-      if (key.indexOf("google") !== -1){
-        window[key] = undefined;
-      }
+    for (var i = 0; i < postGoogleVars.length; i++) {
+      var key = postGoogleVars[i];
+      window[key] = undefined;
     }
   }
 
+  if(preGoogleVars === null) {
+    preGoogleVars = [];
+    for(var key in window) {
+      if(key.indexOf("google") !== -1) {
+        preGoogleVars.push(key);
+      }
+    }
+  }
+  
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
   ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+  ga.addEventListener('load', function(e) {
+    if(postGoogleVars === null) {
+      postGoogleVars = [];
+
+      for(var key in window) {
+        if(key.indexOf("google") !== -1 && preGoogleVars.indexOf(key) == -1) {
+          postGoogleVars.push(key);
+        }
+      }
+    }
+  });
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
 });
