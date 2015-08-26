@@ -112,6 +112,12 @@ ad_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+  dfp_target_topic_list_top_key_code:
+    client: true
+    default: ''
+  dfp_target_topic_list_top_value_code:
+    client: true
+    default: ''
   dfp_show_topic_list_top:
     client: true
     default: false
