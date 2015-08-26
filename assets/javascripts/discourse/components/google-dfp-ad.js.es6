@@ -25,8 +25,6 @@ function valueParse(value) {
   return final;
 }
 
-
-
 //PageTracker.current().on('change', function(url) {
 function loadGoogle(settings) {
   if (_loaded) {
@@ -45,8 +43,6 @@ function loadGoogle(settings) {
       console.log('googletag is undefined!');
     }
 
-    // Define our ad units - extend for mobile view.
-    // if statement?  the code should be able to run without the custom targeting settings
     googletag.cmd.push(function() {
       if (settings.dfp_topic_list_top_code && !settings.dfp_show_topic_list_top && settings.topic_list_top_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_list_top_ad_sizes));
@@ -60,7 +56,7 @@ function loadGoogle(settings) {
           // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
           .addService(googletag.pubads());
 
-          console.log(typeof(valueParse(settings.dfp_target_topic_list_top_value_code)));
+          console.log(valueParse(settings.dfp_target_topic_list_top_value_code));
         }
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
