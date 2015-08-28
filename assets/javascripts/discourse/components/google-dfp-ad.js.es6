@@ -78,9 +78,24 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested')
-          .setTargeting(settings.dfp_target_topic_above_suggested_key_code, valueParse(settings.dfp_target_topic_above_suggested_value_code))
+          
+          googletag.setTargeting(settings.dfp_target_topic_above_suggested_key_code, valueParse(settings.dfp_target_topic_above_suggested_value_code))
           // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
-          .addService(googletag.pubads());        
+          googletag.addService(googletag.pubads());
+
+
+        var Foo = function() {}
+        Foo.prototype.bar = function() {
+          // Stuff
+          return this;
+        }
+
+        var f = new Foo();
+        f.bar().bar().bar();
+        f.bar();
+        f.bar();
+        f.bar();
+
         }
       }
       if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
