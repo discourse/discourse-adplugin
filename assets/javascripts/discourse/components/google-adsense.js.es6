@@ -8,6 +8,8 @@ var ad_code = '';
 var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
 var preGoogleVars = null;
 var postGoogleVars = null;
+var mobile_width = 320;
+var mobile_height = 50;
 
 
 function splitWidthInt(value) {
@@ -101,6 +103,9 @@ export default Ember.Component.extend({
   ad_width: ad_width,
   ad_height: ad_height,
 
+  mobile_width: mobile_width,
+  mobile_height: mobile_height,
+
   init: function() {
     this.set('ad_width', data[this.placement]["ad_width"] );
     this.set('ad_height', data[this.placement]["ad_height"] );
@@ -117,8 +122,8 @@ export default Ember.Component.extend({
   }.property('adWrapperStyle'),
 
   adWrapperStyleMobile: function() {
-    return `width: 320px; height: 50px; margin:0 auto;`.htmlSafe();
-  },
+    return `width: ${this.get('mobile_width')}px; height: ${this.get('mobile_height')}px; margin:0 auto;`.htmlSafe();
+  }.property('mobile_width', 'mobile_height'),
 
   adInsStyleMobile: function() {
     return `display: inline-block; ${this.get('adWrapperStyleMobile')}`.htmlSafe();
