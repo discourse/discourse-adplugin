@@ -55,8 +55,6 @@ function loadGoogle(settings) {
           .setTargeting(settings.dfp_target_topic_list_top_key_code, valueParse(settings.dfp_target_topic_list_top_value_code))
           // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
           .addService(googletag.pubads());
-
-          console.log(valueParse(settings.dfp_target_topic_list_top_value_code));
         }
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
@@ -66,7 +64,10 @@ function loadGoogle(settings) {
           googletag.defineSlot(settings.dfp_topic_above_post_stream_code, [320,50], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream')
+          .setTargeting(settings.dfp_target_topic_above_post_stream_key_code, valueParse(settings.dfp_target_topic_above_post_stream_value_code))
+          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
+          .addService(googletag.pubads());       
         }
       }
       if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes) {
@@ -76,7 +77,10 @@ function loadGoogle(settings) {
           googletag.defineSlot(settings.dfp_topic_above_suggested_code, [320,50], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested')
+          .setTargeting(settings.dfp_target_topic_above_suggested_key_code, valueParse(settings.dfp_target_topic_above_suggested_value_code))
+          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
+          .addService(googletag.pubads());        
         }
       }
       if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
@@ -86,7 +90,10 @@ function loadGoogle(settings) {
           googletag.defineSlot(settings.dfp_post_bottom_code, [320,50], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom')
+          .setTargeting(settings.dfp_target_post_bottom_key_code, valueParse(settings.dfp_target_post_bottom_value_code))
+          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
+          .addService(googletag.pubads());        
         }
       }
 

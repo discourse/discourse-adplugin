@@ -142,7 +142,10 @@ ad_plugin:
   dfp_show_topic_above_post_stream:
     client: true
     default: false
-  dfp_topic_above_post_stream_custom_targeting_code:
+  dfp_target_topic_above_post_stream_key_code:
+    client: true
+    default: ''
+  dfp_target_topic_above_post_stream_value_code:
     client: true
     default: ''
   dfp_topic_above_suggested_code:
@@ -166,7 +169,10 @@ ad_plugin:
   dfp_show_topic_above_suggested:
     client: true
     default: false
-  dfp_topic_above_suggested_custom_targeting_code:
+  dfp_target_topic_above_suggested_key_code:
+    client: true
+    default: ''
+  dfp_target_topic_above_suggested_value_code:
     client: true
     default: ''
   dfp_post_bottom_code:
@@ -193,6 +199,9 @@ ad_plugin:
   dfp_show_post_bottom:
     client: true
     default: false
-  dfp_post_bottom_custom_targeting_code:
+  dfp_target_post_bottom_key_code:
+    client: true
+    default: ''
+  dfp_target_post_bottom_value_code:
     client: true
     default: ''
