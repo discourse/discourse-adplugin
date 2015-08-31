@@ -52,13 +52,11 @@ Foo.prototype.bar = function() {
 
 // This should call googletag.setTargeting(key for that location, value for that location)
 function custom_targeting(key_array, value_array) {
-  var i = 0;
-  while (i < key_array.length) {
-    var custom_values = [];
-    var wordValue = valueParse(value_array[i])
+  for (var i = 0; i < key_array.length; i++) {
+    var wordValue = valueParse(value_array[i]);
     var f = new Foo(key_array[i], wordValue, googletag);
     f.bar();
-    i++;
+    console.log("works!");
   }
 }
 

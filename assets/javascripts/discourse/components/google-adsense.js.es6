@@ -1,7 +1,5 @@
 import PageTracker from 'discourse/lib/page-tracker';
 
-console.log(Discourse.SiteSettings.adsense_nth_post_code);
-
 var ad_width = '';
 var ad_height = '';
 var ad_code = '';
