@@ -39,19 +39,20 @@ function keyParse(word) {
 }
 
 // This sets the key and value for custom targeting
-var Foo = function(key, value) {
+var Foo = function(key, value, googletag) {
   this.locationKey = key;
   this.locationValue = value;
+  this.googletag = googletag;
 }
 
 // setTargeting is not defined.  We want to return as a method - PROBLEM 1
 Foo.prototype.bar = function() {
-  return setTargeting((this.locationKey), (this.locationValue));
+  return googletag.setTargeting((this.locationKey), (this.locationValue));
 }
 
 // This should call googletag.setTargeting(key for that location, value for that location)
-var googletag = new Foo(keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code), valueParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code));
-googletag.bar();
+var f = new Foo(keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code), valueParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code), googletag);
+f.bar();
 
 // END of Coaches Note
 
