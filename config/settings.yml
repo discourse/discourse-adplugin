@@ -112,12 +112,14 @@ ad_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
-  dfp_target_topic_list_top_key_code:
-    client: true
+  dfp_target_topic_list_top_key_code:    
     default: ''
+    type: url_list
+    client: true
   dfp_target_topic_list_top_value_code:
-    client: true
     default: ''
+    type: url_list
+    client: true
   dfp_show_topic_list_top:
     client: true
     default: false
@@ -142,9 +144,14 @@ ad_plugin:
   dfp_show_topic_above_post_stream:
     client: true
     default: false
-  dfp_topic_above_post_stream_custom_targeting_code:
-    client: true
+  dfp_target_topic_above_post_stream_key_code:
     default: ''
+    type: url_list
+    client: true
+  dfp_target_topic_above_post_stream_value_code:
+    default: ''
+    type: url_list
+    client: true
   dfp_topic_above_suggested_code:
     client: true
     default: ''
@@ -166,9 +173,14 @@ ad_plugin:
   dfp_show_topic_above_suggested:
     client: true
     default: false
-  dfp_topic_above_suggested_custom_targeting_code:
-    client: true
+  dfp_target_topic_above_suggested_key_code:
     default: ''
+    type: url_list
+    client: true
+  dfp_target_topic_above_suggested_value_code:
+    default: ''
+    type: url_list
+    client: true
   dfp_post_bottom_code:
     client: true
     default: ''
@@ -193,6 +205,11 @@ ad_plugin:
   dfp_show_post_bottom:
     client: true
     default: false
-  dfp_post_bottom_custom_targeting_code:
-    client: true
+  dfp_target_post_bottom_key_code:
     default: ''
+    type: url_list
+    client: true
+  dfp_target_post_bottom_value_code:
+    default: ''
+    type: url_list
+    client: true

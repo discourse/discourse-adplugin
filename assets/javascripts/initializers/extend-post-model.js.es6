@@ -9,8 +9,8 @@ export default {
   	  }.property('post_number'),
 
   	  postSpecificCountAdsense: function() {
-   	    return this.get('post_number') === parseInt(Discourse.SiteSettings.adsense_nth_post_code); 
-  	  }.property('post_number')
+        return this.get('post_number') === parseInt(Discourse.SiteSettings.adsense_nth_post_code); 
+  	  }.property('post_number'),
   	});
   }
 };
