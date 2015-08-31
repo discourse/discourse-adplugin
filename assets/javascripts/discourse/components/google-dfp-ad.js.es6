@@ -47,12 +47,20 @@ var Foo = function(key, value, googletag) {
 
 // setTargeting is not defined.  We want to return as a method - PROBLEM 1
 Foo.prototype.bar = function() {
-  return googletag.setTargeting((this.locationKey), (this.locationValue));
+  return this.googletag.setTargeting(this.locationKey, this.locationValue);
 }
 
 // This should call googletag.setTargeting(key for that location, value for that location)
-var f = new Foo(keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code), valueParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code), googletag);
-f.bar();
+function custom_targeting(key_array, value_array) {
+  var i = 0;
+  while (i < key_array.length) {
+    var custom_values = [];
+    var wordValue = valueParse(value_array[i])
+    var f = new Foo(key_array[i], wordValue, googletag);
+    f.bar();
+    i++;
+  }
+}
 
 // END of Coaches Note
 
@@ -93,9 +101,8 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
-          .setTargeting(keyParse(settings.dfp_target_topic_list_top_key_code), valueParse(settings.dfp_target_topic_list_top_value_code))
-          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
-          .addService(googletag.pubads());
+          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)))
+          googletag.addService(googletag.pubads());
         }
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
