@@ -16,7 +16,7 @@ function splitHeightInt(value) {
     var str = value.substring(4, 7);
     return str.trim();
 }
-
+/*
 // Coaches Note!  
 // Background: We want to call on google.setTargeting using googletag.bar so that we can can take in inputs from users (key and value) for custom targeting.
 // Look at 26 - 55 which should call on googletag.setTargeting.
@@ -99,8 +99,9 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
-          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)))
-          googletag.addService(googletag.pubads());
+          //custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)))
+          .setTargeting('gender', 'female')
+          .addService(googletag.pubads());
         }
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
@@ -111,7 +112,7 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream')
-          .setTargeting(settings.dfp_target_topic_above_post_stream_key_code, valueParse(settings.dfp_target_topic_above_post_stream_value_code))
+          //.setTargeting(settings.dfp_target_topic_above_post_stream_key_code, valueParse(settings.dfp_target_topic_above_post_stream_value_code))
           // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
           .addService(googletag.pubads());       
         }
@@ -125,7 +126,7 @@ function loadGoogle(settings) {
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested')
           
-          googletag.setTargeting(settings.dfp_target_topic_above_suggested_key_code, valueParse(settings.dfp_target_topic_above_suggested_value_code))
+          //googletag.setTargeting(settings.dfp_target_topic_above_suggested_key_code, valueParse(settings.dfp_target_topic_above_suggested_value_code))
           // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
           googletag.addService(googletag.pubads());
         }
@@ -138,7 +139,7 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom')
-          .setTargeting(settings.dfp_target_post_bottom_key_code, valueParse(settings.dfp_target_post_bottom_value_code))
+          //.setTargeting(settings.dfp_target_post_bottom_key_code, valueParse(settings.dfp_target_post_bottom_value_code))
           // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
           .addService(googletag.pubads());        
         }
