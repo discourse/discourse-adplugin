@@ -17,6 +17,11 @@ function splitHeightInt(value) {
     return str.trim();
 }
 
+// Coaches Note!  
+// Background: We want to call on google.setTargeting using googletag.bar so that we can can take in inputs from users (key and value) for custom targeting.
+// Look at 26 - 55 which should call on googletag.setTargeting.
+// Error is occuring on link 49 which is returning "Uncaught ReferenceError: setTargeting is not defined"
+
 // This creates an array for the values of the custom targeting key
 function valueParse(value) {
   var final = value.replace(/ /g,'');
@@ -24,6 +29,41 @@ function valueParse(value) {
   final = final.split(',');
   return final;
 }
+
+// This creates an array for the key of the custom targeting key
+function keyParse(word) {
+  var key = word;
+  key = key.replace(/['"]+/g, '');
+  key = key.split("\n");
+  return key; 
+}
+
+// This sets the key and value for custom targeting
+var Foo = function(key, value) {
+  this.locationKey = key;
+  this.locationValue = value;
+}
+
+// setTargeting is not defined.  We want to return as a method - PROBLEM 1
+Foo.prototype.bar = function() {
+  return setTargeting((this.locationKey), (this.locationValue));
+}
+
+// This should call googletag.setTargeting(key for that location, value for that location)
+var googletag = new Foo(keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code), valueParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code));
+googletag.bar();
+
+// END of Coaches Note
+
+// splitting values 
+/*var custom_values = [];
+var word = keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code);
+var wordValue;
+for (var i = 0; i < word.length; i++) {
+  wordValue = valueParse(word[i]);
+  custom_values.push(wordValue);
+}*/
+
 
 //PageTracker.current().on('change', function(url) {
 function loadGoogle(settings) {
@@ -52,7 +92,7 @@ function loadGoogle(settings) {
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
-          .setTargeting(settings.dfp_target_topic_list_top_key_code, valueParse(settings.dfp_target_topic_list_top_value_code))
+          .setTargeting(keyParse(settings.dfp_target_topic_list_top_key_code), valueParse(settings.dfp_target_topic_list_top_value_code))
           // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
           .addService(googletag.pubads());
         }
@@ -82,20 +122,6 @@ function loadGoogle(settings) {
           googletag.setTargeting(settings.dfp_target_topic_above_suggested_key_code, valueParse(settings.dfp_target_topic_above_suggested_value_code))
           // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
           googletag.addService(googletag.pubads());
-
-
-        var Foo = function() {}
-        Foo.prototype.bar = function() {
-          // Stuff
-          return this;
-        }
-
-        var f = new Foo();
-        f.bar().bar().bar();
-        f.bar();
-        f.bar();
-        f.bar();
-
         }
       }
       if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
