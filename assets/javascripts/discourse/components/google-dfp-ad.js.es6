@@ -96,7 +96,7 @@ function loadGoogle(settings) {
         const_width = parseInt(splitWidthInt(settings.topic_list_top_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_list_top_ad_sizes));
         if (Discourse.Mobile.mobileView) {
-          googletag.defineSlot(settings.dfp_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
+          googletag.defineSlot(settings.dfp_mobile_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
         }
         else {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')

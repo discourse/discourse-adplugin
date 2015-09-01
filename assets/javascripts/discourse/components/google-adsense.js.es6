@@ -3,6 +3,7 @@ import PageTracker from 'discourse/lib/page-tracker';
 var ad_width = '';
 var ad_height = '';
 var ad_code = '';
+var ad_mobile_code = '';
 var currentUser = Discourse.User.current();
 var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
 var preGoogleVars = null;
@@ -66,12 +67,17 @@ var data = {
   "post-bottom" : {}  
 }
 
+
 if (Discourse.SiteSettings.adsense_publisher_code) {
-  // if ((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level)) {
-    if (Discourse.SiteSettings.adsense_topic_list_top_code && !Discourse.SiteSettings.adsense_show_topic_list_top && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level))) {
-      data["topic-list-top"]["ad_code"] = Discourse.SiteSettings.adsense_topic_list_top_code;
-      data["topic-list-top"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
-      data["topic-list-top"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
+    if (!Discourse.SiteSettings.adsense_show_topic_list_top && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level))) {
+      if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_topic_list_top_code) {
+        data["topic-list-top"]["ad_code"] = Discourse.SiteSettings.adsense_topic_list_top_code;
+        data["topic-list-top"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
+        data["topic-list-top"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
+      } 
+      if (Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_mobile_topic_list_top_code) {
+        data["topic-list-top"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_list_top_code;
+      }  
     }
     if (Discourse.SiteSettings.adsense_topic_above_post_stream_code && !Discourse.SiteSettings.adsense_show_topic_above_post_stream && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level))) {
       data["topic-above-post-stream"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_post_stream_code;
@@ -104,6 +110,7 @@ export default Ember.Component.extend({
     this.set('ad_width', data[this.placement]["ad_width"] );
     this.set('ad_height', data[this.placement]["ad_height"] );
     this.set('ad_code', data[this.placement]["ad_code"] );
+    this.set('ad_mobile_code', data[this.placement]["ad_mobile_code"] );
     this._super();
   },
   
