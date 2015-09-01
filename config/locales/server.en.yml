@@ -23,6 +23,7 @@ en:
         dfp_target_post_bottom_key_code: "Input key values - Inventory Level"
         dfp_target_post_bottom_value_code: "Input key values - Inventory Level"        
         adsense_publisher_code: "Insert your Publisher ID here"
+        adsense_through_trust_level: "Show your ads to users based on trust."
         adsense_show_topic_list_top: "Disable topic_list_top ad"
         adsense_topic_list_top_code: "Show leaderboard ad above topic lists."
         adsense_topic_list_top_ad_sizes: "Choose your ad sizes"

@@ -2,6 +2,10 @@ adsense_plugin:
   adsense_publisher_code:
     client: true
     default: ''
+  adsense_through_trust_level:
+    client: true
+    default: 2
+    enum: 'TrustLevelSetting'
   adsense_topic_list_top_code:
     client: true
     default: ''
