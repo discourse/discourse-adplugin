@@ -3,6 +3,8 @@ import loadScript from 'discourse/lib/load-script';
 
 var const_width = '';
 var const_height = '';
+var const_mobile_width = 320;
+var const_mobile_height = 50;
 var currentUser = Discourse.User.current();
 
 var _loaded = false,
@@ -160,6 +162,8 @@ function loadGoogle(settings) {
 export default Ember.Component.extend({
   const_width: const_width,
   const_height: const_height,
+  const_mobile_width: const_mobile_width,
+  const_mobile_height: const_mobile_height,
 
   classNames: ['google-dfp-ad'],
   loadedGoogletag: false,
@@ -174,8 +178,8 @@ export default Ember.Component.extend({
   }.property('const_width', 'const_height'),
 
   adWrapperStyleMobile: function() {
-    return `width: 320px; height: 50px;`.htmlSafe();
-  },
+    return `width: ${this.get('const_mobile_width')}px; height: ${this.get('const_mobile_height')}px;`.htmlSafe();
+  }.property('const_mobile_width', 'const_mobile_height'),
 
   _initGoogleDFP: function() {
     var self = this;
