@@ -4,6 +4,9 @@ import loadScript from 'discourse/lib/load-script';
 var const_width = '';
 var const_height = '';
 
+var mobile_width = 320;
+var mobile_height = 50;
+
 var _loaded = false,
     _promise = null;
 
@@ -163,6 +166,9 @@ export default Ember.Component.extend({
   classNames: ['google-dfp-ad'],
   loadedGoogletag: false,
 
+  mobile_width: mobile_width,
+  mobile_height: mobile_height,
+
   // Part of the divID of the div part of the GPT
   divId: function() {
     return "div-gpt-ad-" + this.get('placement');
@@ -173,8 +179,8 @@ export default Ember.Component.extend({
   }.property('const_width', 'const_height'),
 
   adWrapperStyleMobile: function() {
-    return `width: 320px; height: 50px;`.htmlSafe();
-  },
+    return `width: ${this.get('mobile_width')}px; height: ${this.get('mobile_height')}px; margin:0 auto;`.htmlSafe();
+  }.property('mobile_width', 'mobile_height'),
 
   _initGoogleDFP: function() {
     var self = this;
