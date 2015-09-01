@@ -98,6 +98,10 @@ ad_plugin:
   dfp_publisher_id:
     client: true
     default: ''
+  dfp_through_trust_level:
+    client: true
+    default: 2
+    enum: 'TrustLevelSetting'
   dfp_topic_list_top_code:
     client: true
     default: ''

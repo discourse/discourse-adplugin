@@ -1,6 +1,7 @@
 en:
   site_settings:
         dfp_publisher_id: "Put in your publisher id here"
+        dfp_through_trust_level: "Show your ads to users based on trust."
         dfp_show_topic_list_top: "Disable topic_list_top ad"
         dfp_topic_list_top_code: "Show leaderboard ad above topic lists."
         topic_list_top_ad_sizes: "Choose your ad size"
