@@ -7,9 +7,6 @@ var const_mobile_width = 320;
 var const_mobile_height = 50;
 var currentUser = Discourse.User.current();
 
-var mobile_width = 320;
-var mobile_height = 50;
-
 var _loaded = false,
     _promise = null;
 
@@ -57,12 +54,6 @@ function loadGoogle(settings) {
     }
 
     googletag.cmd.push(function() {
-
-      var topic_list_top = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
-      var topic_above_post_stream = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_above_post_stream_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
-      var topic_above_suggested = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
-      var post_bottom = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(Discourse.SiteSettings.post_bottom_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
-
       // This sets the key and value for custom targeting
       var Foo = function(key, value, googletag) {
         this.locationKey = key;
@@ -80,7 +71,7 @@ function loadGoogle(settings) {
         var f;
         for (var i = 0; i < key_array.length; i++) {
           var wordValue = valueParse(value_array[i]);
-          f = new Foo(key_array[i], wordValue, location);    
+          f = new Foo(key_array[i], wordValue, location);  
           f.bar();
         }
       }
@@ -92,6 +83,11 @@ function loadGoogle(settings) {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
         }
         else {   
+          // googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
+          // .setTargeting('gender', 'male')
+          // .setTargeting('category', 'clothes')
+          // .addService(googletag.pubads());
+          var topic_list_top = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)), topic_list_top)
         }
       }
@@ -102,6 +98,7 @@ function loadGoogle(settings) {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [320,50], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
         }
         else {
+          var topic_above_post_stream = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_above_post_stream_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code)), topic_above_post_stream)
         }
       }
@@ -112,6 +109,7 @@ function loadGoogle(settings) {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [320,50], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
         }
         else {
+          var topic_above_suggested = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_value_code)), topic_above_suggested)
         }
       }
@@ -122,6 +120,7 @@ function loadGoogle(settings) {
           googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [320,50], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
         }
         else {
+          var post_bottom = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(Discourse.SiteSettings.post_bottom_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_post_bottom_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_post_bottom_value_code)), post_bottom)
         }
       }
@@ -145,9 +144,6 @@ export default Ember.Component.extend({
 
   classNames: ['google-dfp-ad'],
   loadedGoogletag: false,
-
-  mobile_width: mobile_width,
-  mobile_height: mobile_height,
 
   // Part of the divID of the div part of the GPT
   divId: function() {
