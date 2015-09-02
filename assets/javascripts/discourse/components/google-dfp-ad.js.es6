@@ -17,11 +17,6 @@ function splitHeightInt(value) {
     return str.trim();
 }
 
-// Coaches Note!  
-// Background: We want to call on google.setTargeting using googletag.bar so that we can can take in inputs from users (key and value) for custom targeting.
-// Look at 26 - 55 which should call on googletag.setTargeting.
-// Error is occuring on link 49 which is returning "Uncaught ReferenceError: setTargeting is not defined"
-
 // This creates an array for the values of the custom targeting key
 function valueParse(value) {
   var final = value.replace(/ /g,'');
@@ -85,14 +80,9 @@ function loadGoogle(settings) {
         const_width = parseInt(splitWidthInt(settings.topic_list_top_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_list_top_ad_sizes));
         if (Discourse.Mobile.mobileView) {
-          googletag.defineSlot(settings.dfp_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
         }
-        else {
-          //googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
-          //.setTargeting('category', ['clothes'])
-          //.setTargeting('gender', ['male'])
-          //.addService(googletag.pubads());
-          //.setTargeting("category", ["clothes"]);    
+        else {   
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)), topic_list_top)
         }
       }
@@ -100,40 +90,30 @@ function loadGoogle(settings) {
         const_width = parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes));
         if (Discourse.Mobile.mobileView) {
-          googletag.defineSlot(settings.dfp_topic_above_post_stream_code, [320,50], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [320,50], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream')
-          .setTargeting(settings.dfp_target_topic_above_post_stream_key_code, valueParse(settings.dfp_target_topic_above_post_stream_value_code))
-          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
-          .addService(googletag.pubads());       
+          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code)), topic_above_post_stream)      
         }
       }
       if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes));
         if (Discourse.Mobile.mobileView) {
-          googletag.defineSlot(settings.dfp_topic_above_suggested_code, [320,50], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [320,50], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested')
-          
-          googletag.setTargeting(settings.dfp_target_topic_above_suggested_key_code, valueParse(settings.dfp_target_topic_above_suggested_value_code))
-          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
-          googletag.addService(googletag.pubads());
+          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_value_code)), topic_above_suggested)
         }
       }
       if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.post_bottom_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.post_bottom_ad_sizes));
         if (Discourse.Mobile.mobileView) {
-          googletag.defineSlot(settings.dfp_post_bottom_code, [320,50], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [320,50], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom')
-          .setTargeting(settings.dfp_target_post_bottom_key_code, valueParse(settings.dfp_target_post_bottom_value_code))
-          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
-          .addService(googletag.pubads());        
+          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_post_bottom_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_post_bottom_value_code)), post_bottom)      
         }
       }
 
