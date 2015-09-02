@@ -89,7 +89,7 @@ function loadGoogle(settings) {
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)), topic_list_top)
         }
       }
-      if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level))) {
+      if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes));
         if (Discourse.Mobile.mobileView) {
@@ -99,7 +99,7 @@ function loadGoogle(settings) {
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code)), topic_above_post_stream)      
         }
       }
-      if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level))) {
+      if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes));
         if (Discourse.Mobile.mobileView) {
@@ -109,7 +109,7 @@ function loadGoogle(settings) {
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_value_code)), topic_above_suggested)
         }
       }
-      if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level))) {
+      if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.post_bottom_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.post_bottom_ad_sizes));
         if (Discourse.Mobile.mobileView) {
@@ -152,6 +152,10 @@ export default Ember.Component.extend({
   adWrapperStyleMobile: function() {
     return `width: ${this.get('const_mobile_width')}px; height: ${this.get('const_mobile_height')}px;`.htmlSafe();
   }.property('const_mobile_width', 'const_mobile_height'),
+
+  checkTrustLevels: function() {
+    return !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level));
+  }.property('trust_level'),
 
   _initGoogleDFP: function() {
     var self = this;

@@ -1,18 +1,22 @@
 {{#if site.mobileView}}
   {{#if loadedGoogletag}}
-    <div id={{divId}} style={{adWrapperStyleMobile}} class="dfp-ad-unit" align=center> 
-      <script type='text/javascript'>
-      googletag.cmd.push(function() { googletag.display('{{divId}}'); });
-      </script>
-  </div>
+   {{#if checkTrustLevels}}
+      <div id={{divId}} style={{adWrapperStyleMobile}} class="dfp-ad-unit" align=center> 
+        <script type='text/javascript'>
+        googletag.cmd.push(function() { googletag.display('{{divId}}'); });
+        </script>
+      </div>
+    {{/if}}
   {{/if}}
 
 {{else}}
   {{#if loadedGoogletag}}
-    <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center> 
-      <script type='text/javascript'>
-      googletag.cmd.push(function() { googletag.display('{{divId}}'); });
-      </script>
-  </div>
+    {{#if checkTrustLevels}}
+      <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center> 
+        <script type='text/javascript'>
+        googletag.cmd.push(function() { googletag.display('{{divId}}'); });
+        </script>
+      </div>
+    {{/if}}
   {{/if}}
 {{/if}}
