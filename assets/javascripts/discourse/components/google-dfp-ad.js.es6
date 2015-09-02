@@ -56,6 +56,9 @@ function loadGoogle(settings) {
     googletag.cmd.push(function() {
 
       var topic_list_top = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
+      var topic_above_post_stream = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_above_post_stream_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
+      var topic_above_suggested = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
+      var post_bottom = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(Discourse.SiteSettings.post_bottom_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
 
       // This sets the key and value for custom targeting
       var Foo = function(key, value, googletag) {
