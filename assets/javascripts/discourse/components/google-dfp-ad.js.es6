@@ -3,6 +3,9 @@ import loadScript from 'discourse/lib/load-script';
 
 var const_width = '';
 var const_height = '';
+var const_mobile_width = 320;
+var const_mobile_height = 50;
+var currentUser = Discourse.User.current();
 
 var mobile_width = 320;
 var mobile_height = 50;
@@ -19,11 +22,6 @@ function splitHeightInt(value) {
     var str = value.substring(4, 7);
     return str.trim();
 }
-/*
-// Coaches Note!  
-// Background: We want to call on google.setTargeting using googletag.bar so that we can can take in inputs from users (key and value) for custom targeting.
-// Look at 26 - 55 which should call on googletag.setTargeting.
-// Error is occuring on link 49 which is returning "Uncaught ReferenceError: setTargeting is not defined"
 
 // This creates an array for the values of the custom targeting key
 function valueParse(value) {
@@ -41,41 +39,6 @@ function keyParse(word) {
   return key; 
 }
 
-// This sets the key and value for custom targeting
-var Foo = function(key, value, googletag) {
-  this.locationKey = key;
-  this.locationValue = value;
-  this.googletag = googletag;
-}
-
-// setTargeting is not defined.  We want to return as a method - PROBLEM 1
-Foo.prototype.bar = function() {
-  return this.googletag.setTargeting(this.locationKey, this.locationValue);
-}
-
-// This should call googletag.setTargeting(key for that location, value for that location)
-function custom_targeting(key_array, value_array) {
-  for (var i = 0; i < key_array.length; i++) {
-    var wordValue = valueParse(value_array[i]);
-    var f = new Foo(key_array[i], wordValue, googletag);
-    f.bar();
-    console.log("works!");
-  }
-}
-
-// END of Coaches Note
-
-// splitting values 
-/*var custom_values = [];
-var word = keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code);
-var wordValue;
-for (var i = 0; i < word.length; i++) {
-  wordValue = valueParse(word[i]);
-  custom_values.push(wordValue);
-}*/
-
-
-//PageTracker.current().on('change', function(url) {
 function loadGoogle(settings) {
   if (_loaded) {
     return Ember.RSVP.resolve();
@@ -94,57 +57,72 @@ function loadGoogle(settings) {
     }
 
     googletag.cmd.push(function() {
+
+      var topic_list_top = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
+      var topic_above_post_stream = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_above_post_stream_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
+      var topic_above_suggested = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
+      var post_bottom = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(Discourse.SiteSettings.post_bottom_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
+
+      // This sets the key and value for custom targeting
+      var Foo = function(key, value, googletag) {
+        this.locationKey = key;
+        this.locationValue = value;
+        this.googletag = googletag;
+      }
+
+      // setTargeting is not defined.  We want to return as a method - PROBLEM 1
+      Foo.prototype.bar = function() {
+        return this.googletag.setTargeting(this.locationKey, this.locationValue);
+      }
+
+      // This should call googletag.setTargeting(key for that location, value for that location)
+      function custom_targeting(key_array, value_array, location) {
+        var f;
+        for (var i = 0; i < key_array.length; i++) {
+          var wordValue = valueParse(value_array[i]);
+          f = new Foo(key_array[i], wordValue, location);    
+          f.bar();
+        }
+      }
+
       if (settings.dfp_topic_list_top_code && !settings.dfp_show_topic_list_top && settings.topic_list_top_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_list_top_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_list_top_ad_sizes));
         if (Discourse.Mobile.mobileView) {
-          googletag.defineSlot(settings.dfp_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
         }
-        else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
-          //custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)))
-          .setTargeting('gender', 'female')
-          .addService(googletag.pubads());
+        else {   
+          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)), topic_list_top)
         }
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes));
         if (Discourse.Mobile.mobileView) {
-          googletag.defineSlot(settings.dfp_topic_above_post_stream_code, [320,50], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [320,50], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream')
-          //.setTargeting(settings.dfp_target_topic_above_post_stream_key_code, valueParse(settings.dfp_target_topic_above_post_stream_value_code))
-          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
-          .addService(googletag.pubads());       
+          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code)), topic_above_post_stream)
         }
       }
       if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes));
         if (Discourse.Mobile.mobileView) {
-          googletag.defineSlot(settings.dfp_topic_above_suggested_code, [320,50], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [320,50], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested')
-          
-          //googletag.setTargeting(settings.dfp_target_topic_above_suggested_key_code, valueParse(settings.dfp_target_topic_above_suggested_value_code))
-          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
-          googletag.addService(googletag.pubads());
+          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_value_code)), topic_above_suggested)
         }
       }
       if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.post_bottom_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.post_bottom_ad_sizes));
         if (Discourse.Mobile.mobileView) {
-          googletag.defineSlot(settings.dfp_post_bottom_code, [320,50], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
+          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [320,50], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
         }
         else {
-          googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom')
-          //.setTargeting(settings.dfp_target_post_bottom_key_code, valueParse(settings.dfp_target_post_bottom_value_code))
-          // This hardcoded code works: .setTargeting('category', ["clothes", "handbags", "makeup"])
-          .addService(googletag.pubads());        
+          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_post_bottom_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_post_bottom_value_code)), post_bottom)
         }
       }
 
@@ -162,6 +140,8 @@ function loadGoogle(settings) {
 export default Ember.Component.extend({
   const_width: const_width,
   const_height: const_height,
+  const_mobile_width: const_mobile_width,
+  const_mobile_height: const_mobile_height,
 
   classNames: ['google-dfp-ad'],
   loadedGoogletag: false,
@@ -179,8 +159,12 @@ export default Ember.Component.extend({
   }.property('const_width', 'const_height'),
 
   adWrapperStyleMobile: function() {
-    return `width: ${this.get('mobile_width')}px; height: ${this.get('mobile_height')}px; margin:0 auto;`.htmlSafe();
-  }.property('mobile_width', 'mobile_height'),
+    return `width: ${this.get('const_mobile_width')}px; height: ${this.get('const_mobile_height')}px;`.htmlSafe();
+  }.property('const_mobile_width', 'const_mobile_height'),
+
+  checkTrustLevels: function() {
+    return !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level));
+  }.property('trust_level'),
 
   _initGoogleDFP: function() {
     var self = this;

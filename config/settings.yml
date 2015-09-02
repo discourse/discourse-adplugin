@@ -2,9 +2,16 @@ adsense_plugin:
   adsense_publisher_code:
     client: true
     default: ''
+  adsense_through_trust_level:
+    client: true
+    default: 2
+    enum: 'TrustLevelSetting'
   adsense_topic_list_top_code:
     client: true
     default: ''
+  adsense_mobile_topic_list_top_code:
+    client: true
+    default: ''    
   adsense_show_topic_list_top:
     client: true
     default: false
@@ -26,6 +33,9 @@ adsense_plugin:
   adsense_topic_above_post_stream_code:
     client: true
     default: ''
+  adsense_mobile_topic_above_post_stream_code:
+    client: true
+    default: ''    
   adsense_show_topic_above_post_stream:
     client: true
     default: false
@@ -47,6 +57,9 @@ adsense_plugin:
   adsense_topic_above_suggested_code:
     client: true
     default: ''
+  adsense_mobile_topic_above_suggested_code:
+    client: true
+    default: ''
   adsense_show_topic_above_suggested:
     client: true
     default: false
@@ -66,6 +79,9 @@ adsense_plugin:
       - 200*200 - small square
       - 250*250 - square
   adsense_post_bottom_code: 
+    client: true
+    default: ''
+  adsense_mobile_post_bottom_code: 
     client: true
     default: ''
   adsense_show_post_bottom:
@@ -94,7 +110,14 @@ ad_plugin:
   dfp_publisher_id:
     client: true
     default: ''
+  dfp_through_trust_level:
+    client: true
+    default: 2
+    enum: 'TrustLevelSetting'
   dfp_topic_list_top_code:
+    client: true
+    default: ''
+  dfp_mobile_topic_list_top_code:
     client: true
     default: ''
   topic_list_top_ad_sizes:
@@ -126,6 +149,9 @@ ad_plugin:
   dfp_topic_above_post_stream_code:
     client: true
     default: ''
+  dfp_mobile_topic_above_post_stream_code:
+    client: true
+    default: ''
   topic_above_post_stream_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -155,6 +181,9 @@ ad_plugin:
   dfp_topic_above_suggested_code:
     client: true
     default: ''
+  dfp_mobile_topic_above_suggested_code:
+    client: true
+    default: ''  
   topic_above_suggested_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -184,6 +213,9 @@ ad_plugin:
   dfp_post_bottom_code:
     client: true
     default: ''
+  dfp_mobile_post_bottom_code:
+    client: true
+    default: ''  
   dfp_nth_post_code:
     client: true
     default: ''
