@@ -3,6 +3,9 @@ import loadScript from 'discourse/lib/load-script';
 
 var const_width = '';
 var const_height = '';
+var const_mobile_width = 320;
+var const_mobile_height = 50;
+var currentUser = Discourse.User.current();
 
 var _loaded = false,
     _promise = null;
@@ -86,7 +89,7 @@ function loadGoogle(settings) {
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)), topic_list_top)
         }
       }
-      if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
+      if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level))) {
         const_width = parseInt(splitWidthInt(settings.topic_above_post_stream_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_above_post_stream_ad_sizes));
         if (Discourse.Mobile.mobileView) {
@@ -96,7 +99,7 @@ function loadGoogle(settings) {
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code)), topic_above_post_stream)      
         }
       }
-      if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes) {
+      if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.topic_above_suggested_ad_sizes && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level))) {
         const_width = parseInt(splitWidthInt(settings.topic_above_suggested_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_above_suggested_ad_sizes));
         if (Discourse.Mobile.mobileView) {
@@ -106,7 +109,7 @@ function loadGoogle(settings) {
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_value_code)), topic_above_suggested)
         }
       }
-      if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes) {
+      if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.post_bottom_ad_sizes && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level))) {
         const_width = parseInt(splitWidthInt(settings.post_bottom_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.post_bottom_ad_sizes));
         if (Discourse.Mobile.mobileView) {
@@ -131,6 +134,8 @@ function loadGoogle(settings) {
 export default Ember.Component.extend({
   const_width: const_width,
   const_height: const_height,
+  const_mobile_width: const_mobile_width,
+  const_mobile_height: const_mobile_height,
 
   classNames: ['google-dfp-ad'],
   loadedGoogletag: false,
@@ -145,8 +150,8 @@ export default Ember.Component.extend({
   }.property('const_width', 'const_height'),
 
   adWrapperStyleMobile: function() {
-    return `width: 320px; height: 50px;`.htmlSafe();
-  },
+    return `width: ${this.get('const_mobile_width')}px; height: ${this.get('const_mobile_height')}px;`.htmlSafe();
+  }.property('const_mobile_width', 'const_mobile_height'),
 
   _initGoogleDFP: function() {
     var self = this;
