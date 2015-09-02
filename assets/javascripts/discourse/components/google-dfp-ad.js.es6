@@ -38,9 +38,6 @@ function keyParse(word) {
   return key; 
 }
 
-
-
-
 function loadGoogle(settings) {
   if (_loaded) {
     return Ember.RSVP.resolve();
@@ -58,38 +55,32 @@ function loadGoogle(settings) {
       console.log('googletag is undefined!');
     }
 
-    var topic_list_top = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top');
-
-    var DefineSlotFactory = {
-      create: function(type){
-        return type;
-      }
-    }
-
-    // This sets the key and value for custom targeting
-    var Foo = function(key, value, googletag) {
-      this.locationKey = key;
-      this.locationValue = value;
-      this.googletag = googletag;
-    }
-
-    // setTargeting is not defined.  We want to return as a method - PROBLEM 1
-    Foo.prototype.bar = function() {
-      return this.googletag.setTargeting(this.locationKey, this.locationValue);
-    }
-
-    // This should call googletag.setTargeting(key for that location, value for that location)
-    function custom_targeting(key_array, value_array) {
-      for (var i = 0; i < key_array.length; i++) {
-        var wordValue = valueParse(value_array[i]);
-        var f = new Foo(key_array[i], wordValue, DefineSlotFactory.create(topic_list_top));    
-        return f.bar();
-      }
-    }
-
-
-   
     googletag.cmd.push(function() {
+
+      var topic_list_top = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(Discourse.SiteSettings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(Discourse.SiteSettings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
+
+      // This sets the key and value for custom targeting
+      var Foo = function(key, value, googletag) {
+        this.locationKey = key;
+        this.locationValue = value;
+        this.googletag = googletag;
+      }
+
+      // setTargeting is not defined.  We want to return as a method - PROBLEM 1
+      Foo.prototype.bar = function() {
+        return this.googletag.setTargeting(this.locationKey, this.locationValue);
+      }
+
+      // This should call googletag.setTargeting(key for that location, value for that location)
+      function custom_targeting(key_array, value_array, location) {
+        var f;
+        for (var i = 0; i < key_array.length; i++) {
+          var wordValue = valueParse(value_array[i]);
+          f = new Foo(key_array[i], wordValue, location);    
+          f.bar();
+        }
+      }
+
       if (settings.dfp_topic_list_top_code && !settings.dfp_show_topic_list_top && settings.topic_list_top_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.topic_list_top_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.topic_list_top_ad_sizes));
@@ -97,8 +88,12 @@ function loadGoogle(settings) {
           googletag.defineSlot(settings.dfp_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
         }
         else {
-          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)))
-          .addService(googletag.pubads());
+          //googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top')
+          //.setTargeting('category', ['clothes'])
+          //.setTargeting('gender', ['male'])
+          //.addService(googletag.pubads());
+          //.setTargeting("category", ["clothes"]);    
+          custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)), topic_list_top)
         }
       }
       if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.topic_above_post_stream_ad_sizes) {
