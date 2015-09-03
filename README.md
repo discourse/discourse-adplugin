@@ -2,7 +2,7 @@
 
 This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
 
-**Supported Discourse Version**: 1.4
+**Supported Discourse Version**: 1.4</p>
 **Supported Ad Platforms**: [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html), [Google Double Click for Publishers](https://www.google.com/dfp)
 
 
