@@ -10,11 +10,9 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 
 There are three sets of installation instructions:
 
-1. **Docker Installation - Recommended ** - If you have a live Discourse forum and minimal programming experience.
+1. **Docker Installation - Recommended** - If you have a live Discourse forum and minimal programming experience.
 2. Non-Docker Installation - If you have experience with programming.  This will set up this plugin as a git submodule in your Discourse directory.
 3. Local Development - If you want develop locally and have experience with programming.  This will set up this plugin as a symlinked file in Discourse's plugin directory.
-
-* Supported Discourse version: v1.4
 
 
 ### 1. Docker Installation - Recommended
