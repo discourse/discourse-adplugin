@@ -3,21 +3,25 @@
 This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
 
 **Supported Discourse Version**: 1.4</p>
-**Supported Ad Platforms**: [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html), [Google Double Click for Publishers](https://www.google.com/dfp)
+**Supported Ad Platforms**: 
+
+* [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html)
+* [Google Double Click for Publishers](https://www.google.com/dfp)
 
 
-## Installation
+## Quick Start in 3 Steps (Recommended Installation & Usage)
 
-There are three sets of installation instructions:
+Recommended if you have:
 
-1. **Docker Installation - Recommended** - If you have a live Discourse forum and minimal programming experience.
-2. Non-Docker Installation - If you have experience with programming.  This will set up this plugin as a git submodule in your Discourse directory.
-3. Local Development - If you want develop locally and have experience with programming.  This will set up this plugin as a symlinked file in Discourse's plugin directory.
+* A live discourse forum 
+* You have deployed that forum using Docker.  Most people using Digital Ocean will have deployed Discourse using Docker. 
+
+For installation for non-docker or local development (those with programming experience, see Other Installation)
+
+### Step 1 - Install the Official Discourse Advertising Plugin
 
 
-### 1. Docker Installation - Recommended
-
-As seen in a [how-to on meta.discourse.org](https://meta.discourse.org/t/advanced-troubleshooting-with-docker/15927#Example:%20Install%20a%20plugin), simply **add the plugin's repo url to your container's app.yml file**:
+As seen in a [how-to on meta.discourse.org](https://meta.discourse.org/t/advanced-troubleshooting-with-docker/15927#Example:%20Install%20a%20plugin), simply **add the plugin's repository url to your container's app.yml file**:
 
 ```yml
 hooks:
@@ -36,33 +40,12 @@ git pull
 ./launcher rebuild app
 ```
 
-### 2. Non-docker installation
+### Step 2 - Configure Your Settings to Display Your Advertisments
 
-* Run `bundle exec rake plugin:install repo=http://github.com/team-melbourne-rgsoc2015/discourse-adplugin` in your discourse directory
-* In development mode, run `bundle exec rake assets:clean`
-* In production, recompile your assets: `bundle exec rake assets:precompile`
-* Restart Discourse
-
-
-### 3. Local Development Installation
-
-* Clone the [Discourse Adplugin Repo](http://github.com/team-melbourne-rgsoc2015/discourse-adplugin) in a new local folder.
-* Separately clone [Discourse Forum](https://github.com/discourse/discourse) in another local folder.
-* In your terminal, go into Discourse folder navigate into the plugins folder.  Example ```cd ~/code/discourse/plugins```
-* Create a symlink in this folder by typing the following into your terminal
-:
-```
-ln -s ~/whereever_your_cloned_ad_plugin_path_is .
-For example: ln -s ~/discourse-plugin-test .
-```
-* You can now make changes in your locally held Discourse Adplugin folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
-
-
-
-## Usage
-
-
-Note TODO:
+TBC
+Add GIFS, Images
+✘ this is a cross
+✓ this is a tick
 After installation users likely want to:
 - Choose platform.
 - Input ad codes + do a few other things. - DFP in detail with custom targeting - write guide on this.
@@ -93,8 +76,6 @@ The namings in settings are with reference to the plugin outlets created by Disc
 
 `dfp_nth_post_code` and ensure your total number of posts in topic >=N. For example, if you input N = 4, the forum should have at least 4 replies/posts)
 
-
-
 ### Sample DFP Ad Codes:
 1. /142953540/PostandCourier/Postandcourier.com/News/Leaderboard_Bottom
 2. /6355419/Travel/Europe/France/Paris
@@ -118,18 +99,52 @@ This is how the ads should display is all is working fine.... (ads also change s
 **Location: Above Suggested Topic**
 ![](https://www.dropbox.com/sc/cnkialxmcfust55/ad-display-3-above-suggested.png?dl=1)
 
-
-
 * Finally, if you wish to disable the ad, tick ad disabling box
 
-# Ad Providers Supported
+### Step 3 - See Your Ad
 
-* Google DFP
+TBC
 
-# Potential Ad Sizes
 
-Restricted container:
-Max H: 300 or lower of ad,  W: 1000 left align.
+
+## Other Installation - Non-Docker Installation and Local Development
+
+There are two sets of installation instructions:
+
+1. Non-Docker Installation - If you have experience with programming.  This will set up this plugin as a git submodule in your Discourse directory.
+2. Local Development - If you want develop locally and have experience with programming.  This will set up this plugin as a symlinked file in Discourse's plugin directory.
+
+If you already have a live Discourse forum up, please go to the Quick Start heading above.
+
+
+### 1. Non-docker installation
+
+
+* Run `bundle exec rake plugin:install repo=http://github.com/team-melbourne-rgsoc2015/discourse-adplugin` in your discourse directory
+* In development mode, run `bundle exec rake assets:clean`
+* In production, recompile your assets: `bundle exec rake assets:precompile`
+* Restart Discourse
+
+
+### 2. Local Development Installation
+
+
+* Clone the [Discourse Adplugin Repo](http://github.com/team-melbourne-rgsoc2015/discourse-adplugin) in a new local folder.
+* Separately clone [Discourse Forum](https://github.com/discourse/discourse) in another local folder.
+* In your terminal, go into Discourse folder navigate into the plugins folder.  Example ```cd ~/code/discourse/plugins```
+* Create a symlink in this folder by typing the following into your terminal
+:
+```
+ln -s ~/whereever_your_cloned_ad_plugin_path_is .
+For example: ln -s ~/discourse-plugin-test .
+```
+* You can now make changes in your locally held Discourse Adplugin folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
+
+
+
+## Advertisement Sizes Supported
+
+This plugin supports the following ad sizes:
 
 Topic list top, Topic top, Above Suggested
 -	728*90
@@ -151,7 +166,20 @@ Max H: 90 or lower of ad,  W: 1000 left align.
 -	468*60
 -	234*60
 
+
+## Questions/Feedback/Contributing?
+
+Open an Issue on this repository to start a chat.  Issues and Pull Requests are greatly appreciated.  Bear in mind that when submitteing feature requests, if it's not somehting that most people will use, it probably won't get merged.
+
+
+## Credits
+
+Discourse.org - Thanks to our mentor @eviltrout and the Discourse team - @LIST_OUT_THEIR_GITHUB_HANDLE
+Rails Girls - Thanks @sareg0 and the Rails Girls Team.
+Our Coaches - @LIST_OUT_THEIR_GITHUB_HANDLE
+
+
 ## License
 
-GPL v2 or MIT?
+TBC: GPL v2 or MIT
 
