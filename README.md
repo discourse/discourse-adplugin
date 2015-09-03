@@ -148,12 +148,14 @@ This plugin supports the following ad sizes for the following locations:
 
 Advertisement locations: topic list top, topic above post stream and topic above suggested.
 
---|--|--
 
-728*90|336*280|300*250
-960*90|468*60|234*60
-125*125|180*150|200*200
-250*250|--|--
+
+--|--|--
+728*90 | 336*280 | 300*250
+960*90 | 468*60 | 234*60
+125*125 | 180*150 | 200*200
+250*250 | | 
+--|--|--
 
 Post Bottom
 Max H: 90 or lower of ad,  W: 1000 left align.
