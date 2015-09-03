@@ -151,7 +151,7 @@ Advertisement locations: topic list top, topic above post stream and topic above
 
 
 All locations except post bottom | Post bottom location | Mobile
---|--|--
+--- | --- | ---
 728 x 90 | 728 x 90 | 320 x 50 
 336 x 280 | 960 x 90 |
 300 x 250 | 468 x 60 |
@@ -162,7 +162,6 @@ All locations except post bottom | Post bottom location | Mobile
 180 x 150 | |
 200 x 200 | |
 250 x 250 | | 
---|--|--
 
 
 Do tables work?
