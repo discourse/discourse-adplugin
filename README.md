@@ -2,19 +2,22 @@
 
 This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
 
+**Supported Discourse Version**: 1.4
+**Supported Ad Platforms**: [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html), [Google Double Click for Publishers](https://www.google.com/dfp)
+
 
 ## Installation
 
 There are three sets of installation instructions:
 
-1. **Docker Installation** - If you have a live Discourse forum and minimal programming experience.  **Recommended**.
+1. **Docker Installation - Recommended ** - If you have a live Discourse forum and minimal programming experience.
 2. Non-Docker Installation - If you have experience with programming.  This will set up this plugin as a git submodule in your Discourse directory.
 3. Local Development - If you want develop locally and have experience with programming.  This will set up this plugin as a symlinked file in Discourse's plugin directory.
 
 * Supported Discourse version: v1.4
 
 
-### 1. Docker Installation (For Live Discourse Forums)
+### 1. Docker Installation - Recommended
 
 As seen in a [how-to on meta.discourse.org](https://meta.discourse.org/t/advanced-troubleshooting-with-docker/15927#Example:%20Install%20a%20plugin), simply **add the plugin's repo url to your container's app.yml file**:
 
@@ -27,7 +30,7 @@ hooks:
           - mkdir -p plugins
           - git clone https://github.com/team-melbourne-rgsoc2015/discourse-adplugin.git
 ```
-* Rebuild the container
+Rebuild the container
 
 ```
 cd /var/docker
@@ -52,18 +55,21 @@ git pull
 :
 ```
 ln -s ~/whereever_your_cloned_ad_plugin_path_is .
-
 For example: ln -s ~/discourse-plugin-test .
-
 ```
 * You can now make changes in your locally held Discourse Adplugin folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
 
 
 
-
-
-
 ## Usage
+
+
+Note TODO:
+After installation users likely want to:
+- Choose platform.
+- Input ad codes + do a few other things. - DFP in detail with custom targeting - write guide on this.
+- Display ad.
+
 
 * Go to Admin > Settings > Ad Plugin
 * Add DFP link into code boxes, input width and height based on Google Ad Ad units.  Here are some sample ad codes that you can put in the input into the settings.  But remember:
@@ -88,6 +94,7 @@ The namings in settings are with reference to the plugin outlets created by Disc
 `dfp_post_bottom_code`: ad will appear on the Nth post (be sure to input N in the bottom-most box called 
 
 `dfp_nth_post_code` and ensure your total number of posts in topic >=N. For example, if you input N = 4, the forum should have at least 4 replies/posts)
+
 
 
 ### Sample DFP Ad Codes:
@@ -150,9 +157,3 @@ Max H: 90 or lower of ad,  W: 1000 left align.
 
 GPL v2 or MIT?
 
-TO-DO:
-
-* Fix up the image loading issue in Readme.
-* Publisher ID support 
-* Trust levels
-* More ad providers!
