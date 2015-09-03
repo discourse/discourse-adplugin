@@ -165,6 +165,15 @@ All locations except post bottom | Post bottom location | Mobile
 --|--|--
 
 
+Do tables work?
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+
+
+
 ## Questions/Feedback/Contributing?
 
 Open an Issue on this repository to start a chat.  Issues and Pull Requests are greatly appreciated.  Bear in mind that when submitting feature requests, if it's not something that most people will use, it probably won't get merged.
