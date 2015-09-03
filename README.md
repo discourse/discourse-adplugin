@@ -14,9 +14,9 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 This quick start shows you how to install this plugin and use it.  Recommended if you have:
 
 * A live discourse forum 
-* You have deployed that forum using Docker.  Most people using Digital Ocean will have deployed Discourse using Docker. 
+* You have deployed your live forum using Docker.  If you're using Digital Ocean, it's likely that your forum is deployed on Docker. 
 
-For installation for non-docker or local development (those with programming experience), see Other Installation.
+For non-docker or local development installation (those with programming experience), see **Other Installation**.
 
 
 ### Step 1 - Install the Official Discourse Advertising Plugin
@@ -50,7 +50,9 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 
 * Navigate to the Admin section in your Discourse forum.
 * Click on Settings and a left vertical navigation bar should appear.
-* Choose your advertisement platform by clicking on "Adsense Plugin" if using Adsense as your advertisement platform and/or click "DFP Plugin" if using the DoubleClick for Publishers advertisement platform.
+* Choose your advertisement platform by clicking on:
+⋅⋅* Adsense Plugin - if using Adsense as your advertisement platform
+⋅⋅* DFP Plugin - if using the DoubleClick for Publishers advertisement platform.
 
 
 #### Step 2(b)(i) - Input Your Details (Adsense)
