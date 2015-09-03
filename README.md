@@ -1,35 +1,20 @@
-# Discourse-Adplugin
+# Official Discourse Advertising Plugin
 
-Ad plugin for Discourse forum.
+This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
+
 
 ## Installation
 
+There are three sets of installation instructions:
+
+1. **Docker Installation** - If you have a live Discourse forum and minimal programming experience.  **Recommended**.
+2. Non-Docker Installation - If you have experience with programming.  This will set up this plugin as a git submodule in your Discourse directory.
+3. Local Development - If you want develop locally and have experience with programming.  This will set up this plugin as a symlinked file in Discourse's plugin directory.
+
 * Supported Discourse version: v1.4
 
-### Special Installation Instructions for RGSoC Coaches
 
-* You would have already gotten the discourse to load locally.  If not, do that first.  You can find instructions [here](https://github.com/team-melbourne-rgsoc2015/discoursetest-avn).
-* Then clone this repo in a new local folder.
-* In the terminal, go into your discourse folder and then into plugins.  Example ```cd ~/code/discourse/plugins```
-* Create a symlink in this folder and do that by doing:
-
-```
-ln -s ~/whereever_your_cloned_ad_plugin_path_is .
-
-For example: ln -s ~/discourse-plugin-test .
-
-```
-Now you are done.  See 'Usage' heading for sample ad codes that you can input.
-
-
-### Non-docker installation
-
-* Run `bundle exec rake plugin:install repo=http://github.com/team-melbourne-rgsoc2015/discourse-adplugin` in your discourse directory
-* In development mode, run `bundle exec rake assets:clean`
-* In production, recompile your assets: `bundle exec rake assets:precompile`
-* Restart Discourse
-
-### Docker installation
+### 1. Docker Installation (For Live Discourse Forums)
 
 As seen in a [how-to on meta.discourse.org](https://meta.discourse.org/t/advanced-troubleshooting-with-docker/15927#Example:%20Install%20a%20plugin), simply **add the plugin's repo url to your container's app.yml file**:
 
@@ -49,6 +34,33 @@ cd /var/docker
 git pull
 ./launcher rebuild app
 ```
+
+### 2. Non-docker installation
+
+* Run `bundle exec rake plugin:install repo=http://github.com/team-melbourne-rgsoc2015/discourse-adplugin` in your discourse directory
+* In development mode, run `bundle exec rake assets:clean`
+* In production, recompile your assets: `bundle exec rake assets:precompile`
+* Restart Discourse
+
+
+### 3. Local Development Installation
+
+* Clone the [Discourse Adplugin Repo](http://github.com/team-melbourne-rgsoc2015/discourse-adplugin) in a new local folder.
+* Separately clone [Discourse Forum](https://github.com/discourse/discourse) in another local folder.
+* In your terminal, go into Discourse folder navigate into the plugins folder.  Example ```cd ~/code/discourse/plugins```
+* Create a symlink in this folder by typing the following into your terminal
+:
+```
+ln -s ~/whereever_your_cloned_ad_plugin_path_is .
+
+For example: ln -s ~/discourse-plugin-test .
+
+```
+* You can now make changes in your locally held Discourse Adplugin folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
+
+
+
+
 
 
 ## Usage
@@ -136,7 +148,7 @@ Max H: 90 or lower of ad,  W: 1000 left align.
 
 ## License
 
-GPL v2
+GPL v2 or MIT?
 
 TO-DO:
 
