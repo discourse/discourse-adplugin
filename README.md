@@ -16,7 +16,8 @@ This quick start shows you how to install this plugin and use it.  Recommended i
 * A live discourse forum 
 * You have deployed that forum using Docker.  Most people using Digital Ocean will have deployed Discourse using Docker. 
 
-For installation for non-docker or local development (those with programming experience, see Other Installation)
+For installation for non-docker or local development (those with programming experience), see Other Installation.
+
 
 ### Step 1 - Install the Official Discourse Advertising Plugin
 
@@ -149,21 +150,19 @@ This plugin supports the following ad sizes for the following locations:
 Advertisement locations: topic list top, topic above post stream and topic above suggested.
 
 
-
+All locations except post bottom | Post bottom location | Mobile
 --|--|--
-728*90 | 336*280 | 300*250
-960*90 | 468*60 | 234*60
-125*125 | 180*150 | 200*200
-250*250 | | 
+728 x 90 | 728 x 90 | 320 x 50 
+336 x 280 | 960 x 90 |
+300 x 250 | 468 x 60 |
+960 x 90 | 234 x 60 |
+468 x 60 | |
+234 x 60 | |
+125 x 125 | |
+180 x 150 | |
+200 x 200 | |
+250 x 250 | | 
 --|--|--
-
-Post Bottom
-Max H: 90 or lower of ad,  W: 1000 left align.
-
--	728*90
--	960*90
--	468*60
--	234*60
 
 
 ## Questions/Feedback/Contributing?
