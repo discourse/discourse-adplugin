@@ -43,23 +43,36 @@ git pull
 
 ### Step 2 - Configure Your Settings to Display Your Advertisments
 
-TBC
+There are 2 easy steps for configuring your Discourse settings to enable advertisements to display in your Discourse forum.
+
+#### Step 2(a) - Choose Your Advertisement Platform
+
+
+* Navigate to the Admin section in your Discourse forum.
+* Click on Settings and a left vertical navigation bar should appear.
+* Choose your advertisement platform by clicking on "Adsense Plugin" if using Adsense as your advertisement platform and/or click "DFP Plugin" if using the DoubleClick for Publishers advertisement platform.
+
+
+#### Step 2(b)(i) - Input Your Details (Adsense)
+
+* Insert Image + Explain the code in the provided tag from ad provider.
+
+
+#### Step 2(b)(ii) - Input Your Details (DoubleClick for Publishers)
+
+* Insert Image + Explain the code in the provided tag from ad provider.
+
+
+// TO BE FIXED START
 Add GIFS, Images
 ✘ this is a cross
 ✓ this is a tick
 After installation users likely want to:
-- Choose platform.
+- Choose platform - DONE
 - Input ad codes + do a few other things. - DFP in detail with custom targeting - write guide on this.
 - Display ad.
 
 
-* Go to Admin > Settings > Ad Plugin
-* Add DFP link into code boxes, input width and height based on Google Ad Ad units.  Here are some sample ad codes that you can put in the input into the settings.  But remember:
-⋅⋅* Each slot requires a different sample ad code.  That means, you cannot put the same ad sample ad codes multiple times in different slots.  They won't appear.  
-⋅⋅* Don't click on the ad.  
-⋅⋅* On the last stroke of midnight, the magic will wear off. Make sure you leave the ball before then. 
-
-*Please test both plugins individually* - don't symlink both together, instead test them in isolation. 
 
 Input 3 parts - ad code (topmost box), width, height. And be sure to untick the disable box. Then, refresh the page for the inputs to take effect, and go to the ad location.
 
@@ -76,35 +89,16 @@ The namings in settings are with reference to the plugin outlets created by Disc
 `dfp_post_bottom_code`: ad will appear on the Nth post (be sure to input N in the bottom-most box called 
 
 `dfp_nth_post_code` and ensure your total number of posts in topic >=N. For example, if you input N = 4, the forum should have at least 4 replies/posts)
+// TO BE FIXED END
 
-### Sample DFP Ad Codes:
-1. /142953540/PostandCourier/Postandcourier.com/News/Leaderboard_Bottom
-2. /6355419/Travel/Europe/France/Paris
-3. /1047893/kv_home_bigbox1
-
-This is how it looks like when you put it in site settings.
-(Images here aren't showing atm - but you can go to [this link to see the ad codes and what the ads look like when they're loaded](https://meta.discourse.org/t/rails-girls-soc-banter/26875/53)).
-
-![](https://www.dropbox.com/sc/cyouv2pis3o4gx4/ad-codes-p1.png?dl=1)
-
-![](https://www.dropbox.com/sc/5z7sl2hdmtzv1ho/ad-codes-p2.png?dl=1)
-
-This is how the ads should display is all is working fine.... (ads also change so don't worry if your ads look different).
-
-**Location: Topic list top**
-![](https://www.dropbox.com/sc/cbu0otlt2zl5kdw/ad-display-1-discovery-list.png?dl=1)
-
-**Location: Topic top**
-![](https://www.dropbox.com/sc/cdx0duqkco7rs8s/ad-display-2-topic-top.png?dl=1)
-
-**Location: Above Suggested Topic**
-![](https://www.dropbox.com/sc/cnkialxmcfust55/ad-display-3-above-suggested.png?dl=1)
 
 * Finally, if you wish to disable the ad, tick ad disabling box
 
 ### Step 3 - See Your Ad
 
-TBC
+Once you've configured your settings and your advertising platform has ads that are ready to serve, navigate to the page where you've inputted for the location and you should see ads.  For example, a Discourse forum serving ads looks like this:
+
+INSERT_IMAGE_HERE
 
 
 
@@ -161,9 +155,11 @@ All locations except post bottom | Post bottom location | Mobile
 250 x 250 | | 
 
 
-## Questions/Feedback/Contributing?
+## Questions or Want to Contribute?
 
-Open an Issue on this repository to start a chat.  Issues and Pull Requests are greatly appreciated.  Bear in mind that when submitting feature requests, if it's not something that most people will use, it probably won't get merged.
+Open an Issue on this repository to start a chat.  
+
+Issues and Pull Requests are greatly appreciated.  Bear in mind that when submitting feature requests, if it's not something that most people will use, it probably won't get merged.
 
 
 ## Credits
