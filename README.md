@@ -9,9 +9,9 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 * [Google Double Click for Publishers](https://www.google.com/dfp)
 
 
-## Quick Start in 3 Steps (Recommended Installation & Usage)
+## Quick Start in 3 Steps
 
-Recommended if you have:
+This quick start shows you how to install this plugin and use it.  Recommended if you have:
 
 * A live discourse forum 
 * You have deployed that forum using Docker.  Most people using Digital Ocean will have deployed Discourse using Docker. 
@@ -107,7 +107,7 @@ TBC
 
 
 
-## Other Installation - Non-Docker Installation and Local Development
+## Other Installation
 
 There are two sets of installation instructions:
 
@@ -144,19 +144,16 @@ For example: ln -s ~/discourse-plugin-test .
 
 ## Advertisement Sizes Supported
 
-This plugin supports the following ad sizes:
+This plugin supports the following ad sizes for the following locations:
 
-Topic list top, Topic top, Above Suggested
--	728*90
--	336*280
--	300*250
--	960*90
--	468*60
--	234*60
--	125*125
--	180*150
--	200*200
--	250*250
+Advertisement locations: topic list top, topic above post stream and topic above suggested.
+
+--|--|--
+
+728*90|336*280|300*250
+960*90|468*60|234*60
+125*125|180*150|200*200
+250*250|--|--
 
 Post Bottom
 Max H: 90 or lower of ad,  W: 1000 left align.
@@ -169,7 +166,7 @@ Max H: 90 or lower of ad,  W: 1000 left align.
 
 ## Questions/Feedback/Contributing?
 
-Open an Issue on this repository to start a chat.  Issues and Pull Requests are greatly appreciated.  Bear in mind that when submitteing feature requests, if it's not somehting that most people will use, it probably won't get merged.
+Open an Issue on this repository to start a chat.  Issues and Pull Requests are greatly appreciated.  Bear in mind that when submitting feature requests, if it's not something that most people will use, it probably won't get merged.
 
 
 ## Credits
