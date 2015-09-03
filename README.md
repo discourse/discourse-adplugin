@@ -145,10 +145,7 @@ For example: ln -s ~/discourse-plugin-test .
 
 ## Advertisement Sizes Supported
 
-This plugin supports the following ad sizes for the following locations:
-
-Advertisement locations: topic list top, topic above post stream and topic above suggested.
-
+This plugin supports the following ad sizes for the following locations.
 
 All locations except post bottom | Post bottom location | Mobile
 --- | --- | ---
@@ -162,15 +159,6 @@ All locations except post bottom | Post bottom location | Mobile
 180 x 150 | |
 200 x 200 | |
 250 x 250 | | 
-
-
-Do tables work?
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
 
 
 ## Questions/Feedback/Contributing?
