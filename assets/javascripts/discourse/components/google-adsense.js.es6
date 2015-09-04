@@ -39,7 +39,7 @@ PageTracker.current().on('change', function(url) {
   if(preGoogleVars === null) {
     preGoogleVars = [];
     for(var key in window) {
-      if(key.indexOf("google") !== -1) {
+      if(key.indexOf("google") !== -1 && key.indexOf("googletag") == -1) {
         preGoogleVars.push(key);
       }
     }
@@ -55,7 +55,7 @@ PageTracker.current().on('change', function(url) {
       postGoogleVars = [];
 
       for(var key in window) {
-        if(key.indexOf("google") !== -1 && preGoogleVars.indexOf(key) == -1) {
+        if(key.indexOf("google") !== -1 && preGoogleVars.indexOf(key) == -1 && key.indexOf("googletag") == -1) {
           postGoogleVars.push(key);
         }
       }

@@ -98,10 +98,6 @@ adsense_plugin:
       - 970*90 - large leaderboard
       - 468*60 - banner 
       - 234*60 - half banner 
-      - 125*125 - button 
-      - 180*150 - small rectangle
-      - 200*200 - small square
-      - 250*250 - square
   adsense_nth_post_code: 
     client: true
     default: ''
@@ -230,10 +226,6 @@ ad_plugin:
       - 970*90 - large leaderboard
       - 468*60 - banner 
       - 234*60 - half banner 
-      - 125*125 - button 
-      - 180*150 - small rectangle
-      - 200*200 - small square
-      - 250*250 - square
   dfp_show_post_bottom:
     client: true
     default: false
