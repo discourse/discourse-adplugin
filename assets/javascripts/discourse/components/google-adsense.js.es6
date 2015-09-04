@@ -24,20 +24,18 @@ function splitHeightInt(value) {
     return str.trim();
 }
 
+// On each page change, the child is removed and elements part of Adsense's googleads are removed/undefined.
 PageTracker.current().on('change', function(url) {
   var ads = document.getElementById("adsense_loader");
   if (ads) {
     ads.parentNode.removeChild(ads);
-     // for (var key in window) {
-     //  if (key.indexOf("google") !== -1){
-     //      window[key] = undefined;
-     //  }
     for (var i = 0; i < postGoogleVars.length; i++) {
       var key = postGoogleVars[i];
       window[key] = undefined;
     }
   }
 
+// This is an array of all elements that start with google (adsense related or not)
   if(preGoogleVars === null) {
     preGoogleVars = [];
     for(var key in window) {
@@ -46,9 +44,12 @@ PageTracker.current().on('change', function(url) {
       }
     }
   }
-  
+
+// Reinitialize script so that the ad can reload
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
   ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+// Creates array of postGoogle vars which are only elements starting with 'google' related to 
+// Adsense's googleads.  This array is used in line 34 to undefine google elements related to Adsense only.
   ga.addEventListener('load', function(e) {
     if(postGoogleVars === null) {
       postGoogleVars = [];
@@ -60,6 +61,7 @@ PageTracker.current().on('change', function(url) {
       }
     }
   });
+  // Puts relevant elements back into script.
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 });
 
