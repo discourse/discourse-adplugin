@@ -110,25 +110,11 @@ For example: ln -s ~/discourse-plugin-test .
 * You can now make changes in your locally held Discourse Adplugin folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
 
 
-### Plugin Features
-
-
-// TO BE FIXED START
-Add GIFS, Images
-✘ this is a cross
-✓ this is a tick
-After installation users likely want to:
-- Choose platform - DONE
-- Input ad codes + do a few other things. - DFP in detail with custom targeting - write guide on this.
-- Display ad.
-
+## Plugin Features
 
 * Available Locations for Ad Display
 * Ad Sizes Supported
 * Trust Levels
-* Other.... (TBC)
-
-
 
 
 ### Available Locations for Ad Display
@@ -157,6 +143,18 @@ All locations except post bottom | Post bottom location | Mobile
 180 x 150 | |
 200 x 200 | |
 250 x 250 | | 
+
+
+
+TBC:
+Add GIFS, Images
+✘ this is a cross
+✓ this is a tick
+After installation users likely want to:
+- Choose platform - DONE
+- Input ad codes + do a few other things. - DFP in detail with custom targeting - write guide on this.
+- Display ad.
+
 
 
 ## Questions or Want to Contribute?
