@@ -55,77 +55,25 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 
 #### Step 2(b) - Input Your Details
 
-Depending on which ad platform you are using, to input your ad details you need to:
-
-1. Add in your publisher ID - your publisher ID can be obtained from your ad provider and can also be found in your ad tag (see picture below).
+1. Add in your publisher ID - your publisher ID can be obtained from your ad platform and can also be found in your ad tag (see picture below).
 2. Choose your trust level from the dropdown box.  This will only display ads to users with a certain level of trust.  For more details about trust levels go to the **Plugin Features** heading.
-3. Get the Advertisement Tag from your Ad Provider - see the images below to see what a tag looks like.
+3. Get the Advertisement Tag from your Ad Platform - see the images below to see what a tag looks like.
 4. Add parts of your ad code to Discourse's site settings as per the color coding in the images below.  Only use the image for your ad platform. 
 5. Choose Your Ad Size - this is the same size that you've put into your ad provider to create your ad.  Go to the **Plugin Features** heading to see a list of supported Ad sizes.
+6. To disable your ad (and not have it display), click on the disable button.
 
-
-##### Adsense Ad Tag Into SiteSettings
+##### Adsense Advertisement Tag to Discourse's Site Settings
 
 ![](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
 
-##### DoubleClick for Publishers' Ad Tag Into SiteSettings
+##### DoubleClick for Publishers' Advertisement Tag to Discourse's Site Settings
 
 ![](https://www.dropbox.com/sc/0inoc1iduux0gsf/AADi8tfKX9S6Tx9S8RndcUE8a?dl=1)
 
 
-In Ad Plugin Features:
-
-* Available Locations for Ad Display
-* Ad Sizes Supported
-* Trust Levels
-* Other.... (TBC)
-
-Locations to be in a table...
-
-Post Bottom ![](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
-Topic Above Post ![](https://www.dropbox.com/sc/1ze0dikrmkfj0wg/AADMGWGVsECEOwZdnmSLGkhZa?dl=1)
-Topic Above Suggested ![](https://www.dropbox.com/sc/y3p2iqwggb5he0e/AAAbrTqZCAYgIhIYE4necmfXa?dl=1)
-Topic List Top ![](https://www.dropbox.com/sc/cpm9i6jj5dtivjc/AACmgp6qxI-8kMp3F2VVWsvba?dl=1)
-
-
-
-
-// TO BE FIXED START
-Add GIFS, Images
-✘ this is a cross
-✓ this is a tick
-After installation users likely want to:
-- Choose platform - DONE
-- Input ad codes + do a few other things. - DFP in detail with custom targeting - write guide on this.
-- Display ad.
-
-
-Input 3 parts - ad code (topmost box), width, height. And be sure to untick the disable box. Then, refresh the page for the inputs to take effect, and go to the ad location.
-
-Usually google sizes tDOcso input are (width*height) 300*250 or 728*90 (best) respectively. Input your dfp ad code.
-
-The namings in settings are with reference to the plugin outlets created by Discourse.
-
-`dfp_topic_list_top_code`: ad will appear at the header of Discourse homepage
-
-`dfp_topic_above_post_stream_code`: ad will appear at the header of all Discourse forum topics
-
-`dfp_topic_above_suggested_code`: ad will appear at the footer above suggested topics of all Discourse forum topics
-
-`dfp_post_bottom_code`: ad will appear on the Nth post (be sure to input N in the bottom-most box called 
-
-`dfp_nth_post_code` and ensure your total number of posts in topic >=N. For example, if you input N = 4, the forum should have at least 4 replies/posts)
-// TO BE FIXED END
-
-
-* Finally, if you wish to disable the ad, tick ad disabling box
-
 ### Step 3 - See Your Ad
 
-Once you've configured your settings and your advertising platform has ads that are ready to serve, navigate to the page where you've inputted for the location and you should see ads.  For example, a Discourse forum serving ads looks like this:
-
-INSERT_IMAGE_HERE
-
+Once you've configured your settings and your advertising platform has ads that are ready to serve, navigate to the page where you've inputted for the location and you should see ads.
 
 
 ## Other Installation
@@ -162,8 +110,38 @@ For example: ln -s ~/discourse-plugin-test .
 * You can now make changes in your locally held Discourse Adplugin folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
 
 
+### Plugin Features
 
-## Advertisement Sizes Supported
+
+// TO BE FIXED START
+Add GIFS, Images
+✘ this is a cross
+✓ this is a tick
+After installation users likely want to:
+- Choose platform - DONE
+- Input ad codes + do a few other things. - DFP in detail with custom targeting - write guide on this.
+- Display ad.
+
+
+* Available Locations for Ad Display
+* Ad Sizes Supported
+* Trust Levels
+* Other.... (TBC)
+
+
+
+
+### Available Locations for Ad Display
+
+Location Name | Description | Image of Location
+--- | --- | ---
+Topic List Top | Ad will appear at the header of Discourse homepage | [Topic list top](https://www.dropbox.com/sc/cpm9i6jj5dtivjc/AACmgp6qxI-8kMp3F2VVWsvba?dl=1) 
+Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics | [Topic above post stream](https://www.dropbox.com/sc/1ze0dikrmkfj0wg/AADMGWGVsECEOwZdnmSLGkhZa?dl=1)
+Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics | [Topic above suggested](https://www.dropbox.com/sc/y3p2iqwggb5he0e/AAAbrTqZCAYgIhIYE4necmfXa?dl=1)
+Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```.  | [Post bottom](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
+
+
+### Advertisement Sizes Supported
 
 This plugin supports the following ad sizes for the following locations.
 
