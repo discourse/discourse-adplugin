@@ -53,12 +53,37 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 * Choose your advertisement platform by clicking on "Adsense Plugin" if using Adsense as your advertisement platform and/or click "DFP Plugin" if using the DoubleClick for Publishers advertisement platform.
 
 
-#### Step 2(b)(i) - Input Your Details (Adsense)
+#### Step 2(b) - Input Your Details
 
-* Insert Image + Explain the code in the provided tag from ad provider.
+Depending on which ad platform you are using, to input your ad details you need to:
+
+* Get the Advertisement Tag from your Ad Provider
+* Add parts of your ad code to Discourse's site settings as per the color coding in the images below.  Only use the image for your ad platform. 
+
+**Adsense Ad Tag Into SiteSettings**
+![](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
+
+**DoubleClick for Publishers' Ad Tag Into SiteSettings**
+
+![](https://www.dropbox.com/sc/0inoc1iduux0gsf/AADi8tfKX9S6Tx9S8RndcUE8a?dl=1)
 
 
-#### Step 2(b)(ii) - Input Your Details (DoubleClick for Publishers)
+In Ad Plugin Features:
+
+* Available Locations for Ad Display
+* Ad Sizes Supported
+* Other.... (TBC)
+
+Locations to be in a table...
+
+Post Bottom ![](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
+Topic Above Post ![](https://www.dropbox.com/sc/1ze0dikrmkfj0wg/AADMGWGVsECEOwZdnmSLGkhZa?dl=1)
+Topic Above Suggested ![](https://www.dropbox.com/sc/y3p2iqwggb5he0e/AAAbrTqZCAYgIhIYE4necmfXa?dl=1)
+Topic List Top ![](https://www.dropbox.com/sc/cpm9i6jj5dtivjc/AACmgp6qxI-8kMp3F2VVWsvba?dl=1)
+
+
+
+
 
 * Insert Image + Explain the code in the provided tag from ad provider.
 
