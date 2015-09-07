@@ -18,7 +18,7 @@ This quick start shows you how to install this plugin and use it.  Recommended i
 * A live discourse forum 
 * You have deployed that forum using Docker.  Most people using Digital Ocean will have deployed Discourse using Docker. 
 
-For installation for non-docker or local development (those with programming experience), see Other Installation.
+For non-docker or local development installation (those with programming experience), see **Other Installation**.
 
 
 ### Step 1 - Install the Official Discourse Advertising Plugin
@@ -56,7 +56,7 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 
 #### Step 2(b) - Input Your Details
 
-1. Add in your publisher ID - your publisher ID can be obtained from your ad platform and can also be found in your ad tag (see picture below).
+1. Add in your publisher ID - your publisher ID can be obtained from your ad platform and can also be found in your ad tag (see pictures below).
 2. Choose your trust level from the dropdown box.  This will only display ads to users with a certain level of trust.  For more details about trust levels go to the **Plugin Features** heading.
 3. Get the Advertisement Tag from your Ad Platform - see the images below to see what a tag looks like.
 4. Add parts of your ad code to Discourse's site settings for the locations you wish your ad to appear.  Refer to image for your ad platform to where parts of your ad tag should go.  For more detail about where the ad will appear
@@ -85,6 +85,8 @@ In this section, we go into more detail on:
 * Trust Levels
 
 ### Available Locations for Ad Display
+
+The following are available locations along with a description and an image showing their location within Discourse to display ads for all platforms.
 
 Location Name | Description | Image of Location
 --- | --- | ---
@@ -168,6 +170,6 @@ Issues and Pull Requests are greatly appreciated.  Bear in mind that when submit
 
 ## Credits
 
-Discourse.org - Thanks to our mentor [eviltrout](https://github.com/eviltrout) and the Discourse team - @LIST_OUT_THEIR_GITHUB_HANDLE
-Rails Girls - Thanks [sareg0](https://github.com/...) and the Rails Girls Team.
+Discourse.org - Thanks to our mentor [@viltrout](https://github.com/eviltrout) and the Discourse team - @LIST_OUT_THEIR_GITHUB_HANDLE
+Rails Girls - Thanks [@sareg0](https://github.com/...) and the Rails Girls Team.
 Our Coaches - @LIST_OUT_THEIR_GITHUB_HANDLE
