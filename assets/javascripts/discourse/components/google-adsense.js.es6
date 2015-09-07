@@ -8,8 +8,6 @@ var ad_mobile_height = 50;
 var ad_mobile_code = '';
 var currentUser = Discourse.User.current();
 var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
-var preGoogleVars = null;
-var postGoogleVars = null;
 var mobile_width = 320;
 var mobile_height = 50;
 
@@ -29,18 +27,10 @@ PageTracker.current().on('change', function(url) {
   var ads = document.getElementById("adsense_loader");
   if (ads) {
     ads.parentNode.removeChild(ads);
-    for (var i = 0; i < postGoogleVars.length; i++) {
-      var key = postGoogleVars[i];
-      window[key] = undefined;
-    }
-  }
-
-// This is an array of all elements that start with google (adsense related or not)
-  if(preGoogleVars === null) {
-    preGoogleVars = [];
-    for(var key in window) {
-      if(key.indexOf("google") !== -1 && key.indexOf("googletag") == -1) {
-        preGoogleVars.push(key);
+    for (var key in window) {
+      // comment to be provided here later
+      if(key.indexOf('google') !== -1 && key.indexOf('googletag') === -1) {
+        window[key] = undefined;
       }
     }
   }
@@ -51,17 +41,7 @@ PageTracker.current().on('change', function(url) {
   ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
 // Creates array of postGoogle vars which are only elements starting with 'google' related to 
 // Adsense's googleads.  This array is used in line 34 to undefine google elements related to Adsense only.
-  ga.addEventListener('load', function(e) {
-    if(postGoogleVars === null) {
-      postGoogleVars = [];
-
-      for(var key in window) {
-        if(key.indexOf("google") !== -1 && preGoogleVars.indexOf(key) == -1 && key.indexOf("googletag") == -1) {
-          postGoogleVars.push(key);
-        }
-      }
-    }
-  });
+  
   // Puts relevant elements back into script.
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
