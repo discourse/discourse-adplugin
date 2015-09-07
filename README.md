@@ -57,13 +57,18 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 
 Depending on which ad platform you are using, to input your ad details you need to:
 
-* Get the Advertisement Tag from your Ad Provider
-* Add parts of your ad code to Discourse's site settings as per the color coding in the images below.  Only use the image for your ad platform. 
+1. Add in your publisher ID - your publisher ID can be obtained from your ad provider and can also be found in your ad tag (see picture below).
+2. Choose your trust level from the dropdown box.  This will only display ads to users with a certain level of trust.  For more details about trust levels go to the **Plugin Features** heading.
+3. Get the Advertisement Tag from your Ad Provider - see the images below to see what a tag looks like.
+4. Add parts of your ad code to Discourse's site settings as per the color coding in the images below.  Only use the image for your ad platform. 
+5. Choose Your Ad Size - this is the same size that you've put into your ad provider to create your ad.  Go to the **Plugin Features** heading to see a list of supported Ad sizes.
 
-**Adsense Ad Tag Into SiteSettings**
+
+##### Adsense Ad Tag Into SiteSettings
+
 ![](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
 
-**DoubleClick for Publishers' Ad Tag Into SiteSettings**
+##### DoubleClick for Publishers' Ad Tag Into SiteSettings
 
 ![](https://www.dropbox.com/sc/0inoc1iduux0gsf/AADi8tfKX9S6Tx9S8RndcUE8a?dl=1)
 
@@ -72,6 +77,7 @@ In Ad Plugin Features:
 
 * Available Locations for Ad Display
 * Ad Sizes Supported
+* Trust Levels
 * Other.... (TBC)
 
 Locations to be in a table...
@@ -82,10 +88,6 @@ Topic Above Suggested ![](https://www.dropbox.com/sc/y3p2iqwggb5he0e/AAAbrTqZCAY
 Topic List Top ![](https://www.dropbox.com/sc/cpm9i6jj5dtivjc/AACmgp6qxI-8kMp3F2VVWsvba?dl=1)
 
 
-
-
-
-* Insert Image + Explain the code in the provided tag from ad provider.
 
 
 // TO BE FIXED START
