@@ -2,9 +2,11 @@
 
 This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
 
-**Supported Discourse Version**: 1.4</p>
-**Supported Ad Platforms**: 
-
+**Authors**: 		[cyberkoi](https://github.com/cyberkoi) & [ladydanger](https://github.com/ladydanger)  		
+**Contributors**: 					See credits section below		
+**License**: 			MIT License		
+**Supported Discourse Version**: 1.4	
+**Supported Ad Platforms**:    
 * [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html)
 * [Google Double Click for Publishers](https://www.google.com/dfp)
 
@@ -47,7 +49,6 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 
 #### Step 2(a) - Choose Your Advertisement Platform
 
-
 * Navigate to the Admin section in your Discourse forum.
 * Click on Settings and a left vertical navigation bar should appear.
 * Choose your advertisement platform by clicking on:
@@ -55,52 +56,77 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 ⋅⋅* DFP Plugin - if using the DoubleClick for Publishers advertisement platform.
 
 
-#### Step 2(b)(i) - Input Your Details (Adsense)
+#### Step 2(b) - Input Your Details
 
-* Insert Image + Explain the code in the provided tag from ad provider.
+1. Add in your publisher ID - your publisher ID can be obtained from your ad platform and can also be found in your ad tag (see pictures below).
+2. Choose your trust level from the dropdown box.  This will only display ads to users with a certain level of trust.  For more details about trust levels go to the **Plugin Features** heading.
+3. Get the Advertisement Tag from your Ad Platform - see the images below to see what a tag looks like.
+4. Add parts of your ad code to Discourse's site settings for the locations you wish your ad to appear.  Refer to image for your ad platform to where parts of your ad tag should go.  For more detail about where the ad will appear
+5. Choose Your Ad Size - this is the same size that you've put into your ad provider to create your ad.  Go to the **Plugin Features** heading to see a list of supported Ad sizes.
+6. To disable your ad (and not have it display), click on the disable button.
 
+##### Adsense Advertisement Tag to Discourse's Site Settings
 
-#### Step 2(b)(ii) - Input Your Details (DoubleClick for Publishers)
+![](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
 
-* Insert Image + Explain the code in the provided tag from ad provider.
+##### DoubleClick for Publishers' Advertisement Tag to Discourse's Site Settings
 
+![](https://www.dropbox.com/sc/0inoc1iduux0gsf/AADi8tfKX9S6Tx9S8RndcUE8a?dl=1)
 
-// TO BE FIXED START
-Add GIFS, Images
-✘ this is a cross
-✓ this is a tick
-After installation users likely want to:
-- Choose platform - DONE
-- Input ad codes + do a few other things. - DFP in detail with custom targeting - write guide on this.
-- Display ad.
-
-
-Input 3 parts - ad code (topmost box), width, height. And be sure to untick the disable box. Then, refresh the page for the inputs to take effect, and go to the ad location.
-
-Usually google sizes tDOcso input are (width*height) 300*250 or 728*90 (best) respectively. Input your dfp ad code.
-
-The namings in settings are with reference to the plugin outlets created by Discourse.
-
-`dfp_topic_list_top_code`: ad will appear at the header of Discourse homepage
-
-`dfp_topic_above_post_stream_code`: ad will appear at the header of all Discourse forum topics
-
-`dfp_topic_above_suggested_code`: ad will appear at the footer above suggested topics of all Discourse forum topics
-
-`dfp_post_bottom_code`: ad will appear on the Nth post (be sure to input N in the bottom-most box called 
-
-`dfp_nth_post_code` and ensure your total number of posts in topic >=N. For example, if you input N = 4, the forum should have at least 4 replies/posts)
-// TO BE FIXED END
-
-
-* Finally, if you wish to disable the ad, tick ad disabling box
 
 ### Step 3 - See Your Ad
 
-Once you've configured your settings and your advertising platform has ads that are ready to serve, navigate to the page where you've inputted for the location and you should see ads.  For example, a Discourse forum serving ads looks like this:
+Once you've configured your settings and your advertising platform has ads that are ready to serve, navigate to the page where you've inputted for the location and you should see ads.
 
-INSERT_IMAGE_HERE
 
+## Plugin Features
+
+In this section, we go into more detail on:
+* Available Locations for Ad Display
+* Ad Sizes Supported
+* Trust Levels
+
+### Available Locations for Ad Display
+
+The following are available locations along with a description and an image showing their location within Discourse to display ads for all platforms.
+
+Location Name | Description | Image of Location
+--- | --- | ---
+Topic List Top | Ad will appear at the header of Discourse homepage | [Topic list top](https://www.dropbox.com/sc/cpm9i6jj5dtivjc/AACmgp6qxI-8kMp3F2VVWsvba?dl=1) 
+Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics | [Topic above post stream](https://www.dropbox.com/sc/1ze0dikrmkfj0wg/AADMGWGVsECEOwZdnmSLGkhZa?dl=1)
+Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics | [Topic above suggested](https://www.dropbox.com/sc/y3p2iqwggb5he0e/AAAbrTqZCAYgIhIYE4necmfXa?dl=1)
+Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```.  | [Post bottom](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
+
+
+### Advertisement Sizes Supported
+
+This plugin supports the following ad sizes for the following locations.
+
+All locations except post bottom | Post bottom location | Mobile
+--- | --- | ---
+728 x 90 | 728 x 90 | 320 x 50 
+336 x 280 | 336 x 280 |
+300 x 250 | 300 x 250 |
+970 x 90 | 970 x 90 |
+468 x 60 | 468 x 60 |
+234 x 60 | 234 x 60 |
+125 x 125 | |
+180 x 150 | |
+200 x 200 | |
+250 x 250 | | 
+
+
+### Trust Levels
+
+You can use the ```ad_platform_through_trust_level``` dropdown to disable ads for users above a certain trust levels. As a guide, choosing:
+
+* 0 shows ads to users that are not logged in.
+* 1 shows ads to users that are not logged in, and to new and basic users.
+* 2 shows ads to regular users as well, but not to leaders and elders.
+* 3 shows ads to everyone but elders.
+* 4 shows ads to everyone including elders.
+
+To find more about trust levels in Discourse, refer to [Discourse's posts on trust levels](https://meta.discourse.org/t/what-do-user-trust-levels-do/4924/7)
 
 
 ## Other Installation
@@ -137,39 +163,21 @@ For example: ln -s ~/discourse-plugin-test .
 * You can now make changes in your locally held Discourse Adplugin folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
 
 
-
-## Advertisement Sizes Supported
-
-This plugin supports the following ad sizes for the following locations.
-
-All locations except post bottom | Post bottom location | Mobile
---- | --- | ---
-728 x 90 | 728 x 90 | 320 x 50 
-336 x 280 | 960 x 90 |
-300 x 250 | 468 x 60 |
-960 x 90 | 234 x 60 |
-468 x 60 | |
-234 x 60 | |
-125 x 125 | |
-180 x 150 | |
-200 x 200 | |
-250 x 250 | | 
-
-
 ## Questions or Want to Contribute?
 
 Open an Issue on this repository to start a chat.  
 
-Issues and Pull Requests are greatly appreciated.  Bear in mind that when submitting feature requests, if it's not something that most people will use, it probably won't get merged.
-
 
 ## Credits
 
-Discourse.org - Thanks to our mentor @eviltrout and the Discourse team - @LIST_OUT_THEIR_GITHUB_HANDLE
-Rails Girls - Thanks @sareg0 and the Rails Girls Team.
-Our Coaches - @LIST_OUT_THEIR_GITHUB_HANDLE
+**Discourse.org**: 		Thanks to our mentor [@eviltrout](https://github.com/eviltrout) and the wonderful [Discourse team!](http://www.discourse.org/)
+
+**Our Coaches**: 					Very special thank you to our coaches and honorary coach - [@georg](https://github.com/georg), [@betaass](https://github.com/betaass), [@adelsmee](https://github.com/adelsmee), [@davich](https://github.com/davich), [@link664](https://github.com/link664), [@tomjadams](https://github.com/tomjadams), [@compactcode](https://github.com/compactcode), [@joffotron](https://github.com/joffotron), [@jocranford](https://github.com/jocranford), [@saramic](https://github.com/saramic), [@madpilot](https://github.com/madpilot), [@catkins](https://github.com/catkins)
+
+**Rails Girls**: 			Thanks [@sareg0](https://github.com/sareg0) and the Rails Girls Team for the opportunity to participate in Rails Girls Summer of Code 2015.
+
+ 
 
 
-## License
 
-TBC: GPL v2 or MIT
+
