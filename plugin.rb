@@ -1,7 +1,7 @@
 # name: discourse-adplugin
-# about: Ad Plugin for Discourse (dfp)
+# about: Ad Plugin for Discourse
 # version: 0.1
-# authors: Vi and Sarah (Team Melbourne)
+# authors: Vi and Sarah (@ladydanger and @cyberkoi)
 
 register_css <<CSS
 
