@@ -165,8 +165,6 @@ For example: ln -s ~/discourse-plugin-test .
 
 Open an Issue on this repository to start a chat.  
 
-Issues and Pull Requests are greatly appreciated.  Bear in mind that when submitting feature requests, if it's not something that most people will use, it probably won't get merged.
-
 
 ## Credits
 
