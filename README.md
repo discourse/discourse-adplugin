@@ -170,6 +170,14 @@ Issues and Pull Requests are greatly appreciated.  Bear in mind that when submit
 
 ## Credits
 
-Discourse.org - Thanks to our mentor [@viltrout](https://github.com/eviltrout) and the Discourse team - @LIST_OUT_THEIR_GITHUB_HANDLE
-Rails Girls - Thanks [@sareg0](https://github.com/...) and the Rails Girls Team.
-Our Coaches - @LIST_OUT_THEIR_GITHUB_HANDLE
+**Discourse.org**: 		Thanks to our mentor [@eviltrout](https://github.com/eviltrout) and the wonderful [Discourse team!](http://www.discourse.org/)
+
+**Our Coaches**: 					Very special thank you to our coaches and honorary coach - [@georg](https://github.com/georg), [@betaass](https://github.com/betaass), [@adelsmee](https://github.com/adelsmee), [@davich](https://github.com/davich), [@link664](https://github.com/link664), [@tomjadams](https://github.com/tomjadams), [@compactcode](https://github.com/compactcode), [@joffotron](https://github.com/joffotron), [@jocranford](https://github.com/jocranford), [@saramic](https://github.com/saramic), [@madpilot](https://github.com/madpilot), [@catkins](https://github.com/catkins)
+
+**Rails Girls**: 			Thanks [@sareg0](https://github.com/sareg0) and the Rails Girls Team for the opportunity to participate in Rails Girls Summer of Code 2015.
+
+ 
+
+
+
+
