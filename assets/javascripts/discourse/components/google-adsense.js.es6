@@ -37,13 +37,8 @@ PageTracker.current().on('change', function(url) {
   }
 
 // Reinitialize script so that the ad can reload
-  // window.adsbygoogle = []; 
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
   ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-// Creates array of postGoogle vars which are only elements starting with 'google' related to 
-// Adsense's googleads.  This array is used in line 34 to undefine google elements related to Adsense only.
-  
-  // Puts relevant elements back into script.
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
 });
