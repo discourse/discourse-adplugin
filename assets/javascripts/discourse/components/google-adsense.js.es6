@@ -28,7 +28,8 @@ PageTracker.current().on('change', function(url) {
   if (ads) {
     ads.parentNode.removeChild(ads);
     for (var key in window) {
-      // comment to be provided here later
+      // Undefining all elements starting with google except for googletag so that the reloading doesn't affect dfp.  Potential future
+      // conflicts may occur if other plugins have element starting with google.
       if(key.indexOf('google') !== -1 && key.indexOf('googletag') === -1) {
         window[key] = undefined;
       }
