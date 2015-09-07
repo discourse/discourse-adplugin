@@ -2,15 +2,13 @@
 
 This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
 
-**Authors**: [cyberkoi](https://github.com/cyberkoi) (insert_web_page) and [ladydanger](https://github.com/ladydanger) (insert_web_page) :heart: </p>
-**Contributors**: See Credits section below</p>
-**Copyright**: 2015 **License**: MIT License</p>
-**Supported Discourse Version**: 1.4</p>
-**Supported Ad Platforms**: 
-
+**Authors**: 		[cyberkoi](https://github.com/cyberkoi) (insert_web_page) and [ladydanger](https://github.com/ladydanger) (insert_web_page) :heart:		
+**Contributors**: 					See credits section below		
+**License**: 			MIT License		
+**Supported Discourse Version**: 1.4	
+**Supported Ad Platforms**:    
 * [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html)
 * [Google Double Click for Publishers](https://www.google.com/dfp)
-
 
 
 ## Quick Start in 3 Steps
