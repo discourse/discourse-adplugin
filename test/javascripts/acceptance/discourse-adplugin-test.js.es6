@@ -1,22 +1,20 @@
 import { acceptance } from "helpers/qunit-helpers";
 acceptance("Discourse Ad Plugin", { loggedIn: true });
 
-test("DFP and Adsense Button Appears on Site Settings", () => {
-  visit("/admin/site_settings/category/adsense_plugin");
 
+test("Unknown URL", () => {
+  expect(1);
+  visit("/url-that-doesn't-exist");
   andThen(() => {
-    fillIn('#login-account-name', 'eviltrout');
-  //   ok(!exists('.tentacle'), "the tentacle is not shown yet");
-  // });
-
-  // click('#show-tentacle');
-
-  // andThen(() => {
-  //   ok(exists('.tentacle'), "the tentacle wants to rule the world!");
-  // });
+    ok(exists(".page-not-found"), "The not found content is present");
+  });
 });
 
-
-// Test if dfp and adsense button appear on site settings
-// Test if AAdsense ad loads
-// Test if DFP ad loads
+test("Presence of adsense within the plugin", () => {
+	expect(1);
+	visit("/admin/site_settings/category/adsense_plugin");
+	andThen(() => {
+		equal(currentURL(), '/admin/site_settings/category/adsense_plugin', "adsense lives!");
+		ok(!exists(".page-not-found"), "A page exists for adsense plugin");
+	});
+});
