@@ -16,7 +16,7 @@ test("Presence of adsense within the plugin", () => {
 // Test to fill in publisher id and save it.
 test("Presence of adsense within the plugin", () => {
 	visit("/admin/site_settings/category/adsense_plugin");
-	fillIn(".input-setting-string input[value='adsense_publisher_code']", "12345");
+	fillIn(".input-setting-string", "12345");
 	click('.ok');
 	
 	andThen(() => {
