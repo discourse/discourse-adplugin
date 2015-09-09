@@ -1,6 +1,8 @@
 import { acceptance } from "helpers/qunit-helpers";
 acceptance("Discourse Ad Plugin", { loggedIn: true });
 
+// Put in this URL when testing: http://localhost:3000/qunit?module=Acceptance%3A%20Discourse%20Ad%20Plugin
+
 // Play around test for presence of page
 test("Presence of adsense within the plugin", () => {
 	expect(1);
@@ -15,8 +17,10 @@ test("Presence of adsense within the plugin", () => {
 
 // Test to fill in publisher id and save it.
 test("Presence of adsense within the plugin", () => {
-	visit("/admin/site_settings/category/adsense_plugin");
+	visit("/admin/plugins/adsense_plugin");
+	return pauseTest();
 	fillIn(".input-setting-string", "12345");
+
 	click('.ok');
 	
 	andThen(() => {
