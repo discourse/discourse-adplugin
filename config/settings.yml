@@ -237,3 +237,23 @@ dfp_plugin:
     default: ''
     type: value_list
     client: true
+
+amazon_plugin:
+  amazon_topic_list_top_code:
+    client: true
+    default: ''
+  amazon_topic_list_top_ad_sizes:
+    client: true
+    default: '728*90 - leaderboard'
+    type: enum
+    choices:
+      - 728*90 - leaderboard
+      - 234*60 - small banner
+      - 300*250 - medium rectangle
+      - 468*60 - banner 
+      - 125*125 - button 
+      - 120*90 - small rectangle
+      - 120*60 - mini rectangle
+      - 88*31 - button
+      - 160*600 - vertical leaderboard 
+      - 120*240 - product link
