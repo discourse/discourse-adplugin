@@ -39,7 +39,7 @@ PageTracker.current().on('change', function(url) {
 // Reinitialize script so that the ad can reload
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
   ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
 
 });
 

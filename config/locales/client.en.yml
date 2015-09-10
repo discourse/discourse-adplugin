@@ -3,5 +3,5 @@ en:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'DFP Plugin'
+          dfp_plugin: 'DFP Plugin'
           adsense_plugin: 'Adsense Plugin'

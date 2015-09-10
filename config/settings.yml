@@ -102,7 +102,7 @@ adsense_plugin:
     client: true
     default: ''
 
-ad_plugin:
+dfp_plugin:
   dfp_publisher_id:
     client: true
     default: ''
@@ -116,7 +116,7 @@ ad_plugin:
   dfp_mobile_topic_list_top_code:
     client: true
     default: ''
-  topic_list_top_ad_sizes:
+  dfp_topic_list_top_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
     type: enum
@@ -148,7 +148,7 @@ ad_plugin:
   dfp_mobile_topic_above_post_stream_code:
     client: true
     default: ''
-  topic_above_post_stream_ad_sizes:
+  dfp_topic_above_post_stream_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
     type: enum
@@ -180,7 +180,7 @@ ad_plugin:
   dfp_mobile_topic_above_suggested_code:
     client: true
     default: ''  
-  topic_above_suggested_ad_sizes:
+  dfp_topic_above_suggested_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
     type: enum
@@ -215,7 +215,7 @@ ad_plugin:
   dfp_nth_post_code:
     client: true
     default: ''
-  post_bottom_ad_sizes:
+  dfp_post_bottom_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
     type: enum
