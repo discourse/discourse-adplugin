@@ -9,7 +9,7 @@ fr:
         dfp_target_topic_list_top_key_code: "Entrez vos clés pour le ciblage personnalisé - niveau des stocks"
         dfp_target_topic_list_top_value_code: "Entrez vos valeurs pour le ciblage personnalisé - niveau des stocks"
         dfp_show_topic_above_post_stream: "Désactiver la publicité qui est sur la page de sujet ci-dessus tous les messages"
-        dfp_topic_above_post_stream_code: "Show leaderboard ad above post stream"
+        dfp_topic_above_post_stream_code: "ID de la publicité pour l'emplacement sur la page de sujet ci-dessus tous les messages"
         dfp_mobile_topic_above_post_stream_code: "Mobile - Show leaderboard ad above post stream"
         dfp_topic_above_post_stream_ad_sizes: "Choose your ad size"
         dfp_target_topic_above_post_stream_key_code: "Input key values - Inventory Level"
