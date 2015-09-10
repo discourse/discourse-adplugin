@@ -1,0 +1,12 @@
+{{#if site.mobileView}}
+   {{#if checkTrustLevels}}
+      <iframe style={{adWrapperStyleMobile}} marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src={{userInput}}>
+      </iframe>
+   {{/if}}
+
+{{else}}
+   {{#if checkTrustLevels}}
+      <iframe style={{adWrapperStyle}} marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src={{userInput}}>
+      </iframe>
+   {{/if}}
+{{/if}}

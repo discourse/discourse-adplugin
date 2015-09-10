@@ -46,3 +46,6 @@ en:
         adsense_show_post_bottom: "Disable post_bottom ad"
         adsense_post_bottom_ad_sizes: "Choose your ad sizes"
         adsense_nth_post_code: "Choose the Nth position for your ad to show"
+        amazon_topic_list_top_code: "Insert your src code here"
+        amazon_topic_list_top_ad_sizes: "Choose your ad sizes"
+        amazon_nth_post_code: "Choose the Nth position for your ad to show"
