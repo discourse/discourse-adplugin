@@ -1,0 +1,7 @@
+zh_CN:
+  admin_js:
+    admin:
+      site_settings:
+        categories:
+          dfp_plugin: '谷歌DFP广告'
+          adsense_plugin: '谷歌Adsense广告'
