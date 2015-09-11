@@ -239,7 +239,58 @@ dfp_plugin:
     client: true
 
 amazon_plugin:
-  amazon_topic_list_top_code:
+  amazon_topic_list_top_ad_category:
+    client: true
+    default: 'Product/Easy Banner Link'
+    type: enum
+    choices:
+      - Product/Easy Banner Link
+      - Native Shopping Ad - Recommended
+      - Native Shopping Ad - Custom
+      - Native Shopping Ad - Search
+  amazon_tracking_id_code:
+    client: true
+    default: ''
+  amazon_region_code:
+    client: true
+    default: ''
+  amazon_topic_list_top_src_code:
+    client: true
+    default: ''
+  amazon_topic_list_top_title_code:
+    client: true
+    default: '' 
+  amazon_topic_list_top_ad_width_code:
+    client: true
+    default: '' 
+  amazon_topic_list_top_ad_height_code:
+    client: true
+    default: ''
+  amazon_topic_list_top_custom_product_id_code:
+    default: ''
+    type: value_list
+    client: true
+  amazon_topic_list_top_link_id_code:
+    client: true
+    default: ''
+  amazon_topic_list_top_ad_mode:
+    client: true
+    default: 'manual'
+    type: enum
+    choices:
+      - manual
+      - auto
+      - search
+  amazon_topic_list_top_fallback_mode_value_code:
+    client: true
+    default: ''
+  amazon_topic_list_top_row_ads_code:
+    client: true
+    default: ''
+  amazon_topic_list_top_default_category_code:
+    client: true
+    default: ''
+  amazon_topic_list_top_search_phrase_code:
     client: true
     default: ''
   amazon_through_trust_level:
@@ -247,19 +298,4 @@ amazon_plugin:
     default: 2  
   amazon_nth_post_code: 
     client: true
-    default: ''  
-  amazon_topic_list_top_ad_sizes:
-    client: true
-    default: '728*90 - leaderboard'
-    type: enum
-    choices:
-      - 728*90 - leaderboard
-      - 234*60 - small banner
-      - 300*250 - medium rectangle
-      - 468*60 - banner 
-      - 125*125 - button 
-      - 120*90 - small rectangle
-      - 120*60 - mini rectangle
-      - 88*31 - button
-      - 160*600 - vertical leaderboard 
-      - 120*240 - product link
+    default: ''
