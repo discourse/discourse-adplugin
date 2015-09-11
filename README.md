@@ -85,6 +85,7 @@ In this section, we go into more detail on:
 * Available Locations for Ad Display
 * Ad Sizes Supported
 * Trust Levels
+* Languages Supported
 
 ### Available Locations for Ad Display
 
@@ -128,6 +129,11 @@ You can use the ```ad_platform_through_trust_level``` dropdown to disable ads fo
 
 To find more about trust levels in Discourse, refer to [Discourse's posts on trust levels](https://meta.discourse.org/t/what-do-user-trust-levels-do/4924/7)
 
+### Languages Supported
+
+* Chinese (Simplified)
+* English
+* French
 
 ## Other Installation
 
