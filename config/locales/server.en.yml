@@ -5,7 +5,7 @@ en:
         dfp_show_topic_list_top: "Disable ad at topic list top location"
         dfp_topic_list_top_code: "Enter ad code to display at topic list top location"
         dfp_mobile_topic_list_top_code: "Enter ad code to display mobile ads at topic list top location"
-        topic_list_top_ad_sizes: "Choose your ad size"
+        dfp_topic_list_top_ad_sizes: "Choose your ad size"
         dfp_target_topic_list_top_key_code: "Input custom targeting keys - inventory Level"
         dfp_target_topic_list_top_value_code: "Input custom targeting values - inventory Level"
         dfp_show_topic_above_post_stream: "Disable ad at topic above post stream location"
