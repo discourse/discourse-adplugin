@@ -137,6 +137,7 @@ To find more about trust levels in Discourse, refer to [Discourse's posts on tru
 * Chinese (Simplified)
 * English
 * French
+* Spanish
 
 ## Other Installation
 
