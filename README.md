@@ -49,15 +49,15 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 
 #### Step 2(a) - Choose Your Advertisement Platform
 
-<ol>
+<ul>
 <li>Navigate to the Admin section in your Discourse forum.</li>
 <li>Click on Settings and a left vertical navigation bar should appear.</li>
 <li>Choose your advertisement platform.</li>
-<ol>
+<ul>
 <li>Adsense - if using Adsense as your advertisement platform.</li>
 <li>DFP - if using the DoubleClick for Publishers advertisement platform.</li>
-</ol>
-</ol>
+</ul>
+</ul>
 
 #### Step 2(b) - Input Your Details
 
