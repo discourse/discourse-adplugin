@@ -1,4 +1,4 @@
-{{#if checkTrustLevels}}
+{{!{{#if checkTrustLevels}}
 	{{#if typeProductCategory}}
 		{{#if site.mobileView}}
     		<iframe style={{adWrapperStyleMobile}} marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src={{userInput}}>
@@ -9,10 +9,11 @@
     			</iframe>
     		</div>
    		{{/if}}
-   {{else}}
+  {{/if}}
+
    		{{#if typeRecommendedCategory}}
-   		  	<script type="text/javascript">
-				amzn_assoc_placement = "adunit0";
+   		  <script type="text/javascript">
+   		  amzn_assoc_placement = "adunit0";
 				amzn_assoc_enable_interest_ads = "true";
 				amzn_assoc_tracking_id = "s0fcc-20";
 				amzn_assoc_ad_mode = "auto";
@@ -26,7 +27,6 @@
 				amzn_assoc_fallback_mode = {"type":"search","value":"hello"};
 				amzn_assoc_default_category = "Electronics";
 				</script>
-			<script src={{userInput}}></script>
    		{{/if}}
 
    		{{#if typeSearchCategory}}
@@ -62,5 +62,5 @@
 			</script>
 			<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
    		{{/if}}
-   {{/if}}
-{{/if}}
+
+{{!{{/if}}
