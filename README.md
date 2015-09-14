@@ -180,13 +180,14 @@ Open an Issue on this repository to start a chat.
 
 ## Credits
 
-**Discourse.org**: 		Thanks to our mentor [@eviltrout](https://github.com/eviltrout) and the wonderful [Discourse team!](http://www.discourse.org/)
+**Discourse.org**: 		Thanks to our amazing mentor [@eviltrout](https://github.com/eviltrout) and the wonderful [Discourse team!](http://www.discourse.org/)
 
 **Our Coaches**: 					Very special thank you to our coaches and honorary coach - [@georg](https://github.com/georg), [@betaass](https://github.com/betaass), [@adelsmee](https://github.com/adelsmee), [@davich](https://github.com/davich), [@link664](https://github.com/link664), [@tomjadams](https://github.com/tomjadams), [@compactcode](https://github.com/compactcode), [@joffotron](https://github.com/joffotron), [@jocranford](https://github.com/jocranford), [@saramic](https://github.com/saramic), [@madpilot](https://github.com/madpilot), [@catkins](https://github.com/catkins)
 
 **Rails Girls**: 			Thanks [@sareg0](https://github.com/sareg0) and the Rails Girls Team for the opportunity to participate in Rails Girls Summer of Code 2015.
+<p>To create this plugin we referenced the original dfp plugin (created by  <a href="https://github.com/search?q=neil+lalonde+lalonde&ref=opensearch&type=Users">nlalonde</a>) and the <a href="https://meta.discourse.org/t/google-adsense-plugin/11763/133">adsense plugin</a></p>
 
-In creating this plugin, we referenced the original dfp plugin (created by ![nlalonde](https://github.com/search?q=neil+lalonde&ref=opensearch&type=Users) and the ![adsense plugin](https://meta.discourse.org/t/google-adsense-plugin/11763/133).
+
 
  
 
