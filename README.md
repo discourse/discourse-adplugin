@@ -186,6 +186,8 @@ Open an Issue on this repository to start a chat.
 
 **Rails Girls**: 			Thanks [@sareg0](https://github.com/sareg0) and the Rails Girls Team for the opportunity to participate in Rails Girls Summer of Code 2015.
 
+In creating this plugin, we referenced the original dfp plugin (created by ![nlalonde](https://github.com/search?q=neil+lalonde&ref=opensearch&type=Users) and the ![adsense plugin](https://meta.discourse.org/t/google-adsense-plugin/11763/133).
+
  
 
 
