@@ -1,5 +1,5 @@
 import loadScript from 'discourse/lib/load-script';
-
+import PageTracker from 'discourse/lib/page-tracker';
 var amazon_code = '';
 var amazon_width = '';
 var amazon_height = '';
@@ -28,7 +28,30 @@ var _loaded = false,
     _promise = null;
 
 
-function loadAmazon(settings) {
+/* // Adsense METHOD
+  PageTracker.current().on('change', function(url) {
+  var ads = document.getElementById("amazon_aff");
+  if (ads) {
+    ads.parentNode.removeChild(ads);
+    for (var key in window) {
+      // Undefining all elements starting with google except for googletag so that the reloading doesn't affect dfp.  Potential future
+      // conflicts may occur if other plugins have element starting with google.
+      if(key.indexOf('amazon') !== -1) {
+        window[key] = undefined;
+      }
+    }
+  }
+  // The Amazon SRC using Discourse.org loadScript
+  var amazon_aff = document.createElement('script'); 
+  amazon_aff.src = "//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"; 
+  //document.getElementById('hello').innerHTML = "hi";
+  //console.log(hello);
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(amazon_aff, s);
+}); 
+*/
+
+
+  function loadAmazon(settings) {
   if (_loaded) {
     return Ember.RSVP.resolve();
   }
@@ -36,43 +59,26 @@ function loadAmazon(settings) {
   if (_promise) {
     return _promise;
   }
-
-  // The Amazon SRC using Discourse.org loadScript
-  var amazon_aff = document.createElement('script');
-  amazon_aff.src = '//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US';
-  _promise = loadScript(amazon_aff, { scriptTag: true }).then(function() {
+  
+    /*
+   var amazon_aff = document.createElement('script'); 
+   amazon_aff.setAttribute('id', 'amazon_aff');
+   amazon_aff.src = '//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US';
+  _promise = loadScript(amazon_aff.src, { scriptTag: true }).then(function() {
     _loaded = true;
-    if (window.amazon_aff === undefined) {
-      console.log('amazon tag is undefined!');
-    }
-    // pushing that script if someone select Native Shopping Ad as a category
-    // At this point, it should go to amazon product links.hbs and serve the ads.
-    amazon_aff.cmd.push(function() {
-      if (settings.amazon_topic_list_top_ad_category === "Native Shopping Ad - Recommended") {
-    };
 
-    });
+    console.log('Amazon Ad network script loaded'); 
+    if (settings.amazon_topic_list_top_ad_category === "Native Shopping Ad - Recommended") {
+    
+    };
   });
+*/
 
   return _promise;
+
 }
 
 
-/*window.onload = function() {
-
-// Reinitialize script so that the ad can reload
-  // var amazon_aff = document.createElement('script'); amazon_aff.type = 'text/javascript'; amazon_aff.async = true;
-  // amazon_aff.src = '//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US';
-
-  if (Discourse.SiteSettings.amazon_topic_list_top_ad_category === "Native Shopping Ad - Recommended") {
-    user_input = Discourse.SiteSettings.amazon_topic_list_top_src_code;
-  };
-  var amazon_aff = document.createElement('script'); amazon_aff.type = 'text/javascript'; amazon_aff.async = true;
-  amazon_aff.src = '//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(amazon_aff, s);
-   
-};
-*/
 if (Discourse.SiteSettings.amazon_topic_list_top_src_code) {
   if (Discourse.SiteSettings.amazon_topic_list_top_ad_category === 'Product/Easy Banner Link' && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.amazon_through_trust_level))) {
     user_input = Discourse.SiteSettings.amazon_topic_list_top_src_code;
@@ -118,12 +124,12 @@ export default Ember.Component.extend({
   classNames: ['amazon-product-links'],
   loadedAmazontag: false,
 
-  _initAmazon: function() {
-    var self = this;
-    loadAmazon(this.siteSettings).then(function() {
-      self.set('loadedAmazontag', true);
-    });
-  }.on('didInsertElement'),
+  // _initAmazon: function() {
+  //   var self = this;
+  //   loadAmazon(this.siteSettings).then(function() {
+  //     self.set('loadedAmazontag', true);
+  //   });
+  // }.on('didInsertElement'),
 
   // // Part of the divID of the div part of Amazon
   // divId: function() {
