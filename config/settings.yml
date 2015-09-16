@@ -296,6 +296,69 @@ amazon_plugin:
   amazon_through_trust_level:
     client: true
     default: 2  
+  amazon_mobile_topic_list_top_src_code:
+    client: true
+    default: ''
+  amazon_mobile_topic_list_top_ad_width_code: 
+    client: true
+    default: ''
+  amazon_mobile_topic_list_top_ad_height_code: 
+    client: true
+    default: ''
+  amazon_topic_above_post_stream_src_code:
+    client: true
+    default: ''
+  amazon_topic_above_post_stream_ad_width_code: 
+    client: true
+    default: ''
+  amazon_topic_above_post_stream_ad_height_code: 
+    client: true
+    default: ''
+  amazon_mobile_topic_above_post_stream_src_code:
+    client: true
+    default: ''
+  amazon_mobile_topic_above_post_stream_ad_width_code:
+    client: true
+    default: ''
+  amazon_mobile_topic_above_post_stream_ad_height_code: 
+    client: true
+    default: ''
+  amazon_topic_above_suggested_src_code: 
+    client: true
+    default: ''
+  amazon_topic_above_suggested_ad_width_code: 
+    client: true
+    default: ''
+  amazon_topic_above_suggested_ad_height_code:
+    client: true
+    default: ''
+  amazon_mobile_topic_above_suggested_src_code:
+    client: true
+    default: ''
+  amazon_mobile_topic_above_suggested_ad_width_code:
+    client: true
+    default: ''
+  amazon_mobile_topic_above_suggested_ad_height_code:
+    client: true
+    default: ''
+  amazon_post_bottom_src_code:
+    client: true
+    default: ''
   amazon_nth_post_code: 
+    client: true
+    default: ''
+  amazon_post_bottom_ad_width_code:
+    client: true
+    default: ''
+  amazon_post_bottom_ad_height_code:
+    client: true
+    default: ''
+  amazon_mobile_post_bottom_src_code:
+    client: true
+    default: ''
+  amazon_mobile_post_bottom_ad_width_code:
+    client: true
+    default: ''
+  amazon_mobile_post_bottom_ad_height_code:
     client: true
     default: ''

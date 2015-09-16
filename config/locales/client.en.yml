@@ -3,6 +3,6 @@ en:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'DFP Plugin'
-          adsense_plugin: 'Adsense Plugin'
-          amazon_plugin: 'Amazon Plugin'
+          dfp_plugin: 'DFP'
+          adsense_plugin: 'Adsense'
+          amazon_plugin: 'Amazon Links/Banners'
