@@ -24,7 +24,6 @@ var data = {
 }
 
 
-
 if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_topic_list_top_src_code) {
   data["topic-list-top"]["user_input"] = Discourse.SiteSettings.amazon_topic_list_top_src_code;
   data["topic-list-top"]["amazon_width"] = parseInt(Discourse.SiteSettings.amazon_topic_list_top_ad_width_code);
