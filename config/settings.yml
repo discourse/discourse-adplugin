@@ -239,63 +239,18 @@ dfp_plugin:
     client: true
 
 amazon_plugin:
-  amazon_topic_list_top_ad_category:
+  amazon_through_trust_level:
     client: true
-    default: 'Product/Easy Banner Link'
-    type: enum
-    choices:
-      - Product/Easy Banner Link
-      - Native Shopping Ad - Recommended
-      - Native Shopping Ad - Custom
-      - Native Shopping Ad - Search
-  amazon_tracking_id_code:
-    client: true
-    default: ''
-  amazon_region_code:
-    client: true
-    default: ''
+    default: 2  
   amazon_topic_list_top_src_code:
     client: true
     default: ''
-  amazon_topic_list_top_title_code:
-    client: true
-    default: '' 
   amazon_topic_list_top_ad_width_code:
     client: true
     default: '' 
   amazon_topic_list_top_ad_height_code:
     client: true
     default: ''
-  amazon_topic_list_top_custom_product_id_code:
-    default: ''
-    type: value_list
-    client: true
-  amazon_topic_list_top_link_id_code:
-    client: true
-    default: ''
-  amazon_topic_list_top_ad_mode:
-    client: true
-    default: 'manual'
-    type: enum
-    choices:
-      - manual
-      - auto
-      - search
-  amazon_topic_list_top_fallback_mode_value_code:
-    client: true
-    default: ''
-  amazon_topic_list_top_row_ads_code:
-    client: true
-    default: ''
-  amazon_topic_list_top_default_category_code:
-    client: true
-    default: ''
-  amazon_topic_list_top_search_phrase_code:
-    client: true
-    default: ''
-  amazon_through_trust_level:
-    client: true
-    default: 2  
   amazon_mobile_topic_list_top_src_code:
     client: true
     default: ''

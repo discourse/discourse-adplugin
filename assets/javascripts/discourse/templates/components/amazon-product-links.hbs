@@ -1,66 +1,11 @@
 {{#if checkTrustLevels}}
-	{{#if typeProductCategory}}
-		{{#if site.mobileView}}
-    		<iframe style={{adWrapperStyleMobile}} marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src={{userInput}}>
-    		</iframe>
-   		{{else}}
-   			<div class="container" align="center">
-    			<iframe style={{adWrapperStyle}} marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src={{userInput}}>
-    			</iframe>
-    		</div>
-   		{{/if}}
-   {{else}}
-   		{{#if typeRecommendedCategory}}
-   		  	<script type="text/javascript">
-				amzn_assoc_placement = "adunit0";
-				amzn_assoc_enable_interest_ads = "true";
-				amzn_assoc_tracking_id = "s0fcc-20";
-				amzn_assoc_ad_mode = "auto";
-				amzn_assoc_ad_type = "smart";
-				amzn_assoc_marketplace = "amazon";
-				amzn_assoc_region = "US";
-				amzn_assoc_linkid = "0d4f6279a6c527dd41ea063851ee9154";
-				amzn_assoc_emphasize_categories = "51569011,3760911";
-				amzn_assoc_size = "autoxauto";
-				amzn_assoc_rows = "2";
-				amzn_assoc_fallback_mode = {"type":"search","value":"hello"};
-				amzn_assoc_default_category = "Electronics";
-				</script>
-			<script src={{userInput}}></script>
-   		{{/if}}
-
-   		{{#if typeSearchCategory}}
-	   		<script type="text/javascript">
-				amzn_assoc_placement = "adunit0";
-				amzn_assoc_tracking_id = "s0fcc-20";
-				amzn_assoc_ad_mode = "search";
-				amzn_assoc_ad_type = "smart";
-				amzn_assoc_marketplace = "amazon";
-				amzn_assoc_region = "US";
-				amzn_assoc_linkid = "a72ad11d9a0bf521a92e8256409f29e1";
-				amzn_assoc_default_search_phrase = "Nokia Phones";
-				amzn_assoc_size = "autoxauto";
-				amzn_assoc_rows = "2";
-				amzn_assoc_search_bar_position = "bottom";
-			</script>
-			<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-   		{{/if}}
-
-   		{{#if typeCustomCategory}}
-   			<script type="text/javascript">
-				amzn_assoc_placement = "adunit0";
-				amzn_assoc_tracking_id = "s0fcc-20";
-				amzn_assoc_ad_mode = "manual";
-				amzn_assoc_ad_type = "smart";
-				amzn_assoc_marketplace = "amazon";
-				amzn_assoc_region = "US";
-				amzn_assoc_linkid = "402f6cf98c6537aa462dfa90c96af127";
-				amzn_assoc_asins = "B012CD7N1Q,B001DPQL2W,B00FFXF8KE,B004W2GTMA,B001DI1G3S,B012CNXH5C,B00OY0YMJW,B00SUYCC9A";
-				amzn_assoc_size = "500x500";
-				amzn_assoc_search_bar = "true";
-				amzn_assoc_title = "My Life";
-			</script>
-			<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-   		{{/if}}
-   {{/if}}
+	{{#if site.mobileView}}
+		<iframe style={{adWrapperStyleMobile}} marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src={{userInput}}>
+		</iframe>
+	{{else}}
+		<div class="container" align="center">
+			<iframe style={{adWrapperStyle}} marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src={{userInput}}>
+			</iframe>
+		</div>
+	{{/if}}
 {{/if}}

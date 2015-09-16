@@ -52,7 +52,7 @@ var data = {
 
 
 if (Discourse.SiteSettings.adsense_publisher_code) {
-  if (!Discourse.SiteSettings.adsense_show_topic_list_top && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level))) {
+  if (!Discourse.SiteSettings.adsense_show_topic_list_top) {
     if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_topic_list_top_code) {
       data["topic-list-top"]["ad_code"] = Discourse.SiteSettings.adsense_topic_list_top_code;
       data["topic-list-top"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
@@ -62,7 +62,7 @@ if (Discourse.SiteSettings.adsense_publisher_code) {
       data["topic-list-top"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_list_top_code;
     }  
   }
-  if (!Discourse.SiteSettings.adsense_show_topic_above_post_stream && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level))) {
+  if (!Discourse.SiteSettings.adsense_show_topic_above_post_stream) {
     if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_topic_above_post_stream_code) {
       data["topic-above-post-stream"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_post_stream_code;
       data["topic-above-post-stream"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes));
@@ -72,7 +72,7 @@ if (Discourse.SiteSettings.adsense_publisher_code) {
       data["topic-above-post-stream"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_code;
     }
   }
-  if (!Discourse.SiteSettings.adsense_show_topic_above_suggested && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level))) {
+  if (!Discourse.SiteSettings.adsense_show_topic_above_suggested) {
     if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_topic_above_suggested_code) {
       data["topic-above-suggested"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_suggested_code;
       data["topic-above-suggested"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes));
@@ -82,7 +82,7 @@ if (Discourse.SiteSettings.adsense_publisher_code) {
       data["topic-above-suggested"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code;
     }
   }
-  if (!Discourse.SiteSettings.adsense_show_post_bottom && !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level))) {
+  if (!Discourse.SiteSettings.adsense_show_post_bottom) {
     if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_post_bottom_code) {
       data["post-bottom"]["ad_code"] = Discourse.SiteSettings.adsense_post_bottom_code;
       data["post-bottom"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_post_bottom_ad_sizes));
@@ -131,4 +131,8 @@ export default Ember.Component.extend({
   adInsStyleMobile: function() {
     return `display: inline-block; ${this.get('adWrapperStyleMobile')}`.htmlSafe();
   }.property('adWrapperStyleMobile'),
+
+  checkTrustLevels: function() {
+    return !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level));
+  }.property('trust_level'),
 });
