@@ -9,6 +9,7 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 **Supported Ad Platforms**:    
 * [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html)
 * [Google Double Click for Publishers](https://www.google.com/dfp)
+* [Amazon Affiliates](http://affiliate-program.amazon.com) - Banner and Product Link Ads
 
 
 ## Quick Start in 3 Steps
@@ -75,6 +76,12 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 ##### DoubleClick for Publishers' Advertisement Tag to Discourse's Site Settings
 
 ![](https://www.dropbox.com/sc/0inoc1iduux0gsf/AADi8tfKX9S6Tx9S8RndcUE8a?dl=1)
+
+##### Amazon Affiliates' Advertisement Tag to Discourse's Site Settings
+Only for Product Link and Banner Ads.
+
+![](https://www.dropbox.com/sc/l67fb5c3tl8bq3d/AAAAMmccMW3kkIeBR7cBdWoFa?dl=1)
+
 
 
 ### Step 3 - See Your Ad
