@@ -1,17 +1,12 @@
-{{#if site.mobileView}}
+{{#if checkTrustLevels}}
   {{#if loadedGoogletag}}
-   {{#if checkTrustLevels}}
+    {{#if site.mobileView}}
       <div id={{divId}} style={{adWrapperStyleMobile}} class="dfp-ad-unit" align=center> 
         <script type='text/javascript'>
         googletag.cmd.push(function() { googletag.display('{{divId}}'); });
         </script>
       </div>
-    {{/if}}
-  {{/if}}
-
-{{else}}
-  {{#if loadedGoogletag}}
-    {{#if checkTrustLevels}}
+    {{else}}
       <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center> 
         <script type='text/javascript'>
         googletag.cmd.push(function() { googletag.display('{{divId}}'); });

@@ -11,6 +11,10 @@ export default {
   	  postSpecificCountAdsense: function() {
         return this.get('post_number') === parseInt(Discourse.SiteSettings.adsense_nth_post_code); 
   	  }.property('post_number'),
+
+      postSpecificCountAmazon: function() {
+        return this.get('post_number') === parseInt(Discourse.SiteSettings.amazon_nth_post_code); 
+      }.property('post_number'),
   	});
   }
 };

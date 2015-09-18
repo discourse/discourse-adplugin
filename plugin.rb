@@ -25,4 +25,14 @@ register_css <<CSS
   margin: 0 auto;
 }
 
+.amazon-product-links {
+  padding: 3px;
+  margin-bottom: 10px;
+  clear: both;
+}
+
+.amazon-product-links  .amazon-unit {
+  margin: 0 auto;
+}
+
 CSS
