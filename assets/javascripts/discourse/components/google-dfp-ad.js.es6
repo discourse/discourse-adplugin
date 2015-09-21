@@ -76,7 +76,7 @@ function loadGoogle(settings) {
         }
       }
 
-      if (settings.dfp_topic_list_top_code && !settings.dfp_show_topic_list_top && settings.dfp_topic_list_top_ad_sizes) {
+      if (settings.dfp_topic_list_top_code && settings.dfp_topic_list_top_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.dfp_topic_list_top_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.dfp_topic_list_top_ad_sizes));
         if (Discourse.Mobile.mobileView) {
@@ -88,7 +88,7 @@ function loadGoogle(settings) {
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_value_code)), topic_list_top)
         }
       }
-      if (settings.dfp_topic_above_post_stream_code && !settings.dfp_show_topic_above_post_stream && settings.dfp_topic_above_post_stream_ad_sizes) {
+      if (settings.dfp_topic_above_post_stream_code && settings.dfp_topic_above_post_stream_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.dfp_topic_above_post_stream_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.dfp_topic_above_post_stream_ad_sizes));
         if (Discourse.Mobile.mobileView) {
@@ -100,7 +100,7 @@ function loadGoogle(settings) {
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_post_stream_value_code)), topic_above_post_stream)
         }
       }
-      if (settings.dfp_topic_above_suggested_code && !settings.dfp_show_topic_above_suggested && settings.dfp_topic_above_suggested_ad_sizes) {
+      if (settings.dfp_topic_above_suggested_code && settings.dfp_topic_above_suggested_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.dfp_topic_above_suggested_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.dfp_topic_above_suggested_ad_sizes));
         if (Discourse.Mobile.mobileView) {
@@ -112,7 +112,7 @@ function loadGoogle(settings) {
           custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_key_code)), (keyParse(Discourse.SiteSettings.dfp_target_topic_above_suggested_value_code)), topic_above_suggested)
         }
       }
-      if (settings.dfp_post_bottom_code && !settings.dfp_show_post_bottom && settings.dfp_post_bottom_ad_sizes) {
+      if (settings.dfp_post_bottom_code && settings.dfp_post_bottom_ad_sizes) {
         const_width = parseInt(splitWidthInt(settings.dfp_post_bottom_ad_sizes));
         const_height = parseInt(splitHeightInt(settings.dfp_post_bottom_ad_sizes));
         if (Discourse.Mobile.mobileView) {

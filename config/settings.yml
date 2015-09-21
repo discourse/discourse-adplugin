@@ -12,9 +12,6 @@ adsense_plugin:
   adsense_mobile_topic_list_top_code:
     client: true
     default: ''    
-  adsense_show_topic_list_top:
-    client: true
-    default: false
   adsense_topic_list_top_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -36,9 +33,6 @@ adsense_plugin:
   adsense_mobile_topic_above_post_stream_code:
     client: true
     default: ''    
-  adsense_show_topic_above_post_stream:
-    client: true
-    default: false
   adsense_topic_above_post_stream_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -60,9 +54,6 @@ adsense_plugin:
   adsense_mobile_topic_above_suggested_code:
     client: true
     default: ''
-  adsense_show_topic_above_suggested:
-    client: true
-    default: false
   adsense_topic_above_suggested_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -84,9 +75,6 @@ adsense_plugin:
   adsense_mobile_post_bottom_code: 
     client: true
     default: ''
-  adsense_show_post_bottom:
-    client: true
-    default: false
   adsense_post_bottom_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -139,9 +127,6 @@ dfp_plugin:
     default: ''
     type: value_list
     client: true
-  dfp_show_topic_list_top:
-    client: true
-    default: false
   dfp_topic_above_post_stream_code:
     client: true
     default: ''
@@ -163,9 +148,6 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
-  dfp_show_topic_above_post_stream:
-    client: true
-    default: false
   dfp_target_topic_above_post_stream_key_code:
     default: ''
     type: value_list
@@ -195,9 +177,6 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
-  dfp_show_topic_above_suggested:
-    client: true
-    default: false
   dfp_target_topic_above_suggested_key_code:
     default: ''
     type: value_list
@@ -226,9 +205,6 @@ dfp_plugin:
       - 970*90 - large leaderboard
       - 468*60 - banner 
       - 234*60 - half banner 
-  dfp_show_post_bottom:
-    client: true
-    default: false
   dfp_target_post_bottom_key_code:
     default: ''
     type: value_list
@@ -241,7 +217,8 @@ dfp_plugin:
 amazon_plugin:
   amazon_through_trust_level:
     client: true
-    default: 2  
+    default: 2
+    enum: 'TrustLevelSetting'
   amazon_topic_list_top_src_code:
     client: true
     default: ''
