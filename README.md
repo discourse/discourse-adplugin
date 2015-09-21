@@ -2,9 +2,9 @@
 
 This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
 
-**Authors**: 		[Sarah Ni](https://github.com/cyberkoi) & [Vi Nguyen](https://github.com/ladydanger)
-**Version**: 		1.0.1
-**Contributors**: 					See credits section below		
+**Authors**: 		[Sarah Ni](https://github.com/cyberkoi) & [Vi Nguyen](https://github.com/ladydanger)  
+**Version**: 			1.0.1		
+**Contributors**: See credits section below	
 **License**: 			MIT License		
 **Supported Discourse Version**: 1.4	
 **Supported Ad Platforms**:    
