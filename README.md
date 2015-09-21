@@ -101,13 +101,15 @@ In this section, we go into more detail on:
 
 The following are available locations along with a description and an image showing their location within Discourse to display ads for all platforms.
 
-Location Name | Description | Image of Location
+Location Name | Description
 --- | --- | ---
-Topic List Top | Ad will appear at the header of Discourse homepage | [Topic list top](https://www.dropbox.com/sc/cpm9i6jj5dtivjc/AACmgp6qxI-8kMp3F2VVWsvba?dl=1) 
-Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics | [Topic above post stream](https://www.dropbox.com/sc/1ze0dikrmkfj0wg/AADMGWGVsECEOwZdnmSLGkhZa?dl=1)
-Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics | [Topic above suggested](https://www.dropbox.com/sc/y3p2iqwggb5he0e/AAAbrTqZCAYgIhIYE4necmfXa?dl=1)
-Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```.  | [Post bottom](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
+Topic List Top | Ad will appear at the header of Discourse homepage 
+Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics 
+Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics 
+Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```.  
 
+
+![](https://www.dropbox.com/sc/rm5bcn8c85niul1/AAAUVW-hn56XtCl_XTNlE19Ra?dl=1)
 
 ### Advertisement Sizes Supported
 
