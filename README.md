@@ -2,7 +2,8 @@
 
 This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
 
-**Authors**: 		[Sarah Ni](https://github.com/cyberkoi) & [Vi Nguyen](https://github.com/ladydanger)  		
+**Authors**: 		[Sarah Ni](https://github.com/cyberkoi) & [Vi Nguyen](https://github.com/ladydanger)
+**Version**: 		1.0.1
 **Contributors**: 					See credits section below		
 **License**: 			MIT License		
 **Supported Discourse Version**: 1.4	
@@ -67,7 +68,6 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 3. Get the Advertisement Tag from your Ad Platform - see the images below to see what a tag looks like.
 4. Add parts of your ad code to Discourse's site settings for the locations you wish your ad to appear.  Refer to image for your ad platform to where parts of your ad tag should go.  For more detail about where the ad will appear
 5. Choose Your Ad Size - this is the same size that you've put into your ad provider to create your ad.  Go to the **Plugin Features** heading to see a list of supported Ad sizes.
-6. To disable your ad (and not have it display), click on the disable button.
 
 ##### Adsense Advertisement Tag to Discourse's Site Settings
 
