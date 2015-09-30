@@ -35,4 +35,46 @@ register_css <<CSS
   margin: 0 auto;
 }
 
+.amazon-product-links .amazon-product-links-label {
+  width: 728px;
+  margin: 0 auto;
+}
+
+.amazon-product-links .amazon-product-links-label h2 {
+  margin: 4px 0 !important;
+  color: #858a8c;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.google-adsense .google-adsense-label {
+  width: 728px;
+  margin: 0 auto;
+}
+
+.google-adsense .google-adsense-label h2 {
+  margin: 4px 0 !important;
+  color: #858a8c;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.google-dfp-ad .google-dfp-ad-label {
+  width: 728px;
+  margin: 0 auto;
+}
+
+.google-dfp-ad .google-dfp-ad-label h2 {
+  margin: 4px 0 !important;
+  color: #858a8c;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
 CSS
