@@ -197,7 +197,7 @@ export default Ember.Component.extend({
 
     var self = this;
 
-    if (this.get('loadedGoogletag')) {
+    if (this.get('loadedGoogletag') && this.get('refreshOnChange')) {
       googletag.cmd.push(function() {
         ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : null);
         googletag.pubads().refresh([ad]);

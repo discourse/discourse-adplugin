@@ -2,7 +2,7 @@
   {{google-adsense placement="topic-list-top"}}
 {{/if}}
 {{#if siteSettings.dfp_topic_list_top_code}}
-  {{google-dfp-ad placement="topic-list-top" category=category.slug}}
+  {{google-dfp-ad placement="topic-list-top" refreshOnChange=loading category=category.slug}}
 {{/if}}
 {{#if siteSettings.amazon_topic_list_top_src_code}}
   {{amazon-product-links placement="topic-list-top"}}
