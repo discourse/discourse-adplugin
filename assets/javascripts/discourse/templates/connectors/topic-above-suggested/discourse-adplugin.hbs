@@ -2,7 +2,7 @@
   {{google-adsense placement="topic-above-suggested"}}
 {{/if}}
 {{#if siteSettings.dfp_topic_above_suggested_code}}
-  {{google-dfp-ad placement="topic-above-suggested" refreshOnChange=model.id}}
+  {{google-dfp-ad placement="topic-above-suggested" refreshOnChange=model.id category=model.category.slug}}
 {{/if}}
 {{#if siteSettings.amazon_topic_above_suggested_src_code}}
   {{amazon-product-links placement="topic-above-suggested"}}
