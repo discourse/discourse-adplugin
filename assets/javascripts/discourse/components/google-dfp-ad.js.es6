@@ -199,7 +199,7 @@ export default Ember.Component.extend({
 
     if (this.get('loadedGoogletag') && this.get('refreshOnChange')) {
       googletag.cmd.push(function() {
-        ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : null);
+        ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : '0');
         googletag.pubads().refresh([ad]);
       });
     }
@@ -212,7 +212,7 @@ export default Ember.Component.extend({
       googletag.cmd.push(function() {
         var ad = defineSlot(self.get('placement'), self.siteSettings);
         if (ad) {
-          ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : null);
+          ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : '0');
           googletag.display(self.get('divId'));
           googletag.pubads().refresh([ad]);
         }
