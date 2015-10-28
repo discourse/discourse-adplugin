@@ -187,6 +187,10 @@ export default Ember.Component.extend({
     return `width: ${this.get('const_mobile_width')}px; height: ${this.get('const_mobile_height')}px;`.htmlSafe();
   }.property('const_mobile_width', 'const_mobile_height'),
 
+  adTitleStyleMobile: function() {
+    return `width: ${this.get('const_mobile_width')}px;`.htmlSafe();
+  }.property('const_mobile_width'),
+
   checkTrustLevels: function() {
     return !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level));
   }.property('trust_level'),

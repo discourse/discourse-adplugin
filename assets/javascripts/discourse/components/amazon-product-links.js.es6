@@ -101,6 +101,10 @@ export default Ember.Component.extend({
     return `width: ${this.get('mobile_amazon_width')}px; height: ${this.get('mobile_amazon_height')}px;`.htmlSafe();
   }.property('mobile_amazon_width', 'mobile_amazon_height'),
 
+  adTitleStyleMobile: function() {
+    return `width: ${this.get('mobile_amazon_width')}px;`.htmlSafe();
+  }.property('mobile_amazon_width'),
+
   userInput: function() {
     return `${this.get('user_input')}`.htmlSafe();
   }.property('user_input'),
