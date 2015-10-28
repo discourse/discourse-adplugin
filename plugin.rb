@@ -6,7 +6,7 @@
 register_css <<CSS
 
 .google-dfp-ad {
-  padding: 3px;
+  padding: 3px 0;
   margin-bottom: 10px;
   clear: both;
 }
@@ -16,7 +16,7 @@ register_css <<CSS
 }
 
 .google-adsense {
-  padding: 3px;
+  padding: 3px 0;
   margin-bottom: 10px;
   clear: both;
 }
