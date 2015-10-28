@@ -195,8 +195,11 @@ export default Ember.Component.extend({
     var ad = ads[this.get('placement')];
     if (!ad) { return; }
 
-    if (this.get('loadedGoogletag')) {
+    var self = this;
+
+    if (this.get('loadedGoogletag') && this.get('refreshOnChange')) {
       googletag.cmd.push(function() {
+        ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : null);
         googletag.pubads().refresh([ad]);
       });
     }
@@ -209,6 +212,7 @@ export default Ember.Component.extend({
       googletag.cmd.push(function() {
         var ad = defineSlot(self.get('placement'), self.siteSettings);
         if (ad) {
+          ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : null);
           googletag.display(self.get('divId'));
           googletag.pubads().refresh([ad]);
         }
