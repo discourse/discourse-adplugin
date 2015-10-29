@@ -119,6 +119,10 @@ export default Ember.Component.extend({
   adWrapperStyleMobile: function() {
     return `width: ${this.get('ad_mobile_width')}px; height: ${this.get('ad_mobile_height')}px; margin:0 auto;`.htmlSafe();
   }.property('ad_mobile_width', 'ad_mobile_height'),
+  
+  adTitleStyleMobile: function() {
+    return `width: ${this.get('ad_mobile_width')}px;`.htmlSafe();
+  }.property('ad_mobile_width'),
 
   adInsStyleMobile: function() {
     return `display: inline-block; ${this.get('adWrapperStyleMobile')}`.htmlSafe();
