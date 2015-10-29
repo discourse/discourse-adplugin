@@ -1,7 +1,7 @@
 {{#if checkTrustLevels}}
-  <div class="google-adsense-label"><h2>ADVERTISEMENT</h2></div>
   {{#if site.mobileView}} 
     <div style={{adWrapperStyleMobile}}>
+      <div class="google-adsense-label" style={{adTitleStyleMobile}}><h2>ADVERTISEMENT</h2></div>
       <ins class="adsbygoogle"
         style={{adInsStyleMobile}}
         data-ad-client="ca-pub-{{publisher_id}}"
@@ -13,6 +13,7 @@
       </script>
     </div>
   {{else}}
+    <div class="google-adsense-label"><h2>ADVERTISEMENT</h2></div>
     <div style={{adWrapperStyle}}>
       <ins class="adsbygoogle"
         style={{adInsStyle}}

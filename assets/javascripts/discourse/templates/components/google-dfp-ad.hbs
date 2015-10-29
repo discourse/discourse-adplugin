@@ -1,9 +1,10 @@
 {{#if checkTrustLevels}}
-  <div class="google-dfp-ad-label"><h2>ADVERTISEMENT</h2></div>
 
   {{#if site.mobileView}}
+    <div class="google-dfp-ad-label" style={{adTitleStyleMobile}}><h2>ADVERTISEMENT</h2></div>
     <div id={{divId}} style={{adWrapperStyleMobile}} class="dfp-ad-unit" align=center></div>
   {{else}}
+    <div class="google-dfp-ad-label"><h2>ADVERTISEMENT</h2></div>
     <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center></div>
   {{/if}}
 {{/if}}
