@@ -186,6 +186,10 @@ export default Ember.Component.extend({
   adWrapperStyleMobile: function() {
     return `width: ${this.get('const_mobile_width')}px; height: ${this.get('const_mobile_height')}px;`.htmlSafe();
   }.property('const_mobile_width', 'const_mobile_height'),
+  
+  adTitleStyleMobile: function() {
+    return `width: ${this.get('const_mobile_width')}px;`.htmlSafe();
+  }.property('const_mobile_width'),
 
   adTitleStyleMobile: function() {
     return `width: ${this.get('const_mobile_width')}px;`.htmlSafe();
