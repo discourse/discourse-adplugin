@@ -17,10 +17,12 @@ adsense_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - 970*250 - interactive billboard
+      - 970*90 - large leaderboard
+      - 920*70 - medium leaderboard
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
-      - 970*90 - large leaderboard
       - 468*60 - banner
       - 234*60 - half banner
       - 125*125 - button
@@ -38,10 +40,12 @@ adsense_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - 970*250 - interactive billboard
+      - 970*90 - large leaderboard
+      - 920*70 - medium leaderboard
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
-      - 970*90 - large leaderboard
       - 468*60 - banner
       - 234*60 - half banner
       - 125*125 - button
@@ -59,10 +63,12 @@ adsense_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - 970*250 - interactive billboard
+      - 970*90 - large leaderboard
+      - 920*70 - medium leaderboard
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
-      - 970*90 - large leaderboard
       - 468*60 - banner
       - 234*60 - half banner
       - 125*125 - button
@@ -80,10 +86,12 @@ adsense_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - 970*250 - interactive billboard
+      - 970*90 - large leaderboard
+      - 920*70 - medium leaderboard
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
-      - 970*90 - large leaderboard
       - 468*60 - banner
       - 234*60 - half banner
   adsense_nth_post_code:
@@ -109,6 +117,7 @@ dfp_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - 970*250 - interactive billboard
       - 970*90 - large leaderboard
       - 920*70 - medium leaderboard
       - 728*90 - leaderboard
@@ -139,10 +148,12 @@ dfp_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - 970*250 - interactive billboard
+      - 970*90 - large leaderboard
+      - 920*70 - medium leaderboard
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
-      - 970*90 - large leaderboard
       - 468*60 - banner
       - 234*60 - half banner
       - 125*125 - button
@@ -168,10 +179,12 @@ dfp_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - 970*250 - interactive billboard
+      - 970*90 - large leaderboard
+      - 920*70 - medium leaderboard
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
-      - 970*90 - large leaderboard
       - 468*60 - banner
       - 234*60 - half banner
       - 125*125 - button
@@ -200,10 +213,12 @@ dfp_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - 970*250 - interactive billboard
+      - 970*90 - large leaderboard
+      - 920*70 - medium leaderboard
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
-      - 970*90 - large leaderboard
       - 468*60 - banner
       - 234*60 - half banner
   dfp_target_post_bottom_key_code:
