@@ -4,12 +4,10 @@ var ad_width = '';
 var ad_height = '';
 var ad_code = '';
 var ad_mobile_width = 320;
-var ad_mobile_height = 50;
+var ad_mobile_height = 100;
 var ad_mobile_code = '';
 var currentUser = Discourse.User.current();
 var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
-var mobile_width = 320;
-var mobile_height = 50;
 
 
 function splitWidthInt(value) {
@@ -39,7 +37,7 @@ PageTracker.current().on('change', function(url) {
 // Reinitialize script so that the ad can reload
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
   ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
 });
 
@@ -47,7 +45,7 @@ var data = {
   "topic-list-top" : {},
   "topic-above-post-stream" : {},
   "topic-above-suggested" : {},
-  "post-bottom" : {}  
+  "post-bottom" : {}
 }
 
 
@@ -56,10 +54,10 @@ if (Discourse.SiteSettings.adsense_publisher_code) {
       data["topic-list-top"]["ad_code"] = Discourse.SiteSettings.adsense_topic_list_top_code;
       data["topic-list-top"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
       data["topic-list-top"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
-    } 
+    }
     if (Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_mobile_topic_list_top_code) {
       data["topic-list-top"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_list_top_code;
-    }  
+    }
     if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_topic_above_post_stream_code) {
       data["topic-above-post-stream"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_post_stream_code;
       data["topic-above-post-stream"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes));
@@ -97,9 +95,6 @@ export default Ember.Component.extend({
   ad_mobile_width: ad_mobile_width,
   ad_mobile_height: ad_mobile_height,
 
-  mobile_width: mobile_width,
-  mobile_height: mobile_height,
-
   init: function() {
     this.set('ad_width', data[this.placement]["ad_width"] );
     this.set('ad_height', data[this.placement]["ad_height"] );
@@ -107,7 +102,7 @@ export default Ember.Component.extend({
     this.set('ad_mobile_code', data[this.placement]["ad_mobile_code"] );
     this._super();
   },
-  
+
   adWrapperStyle: function() {
     return `width: ${this.get('ad_width')}px; height: ${this.get('ad_height')}px; margin:0 auto;`.htmlSafe();
   }.property('ad_width', 'ad_height'),
@@ -119,7 +114,7 @@ export default Ember.Component.extend({
   adWrapperStyleMobile: function() {
     return `width: ${this.get('ad_mobile_width')}px; height: ${this.get('ad_mobile_height')}px; margin:0 auto;`.htmlSafe();
   }.property('ad_mobile_width', 'ad_mobile_height'),
-  
+
   adTitleStyleMobile: function() {
     return `width: ${this.get('ad_mobile_width')}px;`.htmlSafe();
   }.property('ad_mobile_width'),
