@@ -221,6 +221,12 @@ dfp_plugin:
     default: ''
     type: value_list
     client: true
+  dfp_mobile_ad_width:
+      client: true
+      default: '320'
+  dfp_mobile_ad_height:
+      client: true
+      default: '50'
 
 amazon_plugin:
   amazon_through_trust_level:

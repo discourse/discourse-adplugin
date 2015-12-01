@@ -23,6 +23,8 @@ it:
         dfp_post_bottom_ad_sizes: "Scegli la dimensione dell' inserzione"
         dfp_target_post_bottom_key_code: "Immissione chaivi per targeting personalizzato - livello inventario"
         dfp_target_post_bottom_value_code: "Immissione valori per targeting personalizzato - livello inventario"
+        dfp_mobile_ad_width: "Inserisci la larghezza dell' inserzione da usare su mobile"
+        dfp_mobile_ad_height: "Inserisci l' altezza dell' inserzione da usare su mobile"
         adsense_publisher_code: "Inserisci il tuo publisher ID"
         adsense_through_trust_level: "Mostra inserzioni ai tuoi utenti basati sul livello di fiducia"
         adsense_topic_list_top_code: "Inserisci il codice inserzione da mostrare in cima alla lista degli argomenti"

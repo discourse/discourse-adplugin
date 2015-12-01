@@ -3,8 +3,8 @@ import loadScript from 'discourse/lib/load-script';
 
 var const_width = '';
 var const_height = '';
-var const_mobile_width = 320;
-var const_mobile_height = 100;
+var const_mobile_width = Discourse.SiteSettings.dfp_mobile_ad_width;
+var const_mobile_height = Discourse.SiteSettings.dfp_mobile_ad_height;
 var currentUser = Discourse.User.current();
 
 var _loaded = false,
