@@ -4,12 +4,12 @@ var ad_width = '';
 var ad_height = '';
 var ad_code = '';
 var ad_mobile_width = 320;
-var ad_mobile_height = 80;
+var ad_mobile_height = 120;
 var ad_mobile_code = '';
 var currentUser = Discourse.User.current();
 var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
 var mobile_width = 320;
-var mobile_height = 80;
+var mobile_height = 120;
 
 
 function splitWidthInt(value) {
