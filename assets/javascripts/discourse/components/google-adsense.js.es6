@@ -9,7 +9,7 @@ var ad_mobile_code = '';
 var currentUser = Discourse.User.current();
 var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
 var mobile_width = 320;
-var mobile_height = 60;
+var mobile_height = 80;
 
 
 function splitWidthInt(value) {
