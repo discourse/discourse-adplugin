@@ -1,3 +1,4 @@
+import { withPluginApi } from 'discourse/lib/plugin-api';
 import PageTracker from 'discourse/lib/page-tracker';
 
 var ad_width = '';
@@ -22,8 +23,8 @@ function splitHeightInt(value) {
 }
 
 // On each page change, the child is removed and elements part of Adsense's googleads are removed/undefined.
-PageTracker.current().on('change', function() {
-  var ads = document.getElementById("adsense_loader");
+function changePage() {
+  const ads = document.getElementById("adsense_loader");
   if (ads) {
     ads.parentNode.removeChild(ads);
     for (var key in window) {
@@ -36,10 +37,19 @@ PageTracker.current().on('change', function() {
   }
 
   // Reinitialize script so that the ad can reload
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
+  const ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
   ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
-});
+  const s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+}
+
+function oldPluginCode() {
+  PageTracker.current().on('change', changePage);
+}
+
+function watchPageChanges(api) {
+  api.onPageChange(changePage);
+}
+withPluginApi('0.1', watchPageChanges, { noApi: oldPluginCode });
 
 var data = {
   "topic-list-top" : {},

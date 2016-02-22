@@ -1,5 +1,4 @@
 import loadScript from 'discourse/lib/load-script';
-//import PageTracker from 'discourse/lib/page-tracker';
 
 var const_width = '';
 var const_height = '';
@@ -71,11 +70,11 @@ function defineSlot(placement, settings) {
     const_width = parseInt(splitWidthInt(settings.dfp_topic_list_top_ad_sizes));
     const_height = parseInt(splitHeightInt(settings.dfp_topic_list_top_ad_sizes));
     if (Discourse.Mobile.mobileView) {
-      var topic_list_top_mobile = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_mobile_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
+      var topic_list_top_mobile = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_mobile_topic_list_top_code, [320,50], 'div-gpt-ad-topic-list-top').addService(window.googletag.pubads());
       ads['topic-list-top'] = topic_list_top_mobile;
       custom_targeting((keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code)), (keyParse(settings.dfp_target_topic_list_top_value_code)), topic_list_top_mobile);
     } else {
-      var topic_list_top = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.dfp_topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.dfp_topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(googletag.pubads());
+      var topic_list_top = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_list_top_code, [parseInt(splitWidthInt(settings.dfp_topic_list_top_ad_sizes)), parseInt(splitHeightInt(settings.dfp_topic_list_top_ad_sizes))], 'div-gpt-ad-topic-list-top').addService(window.googletag.pubads());
       ads['topic-list-top'] = topic_list_top;
       custom_targeting((keyParse(settings.dfp_target_topic_list_top_key_code)), (keyParse(settings.dfp_target_topic_list_top_value_code)), topic_list_top);
     }
@@ -87,12 +86,12 @@ function defineSlot(placement, settings) {
     const_width = parseInt(splitWidthInt(settings.dfp_topic_above_post_stream_ad_sizes));
     const_height = parseInt(splitHeightInt(settings.dfp_topic_above_post_stream_ad_sizes));
     if (Discourse.Mobile.mobileView) {
-      var topic_above_post_stream_mobile = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_mobile_topic_above_post_stream_code, [320,50], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
+      var topic_above_post_stream_mobile = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_mobile_topic_above_post_stream_code, [320,50], 'div-gpt-ad-topic-above-post-stream').addService(window.googletag.pubads());
       ads['topic-above-post-stream'] = topic_above_post_stream_mobile;
       custom_targeting((keyParse(settings.dfp_target_topic_above_post_stream_key_code)), (keyParse(settings.dfp_target_topic_above_post_stream_value_code)), topic_above_post_stream_mobile);
     }
     else {
-      var topic_above_post_stream = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.dfp_topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.dfp_topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(googletag.pubads());
+      var topic_above_post_stream = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_post_stream_code, [parseInt(splitWidthInt(settings.dfp_topic_above_post_stream_ad_sizes)), parseInt(splitHeightInt(settings.dfp_topic_above_post_stream_ad_sizes))], 'div-gpt-ad-topic-above-post-stream').addService(window.googletag.pubads());
       ads['topic-above-post-stream'] = topic_above_post_stream;
       custom_targeting((keyParse(settings.dfp_target_topic_above_post_stream_key_code)), (keyParse(settings.dfp_target_topic_above_post_stream_value_code)), topic_above_post_stream);
     }
@@ -104,12 +103,12 @@ function defineSlot(placement, settings) {
     const_width = parseInt(splitWidthInt(settings.dfp_topic_above_suggested_ad_sizes));
     const_height = parseInt(splitHeightInt(settings.dfp_topic_above_suggested_ad_sizes));
     if (Discourse.Mobile.mobileView) {
-      var topic_above_suggested_mobile = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_mobile_topic_above_suggested_code, [320,50], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
+      var topic_above_suggested_mobile = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_mobile_topic_above_suggested_code, [320,50], 'div-gpt-ad-topic-above-suggested').addService(window.googletag.pubads());
       ads['topic-above-suggested'] = topic_above_suggested_mobile;
       custom_targeting((keyParse(settings.dfp_target_topic_above_suggested_key_code)), (keyParse(settings.dfp_target_topic_above_suggested_value_code)), topic_above_suggested_mobile);
     }
     else {
-      var topic_above_suggested = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.dfp_topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.dfp_topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(googletag.pubads());
+      var topic_above_suggested = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_suggested_code, [parseInt(splitWidthInt(settings.dfp_topic_above_suggested_ad_sizes)), parseInt(splitHeightInt(settings.dfp_topic_above_suggested_ad_sizes))], 'div-gpt-ad-topic-above-suggested').addService(window.googletag.pubads());
       ads['topic-above-suggested'] = topic_above_suggested;
       custom_targeting((keyParse(settings.dfp_target_topic_above_suggested_key_code)), (keyParse(settings.dfp_target_topic_above_suggested_value_code)), topic_above_suggested);
     }
@@ -121,12 +120,12 @@ function defineSlot(placement, settings) {
     const_width = parseInt(splitWidthInt(settings.dfp_post_bottom_ad_sizes));
     const_height = parseInt(splitHeightInt(settings.dfp_post_bottom_ad_sizes));
     if (Discourse.Mobile.mobileView) {
-      var post_bottom_mobile = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_mobile_post_bottom_code, [320,50], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
+      var post_bottom_mobile = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_mobile_post_bottom_code, [320,50], 'div-gpt-ad-post-bottom').addService(window.googletag.pubads());
       ads['post-bottom'] = post_bottom_mobile;
       custom_targeting((keyParse(settings.dfp_target_post_bottom_key_code)), (keyParse(settings.dfp_target_post_bottom_value_code)), post_bottom_mobile);
     }
     else {
-      var post_bottom = googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.dfp_post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.dfp_post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(googletag.pubads());
+      var post_bottom = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_post_bottom_code, [parseInt(splitWidthInt(settings.dfp_post_bottom_ad_sizes)), parseInt(splitHeightInt(settings.dfp_post_bottom_ad_sizes))], 'div-gpt-ad-post-bottom').addService(window.googletag.pubads());
       ads['post-bottom'] = post_bottom;
       custom_targeting((keyParse(settings.dfp_target_post_bottom_key_code)), (keyParse(settings.dfp_target_post_bottom_value_code)), post_bottom);
     }
@@ -135,7 +134,7 @@ function defineSlot(placement, settings) {
   }
 }
 
-function loadGoogle(settings) {
+function loadGoogle() {
   if (_loaded) {
     return Ember.RSVP.resolve();
   }
@@ -145,17 +144,17 @@ function loadGoogle(settings) {
   }
 
   // The boilerplate code
-  var dfpSrc = (('https:' == document.location.protocol) ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+  var dfpSrc = (('https:' === document.location.protocol) ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
   _promise = loadScript(dfpSrc, { scriptTag: true }).then(function() {
     _loaded = true;
     if (window.googletag === undefined) {
       console.log('googletag is undefined!');
     }
 
-    googletag.cmd.push(function() {
-      googletag.pubads().enableSingleRequest();
-      googletag.pubads().disableInitialLoad(); // we always use refresh() to fetch the ads
-      googletag.enableServices();
+    window.googletag.cmd.push(function() {
+      window.googletag.pubads().enableSingleRequest();
+      window.googletag.pubads().disableInitialLoad(); // we always use refresh() to fetch the ads
+      window.googletag.enableServices();
     });
   });
 
@@ -202,9 +201,9 @@ export default Ember.Component.extend({
     var self = this;
 
     if (this.get('loadedGoogletag') && this.get('refreshOnChange')) {
-      googletag.cmd.push(function() {
+      window.googletag.cmd.push(function() {
         ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : '0');
-        googletag.pubads().refresh([ad]);
+        window.googletag.pubads().refresh([ad]);
       });
     }
   }.observes('refreshOnChange'),
@@ -213,12 +212,12 @@ export default Ember.Component.extend({
     var self = this;
     loadGoogle(this.siteSettings).then(function() {
       self.set('loadedGoogletag', true);
-      googletag.cmd.push(function() {
+      window.googletag.cmd.push(function() {
         var ad = defineSlot(self.get('placement'), self.siteSettings);
         if (ad) {
           ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : '0');
-          googletag.display(self.get('divId'));
-          googletag.pubads().refresh([ad]);
+          window.googletag.display(self.get('divId'));
+          window.googletag.pubads().refresh([ad]);
         }
       });
     });
