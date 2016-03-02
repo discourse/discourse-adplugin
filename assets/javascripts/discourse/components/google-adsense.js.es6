@@ -1,28 +1,28 @@
+import { withPluginApi } from 'discourse/lib/plugin-api';
 import PageTracker from 'discourse/lib/page-tracker';
 
 var ad_width = '';
 var ad_height = '';
-var ad_code = '';
 var ad_mobile_width = 320;
-var ad_mobile_height = 100;
-var ad_mobile_code = '';
+var ad_mobile_height = 50;
 var currentUser = Discourse.User.current();
 var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
 
+const mobileView = Discourse.Site.currentProp('mobileView');
 
 function splitWidthInt(value) {
-    var str = value.substring(0, 3);
-    return str.trim();
+  var str = value.substring(0, 3);
+  return str.trim();
 }
 
 function splitHeightInt(value) {
-    var str = value.substring(4, 7);
-    return str.trim();
+  var str = value.substring(4, 7);
+  return str.trim();
 }
 
 // On each page change, the child is removed and elements part of Adsense's googleads are removed/undefined.
-PageTracker.current().on('change', function(url) {
-  var ads = document.getElementById("adsense_loader");
+function changePage() {
+  const ads = document.getElementById("adsense_loader");
   if (ads) {
     ads.parentNode.removeChild(ads);
     for (var key in window) {
@@ -34,56 +34,62 @@ PageTracker.current().on('change', function(url) {
     }
   }
 
-// Reinitialize script so that the ad can reload
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
+  // Reinitialize script so that the ad can reload
+  const ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
   ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  const s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+}
 
-});
+function oldPluginCode() {
+  PageTracker.current().on('change', changePage);
+}
+
+function watchPageChanges(api) {
+  api.onPageChange(changePage);
+}
+withPluginApi('0.1', watchPageChanges, { noApi: oldPluginCode });
 
 var data = {
   "topic-list-top" : {},
   "topic-above-post-stream" : {},
   "topic-above-suggested" : {},
   "post-bottom" : {}
-}
-
+};
 
 if (Discourse.SiteSettings.adsense_publisher_code) {
-    if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_topic_list_top_code) {
-      data["topic-list-top"]["ad_code"] = Discourse.SiteSettings.adsense_topic_list_top_code;
-      data["topic-list-top"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
-      data["topic-list-top"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
-    }
-    if (Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_mobile_topic_list_top_code) {
-      data["topic-list-top"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_list_top_code;
-    }
-    if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_topic_above_post_stream_code) {
-      data["topic-above-post-stream"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_post_stream_code;
-      data["topic-above-post-stream"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes));
-      data["topic-above-post-stream"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes));
-    }
-    if (Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_code) {
-      data["topic-above-post-stream"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_code;
-    }
-    if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_topic_above_suggested_code) {
-      data["topic-above-suggested"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_suggested_code;
-      data["topic-above-suggested"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes));
-      data["topic-above-suggested"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes));
-    }
-    if (Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code) {
-      data["topic-above-suggested"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code;
-    }
-    if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_post_bottom_code) {
-      data["post-bottom"]["ad_code"] = Discourse.SiteSettings.adsense_post_bottom_code;
-      data["post-bottom"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_post_bottom_ad_sizes));
-      data["post-bottom"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_post_bottom_ad_sizes));
-    }
-    if (Discourse.Mobile.mobileView && Discourse.SiteSettings.adsense_mobile_post_bottom_code) {
-      data["post-bottom"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_post_bottom_code;
-    }
+  if (!mobileView && Discourse.SiteSettings.adsense_topic_list_top_code) {
+    data["topic-list-top"]["ad_code"] = Discourse.SiteSettings.adsense_topic_list_top_code;
+    data["topic-list-top"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
+    data["topic-list-top"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
+  }
+  if (mobileView && Discourse.SiteSettings.adsense_mobile_topic_list_top_code) {
+    data["topic-list-top"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_list_top_code;
+  }
+  if (!mobileView && Discourse.SiteSettings.adsense_topic_above_post_stream_code) {
+    data["topic-above-post-stream"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_post_stream_code;
+    data["topic-above-post-stream"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes));
+    data["topic-above-post-stream"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes));
+  }
+  if (mobileView && Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_code) {
+    data["topic-above-post-stream"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_code;
+  }
+  if (!mobileView && Discourse.SiteSettings.adsense_topic_above_suggested_code) {
+    data["topic-above-suggested"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_suggested_code;
+    data["topic-above-suggested"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes));
+    data["topic-above-suggested"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes));
+  }
+  if (mobileView && Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code) {
+    data["topic-above-suggested"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code;
+  }
+  if (!mobileView && Discourse.SiteSettings.adsense_post_bottom_code) {
+    data["post-bottom"]["ad_code"] = Discourse.SiteSettings.adsense_post_bottom_code;
+    data["post-bottom"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_post_bottom_ad_sizes));
+    data["post-bottom"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_post_bottom_ad_sizes));
+  }
+  if (mobileView && Discourse.SiteSettings.adsense_mobile_post_bottom_code) {
+    data["post-bottom"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_post_bottom_code;
+  }
 }
-
 
 export default Ember.Component.extend({
   classNames: ['google-adsense'],
