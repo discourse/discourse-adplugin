@@ -2,27 +2,27 @@ import loadScript from 'discourse/lib/load-script';
 
 var const_width = '';
 var const_height = '';
-var const_mobile_width = 320;
-var const_mobile_height = 50;
+var const_mobile_width = Discourse.SiteSettings.dfp_mobile_ad_width;
+var const_mobile_height = Discourse.SiteSettings.dfp_mobile_ad_height;
 var currentUser = Discourse.User.current();
 
 var _loaded = false,
-    _promise = null,
-    ads = {};
+  _promise = null,
+  ads = {};
 
 function splitWidthInt(value) {
-    var str = value.substring(0, 3);
-    return str.trim();
+  var str = value.substring(0, 3);
+  return str.trim();
 }
 
 function splitHeightInt(value) {
-    var str = value.substring(4, 7);
-    return str.trim();
+  var str = value.substring(4, 7);
+  return str.trim();
 }
 
 // This creates an array for the values of the custom targeting key
 function valueParse(value) {
-  var final = value.replace(/ /g,'');
+  var final = value.replace(/ /g, '');
   final = final.replace(/['"]+/g, '');
   final = final.split(',');
   return final;
@@ -190,13 +190,19 @@ export default Ember.Component.extend({
     return `width: ${this.get('const_mobile_width')}px;`.htmlSafe();
   }.property('const_mobile_width'),
 
+  adTitleStyleMobile: function() {
+    return `width: ${this.get('const_mobile_width')}px;`.htmlSafe();
+  }.property('const_mobile_width'),
+
   checkTrustLevels: function() {
     return !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level));
   }.property('trust_level'),
 
   refreshAd: function() {
     var ad = ads[this.get('placement')];
-    if (!ad) { return; }
+    if (!ad) {
+      return;
+    }
 
     var self = this;
 

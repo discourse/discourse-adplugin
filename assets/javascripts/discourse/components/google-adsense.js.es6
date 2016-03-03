@@ -7,8 +7,6 @@ var ad_mobile_width = 320;
 var ad_mobile_height = 50;
 var currentUser = Discourse.User.current();
 var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
-var mobile_width = 320;
-var mobile_height = 50;
 
 const mobileView = Discourse.Site.currentProp('mobileView');
 
@@ -103,9 +101,6 @@ export default Ember.Component.extend({
   ad_mobile_width: ad_mobile_width,
   ad_mobile_height: ad_mobile_height,
 
-  mobile_width: mobile_width,
-  mobile_height: mobile_height,
-
   init: function() {
     this.set('ad_width', data[this.placement]["ad_width"] );
     this.set('ad_height', data[this.placement]["ad_height"] );
@@ -125,6 +120,10 @@ export default Ember.Component.extend({
   adWrapperStyleMobile: function() {
     return `width: ${this.get('ad_mobile_width')}px; height: ${this.get('ad_mobile_height')}px; margin:0 auto;`.htmlSafe();
   }.property('ad_mobile_width', 'ad_mobile_height'),
+
+  adTitleStyleMobile: function() {
+    return `width: ${this.get('ad_mobile_width')}px;`.htmlSafe();
+  }.property('ad_mobile_width'),
 
   adTitleStyleMobile: function() {
     return `width: ${this.get('ad_mobile_width')}px;`.htmlSafe();
