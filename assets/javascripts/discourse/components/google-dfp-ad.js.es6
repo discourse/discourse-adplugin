@@ -116,6 +116,23 @@ function defineSlot(placement, settings) {
     return ads['topic-above-suggested'];
   }
 
+  if (placement === "topic-above-footer" && settings.dfp_topic_above_footer_code && settings.dfp_topic_above_footer_ad_sizes) {
+    const_width = parseInt(splitWidthInt(settings.dfp_topic_above_footer_ad_sizes));
+    const_height = parseInt(splitHeightInt(settings.dfp_topic_above_footer_ad_sizes));
+    if (Discourse.Mobile.mobileView) {
+      var topic_above_footer_mobile = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_mobile_topic_above_footer_code, [320,50], 'div-gpt-ad-topic-above-footer').addService(window.googletag.pubads());
+      ads['topic-above-footer'] = topic_above_footer_mobile;
+      custom_targeting((keyParse(settings.dfp_target_topic_above_footer_key_code)), (keyParse(settings.dfp_target_topic_above_footer_value_code)), topic_above_footer_mobile);
+    }
+    else {
+      var topic_above_footer = window.googletag.defineSlot('/' + settings.dfp_publisher_id + '/' + settings.dfp_topic_above_footer_code, [parseInt(splitWidthInt(settings.dfp_topic_above_footer_ad_sizes)), parseInt(splitHeightInt(settings.dfp_topic_above_footer_ad_sizes))], 'div-gpt-ad-topic-above-footer').addService(window.googletag.pubads());
+      ads['topic-above-footer'] = topic_above_footer;
+      custom_targeting((keyParse(settings.dfp_target_topic_above_footer_key_code)), (keyParse(settings.dfp_target_topic_above_footer_value_code)), topic_above_footer);
+    }
+
+    return ads['topic-above-footer'];
+  }
+
   if (placement === "post-bottom" && settings.dfp_post_bottom_code && settings.dfp_post_bottom_ad_sizes) {
     const_width = parseInt(splitWidthInt(settings.dfp_post_bottom_ad_sizes));
     const_height = parseInt(splitHeightInt(settings.dfp_post_bottom_ad_sizes));

@@ -1,0 +1,9 @@
+{{#if siteSettings.adsense_topic_above_footer_code}}
+  {{google-adsense placement="topic-above-footer"}}
+{{/if}}
+{{#if siteSettings.dfp_topic_above_footer_code}}
+  {{google-dfp-ad placement="topic-above-footer" refreshOnChange=model.id category=model.category.slug}}
+{{/if}}
+{{#if siteSettings.amazon_topic_above_footer_src_code}}
+  {{amazon-product-links placement="topic-above-footer"}}
+{{/if}}

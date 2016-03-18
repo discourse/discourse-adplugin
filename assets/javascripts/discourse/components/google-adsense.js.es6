@@ -37,7 +37,7 @@ function changePage() {
   // Reinitialize script so that the ad can reload
   const ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
   ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  const s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+  const s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 }
 
 function oldPluginCode() {
@@ -53,6 +53,7 @@ var data = {
   "topic-list-top" : {},
   "topic-above-post-stream" : {},
   "topic-above-suggested" : {},
+  "topic-above-footer" : {},
   "post-bottom" : {}
 };
 
@@ -81,6 +82,16 @@ if (Discourse.SiteSettings.adsense_publisher_code) {
   if (mobileView && Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code) {
     data["topic-above-suggested"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code;
   }
+
+  if (!mobileView && Discourse.SiteSettings.adsense_topic_above_footer_code) {
+    data["topic-above-footer"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_footer_code;
+    data["topic-above-footer"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_footer_ad_sizes));
+    data["topic-above-footer"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_above_footer_ad_sizes));
+  }
+  if (mobileView && Discourse.SiteSettings.adsense_mobile_topic_above_footer_code) {
+    data["topic-above-footer"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_footer_code;
+  }
+
   if (!mobileView && Discourse.SiteSettings.adsense_post_bottom_code) {
     data["post-bottom"]["ad_code"] = Discourse.SiteSettings.adsense_post_bottom_code;
     data["post-bottom"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_post_bottom_ad_sizes));

@@ -21,7 +21,7 @@ export default {
   	});
 
     withPluginApi('0.1', api => {
-      api.decorateWidget('post:after', dec => {
+      api.decorateWidget('post:after', (dec) => {
         return dec.connect({
           templateName: 'connectors/post-bottom/discourse-adplugin',
           context: 'model'

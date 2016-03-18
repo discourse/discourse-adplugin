@@ -20,7 +20,8 @@ var data = {
   "topic-list-top" : {},
   "topic-above-post-stream" : {},
   "topic-above-suggested" : {},
-  "post-bottom" : {}  
+  "topic-above-footer" : {},
+  "post-bottom" : {}
 }
 
 
@@ -28,13 +29,13 @@ if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_topic_list_top
   data["topic-list-top"]["user_input"] = Discourse.SiteSettings.amazon_topic_list_top_src_code;
   data["topic-list-top"]["amazon_width"] = parseInt(Discourse.SiteSettings.amazon_topic_list_top_ad_width_code);
   data["topic-list-top"]["amazon_height"] = parseInt(Discourse.SiteSettings.amazon_topic_list_top_ad_height_code);
-} 
+}
 
 if (Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_mobile_topic_list_top_src_code) {
   data["topic-list-top"]["user_input_mobile"] = Discourse.SiteSettings.amazon_mobile_topic_list_top_src_code;
   data["topic-list-top"]["mobile_amazon_width"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_list_top_ad_width_code);
   data["topic-list-top"]["mobile_amazon_height"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_list_top_ad_height_code);
-}  
+}
 
 if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_topic_above_post_stream_src_code) {
   data["topic-above-post-stream"]["user_input"] = Discourse.SiteSettings.amazon_topic_above_post_stream_src_code;
@@ -46,7 +47,7 @@ if (Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_mobile_topic_ab
   data["topic-above-post-stream"]["user_input_mobile"] = Discourse.SiteSettings.amazon_mobile_topic_above_post_stream_src_code;
   data["topic-above-post-stream"]["mobile_amazon_width"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_above_post_stream_ad_width_code);
   data["topic-above-post-stream"]["mobile_amazon_height"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_above_post_stream_ad_height_code);
-}  
+}
 
 if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_topic_above_suggested_src_code) {
   data["topic-above-suggested"]["user_input"] = Discourse.SiteSettings.amazon_topic_above_suggested_src_code;
@@ -58,7 +59,20 @@ if (Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_mobile_topic_ab
   data["topic-above-suggested"]["user_input_mobile"] = Discourse.SiteSettings.amazon_mobile_topic_above_suggested_src_code;
   data["topic-above-suggested"]["mobile_amazon_width"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_above_suggested_ad_width_code);
   data["topic-above-suggested"]["mobile_amazon_height"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_above_suggested_ad_height_code);
-}  
+}
+
+if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_topic_above_footer_src_code) {
+  data["topic-above-footer"]["user_input"] = Discourse.SiteSettings.amazon_topic_above_footer_src_code;
+  data["topic-above-footer"]["amazon_width"] = parseInt(Discourse.SiteSettings.amazon_topic_above_footer_ad_width_code);
+  data["topic-above-footer"]["amazon_height"] = parseInt(Discourse.SiteSettings.amazon_topic_above_footer_ad_height_code);
+}
+
+if (Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_mobile_topic_above_footer_src_code) {
+  data["topic-above-footer"]["user_input_mobile"] = Discourse.SiteSettings.amazon_mobile_topic_above_footer_src_code;
+  data["topic-above-footer"]["mobile_amazon_width"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_above_footer_ad_width_code);
+  data["topic-above-footer"]["mobile_amazon_height"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_above_footer_ad_height_code);
+}
+
 
 if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_post_bottom_src_code) {
   data["post-bottom"]["user_input"] = Discourse.SiteSettings.amazon_post_bottom_src_code;
@@ -100,7 +114,7 @@ export default Ember.Component.extend({
   adWrapperStyleMobile: function() {
     return `width: ${this.get('mobile_amazon_width')}px; height: ${this.get('mobile_amazon_height')}px;`.htmlSafe();
   }.property('mobile_amazon_width', 'mobile_amazon_height'),
-  
+
   adTitleStyleMobile: function() {
     return `width: ${this.get('mobile_amazon_width')}px;`.htmlSafe();
   }.property('mobile_amazon_width'),

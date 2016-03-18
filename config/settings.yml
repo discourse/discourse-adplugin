@@ -72,6 +72,28 @@ adsense_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+  adsense_topic_above_footer_code:
+    client: true
+    default: ''
+  adsense_mobile_topic_above_footer_code:
+    client: true
+    default: ''
+  adsense_topic_above_footer_ad_sizes:
+    client: true
+    default: '728*90 - leaderboard'
+    type: enum
+    choices:
+      - 970*250 - interactive billboard
+      - 970*90 - large leaderboard
+      - 728*90 - leaderboard
+      - 336*280 - large rectangle
+      - 300*250 - medium rectangle
+      - 468*60 - banner
+      - 234*60 - half banner
+      - 125*125 - button
+      - 180*150 - small rectangle
+      - 200*200 - small square
+      - 250*250 - square
   adsense_post_bottom_code:
     client: true
     default: ''
@@ -192,6 +214,36 @@ dfp_plugin:
     default: ''
     type: value_list
     client: true
+  dfp_topic_above_footer_code:
+    client: true
+    default: ''
+  dfp_mobile_topic_above_footer_code:
+    client: true
+    default: ''
+  dfp_topic_above_footer_ad_sizes:
+    client: true
+    default: '728*90 - leaderboard'
+    type: enum
+    choices:
+      - 970*250 - interactive billboard
+      - 970*90 - large leaderboard
+      - 728*90 - leaderboard
+      - 336*280 - large rectangle
+      - 300*250 - medium rectangle
+      - 468*60 - banner
+      - 234*60 - half banner
+      - 125*125 - button
+      - 180*150 - small rectangle
+      - 200*200 - small square
+      - 250*250 - square
+  dfp_target_topic_above_footer_key_code:
+    default: ''
+    type: value_list
+    client: true
+  dfp_target_topic_above_footer_value_code:
+    default: ''
+    type: value_list
+    client: true
   dfp_post_bottom_code:
     client: true
     default: ''
@@ -227,7 +279,6 @@ dfp_plugin:
   dfp_mobile_ad_height:
       client: true
       default: '50'
-
 amazon_plugin:
   amazon_through_trust_level:
     client: true
@@ -285,6 +336,24 @@ amazon_plugin:
     client: true
     default: ''
   amazon_mobile_topic_above_suggested_ad_height_code:
+    client: true
+    default: ''
+  amazon_topic_above_footer_src_code:
+    client: true
+    default: ''
+  amazon_topic_above_footer_ad_width_code:
+    client: true
+    default: ''
+  amazon_topic_above_footer_ad_height_code:
+    client: true
+    default: ''
+  amazon_mobile_topic_above_footer_src_code:
+    client: true
+    default: ''
+  amazon_mobile_topic_above_footer_ad_width_code:
+    client: true
+    default: ''
+  amazon_mobile_topic_above_footer_ad_height_code:
     client: true
     default: ''
   amazon_post_bottom_src_code:
