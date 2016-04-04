@@ -115,7 +115,7 @@ export default Ember.Component.extend({
   },
 
   adWrapperStyle: function() {
-    return `width: ${this.get('ad_width')}px; height: ${this.get('ad_height')}px; margin:0 auto;`.htmlSafe();
+    return `width: ${this.get('ad_width')}px; height: ${this.get('ad_height')}px;`.htmlSafe();
   }.property('ad_width', 'ad_height'),
 
   adInsStyle: function() {
@@ -123,7 +123,7 @@ export default Ember.Component.extend({
   }.property('adWrapperStyle'),
 
   adWrapperStyleMobile: function() {
-    return `width: ${this.get('ad_mobile_width')}px; height: ${this.get('ad_mobile_height')}px; margin:0 auto;`.htmlSafe();
+    return `width: ${this.get('ad_mobile_width')}px; height: ${this.get('ad_mobile_height')}px;`.htmlSafe();
   }.property('ad_mobile_width', 'ad_mobile_height'),
 
   adTitleStyleMobile: function() {
