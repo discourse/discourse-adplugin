@@ -1,7 +1,7 @@
 en:
   site_settings:
         dfp_publisher_id: "Input your publisher ID"
-        dfp_through_trust_level: "Show your ads to users based on trust levels"
+        dfp_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
         dfp_topic_list_top_code: "Enter the code of the ad unit to display at topic list top location. This is the short code (max 100 chars) of the ad unit, not the JavaScript code."
         dfp_mobile_topic_list_top_code: "Enter the code of the ad unit to display mobile ads at topic list top location. This is the short code (max 100 chars) of the ad unit, not the JavaScript code."
         dfp_topic_list_top_ad_sizes: "Choose your ad size"
@@ -24,7 +24,7 @@ en:
         dfp_target_post_bottom_key_code: "Input custom targeting keys - inventory Level"
         dfp_target_post_bottom_value_code: "Input custom targeting values - inventory Level"        
         adsense_publisher_code: "Input your publisher ID"
-        adsense_through_trust_level: "Show your ads to users based on trust levels"
+        adsense_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
         adsense_topic_list_top_code: "Enter code of the ad unit to display at topic list top location. This is the number assigned to the ad unit, not the JavaScript code."
         adsense_mobile_topic_list_top_code: "Enter code of the ad unit to display mobile ads at topic list top location. This is the number assigned to the ad unit, not the JavaScript code."
         adsense_topic_list_top_ad_sizes: "Choose your ad sizes"
@@ -38,7 +38,7 @@ en:
         adsense_mobile_post_bottom_code: "Enter code of the ad unit to display mobile ads at post bottom location. This is the number assigned to the ad unit, not the JavaScript code."
         adsense_post_bottom_ad_sizes: "Choose your ad sizes"
         adsense_nth_post_code: "Choose a post number for your ad to show in the post bottom location - this is the nth post"
-        amazon_through_trust_level: "Show your ads to users based on trust levels"
+        amazon_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
         amazon_topic_list_top_src_code: "Enter src code to display at topic list top location"
         amazon_topic_list_top_ad_width_code: "Input your ad width"
         amazon_topic_list_top_ad_height_code: "Input your ad height"
