@@ -63,6 +63,10 @@ register_css <<CSS
   font-weight: normal;
 }
 
+.google-adsense .google-adsense-content {
+  margin: 0 auto;
+}
+
 .google-dfp-ad .google-dfp-ad-label {
   width: 728px;
   margin: 0 auto;
