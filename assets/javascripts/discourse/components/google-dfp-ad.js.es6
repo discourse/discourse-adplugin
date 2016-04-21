@@ -151,12 +151,17 @@ export default Ember.Component.extend({
   width: 728,
   height: 90,
 
+  classNameBindings: ['adUnitClass'],
   classNames: ['google-dfp-ad'],
   loadedGoogletag: false,
   refreshOnChange: null,
 
   divId: function() {
     return "div-gpt-ad-" + this.get('placement');
+  }.property('placement'),
+
+  adUnitClass: function() {
+    return "dfp-ad-" + this.get("placement");
   }.property('placement'),
 
   adWrapperStyle: function() {

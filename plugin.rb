@@ -81,4 +81,10 @@ register_css <<CSS
   font-weight: normal;
 }
 
+.google-dfp-ad.dfp-ad-post-bottom {
+  .google-dfp-ad-label, .dfp-ad-unit {
+    margin: 0 0 0 52px;
+  }
+}
+
 CSS
