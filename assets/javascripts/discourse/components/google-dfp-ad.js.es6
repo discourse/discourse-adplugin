@@ -55,14 +55,12 @@ function custom_targeting(key_array, value_array, location) {
   }
 }
 
-function defineSlot(placement, settings, isMobile) {
-  var ad, width, height, divId;
+function defineSlot(divId, placement, settings, isMobile) {
+  var ad, width, height;
 
-  if (ads[placement]) {
-    return ads[placement];
+  if (ads[divId]) {
+    return ads[divId];
   }
-
-  divId = "div-gpt-ad-" + placement;
 
   if (isMobile) {
     // There are no settings for customizing the mobile ad sizes.
@@ -113,8 +111,8 @@ function defineSlot(placement, settings, isMobile) {
   }
 
   if (ad) {
-    ads[placement] = {ad: ad, width: width, height: height};
-    return ads[placement];
+    ads[divId] = {ad: ad, width: width, height: height};
+    return ads[divId];
   }
 }
 
@@ -157,8 +155,12 @@ export default Ember.Component.extend({
   refreshOnChange: null,
 
   divId: function() {
-    return "div-gpt-ad-" + this.get('placement');
-  }.property('placement'),
+    if (this.get('postNumber')) {
+      return "div-gpt-ad-" + this.get('placement') + '-' + this.get('postNumber');
+    } else {
+      return "div-gpt-ad-" + this.get('placement');
+    }
+  }.property('placement', 'postNumber'),
 
   adUnitClass: function() {
     return "dfp-ad-" + this.get("placement");
@@ -177,7 +179,7 @@ export default Ember.Component.extend({
   }.property('trust_level'),
 
   refreshAd: function() {
-    var slot = ads[this.get('placement')];
+    var slot = ads[this.get('divId')];
     if (!(slot && slot.ad)) { return; }
 
     var self = this,
@@ -196,7 +198,7 @@ export default Ember.Component.extend({
     loadGoogle(this.siteSettings).then(function() {
       self.set('loadedGoogletag', true);
       window.googletag.cmd.push(function() {
-        let slot = defineSlot(self.get('placement'), self.siteSettings, self.site.mobileView);
+        let slot = defineSlot(self.get('divId'), self.get('placement'), self.siteSettings, self.site.mobileView);
         if (slot && slot.ad) {
           slot.ad.setTargeting('discourse-category', self.get('category') ? self.get('category') : '0');
           self.set('width', slot.width);
