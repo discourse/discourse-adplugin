@@ -1,9 +1,9 @@
 {{#if postSpecificCountAdsense}}
-	{{google-adsense placement="post-bottom"}}
+	{{google-adsense placement="post-bottom" postNumber=post_number}}
 {{/if}}
 {{#if postSpecificCountDFP}}
-  {{google-dfp-ad placement="post-bottom" category=topic.category.slug}}
+  {{google-dfp-ad placement="post-bottom" category=topic.category.slug postNumber=post_number}}
 {{/if}}
 {{#if postSpecificCountAmazon}}
-  {{amazon-product-links placement="post-bottom"}}
+  {{amazon-product-links placement="post-bottom" postNumber=post_number}}
 {{/if}}
