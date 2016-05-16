@@ -116,6 +116,15 @@ function defineSlot(divId, placement, settings, isMobile) {
   }
 }
 
+function destroySlot(divId) {
+  if (ads[divId] && window.googletag) {
+    window.googletag.cmd.push(function(){
+      window.googletag.destroySlots([ads[divId].ad]);
+      delete ads[divId];
+    });
+  }
+}
+
 function loadGoogle() {
   if (_loaded) {
     return Ember.RSVP.resolve();
@@ -208,5 +217,9 @@ export default Ember.Component.extend({
         }
       });
     });
-  }.on('didInsertElement')
+  }.on('didInsertElement'),
+
+  cleanup: function() {
+    destroySlot(this.get('divId'));
+  }.on('willDestroyElement')
 });
