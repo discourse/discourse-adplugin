@@ -128,6 +128,8 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
   dfp_mobile_topic_list_top_code:
     client: true
     default: ''
@@ -146,6 +148,8 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
   dfp_target_topic_list_top_key_code:
     default: ''
     type: value_list
@@ -175,6 +179,8 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
   dfp_mobile_topic_above_post_stream_code:
     client: true
     default: ''
@@ -193,6 +199,8 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
   dfp_target_topic_above_post_stream_key_code:
     default: ''
     type: value_list
@@ -222,6 +230,8 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
   dfp_mobile_topic_above_suggested_code:
     client: true
     default: ''
@@ -240,6 +250,8 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
   dfp_target_topic_above_suggested_key_code:
     default: ''
     type: value_list
@@ -274,6 +286,8 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
   dfp_mobile_post_bottom_code:
     client: true
     default: ''
@@ -292,6 +306,8 @@ dfp_plugin:
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
   dfp_target_post_bottom_key_code:
     default: ''
     type: value_list
