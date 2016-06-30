@@ -131,6 +131,7 @@ dfp_plugin:
       - 250*250 - square
       - 300*600 - half page ad
       - 320*100 - large mobile banner
+      - 690*250
   dfp_mobile_topic_list_top_code:
     client: true
     default: ''
@@ -183,6 +184,7 @@ dfp_plugin:
       - 250*250 - square
       - 300*600 - half page ad
       - 320*100 - large mobile banner
+      - 690*250
   dfp_mobile_topic_above_post_stream_code:
     client: true
     default: ''
@@ -235,6 +237,7 @@ dfp_plugin:
       - 250*250 - square
       - 300*600 - half page ad
       - 320*100 - large mobile banner
+      - 690*250
   dfp_mobile_topic_above_suggested_code:
     client: true
     default: ''
@@ -292,6 +295,7 @@ dfp_plugin:
       - 250*250 - square
       - 300*600 - half page ad
       - 320*100 - large mobile banner
+      - 690*250
   dfp_mobile_post_bottom_code:
     client: true
     default: ''
