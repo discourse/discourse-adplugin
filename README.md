@@ -35,7 +35,7 @@ hooks:
         cd: $home/plugins
         cmd:
           - mkdir -p plugins
-          - git clone https://github.com/team-melbourne-rgsoc2015/discourse-adplugin.git
+          - git clone https://github.com/discourse/discourse-adplugin.git
 ```
 Rebuild the container
 
@@ -161,7 +161,7 @@ If you already have a live Discourse forum up, please go to the Quick Start head
 ### 1. Non-docker installation
 
 
-* Run `bundle exec rake plugin:install repo=http://github.com/team-melbourne-rgsoc2015/discourse-adplugin` in your discourse directory
+* Run `bundle exec rake plugin:install repo=https://github.com/discourse/discourse-adplugin.git` in your discourse directory
 * In development mode, run `bundle exec rake assets:clean`
 * In production, recompile your assets: `bundle exec rake assets:precompile`
 * Restart Discourse
