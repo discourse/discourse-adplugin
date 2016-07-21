@@ -2,6 +2,7 @@ adsense_plugin:
   adsense_publisher_code:
     client: true
     default: ''
+    regex: '^[\d]*$'
   adsense_through_trust_level:
     client: true
     default: 2
@@ -10,10 +11,12 @@ adsense_plugin:
     client: true
     default: ''
     max: 50
+    regex: '^[\d]*$'
   adsense_mobile_topic_list_top_code:
     client: true
     default: ''
     max: 50
+    regex: '^[\d]*$'
   adsense_topic_list_top_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -33,10 +36,12 @@ adsense_plugin:
     client: true
     default: ''
     max: 50
+    regex: '^[\d]*$'
   adsense_mobile_topic_above_post_stream_code:
     client: true
     default: ''
     max: 50
+    regex: '^[\d]*$'
   adsense_topic_above_post_stream_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -56,10 +61,12 @@ adsense_plugin:
     client: true
     default: ''
     max: 50
+    regex: '^[\d]*$'
   adsense_mobile_topic_above_suggested_code:
     client: true
     default: ''
     max: 50
+    regex: '^[\d]*$'
   adsense_topic_above_suggested_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
@@ -79,10 +86,12 @@ adsense_plugin:
     client: true
     default: ''
     max: 50
+    regex: '^[\d]*$'
   adsense_mobile_post_bottom_code:
     client: true
     default: ''
     max: 50
+    regex: '^[\d]*$'
   adsense_post_bottom_ad_sizes:
     client: true
     default: '728*90 - leaderboard'
