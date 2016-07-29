@@ -26,12 +26,18 @@ adsense_plugin:
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
       - 970*90 - large leaderboard
+      - 970*250 - billboard
       - 468*60 - banner
+      - 320*50 - mobile leaderboard
+      - 160*600 - wide skyscraper
       - 234*60 - half banner
       - 125*125 - button
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
+      - 690*250
   adsense_topic_above_post_stream_code:
     client: true
     default: ''
@@ -51,12 +57,18 @@ adsense_plugin:
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
       - 970*90 - large leaderboard
+      - 970*250 - billboard
       - 468*60 - banner
+      - 320*50 - mobile leaderboard
+      - 160*600 - wide skyscraper
       - 234*60 - half banner
       - 125*125 - button
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
+      - 690*250
   adsense_topic_above_suggested_code:
     client: true
     default: ''
@@ -76,12 +88,18 @@ adsense_plugin:
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
       - 970*90 - large leaderboard
+      - 970*250 - billboard
       - 468*60 - banner
+      - 320*50 - mobile leaderboard
+      - 160*600 - wide skyscraper
       - 234*60 - half banner
       - 125*125 - button
       - 180*150 - small rectangle
       - 200*200 - small square
       - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
+      - 690*250
   adsense_post_bottom_code:
     client: true
     default: ''
@@ -101,8 +119,18 @@ adsense_plugin:
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
       - 970*90 - large leaderboard
+      - 970*250 - billboard
       - 468*60 - banner
+      - 320*50 - mobile leaderboard
+      - 160*600 - wide skyscraper
       - 234*60 - half banner
+      - 125*125 - button
+      - 180*150 - small rectangle
+      - 200*200 - small square
+      - 250*250 - square
+      - 300*600 - half page ad
+      - 320*100 - large mobile banner
+      - 690*250
   adsense_nth_post_code:
     client: true
     default: ''
