@@ -106,12 +106,22 @@ export default Ember.Component.extend({
   mobile_width: mobile_width,
   mobile_height: mobile_height,
 
-  init: function() {
+  init() {
     this.set('ad_width', data[this.placement]["ad_width"] );
     this.set('ad_height', data[this.placement]["ad_height"] );
     this.set('ad_code', data[this.placement]["ad_code"] );
     this.set('ad_mobile_code', data[this.placement]["ad_mobile_code"] );
     this._super();
+  },
+
+  _triggerAds() {
+    const adsbygoogle = window.adsbygoogle || [];
+    adsbygoogle.push({});
+  },
+
+  didInsertElement() {
+    this._super();
+    Ember.run.scheduleOnce('afterRender', this, this._triggerAds);
   },
 
   adWrapperStyle: function() {
