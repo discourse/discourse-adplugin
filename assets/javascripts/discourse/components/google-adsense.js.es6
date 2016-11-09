@@ -116,11 +116,15 @@ export default Ember.Component.extend({
 
   _triggerAds() {
     const adsbygoogle = window.adsbygoogle || [];
-    adsbygoogle.push({});
+
+    try {
+      adsbygoogle.push({});
+    } catch (ex) { }
   },
 
   didInsertElement() {
     this._super();
+
     Ember.run.scheduleOnce('afterRender', this, this._triggerAds);
   },
 
