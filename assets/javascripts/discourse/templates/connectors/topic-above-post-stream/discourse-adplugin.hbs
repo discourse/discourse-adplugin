@@ -1,9 +1,21 @@
-{{#if siteSettings.adsense_topic_above_post_stream_code}}
-  {{google-adsense placement="topic-above-post-stream"}}
-{{/if}}
-{{#if siteSettings.dfp_topic_above_post_stream_code}}
-  {{google-dfp-ad placement="topic-above-post-stream" refreshOnChange=model.id category=model.category.slug}}
-{{/if}}
-{{#if siteSettings.amazon_topic_above_post_stream_src_code}}
-  {{amazon-product-links placement="topic-above-post-stream"}}
+{{#if site.mobileView}}
+  {{#if siteSettings.adsense_mobile_topic_above_post_stream_code}}
+    {{google-adsense placement="topic-above-post-stream"}}
+  {{/if}}
+  {{#if siteSettings.dfp_mobile_topic_above_post_stream_code}}
+    {{google-dfp-ad placement="topic-above-post-stream" refreshOnChange=model.id category=model.category.slug}}
+  {{/if}}
+  {{#if siteSettings.amazon_mobile_topic_above_post_stream_src_code}}
+    {{amazon-product-links placement="topic-above-post-stream"}}
+  {{/if}}
+{{else}}
+  {{#if siteSettings.adsense_topic_above_post_stream_code}}
+    {{google-adsense placement="topic-above-post-stream"}}
+  {{/if}}
+  {{#if siteSettings.dfp_topic_above_post_stream_code}}
+    {{google-dfp-ad placement="topic-above-post-stream" refreshOnChange=model.id category=model.category.slug}}
+  {{/if}}
+  {{#if siteSettings.amazon_topic_above_post_stream_src_code}}
+    {{amazon-product-links placement="topic-above-post-stream"}}
+  {{/if}}
 {{/if}}

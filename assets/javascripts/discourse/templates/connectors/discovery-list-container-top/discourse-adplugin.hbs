@@ -1,9 +1,21 @@
-{{#if siteSettings.adsense_topic_list_top_code}}
-  {{google-adsense placement="topic-list-top"}}
-{{/if}}
-{{#if siteSettings.dfp_topic_list_top_code}}
-  {{google-dfp-ad placement="topic-list-top" refreshOnChange=loading category=category.slug}}
-{{/if}}
-{{#if siteSettings.amazon_topic_list_top_src_code}}
-  {{amazon-product-links placement="topic-list-top"}}
+{{#if site.mobileView}}
+  {{#if siteSettings.adsense_mobile_topic_list_top_code}}
+    {{google-adsense placement="topic-list-top"}}
+  {{/if}}
+  {{#if siteSettings.dfp_mobile_topic_list_top_code}}
+    {{google-dfp-ad placement="topic-list-top" refreshOnChange=loading category=category.slug}}
+  {{/if}}
+  {{#if siteSettings.amazon_mobile_topic_list_top_src_code}}
+    {{amazon-product-links placement="topic-list-top"}}
+  {{/if}}
+{{else}}
+  {{#if siteSettings.adsense_topic_list_top_code}}
+    {{google-adsense placement="topic-list-top"}}
+  {{/if}}
+  {{#if siteSettings.dfp_topic_list_top_code}}
+    {{google-dfp-ad placement="topic-list-top" refreshOnChange=loading category=category.slug}}
+  {{/if}}
+  {{#if siteSettings.amazon_topic_list_top_src_code}}
+    {{amazon-product-links placement="topic-list-top"}}
+  {{/if}}
 {{/if}}
