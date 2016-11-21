@@ -125,6 +125,8 @@ export default Ember.Component.extend({
   didInsertElement() {
     this._super();
 
+    if (!this.get('showAd')) { return; }
+
     Ember.run.scheduleOnce('afterRender', this, this._triggerAds);
   },
 
@@ -151,4 +153,8 @@ export default Ember.Component.extend({
   checkTrustLevels: function() {
     return !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level));
   }.property('trust_level'),
+
+  showAd: function() {
+    return Discourse.SiteSettings.adsense_publisher_code && this.get('checkTrustLevels');
+  }.property('checkTrustLevels')
 });
