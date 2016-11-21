@@ -24,6 +24,8 @@ function splitHeightInt(value) {
 
 // On each page change, the child is removed and elements part of Adsense's googleads are removed/undefined.
 function changePage() {
+  if (!Discourse.SiteSettings.adsense_publisher_code) { return; }
+
   const ads = document.getElementById("adsense_loader");
   if (ads) {
     ads.parentNode.removeChild(ads);
