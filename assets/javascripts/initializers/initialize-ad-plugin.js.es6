@@ -30,6 +30,12 @@ export default {
 
     withPluginApi('0.1', api => {
       api.decorateWidget('post:after', dec => {
+
+        if (dec.canConnectComponent) {
+          return dec.connect({ component: 'adplugin-container', context: 'model' });
+        }
+
+        // Old way for backwards compatibility
         return dec.connect({
           templateName: 'connectors/post-bottom/discourse-adplugin',
           context: 'model'
