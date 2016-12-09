@@ -1,0 +1,33 @@
+{{#if site.mobileView}}
+  {{#if model.postSpecificCountAdsense}}
+    {{#if siteSettings.adsense_mobile_post_bottom_code}}
+      {{google-adsense placement="post-bottom" postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
+  {{#if model.postSpecificCountDFP}}
+    {{#if siteSettings.dfp_mobile_post_bottom_code}}
+      {{google-dfp-ad placement="post-bottom" category=model.topic.category.slug postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
+  {{#if model.postSpecificCountAmazon}}
+    {{#if siteSettings.amazon_mobile_post_bottom_src_code}}
+      {{amazon-product-links placement="post-bottom" postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
+{{else}}
+  {{#if model.postSpecificCountAdsense}}
+    {{#if siteSettings.adsense_post_bottom_code}}
+      {{google-adsense placement="post-bottom" postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
+  {{#if model.postSpecificCountDFP}}
+    {{#if siteSettings.dfp_post_bottom_code}}
+      {{google-dfp-ad placement="post-bottom" category=model.topic.category.slug postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
+  {{#if model.postSpecificCountAmazon}}
+    {{#if siteSettings.amazon_post_bottom_src_code}}
+      {{amazon-product-links placement="post-bottom" postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
+{{/if}}

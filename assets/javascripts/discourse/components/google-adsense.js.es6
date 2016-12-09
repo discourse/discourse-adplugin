@@ -1,14 +1,17 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
 import PageTracker from 'discourse/lib/page-tracker';
+import loadScript from 'discourse/lib/load-script';
 
-var ad_width = '';
-var ad_height = '';
-var ad_mobile_width = 320;
-var ad_mobile_height = 50;
-var currentUser = Discourse.User.current();
-var publisher_id = Discourse.SiteSettings.adsense_publisher_code;
-var mobile_width = 320;
-var mobile_height = 50;
+var _loaded = false,
+    _promise = null,
+    ad_width = '',
+    ad_height = '',
+    ad_mobile_width = 320,
+    ad_mobile_height = 50,
+    currentUser = Discourse.User.current(),
+    publisher_id = Discourse.SiteSettings.adsense_publisher_code,
+    mobile_width = 320,
+    mobile_height = 50;
 
 const mobileView = Discourse.Site.currentProp('mobileView');
 
@@ -22,34 +25,22 @@ function splitHeightInt(value) {
   return str.trim();
 }
 
-// On each page change, the child is removed and elements part of Adsense's googleads are removed/undefined.
-function changePage() {
-  const ads = document.getElementById("adsense_loader");
-  if (ads) {
-    ads.parentNode.removeChild(ads);
-    for (var key in window) {
-      // Undefining all elements starting with google except for googletag so that the reloading doesn't affect dfp.  Potential future
-      // conflicts may occur if other plugins have element starting with google.
-      if(key.indexOf('google') !== -1 && key.indexOf('googletag') === -1) {
-        window[key] = undefined;
-      }
-    }
+function loadAdsense() {
+  if (_loaded) {
+    return Ember.RSVP.resolve();
   }
 
-  // Reinitialize script so that the ad can reload
-  const ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.id="adsense_loader";
-  ga.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  const s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
-}
+  if (_promise) {
+    return _promise;
+  }
 
-function oldPluginCode() {
-  PageTracker.current().on('change', changePage);
-}
+  var adsenseSrc = (('https:' === document.location.protocol) ? 'https:' : 'http:') + '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+  _promise = loadScript(adsenseSrc, { scriptTag: true }).then(function() {
+    _loaded = true;
+  });
 
-function watchPageChanges(api) {
-  api.onPageChange(changePage);
+  return _promise;
 }
-withPluginApi('0.1', watchPageChanges, { noApi: oldPluginCode });
 
 var data = {
   "topic-list-top" : {},
@@ -106,12 +97,30 @@ export default Ember.Component.extend({
   mobile_width: mobile_width,
   mobile_height: mobile_height,
 
-  init: function() {
+  init() {
     this.set('ad_width', data[this.placement]["ad_width"] );
     this.set('ad_height', data[this.placement]["ad_height"] );
     this.set('ad_code', data[this.placement]["ad_code"] );
     this.set('ad_mobile_code', data[this.placement]["ad_mobile_code"] );
     this._super();
+  },
+
+  _triggerAds() {
+    loadAdsense().then(function() {
+      const adsbygoogle = window.adsbygoogle || [];
+
+      try {
+        adsbygoogle.push({}); // ask AdSense to fill one ad unit
+      } catch (ex) {}
+    });
+  },
+
+  didInsertElement() {
+    this._super();
+
+    if (!this.get('showAd')) { return; }
+
+    Ember.run.scheduleOnce('afterRender', this, this._triggerAds);
   },
 
   adWrapperStyle: function() {
@@ -137,4 +146,8 @@ export default Ember.Component.extend({
   checkTrustLevels: function() {
     return !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.adsense_through_trust_level));
   }.property('trust_level'),
+
+  showAd: function() {
+    return Discourse.SiteSettings.adsense_publisher_code && this.get('checkTrustLevels');
+  }.property('checkTrustLevels')
 });

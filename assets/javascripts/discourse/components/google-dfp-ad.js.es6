@@ -56,6 +56,11 @@ function custom_targeting(key_array, value_array, location) {
 }
 
 function defineSlot(divId, placement, settings, isMobile) {
+
+  if (!settings.dfp_publisher_id) {
+    return;
+  }
+
   var ad, width, height;
 
   if (ads[divId]) {
@@ -185,6 +190,10 @@ export default Ember.Component.extend({
     return `width: ${this.get('width')}px;`.htmlSafe();
   }.property('width'),
 
+  showAd: function() {
+    return Discourse.SiteSettings.dfp_publisher_id && this.get('checkTrustLevels');
+  }.property('checkTrustLevels'),
+
   checkTrustLevels: function() {
     return !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.dfp_through_trust_level));
   }.property('trust_level'),
@@ -205,6 +214,8 @@ export default Ember.Component.extend({
   }.observes('refreshOnChange'),
 
   _initGoogleDFP: function() {
+    if (!this.get('showAd')) { return; }
+
     var self = this;
     loadGoogle(this.siteSettings).then(function() {
       self.set('loadedGoogletag', true);
