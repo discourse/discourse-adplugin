@@ -1,6 +1,6 @@
 # name: discourse-adplugin
 # about: Ad Plugin for Discourse
-# version: 1.0.2
+# version: 1.0.3-b
 # authors: Vi and Sarah (@ladydanger and @cyberkoi)
 
 register_css <<CSS
