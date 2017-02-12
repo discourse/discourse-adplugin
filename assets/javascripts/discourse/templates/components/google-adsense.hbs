@@ -1,6 +1,6 @@
 {{#if showAd}}
   {{#if site.mobileView}}
-    <div class="google-adsense-label" style={{adTitleStyleMobile}}><h2>ADVERTISEMENT</h2></div>
+    <div class="google-adsense-label" style={{adTitleStyleMobile}}><h2>{{ad_label}}</h2></div>
     <div class="google-adsense-content" style={{adWrapperStyleMobile}}>
       <ins class="adsbygoogle"
         style={{adInsStyleMobile}}
@@ -9,7 +9,7 @@
       </ins>
     </div>
   {{else}}
-    <div class="google-adsense-label"><h2>ADVERTISEMENT</h2></div>
+    <div class="google-adsense-label"><h2>{{ad_label}}</h2></div>
     <div class="google-adsense-content" style={{adWrapperStyle}}>
       <ins class="adsbygoogle"
         style={{adInsStyle}}

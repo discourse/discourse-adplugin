@@ -1,10 +1,10 @@
 {{#if checkTrustLevels}}
 	{{#if site.mobileView}}
-    <div class="amazon-product-links-label" style={{adTitleStyleMobile}}><h2>ADVERTISEMENT</h2></div>
+    <div class="amazon-product-links-label" style={{adTitleStyleMobile}}><h2>{{ad_label}}</h2></div>
 		<iframe style={{adWrapperStyleMobile}} marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src={{userInputMobile}}>
 		</iframe>
 	{{else}}
-    <div class="amazon-product-links-label"><h2>ADVERTISEMENT</h2></div>
+    <div class="amazon-product-links-label"><h2>{{ad_label}}</h2></div>
 		<div class="container" align="center">
 			<iframe style={{adWrapperStyle}} marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src={{userInput}}>
 			</iframe>
