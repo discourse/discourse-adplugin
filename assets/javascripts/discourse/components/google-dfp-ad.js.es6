@@ -5,7 +5,7 @@ var currentUser = Discourse.User.current(),
     _promise = null,
     ads = {};
 
-var dfpAdLabel = setting.dfp_ad_label;
+var dfpAdLabel = settings.dfp_ad_label;
 
 function splitWidthInt(value) {
     var str = value.substring(0, 3);
