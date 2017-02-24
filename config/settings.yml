@@ -1,7 +1,7 @@
 adsense_plugin:
   adsense_ad_label:
     client: true
-    default: ''
+    default: 'ADVERTISING'
   adsense_publisher_code:
     client: true
     default: ''
@@ -142,7 +142,7 @@ adsense_plugin:
 dfp_plugin:
   dfp_ad_label:
     client: true
-    default: ''
+    default: 'ADVERTISING'
   dfp_publisher_id:
     client: true
     default: ''
@@ -371,7 +371,7 @@ dfp_plugin:
 amazon_plugin:
   amazon_ad_label:
     client: true
-    default: ''
+    default: 'ADVERTISING'
   amazon_through_trust_level:
     client: true
     default: 2
