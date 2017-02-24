@@ -1,7 +1,7 @@
 import loadScript from 'discourse/lib/load-script';
 
 var dfpLabel = Discourse.SiteSettings.adsense_ad_label,
-var _loaded = false,
+    _loaded = false,
     _promise = null;
 
 var currentUser = Discourse.User.current(),
