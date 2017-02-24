@@ -1,6 +1,6 @@
 import loadScript from 'discourse/lib/load-script';
 
-var dfpLabel = Discourse.SiteSettings.dfp_ad_label,
+var dfp_label = settings.dfp_ad_label,
     _loaded = false,
     _promise = null;
 
