@@ -137,6 +137,9 @@ adsense_plugin:
     min: 1
 
 dfp_plugin:
+  dfp_ad_label:
+    client: true
+    default: 'PUBLICIDAD'
   dfp_publisher_id:
     client: true
     default: ''
