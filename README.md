@@ -135,11 +135,11 @@ You can use the ```ad_platform_through_trust_level``` dropdown to disable ads fo
 
 * 0 shows ads to users that are not logged in.
 * 1 shows ads to users that are not logged in, and to new and basic users.
-* 2 shows ads to regular users as well, but not to leaders and elders.
-* 3 shows ads to everyone but elders.
-* 4 shows ads to everyone including elders.
+* 2 shows ads to members as well, but not to regulars and leaders.
+* 3 shows ads to everyone but leaders.
+* 4 shows ads to everyone including leaders.
 
-To find more about trust levels in Discourse, refer to [Discourse's posts on trust levels](https://meta.discourse.org/t/what-do-user-trust-levels-do/4924/7)
+To find more about trust levels in Discourse, refer to [Discourse's posts on trust levels](https://meta.discourse.org/t/what-do-user-trust-levels-do/4924)
 
 ### Languages Supported
 
