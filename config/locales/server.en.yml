@@ -1,5 +1,6 @@
 en:
   site_settings:
+    dfp_ad_label: "Label your ads. For example: ADVERTISING"
     dfp_publisher_id: "Input your publisher ID"
     dfp_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
 
@@ -32,6 +33,7 @@ en:
     dfp_target_post_bottom_key_code: "Input custom targeting keys - inventory Level"
     dfp_target_post_bottom_value_code: "Input custom targeting values - inventory Level"
 
+    adsense_ad_label: "Label your ads. For example: ADVERTISING"
     adsense_publisher_code: "Your publisher ID. Enter only the number, excluding 'pub-'."
     adsense_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
     adsense_topic_list_top_code: "Enter code of the ad unit to display at topic list top location. This is the number assigned to the ad unit, not the JavaScript code."
@@ -48,6 +50,7 @@ en:
     adsense_post_bottom_ad_sizes: "Choose your ad sizes"
     adsense_nth_post_code: "Show an ad after every N posts, where N is this value."
 
+    amazon_ad_label: "Label your ads. For example: ADVERTISING" 
     amazon_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
     amazon_topic_list_top_src_code: "Enter src code to display at topic list top location"
     amazon_topic_list_top_ad_width_code: "Input your ad width"

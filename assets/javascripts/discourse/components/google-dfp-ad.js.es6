@@ -1,5 +1,9 @@
 import loadScript from 'discourse/lib/load-script';
 
+var dfp_label = settings.dfp_ad_label,
+    _loaded = false,
+    _promise = null;
+
 var currentUser = Discourse.User.current(),
     _loaded = false,
     _promise = null,
