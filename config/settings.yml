@@ -22,6 +22,7 @@ adsense_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - responsive
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
@@ -53,6 +54,7 @@ adsense_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - responsive
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
@@ -84,6 +86,7 @@ adsense_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - responsive
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
@@ -115,6 +118,7 @@ adsense_plugin:
     default: '728*90 - leaderboard'
     type: enum
     choices:
+      - responsive
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle

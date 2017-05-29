@@ -1,11 +1,7 @@
-import { withPluginApi } from 'discourse/lib/plugin-api';
-import PageTracker from 'discourse/lib/page-tracker';
 import loadScript from 'discourse/lib/load-script';
 
 var _loaded = false,
     _promise = null,
-    ad_width = '',
-    ad_height = '',
     ad_mobile_width = 320,
     ad_mobile_height = 50,
     currentUser = Discourse.User.current(),
@@ -15,14 +11,14 @@ var _loaded = false,
 
 const mobileView = Discourse.Site.currentProp('mobileView');
 
-function splitWidthInt(value) {
-  var str = value.substring(0, 3);
-  return str.trim();
+function parseAdWidth(value) {
+  if (value === 'responsive') { return 'auto'; }
+  return `${parseInt( value.substring(0, 3).trim() )}px`;
 }
 
-function splitHeightInt(value) {
-  var str = value.substring(4, 7);
-  return str.trim();
+function parseAdHeight(value) {
+  if (value === 'responsive') { return 'auto'; }
+  return `${parseInt( value.substring(4, 7).trim() )}px`;
 }
 
 function loadAdsense() {
@@ -52,32 +48,32 @@ var data = {
 if (Discourse.SiteSettings.adsense_publisher_code) {
   if (!mobileView && Discourse.SiteSettings.adsense_topic_list_top_code) {
     data["topic-list-top"]["ad_code"] = Discourse.SiteSettings.adsense_topic_list_top_code;
-    data["topic-list-top"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
-    data["topic-list-top"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes));
+    data["topic-list-top"]["ad_width"] = parseAdWidth(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes);
+    data["topic-list-top"]["ad_height"] = parseAdHeight(Discourse.SiteSettings.adsense_topic_list_top_ad_sizes);
   }
   if (mobileView && Discourse.SiteSettings.adsense_mobile_topic_list_top_code) {
     data["topic-list-top"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_list_top_code;
   }
   if (!mobileView && Discourse.SiteSettings.adsense_topic_above_post_stream_code) {
     data["topic-above-post-stream"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_post_stream_code;
-    data["topic-above-post-stream"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes));
-    data["topic-above-post-stream"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes));
+    data["topic-above-post-stream"]["ad_width"] = parseAdWidth(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes);
+    data["topic-above-post-stream"]["ad_height"] = parseAdHeight(Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes);
   }
   if (mobileView && Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_code) {
     data["topic-above-post-stream"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_code;
   }
   if (!mobileView && Discourse.SiteSettings.adsense_topic_above_suggested_code) {
     data["topic-above-suggested"]["ad_code"] = Discourse.SiteSettings.adsense_topic_above_suggested_code;
-    data["topic-above-suggested"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes));
-    data["topic-above-suggested"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes));
+    data["topic-above-suggested"]["ad_width"] = parseAdWidth(Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes);
+    data["topic-above-suggested"]["ad_height"] = parseAdHeight(Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes);
   }
   if (mobileView && Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code) {
     data["topic-above-suggested"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code;
   }
   if (!mobileView && Discourse.SiteSettings.adsense_post_bottom_code) {
     data["post-bottom"]["ad_code"] = Discourse.SiteSettings.adsense_post_bottom_code;
-    data["post-bottom"]["ad_width"] = parseInt(splitWidthInt(Discourse.SiteSettings.adsense_post_bottom_ad_sizes));
-    data["post-bottom"]["ad_height"] = parseInt(splitHeightInt(Discourse.SiteSettings.adsense_post_bottom_ad_sizes));
+    data["post-bottom"]["ad_width"] = parseAdWidth(Discourse.SiteSettings.adsense_post_bottom_ad_sizes);
+    data["post-bottom"]["ad_height"] = parseAdHeight(Discourse.SiteSettings.adsense_post_bottom_ad_sizes);
   }
   if (mobileView && Discourse.SiteSettings.adsense_mobile_post_bottom_code) {
     data["post-bottom"]["ad_mobile_code"] = Discourse.SiteSettings.adsense_mobile_post_bottom_code;
@@ -89,8 +85,8 @@ export default Ember.Component.extend({
   loadedGoogletag: false,
 
   publisher_id: publisher_id,
-  ad_width: ad_width,
-  ad_height: ad_height,
+  ad_width: null,
+  ad_height: null,
   ad_mobile_width: ad_mobile_width,
   ad_mobile_height: ad_mobile_height,
 
@@ -124,7 +120,7 @@ export default Ember.Component.extend({
   },
 
   adWrapperStyle: function() {
-    return `width: ${this.get('ad_width')}px; height: ${this.get('ad_height')}px;`.htmlSafe();
+    return `width: ${this.get('ad_width')}; height: ${this.get('ad_height')};`.htmlSafe();
   }.property('ad_width', 'ad_height'),
 
   adInsStyle: function() {
@@ -132,11 +128,11 @@ export default Ember.Component.extend({
   }.property('adWrapperStyle'),
 
   adWrapperStyleMobile: function() {
-    return `width: ${this.get('ad_mobile_width')}px; height: ${this.get('ad_mobile_height')}px;`.htmlSafe();
+    return `width: ${this.get('ad_mobile_width')}; height: ${this.get('ad_mobile_height')};`.htmlSafe();
   }.property('ad_mobile_width', 'ad_mobile_height'),
 
   adTitleStyleMobile: function() {
-    return `width: ${this.get('ad_mobile_width')}px;`.htmlSafe();
+    return `width: ${this.get('ad_mobile_width')};`.htmlSafe();
   }.property('ad_mobile_width'),
 
   adInsStyleMobile: function() {
