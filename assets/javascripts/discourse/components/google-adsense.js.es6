@@ -93,6 +93,8 @@ export default Ember.Component.extend({
   mobile_width: mobile_width,
   mobile_height: mobile_height,
 
+  adRequested: false,
+
   init() {
     this.set('ad_width', data[this.placement]["ad_width"] );
     this.set('ad_height', data[this.placement]["ad_height"] );
@@ -102,6 +104,7 @@ export default Ember.Component.extend({
   },
 
   _triggerAds() {
+    this.set('adRequested', true);
     loadAdsense().then(function() {
       const adsbygoogle = window.adsbygoogle || [];
 
@@ -116,8 +119,17 @@ export default Ember.Component.extend({
 
     if (!this.get('showAd')) { return; }
 
+    if (this.get('listLoading')) { return; }
+
     Ember.run.scheduleOnce('afterRender', this, this._triggerAds);
   },
+
+  waitForLoad: function() {
+    if (this.get('adRequested')) { return; } // already requested that this ad unit be populated
+    if (!this.get('listLoading')) {
+      Ember.run.scheduleOnce('afterRender', this, this._triggerAds);
+    }
+  }.observes('listLoading'),
 
   isResponsive: function() {
     return this.get('ad_width') === 'auto';
