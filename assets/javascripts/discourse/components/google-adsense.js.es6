@@ -81,7 +81,7 @@ if (Discourse.SiteSettings.adsense_publisher_code) {
 }
 
 export default Ember.Component.extend({
-  classNames: ['google-adsense'],
+  classNameBindings: [':google-adsense', 'classForSlot', 'isResponsive:adsense-responsive'],
   loadedGoogletag: false,
 
   publisher_id: publisher_id,
@@ -119,16 +119,28 @@ export default Ember.Component.extend({
     Ember.run.scheduleOnce('afterRender', this, this._triggerAds);
   },
 
+  isResponsive: function() {
+    return this.get('ad_width') === 'auto';
+  }.property('ad_width'),
+
+  classForSlot: function() {
+    return `adsense-${this.get('placement')}`.htmlSafe();
+  }.property('placement'),
+
+  autoAdFormat: function() {
+    return this.get('isResponsive') ? 'auto'.htmlSafe() : false;
+  }.property('isResponsive'),
+
   adWrapperStyle: function() {
-    return `width: ${this.get('ad_width')}; height: ${this.get('ad_height')};`.htmlSafe();
+    return (this.get('isResponsive') ? '' : `width: ${this.get('ad_width')}; height: ${this.get('ad_height')};`).htmlSafe();
   }.property('ad_width', 'ad_height'),
 
   adInsStyle: function() {
-    return `display: inline-block; ${this.get('adWrapperStyle')}`.htmlSafe();
-  }.property('adWrapperStyle'),
+    return `display: ${this.get('isResponsive') ? 'block' : 'inline-block'}; ${this.get('adWrapperStyle')}`.htmlSafe();
+  }.property('adWrapperStyle', 'isResponsive'),
 
   adWrapperStyleMobile: function() {
-    return `width: ${this.get('ad_mobile_width')}; height: ${this.get('ad_mobile_height')};`.htmlSafe();
+    return (this.get('isResponsive') ? '' : `width: ${this.get('ad_mobile_width')}; height: ${this.get('ad_mobile_height')};`).htmlSafe();
   }.property('ad_mobile_width', 'ad_mobile_height'),
 
   adTitleStyleMobile: function() {
@@ -136,7 +148,7 @@ export default Ember.Component.extend({
   }.property('ad_mobile_width'),
 
   adInsStyleMobile: function() {
-    return `display: inline-block; ${this.get('adWrapperStyleMobile')}`.htmlSafe();
+    return `display: ${this.get('isResponsive') ? 'block' : 'inline-block'}; ${this.get('adWrapperStyleMobile')}`.htmlSafe();
   }.property('adWrapperStyleMobile'),
 
   checkTrustLevels: function() {
