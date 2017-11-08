@@ -21,7 +21,34 @@ register_css <<CSS
   clear: both;
 }
 
-.google-adsense  .adsense-unit {
+.google-adsense.adsense-responsive {
+  width: 100%;
+}
+
+.google-adsense .google-adsense-label {
+  width: 728px;
+  margin: 0 auto;
+}
+
+.google-adsense.adsense-responsive .google-adsense-label {
+  width: 100%;
+  text-align: center;
+}
+
+.google-adsense .adsense-unit {
+  margin: 0 auto;
+}
+
+.google-adsense .google-adsense-label h2 {
+  margin: 4px 0 !important;
+  color: #858a8c;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.google-adsense .google-adsense-content {
   margin: 0 auto;
 }
 
@@ -47,24 +74,6 @@ register_css <<CSS
   font-size: 12px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: normal;
-}
-
-.google-adsense .google-adsense-label {
-  width: 728px;
-  margin: 0 auto;
-}
-
-.google-adsense .google-adsense-label h2 {
-  margin: 4px 0 !important;
-  color: #858a8c;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: normal;
-}
-
-.google-adsense .google-adsense-content {
-  margin: 0 auto;
 }
 
 .google-dfp-ad .google-dfp-ad-label {

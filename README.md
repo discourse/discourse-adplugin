@@ -35,7 +35,7 @@ hooks:
         cd: $home/plugins
         cmd:
           - mkdir -p plugins
-          - git clone https://github.com/team-melbourne-rgsoc2015/discourse-adplugin.git
+          - git clone https://github.com/discourse/discourse-adplugin.git
 ```
 Rebuild the container
 
@@ -135,11 +135,11 @@ You can use the ```ad_platform_through_trust_level``` dropdown to disable ads fo
 
 * 0 shows ads to users that are not logged in.
 * 1 shows ads to users that are not logged in, and to new and basic users.
-* 2 shows ads to regular users as well, but not to leaders and elders.
-* 3 shows ads to everyone but elders.
-* 4 shows ads to everyone including elders.
+* 2 shows ads to members as well, but not to regulars and leaders.
+* 3 shows ads to everyone but leaders.
+* 4 shows ads to everyone including leaders.
 
-To find more about trust levels in Discourse, refer to [Discourse's posts on trust levels](https://meta.discourse.org/t/what-do-user-trust-levels-do/4924/7)
+To find more about trust levels in Discourse, refer to [Discourse's posts on trust levels](https://meta.discourse.org/t/what-do-user-trust-levels-do/4924)
 
 ### Languages Supported
 
@@ -161,7 +161,7 @@ If you already have a live Discourse forum up, please go to the Quick Start head
 ### 1. Non-docker installation
 
 
-* Run `bundle exec rake plugin:install repo=http://github.com/team-melbourne-rgsoc2015/discourse-adplugin` in your discourse directory
+* Run `bundle exec rake plugin:install repo=https://github.com/discourse/discourse-adplugin.git` in your discourse directory
 * In development mode, run `bundle exec rake assets:clean`
 * In production, recompile your assets: `bundle exec rake assets:precompile`
 * Restart Discourse
