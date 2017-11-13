@@ -1,8 +1,8 @@
-fr:
+fa_IR:
   admin_js:
     admin:
       site_settings:
         categories:
           dfp_plugin: 'DFP'
-          adsense_plugin: 'Adsense'
-          amazon_plugin: 'Amazon'
+          adsense_plugin: 'ادسنس'
+          amazon_plugin: 'آمازون'

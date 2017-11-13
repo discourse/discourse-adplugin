@@ -1,0 +1,8 @@
+ar:
+  admin_js:
+    admin:
+      site_settings:
+        categories:
+          dfp_plugin: 'DFP'
+          adsense_plugin: 'جوجل ادسنس'
+          amazon_plugin: 'اعلانات امازون'

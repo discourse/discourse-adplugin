@@ -1,0 +1,7 @@
+pl_PL:
+  site_settings:
+    dfp_through_trust_level: "Pokaż reklamy swoim użytkownikom na podstawie poziomu zaufania. Użytkownicy z poziomem zaufania wyższym niż ta wartość, nie zobaczą reklam."
+    dfp_topic_list_top_code: "Podaj unikalny Kod jednostki reklamowej aby wyświetlić ją powyżej listy tematów. Kod jest krótki (maksymalnie 100 znaków), został przydzielony jednostce reklamowej po utworzeniu. Nie jest to kod źródłowy Javascript."
+    dfp_topic_list_top_ad_sizes: "Wybierz rozmiar reklamy dla jednostki reklamowej powyżej listy tematów."
+    dfp_mobile_topic_list_top_code: "Podaj unikalny Kod jednostki reklamowej aby wyświetlić ją powyżej listy tematów dla wersji mobilnej strony. Kod jest krótki (maksymalnie 100 znaków), został przydzielony jednostce reklamowej po utworzeniu. Nie jest to kod źródłowy Javascript."
+    dfp_mobile_topic_list_top_ad_sizes: "Wybierz rozmiar reklamy dla jednostki reklamowej powyżej listy tematów dla wersji mobilnej strony."

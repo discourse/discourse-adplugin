@@ -1,8 +1,8 @@
-fr:
+he:
   admin_js:
     admin:
       site_settings:
         categories:
           dfp_plugin: 'DFP'
-          adsense_plugin: 'Adsense'
-          amazon_plugin: 'Amazon'
+          adsense_plugin: 'אדסנס'
+          amazon_plugin: 'אמזון'
