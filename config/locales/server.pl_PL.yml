@@ -1,3 +1,10 @@
+# encoding: utf-8
+#
+# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+#
+# To work with us on translations, join this project:
+# https://www.transifex.com/projects/p/discourse-org/
+
 pl_PL:
   site_settings:
     dfp_through_trust_level: "Pokaż reklamy swoim użytkownikom na podstawie poziomu zaufania. Użytkownicy z poziomem zaufania wyższym niż ta wartość, nie zobaczą reklam."
