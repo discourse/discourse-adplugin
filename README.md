@@ -2,12 +2,12 @@
 
 This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
 
-**Authors**: 		[Sarah Ni](https://github.com/cyberkoi) & [Vi Nguyen](https://github.com/ladydanger)  
-**Version**: 			1.0.1		
-**Contributors**: See credits section below	
-**License**: 			MIT License		
-**Supported Discourse Version**: 1.4	
-**Supported Ad Platforms**:    
+**Authors**: 		[Sarah Ni](https://github.com/cyberkoi) & [Vi Nguyen](https://github.com/ladydanger)
+**Version**: 			1.0.1
+**Contributors**: See credits section below
+**License**: 			MIT License
+**Supported Discourse Version**: 1.4
+**Supported Ad Platforms**:
 * [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html)
 * [Google Double Click for Publishers](https://www.google.com/dfp)
 * [Amazon Affiliates](http://affiliate-program.amazon.com) - Banner and Product Link Ads
@@ -17,8 +17,8 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 
 This quick start shows you how to install this plugin and use it.  Recommended if you have:
 
-* A live discourse forum 
-* You have deployed your live forum using Docker.  If you're using Digital Ocean, it's likely that your forum is deployed on Docker. 
+* A live discourse forum
+* You have deployed your live forum using Docker.  If you're using Digital Ocean, it's likely that your forum is deployed on Docker.
 
 For non-docker or local development installation (those with programming experience), see **Other Installation**.
 
@@ -103,10 +103,10 @@ The following are available locations along with a description and an image show
 
 Location Name | Description
 --- | --- | ---
-Topic List Top | Ad will appear at the header of Discourse homepage 
-Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics 
-Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics 
-Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```.  
+Topic List Top | Ad will appear at the header of Discourse homepage
+Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics
+Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics
+Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```.
 
 
 ![](https://www.dropbox.com/sc/rm5bcn8c85niul1/AAAUVW-hn56XtCl_XTNlE19Ra?dl=1)
@@ -117,7 +117,7 @@ This plugin supports the following ad sizes for the following locations.
 
 All locations except post bottom | Post bottom location | Mobile
 --- | --- | ---
-728 x 90 | 728 x 90 | 320 x 50 
+728 x 90 | 728 x 90 | 320 x 50
 336 x 280 | 336 x 280 |
 300 x 250 | 300 x 250 |
 970 x 90 | 970 x 90 |
@@ -126,7 +126,7 @@ All locations except post bottom | Post bottom location | Mobile
 125 x 125 | |
 180 x 150 | |
 200 x 200 | |
-250 x 250 | | 
+250 x 250 | |
 
 
 ### Trust Levels
@@ -184,7 +184,7 @@ For example: ln -s ~/discourse-plugin-test .
 
 ## Questions or Want to Contribute?
 
-Open an Issue on this repository to start a chat.  
+Open an Issue on this repository to start a chat.
 
 
 ## Credits
@@ -194,12 +194,4 @@ Open an Issue on this repository to start a chat.
 **Our Coaches**: 					Very special thank you to our coaches and honorary coach - [@georg](https://github.com/georg), [@betaass](https://github.com/betaass), [@adelsmee](https://github.com/adelsmee), [@davich](https://github.com/davich), [@link664](https://github.com/link664), [@tomjadams](https://github.com/tomjadams), [@compactcode](https://github.com/compactcode), [@joffotron](https://github.com/joffotron), [@jocranford](https://github.com/jocranford), [@saramic](https://github.com/saramic), [@madpilot](https://github.com/madpilot), [@catkins](https://github.com/catkins)
 
 **Rails Girls**: 			Thanks [@sareg0](https://github.com/sareg0) and the Rails Girls Team for the opportunity to participate in Rails Girls Summer of Code 2015.
-<p>To create this plugin we referenced the <a href="https://github.com/discourse/discourse-google-dfp">original dfp plugin</a> (created by  <a href="https://github.com/search?q=neil+lalonde+lalonde&ref=opensearch&type=Users">nlalonde</a>) and the <a href="https://meta.discourse.org/t/google-adsense-plugin/11763/133">adsense plugin</a>.</p>
-
-
-
- 
-
-
-
-
+<p>To create this plugin we referenced the <a href="https://github.com/discourse/discourse-google-dfp">original dfp plugin</a> (created by  <a href="https://github.com/search?q=neil+lalonde&ref=opensearch&type=Users">nlalonde</a>) and the <a href="https://meta.discourse.org/t/google-adsense-plugin/11763/133">adsense plugin</a>.</p>
