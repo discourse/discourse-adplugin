@@ -101,12 +101,12 @@ In this section, we go into more detail on:
 
 The following are available locations along with a description and an image showing their location within Discourse to display ads for all platforms.
 
-Location Name | Description
---- | --- | ---
-Topic List Top | Ad will appear at the header of Discourse homepage
-Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics
-Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics
-Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```.
+| Location Name | Description |
+| --- | --- |
+| Topic List Top | Ad will appear at the header of Discourse homepage |
+| Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics |
+| Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics |
+| Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```. |
 
 
 ![](https://www.dropbox.com/sc/rm5bcn8c85niul1/AAAUVW-hn56XtCl_XTNlE19Ra?dl=1)
