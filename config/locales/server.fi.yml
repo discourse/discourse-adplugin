@@ -19,7 +19,7 @@ fi:
     dfp_mobile_topic_above_post_stream_ad_sizes: "Mobiilinäkymässä ketjusivun ylälaidassa näytettävän mainoksen koko."
     dfp_topic_above_suggested_code: "Ketjun viimeisimmän viestin jälkeen, ennen ketjusuosituksia näytettävän mainosyksikön yksilöllinen koodi. Kyseessä on lyhyt koodi (enint. 100 merkkiä), joka annetaan mainosyksikölle kun sitä luodaan. Ei JavaScript-koodi."
     dfp_topic_above_suggested_ad_sizes: "Ketjun viimeisimmän viestin jälkeen näytettävän mainoksen koko."
-    dfp_mobile_topic_above_suggested_code: "Ketjun viimeisimmän viestin jälkeen, ennen ketjusuosituksia näytettävän mainosyksikön yksilöllinen koodi. Kyseessä on lyhyt koodi (enint. 100 merkkiä), joka annetaan mainosyksikölle kun sitä luodaan. Ei JavaScript-koodi."
+    dfp_mobile_topic_above_suggested_code: "Mobiilinäkymässä ketjun viimeisimmän viestin jälkeen, ennen ketjusuosituksia näytettävän mainosyksikön yksilöllinen koodi. Kyseessä on lyhyt koodi (enint. 100 merkkiä), joka annetaan mainosyksikölle kun sitä luodaan. Ei JavaScript-koodi."
     dfp_mobile_topic_above_suggested_ad_sizes: "Mobiilinäkymässä ketjun viimeisimmän viestin jälkeen näytettävän mainoksen koko."
     dfp_nth_post_code: "Näytä mainos N viestin välein, missä N on syöttämäsi luku."
     dfp_post_bottom_code: "Joka n:nnen viestin jälkeen viestien välissä näytettävän mainosyksikön yksilöllinen koodi. Kyseessä on lyhyt koodi (enint. 100 merkkiä), joka annetaan mainosyksikölle kun sitä luodaan. Ei JavaScript-koodi."
