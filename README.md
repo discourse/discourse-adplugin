@@ -40,7 +40,7 @@ hooks:
 Rebuild the container
 
 ```
-cd /var/docker
+cd /var/discourse
 git pull
 ./launcher rebuild app
 ```
