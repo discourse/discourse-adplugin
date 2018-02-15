@@ -1,9 +1,3 @@
-var amazon_width = '';
-var amazon_height = '';
-var mobile_amazon_width = '';
-var mobile_amazon_height = '';
-var user_input = '';
-var user_input_mobile = '';
 var currentUser = Discourse.User.current();
 
 var data = {
@@ -44,7 +38,7 @@ if (!Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_topic_above_su
   data["topic-above-suggested"]["amazon_height"] = parseInt(Discourse.SiteSettings.amazon_topic_above_suggested_ad_height_code);
 }
 
-if (Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_mobile_topic_above_sugggested_src_code) {
+if (Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_mobile_topic_above_suggested_src_code) {
   data["topic-above-suggested"]["user_input_mobile"] = Discourse.SiteSettings.amazon_mobile_topic_above_suggested_src_code;
   data["topic-above-suggested"]["mobile_amazon_width"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_above_suggested_ad_width_code);
   data["topic-above-suggested"]["mobile_amazon_height"] = parseInt(Discourse.SiteSettings.amazon_mobile_topic_above_suggested_ad_height_code);
@@ -64,22 +58,16 @@ if (Discourse.Mobile.mobileView && Discourse.SiteSettings.amazon_mobile_post_bot
 
 
 export default Ember.Component.extend({
-  amazon_width: amazon_width,
-  amazon_height: amazon_height,
-  mobile_amazon_width: mobile_amazon_width,
-  mobile_amazon_height: mobile_amazon_height,
-  user_input: user_input,
-  user_input_mobile: user_input_mobile,
-
   classNames: ['amazon-product-links'],
 
   init: function() {
-    this.set('user_input', data[this.placement]["user_input"] );
-    this.set('amazon_width', data[this.placement]["amazon_width"] );
-    this.set('amazon_height', data[this.placement]["amazon_height"] );
-    this.set('user_input_mobile', data[this.placement]["user_input_mobile"] );
-    this.set('mobile_amazon_height', data[this.placement]["mobile_amazon_height"] );
-    this.set('mobile_amazon_width', data[this.placement]["mobile_amazon_width"] );
+    let placement = this.get('placement');
+    this.set('user_input', data[placement]["user_input"] );
+    this.set('amazon_width', data[placement]["amazon_width"] );
+    this.set('amazon_height', data[placement]["amazon_height"] );
+    this.set('user_input_mobile', data[placement]["user_input_mobile"] );
+    this.set('mobile_amazon_height', data[placement]["mobile_amazon_height"] );
+    this.set('mobile_amazon_width', data[placement]["mobile_amazon_width"] );
     this._super();
   },
 
