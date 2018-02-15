@@ -55,7 +55,6 @@ register_css <<CSS
 
 .google-adsense.adsense-post-bottom {
   max-width: 735px;
-  background-color: blue;
   padding: 0 11px;
 }
 
