@@ -12,6 +12,7 @@ fr:
     dfp_topic_list_top_code: "ID de la publicité pour l'emplacement au dessus de la liste des sujets"
     dfp_topic_list_top_ad_sizes: "Sélectionner des formats de publicité"
     dfp_mobile_topic_list_top_code: "ID de la publicité Mobile pour l'emplacement au dessus de la liste des sujets"
+    dfp_mobile_topic_list_top_ad_sizes: "Choisir le format de publicité pour l'unité de publicité au-dessus des listes de sujet en mode portable."
     dfp_target_topic_list_top_key_code: "Entrez vos clés pour le ciblage personnalisé - niveau des stocks"
     dfp_target_topic_list_top_value_code: "Entrez vos valeurs pour le ciblage personnalisé - niveau des stocks"
     dfp_topic_above_post_stream_code: "ID de la publicité pour l'emplacement sur la page de sujet ci-dessus tous les messages"
