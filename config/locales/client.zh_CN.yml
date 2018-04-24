@@ -6,6 +6,9 @@
 # https://www.transifex.com/projects/p/discourse-org/
 
 zh_CN:
+  js:
+    adplugin:
+      advertisement_label: '广告'
   admin_js:
     admin:
       site_settings:
