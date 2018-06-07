@@ -7,7 +7,7 @@ function loadCodeFund() {
   if (_loaded) {
     return Ember.RSVP.resolve();
   }
-
+  
   if (_promise) {
     return _promise;
   }
@@ -26,6 +26,7 @@ function loadCodeFund() {
     function handler() {
       if (this.readyState === this.DONE) {
         _loaded = true;
+        
         if (this.status === 200) {
           resolve(this.response);
         } else {
@@ -48,9 +49,10 @@ export default Ember.Component.extend({
   _triggerAds() {
     this.set('adRequested', true);
     loadCodeFund().then((data) => {
+      _loaded = false;
+      _promise = null;
       this.set('adDetails', data);
       this.set('adRequested', false);
-      console.log('Loaded ad');
     }).catch(error => console.log(error));
   },
 
