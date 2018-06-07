@@ -341,3 +341,38 @@ amazon_plugin:
   amazon_mobile_post_bottom_ad_height_code:
     client: true
     default: ''
+
+codefund_plugin:
+  codefund_property_code:
+    client: true
+    default: ''
+    regex: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
+  codefund_advertiser_label:
+    client: true
+    default: 'Advertiser'
+  codefund_advertiser_short_label:
+    client: true
+    default: 'Ad'
+  codefund_through_trust_level:
+    client: true
+    default: 2
+    enum: 'TrustLevelSetting'
+  codefund_nth_post_code:
+    client: true
+    default: 4
+    min: 1
+  codefund_display_advertiser_labels:
+    default: true
+    client: true
+  codefund_below_post_enabled:
+    default: true
+    client: true
+  codefund_above_post_stream_enabled:
+    default: true
+    client: true
+  codefund_above_suggested_enabled:
+    default: true
+    client: true
+  codefund_top_of_topic_list_enabled:
+    default: true
+    client: true

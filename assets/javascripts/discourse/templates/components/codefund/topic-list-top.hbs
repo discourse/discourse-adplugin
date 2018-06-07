@@ -1,0 +1,11 @@
+<span class="codefund-wrapper codefund-topic-list-top">
+  <a href="{{adDetails.link}}" class="codefund-text" target="_blank" rel="noopener">
+    {{#if siteSettings.codefund_display_advertiser_labels}}
+      <span class="codefund-label">{{siteSettings.codefund_advertiser_label}}</span>
+    {{/if}}
+    <strong>{{adDetails.headline}}</strong> {{adDetails.description}}
+  </a>
+  <a href={{adDetails.poweredByLink}} class="codefund-powered-by" target="_blank" rel="noopener">
+    ads via codefund.io
+  </a>
+</span>

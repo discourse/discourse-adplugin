@@ -14,6 +14,11 @@
       {{amazon-product-links placement="post-bottom" postNumber=model.post_number}}
     {{/if}}
   {{/if}}
+  {{#if model.postSpecificCountCodeFund}}
+    {{#if siteSettings.codefund_below_post_enabled}}
+      {{codefund-ad placement="post-bottom" postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
 {{else}}
   {{#if model.postSpecificCountAdsense}}
     {{#if siteSettings.adsense_post_bottom_code}}
@@ -28,6 +33,11 @@
   {{#if model.postSpecificCountAmazon}}
     {{#if siteSettings.amazon_post_bottom_src_code}}
       {{amazon-product-links placement="post-bottom" postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
+  {{#if model.postSpecificCountCodeFund}}
+    {{#if siteSettings.codefund_below_post_enabled}}
+      {{codefund-ad placement="post-bottom" postNumber=model.post_number}}
     {{/if}}
   {{/if}}
 {{/if}}
