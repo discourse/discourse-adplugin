@@ -26,7 +26,7 @@ function loadCodeFund() {
     function handler() {
       if (this.readyState === this.DONE) {
         _loaded = true;
-        
+
         if (this.status === 200) {
           resolve(this.response);
         } else {
@@ -95,6 +95,10 @@ export default Ember.Component.extend({
 
   displayTopicListTop: function() {
     return this.get('placement') === 'topic-list-top';
-  }.property('placement')
+  }.property('placement'),
+
+  hasAd: function() {
+    return ((this.get('adDetails.description') || '').length > 0);
+  }.property('adDetails')
 
 });
