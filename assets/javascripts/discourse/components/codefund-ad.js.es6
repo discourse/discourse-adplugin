@@ -97,8 +97,4 @@ export default Ember.Component.extend({
     return this.get('placement') === 'topic-list-top';
   }.property('placement'),
 
-  hasAd: function() {
-    return ((this.get('adDetails.description') || '').length > 0);
-  }.property('adDetails')
-
 });
