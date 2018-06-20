@@ -1,0 +1,29 @@
+{{#if showAd}}
+  {{#if site.mobileView}}
+    {{#if displayPostBottom}}
+      {{partial "components/codefund/post-bottom"}}
+    {{/if}}
+    {{#if displayTopicAbovePostStream}}
+      {{partial "components/codefund/topic-above-post-stream"}}
+    {{/if}}
+    {{#if displayTopicAboveSuggested}}
+      {{partial "components/codefund/topic-above-suggested"}}
+    {{/if}}
+    {{#if displayTopicListTop}}
+      {{partial "components/codefund/topic-list-top"}}
+    {{/if}}
+  {{else}}
+    {{#if displayPostBottom}}
+      {{partial "components/codefund/post-bottom"}}
+    {{/if}}
+    {{#if displayTopicAbovePostStream}}
+      {{partial "components/codefund/topic-above-post-stream"}}
+    {{/if}}
+    {{#if displayTopicAboveSuggested}}
+      {{partial "components/codefund/topic-above-suggested"}}
+    {{/if}}
+    {{#if displayTopicListTop}}
+      {{partial "components/codefund/topic-list-top"}}
+    {{/if}}
+  {{/if}}
+{{/if}}

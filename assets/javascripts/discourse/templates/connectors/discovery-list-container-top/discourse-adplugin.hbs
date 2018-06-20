@@ -8,6 +8,9 @@
   {{#if siteSettings.amazon_mobile_topic_list_top_src_code}}
     {{amazon-product-links placement="topic-list-top" listLoading=listLoading}}
   {{/if}}
+  {{#if siteSettings.codefund_top_of_topic_list_enabled}}
+    {{codefund-ad placement="topic-list-top" listLoading=listLoading refreshOnChange=listLoading}}
+  {{/if}}
 {{else}}
   {{#if siteSettings.adsense_topic_list_top_code}}
     {{google-adsense placement="topic-list-top" listLoading=listLoading}}
@@ -17,5 +20,8 @@
   {{/if}}
   {{#if siteSettings.amazon_topic_list_top_src_code}}
     {{amazon-product-links placement="topic-list-top" listLoading=listLoading}}
+  {{/if}}
+  {{#if siteSettings.codefund_top_of_topic_list_enabled}}
+    {{codefund-ad placement="topic-list-top" listLoading=listLoading refreshOnChange=listLoading}}
   {{/if}}
 {{/if}}
