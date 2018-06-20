@@ -85,7 +85,7 @@ en:
     codefund_display_advertiser_labels: "Show the advertiser label (e.g. 'Advertiser') on the ads"
     codefund_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads"
     codefund_nth_post: "Show an ad after every N posts, where N is this value"
-    codefund_below_post_enabled: "Show an ad below each blog post"
+    codefund_below_post_enabled: "Show an ad below each post"
     codefund_above_post_stream_enabled: "Show an ad above the post stream"
     codefund_above_suggested_enabled: "Show an ad above the suggested topic list"
     codefund_top_of_topic_list_enabled: "Show an ad above the topic list"
