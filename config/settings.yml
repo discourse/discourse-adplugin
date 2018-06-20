@@ -343,7 +343,7 @@ amazon_plugin:
     default: ''
 
 codefund_plugin:
-  codefund_property_code:
+  codefund_property_id:
     client: true
     default: ''
     regex: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
@@ -357,7 +357,7 @@ codefund_plugin:
     client: true
     default: 2
     enum: 'TrustLevelSetting'
-  codefund_nth_post_code:
+  codefund_nth_post:
     client: true
     default: 4
     min: 1

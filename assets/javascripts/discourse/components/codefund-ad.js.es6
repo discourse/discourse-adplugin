@@ -1,20 +1,22 @@
+import { default as computed, observes } from 'ember-addons/ember-computed-decorators';
+
 var _loaded = false,
     _promise = null,
     currentUser = Discourse.User.current(),
-    propertyId = Discourse.SiteSettings.codefund_property_code;
+    propertyId = Discourse.SiteSettings.codefund_property_id;
 
 function loadCodeFund() {
   if (_loaded) {
     return Ember.RSVP.resolve();
   }
-  
+
   if (_promise) {
     return _promise;
   }
 
   const url = 'https://codefund.io/t/s/' + propertyId + '/details.json';
 
-  _promise = new Promise(function(resolve, reject){
+  _promise = new Promise(function(resolve, reject) {
     let xhr = new XMLHttpRequest();
 
     xhr.open('GET', url);
@@ -66,35 +68,41 @@ export default Ember.Component.extend({
     Ember.run.scheduleOnce('afterRender', this, this._triggerAds);
   },
 
+  @observes('listLoading')
   waitForLoad: function() {
     if (this.get('adRequested')) { return; } // already requested that this ad unit be populated
     if (!this.get('listLoading')) {
       Ember.run.scheduleOnce('afterRender', this, this._triggerAds);
     }
-  }.observes('listLoading'),
+  },
 
   checkTrustLevels: function() {
     return !((currentUser) && (currentUser.get('trust_level') > Discourse.SiteSettings.codefund_through_trust_level));
   }.property('trust_level'),
 
-  showAd: function() {
-    return Discourse.SiteSettings.codefund_property_code && this.get('checkTrustLevels');
-  }.property('checkTrustLevels'),
+  @computed('checkTrustLevels')
+  showAd: function(checkTrustLevels) {
+    return Discourse.SiteSettings.codefund_property_id && checkTrustLevels;
+  },
 
-  displayPostBottom: function() {
-    return this.get('placement') === 'post-bottom';
-  }.property('placement'),
+  @computed('placement')
+  displayPostBottom: function(placement) {
+    return placement === 'post-bottom';
+  },
 
+  @computed('placement')
   displayTopicAbovePostStream: function() {
     return this.get('placement') === 'topic-above-post-stream';
-  }.property('placement'),
+  },
 
+  @computed('placement')
   displayTopicAboveSuggested: function() {
     return this.get('placement') === 'topic-above-suggested';
-  }.property('placement'),
+  },
 
+  @computed('placement')
   displayTopicListTop: function() {
     return this.get('placement') === 'topic-list-top';
-  }.property('placement'),
+  }
 
 });

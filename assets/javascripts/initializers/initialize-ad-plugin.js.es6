@@ -9,23 +9,23 @@ export default {
     const siteSettings = container.lookup('site-settings:main');
 
     PostModel.reopen({
-      postSpecificCountDFP: function () {
+      postSpecificCountDFP: function() {
         return this.isNthPost(parseInt(siteSettings.dfp_nth_post_code));
       }.property('post_number'),
 
-      postSpecificCountAdsense: function () {
+      postSpecificCountAdsense: function() {
         return this.isNthPost(parseInt(siteSettings.adsense_nth_post_code));
       }.property('post_number'),
 
-      postSpecificCountAmazon: function () {
+      postSpecificCountAmazon: function() {
         return this.isNthPost(parseInt(siteSettings.amazon_nth_post_code));
       }.property('post_number'),
 
-      postSpecificCountCodeFund: function () {
-        return this.isNthPost(parseInt(siteSettings.codefund_nth_post_code));
+      postSpecificCountCodeFund: function() {
+        return this.isNthPost(parseInt(siteSettings.codefund_nth_post));
       }.property('post_number'),
 
-      isNthPost: function (n) {
+      isNthPost: function(n) {
         if (n && n > 0) {
           return (this.get('post_number') % n) === 0;
         } else {
