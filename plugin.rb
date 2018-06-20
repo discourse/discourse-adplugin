@@ -114,8 +114,6 @@ and (max-width : 775px) {
 }
 
 .codefund-wrapper {
-  float: left;
-  position: relative;
   z-index: 1;
   font-family: system, "Helvetica Neue", Helvetica, Arial;
   font-size: 13px;
