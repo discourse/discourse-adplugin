@@ -11,6 +11,7 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 * [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html)
 * [Google Double Click for Publishers](https://www.google.com/dfp)
 * [Amazon Affiliates](http://affiliate-program.amazon.com) - Banner and Product Link Ads
+* [CodeFund](https://codefund.io) - Ethical Ad Platform for Developers
 
 
 ## Quick Start in 3 Steps
@@ -58,6 +59,7 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 <ul>
 <li>Adsense - if using Adsense as your advertisement platform.</li>
 <li>DFP - if using the DoubleClick for Publishers advertisement platform.</li>
+<li>CodeFund - if using the CodeFund ethical advertisement platform.</li>
 </ul>
 </ul>
 
@@ -82,7 +84,9 @@ Only for Product Link and Banner Ads.
 
 ![](https://www.dropbox.com/sc/l67fb5c3tl8bq3d/AAAAMmccMW3kkIeBR7cBdWoFa?dl=1)
 
+##### CodeFund Embed Tag to Discourse's Site Settings
 
+![CodeFund Instructions](https://s3-us-west-2.amazonaws.com/codesponsor/discourse-codefund-instructions.png)
 
 ### Step 3 - See Your Ad
 

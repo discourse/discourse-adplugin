@@ -49,6 +49,8 @@ export default Ember.Component.extend({
   adDetails: {},
 
   _triggerAds() {
+    if (!propertyId) return;
+    
     this.set('adRequested', true);
     loadCodeFund().then((data) => {
       _loaded = false;
