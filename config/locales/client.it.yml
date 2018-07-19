@@ -6,6 +6,9 @@
 # https://www.transifex.com/projects/p/discourse-org/
 
 it:
+  js:
+    adplugin:
+      advertisement_label: 'ANNUNCIO'
   admin_js:
     admin:
       site_settings:

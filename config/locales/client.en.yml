@@ -1,4 +1,7 @@
 en:
+  js:
+    adplugin:
+      advertisement_label: 'ADVERTISEMENT'
   admin_js:
     admin:
       site_settings:
@@ -6,3 +9,4 @@ en:
           dfp_plugin: 'DFP'
           adsense_plugin: 'Adsense'
           amazon_plugin: 'Amazon'
+          codefund_plugin: 'CodeFund'

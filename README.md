@@ -11,6 +11,7 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 * [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html)
 * [Google Double Click for Publishers](https://www.google.com/dfp)
 * [Amazon Affiliates](http://affiliate-program.amazon.com) - Banner and Product Link Ads
+* [CodeFund](https://codefund.io) - Ethical Ad Platform for Developers
 
 
 ## Quick Start in 3 Steps
@@ -40,7 +41,7 @@ hooks:
 Rebuild the container
 
 ```
-cd /var/docker
+cd /var/discourse
 git pull
 ./launcher rebuild app
 ```
@@ -58,6 +59,7 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 <ul>
 <li>Adsense - if using Adsense as your advertisement platform.</li>
 <li>DFP - if using the DoubleClick for Publishers advertisement platform.</li>
+<li>CodeFund - if using the CodeFund ethical advertisement platform.</li>
 </ul>
 </ul>
 
@@ -82,7 +84,9 @@ Only for Product Link and Banner Ads.
 
 ![](https://www.dropbox.com/sc/l67fb5c3tl8bq3d/AAAAMmccMW3kkIeBR7cBdWoFa?dl=1)
 
+##### CodeFund Embed Tag to Discourse's Site Settings
 
+![CodeFund Instructions](https://s3-us-west-2.amazonaws.com/codesponsor/discourse-codefund-instructions.png)
 
 ### Step 3 - See Your Ad
 
@@ -101,12 +105,12 @@ In this section, we go into more detail on:
 
 The following are available locations along with a description and an image showing their location within Discourse to display ads for all platforms.
 
-Location Name | Description
---- | --- | ---
-Topic List Top | Ad will appear at the header of Discourse homepage
-Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics
-Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics
-Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```.
+| Location Name | Description |
+| --- | --- |
+| Topic List Top | Ad will appear at the header of Discourse homepage |
+| Topic Above Post Stream | Ad will appear in the header of all Discourse forum topics |
+| Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics |
+| Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```. |
 
 
 ![](https://www.dropbox.com/sc/rm5bcn8c85niul1/AAAUVW-hn56XtCl_XTNlE19Ra?dl=1)

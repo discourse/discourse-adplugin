@@ -5,14 +5,7 @@
 # To work with us on translations, join this project:
 # https://www.transifex.com/projects/p/discourse-org/
 
-fr:
+sl:
   js:
     adplugin:
-      advertisement_label: 'PUBLICITE'
-  admin_js:
-    admin:
-      site_settings:
-        categories:
-          dfp_plugin: 'DFP'
-          adsense_plugin: 'Adsense'
-          amazon_plugin: 'Amazon'
+      advertisement_label: 'OGLAS'
