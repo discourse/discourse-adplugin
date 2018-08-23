@@ -5,14 +5,15 @@
 # To work with us on translations, join this project:
 # https://www.transifex.com/projects/p/discourse-org/
 
-bs_BA:
+sw:
   js:
     adplugin:
-      advertisement_label: 'OGLAS'
+      advertisement_label: 'TANGAZO'
   admin_js:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'DFP'
-          adsense_plugin: 'Adsense'
+          dfp_plugin: 'Programu ya matangazo kutoka Google'
+          adsense_plugin: 'Matangazo ya Google.'
           amazon_plugin: 'Amazon'
+          codefund_plugin: 'CodeFund'
