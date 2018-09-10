@@ -22,6 +22,7 @@ it:
     dfp_target_topic_above_post_stream_value_code: "Inserisci i valori personalizzati di targeting - Livello inventario"
     dfp_topic_above_suggested_code: "Inserisci il Codice univoco del gruppo annunci da mostrare dopo l'ultimo messaggio in un argomento, sopra gli argomenti suggeriti. E' il codice breve (max 100 caratteri) dato all'annuncio quando è stato creato, non il codice JavaScript."
     dfp_topic_above_suggested_ad_sizes: "Scegli la dimensione dell'annuncio per il gruppo annunci da collocare dopo l'ultimo messaggio in un argomento."
+    dfp_mobile_topic_above_suggested_code: "Inserisci il Codice univoco del gruppo annunci da mostrare dopo l'ultimo messaggio in un argomento, sopra gli argomenti suggeriti nella vista mobile. E' il codice breve (max 100 caratteri) dato al gruppo annunci quando è stato creato, non il codice JavaScript."
     dfp_mobile_topic_above_suggested_ad_sizes: "Scegli la dimensione dell'annuncio per il gruppo annunci da collocare dopo l'ultimo messaggio in un argomento per la visualizzazione su telefono."
     dfp_target_topic_above_suggested_key_code: "Inserisci le chiavi personalizzate di targeting - Livello inventario"
     dfp_target_topic_above_suggested_value_code: "Inserisci i valori personalizzati di targeting - Livello inventario"

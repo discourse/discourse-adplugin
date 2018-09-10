@@ -7,7 +7,7 @@
 
 de:
   site_settings:
-    dfp_publisher_id: "Gib’ deinen Netzwerkschlüssel ein, den du in deinen Netzwerkeinstellungen findest."
+    dfp_publisher_id: "Eingabe Deines Googe Ad Manager (ehemals DFP) Netzwerk Code, den Du in deinen Netzwerk Einstellungen findest."
     dfp_through_trust_level: "Zeige Benutzern deine Werbung auf Grundlage der Vertrauensstufe. Benutzer mit einer höheren Vertrauensstufe als der angegebene Wert werden keine Werbung sehen."
     dfp_topic_list_top_code: "Gib’ den eindeutigen Code der Werbeeinheit an, die oberhalb von Themenlisten angezeigt werden soll. Das ist der Kurzcode (max. 100 Zeichen), den die Werbeeinheit bei ihrer Erstellung erhalten hat, nicht der JavaScript-Code."
     dfp_topic_list_top_ad_sizes: "Wähle deine Werbegröße für die Werbeeinheit oberhalb der Themenlisten."

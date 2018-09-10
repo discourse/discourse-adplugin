@@ -5,4 +5,9 @@
 # To work with us on translations, join this project:
 # https://www.transifex.com/projects/p/discourse-org/
 
-id: {}
+id:
+  admin_js:
+    admin:
+      site_settings:
+        categories:
+          adsense_plugin: 'Adsense'

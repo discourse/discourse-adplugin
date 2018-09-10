@@ -13,6 +13,7 @@ fr:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'DFP'
+          dfp_plugin: 'Gestionnaire DFP/Ad'
           adsense_plugin: 'Adsense'
           amazon_plugin: 'Amazon'
+          codefund_plugin: 'CodeFund'
