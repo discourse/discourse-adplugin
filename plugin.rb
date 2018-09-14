@@ -31,6 +31,7 @@ register_css <<CSS
 
 .google-adsense .google-adsense-label {
   width: 728px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
