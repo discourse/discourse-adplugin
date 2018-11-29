@@ -7,7 +7,6 @@
 
 nb_NO:
   site_settings:
-    dfp_publisher_id: "Skriv inn din nettverkskode, som er å finne i nettverksinnstillingene."
     dfp_through_trust_level: "Vis dine reklamer til brukere basert på tillitsnivå. Brukere med tillitsnivå høyere enn denne verdien vil ikke se reklamer."
     dfp_nth_post_code: "Vis en reklame etter hver N post, der N er denne verdien."
     adsense_topic_list_top_ad_sizes: "Velg din reklamestørrelse"

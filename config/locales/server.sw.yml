@@ -7,7 +7,6 @@
 
 sw:
   site_settings:
-    dfp_publisher_id: "Ingiza kodi ya mtandano, ambayo inapatikana kwenye mipangilio ya mtandao."
     dfp_through_trust_level: "Onyesha matangazo yako kulingana na uaminifu. Watumiaji ambao wanaaminika kiasii cha juu hawatayaona matangazo."
     dfp_topic_list_top_code: "Andika kodi ya kitengo cha tangazo litakalo onyeshwa juu ya orodha ya mada. Hii kodi lazima iwe fupi (kiwango cha juu ni herufi 100) iliyopewa kitengo cha tangazo kipindi ilivyotengenezwa, isiwe kodi ya JavaScript."
     dfp_topic_list_top_ad_sizes: "Chagua ukubwa wa tangazo juu ya orodha ya mada"

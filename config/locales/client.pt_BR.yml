@@ -13,7 +13,6 @@ pt_BR:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'DFP'
-          adsense_plugin: 'Adsense'
+          dfp_plugin: 'Gerenciador de Anúncios'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'

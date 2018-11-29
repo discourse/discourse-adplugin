@@ -5,12 +5,13 @@
 # To work with us on translations, join this project:
 # https://www.transifex.com/projects/p/discourse-org/
 
-da:
+lt:
   js:
     adplugin:
-      advertisement_label: 'REKLAME'
+      advertisement_label: 'REKLAMA'
   admin_js:
     admin:
       site_settings:
         categories:
+          dfp_plugin: 'DFP/Ad Redaktorius'
           amazon_plugin: 'Amazon'

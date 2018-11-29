@@ -7,7 +7,6 @@
 
 cs:
   site_settings:
-    dfp_publisher_id: "Zadejte kód Vaší sítě, který najdete v nastavení Vaší sítě."
     dfp_through_trust_level: "Zobrazit reklamy uživatelům podle jejich důvěryhodnosti. Uživatelé s důvěryhodností vyšší než tato hodnota reklamy neuvidí."
     dfp_topic_list_top_code: "Zadejte unikátní kód jednotky reklamy pro zobrazení nad seznamem témat. Toto je krátký kód (max 100 znaků) přidělený reklamní jednotce, když byla vytvořena, ne JavaScript kód."
     dfp_topic_list_top_ad_sizes: "Zvolte velikost reklamy pro reklamní jednotku nad seznamem témat."

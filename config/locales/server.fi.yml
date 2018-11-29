@@ -7,7 +7,7 @@
 
 fi:
   site_settings:
-    dfp_publisher_id: "Network code, jonka löydät verkkoasetuksistasi (network settings)."
+    dfp_publisher_id: "Anna Google Ad Managerin (entiseltä nimeltään DFP) network code, jonka löydät asetustesi kohdasta network settings."
     dfp_through_trust_level: "Näytä mainoksia käyttäjälle luottamustasosta riippuen. Käyttäjät joiden luottamustaso on tätä korkeampi eivät näe mainoksia."
     dfp_topic_list_top_code: "Ketjulistausten yllä näytettävän mainosyksikön yksilöllinen koodi. Kyseessä on lyhyt koodi (enint. 100 merkkiä), joka annetaan mainosyksikölle kun sitä luodaan. Ei JavaScript-koodi."
     dfp_topic_list_top_ad_sizes: "Ketjulistauksen yllä näytettävän mainoksen koko."

@@ -14,6 +14,6 @@ es:
       site_settings:
         categories:
           dfp_plugin: 'DFP/Ad Manager'
-          adsense_plugin: 'Adsense'
+          adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
