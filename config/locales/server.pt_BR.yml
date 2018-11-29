@@ -7,7 +7,6 @@
 
 pt_BR:
   site_settings:
-    dfp_publisher_id: "Entre com o seu código de rede, o qual é encontrado nas suas configurações de rede."
     dfp_through_trust_level: "Exibir seus anúncios para usuários baseado em níveis de confiança. Usuários com nível de confiança maior que este valor não verá anúncios."
     dfp_topic_list_top_code: "Digite o Código único do anúncio para exibir em cima das listas de tópicos. Este é o short code (máx. 100 caractereres) dado ao item de anúncio quando ele foi criado, não o código JavaScript."
     dfp_topic_list_top_ad_sizes: "Escolha o tamanho do seu anúncio para o ítem de anúncio em cima das listas de tópicos."

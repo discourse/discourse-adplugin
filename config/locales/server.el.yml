@@ -7,7 +7,6 @@
 
 el:
   site_settings:
-    dfp_publisher_id: "Input your network code, which is found in your network settings."
     dfp_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
     dfp_topic_list_top_code: "Enter the unique Code of the ad unit to display above topic lists. This is the short code (max 100 chars) given to the ad unit when it was created, not the JavaScript code."
     dfp_topic_list_top_ad_sizes: "Choose your ad size for the ad unit above topic lists."

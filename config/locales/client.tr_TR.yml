@@ -10,6 +10,4 @@ tr_TR:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'DFP'
-          adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'

@@ -13,7 +13,5 @@ sw:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'Programu ya matangazo kutoka Google'
-          adsense_plugin: 'Matangazo ya Google.'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'

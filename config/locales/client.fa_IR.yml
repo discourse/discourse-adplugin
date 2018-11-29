@@ -10,6 +10,4 @@ fa_IR:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'DFP'
-          adsense_plugin: 'ادسنس'
           amazon_plugin: 'آمازون'

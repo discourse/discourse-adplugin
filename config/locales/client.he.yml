@@ -13,6 +13,4 @@ he:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'DFP'
-          adsense_plugin: 'אדסנס'
           amazon_plugin: 'אמזון'

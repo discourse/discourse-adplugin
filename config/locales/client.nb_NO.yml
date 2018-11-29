@@ -13,6 +13,4 @@ nb_NO:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'DFP'
-          adsense_plugin: 'Adsense'
           amazon_plugin: 'Amazon'

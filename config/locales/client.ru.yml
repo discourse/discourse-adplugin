@@ -13,7 +13,6 @@ ru:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'Плагин DoubleClick for Publishers (DFP)'
-          adsense_plugin: 'Adsense'
+          dfp_plugin: 'DFP/Ad Manager'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'Плагин CodeFund'

@@ -7,7 +7,6 @@
 
 it:
   site_settings:
-    dfp_publisher_id: "Inserisci il codice della rete che si trova nelle impostazioni di rete."
     dfp_through_trust_level: "Mostra i tuoi annunci agli utenti in base ai livelli di esperienza. Gli utenti con livello di esperienza superiore a questo valore non vedranno gli annunci."
     dfp_topic_list_top_code: "Inserisci il Codice univoco dell'annuncio da mostrare sopra le liste argomenti. E' il codice breve (massimo 100 caratteri) dato all'annuncio quando è stato creato, non il codice JavaScript."
     dfp_topic_list_top_ad_sizes: "Scegli la dimensione dell'annuncio sopra le liste degli argomenti."

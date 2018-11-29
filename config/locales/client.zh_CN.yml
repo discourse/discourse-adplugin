@@ -13,6 +13,6 @@ zh_CN:
     admin:
       site_settings:
         categories:
-          dfp_plugin: '谷歌DFP广告'
-          adsense_plugin: '谷歌Adsense广告'
+          dfp_plugin: '谷歌 DFP/广告管理器'
           amazon_plugin: '亚马逊网站联盟'
+          codefund_plugin: 'CodeFund'
