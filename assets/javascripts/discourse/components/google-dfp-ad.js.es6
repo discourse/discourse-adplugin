@@ -371,8 +371,6 @@ export default Ember.Component.extend({
       return;
     }
 
-    const ember_w_function = String.prototype.w;
-    String.prototype.w = null;
     var self = this;
     loadGoogle(this.siteSettings)
       .then(function() {
@@ -395,9 +393,6 @@ export default Ember.Component.extend({
             window.googletag.pubads().refresh([slot.ad]);
           }
         });
-      })
-      .finally(function() {
-        String.prototype.w = ember_w_function;
       });
   }.on("didInsertElement"),
 
