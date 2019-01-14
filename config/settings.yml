@@ -346,7 +346,6 @@ codefund_plugin:
   codefund_property_id:
     client: true
     default: ''
-    regex: '^[\d]*$'
   codefund_advertiser_label:
     client: true
     default: 'Advertiser'
