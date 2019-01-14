@@ -346,7 +346,6 @@ codefund_plugin:
   codefund_property_id:
     client: true
     default: ''
-    regex: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
   codefund_advertiser_label:
     client: true
     default: 'Advertiser'
