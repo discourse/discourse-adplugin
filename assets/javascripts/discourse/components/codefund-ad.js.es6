@@ -17,7 +17,7 @@ function loadCodeFund() {
     return _promise;
   }
 
-  const url = "https://codefund.io/t/s/" + propertyId + "/details.json";
+  const url = "https://codefund.app/properties/" + propertyId + "/funder.json";
 
   _promise = new Promise(function(resolve, reject) {
     let xhr = new XMLHttpRequest();

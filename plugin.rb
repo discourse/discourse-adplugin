@@ -175,4 +175,14 @@ and (max-width : 775px) {
   text-align: center;
 }
 
+.codefund-wrapper.codefund-topic-above-suggested {
+  clear: both;
+}
+
+.codefund-wrapper .codefund-pixel {
+  visibility: hidden;
+  height: 1px;
+  width: 1px;
+}
+
 CSS
