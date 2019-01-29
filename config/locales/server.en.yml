@@ -51,7 +51,6 @@ en:
     adsense_post_bottom_ad_sizes: "Choose your ad size"
     adsense_mobile_post_bottom_ad_size: "Choose your ad size"
     adsense_nth_post_code: "Show an ad after every N posts, where N is this value."
-    adsense_ads_txt_url: "URL of ads.txt file."
 
     amazon_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
     amazon_topic_list_top_src_code: "Enter src code to display at topic list top location"
