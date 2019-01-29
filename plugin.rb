@@ -176,20 +176,3 @@ and (max-width : 775px) {
 }
 
 CSS
-
-after_initialize do
-  require_dependency 'application_controller'
-  class ::AdstxtController < ::ApplicationController
-    skip_before_action :check_xhr
-
-    def index
-      raise Discourse::NotFound unless SiteSetting.adsense_ads_txt_url.present?
-
-      redirect_to SiteSetting.adsense_ads_txt_url
-    end
-  end
-
-  Discourse::Application.routes.append do
-    get '/ads.txt' => "adstxt#index"
-  end
-end
