@@ -7,7 +7,7 @@
 
 es:
   site_settings:
-    dfp_publisher_id: "Ingrese su network code del Google Ad Manager (llamado DFP), que puedes encontrar en la configuración."
+    dfp_publisher_id: "Introduce tu network code del Google Ad Manager (llamado DFP), que puedes encontrar en la configuración."
     dfp_through_trust_level: "Muestre sus anuncios a los usuarios basados en los niveles de confianza. Usuarios con un nivel de confianza elevado no verían anuncios."
     dfp_topic_list_top_code: "Ingrese su código único de anuncio para mostrar por encima de la lista de temas. Este es un código corto (max 100 caracteres) dado al anuncio cuando fue creado, no el código JavaScript."
     dfp_topic_list_top_ad_sizes: "Seleccione el tamaño de tu anuncio para el anuncio sobre la lista de temas."
