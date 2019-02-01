@@ -13,5 +13,7 @@ it:
     admin:
       site_settings:
         categories:
+          dfp_plugin: 'DFP/Gestore Annunci'
+          adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
