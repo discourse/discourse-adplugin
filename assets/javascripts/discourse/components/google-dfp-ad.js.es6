@@ -108,12 +108,28 @@ const MOBILE_SETTINGS = {
   }
 };
 
+function getWidthAndHeight(placement, settings, isMobile) {
+  let config;
+
+  if (isMobile) {
+    config = MOBILE_SETTINGS[placement];
+  } else {
+    config = DESKTOP_SETTINGS[placement];
+  }
+
+  return {
+    width: parseInt(splitWidthInt(settings[config.sizes])),
+    height: parseInt(splitHeightInt(settings[config.sizes]))
+  };
+}
+
 function defineSlot(divId, placement, settings, isMobile) {
   if (!settings.dfp_publisher_id) {
     return;
   }
 
-  let ad, width, height, config;
+  let ad, config;
+  let size = getWidthAndHeight(placement, settings, isMobile);
 
   if (ads[divId]) {
     return ads[divId];
@@ -125,12 +141,10 @@ function defineSlot(divId, placement, settings, isMobile) {
     config = DESKTOP_SETTINGS[placement];
   }
 
-  width = parseInt(splitWidthInt(settings[config.sizes]));
-  height = parseInt(splitHeightInt(settings[config.sizes]));
   ad = window.googletag
     .defineSlot(
       "/" + settings.dfp_publisher_id + "/" + settings[config.code],
-      [width, height],
+      [size.width, size.height],
       divId
     )
     .addService(window.googletag.pubads());
@@ -141,7 +155,7 @@ function defineSlot(divId, placement, settings, isMobile) {
   );
 
   if (ad) {
-    ads[divId] = { ad: ad, width: width, height: height };
+    ads[divId] = { ad: ad, width: size.width, height: size.height };
     return ads[divId];
   }
 }
@@ -184,11 +198,7 @@ function loadGoogle() {
   return _promise;
 }
 
-// Ember component - the class is the adblock and css
 export default Ember.Component.extend({
-  width: 728,
-  height: 90,
-
   classNameBindings: ["adUnitClass"],
   classNames: ["google-dfp-ad"],
   loadedGoogletag: false,
@@ -272,14 +282,23 @@ export default Ember.Component.extend({
             "discourse-category",
             self.get("category") ? self.get("category") : "0"
           );
-          self.set("width", slot.width);
-          self.set("height", slot.height);
           window.googletag.display(self.get("divId"));
           window.googletag.pubads().refresh([slot.ad]);
         }
       });
     });
   }.on("didInsertElement"),
+
+  willRender() {
+    this._super(...arguments);
+    let size = getWidthAndHeight(
+      this.get("placement"),
+      this.siteSettings,
+      this.site.mobileView
+    );
+    this.set("width", size.width);
+    this.set("height", size.height);
+  },
 
   cleanup: function() {
     destroySlot(this.get("divId"));
