@@ -54,205 +54,91 @@ function custom_targeting(key_array, value_array, location) {
   }
 }
 
+const DESKTOP_SETTINGS = {
+  "topic-list-top": {
+    code: "dfp_topic_list_top_code",
+    sizes: "dfp_topic_list_top_ad_sizes",
+    targeting_keys: "dfp_target_topic_list_top_key_code",
+    targeting_values: "dfp_target_topic_list_top_value_code"
+  },
+  "topic-above-post-stream": {
+    code: "dfp_topic_above_post_stream_code",
+    sizes: "dfp_topic_above_post_stream_ad_sizes",
+    targeting_keys: "dfp_target_topic_above_post_stream_key_code",
+    targeting_values: "dfp_target_topic_above_post_stream_value_code"
+  },
+  "topic-above-suggested": {
+    code: "dfp_topic_above_suggested_code",
+    sizes: "dfp_topic_above_suggested_ad_sizes",
+    targeting_keys: "dfp_target_topic_above_suggested_key_code",
+    targeting_values: "dfp_target_topic_above_suggested_value_code"
+  },
+  "post-bottom": {
+    code: "dfp_post_bottom_code",
+    sizes: "dfp_topic_above_suggested_ad_sizes",
+    targeting_keys: "dfp_target_post_bottom_key_code",
+    targeting_values: "dfp_target_post_bottom_value_code"
+  }
+};
+
+const MOBILE_SETTINGS = {
+  "topic-list-top": {
+    code: "dfp_mobile_topic_list_top_code",
+    sizes: "dfp_mobile_topic_list_top_ad_sizes",
+    targeting_keys: "dfp_target_topic_list_top_key_code",
+    targeting_values: "dfp_target_topic_list_top_value_code"
+  },
+  "topic-above-post-stream": {
+    code: "dfp_mobile_topic_above_post_stream_code",
+    sizes: "dfp_mobile_topic_above_post_stream_ad_sizes",
+    targeting_keys: "dfp_target_topic_above_post_stream_key_code",
+    targeting_values: "dfp_target_topic_above_post_stream_value_code"
+  },
+  "topic-above-suggested": {
+    code: "dfp_mobile_topic_above_suggested_code",
+    sizes: "dfp_mobile_topic_above_suggested_ad_sizes",
+    targeting_keys: "dfp_target_topic_above_suggested_key_code",
+    targeting_values: "dfp_target_topic_above_suggested_value_code"
+  },
+  "post-bottom": {
+    code: "dfp_mobile_post_bottom_code",
+    sizes: "dfp_mobile_post_bottom_ad_sizes",
+    targeting_keys: "dfp_target_post_bottom_key_code",
+    targeting_values: "dfp_target_post_bottom_value_code"
+  }
+};
+
 function defineSlot(divId, placement, settings, isMobile) {
   if (!settings.dfp_publisher_id) {
     return;
   }
 
-  var ad, width, height;
+  let ad, width, height, config;
 
   if (ads[divId]) {
     return ads[divId];
   }
 
-  if (
-    placement === "topic-list-top" &&
-    settings.dfp_topic_list_top_code &&
-    settings.dfp_topic_list_top_ad_sizes
-  ) {
-    if (isMobile) {
-      width = parseInt(
-        splitWidthInt(settings.dfp_mobile_topic_list_top_ad_sizes)
-      );
-      height = parseInt(
-        splitHeightInt(settings.dfp_mobile_topic_list_top_ad_sizes)
-      );
-      ad = window.googletag
-        .defineSlot(
-          "/" +
-            settings.dfp_publisher_id +
-            "/" +
-            settings.dfp_mobile_topic_list_top_code,
-          [width, height],
-          divId
-        )
-        .addService(window.googletag.pubads());
-      custom_targeting(
-        keyParse(Discourse.SiteSettings.dfp_target_topic_list_top_key_code),
-        keyParse(settings.dfp_target_topic_list_top_value_code),
-        ad
-      );
-    } else {
-      width = parseInt(splitWidthInt(settings.dfp_topic_list_top_ad_sizes));
-      height = parseInt(splitHeightInt(settings.dfp_topic_list_top_ad_sizes));
-      ad = window.googletag
-        .defineSlot(
-          "/" +
-            settings.dfp_publisher_id +
-            "/" +
-            settings.dfp_topic_list_top_code,
-          [width, height],
-          divId
-        )
-        .addService(window.googletag.pubads());
-      custom_targeting(
-        keyParse(settings.dfp_target_topic_list_top_key_code),
-        keyParse(settings.dfp_target_topic_list_top_value_code),
-        ad
-      );
-    }
-  } else if (
-    placement === "topic-above-post-stream" &&
-    settings.dfp_topic_above_post_stream_code &&
-    settings.dfp_topic_above_post_stream_ad_sizes
-  ) {
-    if (isMobile) {
-      width = parseInt(
-        splitWidthInt(settings.dfp_mobile_topic_above_post_stream_ad_sizes)
-      );
-      height = parseInt(
-        splitHeightInt(settings.dfp_mobile_topic_above_post_stream_ad_sizes)
-      );
-      ad = window.googletag
-        .defineSlot(
-          "/" +
-            settings.dfp_publisher_id +
-            "/" +
-            settings.dfp_mobile_topic_above_post_stream_code,
-          [width, height],
-          divId
-        )
-        .addService(window.googletag.pubads());
-      custom_targeting(
-        keyParse(settings.dfp_target_topic_above_post_stream_key_code),
-        keyParse(settings.dfp_target_topic_above_post_stream_value_code),
-        ad
-      );
-    } else {
-      width = parseInt(
-        splitWidthInt(settings.dfp_topic_above_post_stream_ad_sizes)
-      );
-      height = parseInt(
-        splitHeightInt(settings.dfp_topic_above_post_stream_ad_sizes)
-      );
-      ad = window.googletag
-        .defineSlot(
-          "/" +
-            settings.dfp_publisher_id +
-            "/" +
-            settings.dfp_topic_above_post_stream_code,
-          [width, height],
-          divId
-        )
-        .addService(window.googletag.pubads());
-      custom_targeting(
-        keyParse(settings.dfp_target_topic_above_post_stream_key_code),
-        keyParse(settings.dfp_target_topic_above_post_stream_value_code),
-        ad
-      );
-    }
-  } else if (
-    placement === "topic-above-suggested" &&
-    settings.dfp_topic_above_suggested_code &&
-    settings.dfp_topic_above_suggested_ad_sizes
-  ) {
-    if (isMobile) {
-      width = parseInt(
-        splitWidthInt(settings.dfp_mobile_topic_above_suggested_ad_sizes)
-      );
-      height = parseInt(
-        splitHeightInt(settings.dfp_mobile_topic_above_suggested_ad_sizes)
-      );
-      ad = window.googletag
-        .defineSlot(
-          "/" +
-            settings.dfp_publisher_id +
-            "/" +
-            settings.dfp_mobile_topic_above_suggested_code,
-          [width, height],
-          divId
-        )
-        .addService(window.googletag.pubads());
-      custom_targeting(
-        keyParse(settings.dfp_target_topic_above_suggested_key_code),
-        keyParse(settings.dfp_target_topic_above_suggested_value_code),
-        ad
-      );
-    } else {
-      width = parseInt(
-        splitWidthInt(settings.dfp_topic_above_suggested_ad_sizes)
-      );
-      height = parseInt(
-        splitHeightInt(settings.dfp_topic_above_suggested_ad_sizes)
-      );
-      ad = window.googletag
-        .defineSlot(
-          "/" +
-            settings.dfp_publisher_id +
-            "/" +
-            settings.dfp_topic_above_suggested_code,
-          [width, height],
-          divId
-        )
-        .addService(window.googletag.pubads());
-      custom_targeting(
-        keyParse(settings.dfp_target_topic_above_suggested_key_code),
-        keyParse(settings.dfp_target_topic_above_suggested_value_code),
-        ad
-      );
-    }
-  } else if (
-    placement === "post-bottom" &&
-    settings.dfp_post_bottom_code &&
-    settings.dfp_post_bottom_ad_sizes
-  ) {
-    if (isMobile) {
-      width = parseInt(splitWidthInt(settings.dfp_mobile_post_bottom_ad_sizes));
-      height = parseInt(
-        splitHeightInt(settings.dfp_mobile_post_bottom_ad_sizes)
-      );
-      ad = window.googletag
-        .defineSlot(
-          "/" +
-            settings.dfp_publisher_id +
-            "/" +
-            settings.dfp_mobile_post_bottom_code,
-          [width, height],
-          divId
-        )
-        .addService(window.googletag.pubads());
-      custom_targeting(
-        keyParse(settings.dfp_target_post_bottom_key_code),
-        keyParse(settings.dfp_target_post_bottom_value_code),
-        ad
-      );
-    } else {
-      width = parseInt(splitWidthInt(settings.dfp_post_bottom_ad_sizes));
-      height = parseInt(splitHeightInt(settings.dfp_post_bottom_ad_sizes));
-      ad = window.googletag
-        .defineSlot(
-          "/" + settings.dfp_publisher_id + "/" + settings.dfp_post_bottom_code,
-          [width, height],
-          divId
-        )
-        .addService(window.googletag.pubads());
-      custom_targeting(
-        keyParse(settings.dfp_target_post_bottom_key_code),
-        keyParse(settings.dfp_target_post_bottom_value_code),
-        ad
-      );
-    }
+  if (isMobile) {
+    config = MOBILE_SETTINGS[placement];
+  } else {
+    config = DESKTOP_SETTINGS[placement];
   }
+
+  width = parseInt(splitWidthInt(settings[config.sizes]));
+  height = parseInt(splitHeightInt(settings[config.sizes]));
+  ad = window.googletag
+    .defineSlot(
+      "/" + settings.dfp_publisher_id + "/" + settings[config.code],
+      [width, height],
+      divId
+    )
+    .addService(window.googletag.pubads());
+  custom_targeting(
+    keyParse(settings[config.targeting_keys]),
+    keyParse(settings[config.targeting_values]),
+    ad
+  );
 
   if (ad) {
     ads[divId] = { ad: ad, width: width, height: height };
@@ -372,28 +258,27 @@ export default Ember.Component.extend({
     }
 
     var self = this;
-    loadGoogle(this.siteSettings)
-      .then(function() {
-        self.set("loadedGoogletag", true);
-        window.googletag.cmd.push(function() {
-          let slot = defineSlot(
-            self.get("divId"),
-            self.get("placement"),
-            self.siteSettings,
-            self.site.mobileView
+    loadGoogle(this.siteSettings).then(function() {
+      self.set("loadedGoogletag", true);
+      window.googletag.cmd.push(function() {
+        let slot = defineSlot(
+          self.get("divId"),
+          self.get("placement"),
+          self.siteSettings,
+          self.site.mobileView
+        );
+        if (slot && slot.ad) {
+          slot.ad.setTargeting(
+            "discourse-category",
+            self.get("category") ? self.get("category") : "0"
           );
-          if (slot && slot.ad) {
-            slot.ad.setTargeting(
-              "discourse-category",
-              self.get("category") ? self.get("category") : "0"
-            );
-            self.set("width", slot.width);
-            self.set("height", slot.height);
-            window.googletag.display(self.get("divId"));
-            window.googletag.pubads().refresh([slot.ad]);
-          }
-        });
+          self.set("width", slot.width);
+          self.set("height", slot.height);
+          window.googletag.display(self.get("divId"));
+          window.googletag.pubads().refresh([slot.ad]);
+        }
       });
+    });
   }.on("didInsertElement"),
 
   cleanup: function() {
