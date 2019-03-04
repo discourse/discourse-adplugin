@@ -53,6 +53,7 @@ es:
     adsense_post_bottom_ad_sizes: "Seleccione el tamaño de tu anuncio"
     adsense_mobile_post_bottom_ad_size: "Selecciona tamaño de anuncio"
     adsense_nth_post_code: "Elija un número de post para su anuncio; se mostrará al final de ese mensaje"
+    adsense_ads_txt: "Contenido de tu archivo ads.txt. Más información disponible en <a href='https://support.google.com/adsense/answer/7532444?hl=es' target='_blank'>esta página de ayuda del Google AdSense</a>."
     amazon_through_trust_level: "Muestre sus anuncios a los usuarios basados en los niveles de confianza"
     amazon_topic_list_top_src_code: "Ingrese su código SRC de anuncio para mostrar por encima de la lista de temas"
     amazon_topic_list_top_ad_width_code: "Entrada la anchura de la publicidad"

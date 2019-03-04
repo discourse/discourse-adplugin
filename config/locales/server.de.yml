@@ -53,6 +53,7 @@ de:
     adsense_post_bottom_ad_sizes: "Wähle die Größe deiner Werbung"
     adsense_mobile_post_bottom_ad_size: "Wähle die Größe deiner Werbung"
     adsense_nth_post_code: "Zeige Werbung nach jedem N-ten Beitrag, wobei N dieser Wert ist."
+    adsense_ads_txt: "Inhalt deiner Datei ads.txt. Mehr Information auf <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>dieser Google AdSense Hilfeseite verfügbar</a>. "
     amazon_through_trust_level: "Zeige Benutzern deine Werbung auf Grundlage von Vertrauensstufen. Benutzer mit einer höheren Vertrauensstufe als dieser Wert werden keine Werbung sehen."
     amazon_topic_list_top_src_code: "Gib den Quelltext ein, um Werbung beim Thema oberhalb der Beiträge anzuzeigen"
     amazon_topic_list_top_ad_width_code: "Gib’ die Breite deiner Werbung ein"
