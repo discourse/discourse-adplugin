@@ -75,7 +75,7 @@ const DESKTOP_SETTINGS = {
   },
   "post-bottom": {
     code: "dfp_post_bottom_code",
-    sizes: "dfp_topic_above_suggested_ad_sizes",
+    sizes: "dfp_post_bottom_ad_sizes",
     targeting_keys: "dfp_target_post_bottom_key_code",
     targeting_values: "dfp_target_post_bottom_value_code"
   }
