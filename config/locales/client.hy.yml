@@ -5,14 +5,15 @@
 # To work with us on translations, join this project:
 # https://www.transifex.com/projects/p/discourse-org/
 
-ko:
+hy:
   js:
     adplugin:
-      advertisement_label: '광고'
+      advertisement_label: 'ՀԱՅՏԱՐԱՐՈՒԹՅՈՒՆ'
   admin_js:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'DFP/Ad 관리자'
-          adsense_plugin: '애드센스'
+          dfp_plugin: 'DFP/Ad Manager'
+          adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
+          codefund_plugin: 'CodeFund'

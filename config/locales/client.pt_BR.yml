@@ -8,11 +8,12 @@
 pt_BR:
   js:
     adplugin:
-      advertisement_label: 'PROPAGANDA'
+      advertisement_label: 'PUBLICIDADE'
   admin_js:
     admin:
       site_settings:
         categories:
           dfp_plugin: 'Gerenciador de Anúncios'
+          adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
