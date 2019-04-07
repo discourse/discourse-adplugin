@@ -379,3 +379,21 @@ codefund_plugin:
   codefund_top_of_topic_list_enabled:
     default: true
     client: true
+
+carbonads_plugin:
+  carbonads_serve_id:
+    client: true
+    default: ""
+  carbonads_placement:
+    client: true
+    default: ""
+  carbonads_through_trust_level:
+    client: true
+    default: 2
+    enum: "TrustLevelSetting"
+  carbonads_topic_list_top_enabled:
+    client: true
+    default: false
+  carbonads_above_post_stream_enabled:
+    client: true
+    default: false

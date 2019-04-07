@@ -11,6 +11,9 @@
   {{#if siteSettings.codefund_top_of_topic_list_enabled}}
     {{codefund-ad placement="topic-list-top" listLoading=listLoading refreshOnChange=listLoading}}
   {{/if}}
+  {{#if siteSettings.carbonads_topic_list_top_enabled}}
+    {{carbonads-ad}}
+  {{/if}}
 {{else}}
   {{#if siteSettings.adsense_topic_list_top_code}}
     {{google-adsense placement="topic-list-top" listLoading=listLoading}}
@@ -23,5 +26,8 @@
   {{/if}}
   {{#if siteSettings.codefund_top_of_topic_list_enabled}}
     {{codefund-ad placement="topic-list-top" listLoading=listLoading refreshOnChange=listLoading}}
+  {{/if}}
+  {{#if siteSettings.carbonads_topic_list_top_enabled}}
+    {{carbonads-ad}}
   {{/if}}
 {{/if}}
