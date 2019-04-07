@@ -90,3 +90,9 @@ es:
     codefund_above_post_stream_enabled: "Mostrar un anuncio encima de las publicaciones"
     codefund_above_suggested_enabled: "Mostrar un anuncio encima de la lista de temas sugeridos"
     codefund_top_of_topic_list_enabled: "Mostrar un anuncio encima de la lista de temas"
+
+    carbonads_serve_id: "Tu identificador \"serve\" de Carbon Ads"
+    carbonads_placement: "Tu identificador \"placement\" de Carbon Ads"
+    carbonads_through_trust_level: "Muestre sus anuncios a los usuarios según los niveles de confianza. Los usuarios con un nivel de confianza superior a este valor no verán los anuncios."
+    carbonads_topic_list_top_enabled: "Mostrar un anuncio encima de la lista de temas"
+    carbonads_above_post_stream_enabled: "Mostrar un anuncio encima de las publicaciones"
