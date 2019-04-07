@@ -17,6 +17,7 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 * [Google Double Click for Publishers](https://www.google.com/dfp)
 * [Amazon Affiliates](http://affiliate-program.amazon.com) - Banner and Product Link Ads
 * [CodeFund](https://codefund.io) - Ethical Ad Platform for Developers
+* [Carbon Ads](https://www.carbonads.net/)
 
 
 ## Quick Start in 3 Steps
@@ -65,6 +66,7 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 <li>Adsense - if using Adsense as your advertisement platform.</li>
 <li>DFP - if using the DoubleClick for Publishers advertisement platform.</li>
 <li>CodeFund - if using the CodeFund ethical advertisement platform.</li>
+<li>Carbon Ads - if using the Carbon Ads advertisement platform.</li>
 </ul>
 </ul>
 
@@ -92,6 +94,10 @@ Only for Product Link and Banner Ads.
 ##### CodeFund Embed Tag to Discourse's Site Settings
 
 ![CodeFund Instructions](https://s3-us-west-2.amazonaws.com/codesponsor/discourse-codefund-instructions.png)
+
+##### Carbon Ads Script Tag to Discourse's Site Settings
+
+![Carbon Ads](https://kodular-community.s3.dualstack.eu-west-1.amazonaws.com/original/3X/3/a/3acc7488db2b53733cdd427d3cb1b76361c786e1.png)
 
 ### Step 3 - See Your Ad
 
