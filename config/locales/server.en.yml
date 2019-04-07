@@ -90,3 +90,9 @@ en:
     codefund_above_post_stream_enabled: "Show an ad above the post stream"
     codefund_above_suggested_enabled: "Show an ad above the suggested topic list"
     codefund_top_of_topic_list_enabled: "Show an ad above the topic list"
+
+    carbonads_serve_id: "Your Carbon Ads Serve ID"
+    carbonads_placement: "Your Carbon Ads Placement"
+    carbonads_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
+    carbonads_topic_list_top_enabled: "Show an ad above the topic list"
+    carbonads_above_post_stream_enabled: "Show an ad above the post stream"
