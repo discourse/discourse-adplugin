@@ -3,7 +3,7 @@ import {
   observes
 } from "ember-addons/ember-computed-decorators";
 
-var currentUser = Discourse.User.current(),
+const currentUser = Discourse.User.current(),
   serve_id = Discourse.SiteSettings.carbonads_serve_id,
   placement = Discourse.SiteSettings.carbonads_placement;
 
