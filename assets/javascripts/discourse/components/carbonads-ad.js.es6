@@ -14,17 +14,20 @@ export default Ember.Component.extend({
     this._super();
   },
 
+  @computed("serve_id", "placement")
   url: function() {
     return (`//cdn.carbonads.com/carbon.js?serve=${this.get("serve_id")}&placement=${this.get("placement")}`).htmlSafe();
-  }.property("serve_id", "placement"),
+  },
 
+
+  @computed("trust_level")
   checkTrustLevels: function() {
     return !(
       currentUser &&
       currentUser.get("trust_level") >
         Discourse.SiteSettings.carbonads_through_trust_level
     );
-  }.property("trust_level"),
+  },
 
   @computed("checkTrustLevels")
   showAd: function(checkTrustLevels) {
