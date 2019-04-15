@@ -97,7 +97,7 @@ Only for Product Link and Banner Ads.
 
 ##### Carbon Ads Script Tag to Discourse's Site Settings
 
-![Carbon Ads](https://kodular-community.s3.dualstack.eu-west-1.amazonaws.com/original/3X/3/a/3acc7488db2b53733cdd427d3cb1b76361c786e1.png)
+![Carbon Ads](https://d11a6trkgmumsb.cloudfront.net/original/3X/3/a/3acc7488db2b53733cdd427d3cb1b76361c786e1.png)
 
 ### Step 3 - See Your Ad
 
