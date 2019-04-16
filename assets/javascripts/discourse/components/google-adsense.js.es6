@@ -1,6 +1,10 @@
+import {
+  default as computed,
+  observes
+} from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
 
-var _loaded = false,
+let _loaded = false,
   _promise = null,
   currentUser = Discourse.User.current(),
   publisher_id = Discourse.SiteSettings.adsense_publisher_code;
@@ -30,7 +34,7 @@ function loadAdsense() {
     return _promise;
   }
 
-  var adsenseSrc =
+  const adsenseSrc =
     ("https:" === document.location.protocol ? "https:" : "http:") +
     "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
   _promise = loadScript(adsenseSrc, { scriptTag: true }).then(function() {
@@ -40,7 +44,7 @@ function loadAdsense() {
   return _promise;
 }
 
-var data = {
+let data = {
   "topic-list-top": {},
   "topic-above-post-stream": {},
   "topic-above-suggested": {},
@@ -188,6 +192,7 @@ export default Ember.Component.extend({
     Ember.run.scheduleOnce("afterRender", this, this._triggerAds);
   },
 
+  @observes("listLoading")
   waitForLoad: function() {
     if (this.get("adRequested")) {
       return;
@@ -195,45 +200,46 @@ export default Ember.Component.extend({
     if (!this.get("listLoading")) {
       Ember.run.scheduleOnce("afterRender", this, this._triggerAds);
     }
-  }.observes("listLoading"),
+  },
 
-  isResponsive: function() {
-    return this.get("ad_width") === "auto";
-  }.property("ad_width"),
+  @computed("ad_width")
+  isResponsive: function(adWidth) {
+    return adWidth === "auto";
+  },
 
-  classForSlot: function() {
-    return `adsense-${this.get("placement")}`.htmlSafe();
-  }.property("placement"),
+  @computed("placement", "checkTrustLevels")
+  classForSlot: function(placement, shown) {
+    return shown ? `adsense-${placement}`.htmlSafe() : "";
+  },
 
-  autoAdFormat: function() {
-    return this.get("isResponsive") ? "auto".htmlSafe() : false;
-  }.property("isResponsive"),
+  @computed("isResponsive")
+  autoAdFormat: function(isResponsive) {
+    return isResponsive ? "auto".htmlSafe() : false;
+  },
 
-  adWrapperStyle: function() {
-    return (this.get("isResponsive")
-      ? ""
-      : `width: ${this.get("ad_width")}; height: ${this.get("ad_height")};`
-    ).htmlSafe();
-  }.property("ad_width", "ad_height"),
+  @computed("ad_width", "ad_height", "isResponsive")
+  adWrapperStyle: function(w, h, isResponsive) {
+    return (isResponsive ? "" : `width: ${w}; height: ${h};`).htmlSafe();
+  },
 
-  adInsStyle: function() {
+  @computed("adWrapperStyle", "isResponsive")
+  adInsStyle: function(adWrapperStyle, isResponsive) {
     return `display: ${
-      this.get("isResponsive") ? "block" : "inline-block"
-    }; ${this.get("adWrapperStyle")}`.htmlSafe();
-  }.property("adWrapperStyle", "isResponsive"),
+      isResponsive ? "block" : "inline-block"
+    }; ${adWrapperStyle}`.htmlSafe();
+  },
 
+  @computed()
   checkTrustLevels: function() {
     return !(
       currentUser &&
       currentUser.get("trust_level") >
         Discourse.SiteSettings.adsense_through_trust_level
     );
-  }.property("trust_level"),
+  },
 
-  showAd: function() {
-    return (
-      Discourse.SiteSettings.adsense_publisher_code &&
-      this.get("checkTrustLevels")
-    );
-  }.property("checkTrustLevels")
+  @computed("checkTrustLevels")
+  showAd: function(shown) {
+    return shown && Discourse.SiteSettings.adsense_publisher_code;
+  }
 });
