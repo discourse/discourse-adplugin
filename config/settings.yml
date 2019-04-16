@@ -1,3 +1,11 @@
+ad_plugin:
+  no_ads_for_groups:
+    client: true
+    default: ""
+    type: list
+    choices: "Group.pluck(:name)"
+    list_type: compact
+
 adsense_plugin:
   adsense_publisher_code:
     client: true
