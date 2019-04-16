@@ -49,11 +49,7 @@ function loadCodeFund() {
 }
 
 export default Ember.Component.extend({
-  classNameBindings: [
-    ":codefund-ad",
-    "classForSlot",
-    "isResponsive:codefund-responsive"
-  ],
+  classNameBindings: [":codefund-ad"],
   propertyId: propertyId,
   adRequested: false,
   adDetails: {},
@@ -96,13 +92,14 @@ export default Ember.Component.extend({
     }
   },
 
+  @computed()
   checkTrustLevels: function() {
     return !(
       currentUser &&
       currentUser.get("trust_level") >
         Discourse.SiteSettings.codefund_through_trust_level
     );
-  }.property("trust_level"),
+  },
 
   @computed("checkTrustLevels")
   showAd: function(checkTrustLevels) {
