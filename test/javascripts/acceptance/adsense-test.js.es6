@@ -1,10 +1,8 @@
 import { acceptance, replaceCurrentUser } from "helpers/qunit-helpers";
-import groupFixtures from "fixtures/group-fixtures";
 
 acceptance("AdSense", {
   loggedIn: true,
   settings: {
-    no_ads_for_groups: "discourse",
     adsense_publisher_code: "MYADSENSEID",
     adsense_through_trust_level: 2,
     adsense_topic_list_top_code: "list_top_ad_unit",

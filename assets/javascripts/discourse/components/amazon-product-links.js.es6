@@ -1,9 +1,6 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
-import computed from "ember-addons/ember-computed-decorators";
+var currentUser = Discourse.User.current();
 
-const currentUser = Discourse.User.current();
-
-const data = {
+var data = {
   "topic-list-top": {},
   "topic-above-post-stream": {},
   "topic-above-suggested": {},
@@ -122,12 +119,10 @@ if (
   );
 }
 
-export default AdComponent.extend({
+export default Ember.Component.extend({
   classNames: ["amazon-product-links"],
 
-  showAd: Ember.computed.and("showToTrustLevel", "showToGroups"),
-
-  init() {
+  init: function() {
     let placement = this.get("placement");
     this.set("user_input", data[placement]["user_input"]);
     this.set("amazon_width", data[placement]["amazon_width"]);
@@ -138,37 +133,35 @@ export default AdComponent.extend({
     this._super();
   },
 
-  @computed("amazon_width", "amazon_height")
-  adWrapperStyle(w, h) {
-    return `width: ${w}px; height: ${h}px;`.htmlSafe();
-  },
+  adWrapperStyle: function() {
+    return `width: ${this.get("amazon_width")}px; height: ${this.get(
+      "amazon_height"
+    )}px;`.htmlSafe();
+  }.property("amazon_width", "amazon_height"),
 
-  @computed("mobile_amazon_width", "mobile_amazon_height")
-  adWrapperStyleMobile(w, h) {
-    return `width: ${w}px; height: ${h}px;`.htmlSafe();
-  },
+  adWrapperStyleMobile: function() {
+    return `width: ${this.get("mobile_amazon_width")}px; height: ${this.get(
+      "mobile_amazon_height"
+    )}px;`.htmlSafe();
+  }.property("mobile_amazon_width", "mobile_amazon_height"),
 
-  @computed("mobile_amazon_width")
-  adTitleStyleMobile(w) {
-    return `width: ${w}px;`.htmlSafe();
-  },
+  adTitleStyleMobile: function() {
+    return `width: ${this.get("mobile_amazon_width")}px;`.htmlSafe();
+  }.property("mobile_amazon_width"),
 
-  @computed("user_input")
-  userInput(userInput) {
-    return `${userInput}`.htmlSafe();
-  },
+  userInput: function() {
+    return `${this.get("user_input")}`.htmlSafe();
+  }.property("user_input"),
 
-  @computed("user_input_mobile")
-  userInputMobile(userInput) {
-    return `${userInput}`.htmlSafe();
-  },
+  userInputMobile: function() {
+    return `${this.get("user_input_mobile")}`.htmlSafe();
+  }.property("user_input_mobile"),
 
-  @computed()
-  showToTrustLevel() {
+  checkTrustLevels: function() {
     return !(
       currentUser &&
       currentUser.get("trust_level") >
         Discourse.SiteSettings.amazon_through_trust_level
     );
-  }
+  }.property("trust_level")
 });
