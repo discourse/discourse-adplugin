@@ -1,4 +1,3 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
 import {
   default as computed,
   observes
@@ -147,7 +146,7 @@ if (Discourse.SiteSettings.adsense_publisher_code) {
   }
 }
 
-export default AdComponent.extend({
+export default Ember.Component.extend({
   classNameBindings: [
     ":google-adsense",
     "classForSlot",
@@ -194,7 +193,7 @@ export default AdComponent.extend({
   },
 
   @observes("listLoading")
-  waitForLoad() {
+  waitForLoad: function() {
     if (this.get("adRequested")) {
       return;
     } // already requested that this ad unit be populated
@@ -204,34 +203,34 @@ export default AdComponent.extend({
   },
 
   @computed("ad_width")
-  isResponsive(adWidth) {
+  isResponsive: function(adWidth) {
     return adWidth === "auto";
   },
 
-  @computed("placement", "showAd")
-  classForSlot(placement, showAd) {
-    return showAd ? `adsense-${placement}`.htmlSafe() : "";
+  @computed("placement", "checkTrustLevels")
+  classForSlot: function(placement, shown) {
+    return shown ? `adsense-${placement}`.htmlSafe() : "";
   },
 
   @computed("isResponsive")
-  autoAdFormat(isResponsive) {
+  autoAdFormat: function(isResponsive) {
     return isResponsive ? "auto".htmlSafe() : false;
   },
 
   @computed("ad_width", "ad_height", "isResponsive")
-  adWrapperStyle(w, h, isResponsive) {
+  adWrapperStyle: function(w, h, isResponsive) {
     return (isResponsive ? "" : `width: ${w}; height: ${h};`).htmlSafe();
   },
 
   @computed("adWrapperStyle", "isResponsive")
-  adInsStyle(adWrapperStyle, isResponsive) {
+  adInsStyle: function(adWrapperStyle, isResponsive) {
     return `display: ${
       isResponsive ? "block" : "inline-block"
     }; ${adWrapperStyle}`.htmlSafe();
   },
 
   @computed()
-  showToTrustLevel() {
+  checkTrustLevels: function() {
     return !(
       currentUser &&
       currentUser.get("trust_level") >
@@ -239,12 +238,8 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("showToTrustLevel", "showToGroups")
-  showAd(showToTrustLevel, showToGroups) {
-    return (
-      showToTrustLevel &&
-      showToGroups &&
-      Discourse.SiteSettings.adsense_publisher_code
-    );
+  @computed("checkTrustLevels")
+  showAd: function(shown) {
+    return shown && Discourse.SiteSettings.adsense_publisher_code;
   }
 });

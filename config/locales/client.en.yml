@@ -6,7 +6,6 @@ en:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Ad Plugin'
           dfp_plugin: 'DFP/Ad Manager'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'

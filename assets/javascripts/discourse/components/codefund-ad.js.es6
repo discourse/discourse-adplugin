@@ -1,13 +1,11 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
 import {
   default as computed,
   observes
 } from "ember-addons/ember-computed-decorators";
 
-let _loaded = false,
-  _promise = null;
-
-const currentUser = Discourse.User.current(),
+var _loaded = false,
+  _promise = null,
+  currentUser = Discourse.User.current(),
   propertyId = Discourse.SiteSettings.codefund_property_id;
 
 function loadCodeFund() {
@@ -50,22 +48,11 @@ function loadCodeFund() {
   return _promise;
 }
 
-export default AdComponent.extend({
+export default Ember.Component.extend({
   classNameBindings: [":codefund-ad"],
   propertyId: propertyId,
   adRequested: false,
   adDetails: {},
-
-  displayPostBottom: Ember.computed.equal("placement", "post-bottom"),
-  displayTopicAbovePostStream: Ember.computed.equal(
-    "placement",
-    "topic-above-post-stream"
-  ),
-  displayTopicAboveSuggested: Ember.computed.equal(
-    "placement",
-    "topic-above-suggested"
-  ),
-  displayTopicListTop: Ember.computed.equal("placement", "topic-list-top"),
 
   _triggerAds() {
     if (!propertyId) return;
@@ -96,7 +83,7 @@ export default AdComponent.extend({
   },
 
   @observes("listLoading")
-  waitForLoad() {
+  waitForLoad: function() {
     if (this.get("adRequested")) {
       return;
     } // already requested that this ad unit be populated
@@ -106,7 +93,7 @@ export default AdComponent.extend({
   },
 
   @computed()
-  showToTrustLevel() {
+  checkTrustLevels: function() {
     return !(
       currentUser &&
       currentUser.get("trust_level") >
@@ -114,12 +101,28 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("showToTrustLevel", "showToGroups")
-  showAd(showToTrustLevel, showToGroups) {
-    return (
-      Discourse.SiteSettings.codefund_property_id &&
-      showToTrustLevel &&
-      showToGroups
-    );
+  @computed("checkTrustLevels")
+  showAd: function(checkTrustLevels) {
+    return Discourse.SiteSettings.codefund_property_id && checkTrustLevels;
+  },
+
+  @computed("placement")
+  displayPostBottom: function(placement) {
+    return placement === "post-bottom";
+  },
+
+  @computed("placement")
+  displayTopicAbovePostStream: function() {
+    return this.get("placement") === "topic-above-post-stream";
+  },
+
+  @computed("placement")
+  displayTopicAboveSuggested: function() {
+    return this.get("placement") === "topic-above-suggested";
+  },
+
+  @computed("placement")
+  displayTopicListTop: function() {
+    return this.get("placement") === "topic-list-top";
   }
 });

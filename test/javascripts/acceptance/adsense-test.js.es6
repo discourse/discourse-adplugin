@@ -1,10 +1,8 @@
 import { acceptance, replaceCurrentUser } from "helpers/qunit-helpers";
-import groupFixtures from "fixtures/group-fixtures";
 
 acceptance("AdSense", {
   loggedIn: true,
   settings: {
-    no_ads_for_groups: "discourse",
     adsense_publisher_code: "MYADSENSEID",
     adsense_through_trust_level: 2,
     adsense_topic_list_top_code: "list_top_ad_unit",
@@ -49,20 +47,6 @@ test("correct number of ads should show", async assert => {
 
 test("no ads for trust level 3", async assert => {
   replaceCurrentUser({ staff: false, trust_level: 3 });
-  await visit("/t/280");
-  assert.equal(
-    find(".google-adsense.adsense-post-bottom").length,
-    0,
-    "it should render 0 ads"
-  );
-});
-
-QUnit.only("can omit ads based on groups", async assert => {
-  replaceCurrentUser({
-    staff: false,
-    trust_level: 1,
-    groups: [groupFixtures["/groups/discourse.json"].group]
-  });
   await visit("/t/280");
   assert.equal(
     find(".google-adsense.adsense-post-bottom").length,
