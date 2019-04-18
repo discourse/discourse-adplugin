@@ -1,3 +1,9 @@
+ad_plugin:
+  no_ads_for_groups:
+    client: true
+    default: ""
+    type: group_list
+
 adsense_plugin:
   adsense_publisher_code:
     client: true
