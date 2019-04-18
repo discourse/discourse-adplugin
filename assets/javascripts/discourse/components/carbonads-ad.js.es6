@@ -1,4 +1,4 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
   default as computed,
   observes

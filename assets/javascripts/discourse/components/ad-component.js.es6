@@ -1,8 +1,8 @@
 import computed from "ember-addons/ember-computed-decorators";
 
 export default Ember.Component.extend({
-  @computed('currentUser.groups')
-  showToGroups: function(groups) {
+  @computed("currentUser.groups")
+  showToGroups(groups) {
     const currentUser = Discourse.User.current();
 
     if (
@@ -17,5 +17,13 @@ export default Ember.Component.extend({
     const noAdsGroupNames = this.siteSettings.no_ads_for_groups.split("|");
 
     return !groups.any(group => noAdsGroupNames.includes(group.name));
+  },
+
+  isNthPost(n) {
+    if (n && n > 0) {
+      return this.get("postNumber") % n === 0;
+    } else {
+      return false;
+    }
   }
 });

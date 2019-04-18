@@ -1,0 +1,23 @@
+{{#d-section class="house-ads-settings content-body"}}
+  <div>{{i18n 'admin.adplugin.house_ads.description'}}</div>
+
+  {{#unless houseAds.length}}
+    <p>
+      {{#link-to 'adminPlugins.houseAds.show' 'new'}}
+        {{i18n 'admin.adplugin.house_ads.get_started'}}
+      {{/link-to}}
+    </p>
+  {{else}}
+    <form class="form-horizontal">
+      {{house-ads-list-setting name="topic_list_top" value=adSettings.topic_list_top allAds=houseAds adSettings=adSettings}}
+      {{house-ads-list-setting name="topic_above_post_stream" value=adSettings.topic_above_post_stream allAds=houseAds adSettings=adSettings}}
+      {{house-ads-list-setting name="topic_above_suggested" value=adSettings.topic_above_suggested allAds=houseAds adSettings=adSettings}}
+      {{house-ads-list-setting name="post_bottom" value=adSettings.post_bottom allAds=houseAds adSettings=adSettings}}
+
+      {{d-button label="admin.adplugin.house_ads.more_settings"
+         icon="cog"
+         class="btn-default"
+         action=(route-action "moreSettings")}}
+    </form>
+  {{/unless}}
+{{/d-section}}

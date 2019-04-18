@@ -1,4 +1,4 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
   default as computed,
   observes
@@ -108,17 +108,26 @@ export default AdComponent.extend({
   @computed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
-      trustLevel &&
-      trustLevel > Discourse.SiteSettings.codefund_through_trust_level
+      trustLevel && trustLevel > this.siteSettings.codefund_through_trust_level
     );
   },
 
-  @computed("showToTrustLevel", "showToGroups")
-  showAd(showToTrustLevel, showToGroups) {
+  @computed("showToTrustLevel", "showToGroups", "showAfterPost")
+  showAd(showToTrustLevel, showToGroups, showAfterPost) {
     return (
-      Discourse.SiteSettings.codefund_property_id &&
+      this.siteSettings.codefund_property_id &&
       showToTrustLevel &&
-      showToGroups
+      showToGroups &&
+      showAfterPost
     );
+  },
+
+  @computed("postNumber")
+  showAfterPost(postNumber) {
+    if (!postNumber) {
+      return true;
+    }
+
+    return this.isNthPost(parseInt(this.siteSettings.codefund_nth_post));
   }
 });
