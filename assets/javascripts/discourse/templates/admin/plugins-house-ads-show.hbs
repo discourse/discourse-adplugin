@@ -1,0 +1,26 @@
+{{#d-section class="edit-house-ad content-body"}}
+  <h1>{{text-field class="house-ad-name" value=buffered.name}}</h1>
+  <div class="controls">
+    {{ace-editor content=buffered.html mode="html"}}
+  </div>
+  <div class="controls">
+    {{d-button
+      action=(action "save")
+      disabled=disableSave
+      class="btn-primary"
+      label="admin.adplugin.house_ads.save"}}
+
+    {{#if saving}}
+      {{savingStatus}}
+    {{else}}
+      {{#if dirty}}
+        <a href {{action "cancel"}}>{{i18n 'cancel'}}</a>
+      {{/if}}
+    {{/if}}
+
+    {{d-button
+      action=(action "destroy")
+      class="btn-danger delete-button"
+      label="admin.adplugin.house_ads.delete"}}
+  </div>
+{{/d-section}}

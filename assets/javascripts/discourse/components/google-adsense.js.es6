@@ -1,4 +1,4 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
   default as computed,
   observes
@@ -233,17 +233,26 @@ export default AdComponent.extend({
   @computed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
-      trustLevel &&
-      trustLevel > Discourse.SiteSettings.adsense_through_trust_level
+      trustLevel && trustLevel > this.siteSettings.adsense_through_trust_level
     );
   },
 
-  @computed("showToTrustLevel", "showToGroups")
-  showAd(showToTrustLevel, showToGroups) {
+  @computed("showToTrustLevel", "showToGroups", "showAfterPost")
+  showAd(showToTrustLevel, showToGroups, showAfterPost) {
     return (
+      this.siteSettings.adsense_publisher_code &&
       showToTrustLevel &&
       showToGroups &&
-      Discourse.SiteSettings.adsense_publisher_code
+      showAfterPost
     );
+  },
+
+  @computed("postNumber")
+  showAfterPost(postNumber) {
+    if (!postNumber) {
+      return true;
+    }
+
+    return this.isNthPost(parseInt(this.siteSettings.adsense_nth_post_code));
   }
 });

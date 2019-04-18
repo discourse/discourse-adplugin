@@ -1,4 +1,4 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import computed from "ember-addons/ember-computed-decorators";
 
 const currentUser = Discourse.User.current();
@@ -125,7 +125,11 @@ if (
 export default AdComponent.extend({
   classNames: ["amazon-product-links"],
 
-  showAd: Ember.computed.and("showToTrustLevel", "showToGroups"),
+  showAd: Ember.computed.and(
+    "showToTrustLevel",
+    "showToGroups",
+    "showAfterPost"
+  ),
 
   init() {
     let placement = this.get("placement");
@@ -169,5 +173,14 @@ export default AdComponent.extend({
       trustLevel &&
       trustLevel > Discourse.SiteSettings.amazon_through_trust_level
     );
+  },
+
+  @computed("postNumber")
+  showAfterPost(postNumber) {
+    if (!postNumber) {
+      return true;
+    }
+
+    return this.isNthPost(parseInt(this.siteSettings.amazon_nth_post_code));
   }
 });

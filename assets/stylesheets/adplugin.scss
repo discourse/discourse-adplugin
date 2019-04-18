@@ -7,7 +7,7 @@
   clear: both;
 }
 
-.google-dfp-ad  .dfp-ad-unit {
+.google-dfp-ad .dfp-ad-unit {
   margin: 0 auto;
 }
 
@@ -104,6 +104,15 @@ and (max-width : 775px) {
   .google-dfp-ad-label, .dfp-ad-unit {
     margin: 0 0 0 52px;
   }
+}
+
+.house-creative {
+  margin: 0 auto;
+}
+
+.house-creative.house-post-bottom {
+  margin: 0 0 10px 52px;
+  clear: both;
 }
 
 .codefund-wrapper {
@@ -221,4 +230,57 @@ and (max-width : 775px) {
   line-height: 1;
   letter-spacing: 1px;
   color: $quaternary !important;
+}
+
+.adplugin-mgmt {
+  .house-ads-actions {
+    .btn {
+      margin-right: 8px;
+    }
+  }
+  .house-ads-list {
+    margin-top: 1em;
+  }
+  .house-ads-settings {
+    .form-horizontal {
+      margin-top: 1em;
+    }
+    p.help {
+      margin: 0;
+      margin-top: 5px;
+      color: $primary-medium;
+      font-size: $font-down-1;
+      clear: both;
+    }
+    .house-ads-chooser, .house-ads-text-input {
+      float: left;
+      margin-right: 20px;
+    }
+    .setting-controls {
+      float: left;
+    }
+  }
+  .house-ads-list-setting {
+    margin-bottom: 1.5em;
+  }
+  .content-body {
+    padding-left: 2%;
+    .controls {
+      margin-bottom: 1em;
+    }
+    .delete-button {
+      float: right;
+    }
+    .ace-wrapper {
+      position: relative;
+      height: 270px;
+      .ace_editor {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
 }

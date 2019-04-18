@@ -1,4 +1,4 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
   default as computed,
   observes,
@@ -234,21 +234,30 @@ export default AdComponent.extend({
     return `width: ${w}px;`.htmlSafe();
   },
 
-  @computed("showToTrustLevel", "showToGroups")
-  showAd(showToTrustLevel, showToGroups) {
+  @computed("showToTrustLevel", "showToGroups", "showAfterPost")
+  showAd(showToTrustLevel, showToGroups, showAfterPost) {
     return (
-      Discourse.SiteSettings.dfp_publisher_id &&
+      this.siteSettings.dfp_publisher_id &&
       showToTrustLevel &&
-      showToGroups
+      showToGroups &&
+      showAfterPost
     );
   },
 
   @computed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
-      trustLevel &&
-      trustLevel > Discourse.SiteSettings.dfp_through_trust_level
+      trustLevel && trustLevel > this.siteSettings.dfp_through_trust_level
     );
+  },
+
+  @computed("postNumber")
+  showAfterPost(postNumber) {
+    if (!postNumber) {
+      return true;
+    }
+
+    return this.isNthPost(parseInt(this.siteSettings.dfp_nth_post_code));
   },
 
   @observes("refreshOnChange")

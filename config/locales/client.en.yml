@@ -12,3 +12,28 @@ en:
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
           carbonads_plugin: 'Carbon Ads'
+      adplugin:
+        house_ads:
+          title: "House Ads"
+          new: "New"
+          settings: "Settings"
+          new_name: "New House Ad"
+          save: "Save"
+          delete: "Delete"
+          description: "Define your own ads and where they should be displayed."
+          get_started: "Start by creating a new ad."
+          filter_placeholder: "Select ads..."
+          more_settings: "More Settings"
+
+          topic_list_top:
+            title: "Topic list top ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_above_post_stream:
+            title: "Topic above post stream"
+            description: "Ads to show above the title of a topic on the topic page."
+          topic_above_suggested:
+            title: "Topic above suggested"
+            description: "Ads to show after the last post in a topic, above the suggested topics."
+          post_bottom:
+            title: "Between posts"
+            description: "Ads to show in between posts, after every N posts."

@@ -1,6 +1,7 @@
 en:
   site_settings:
     no_ads_for_groups: "Don't show ads to users in these groups."
+    house_ads_after_nth_post: 'If "Between posts" house ads are defined, show an ad after every N posts, where N is this value.'
 
     dfp_publisher_id: "Input your Google Ad Manager (formerly called DFP) network code, which is found in your network settings."
     dfp_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
