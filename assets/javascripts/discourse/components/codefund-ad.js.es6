@@ -1,11 +1,13 @@
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
 import {
   default as computed,
   observes
 } from "ember-addons/ember-computed-decorators";
 
-var _loaded = false,
-  _promise = null,
-  currentUser = Discourse.User.current(),
+let _loaded = false,
+  _promise = null;
+
+const currentUser = Discourse.User.current(),
   propertyId = Discourse.SiteSettings.codefund_property_id;
 
 function loadCodeFund() {
@@ -48,11 +50,22 @@ function loadCodeFund() {
   return _promise;
 }
 
-export default Ember.Component.extend({
+export default AdComponent.extend({
   classNameBindings: [":codefund-ad"],
   propertyId: propertyId,
   adRequested: false,
   adDetails: {},
+
+  displayPostBottom: Ember.computed.equal("placement", "post-bottom"),
+  displayTopicAbovePostStream: Ember.computed.equal(
+    "placement",
+    "topic-above-post-stream"
+  ),
+  displayTopicAboveSuggested: Ember.computed.equal(
+    "placement",
+    "topic-above-suggested"
+  ),
+  displayTopicListTop: Ember.computed.equal("placement", "topic-list-top"),
 
   _triggerAds() {
     if (!propertyId) return;
@@ -83,7 +96,7 @@ export default Ember.Component.extend({
   },
 
   @observes("listLoading")
-  waitForLoad: function() {
+  waitForLoad() {
     if (this.get("adRequested")) {
       return;
     } // already requested that this ad unit be populated
@@ -92,37 +105,20 @@ export default Ember.Component.extend({
     }
   },
 
-  @computed()
-  checkTrustLevels: function() {
+  @computed("currentUser.trust_level")
+  showToTrustLevel(trustLevel) {
     return !(
-      currentUser &&
-      currentUser.get("trust_level") >
-        Discourse.SiteSettings.codefund_through_trust_level
+      trustLevel &&
+      trustLevel > Discourse.SiteSettings.codefund_through_trust_level
     );
   },
 
-  @computed("checkTrustLevels")
-  showAd: function(checkTrustLevels) {
-    return Discourse.SiteSettings.codefund_property_id && checkTrustLevels;
-  },
-
-  @computed("placement")
-  displayPostBottom: function(placement) {
-    return placement === "post-bottom";
-  },
-
-  @computed("placement")
-  displayTopicAbovePostStream: function() {
-    return this.get("placement") === "topic-above-post-stream";
-  },
-
-  @computed("placement")
-  displayTopicAboveSuggested: function() {
-    return this.get("placement") === "topic-above-suggested";
-  },
-
-  @computed("placement")
-  displayTopicListTop: function() {
-    return this.get("placement") === "topic-list-top";
+  @computed("showToTrustLevel", "showToGroups")
+  showAd(showToTrustLevel, showToGroups) {
+    return (
+      Discourse.SiteSettings.codefund_property_id &&
+      showToTrustLevel &&
+      showToGroups
+    );
   }
 });

@@ -1,3 +1,9 @@
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad_component";
+import {
+  default as computed,
+  observes,
+  on
+} from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
 
 var currentUser = Discourse.User.current(),
@@ -198,51 +204,55 @@ function loadGoogle() {
   return _promise;
 }
 
-export default Ember.Component.extend({
+export default AdComponent.extend({
   classNameBindings: ["adUnitClass"],
   classNames: ["google-dfp-ad"],
   loadedGoogletag: false,
   refreshOnChange: null,
 
-  divId: function() {
-    if (this.get("postNumber")) {
-      return (
-        "div-gpt-ad-" + this.get("placement") + "-" + this.get("postNumber")
-      );
+  @computed("placement", "postNumber")
+  divId(placement, postNumber) {
+    if (postNumber) {
+      return `div-gpt-ad-${placement}-${postNumber}`;
     } else {
-      return "div-gpt-ad-" + this.get("placement");
+      return `div-gpt-ad-${placement}`;
     }
-  }.property("placement", "postNumber"),
+  },
 
-  adUnitClass: function() {
-    return "dfp-ad-" + this.get("placement");
-  }.property("placement"),
+  @computed("placement", "showAd")
+  adUnitClass(placement, showAd) {
+    return showAd ? `dfp-ad-${placement}` : "";
+  },
 
-  adWrapperStyle: function() {
-    return `width: ${this.get("width")}px; height: ${this.get(
-      "height"
-    )}px;`.htmlSafe();
-  }.property("width", "height"),
+  @computed("width", "height")
+  adWrapperStyle(w, h) {
+    return `width: ${w}px; height: ${h}px;`.htmlSafe();
+  },
 
-  adTitleStyleMobile: function() {
-    return `width: ${this.get("width")}px;`.htmlSafe();
-  }.property("width"),
+  @computed("width")
+  adTitleStyleMobile(w) {
+    return `width: ${w}px;`.htmlSafe();
+  },
 
-  showAd: function() {
+  @computed("showToTrustLevel", "showToGroups")
+  showAd(showToTrustLevel, showToGroups) {
     return (
-      Discourse.SiteSettings.dfp_publisher_id && this.get("checkTrustLevels")
+      Discourse.SiteSettings.dfp_publisher_id &&
+      showToTrustLevel &&
+      showToGroups
     );
-  }.property("checkTrustLevels"),
+  },
 
-  checkTrustLevels: function() {
+  @computed("currentUser.trust_level")
+  showToTrustLevel(trustLevel) {
     return !(
-      currentUser &&
-      currentUser.get("trust_level") >
-        Discourse.SiteSettings.dfp_through_trust_level
+      trustLevel &&
+      trustLevel > Discourse.SiteSettings.dfp_through_trust_level
     );
-  }.property("trust_level"),
+  },
 
-  refreshAd: function() {
+  @observes("refreshOnChange")
+  refreshAd() {
     var slot = ads[this.get("divId")];
     if (!(slot && slot.ad)) {
       return;
@@ -260,9 +270,10 @@ export default Ember.Component.extend({
         window.googletag.pubads().refresh([ad]);
       });
     }
-  }.observes("refreshOnChange"),
+  },
 
-  _initGoogleDFP: function() {
+  @on("didInsertElement")
+  _initGoogleDFP() {
     if (!this.get("showAd")) {
       return;
     }
@@ -287,7 +298,7 @@ export default Ember.Component.extend({
         }
       });
     });
-  }.on("didInsertElement"),
+  },
 
   willRender() {
     this._super(...arguments);
@@ -300,7 +311,8 @@ export default Ember.Component.extend({
     this.set("height", size.height);
   },
 
-  cleanup: function() {
+  @on("willDestroyElement")
+  cleanup() {
     destroySlot(this.get("divId"));
-  }.on("willDestroyElement")
+  }
 });
