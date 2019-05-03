@@ -1,6 +1,6 @@
 # name: discourse-adplugin
 # about: Ad Plugin for Discourse
-# version: 1.1.0
+# version: 1.2.0
 # authors: Vi and Sarah (@ladydanger and @cyberkoi)
 # url: https://github.com/discourse/discourse-adplugin
 

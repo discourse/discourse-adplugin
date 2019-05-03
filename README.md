@@ -4,7 +4,7 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 
 **Authors**: 		[Sarah Ni](https://github.com/cyberkoi) & [Vi Nguyen](https://github.com/ladydanger)
 
-**Version**: 			1.0.2
+**Version**: 			1.2.0
 
 **Contributors**: See [credits section](#credits)  below
 
@@ -13,6 +13,7 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 **Supported Discourse Version**: 1.4
 
 **Supported Ad Platforms**:
+* House Ads: Your own ads served from Discourse
 * [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html)
 * [Google Double Click for Publishers](https://www.google.com/dfp)
 * [Amazon Affiliates](http://affiliate-program.amazon.com) - Banner and Product Link Ads
@@ -56,6 +57,18 @@ git pull
 
 There are 2 easy steps for configuring your Discourse settings to enable advertisements to display in your Discourse forum.
 
+#### House Ads
+
+If you don't want to use an external ad platform, but want to show your own ads, then House Ads are for you!
+Define your ads by going to the Admin section of your Discourse forum, and go to the Plugins section.
+On the left, you should see a link called "House Ads".
+
+Begin by creating your ads. Give each a short descriptive name and enter the html for each.
+Style them using a custom theme (Admin > Customize > Themes).
+Lastly, click the Settings button in the House Ads UI and choose which of your ads to show in each of
+the ad slots. The ads will start showing as soon as you add them to slots.
+
+
 #### Step 2(a) - Choose Your Advertisement Platform
 
 <ul>
@@ -63,6 +76,7 @@ There are 2 easy steps for configuring your Discourse settings to enable adverti
 <li>Click on Settings and a left vertical navigation bar should appear.</li>
 <li>Choose your advertisement platform.</li>
 <ul>
+<li>House Ads - if you want to create and serve ads from your Discourse instance.</li>
 <li>Adsense - if using Adsense as your advertisement platform.</li>
 <li>DFP - if using the DoubleClick for Publishers advertisement platform.</li>
 <li>CodeFund - if using the CodeFund ethical advertisement platform.</li>
