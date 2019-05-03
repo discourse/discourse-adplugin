@@ -94,7 +94,7 @@ export default AdComponent.extend({
       return;
     }
 
-    if (!adIndex["topic_list_top"]) {
+    if (adIndex.topic_list_top === null) {
       // start at a random spot in the ad inventory
       Object.keys(adIndex).forEach(placement => {
         const adNames = this.adsNamesForSlot(placement);
