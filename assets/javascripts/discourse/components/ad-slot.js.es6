@@ -47,8 +47,13 @@ export default Ember.Component.extend({
   @computed("placement")
   adComponents(placement) {
     // Check house ads first
-    const houseAds = this.site.get("house_creatives"),
-      adsForSlot = houseAds.settings[placement.replace(/-/g, "_")];
+    const houseAds = this.site.get("house_creatives");
+    if (!houseAds || !houseAds.settings) {
+      return [];
+    }
+
+    const adsForSlot = houseAds.settings[placement.replace(/-/g, "_")];
+
     if (
       Object.keys(houseAds.creatives).length > 0 &&
       !Ember.isBlank(adsForSlot)

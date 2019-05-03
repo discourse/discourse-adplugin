@@ -56,8 +56,13 @@ export default AdComponent.extend({
   },
 
   adsNamesForSlot(placement) {
-    const houseAds = this.site.get("house_creatives"),
-      adsForSlot = houseAds.settings[placement];
+    const houseAds = this.site.get("house_creatives");
+
+    if (!houseAds || !houseAds.settings) {
+      return [];
+    }
+
+    const adsForSlot = houseAds.settings[placement];
 
     if (
       Object.keys(houseAds.creatives).length > 0 &&
