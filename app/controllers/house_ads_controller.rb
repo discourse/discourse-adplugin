@@ -9,6 +9,10 @@ module ::AdPlugin
       )
     end
 
+    def show
+      render_json_dump(house_ad: HouseAd.find(params[:id])&.to_hash)
+    end
+
     def create
       ad = HouseAd.create(house_ad_params)
       if ad.valid?

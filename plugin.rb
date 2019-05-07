@@ -54,7 +54,7 @@ after_initialize do
 
   AdPlugin::Engine.routes.draw do
     root to: 'house_ads#index'
-    resources :house_ads, only: [:index, :create, :update, :destroy]
+    resources :house_ads, only: [:index, :show, :create, :update, :destroy]
     resources :house_ad_settings, only: [:update]
   end
 
