@@ -8,6 +8,11 @@ ad_plugin:
     default: 20
     min: 1
     max: 10000
+  house_ads_frequency:
+    client: true
+    default: 100
+    min: 0
+    max: 100
 
 adsense_plugin:
   adsense_publisher_code:

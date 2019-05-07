@@ -24,7 +24,10 @@ module ::AdPlugin
       ad_names = settings.values.map { |v| v.split('|') }.flatten.uniq
       ads = AdPlugin::HouseAd.all.select { |ad| ad_names.include?(ad.name) }
       {
-        settings: settings.merge(after_nth_post: SiteSetting.house_ads_after_nth_post),
+        settings: settings.merge(
+          after_nth_post: SiteSetting.house_ads_after_nth_post,
+          house_ads_frequency: SiteSetting.house_ads_frequency
+        ),
         creatives: ads.inject({}) { |h, ad| h[ad.name] = ad.html; h }
       }
     end
