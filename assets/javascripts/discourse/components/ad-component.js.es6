@@ -14,9 +14,10 @@ export default Ember.Component.extend({
       return true;
     }
 
-    const noAdsGroupNames = this.siteSettings.no_ads_for_groups.split("|");
+    const groupNames = groups.map(g => g.name.toLowerCase());
+    const noAdsGroupNames = this.siteSettings.no_ads_for_groups.split("|").map(g => g.toLowerCase());
 
-    return !groups.any(group => noAdsGroupNames.includes(group.name));
+    return !groupNames.any(g => noAdsGroupNames.includes(g));
   },
 
   isNthPost(n) {
