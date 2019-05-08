@@ -52,7 +52,7 @@ test("correct ads show", async assert => {
 
   await visit("/latest");
   assert.equal(
-    find(".h-topic-list, .dfp-ad-topic-list").length,
+    find(".h-topic-list-top, .dfp-ad-topic-list-top").length,
     1,
     "it should render ad above topic list"
   );
