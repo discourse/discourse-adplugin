@@ -8,9 +8,15 @@ export default {
       api.decorateWidget("post:after", dec => {
         if (dec.canConnectComponent) {
           if (!dec.attrs.cloaked) {
-            return dec.connect({
-              component: "post-bottom-ad",
-              context: "model"
+            // return dec.connect({
+            //   component: "post-bottom-ad",
+            //   context: "model"
+            // });
+            console.log('initialize attach ad-slot');
+            return dec.attach('ad-slot', {
+              placement: 'post-bottom',
+              category: 'TODO',
+              postNumber: dec.attrs.post_number
             });
           }
         } else {
