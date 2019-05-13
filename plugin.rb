@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # name: discourse-adplugin
 # about: Ad Plugin for Discourse
 # version: 1.2.0

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe AdPlugin::HouseAd do
@@ -117,7 +119,7 @@ describe AdPlugin::HouseAd do
     end
 
     it "validates attributes" do
-      ad = AdPlugin::HouseAd.create({name: '', html: ''})
+      ad = AdPlugin::HouseAd.create(name: '', html: '')
       expect(ad).to be_a(AdPlugin::HouseAd)
       expect(ad).to_not be_valid
       expect(ad.errors.full_messages).to be_present
