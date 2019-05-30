@@ -71,3 +71,4 @@ fi:
     amazon_mobile_post_bottom_ad_width_code: "Mainoksen leveys (mobiilissa)"
     amazon_mobile_post_bottom_ad_height_code: "Mainoksen korkeus (mobiilissa)"
     amazon_nth_post_code: "Näytä mainos N viestin välein, missä N on syöttämäsi luku."
+    carbonads_through_trust_level: "Näytä mainoksia riippuen luottamustasosta. Käyttäjät joiden luottamustaso on tätä korkeampi eivät näe mainoksia."

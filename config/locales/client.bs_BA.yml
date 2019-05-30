@@ -14,3 +14,9 @@ bs_BA:
       site_settings:
         categories:
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "New"
+          settings: "Postavke"
+          save: "Sačuvaj"
+          delete: "Delete"

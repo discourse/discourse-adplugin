@@ -14,3 +14,9 @@ cs:
       site_settings:
         categories:
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "Noví"
+          settings: "Nastavení"
+          save: "Uložit"
+          delete: "Smazat"

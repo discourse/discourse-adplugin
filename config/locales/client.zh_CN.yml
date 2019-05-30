@@ -13,7 +13,16 @@ zh_CN:
     admin:
       site_settings:
         categories:
+          ad_plugin: '广告插件'
           dfp_plugin: '谷歌 DFP/广告管理器'
           adsense_plugin: '谷歌Adsense'
           amazon_plugin: '亚马逊网站联盟'
           codefund_plugin: 'CodeFund'
+      adplugin:
+        house_ads:
+          new: "新建"
+          settings: "设置"
+          save: "保存"
+          delete: "删除"
+          filter_placeholder: "选择广告"
+          more_settings: "更多设置"

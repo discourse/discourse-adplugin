@@ -16,3 +16,9 @@ ko:
           dfp_plugin: 'DFP/Ad 관리자'
           adsense_plugin: '애드센스'
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "새값"
+          settings: "설정"
+          save: "저장"
+          delete: "삭제"

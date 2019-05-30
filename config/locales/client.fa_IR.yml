@@ -11,3 +11,9 @@ fa_IR:
       site_settings:
         categories:
           amazon_plugin: 'آمازون'
+      adplugin:
+        house_ads:
+          new: "جدید"
+          settings: "تنظیمات"
+          save: "ذخیره"
+          delete: "حذف"

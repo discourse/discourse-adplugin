@@ -5,4 +5,12 @@
 # To work with us on translations, join this project:
 # https://www.transifex.com/projects/p/discourse-org/
 
-th: {}
+th:
+  admin_js:
+    admin:
+      adplugin:
+        house_ads:
+          new: "ใหม่"
+          settings: "การตั้งค่า"
+          save: "บันทึก"
+          delete: "ลบ"

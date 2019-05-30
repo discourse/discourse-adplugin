@@ -8,3 +8,10 @@
 uk:
   site_settings:
     adsense_topic_list_top_ad_sizes: "Виберіть розмір вашої реклами"
+    adsense_mobile_topic_list_top_ad_size: "Виберіть розмір вашої реклами"
+    adsense_topic_above_post_stream_ad_sizes: "Виберіть розмір вашої реклами"
+    adsense_mobile_topic_above_post_stream_ad_size: "Виберіть розмір вашої реклами"
+    adsense_topic_above_suggested_ad_sizes: "Виберіть розмір вашої реклами"
+    adsense_mobile_topic_above_suggested_ad_size: "Виберіть розмір вашої реклами"
+    adsense_post_bottom_ad_sizes: "Виберіть розмір вашої реклами"
+    adsense_mobile_post_bottom_ad_size: "Виберіть розмір вашої реклами"

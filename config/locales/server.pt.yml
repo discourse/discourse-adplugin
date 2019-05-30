@@ -9,6 +9,7 @@ pt:
   site_settings:
     dfp_through_trust_level: "Mostre os seus anúncios aos utilizadores com base nos níveis de confiança. Os utilizadores com nível de confiança superior a este valor não irão ver anúncios."
     dfp_topic_list_top_ad_sizes: "Escolha o tamanho do bloco publicitário acima da lista dos tópicos. "
+    adsense_through_trust_level: "Mostre os seus anúncios aos utilizadores com base nos níveis de confiança. Os utilizadores com nível de confiança superior a este valor não irão ver anúncios."
     adsense_topic_list_top_ad_sizes: "Escolha o tamanho do seu anúncio"
     adsense_mobile_topic_list_top_ad_size: "Escolha o tamanho do seu anúncio"
     adsense_topic_above_post_stream_ad_sizes: "Escolha o tamanho do seu anúncio"
@@ -17,6 +18,7 @@ pt:
     adsense_mobile_topic_above_suggested_ad_size: "Escolha o tamanho do seu anúncio"
     adsense_post_bottom_ad_sizes: "Escolha o tamanho do seu anúncio"
     adsense_mobile_post_bottom_ad_size: "Escolha o tamanho do seu anúncio"
+    amazon_through_trust_level: "Mostre os seus anúncios aos utilizadores com base nos níveis de confiança. Os utilizadores com nível de confiança superior a este valor não irão ver anúncios."
     amazon_topic_list_top_ad_width_code: "Insira a largura do seu anúncio"
     amazon_topic_list_top_ad_height_code: "Insira a altura do seu anúncio"
     amazon_mobile_topic_list_top_ad_width_code: "Insira a largura do seu anúncio (móvel)"
@@ -33,3 +35,4 @@ pt:
     amazon_post_bottom_ad_height_code: "Insira a altura do seu anúncio"
     amazon_mobile_post_bottom_ad_width_code: "Insira a largura do seu anúncio (móvel)"
     amazon_mobile_post_bottom_ad_height_code: "Insira a altura do seu anúncio (móvel)"
+    carbonads_through_trust_level: "Mostre os seus anúncios aos utilizadores com base nos níveis de confiança. Os utilizadores com nível de confiança superior a este valor não irão ver anúncios."

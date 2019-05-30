@@ -14,3 +14,9 @@ et:
       site_settings:
         categories:
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "Uus"
+          settings: "Seaded"
+          save: "Salvesta"
+          delete: "Kustuta"

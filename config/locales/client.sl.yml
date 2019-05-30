@@ -9,3 +9,11 @@ sl:
   js:
     adplugin:
       advertisement_label: 'OGLAS'
+  admin_js:
+    admin:
+      adplugin:
+        house_ads:
+          new: "Novi"
+          settings: "Nastavitve"
+          save: "Shrani"
+          delete: "Izbriši"

@@ -11,3 +11,9 @@ sv:
       site_settings:
         categories:
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "Ny"
+          settings: "Inställningar"
+          save: "Spara"
+          delete: "Radera"

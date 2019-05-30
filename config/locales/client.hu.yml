@@ -15,3 +15,9 @@ hu:
         categories:
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
+      adplugin:
+        house_ads:
+          new: "Új"
+          settings: "Beállítások"
+          save: "Mentés"
+          delete: "Töröl"

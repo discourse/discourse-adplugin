@@ -12,3 +12,6 @@ pl_PL:
     dfp_topic_list_top_ad_sizes: "Wybierz rozmiar reklamy dla jednostki reklamowej powyżej listy tematów."
     dfp_mobile_topic_list_top_code: "Podaj unikalny Kod jednostki reklamowej aby wyświetlić ją powyżej listy tematów dla wersji mobilnej strony. Kod jest krótki (maksymalnie 100 znaków), został przydzielony jednostce reklamowej po utworzeniu. Nie jest to kod źródłowy Javascript."
     dfp_mobile_topic_list_top_ad_sizes: "Wybierz rozmiar reklamy dla jednostki reklamowej powyżej listy tematów dla wersji mobilnej strony."
+    adsense_through_trust_level: "Pokaż reklamy swoim użytkownikom na podstawie poziomu zaufania. Użytkownicy z poziomem zaufania wyższym niż ta wartość, nie zobaczą reklam."
+    amazon_through_trust_level: "Pokaż reklamy swoim użytkownikom na podstawie poziomu zaufania. Użytkownicy z poziomem zaufania wyższym niż ta wartość, nie zobaczą reklam."
+    carbonads_through_trust_level: "Pokaż reklamy swoim użytkownikom na podstawie poziomu zaufania. Użytkownicy z poziomem zaufania wyższym niż ta wartość, nie zobaczą reklam."

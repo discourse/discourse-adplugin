@@ -5,4 +5,12 @@
 # To work with us on translations, join this project:
 # https://www.transifex.com/projects/p/discourse-org/
 
-sq: {}
+sq:
+  admin_js:
+    admin:
+      adplugin:
+        house_ads:
+          new: "I Ri"
+          settings: "Rregullimet"
+          save: "Ruaj"
+          delete: "Fshij"

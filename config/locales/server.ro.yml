@@ -9,3 +9,4 @@ ro:
   site_settings:
     codefund_above_suggested_enabled: "Afișează o reclamă desupra listei cu discuții propuse"
     codefund_top_of_topic_list_enabled: "Afișează o reclamă deasupra listei de discuții"
+    carbonads_topic_list_top_enabled: "Afișează o reclamă deasupra listei de discuții"

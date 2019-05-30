@@ -11,3 +11,9 @@ zh_TW:
       site_settings:
         categories:
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "新使用者"
+          settings: "設定"
+          save: "儲存"
+          delete: "刪除"

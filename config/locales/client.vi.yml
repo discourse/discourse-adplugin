@@ -9,3 +9,11 @@ vi:
   js:
     adplugin:
       advertisement_label: 'QUẢNG CÁO'
+  admin_js:
+    admin:
+      adplugin:
+        house_ads:
+          new: "Mới"
+          settings: "Xác lập"
+          save: "Lưu"
+          delete: "Xóa"

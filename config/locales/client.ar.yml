@@ -11,3 +11,9 @@ ar:
       site_settings:
         categories:
           amazon_plugin: 'اعلانات امازون'
+      adplugin:
+        house_ads:
+          new: "جديد"
+          settings: "إعدادات"
+          save: "احفظ"
+          delete: "أحذف"

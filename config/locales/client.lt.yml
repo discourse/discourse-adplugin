@@ -15,3 +15,9 @@ lt:
         categories:
           dfp_plugin: 'DFP/Ad Redaktorius'
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "Naujas"
+          settings: "Nustatymai"
+          save: "Saugoti"
+          delete: "Pašalinti"

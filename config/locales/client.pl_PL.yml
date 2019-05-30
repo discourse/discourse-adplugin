@@ -11,3 +11,9 @@ pl_PL:
       site_settings:
         categories:
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "Nowi"
+          settings: "Ustawienia"
+          save: "Zapisz"
+          delete: "Usuń"

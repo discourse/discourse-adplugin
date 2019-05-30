@@ -17,3 +17,9 @@ fi:
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
+      adplugin:
+        house_ads:
+          new: "Uudet"
+          settings: "Asetukset"
+          save: "Tallenna"
+          delete: "Poista"

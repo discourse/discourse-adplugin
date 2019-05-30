@@ -9,6 +9,7 @@ nb_NO:
   site_settings:
     dfp_through_trust_level: "Vis dine reklamer til brukere basert på tillitsnivå. Brukere med tillitsnivå høyere enn denne verdien vil ikke se reklamer."
     dfp_nth_post_code: "Vis en reklame etter hver N post, der N er denne verdien."
+    adsense_through_trust_level: "Vis dine reklamer til brukere basert på tillitsnivå. Brukere med tillitsnivå høyere enn denne verdien vil ikke se reklamer."
     adsense_topic_list_top_ad_sizes: "Velg din reklamestørrelse"
     adsense_mobile_topic_list_top_ad_size: "Velg din reklamestørrelse"
     adsense_topic_above_post_stream_ad_sizes: "Velg din reklamestørrelse"
@@ -17,6 +18,8 @@ nb_NO:
     adsense_mobile_topic_above_suggested_ad_size: "Velg din reklamestørrelse"
     adsense_post_bottom_ad_sizes: "Velg din reklamestørrelse"
     adsense_mobile_post_bottom_ad_size: "Velg din reklamestørrelse"
+    adsense_nth_post_code: "Vis en reklame etter hvert N innlegg, der N er denne verdien."
+    amazon_through_trust_level: "Vis dine reklamer til brukere basert på tillitsnivå. Brukere med tillitsnivå høyere enn denne verdien vil ikke se reklamer."
     amazon_topic_list_top_ad_width_code: "Velg din reklamebredde"
     amazon_topic_list_top_ad_height_code: "Velg din reklamehøyde"
     amazon_mobile_topic_list_top_ad_width_code: "Velg din reklamebredde (mobil)"
@@ -36,3 +39,4 @@ nb_NO:
     amazon_mobile_post_bottom_ad_width_code: "Velg din reklamebredde (mobil)"
     amazon_mobile_post_bottom_ad_height_code: "Velg din reklamehøyde (mobil)"
     amazon_nth_post_code: "Vis en reklame etter hvert N innlegg, der N er denne verdien."
+    carbonads_through_trust_level: "Vis dine reklamer til brukere basert på tillitsnivå. Brukere med tillitsnivå høyere enn denne verdien vil ikke se reklamer."

@@ -90,3 +90,6 @@ hy:
     codefund_above_post_stream_enabled: "Ցուցադրել գովազդ գրառումների հոսքի վերևում"
     codefund_above_suggested_enabled: "Ցուցադրել գովազդ առաջարկվող թեմաների ցանկի վերևում"
     codefund_top_of_topic_list_enabled: "Ցուցադրել գովազդ թեմաների ցանկի վերևում"
+    carbonads_through_trust_level: "Ցուցադրեք Ձեր գովազդները օգտատերերին՝ հիմնվելով վստահության մակարդակների վրա: Այս արժեքից ավելի բարձր վստահության մակարդակ ունեցող օգտատերերը գովազդներ չեն տեսնի:"
+    carbonads_topic_list_top_enabled: "Ցուցադրել գովազդ թեմաների ցանկի վերևում"
+    carbonads_above_post_stream_enabled: "Ցուցադրել գովազդ գրառումների հոսքի վերևում"

@@ -18,3 +18,12 @@ es:
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
           carbonads_plugin: 'Carbon Ads'
+      adplugin:
+        house_ads:
+          new: "Nuevo"
+          settings: "Ajustes"
+          save: "Guardar"
+          delete: "Borrar"
+          get_started: "Comienza creando un nuevo anuncio."
+          filter_placeholder: "Seleccionar anuncios..."
+          more_settings: "Más ajustes"

@@ -65,3 +65,4 @@ ko:
     amazon_mobile_post_bottom_ad_width_code: "광고 너비를 입력하세요 (모바일)"
     amazon_mobile_post_bottom_ad_height_code: "광고 높이를 입력하세요 (모바일)"
     amazon_nth_post_code: "몇 개의 포스트 다음에 광고를 표시할까요?"
+    carbonads_through_trust_level: "사용자 레벨에 맞추어 광고를 표시합니다. 지정된 레벨 이상의 사용자에게는 광고가 보이지 않습니다."

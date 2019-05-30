@@ -14,3 +14,9 @@ ro:
       site_settings:
         categories:
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "Nou"
+          settings: "Setări"
+          save: "Salvează"
+          delete: "Șterge"

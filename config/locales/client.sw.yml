@@ -15,3 +15,9 @@ sw:
         categories:
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
+      adplugin:
+        house_ads:
+          new: "Mpya"
+          settings: "Mpangilio"
+          save: "hifadhi"
+          delete: "Futa"

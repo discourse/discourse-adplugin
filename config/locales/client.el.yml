@@ -11,3 +11,9 @@ el:
       site_settings:
         categories:
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "Νέο"
+          settings: "Ρυθμίσεις"
+          save: "Αποθήκευση"
+          delete: "Σβήσιμο"

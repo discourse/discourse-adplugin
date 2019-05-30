@@ -75,3 +75,4 @@ ar:
     amazon_mobile_post_bottom_ad_width_code: "ادخل عرض اعلانك (الهاتف المحمول)"
     amazon_mobile_post_bottom_ad_height_code: "ادخل ارتفاع اعلانك (الهاتف المحمول)"
     amazon_nth_post_code: "اظهر الاعلان بعد كل N منشور, حيث ان N هي القيمة."
+    carbonads_through_trust_level: "اظهر اعلاناتك للمستخدمين بناء على مستوى الثقة, المستخدمون مع مستوى ثقة اعلى من هذه القيمة لن يشاهدوا الاعلانات."

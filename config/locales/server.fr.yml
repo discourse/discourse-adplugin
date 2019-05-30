@@ -90,3 +90,8 @@ fr:
     codefund_above_post_stream_enabled: "Afficher une pub au dessus du flux de messages"
     codefund_above_suggested_enabled: "Afficher une pub au dessus de la liste de sujets suggérés"
     codefund_top_of_topic_list_enabled: "Afficher une pub au dessus de la liste de sujets"
+    carbonads_serve_id: "Votre identifiant Carbon Ads"
+    carbonads_placement: "Votre emplacement Carbon Ads"
+    carbonads_through_trust_level: "Afficher les publicités aux utilisateurs en fonction de leurs niveaux de confiance. Les utilisateurs avec un niveau de confiance supérieur à celui-ci ne verront pas de publicité."
+    carbonads_topic_list_top_enabled: "Afficher une pub au dessus de la liste de sujets"
+    carbonads_above_post_stream_enabled: "Afficher une pub au dessus du flux de messages"

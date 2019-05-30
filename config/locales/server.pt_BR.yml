@@ -90,3 +90,6 @@ pt_BR:
     codefund_above_post_stream_enabled: "Mostrar um anúncio acima da stream de postagens"
     codefund_above_suggested_enabled: "Mostrar um anúncio acima da lista de tópico sugeridos"
     codefund_top_of_topic_list_enabled: "Mostrar um anúncio acima da lista de tópicos"
+    carbonads_through_trust_level: "Exibir seus anúncios para usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."
+    carbonads_topic_list_top_enabled: "Mostrar um anúncio acima da lista de tópicos"
+    carbonads_above_post_stream_enabled: "Mostrar um anúncio acima da stream de postagens"

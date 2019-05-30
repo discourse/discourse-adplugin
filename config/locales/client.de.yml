@@ -13,7 +13,33 @@ de:
     admin:
       site_settings:
         categories:
+          ad_plugin: 'Anzeigen Plugin'
           dfp_plugin: 'DFP/Ad Manager'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
+          carbonads_plugin: 'Carbon Ads'
+      adplugin:
+        house_ads:
+          title: "Haus Anzeigen"
+          new: "Neu"
+          settings: "Einstellungen"
+          new_name: "Neue Haus Anzeigen"
+          save: "Speichern"
+          delete: "Löschen"
+          description: "Definiere deine eigenen Anzeige und wo sie angezeigt werden sollen."
+          get_started: "Starte mit dem Erstellen einer neuen Anzeige."
+          filter_placeholder: "Anzeigen auswählen"
+          more_settings: "Weitere Einstellungen"
+          topic_list_top:
+            title: "Themenliste der Top Anzeigen"
+            description: "Anzeigen, die oben auf den Themenlisten-Seiten gezeigt werden sollen."
+          topic_above_post_stream:
+            title: "Thema oberhalb Beitragsfluss"
+            description: "Anzeigen, die oberhalb des Titels eines Themas auf der Themenseite gezeigt werden sollen."
+          topic_above_suggested:
+            title: "Thema oberhalb Vorgeschlagen"
+            description: "Anzeigen, die nach dem letzten Beitrag in einem Thema, oberhalb der vorgeschlagenen Themen angezeigt werden sollen."
+          post_bottom:
+            title: "Zwischen Beiträgen"
+            description: "Anzeigen zwischen Beiträgen anzeigen, nach je N Beiträgen."

@@ -75,3 +75,4 @@ el:
     amazon_mobile_post_bottom_ad_width_code: "Input your ad width (mobile)"
     amazon_mobile_post_bottom_ad_height_code: "Input your ad height (mobile)"
     amazon_nth_post_code: "Show an ad after every N posts, where N is this value."
+    carbonads_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."

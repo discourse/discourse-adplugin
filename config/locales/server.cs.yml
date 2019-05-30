@@ -22,3 +22,8 @@ cs:
     dfp_post_bottom_code: "Zadejte unikátní kód reklamní jednotky pro zobrazení mezi příspěvky po každém n-tém příspěvku. Toto je krátký kód (max 100 znaků) přiřazený reklamní jednotce, když byla vytvořena, ne JavaScript kód."
     dfp_post_bottom_ad_sizes: "Zvolte si velikost reklamy pro reklamní jednotku zobrazovanou mezi příspěvky."
     dfp_mobile_post_bottom_ad_sizes: "Zvolte si velikost reklamy pro reklamní jednotku zobrazovanou mezi příspěvky při mobilním zobrazení."
+    adsense_through_trust_level: "Zobrazit reklamy uživatelům podle jejich důvěryhodnosti. Uživatelé s důvěryhodností vyšší než tato hodnota reklamy neuvidí."
+    adsense_nth_post_code: "Zobrazit reklamu po každém N-tém příspěvku, kde N je tato hodnota."
+    amazon_through_trust_level: "Zobrazit reklamy uživatelům podle jejich důvěryhodnosti. Uživatelé s důvěryhodností vyšší než tato hodnota reklamy neuvidí."
+    amazon_nth_post_code: "Zobrazit reklamu po každém N-tém příspěvku, kde N je tato hodnota."
+    carbonads_through_trust_level: "Zobrazit reklamy uživatelům podle jejich důvěryhodnosti. Uživatelé s důvěryhodností vyšší než tato hodnota reklamy neuvidí."

@@ -17,3 +17,9 @@ hy:
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
+      adplugin:
+        house_ads:
+          new: "Նոր"
+          settings: "Կարգավորումներ"
+          save: "Պահպանել"
+          delete: "Ջնջել"

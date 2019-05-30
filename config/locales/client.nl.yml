@@ -11,3 +11,9 @@ nl:
       site_settings:
         categories:
           amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          new: "Nieuw"
+          settings: "Instellingen"
+          save: "Opslaan"
+          delete: "Verwijderen"
