@@ -13,6 +13,10 @@ ad_plugin:
     default: 100
     min: 0
     max: 100
+  ads_txt:
+    client: false
+    default: ""
+    textarea: true
 
 adsense_plugin:
   adsense_publisher_code:
@@ -124,10 +128,6 @@ adsense_plugin:
     client: true
     default: ""
     min: 1
-  adsense_ads_txt:
-    client: false
-    default: ""
-    textarea: true
 
 dfp_plugin:
   dfp_publisher_id:

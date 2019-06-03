@@ -43,9 +43,9 @@ after_initialize do
     skip_before_action :check_xhr
 
     def index
-      raise Discourse::NotFound unless SiteSetting.adsense_ads_txt.present?
+      raise Discourse::NotFound unless SiteSetting.ads_txt.present?
 
-      render plain: SiteSetting.adsense_ads_txt
+      render plain: SiteSetting.ads_txt
     end
   end
 
