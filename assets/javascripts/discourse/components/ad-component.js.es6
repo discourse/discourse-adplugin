@@ -8,6 +8,11 @@ export default Ember.Component.extend({
     "router.currentRoute.parent.attributes.category_id"
   ),
 
+  currentCategorySlug: Ember.computed.or(
+    "router.currentRoute.attributes.category.slug",
+    "router.currentRoute.parent.attributes.category.slug"
+  ),
+
   @computed("currentUser.groups")
   showToGroups(groups) {
     const currentUser = Discourse.User.current();

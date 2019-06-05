@@ -266,22 +266,23 @@ export default AdComponent.extend({
     return this.isNthPost(parseInt(this.siteSettings.dfp_nth_post_code));
   },
 
-  @observes("refreshOnChange")
-  refreshAd() {
-    var slot = ads[this.get("divId")];
+  @on("didUpdate")
+  updated() {
+    if (this.get("listLoading")) {
+      return;
+    }
+
+    let slot = ads[this.get("divId")];
     if (!(slot && slot.ad)) {
       return;
     }
 
-    var self = this,
-      ad = slot.ad;
+    let ad = slot.ad,
+      categorySlug = this.get("currentCategorySlug");
 
-    if (this.get("loadedGoogletag") && this.get("refreshOnChange")) {
+    if (this.get("loadedGoogletag")) {
       window.googletag.cmd.push(function() {
-        ad.setTargeting(
-          "discourse-category",
-          self.get("category") ? self.get("category") : "0"
-        );
+        ad.setTargeting("discourse-category", categorySlug || "0");
         window.googletag.pubads().refresh([ad]);
       });
     }
@@ -293,7 +294,7 @@ export default AdComponent.extend({
       return;
     }
 
-    var self = this;
+    let self = this;
     loadGoogle(this.siteSettings).then(function() {
       self.set("loadedGoogletag", true);
       window.googletag.cmd.push(function() {
@@ -306,7 +307,7 @@ export default AdComponent.extend({
         if (slot && slot.ad) {
           slot.ad.setTargeting(
             "discourse-category",
-            self.get("category") ? self.get("category") : "0"
+            self.get("currentCategorySlug") || "0"
           );
           window.googletag.display(self.get("divId"));
           window.googletag.pubads().refresh([slot.ad]);
