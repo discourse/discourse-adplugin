@@ -128,7 +128,8 @@ export default AdComponent.extend({
   showAd: Ember.computed.and(
     "showToTrustLevel",
     "showToGroups",
-    "showAfterPost"
+    "showAfterPost",
+    "showOnCurrentPage"
   ),
 
   init() {

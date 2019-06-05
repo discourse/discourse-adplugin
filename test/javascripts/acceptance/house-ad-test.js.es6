@@ -3,6 +3,7 @@ import { acceptance, replaceCurrentUser } from "helpers/qunit-helpers";
 acceptance("House Ads", {
   loggedIn: true,
   settings: {
+    no_ads_for_categories: "1",
     house_ads_after_nth_post: 6
   },
   site: {
@@ -65,5 +66,29 @@ test("correct ads show", async assert => {
     find(".h-topic-list").length,
     1,
     "it should render ad above topic list"
+  );
+
+  await visit("/t/28830");
+  assert.equal(
+    find(".h-above-post-stream").length,
+    0,
+    "no ad above post stream because category is in no_ads_for_categories"
+  );
+  assert.equal(
+    find(".h-post").length,
+    0,
+    "no ad between posts because category is in no_ads_for_categories"
+  );
+  assert.equal(
+    find(".h-above-suggested").length,
+    0,
+    "no ad above suggested because category is in no_ads_for_categories"
+  );
+
+  await visit("/c/bug");
+  assert.equal(
+    find(".h-topic-list").length,
+    0,
+    "no ad above category topic list because category is in no_ads_for_categories"
   );
 });

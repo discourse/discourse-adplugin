@@ -1,6 +1,13 @@
 import computed from "ember-addons/ember-computed-decorators";
 
 export default Ember.Component.extend({
+  router: Ember.inject.service(),
+
+  currentCategoryId: Ember.computed.or(
+    "router.currentRoute.attributes.category.id",
+    "router.currentRoute.parent.attributes.category_id"
+  ),
+
   @computed("currentUser.groups")
   showToGroups(groups) {
     const currentUser = Discourse.User.current();
@@ -20,6 +27,17 @@ export default Ember.Component.extend({
       .map(g => g.toLowerCase());
 
     return !groupNames.any(g => noAdsGroupNames.includes(g));
+  },
+
+  @computed("currentCategoryId")
+  showOnCurrentPage(categoryId) {
+    return (
+      !categoryId ||
+      !this.siteSettings.no_ads_for_categories ||
+      !this.siteSettings.no_ads_for_categories
+        .split("|")
+        .includes(categoryId.toString())
+    );
   },
 
   isNthPost(n) {

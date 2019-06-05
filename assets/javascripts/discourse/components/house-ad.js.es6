@@ -22,9 +22,9 @@ export default AdComponent.extend({
     return showAd ? `house-${placement}` : "";
   },
 
-  @computed("showToGroups", "showAfterPost")
-  showAd(showToGroups, showAfterPost) {
-    return showToGroups && showAfterPost;
+  @computed("showToGroups", "showAfterPost", "showOnCurrentPage")
+  showAd(showToGroups, showAfterPost, showOnCurrentPage) {
+    return showToGroups && showAfterPost && showOnCurrentPage;
   },
 
   @computed("postNumber")

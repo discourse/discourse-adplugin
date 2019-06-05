@@ -237,13 +237,19 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("showToTrustLevel", "showToGroups", "showAfterPost")
-  showAd(showToTrustLevel, showToGroups, showAfterPost) {
+  @computed(
+    "showToTrustLevel",
+    "showToGroups",
+    "showAfterPost",
+    "showOnCurrentPage"
+  )
+  showAd(showToTrustLevel, showToGroups, showAfterPost, showOnCurrentPage) {
     return (
       this.siteSettings.adsense_publisher_code &&
       showToTrustLevel &&
       showToGroups &&
-      showAfterPost
+      showAfterPost &&
+      showOnCurrentPage
     );
   },
 

@@ -112,13 +112,19 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("showToTrustLevel", "showToGroups", "showAfterPost")
-  showAd(showToTrustLevel, showToGroups, showAfterPost) {
+  @computed(
+    "showToTrustLevel",
+    "showToGroups",
+    "showAfterPost",
+    "showOnCurrentPage"
+  )
+  showAd(showToTrustLevel, showToGroups, showAfterPost, showOnCurrentPage) {
     return (
       this.siteSettings.codefund_property_id &&
       showToTrustLevel &&
       showToGroups &&
-      showAfterPost
+      showAfterPost &&
+      showOnCurrentPage
     );
   },
 

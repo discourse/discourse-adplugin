@@ -3,6 +3,10 @@ ad_plugin:
     client: true
     default: ""
     type: group_list
+  no_ads_for_categories:
+    client: true
+    default: ""
+    type: category_list
   house_ads_after_nth_post:
     client: true
     default: 20

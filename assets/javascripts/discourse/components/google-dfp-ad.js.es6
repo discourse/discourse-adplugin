@@ -234,13 +234,19 @@ export default AdComponent.extend({
     return `width: ${w}px;`.htmlSafe();
   },
 
-  @computed("showToTrustLevel", "showToGroups", "showAfterPost")
-  showAd(showToTrustLevel, showToGroups, showAfterPost) {
+  @computed(
+    "showToTrustLevel",
+    "showToGroups",
+    "showAfterPost",
+    "showOnCurrentPage"
+  )
+  showAd(showToTrustLevel, showToGroups, showAfterPost, showOnCurrentPage) {
     return (
       this.siteSettings.dfp_publisher_id &&
       showToTrustLevel &&
       showToGroups &&
-      showAfterPost
+      showAfterPost &&
+      showOnCurrentPage
     );
   },
 

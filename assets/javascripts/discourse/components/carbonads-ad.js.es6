@@ -28,8 +28,14 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("showToTrustLevel", "showToGroups")
-  showAd(showToTrustLevel, showToGroups) {
-    return placement && serve_id && showToTrustLevel && showToGroups;
+  @computed("showToTrustLevel", "showToGroups", "showOnCurrentPage")
+  showAd(showToTrustLevel, showToGroups, showOnCurrentPage) {
+    return (
+      placement &&
+      serve_id &&
+      showToTrustLevel &&
+      showToGroups &&
+      showOnCurrentPage
+    );
   }
 });
