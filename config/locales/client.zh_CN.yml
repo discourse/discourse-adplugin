@@ -24,5 +24,18 @@ zh_CN:
           settings: "设置"
           save: "保存"
           delete: "删除"
+          description: "定义你自己的广告和显示的位置。"
+          get_started: "开始创建一个新的广告"
           filter_placeholder: "选择广告"
           more_settings: "更多设置"
+          topic_list_top:
+            title: "主题列表顶部广告"
+            description: "在主题列表页面的顶部显示广告。"
+          topic_above_post_stream:
+            title: "主题的贴子之前"
+            description: "在主题页面中的主题标题之上显示广告"
+          topic_above_suggested:
+            title: "主题推荐之前"
+            description: "在主题的最后一个帖子后，主题推荐之前显示广告"
+          post_bottom:
+            title: "帖子之间"

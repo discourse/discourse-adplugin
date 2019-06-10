@@ -7,6 +7,11 @@
 
 es:
   site_settings:
+    no_ads_for_groups: "No mostrar anuncios a los usuarios en estos grupos."
+    no_ads_for_categories: "No mostrar anuncios en la lista de temas y en las páginas de temas que pertenecen a estas categorías."
+    house_ads_after_nth_post: 'Si se definen los anuncios internos "Entre publicaciones", muestre un anuncio después de cada N publicaciones, donde N es este valor.'
+    house_ads_frequency: "Si otras redes publicitarias están configuradas para mostrarse en un espacio publicitario, con qué frecuencia deben mostrarse los anuncios internos, como un porcentaje."
+    ads_txt: "Contenido de tu archivo ads.txt. Más información disponible en <a href='https://support.google.com/adsense/answer/7532444?hl=es' target='_blank'>esta página de ayuda del Google AdSense</a>."
     dfp_publisher_id: "Introduce tu network code del Google Ad Manager (llamado DFP), que puedes encontrar en la configuración."
     dfp_through_trust_level: "Muestre sus anuncios a los usuarios basados en los niveles de confianza. Usuarios con un nivel de confianza elevado no verían anuncios."
     dfp_topic_list_top_code: "Ingrese su código único de anuncio para mostrar por encima de la lista de temas. Este es un código corto (max 100 caracteres) dado al anuncio cuando fue creado, no el código JavaScript."
@@ -53,7 +58,6 @@ es:
     adsense_post_bottom_ad_sizes: "Seleccione el tamaño de tu anuncio"
     adsense_mobile_post_bottom_ad_size: "Selecciona tamaño de anuncio"
     adsense_nth_post_code: "Elija un número de post para su anuncio; se mostrará al final de ese mensaje"
-    adsense_ads_txt: "Contenido de tu archivo ads.txt. Más información disponible en <a href='https://support.google.com/adsense/answer/7532444?hl=es' target='_blank'>esta página de ayuda del Google AdSense</a>."
     amazon_through_trust_level: "Muestre sus anuncios a los usuarios basados en los niveles de confianza"
     amazon_topic_list_top_src_code: "Ingrese su código SRC de anuncio para mostrar por encima de la lista de temas"
     amazon_topic_list_top_ad_width_code: "Entrada la anchura de la publicidad"

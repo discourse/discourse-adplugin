@@ -13,6 +13,7 @@ es:
     admin:
       site_settings:
         categories:
+          ad_plugin: 'Ad Plugin'
           dfp_plugin: 'DFP/Ad Manager'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
@@ -20,10 +21,25 @@ es:
           carbonads_plugin: 'Carbon Ads'
       adplugin:
         house_ads:
+          title: "House Ads"
           new: "Nuevo"
           settings: "Ajustes"
+          new_name: "House Ad Nuevo"
           save: "Guardar"
           delete: "Borrar"
+          description: "Defina sus propios anuncios y dónde deben mostrarse."
           get_started: "Comienza creando un nuevo anuncio."
           filter_placeholder: "Seleccionar anuncios..."
           more_settings: "Más ajustes"
+          topic_list_top:
+            title: "Lista de temas top anuncios"
+            description: "Anuncios para mostrar en la parte superior de las páginas de la lista de temas."
+          topic_above_post_stream:
+            title: "Tema encima de las publicaciones"
+            description: "Anuncios para mostrar encima del título de un tema en la página del tema."
+          topic_above_suggested:
+            title: "Tema sobre los sugeridos"
+            description: "Anuncios para mostrar después de la última publicación en un tema, por encima de los temas sugeridos."
+          post_bottom:
+            title: "Entre publicaciones"
+            description: "Anuncios para mostrar entre publicaciones, después de cada N publicaciones."

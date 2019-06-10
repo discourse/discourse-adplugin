@@ -13,6 +13,7 @@ fr:
     admin:
       site_settings:
         categories:
+          ad_plugin: 'Plugin pub'
           dfp_plugin: 'Gestionnaire DFP/Ad'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
@@ -20,7 +21,25 @@ fr:
           carbonads_plugin: 'Carbon Ads'
       adplugin:
         house_ads:
+          title: "Pubs maison"
           new: "Nouveau"
           settings: "Paramètres"
+          new_name: "Nouvelle pub maison"
           save: "Sauvegarder"
           delete: "Supprimer"
+          description: "Définir vos propres pubs et où elles devraient s'afficher."
+          get_started: "Commencer par créer une nouvelle pub."
+          filter_placeholder: "Séléctionner pubs..."
+          more_settings: "Plus de paramètres"
+          topic_list_top:
+            title: "Liste de sujets pubs haut de page"
+            description: "Pubs à afficher en haut des pages de liste de sujets"
+          topic_above_post_stream:
+            title: "Sujet en haut du flux de messages"
+            description: "Pubs à afficher en haut du titre du sujet sur la page du sujet."
+          topic_above_suggested:
+            title: "Sujet en haut de \"lire ensuite\""
+            description: "Pubs à afficher après le dernier message d'un sujet, en haut de la liste de sujets \"à lire ensuite\"."
+          post_bottom:
+            title: "Entre messages"
+            description: "Pubs à afficher entre les messages, tous les N messages."

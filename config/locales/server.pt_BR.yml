@@ -7,6 +7,7 @@
 
 pt_BR:
   site_settings:
+    ads_txt: "Conteúdo do seu arquivo ads.txt. Mais detalhes disponíveis <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>nesta página de ajuda do Google AdSense</a>."
     dfp_publisher_id: "Insira o código de rede do seu Google Ad Manager (anteriormente chamado de DFP), que é encontrado em suas configurações de rede."
     dfp_through_trust_level: "Exibir seus anúncios para usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."
     dfp_topic_list_top_code: "Digite o Código único da unidade de anúncio para exibir em cima das listas de tópicos. Este é o código curto (máx. 100 caracteres) dado à unidade de anúncio quando ela foi criada, não o código JavaScript."
@@ -53,7 +54,6 @@ pt_BR:
     adsense_post_bottom_ad_sizes: "Escolha o tamanho do seu anúncio"
     adsense_mobile_post_bottom_ad_size: "Escolha o tamanho do seu anúncio"
     adsense_nth_post_code: "Mostrar um anúncio depois de cada N posts, onde N é este valor."
-    adsense_ads_txt: "Conteúdo do seu arquivo ads.txt. Mais detalhes disponíveis <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>nesta página de ajuda do Google AdSense</a>."
     amazon_through_trust_level: "Mostrar seus anúncios aos usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."
     amazon_topic_list_top_src_code: "Digite o código \"src\" para exibir no topo da lista de tópico"
     amazon_topic_list_top_ad_width_code: "Insira a largura do seu anúncio"

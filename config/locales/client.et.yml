@@ -13,6 +13,7 @@ et:
     admin:
       site_settings:
         categories:
+          adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
       adplugin:
         house_ads:

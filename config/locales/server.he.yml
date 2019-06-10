@@ -10,6 +10,7 @@ he:
     no_ads_for_groups: "לא להציג פרסומות בפני משתמשים מהקבוצות האלו."
     house_ads_after_nth_post: 'אם מוגדרות מודעות הבית „בין פוסטים”, להציג פרסומת לאחר כל N פוסטים, כאשר N הוא הערך הזה.'
     house_ads_frequency: "אם מוגדרות רשתות פרסומות אחרות להצגה בשטח שמיועד לפרסומות, באיזו תדירות להציג את פרסומות הבית, באחוזים."
+    ads_txt: "תוכן הקובץ ads.txt. ניתן למצוא פרטים נוספים ב<a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>עמוד העזרה הזה של Google AdSense</a>."
     dfp_publisher_id: "נא להקליד קוד של רשת Google Ad Manager (לשעבר DFP), הנמצא בהגדרות רשת בחשבונך."
     dfp_through_trust_level: "הצגת הפרסומות שלך למשתמשים בהתאם לדרגת האמון. משתמשים עם דרגת אמון שעולה על ערך זה לא יראו פרסומות."
     dfp_topic_list_top_code: "הכניסו את הקוד הייחודי של יחידת הפרסומת לתצוגה מעל לרשימת הנושאים. זהו הקוד הקצר (מקסימום 100 תווים) שניתן ליחידת הפרסומות כשהיא נוצרה, לא קוד ה JavaScript."
@@ -48,7 +49,6 @@ he:
     adsense_post_bottom_ad_sizes: "בחרו בגודל הפרסומת שלכם"
     adsense_mobile_post_bottom_ad_size: "בחרו בגודל הפרסומת שלכם"
     adsense_nth_post_code: "הציגו פרסומת אחת ל-N פוטסטים, כאשר N הוא ערך זה."
-    adsense_ads_txt: "תוכן הקובץ ads.txt. ניתן למצוא פרטים נוספים ב<a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>עמוד העזרה הזה של Google AdSense</a>."
     amazon_through_trust_level: "הציגו את הפרסומות שלכם למשתמשים בהתאם לרמת האמון. משתמשים עם רמת אמון גבוהה יותר מערך זה לא יראו פרסומות."
     amazon_topic_list_top_ad_width_code: "הכניסו את רוחב הפרסומת שלכם"
     amazon_topic_list_top_ad_height_code: "הכניסו את גובה הפרסומת שלכם"
