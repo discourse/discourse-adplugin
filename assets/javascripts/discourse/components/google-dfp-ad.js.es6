@@ -6,10 +6,14 @@ import {
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
 
-var currentUser = Discourse.User.current(),
-  _loaded = false,
+let _loaded = false,
   _promise = null,
-  ads = {};
+  ads = {},
+  nextSlotNum = 1;
+
+function getNextSlotNum() {
+  return nextSlotNum++;
+}
 
 function splitWidthInt(value) {
   var str = value.substring(0, 3);
@@ -23,7 +27,7 @@ function splitHeightInt(value) {
 
 // This creates an array for the values of the custom targeting key
 function valueParse(value) {
-  var final = value.replace(/ /g, "");
+  let final = value.replace(/ /g, "");
   final = final.replace(/['"]+/g, "");
   final = final.split(",");
   return final;
@@ -31,32 +35,21 @@ function valueParse(value) {
 
 // This creates an array for the key of the custom targeting key
 function keyParse(word) {
-  var key = word;
+  let key = word;
   key = key.replace(/['"]+/g, "");
   key = key.split("\n");
   return key;
 }
 
-// This sets the key and value for custom targeting
-var Foo = function(key, value, adslot) {
-  this.locationKey = key;
-  this.locationValue = value;
-  this.adslot = adslot;
-};
-
-Foo.prototype.bar = function() {
-  if (this.locationKey) {
-    this.adslot.setTargeting(this.locationKey, this.locationValue);
-  }
-};
-
 // This should call adslot.setTargeting(key for that location, value for that location)
-function custom_targeting(key_array, value_array, location) {
-  var f;
+function custom_targeting(key_array, value_array, adSlot) {
   for (var i = 0; i < key_array.length; i++) {
-    var wordValue = valueParse(value_array[i]);
-    f = new Foo(key_array[i], wordValue, location);
-    f.bar();
+    if (key_array[i]) {
+      adSlot.setTargeting(
+        key_array[i],
+        valueParse(value_array[i])
+      )
+    }
   }
 }
 
@@ -129,7 +122,7 @@ function getWidthAndHeight(placement, settings, isMobile) {
   };
 }
 
-function defineSlot(divId, placement, settings, isMobile) {
+function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
   if (!settings.dfp_publisher_id) {
     return;
   }
@@ -152,30 +145,37 @@ function defineSlot(divId, placement, settings, isMobile) {
       "/" + settings.dfp_publisher_id + "/" + settings[config.code],
       [size.width, size.height],
       divId
-    )
-    .addService(window.googletag.pubads());
+    );
+
   custom_targeting(
     keyParse(settings[config.targeting_keys]),
     keyParse(settings[config.targeting_values]),
     ad
   );
 
-  if (ad) {
-    ads[divId] = { ad: ad, width: size.width, height: size.height };
-    return ads[divId];
+  if (categoryTarget) {
+    ad.setTargeting("discourse-category", categoryTarget);
   }
+
+  ad.addService(window.googletag.pubads());
+
+  ads[divId] = { ad: ad, width: size.width, height: size.height };
+  return ads[divId];
 }
 
 function destroySlot(divId) {
   if (ads[divId] && window.googletag) {
-    window.googletag.cmd.push(function() {
-      window.googletag.destroySlots([ads[divId].ad]);
-      delete ads[divId];
-    });
+    window.googletag.destroySlots([ads[divId].ad]);
+    delete ads[divId];
   }
 }
 
 function loadGoogle() {
+  /**
+   * Refer to this article for help:
+   * https://support.google.com/admanager/answer/4578089?hl=en
+   */
+
   if (_loaded) {
     return Ember.RSVP.resolve();
   }
@@ -195,11 +195,17 @@ function loadGoogle() {
     }
 
     window.googletag.cmd.push(function() {
+      // Infinite scroll requires SRA:
       window.googletag.pubads().enableSingleRequest();
-      window.googletag.pubads().disableInitialLoad(); // we always use refresh() to fetch the ads
+
+      // we always use refresh() to fetch the ads:
+      window.googletag.pubads().disableInitialLoad();
+
       window.googletag.enableServices();
     });
   });
+
+  window.googletag = window.googletag || {cmd: []};
 
   return _promise;
 }
@@ -212,10 +218,11 @@ export default AdComponent.extend({
 
   @computed("placement", "postNumber")
   divId(placement, postNumber) {
+    let slotNum = getNextSlotNum();
     if (postNumber) {
-      return `div-gpt-ad-${placement}-${postNumber}`;
+      return `div-gpt-ad-${slotNum}-${placement}-${postNumber}`;
     } else {
-      return `div-gpt-ad-${placement}`;
+      return `div-gpt-ad-${slotNum}-${placement}`;
     }
   },
 
@@ -302,13 +309,12 @@ export default AdComponent.extend({
           self.get("divId"),
           self.get("placement"),
           self.siteSettings,
-          self.site.mobileView
+          self.site.mobileView,
+          self.get("currentCategorySlug") || "0"
         );
         if (slot && slot.ad) {
-          slot.ad.setTargeting(
-            "discourse-category",
-            self.get("currentCategorySlug") || "0"
-          );
+          // Display has to be called before refresh
+          // and after the slot div is in the page.
           window.googletag.display(self.get("divId"));
           window.googletag.pubads().refresh([slot.ad]);
         }
@@ -318,6 +324,11 @@ export default AdComponent.extend({
 
   willRender() {
     this._super(...arguments);
+
+    if (!this.get("showAd")) {
+      return;
+    }
+
     let size = getWidthAndHeight(
       this.get("placement"),
       this.siteSettings,
