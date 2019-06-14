@@ -1,7 +1,5 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import {
-  default as computed
-} from "ember-addons/ember-computed-decorators";
+import { default as computed } from "ember-addons/ember-computed-decorators";
 
 const serve_id = Discourse.SiteSettings.carbonads_serve_id,
   placement = Discourse.SiteSettings.carbonads_placement;

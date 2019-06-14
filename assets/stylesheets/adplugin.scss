@@ -41,7 +41,7 @@
   color: #858a8c;
   text-transform: uppercase;
   font-size: 12px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 
@@ -54,8 +54,7 @@
   padding: 0 11px;
 }
 
-@media all
-and (max-width : 775px) {
+@media all and (max-width: 775px) {
   .google-adsense.adsense-post-bottom {
     box-sizing: border-box;
     width: 100%;
@@ -68,7 +67,7 @@ and (max-width : 775px) {
   clear: both;
 }
 
-.amazon-product-links  .amazon-unit {
+.amazon-product-links .amazon-unit {
   margin: 0 auto;
 }
 
@@ -82,7 +81,7 @@ and (max-width : 775px) {
   color: #858a8c;
   text-transform: uppercase;
   font-size: 12px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 
@@ -96,12 +95,13 @@ and (max-width : 775px) {
   color: #858a8c;
   text-transform: uppercase;
   font-size: 12px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 
 .google-dfp-ad.dfp-ad-post-bottom {
-  .google-dfp-ad-label, .dfp-ad-unit {
+  .google-dfp-ad-label,
+  .dfp-ad-unit {
     margin: 0 0 0 52px;
   }
 }
@@ -151,7 +151,7 @@ and (max-width : 775px) {
   margin-right: 4px;
   padding: 2px 6px;
   border-radius: 3px;
-  background-color:  $tertiary;
+  background-color: $tertiary;
   color: $secondary;
 }
 
@@ -225,7 +225,7 @@ and (max-width : 775px) {
   right: 0; // You can also set the position to the "left" with the value of calc(130px + carbon-text’s font size). If the font-size is 12px, you’ll want to set the left value as 142px. It’ll align the .carbon-text with .carbon-poweredby
   bottom: 0;
   display: block;
-  font-size: .8em;
+  font-size: 0.8em;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 1px;
@@ -252,7 +252,8 @@ and (max-width : 775px) {
       font-size: $font-down-1;
       clear: both;
     }
-    .house-ads-chooser, .house-ads-text-input {
+    .house-ads-chooser,
+    .house-ads-text-input {
       float: left;
       margin-right: 20px;
     }

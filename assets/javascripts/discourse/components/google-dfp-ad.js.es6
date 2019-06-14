@@ -44,10 +44,7 @@ function keyParse(word) {
 function custom_targeting(key_array, value_array, adSlot) {
   for (var i = 0; i < key_array.length; i++) {
     if (key_array[i]) {
-      adSlot.setTargeting(
-        key_array[i],
-        valueParse(value_array[i])
-      );
+      adSlot.setTargeting(key_array[i], valueParse(value_array[i]));
     }
   }
 }
@@ -139,12 +136,11 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
     config = DESKTOP_SETTINGS[placement];
   }
 
-  ad = window.googletag
-    .defineSlot(
-      "/" + settings.dfp_publisher_id + "/" + settings[config.code],
-      [size.width, size.height],
-      divId
-    );
+  ad = window.googletag.defineSlot(
+    "/" + settings.dfp_publisher_id + "/" + settings[config.code],
+    [size.width, size.height],
+    divId
+  );
 
   custom_targeting(
     keyParse(settings[config.targeting_keys]),
@@ -205,7 +201,7 @@ function loadGoogle() {
     });
   });
 
-  window.googletag = window.googletag || {cmd: []};
+  window.googletag = window.googletag || { cmd: [] };
 
   return _promise;
 }
