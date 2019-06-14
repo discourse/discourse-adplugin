@@ -13,6 +13,21 @@ export default Ember.Component.extend({
     "router.currentRoute.parent.attributes.category.slug"
   ),
 
+  @computed(
+    "router.currentRoute.parent.attributes.tags",
+    "router.currentRoute.attributes.__type",
+    "router.currentRoute.attributes.id"
+  )
+  currentTags(tagsArray, type, tag) {
+    if (tagsArray) {
+      return tagsArray;
+    }
+
+    if (type == "tag" && tag) {
+      return [tag];
+    }
+  },
+
   @computed("currentUser.groups")
   showToGroups(groups) {
     const currentUser = Discourse.User.current();
@@ -34,14 +49,21 @@ export default Ember.Component.extend({
     return !groupNames.any(g => noAdsGroupNames.includes(g));
   },
 
-  @computed("currentCategoryId")
-  showOnCurrentPage(categoryId) {
+  @computed("currentCategoryId", "currentTags")
+  showOnCurrentPage(categoryId, currentTags) {
     return (
-      !categoryId ||
-      !this.siteSettings.no_ads_for_categories ||
-      !this.siteSettings.no_ads_for_categories
-        .split("|")
-        .includes(categoryId.toString())
+      (!categoryId ||
+        !this.siteSettings.no_ads_for_categories ||
+        !this.siteSettings.no_ads_for_categories
+          .split("|")
+          .includes(categoryId.toString())) &&
+      (!currentTags ||
+        !this.siteSettings.no_ads_for_tags ||
+        Ember.isEmpty(
+          this.siteSettings.no_ads_for_tags
+            .split("|")
+            .filter(tag => currentTags.includes(tag))
+        ))
     );
   },
 
