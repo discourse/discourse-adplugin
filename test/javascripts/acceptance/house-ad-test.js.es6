@@ -1,4 +1,4 @@
-import { acceptance, replaceCurrentUser } from "helpers/qunit-helpers";
+import { acceptance, updateCurrentUser } from "helpers/qunit-helpers";
 
 acceptance("House Ads", {
   loggedIn: true,
@@ -28,7 +28,7 @@ acceptance("House Ads", {
 });
 
 test("correct ads show", async assert => {
-  replaceCurrentUser({ staff: false, trust_level: 1 });
+  updateCurrentUser({ staff: false, trust_level: 1 });
   await visit("/t/280"); // 20 posts
 
   assert.equal(

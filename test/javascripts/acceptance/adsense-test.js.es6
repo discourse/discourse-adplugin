@@ -1,4 +1,4 @@
-import { acceptance, replaceCurrentUser } from "helpers/qunit-helpers";
+import { acceptance, updateCurrentUser } from "helpers/qunit-helpers";
 import groupFixtures from "fixtures/group-fixtures";
 
 acceptance("AdSense", {
@@ -32,7 +32,7 @@ acceptance("AdSense", {
 });
 
 test("correct number of ads should show", async assert => {
-  replaceCurrentUser({ staff: false, trust_level: 1 });
+  updateCurrentUser({ staff: false, trust_level: 1 });
   await visit("/t/280"); // 20 posts
   const ads = find(".google-adsense.adsense-post-bottom");
   assert.equal(ads.length, 3, "it should render 3 ads");
@@ -60,7 +60,7 @@ test("correct number of ads should show", async assert => {
 });
 
 test("no ads for trust level 3", async assert => {
-  replaceCurrentUser({ staff: false, trust_level: 3 });
+  updateCurrentUser({ staff: false, trust_level: 3 });
   await visit("/t/280");
   assert.equal(
     find(".google-adsense.adsense-post-bottom").length,
@@ -70,7 +70,7 @@ test("no ads for trust level 3", async assert => {
 });
 
 test("can omit ads based on groups", async assert => {
-  replaceCurrentUser({
+  updateCurrentUser({
     staff: false,
     trust_level: 1,
     groups: [groupFixtures["/groups/discourse.json"].group]
