@@ -1,5 +1,4 @@
 import MultiSelectComponent from "select-kit/components/multi-select";
-import computed from "ember-addons/ember-computed-decorators";
 const { makeArray } = Ember;
 
 export default MultiSelectComponent.extend({

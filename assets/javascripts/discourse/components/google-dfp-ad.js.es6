@@ -1,7 +1,6 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
   default as computed,
-  observes,
   on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
@@ -48,7 +47,7 @@ function custom_targeting(key_array, value_array, adSlot) {
       adSlot.setTargeting(
         key_array[i],
         valueParse(value_array[i])
-      )
+      );
     }
   }
 }
@@ -191,6 +190,7 @@ function loadGoogle() {
   _promise = loadScript(dfpSrc, { scriptTag: true }).then(function() {
     _loaded = true;
     if (window.googletag === undefined) {
+      // eslint-disable-next-line no-console
       console.log("googletag is undefined!");
     }
 

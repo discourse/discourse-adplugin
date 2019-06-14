@@ -1,7 +1,6 @@
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import { i18n, propertyNotEqual } from "discourse/lib/computed";
-import computed from "ember-addons/ember-computed-decorators";
 
 export default Ember.Component.extend({
   classNames: "house-ads-setting",
@@ -32,7 +31,7 @@ export default Ember.Component.extend({
             data: { value: this.get("adValue") }
           }
         )
-          .then(data => {
+          .then(() => {
             const adSettings = this.get("adSettings");
             adSettings.set(this.get("name"), this.get("adValue"));
             this.setProperties({

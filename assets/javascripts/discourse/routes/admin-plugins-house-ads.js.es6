@@ -3,7 +3,7 @@ import { ajax } from "discourse/lib/ajax";
 export default Discourse.Route.extend({
   settings: null,
 
-  model(params) {
+  model() {
     return ajax("/admin/plugins/adplugin/house_ads.json").then(data => {
       this.set("settings", Ember.Object.create(data.settings));
       return data.house_ads.map(ad => Ember.Object.create(ad));

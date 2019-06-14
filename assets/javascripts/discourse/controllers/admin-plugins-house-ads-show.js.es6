@@ -41,12 +41,12 @@ export default Ember.Controller.extend(bufferedProperty("model"), {
             data
           }
         )
-          .then(data => {
+          .then(ajaxData => {
             this.commitBuffer();
             this.set("savingStatus", I18n.t("saved"));
             if (newRecord) {
               const model = this.get("model");
-              model.set("id", data.house_ad.id);
+              model.set("id", ajaxData.house_ad.id);
               const houseAds = this.get("adminPluginsHouseAds.model");
               if (!houseAds.includes(model)) {
                 houseAds.pushObject(model);

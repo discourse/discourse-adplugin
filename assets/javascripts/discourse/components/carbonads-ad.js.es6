@@ -1,22 +1,19 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
-  default as computed,
-  observes
+  default as computed
 } from "ember-addons/ember-computed-decorators";
 
-const currentUser = Discourse.User.current(),
-  serve_id = Discourse.SiteSettings.carbonads_serve_id,
+const serve_id = Discourse.SiteSettings.carbonads_serve_id,
   placement = Discourse.SiteSettings.carbonads_placement;
 
 export default AdComponent.extend({
   init() {
     this.set("serve_id", serve_id);
-    this.set("placement", placement);
     this._super();
   },
 
-  @computed("serve_id", "placement")
-  url(serveId, placement) {
+  @computed("serve_id")
+  url(serveId) {
     return `//cdn.carbonads.com/carbon.js?serve=${serveId}&placement=${placement}`.htmlSafe();
   },
 

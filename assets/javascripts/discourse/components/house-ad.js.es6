@@ -1,8 +1,7 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
   default as computed,
-  observes,
-  on
+  observes
 } from "ember-addons/ember-computed-decorators";
 
 const adIndex = {

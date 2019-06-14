@@ -7,7 +7,6 @@ import loadScript from "discourse/lib/load-script";
 
 let _loaded = false,
   _promise = null,
-  currentUser = Discourse.User.current(),
   publisher_id = Discourse.SiteSettings.adsense_publisher_code;
 
 const mobileView = Discourse.Site.currentProp("mobileView");

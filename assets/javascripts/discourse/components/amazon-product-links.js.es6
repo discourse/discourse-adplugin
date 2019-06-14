@@ -1,8 +1,6 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import computed from "ember-addons/ember-computed-decorators";
 
-const currentUser = Discourse.User.current();
-
 const data = {
   "topic-list-top": {},
   "topic-above-post-stream": {},

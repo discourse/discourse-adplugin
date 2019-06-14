@@ -7,8 +7,7 @@ import {
 let _loaded = false,
   _promise = null;
 
-const currentUser = Discourse.User.current(),
-  propertyId = Discourse.SiteSettings.codefund_property_id;
+const propertyId = Discourse.SiteSettings.codefund_property_id;
 
 function loadCodeFund() {
   if (_loaded) {
@@ -78,7 +77,10 @@ export default AdComponent.extend({
         this.set("adDetails", data);
         this.set("adRequested", false);
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        // eslint-disable-next-line no-console
+        console.log(error);
+      });
   },
 
   didInsertElement() {
