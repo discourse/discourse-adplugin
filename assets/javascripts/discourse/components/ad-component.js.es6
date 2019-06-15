@@ -23,7 +23,7 @@ export default Ember.Component.extend({
       return tagsArray;
     }
 
-    if (type == "tag" && tag) {
+    if (type === "tag" && tag) {
       return [tag];
     }
   },
