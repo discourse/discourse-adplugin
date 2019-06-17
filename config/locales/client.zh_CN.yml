@@ -18,10 +18,13 @@ zh_CN:
           adsense_plugin: '谷歌Adsense'
           amazon_plugin: '亚马逊网站联盟'
           codefund_plugin: 'CodeFund'
+          carbonads_plugin: 'Carbon Ads'
       adplugin:
         house_ads:
+          title: "自定义广告"
           new: "新建"
           settings: "设置"
+          new_name: "新建自定义广告"
           save: "保存"
           delete: "删除"
           description: "定义你自己的广告和显示的位置。"
@@ -39,3 +42,4 @@ zh_CN:
             description: "在主题的最后一个帖子后，主题推荐之前显示广告"
           post_bottom:
             title: "帖子之间"
+            description: "在每N个帖子之间显示广告。"

@@ -9,6 +9,7 @@ de:
   site_settings:
     no_ads_for_groups: "Zeige Anzeigen nicht den Benutzern dieser Gruppen."
     no_ads_for_categories: "Zeige keine Anzeigen auf der Themenliste und Themenseiten, die zu diesen Kategorien gehören."
+    no_ads_for_tags: "Anzeigen nicht auf der Themenliste und Themenseiten zeigen, de zu diesen Tags gehören."
     house_ads_after_nth_post: 'Falls "Zwischen Beiträgen" Haus Anzeigen definiert sind, zeige eine Anzeige nach jeweils N Beiträgen, wobei N dieser Wert ist.'
     house_ads_frequency: "Falls andere Werbenetzwerke zur Anzeige an einem Werbe-Platz konfiguriert sind, wie oft sollen Haus Anzeigen gezeigt werden, in Prozent."
     ads_txt: "Inhalt deiner Datei ads.txt. Mehr Information auf <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>dieser Google AdSense Hilfeseite verfügbar</a>. "

@@ -13,13 +13,33 @@ it:
     admin:
       site_settings:
         categories:
+          ad_plugin: 'Ad Plugin'
           dfp_plugin: 'DFP/Gestore Annunci'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
+          carbonads_plugin: 'Carbon Ads'
       adplugin:
         house_ads:
+          title: "House Ads"
           new: "Nuovo"
           settings: "Impostazioni"
+          new_name: "Nuovo House Ad"
           save: "Salva"
           delete: "Elimina"
+          description: "Definisci i tuoi annunci e dove saranno visualizzati."
+          get_started: "Comincia creando un nuovo annuncio."
+          filter_placeholder: "Seleziona annuncio"
+          more_settings: "Altre impostazioni"
+          topic_list_top:
+            title: "Annunci in testa alla lista Argomenti"
+            description: "Annunci da mostrare in testa alla pagina della lista Argomenti."
+          topic_above_post_stream:
+            title: "Argomento sopra la lista dei messaggi"
+            description: "Annunci da mostrare sopra al titolo di un Argomento, sulla pagina dell'Argomento."
+          topic_above_suggested:
+            title: "Argomento sopra i suggeriti"
+            description: "Annunci da mostrare dopo l'ultimo messaggio di un Argomento, sopra gli Argomenti suggeriti"
+          post_bottom:
+            title: "Tra messaggi"
+            description: "Annunci da mostrare tra messaggi, ogni N messaggi."
