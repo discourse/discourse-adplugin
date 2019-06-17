@@ -13,18 +13,18 @@ export default Ember.Component.extend({
     "router.currentRoute.parent.attributes.category.slug"
   ),
 
+  // Server needs to compute this in case hidden tags are being used.
+  topicTagsDisableAds: Ember.computed.alias(
+    "router.currentRoute.parent.attributes.tags_disable_ads"
+  ),
+
   @computed(
-    "router.currentRoute.parent.attributes.tags",
     "router.currentRoute.attributes.__type",
     "router.currentRoute.attributes.id"
   )
-  currentTags(tagsArray, type, tag) {
-    if (tagsArray) {
-      return tagsArray;
-    }
-
+  topicListTag(type, tag) {
     if (type === "tag" && tag) {
-      return [tag];
+      return tag;
     }
   },
 
@@ -49,21 +49,19 @@ export default Ember.Component.extend({
     return !groupNames.any(g => noAdsGroupNames.includes(g));
   },
 
-  @computed("currentCategoryId", "currentTags")
-  showOnCurrentPage(categoryId, currentTags) {
+  @computed("currentCategoryId", "topicTagsDisableAds", "topicListTag")
+  showOnCurrentPage(categoryId, topicTagsDisableAds, topicListTag) {
     return (
+      !topicTagsDisableAds &&
       (!categoryId ||
         !this.siteSettings.no_ads_for_categories ||
         !this.siteSettings.no_ads_for_categories
           .split("|")
           .includes(categoryId.toString())) &&
-      (!currentTags ||
+      (!topicListTag ||
         !this.siteSettings.no_ads_for_tags ||
-        Ember.isEmpty(
-          this.siteSettings.no_ads_for_tags
-            .split("|")
-            .filter(tag => currentTags.includes(tag))
-        ))
+        !this.siteSettings.no_ads_for_tags.split("|").includes(topicListTag)
+      )
     );
   },
 

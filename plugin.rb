@@ -39,6 +39,12 @@ after_initialize do
     AdPlugin::HouseAdSetting.settings_and_ads
   end
 
+  add_to_serializer :topic_view, :tags_disable_ads do
+    return false if !SiteSetting.tagging_enabled || !SiteSetting.no_ads_for_tags.present?
+    return false if object.topic.tags.empty?
+    !(SiteSetting.no_ads_for_tags.split('|') & object.topic.tags.map(&:name)).empty?
+  end
+
   class ::AdstxtController < ::ApplicationController
     skip_before_action :check_xhr
 
