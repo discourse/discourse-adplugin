@@ -60,8 +60,7 @@ export default Ember.Component.extend({
           .includes(categoryId.toString())) &&
       (!topicListTag ||
         !this.siteSettings.no_ads_for_tags ||
-        !this.siteSettings.no_ads_for_tags.split("|").includes(topicListTag)
-      )
+        !this.siteSettings.no_ads_for_tags.split("|").includes(topicListTag))
     );
   },
 
