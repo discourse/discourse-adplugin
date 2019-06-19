@@ -141,6 +141,9 @@ dfp_plugin:
   dfp_publisher_id:
     client: true
     default: ""
+  dfp_publisher_id_mobile:
+    client: true
+    default: ""
   dfp_through_trust_level:
     client: true
     default: 2

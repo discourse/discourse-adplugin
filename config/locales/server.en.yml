@@ -8,6 +8,7 @@ en:
     ads_txt: "Contents of your ads.txt file. More details available at <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>this Google AdSense help page</a>."
 
     dfp_publisher_id: "Input your Google Ad Manager (formerly called DFP) network code, which is found in your network settings."
+    dfp_publisher_id_mobile: "(Optional) If you want to use a different Ad Manager publisher id for the mobile version of the site, enter it here. Leave blank to use dfp_publisher_id on mobile."
     dfp_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
 
     dfp_topic_list_top_code: "Enter the unique Code of the ad unit to display above topic lists. This is the short code (max 100 chars) given to the ad unit when it was created, not the JavaScript code."

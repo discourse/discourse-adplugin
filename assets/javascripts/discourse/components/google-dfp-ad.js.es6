@@ -123,21 +123,23 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
     return;
   }
 
-  let ad, config;
-  let size = getWidthAndHeight(placement, settings, isMobile);
-
   if (ads[divId]) {
     return ads[divId];
   }
 
+  let ad, config, publisherId;
+  let size = getWidthAndHeight(placement, settings, isMobile);
+
   if (isMobile) {
+    publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
     config = MOBILE_SETTINGS[placement];
   } else {
+    publisherId = settings.dfp_publisher_id;
     config = DESKTOP_SETTINGS[placement];
   }
 
   ad = window.googletag.defineSlot(
-    "/" + settings.dfp_publisher_id + "/" + settings[config.code],
+    "/" + publisherId + "/" + settings[config.code],
     [size.width, size.height],
     divId
   );
@@ -212,6 +214,19 @@ export default AdComponent.extend({
   loadedGoogletag: false,
   refreshOnChange: null,
 
+  @computed(
+    "siteSettings.dfp_publisher_id",
+    "siteSettings.dfp_publisher_id_mobile",
+    "site.mobileView"
+  )
+  publisherId(globalId, mobileId, isMobile) {
+    if (isMobile) {
+      return mobileId || globalId;
+    } else {
+      return globalId;
+    }
+  },
+
   @computed("placement", "postNumber")
   divId(placement, postNumber) {
     let slotNum = getNextSlotNum();
@@ -238,14 +253,21 @@ export default AdComponent.extend({
   },
 
   @computed(
+    "publisherId",
     "showToTrustLevel",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
-  showAd(showToTrustLevel, showToGroups, showAfterPost, showOnCurrentPage) {
+  showAd(
+    publisherId,
+    showToTrustLevel,
+    showToGroups,
+    showAfterPost,
+    showOnCurrentPage
+  ) {
     return (
-      this.siteSettings.dfp_publisher_id &&
+      publisherId &&
       showToTrustLevel &&
       showToGroups &&
       showAfterPost &&
