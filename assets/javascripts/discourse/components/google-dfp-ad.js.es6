@@ -213,6 +213,7 @@ export default AdComponent.extend({
   classNames: ["google-dfp-ad"],
   loadedGoogletag: false,
   refreshOnChange: null,
+  lastAdRefresh: null,
 
   @computed(
     "siteSettings.dfp_publisher_id",
@@ -291,9 +292,20 @@ export default AdComponent.extend({
     return this.isNthPost(parseInt(this.siteSettings.dfp_nth_post_code));
   },
 
+  // 3 second delay between calls to refresh ads in a component.
+  // Ember often calls updated() more than once, and *sometimes*
+  // updated() is called after _initGoogleDFP().
+  shouldRefreshAd() {
+    const lastAdRefresh = this.get("lastAdRefresh");
+    if (!lastAdRefresh) {
+      return true;
+    }
+    return new Date() - lastAdRefresh > 3000;
+  },
+
   @on("didUpdate")
   updated() {
-    if (this.get("listLoading")) {
+    if (this.get("listLoading") || !this.shouldRefreshAd()) {
       return;
     }
 
@@ -306,7 +318,9 @@ export default AdComponent.extend({
       categorySlug = this.get("currentCategorySlug");
 
     if (this.get("loadedGoogletag")) {
-      window.googletag.cmd.push(function() {
+      // console.log(`refresh(${this.get("divId")}) from updated()`);
+      this.set("lastAdRefresh", new Date());
+      window.googletag.cmd.push(() => {
         ad.setTargeting("discourse-category", categorySlug || "0");
         window.googletag.pubads().refresh([ad]);
       });
@@ -319,21 +333,22 @@ export default AdComponent.extend({
       return;
     }
 
-    let self = this;
-    loadGoogle(this.siteSettings).then(function() {
-      self.set("loadedGoogletag", true);
-      window.googletag.cmd.push(function() {
+    loadGoogle(this.siteSettings).then(() => {
+      this.set("loadedGoogletag", true);
+      this.set("lastAdRefresh", new Date());
+      window.googletag.cmd.push(() => {
         let slot = defineSlot(
-          self.get("divId"),
-          self.get("placement"),
-          self.siteSettings,
-          self.site.mobileView,
-          self.get("currentCategorySlug") || "0"
+          this.get("divId"),
+          this.get("placement"),
+          this.siteSettings,
+          this.site.mobileView,
+          this.get("currentCategorySlug") || "0"
         );
         if (slot && slot.ad) {
           // Display has to be called before refresh
           // and after the slot div is in the page.
-          window.googletag.display(self.get("divId"));
+          window.googletag.display(this.get("divId"));
+          // console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
           window.googletag.pubads().refresh([slot.ad]);
         }
       });
