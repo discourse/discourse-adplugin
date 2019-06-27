@@ -1,5 +1,6 @@
 en:
   site_settings:
+    no_ads_for_personal_messages: "Don't show ads when viewing personal messages"
     no_ads_for_groups: "Don't show ads to users in these groups."
     no_ads_for_categories: "Don't show ads on topic list and topic pages belonging to these categories."
     no_ads_for_tags: "Don't show ads on topic list and topic pages belonging to these tags."

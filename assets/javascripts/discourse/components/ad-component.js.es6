@@ -28,6 +28,11 @@ export default Ember.Component.extend({
     }
   },
 
+  @computed("router.currentRoute.parent.attributes.archetype")
+  isPersonalMessage(topicType) {
+    return topicType === "private_message";
+  },
+
   @computed("currentUser.groups")
   showToGroups(groups) {
     const currentUser = Discourse.User.current();
@@ -49,8 +54,18 @@ export default Ember.Component.extend({
     return !groupNames.any(g => noAdsGroupNames.includes(g));
   },
 
-  @computed("currentCategoryId", "topicTagsDisableAds", "topicListTag")
-  showOnCurrentPage(categoryId, topicTagsDisableAds, topicListTag) {
+  @computed(
+    "currentCategoryId",
+    "topicTagsDisableAds",
+    "topicListTag",
+    "isPersonalMessage"
+  )
+  showOnCurrentPage(
+    categoryId,
+    topicTagsDisableAds,
+    topicListTag,
+    isPersonalMessage
+  ) {
     return (
       !topicTagsDisableAds &&
       (!categoryId ||
@@ -60,7 +75,8 @@ export default Ember.Component.extend({
           .includes(categoryId.toString())) &&
       (!topicListTag ||
         !this.siteSettings.no_ads_for_tags ||
-        !this.siteSettings.no_ads_for_tags.split("|").includes(topicListTag))
+        !this.siteSettings.no_ads_for_tags.split("|").includes(topicListTag)) &&
+      (!isPersonalMessage || !this.siteSettings.no_ads_for_personal_messages)
     );
   },
 
