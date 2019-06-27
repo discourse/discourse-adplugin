@@ -4,7 +4,7 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 
 **Authors**: 		[Sarah Ni](https://github.com/cyberkoi) & [Vi Nguyen](https://github.com/ladydanger)
 
-**Version**: 			1.2.2
+**Version**: 			1.2.3
 
 **Contributors**: See [credits section](#credits)  below
 
