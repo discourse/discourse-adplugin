@@ -10,8 +10,6 @@ let _loaded = false,
   renderCounts = {},
   publisher_id = Discourse.SiteSettings.adsense_publisher_code;
 
-const mobileView = Discourse.Site.currentProp("mobileView");
-
 function parseAdWidth(value) {
   if (value === "responsive") {
     return "auto";
@@ -113,7 +111,7 @@ export default AdComponent.extend({
 
     const sizes = (this.siteSettings[config.sizes] || "").split("|");
 
-    if (sizes.length == 1) {
+    if (sizes.length === 1) {
       size = sizes[0];
     } else {
       size = sizes[renderCounts[placement] % sizes.length];

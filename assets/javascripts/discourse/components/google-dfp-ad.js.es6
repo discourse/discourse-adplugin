@@ -119,7 +119,7 @@ function getWidthAndHeight(placement, settings, isMobile) {
 
   const sizes = (settings[config.sizes] || "").split("|");
 
-  if (sizes.length == 1) {
+  if (sizes.length === 1) {
     size = sizes[0];
   } else {
     size = sizes[renderCounts[placement] % sizes.length];
