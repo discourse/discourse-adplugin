@@ -8,7 +8,8 @@ import loadScript from "discourse/lib/load-script";
 let _loaded = false,
   _promise = null,
   ads = {},
-  nextSlotNum = 1;
+  nextSlotNum = 1,
+  renderCounts = {};
 
 function getNextSlotNum() {
   return nextSlotNum++;
@@ -104,7 +105,7 @@ const MOBILE_SETTINGS = {
 };
 
 function getWidthAndHeight(placement, settings, isMobile) {
-  let config;
+  let config, size;
 
   if (isMobile) {
     config = MOBILE_SETTINGS[placement];
@@ -112,9 +113,22 @@ function getWidthAndHeight(placement, settings, isMobile) {
     config = DESKTOP_SETTINGS[placement];
   }
 
+  if (!renderCounts[placement]) {
+    renderCounts[placement] = 0;
+  }
+
+  const sizes = (settings[config.sizes] || "").split("|");
+
+  if (sizes.length == 1) {
+    size = sizes[0];
+  } else {
+    size = sizes[renderCounts[placement] % sizes.length];
+    renderCounts[placement] += 1;
+  }
+
   return {
-    width: parseInt(splitWidthInt(settings[config.sizes])),
-    height: parseInt(splitHeightInt(settings[config.sizes]))
+    width: parseInt(splitWidthInt(size)),
+    height: parseInt(splitHeightInt(size))
   };
 }
 

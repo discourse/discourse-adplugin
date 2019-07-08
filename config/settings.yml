@@ -46,7 +46,7 @@ adsense_plugin:
   adsense_topic_list_top_ad_sizes:
     client: true
     default: "728*90 - leaderboard"
-    type: enum
+    type: list
     choices: &adsense_choices
       - responsive
       - 728*90 - leaderboard
@@ -73,7 +73,7 @@ adsense_plugin:
   adsense_mobile_topic_list_top_ad_size:
     client: true
     default: "responsive"
-    type: enum
+    type: list
     choices: *adsense_choices
   adsense_topic_above_post_stream_code:
     client: true
@@ -83,7 +83,7 @@ adsense_plugin:
   adsense_topic_above_post_stream_ad_sizes:
     client: true
     default: "728*90 - leaderboard"
-    type: enum
+    type: list
     choices: *adsense_choices
   adsense_mobile_topic_above_post_stream_code:
     client: true
@@ -93,7 +93,7 @@ adsense_plugin:
   adsense_mobile_topic_above_post_stream_ad_size:
     client: true
     default: "responsive"
-    type: enum
+    type: list
     choices: *adsense_choices
   adsense_topic_above_suggested_code:
     client: true
@@ -103,7 +103,7 @@ adsense_plugin:
   adsense_topic_above_suggested_ad_sizes:
     client: true
     default: "728*90 - leaderboard"
-    type: enum
+    type: list
     choices: *adsense_choices
   adsense_mobile_topic_above_suggested_code:
     client: true
@@ -113,7 +113,7 @@ adsense_plugin:
   adsense_mobile_topic_above_suggested_ad_size:
     client: true
     default: "responsive"
-    type: enum
+    type: list
     choices: *adsense_choices
   adsense_post_bottom_code:
     client: true
@@ -123,7 +123,7 @@ adsense_plugin:
   adsense_post_bottom_ad_sizes:
     client: true
     default: "728*90 - leaderboard"
-    type: enum
+    type: list
     choices: *adsense_choices
   adsense_mobile_post_bottom_code:
     client: true
@@ -133,7 +133,7 @@ adsense_plugin:
   adsense_mobile_post_bottom_ad_size:
     client: true
     default: "responsive"
-    type: enum
+    type: list
     choices: *adsense_choices
   adsense_nth_post_code:
     client: true
@@ -158,7 +158,7 @@ dfp_plugin:
   dfp_topic_list_top_ad_sizes:
     client: true
     default: "728*90 - leaderboard"
-    type: enum
+    type: list
     choices: &dfp_choices
       - 728*90 - leaderboard
       - 336*280 - large rectangle
@@ -200,7 +200,7 @@ dfp_plugin:
   dfp_mobile_topic_list_top_ad_sizes:
     client: true
     default: "320*50 - mobile leaderboard"
-    type: enum
+    type: list
     choices: *dfp_choices
   dfp_target_topic_list_top_key_code:
     default: ""
@@ -217,7 +217,7 @@ dfp_plugin:
   dfp_topic_above_post_stream_ad_sizes:
     client: true
     default: "728*90 - leaderboard"
-    type: enum
+    type: list
     choices: *dfp_choices
   dfp_mobile_topic_above_post_stream_code:
     client: true
@@ -226,7 +226,7 @@ dfp_plugin:
   dfp_mobile_topic_above_post_stream_ad_sizes:
     client: true
     default: "320*50 - mobile leaderboard"
-    type: enum
+    type: list
     choices: *dfp_choices
   dfp_target_topic_above_post_stream_key_code:
     default: ""
@@ -243,7 +243,7 @@ dfp_plugin:
   dfp_topic_above_suggested_ad_sizes:
     client: true
     default: "728*90 - leaderboard"
-    type: enum
+    type: list
     choices: *dfp_choices
   dfp_mobile_topic_above_suggested_code:
     client: true
@@ -252,7 +252,7 @@ dfp_plugin:
   dfp_mobile_topic_above_suggested_ad_sizes:
     client: true
     default: "320*50 - mobile leaderboard"
-    type: enum
+    type: list
     choices: *dfp_choices
   dfp_target_topic_above_suggested_key_code:
     default: ""
@@ -274,7 +274,7 @@ dfp_plugin:
   dfp_post_bottom_ad_sizes:
     client: true
     default: "728*90 - leaderboard"
-    type: enum
+    type: list
     choices: *dfp_choices
   dfp_mobile_post_bottom_code:
     client: true
@@ -283,7 +283,7 @@ dfp_plugin:
   dfp_mobile_post_bottom_ad_sizes:
     client: true
     default: "320*50 - mobile leaderboard"
-    type: enum
+    type: list
     choices: *dfp_choices
   dfp_target_post_bottom_key_code:
     default: ""

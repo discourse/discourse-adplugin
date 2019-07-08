@@ -7,6 +7,7 @@ import loadScript from "discourse/lib/load-script";
 
 let _loaded = false,
   _promise = null,
+  renderCounts = {},
   publisher_id = Discourse.SiteSettings.adsense_publisher_code;
 
 const mobileView = Discourse.Site.currentProp("mobileView");
@@ -44,107 +45,43 @@ function loadAdsense() {
   return _promise;
 }
 
-let data = {
-  "topic-list-top": {},
-  "topic-above-post-stream": {},
-  "topic-above-suggested": {},
-  "post-bottom": {}
+const DESKTOP_SETTINGS = {
+  "topic-list-top": {
+    code: "adsense_topic_list_top_code",
+    sizes: "adsense_topic_list_top_ad_sizes"
+  },
+  "topic-above-post-stream": {
+    code: "adsense_topic_above_post_stream_code",
+    sizes: "adsense_topic_above_post_stream_ad_sizes"
+  },
+  "topic-above-suggested": {
+    code: "adsense_topic_above_suggested_code",
+    sizes: "adsense_topic_above_suggested_ad_sizes"
+  },
+  "post-bottom": {
+    code: "adsense_post_bottom_code",
+    sizes: "adsense_post_bottom_ad_sizes"
+  }
 };
 
-if (Discourse.SiteSettings.adsense_publisher_code) {
-  if (!mobileView && Discourse.SiteSettings.adsense_topic_list_top_code) {
-    data["topic-list-top"]["ad_code"] =
-      Discourse.SiteSettings.adsense_topic_list_top_code;
-    data["topic-list-top"]["ad_width"] = parseAdWidth(
-      Discourse.SiteSettings.adsense_topic_list_top_ad_sizes
-    );
-    data["topic-list-top"]["ad_height"] = parseAdHeight(
-      Discourse.SiteSettings.adsense_topic_list_top_ad_sizes
-    );
+const MOBILE_SETTINGS = {
+  "topic-list-top": {
+    code: "adsense_mobile_topic_list_top_code",
+    sizes: "adsense_mobile_topic_list_top_ad_size"
+  },
+  "topic-above-post-stream": {
+    code: "adsense_mobile_topic_above_post_stream_code",
+    sizes: "adsense_mobile_topic_above_post_stream_ad_size"
+  },
+  "topic-above-suggested": {
+    code: "adsense_mobile_topic_above_suggested_code",
+    sizes: "adsense_mobile_topic_above_suggested_ad_size"
+  },
+  "post-bottom": {
+    code: "adsense_mobile_post_bottom_code",
+    sizes: "adsense_mobile_post_bottom_ad_size"
   }
-  if (mobileView && Discourse.SiteSettings.adsense_mobile_topic_list_top_code) {
-    data["topic-list-top"]["ad_code"] =
-      Discourse.SiteSettings.adsense_mobile_topic_list_top_code;
-    data["topic-list-top"]["ad_width"] = parseAdWidth(
-      Discourse.SiteSettings.adsense_mobile_topic_list_top_ad_size
-    );
-    data["topic-list-top"]["ad_height"] = parseAdHeight(
-      Discourse.SiteSettings.adsense_mobile_topic_list_top_ad_size
-    );
-  }
-  if (
-    !mobileView &&
-    Discourse.SiteSettings.adsense_topic_above_post_stream_code
-  ) {
-    data["topic-above-post-stream"]["ad_code"] =
-      Discourse.SiteSettings.adsense_topic_above_post_stream_code;
-    data["topic-above-post-stream"]["ad_width"] = parseAdWidth(
-      Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes
-    );
-    data["topic-above-post-stream"]["ad_height"] = parseAdHeight(
-      Discourse.SiteSettings.adsense_topic_above_post_stream_ad_sizes
-    );
-  }
-  if (
-    mobileView &&
-    Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_code
-  ) {
-    data["topic-above-post-stream"]["ad_code"] =
-      Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_code;
-    data["topic-above-post-stream"]["ad_width"] = parseAdWidth(
-      Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_ad_size
-    );
-    data["topic-above-post-stream"]["ad_height"] = parseAdHeight(
-      Discourse.SiteSettings.adsense_mobile_topic_above_post_stream_ad_size
-    );
-  }
-  if (
-    !mobileView &&
-    Discourse.SiteSettings.adsense_topic_above_suggested_code
-  ) {
-    data["topic-above-suggested"]["ad_code"] =
-      Discourse.SiteSettings.adsense_topic_above_suggested_code;
-    data["topic-above-suggested"]["ad_width"] = parseAdWidth(
-      Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes
-    );
-    data["topic-above-suggested"]["ad_height"] = parseAdHeight(
-      Discourse.SiteSettings.adsense_topic_above_suggested_ad_sizes
-    );
-  }
-  if (
-    mobileView &&
-    Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code
-  ) {
-    data["topic-above-suggested"]["ad_code"] =
-      Discourse.SiteSettings.adsense_mobile_topic_above_suggested_code;
-    data["topic-above-suggested"]["ad_width"] = parseAdWidth(
-      Discourse.SiteSettings.adsense_mobile_topic_above_suggested_ad_size
-    );
-    data["topic-above-suggested"]["ad_height"] = parseAdHeight(
-      Discourse.SiteSettings.adsense_mobile_topic_above_suggested_ad_size
-    );
-  }
-  if (!mobileView && Discourse.SiteSettings.adsense_post_bottom_code) {
-    data["post-bottom"]["ad_code"] =
-      Discourse.SiteSettings.adsense_post_bottom_code;
-    data["post-bottom"]["ad_width"] = parseAdWidth(
-      Discourse.SiteSettings.adsense_post_bottom_ad_sizes
-    );
-    data["post-bottom"]["ad_height"] = parseAdHeight(
-      Discourse.SiteSettings.adsense_post_bottom_ad_sizes
-    );
-  }
-  if (mobileView && Discourse.SiteSettings.adsense_mobile_post_bottom_code) {
-    data["post-bottom"]["ad_code"] =
-      Discourse.SiteSettings.adsense_mobile_post_bottom_code;
-    data["post-bottom"]["ad_width"] = parseAdWidth(
-      Discourse.SiteSettings.adsense_mobile_post_bottom_ad_size
-    );
-    data["post-bottom"]["ad_height"] = parseAdHeight(
-      Discourse.SiteSettings.adsense_mobile_post_bottom_ad_size
-    );
-  }
-}
+};
 
 export default AdComponent.extend({
   classNameBindings: [
@@ -161,9 +98,31 @@ export default AdComponent.extend({
   adRequested: false,
 
   init() {
-    this.set("ad_width", data[this.placement]["ad_width"]);
-    this.set("ad_height", data[this.placement]["ad_height"]);
-    this.set("ad_code", data[this.placement]["ad_code"]);
+    let config, size;
+    const placement = this.get("placement");
+
+    if (this.site.mobileView) {
+      config = MOBILE_SETTINGS[placement];
+    } else {
+      config = DESKTOP_SETTINGS[placement];
+    }
+
+    if (!renderCounts[placement]) {
+      renderCounts[placement] = 0;
+    }
+
+    const sizes = (this.siteSettings[config.sizes] || "").split("|");
+
+    if (sizes.length == 1) {
+      size = sizes[0];
+    } else {
+      size = sizes[renderCounts[placement] % sizes.length];
+      renderCounts[placement] += 1;
+    }
+
+    this.set("ad_width", parseAdWidth(size));
+    this.set("ad_height", parseAdHeight(size));
+    this.set("ad_code", this.siteSettings[config.code]);
     this._super();
   },
 
