@@ -7,6 +7,7 @@
 
 es:
   site_settings:
+    no_ads_for_personal_messages: "No mostrar anuncios al ver mensajes personales"
     no_ads_for_groups: "No mostrar anuncios a los usuarios en estos grupos."
     no_ads_for_categories: "No mostrar anuncios en la lista de temas y en las páginas de temas que pertenecen a estas categorías."
     no_ads_for_tags: "No mostrar anuncios en la lista de temas y en las páginas de temas que pertenecen a estas categorías."
@@ -14,6 +15,7 @@ es:
     house_ads_frequency: "Si otras redes publicitarias están configuradas para mostrarse en un espacio publicitario, con qué frecuencia deben mostrarse los anuncios internos, como un porcentaje."
     ads_txt: "Contenido de tu archivo ads.txt. Más información disponible en <a href='https://support.google.com/adsense/answer/7532444?hl=es' target='_blank'>esta página de ayuda del Google AdSense</a>."
     dfp_publisher_id: "Introduce tu network code del Google Ad Manager (llamado DFP), que puedes encontrar en la configuración."
+    dfp_publisher_id_mobile: "(Opcional) Si desea utilizar un ID de editor de Ad Manager diferente para la versión móvil del sitio, ingréselo aquí. Deje en blanco para usar dfp_publisher_id en el móvil."
     dfp_through_trust_level: "Muestre sus anuncios a los usuarios basados en los niveles de confianza. Usuarios con un nivel de confianza elevado no verían anuncios."
     dfp_topic_list_top_code: "Ingrese su código único de anuncio para mostrar por encima de la lista de temas. Este es un código corto (max 100 caracteres) dado al anuncio cuando fue creado, no el código JavaScript."
     dfp_topic_list_top_ad_sizes: "Seleccione el tamaño de tu anuncio para el anuncio sobre la lista de temas."

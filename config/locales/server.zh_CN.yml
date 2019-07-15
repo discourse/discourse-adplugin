@@ -7,6 +7,7 @@
 
 zh_CN:
   site_settings:
+    no_ads_for_personal_messages: "查看个人消息时不显示广告"
     no_ads_for_groups: "不对这些群组中的用户显示广告。"
     no_ads_for_categories: "不在属于这些分类的主题列表和主题页面上显示广告。"
     no_ads_for_tags: "不在含有这些标签的主题列表和主题页面上显示广告。"
@@ -14,6 +15,7 @@ zh_CN:
     house_ads_frequency: "如果广告位配置其它广告网络，自定义广告的显示频率百分比。"
     ads_txt: "ads.txt 文件的内容。详情于<a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>Google Adsense帮助页面</a>。"
     dfp_publisher_id: "输入谷歌广告管理器（曾用名 DFP）网络号码，可在广告网络设置中找到。"
+    dfp_publisher_id_mobile: "（可选）如果你想为移动端的站点使用一个不一样的广告管理发布商id，在这里输入。留空则在移动端使用dfp_publisher_id。"
     dfp_through_trust_level: "按照信任等级向用户展示广告。高于此等级的用户不会看到广告。"
     dfp_topic_list_top_code: "主页.输入DFP广告代码"
     dfp_topic_list_top_ad_sizes: "主页.DFP广告大小选择"

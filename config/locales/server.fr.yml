@@ -11,7 +11,7 @@ fr:
     no_ads_for_categories: "Ne pas montrer de pub sur listes de sujets et pages de sujets dans ces catégories."
     house_ads_after_nth_post: 'Si des pubs maison "entre messages" sont définies, afficher la pub tous les N messages, où cette valeur est N.'
     house_ads_frequency: "Si d'autres réseaux de pub sont configurés pour figurer dans cet emplacement, à quel taux les pubs maisons doivent être affichées, en pourcent."
-    ads_txt: "Contenu du fichier ads.txt. Plus d'informations disponibles sur  <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>la page Aide de Google AdSense</a>."
+    ads_txt: "Contenu du fichier ads.txt. Plus d'informations disponibles sur <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>la page Aide de Google AdSense</a>."
     dfp_publisher_id: "Entrez votre code réseau Google Ad Manager (anciennement appelé DFP), qui se trouve dans vos paramètres réseau."
     dfp_through_trust_level: "Afficher les publicités aux utilisateurs en fonction de leurs niveaux de confiance. Les utilisateurs avec un niveau de confiance supérieur à celui-ci ne verront pas de publicité."
     dfp_topic_list_top_code: "Saisir le Code unique de l'unité de publicité à afficher au dessus de la liste des sujets. Ceci est un code court (100 caractères maximum) attribué à l'unité de publicité à sa création, et non un code JavaScript. "

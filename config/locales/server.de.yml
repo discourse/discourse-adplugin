@@ -7,6 +7,7 @@
 
 de:
   site_settings:
+    no_ads_for_personal_messages: "Keine Werbung beim Lesen persönlicher Nachrichten zeigen"
     no_ads_for_groups: "Zeige Anzeigen nicht den Benutzern dieser Gruppen."
     no_ads_for_categories: "Zeige keine Anzeigen auf der Themenliste und Themenseiten, die zu diesen Kategorien gehören."
     no_ads_for_tags: "Anzeigen nicht auf der Themenliste und Themenseiten zeigen, de zu diesen Tags gehören."
@@ -14,6 +15,7 @@ de:
     house_ads_frequency: "Falls andere Werbenetzwerke zur Anzeige an einem Werbe-Platz konfiguriert sind, wie oft sollen Haus Anzeigen gezeigt werden, in Prozent."
     ads_txt: "Inhalt deiner Datei ads.txt. Mehr Information auf <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>dieser Google AdSense Hilfeseite verfügbar</a>. "
     dfp_publisher_id: "Eingabe Deines Googe Ad Manager (ehemals DFP) Netzwerk Code, den Du in deinen Netzwerk Einstellungen findest."
+    dfp_publisher_id_mobile: "(Optional) Wenn du eine andere Ad Manager Veröffentlicher ID für die mobile Version der Seite verwenden willst, gibt sie hier ein. Leer lassen um dfp_publisher_id auf Mobilgeräten zu verwenden."
     dfp_through_trust_level: "Zeige Benutzern deine Werbung auf Grundlage der Vertrauensstufe. Benutzer mit einer höheren Vertrauensstufe als der angegebene Wert werden keine Werbung sehen."
     dfp_topic_list_top_code: "Gib den eindeutigen Code der Werbeeinheit an, die oberhalb von Themenlisten angezeigt werden soll. Das ist der Kurzcode (max. 100 Zeichen), den die Werbeeinheit bei ihrer Erstellung erhalten hat, nicht der JavaScript-Code."
     dfp_topic_list_top_ad_sizes: "Wähle deine Werbegröße für die Werbeeinheit oberhalb der Themenlisten."

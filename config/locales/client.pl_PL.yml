@@ -6,14 +6,40 @@
 # https://www.transifex.com/projects/p/discourse-org/
 
 pl_PL:
+  js:
+    adplugin:
+      advertisement_label: 'OGŁOSZENIE'
   admin_js:
     admin:
       site_settings:
         categories:
+          ad_plugin: 'Wtyczka reklamowa'
+          dfp_plugin: 'Menedżer DFP/reklam'
+          adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
+          codefund_plugin: 'CodeFund'
+          carbonads_plugin: 'Carbon Ads'
       adplugin:
         house_ads:
+          title: "House Ads"
           new: "Nowi"
           settings: "Ustawienia"
+          new_name: "New House Ad"
           save: "Zapisz"
           delete: "Usuń"
+          description: "Zdefiniuj własne reklamy oraz to, gdzie mają być wyświetlane."
+          get_started: "Rozpocznij, tworząc nową reklamę."
+          filter_placeholder: "Wybierz reklamy…"
+          more_settings: "Więcej utsawień"
+          topic_list_top:
+            title: "Reklama nad listą tematów"
+            description: "Reklamy do wyświetlania na górze listy tematów."
+          topic_above_post_stream:
+            title: "Temat nad strumieniem postów"
+            description: "Reklamy do wyświetlania nad tytułem tematu na stronie tematu."
+          topic_above_suggested:
+            title: "Temat nad sugerowanymi"
+            description: "Reklamy do wyświetlania po ostatnim poście w temacie, nad sugerowanymi tematami."
+          post_bottom:
+            title: "Pomiędzy postami"
+            description: "Reklamy do wyświetlania pomiędzy postami, po każdym N‐tym poście."
