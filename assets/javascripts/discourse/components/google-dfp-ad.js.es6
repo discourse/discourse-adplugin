@@ -132,7 +132,15 @@ function getWidthAndHeight(placement, settings, isMobile) {
   };
 }
 
-function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
+function defineSlot(
+  divId,
+  placement,
+  settings,
+  isMobile,
+  width,
+  height,
+  categoryTarget
+) {
   if (!settings.dfp_publisher_id) {
     return;
   }
@@ -142,7 +150,6 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
   }
 
   let ad, config, publisherId;
-  let size = getWidthAndHeight(placement, settings, isMobile);
 
   if (isMobile) {
     publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
@@ -154,7 +161,7 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
 
   ad = window.googletag.defineSlot(
     "/" + publisherId + "/" + settings[config.code],
-    [size.width, size.height],
+    [width, height],
     divId
   );
 
@@ -170,7 +177,7 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
 
   ad.addService(window.googletag.pubads());
 
-  ads[divId] = { ad: ad, width: size.width, height: size.height };
+  ads[divId] = { ad: ad, width: width, height: height };
   return ads[divId];
 }
 
@@ -228,6 +235,17 @@ export default AdComponent.extend({
   loadedGoogletag: false,
   refreshOnChange: null,
   lastAdRefresh: null,
+  width: Ember.computed.alias("size.width"),
+  height: Ember.computed.alias("size.height"),
+
+  @computed()
+  size() {
+    return getWidthAndHeight(
+      this.get("placement"),
+      this.siteSettings,
+      this.site.mobileView
+    );
+  },
 
   @computed(
     "siteSettings.dfp_publisher_id",
@@ -332,7 +350,6 @@ export default AdComponent.extend({
       categorySlug = this.get("currentCategorySlug");
 
     if (this.get("loadedGoogletag")) {
-      // console.log(`refresh(${this.get("divId")}) from updated()`);
       this.set("lastAdRefresh", new Date());
       window.googletag.cmd.push(() => {
         ad.setTargeting("discourse-category", categorySlug || "0");
@@ -350,19 +367,21 @@ export default AdComponent.extend({
     loadGoogle(this.siteSettings).then(() => {
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
+
       window.googletag.cmd.push(() => {
         let slot = defineSlot(
           this.get("divId"),
           this.get("placement"),
           this.siteSettings,
           this.site.mobileView,
+          this.get("width"),
+          this.get("height"),
           this.get("currentCategorySlug") || "0"
         );
         if (slot && slot.ad) {
           // Display has to be called before refresh
           // and after the slot div is in the page.
           window.googletag.display(this.get("divId"));
-          // console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
           window.googletag.pubads().refresh([slot.ad]);
         }
       });
@@ -375,14 +394,6 @@ export default AdComponent.extend({
     if (!this.get("showAd")) {
       return;
     }
-
-    let size = getWidthAndHeight(
-      this.get("placement"),
-      this.siteSettings,
-      this.site.mobileView
-    );
-    this.set("width", size.width);
-    this.set("height", size.height);
   },
 
   @on("willDestroyElement")
