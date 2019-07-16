@@ -93,8 +93,9 @@ export default AdComponent.extend({
         name;
 
       if (
-        config.enabledSetting &&
-        !Ember.isBlank(this.siteSettings[config.enabledSetting]) &&
+        ((config.enabledSetting &&
+          !Ember.isBlank(this.siteSettings[config.enabledSetting])) ||
+          config.enabledSetting === false) &&
         (!postNumber ||
           !config.nthPost ||
           this.isNthPost(parseInt(this.siteSettings[config.nthPost], 10)))
