@@ -117,7 +117,11 @@ export default AdComponent.extend({
           }${placeUnderscored}_code`;
         }
 
-        if (name !== false && !Ember.isBlank(this.siteSettings[name])) {
+        if (
+          name !== false &&
+          this.siteSettings[name] !== false &&
+          !Ember.isBlank(this.siteSettings[name])
+        ) {
           types.push(adNetwork);
         }
       }
