@@ -172,8 +172,14 @@
 }
 
 .codefund-wrapper.codefund-post-bottom {
-  width: 757px;
+  width: calc(#{$topic-body-width} + 67px);
   text-align: center;
+}
+
+@media all and (max-width: 775px) {
+  .codefund-wrapper.codefund-post-bottom {
+    width: 100%;
+  }
 }
 
 .codefund-wrapper.codefund-topic-above-suggested {
