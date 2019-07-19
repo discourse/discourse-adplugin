@@ -28,12 +28,21 @@ module ::AdPlugin
   end
 end
 
+# TODO: Remove this once 2.4.0.beta3 is released.
+# HACK: Checking if the file exists, this means we can assume the migration happenned
+above_min_version = File.exist?(
+  File.expand_path('../../../db/migrate/20190717133743_migrate_group_list_site_settings.rb', __FILE__)
+)
+
 after_initialize do
   require_dependency File.expand_path('../app/models/house_ad', __FILE__)
   require_dependency File.expand_path('../app/models/house_ad_setting', __FILE__)
   require_dependency File.expand_path('../app/controllers/house_ads_controller', __FILE__)
   require_dependency File.expand_path('../app/controllers/house_ad_settings_controller', __FILE__)
   require_dependency 'application_controller'
+
+  # TODO: remove when 2.4 becomes the new stable
+  add_to_serializer(:site, :group_list_use_ids) { above_min_version }
 
   add_to_serializer :site, :house_creatives do
     AdPlugin::HouseAdSetting.settings_and_ads
