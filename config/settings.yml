@@ -2,6 +2,9 @@ ad_plugin:
   no_ads_for_personal_messages:
     client: true
     default: true
+  no_ads_for_restricted_categories:
+    client: true
+    default: false
   no_ads_for_groups:
     client: true
     default: ""

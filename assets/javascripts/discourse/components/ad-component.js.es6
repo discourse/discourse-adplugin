@@ -18,6 +18,11 @@ export default Ember.Component.extend({
     "router.currentRoute.parent.attributes.tags_disable_ads"
   ),
 
+  isRestrictedCategory: Ember.computed.or(
+    "router.currentRoute.attributes.category.read_restricted",
+    "router.currentRoute.parent.attributes.category.read_restricted"
+  ),
+
   @computed(
     "router.currentRoute.attributes.__type",
     "router.currentRoute.attributes.id"
@@ -66,13 +71,15 @@ export default Ember.Component.extend({
     "currentCategoryId",
     "topicTagsDisableAds",
     "topicListTag",
-    "isPersonalMessage"
+    "isPersonalMessage",
+    "isRestrictedCategory"
   )
   showOnCurrentPage(
     categoryId,
     topicTagsDisableAds,
     topicListTag,
-    isPersonalMessage
+    isPersonalMessage,
+    isRestrictedCategory
   ) {
     return (
       !topicTagsDisableAds &&
@@ -84,7 +91,9 @@ export default Ember.Component.extend({
       (!topicListTag ||
         !this.siteSettings.no_ads_for_tags ||
         !this.siteSettings.no_ads_for_tags.split("|").includes(topicListTag)) &&
-      (!isPersonalMessage || !this.siteSettings.no_ads_for_personal_messages)
+      (!isPersonalMessage || !this.siteSettings.no_ads_for_personal_messages) &&
+      (!isRestrictedCategory ||
+        !this.siteSettings.no_ads_for_restricted_categories)
     );
   },
 
