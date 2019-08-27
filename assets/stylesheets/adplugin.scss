@@ -238,6 +238,20 @@
   color: $quaternary !important;
 }
 
+.adbutler-topic-list-top, .adbutler-topic-above-suggested {
+  margin: 10px;
+  text-align: center;
+}
+
+.adbutler-topic-above-post-stream {
+  margin: 10px 0px 10px 0px;
+}
+
+.adbutler-post-bottom {
+  margin: 10px 0px 10px 56px;
+} 
+
+
 .adplugin-mgmt {
   .house-ads-actions {
     .btn {

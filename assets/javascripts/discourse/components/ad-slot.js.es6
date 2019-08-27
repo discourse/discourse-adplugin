@@ -53,6 +53,23 @@ const adConfig = Ember.Object.create({
       "topic-above-post-stream": "carbonads_above_post_stream_enabled",
       "topic-above-suggested": false
     }
+  },
+  "adbutler-ad": {
+    settingPrefix: "adbutler",
+    enabledSetting: "adbutler_publisher_id",
+    desktop: {
+      "topic-list-top": "adbutler_topic_list_top_zone_id",
+      "post-bottom": "adbutler_post_bottom_zone_id",
+      "topic-above-post-stream": "adbutler_topic_above_post_stream_zone_id",
+      "topic-above-suggested": "adbutler_topic_above_suggested_zone_id"
+    },
+    mobile: {
+      "topic-list-top": "adbutler_mobile_topic_list_top_zone_id",
+      "post-bottom": "adbutler_mobile_post_bottom_zone_id",
+      "topic-above-post-stream":
+        "adbutler_mobile_topic_above_post_stream_zone_id",
+      "topic-above-suggested": "adbutler_mobile_topic_above_suggested_zone_id"
+    }
   }
 });
 

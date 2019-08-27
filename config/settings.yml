@@ -430,3 +430,40 @@ carbonads_plugin:
   carbonads_above_post_stream_enabled:
     client: true
     default: false
+
+adbutler_plugin:
+  adbutler_publisher_id:
+    client: true
+    default: ""
+  adbutler_through_trust_level:
+    client: true
+    default: 2
+    enum: "TrustLevelSetting"
+  adbutler_topic_list_top_zone_id:
+    client: true
+    default: ""
+  adbutler_mobile_topic_list_top_zone_id:
+    client: true
+    default: ""
+  adbutler_topic_above_post_stream_zone_id:
+    client: true
+    default: ""
+  adbutler_mobile_topic_above_post_stream_zone_id:
+    client: true
+    default: ""
+  adbutler_topic_above_suggested_zone_id:
+    client: true
+    default: ""
+  adbutler_mobile_topic_above_suggested_zone_id:
+    client: true
+    default: ""
+  adbutler_post_bottom_zone_id:
+    client: true
+    default: ""
+  adbutler_mobile_post_bottom_zone_id:
+    client: true
+    default: ""
+  adbutler_nth_post:
+    client: true
+    default: 4
+    min: 1
