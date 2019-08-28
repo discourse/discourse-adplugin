@@ -3,6 +3,7 @@ import { default as computed, observes } from "ember-addons/ember-computed-decor
 import loadScript from "discourse/lib/load-script";
 
 const publisher_id = Discourse.SiteSettings.adbutler_publisher_id;
+const adserver_hostname = Discourse.SiteSettings.adbutler_adserver_hostname;
 
 let _loaded = false,
     _promise = null,
@@ -18,7 +19,7 @@ function loadAdbutler() {
     return _promise;
   }
 
-  _promise = loadScript("https://servedbyadbutler.com/app.js", { scriptTag: true }).then(function() {
+  _promise = loadScript('https://' + adserver_hostname + '/app.js', { scriptTag: true }).then(function() {
     _loaded = true;
   });
 
@@ -68,7 +69,7 @@ export default AdComponent.extend({
           handler: function(opt){ 
             AdButler.register(opt.place.publisher_id, opt.place.zone_id, opt.place.dimensions, opt.place.div_id, opt);
           }, 
-          opt: { place: _divs.pop(), keywords: abkw, domain: 'servedbyadbutler.com', click:'CLICK_MACRO_PLACEHOLDER' }
+          opt: { place: _divs.pop(), keywords: abkw, domain: adserver_hostname, click:'CLICK_MACRO_PLACEHOLDER' }
         });
       }
     });

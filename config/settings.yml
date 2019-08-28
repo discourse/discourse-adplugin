@@ -467,3 +467,6 @@ adbutler_plugin:
     client: true
     default: 4
     min: 1
+  adbutler_adserver_hostname:
+    client: true
+    default: "servedbyadbutler.com"
