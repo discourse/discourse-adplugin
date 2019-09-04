@@ -28,26 +28,28 @@ function loadAdbutler() {
 
 export default AdComponent.extend({
   init() {
-    var dimensions = [728,90];
-    var config_key = 'adbutler_';
-    var class_name = 'adbutler-';
+    let dimensions = [728,90];
+    let config_key = 'adbutler_';
+    let class_name = 'adbutler-';
+    let dim_class_name = 'adbutler-ad';
 
     if (this.site.mobileView) {
       dimensions = [320,50];
       config_key += 'mobile_';
       class_name += 'mobile-';
+      dim_class_name = 'adbutler-mobile-ad';
     }
 
     config_key += this.get("placement").replace(/-/g, '_') + '_zone_id';
     this.set("config_key", config_key);
 
     class_name += this.get("placement");
-    this.set("class_name", class_name);
+    this.set("class_name", class_name + ' ' + dim_class_name);
 
-    var zone_id = this.siteSettings[config_key];
+    let zone_id = this.siteSettings[config_key];
     this.set("zone_id", zone_id);
 
-    var div_id = 'placement-' + zone_id + '-' + _c;
+    let div_id = 'placement-' + zone_id + '-' + _c;
     this.set("div_id", div_id);
     _c++;
     _divs.push({
@@ -64,7 +66,7 @@ export default AdComponent.extend({
   _triggerAds() {
     loadAdbutler().then(function() {
       if(_divs.length > 0) {
-        var abkw = window.abkw || '';
+        let abkw = window.abkw || '';
         AdButler.ads.push({
           handler: function(opt){ 
             AdButler.register(opt.place.publisher_id, opt.place.zone_id, opt.place.dimensions, opt.place.div_id, opt);
