@@ -19,6 +19,7 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 * [Amazon Affiliates](http://affiliate-program.amazon.com) - Banner and Product Link Ads
 * [CodeFund](https://codefund.io) - Ethical Ad Platform for Developers
 * [Carbon Ads](https://www.carbonads.net/)
+* [AdButler](https://www.adbutler.com/)
 
 
 ## Quick Start in 3 Steps
@@ -81,6 +82,7 @@ the ad slots. The ads will start showing as soon as you add them to slots.
 <li>DFP - if using the DoubleClick for Publishers advertisement platform.</li>
 <li>CodeFund - if using the CodeFund ethical advertisement platform.</li>
 <li>Carbon Ads - if using the Carbon Ads advertisement platform.</li>
+<li>AdButler - if using the AdButler advertisement platform.</li>
 </ul>
 </ul>
 
@@ -112,6 +114,13 @@ Only for Product Link and Banner Ads.
 ##### Carbon Ads Script Tag to Discourse's Site Settings
 
 ![Carbon Ads](https://d11a6trkgmumsb.cloudfront.net/original/3X/3/a/3acc7488db2b53733cdd427d3cb1b76361c786e1.png)
+
+##### AdButler Ads Zone URL to Discourse's Site Settings
+
+If you browse to a zone in the AdButler admin, then you can find the Publisher ID (PPPPPP) and the Zone ID (ZZZZZZ) in the URL:
+
+`https://admin.adbutler.com/?ID=PPPPPP&p=textadzone.view&zoneID=ZZZZZZ`
+
 
 ### Step 3 - See Your Ad
 
