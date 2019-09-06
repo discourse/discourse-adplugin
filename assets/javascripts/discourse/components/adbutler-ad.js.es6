@@ -2,8 +2,8 @@ import AdComponent from "discourse/plugins/discourse-adplugin/discourse/componen
 import { default as computed, observes } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
 
-const publisher_id = Discourse.SiteSettings.adbutler_publisher_id;
-const adserver_hostname = Discourse.SiteSettings.adbutler_adserver_hostname;
+const publisherId = Discourse.SiteSettings.adbutler_publisher_id;
+const adserverHostname = Discourse.SiteSettings.adbutler_adserver_hostname;
 
 let _loaded = false,
     _promise = null,
@@ -19,7 +19,7 @@ function loadAdbutler() {
     return _promise;
   }
 
-  _promise = loadScript('https://' + adserver_hostname + '/app.js', { scriptTag: true }).then(function() {
+  _promise = loadScript('https://' + adserverHostname + '/app.js', { scriptTag: true }).then(function() {
     _loaded = true;
   });
 
@@ -27,39 +27,40 @@ function loadAdbutler() {
 }
 
 export default AdComponent.extend({
+
   init() {
     let dimensions = [728,90];
-    let config_key = 'adbutler_';
-    let class_name = 'adbutler-';
-    let dim_class_name = 'adbutler-ad';
+    let configKey = 'adbutler_';
+    let className = 'adbutler-';
+    let dimClassName = 'adbutler-ad';
 
     if (this.site.mobileView) {
       dimensions = [320,50];
-      config_key += 'mobile_';
-      class_name += 'mobile-';
-      dim_class_name = 'adbutler-mobile-ad';
+      configKey += 'mobile_';
+      className += 'mobile-';
+      dimClassName = 'adbutler-mobile-ad';
     }
 
-    config_key += this.get("placement").replace(/-/g, '_') + '_zone_id';
-    this.set("config_key", config_key);
+    configKey += this.get("placement").replace(/-/g, '_') + '_zone_id';
+    this.set("configKey", configKey);
 
-    class_name += this.get("placement");
-    this.set("class_name", class_name + ' ' + dim_class_name);
+    className += this.get("placement");
+    this.set("className", className + ' ' + dimClassName);
 
-    let zone_id = this.siteSettings[config_key];
-    this.set("zone_id", zone_id);
+    let zoneId = this.siteSettings[configKey];
+    this.set("zoneId", zoneId);
 
-    let div_id = 'placement-' + zone_id + '-' + _c;
-    this.set("div_id", div_id);
+    let divId = 'placement-' + zoneId + '-' + _c;
+    this.set("divId", divId);
     _c++;
     _divs.push({
-      div_id: div_id,
-      publisher_id: publisher_id,
-      zone_id: zone_id,
+      divId: divId,
+      publisherId: publisherId,
+      zoneId: zoneId,
       dimensions: dimensions
     });
 
-    this.set("publisher_id", publisher_id);
+    this.set("publisherId", publisherId);
     this._super();
   },
 
@@ -69,9 +70,9 @@ export default AdComponent.extend({
         let abkw = window.abkw || '';
         AdButler.ads.push({
           handler: function(opt){ 
-            AdButler.register(opt.place.publisher_id, opt.place.zone_id, opt.place.dimensions, opt.place.div_id, opt);
+            AdButler.register(opt.place.publisherId, opt.place.zoneId, opt.place.dimensions, opt.place.divId, opt);
           }, 
-          opt: { place: _divs.pop(), keywords: abkw, domain: adserver_hostname, click:'CLICK_MACRO_PLACEHOLDER' }
+          opt: { place: _divs.pop(), keywords: abkw, domain: adserverHostname, click:'CLICK_MACRO_PLACEHOLDER' }
         });
       }
     });
@@ -108,7 +109,7 @@ export default AdComponent.extend({
   )
   showAd(showToTrustLevel, showToGroups, showAfterPost, showOnCurrentPage) {
     return (
-      publisher_id &&
+      publisherId &&
       showToTrustLevel &&
       showToGroups &&
       showAfterPost &&
