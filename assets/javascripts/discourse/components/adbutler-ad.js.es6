@@ -7,7 +7,6 @@ const adserverHostname = Discourse.SiteSettings.adbutler_adserver_hostname;
 
 let _loaded = false,
     _promise = null,
-    _divs = [],
     _c = 0;
 
 function loadAdbutler() {
@@ -27,6 +26,8 @@ function loadAdbutler() {
 }
 
 export default AdComponent.extend({
+
+  divs: [],
 
   init() {
     let dimensions = [728,90];
@@ -53,7 +54,7 @@ export default AdComponent.extend({
     let divId = 'placement-' + zoneId + '-' + _c;
     this.set("divId", divId);
     _c++;
-    _divs.push({
+    this.divs.push({
       divId: divId,
       publisherId: publisherId,
       zoneId: zoneId,
@@ -66,16 +67,16 @@ export default AdComponent.extend({
 
   _triggerAds() {
     loadAdbutler().then(function() {
-      if(_divs.length > 0) {
+      if(this.divs.length > 0) {
         let abkw = window.abkw || '';
         AdButler.ads.push({
           handler: function(opt){ 
             AdButler.register(opt.place.publisherId, opt.place.zoneId, opt.place.dimensions, opt.place.divId, opt);
           }, 
-          opt: { place: _divs.pop(), keywords: abkw, domain: adserverHostname, click:'CLICK_MACRO_PLACEHOLDER' }
+          opt: { place: this.divs.pop(), keywords: abkw, domain: adserverHostname, click:'CLICK_MACRO_PLACEHOLDER' }
         });
       }
-    });
+    }.bind(this));
   },
 
   didInsertElement() {
