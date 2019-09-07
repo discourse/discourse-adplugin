@@ -27,13 +27,15 @@ function loadAdbutler() {
 
 export default AdComponent.extend({
 
-  divs: [],
+  divs: null,
 
   init() {
     let dimensions = [728,90];
     let configKey = 'adbutler_';
     let className = 'adbutler-';
     let dimClassName = 'adbutler-ad';
+
+    this.set('divs', []);
 
     if (this.site.mobileView) {
       dimensions = [320,50];
