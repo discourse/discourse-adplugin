@@ -14,14 +14,24 @@ function parseAdWidth(value) {
   if (value === "responsive") {
     return "auto";
   }
-  return `${parseInt(value.substring(0, 3).trim())}px`;
+  const w = parseInt(value.substring(0, 3).trim());
+  if (isNaN(w)) {
+    return "auto";
+  } else {
+    return `${w}px`;
+  }
 }
 
 function parseAdHeight(value) {
   if (value === "responsive") {
     return "auto";
   }
-  return `${parseInt(value.substring(4, 7).trim())}px`;
+  const h = parseInt(value.substring(4, 7).trim());
+  if (isNaN(h)) {
+    return "auto";
+  } else {
+    return `${h}px`;
+  }
 }
 
 function loadAdsense() {

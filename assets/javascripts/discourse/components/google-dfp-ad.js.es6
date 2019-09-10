@@ -126,10 +126,14 @@ function getWidthAndHeight(placement, settings, isMobile) {
     renderCounts[placement] += 1;
   }
 
-  return {
+  const sizeObj = {
     width: parseInt(splitWidthInt(size)),
     height: parseInt(splitHeightInt(size))
   };
+
+  if (!isNaN(sizeObj.width) && !isNaN(sizeObj.height)) {
+    return sizeObj;
+  }
 }
 
 function defineSlot(
@@ -290,21 +294,24 @@ export default AdComponent.extend({
     "showToTrustLevel",
     "showToGroups",
     "showAfterPost",
-    "showOnCurrentPage"
+    "showOnCurrentPage",
+    "size"
   )
   showAd(
     publisherId,
     showToTrustLevel,
     showToGroups,
     showAfterPost,
-    showOnCurrentPage
+    showOnCurrentPage,
+    size
   ) {
     return (
       publisherId &&
       showToTrustLevel &&
       showToGroups &&
       showAfterPost &&
-      showOnCurrentPage
+      showOnCurrentPage &&
+      size
     );
   },
 
