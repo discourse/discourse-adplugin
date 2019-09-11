@@ -5,6 +5,7 @@ acceptance("AdSense", {
   loggedIn: true,
   settings: {
     no_ads_for_groups: "discourse",
+    no_ads_for_categories: "1",
     adsense_publisher_code: "MYADSENSEID",
     adsense_through_trust_level: 2,
     adsense_topic_list_top_code: "list_top_ad_unit",
@@ -15,7 +16,9 @@ acceptance("AdSense", {
     adsense_post_bottom_ad_sizes: "728*90 - leaderboard",
     adsense_mobile_post_bottom_code: "mobile_post_bottom_ad_unit",
     adsense_mobile_post_bottom_ad_size: "300*250 - medium rectangle",
-    adsense_nth_post_code: 6
+    adsense_nth_post_code: 6,
+    adsense_topic_above_post_stream_code: "above_post_stream_ad_unit",
+    adsense_topic_above_post_stream_ad_sizes: "728*90 - leaderboard"
   },
   site: {
     house_creatives: {
@@ -34,6 +37,13 @@ acceptance("AdSense", {
 test("correct number of ads should show", async assert => {
   updateCurrentUser({ staff: false, trust_level: 1 });
   await visit("/t/280"); // 20 posts
+
+  assert.equal(
+    find(".google-adsense.adsense-topic-above-post-stream").length,
+    1,
+    "it should render 1 ad"
+  );
+
   const ads = find(".google-adsense.adsense-post-bottom");
   assert.equal(ads.length, 3, "it should render 3 ads");
   assert.equal(
@@ -78,6 +88,16 @@ test("can omit ads based on groups", async assert => {
   await visit("/t/280");
   assert.equal(
     find(".google-adsense.adsense-post-bottom").length,
+    0,
+    "it should render 0 ads"
+  );
+});
+
+test("can omit ads based on category", async assert => {
+  updateCurrentUser({ staff: false, trust_level: 1 });
+  await visit("/t/28830");
+  assert.equal(
+    find(".google-adsense.adsense-topic-above-post-stream").length,
     0,
     "it should render 0 ads"
   );
