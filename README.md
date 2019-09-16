@@ -117,10 +117,30 @@ Only for Product Link and Banner Ads.
 
 ##### AdButler Ads Zone URL to Discourse's Site Settings
 
-If you browse to a zone in the AdButler admin, then you can find the Publisher ID (PPPPPP) and the Zone ID (ZZZZZZ) in the URL:
+This plugin only support AdButler "Standard Zones". Text and VAST are not supported.
+
+If you browse to a zone in the AdButler admin, then you can find the Publisher ID (PPPPPP) and the Zone ID (ZZZZZZ) in the URL of your browser's address bar:
 
 `https://admin.adbutler.com/?ID=PPPPPP&p=textadzone.view&zoneID=ZZZZZZ`
 
+Configure the ads in Admin > Settings > AdButler.
+Enter the publisher id in the "adbutler publisher id" setting, and enter the Zone IDs in the different
+zone id settings as desired.
+
+By default, ads are assumed to be size 728 x 90, or 320 x 50 in mobile view.
+To use different size ads, customize using CSS in your site's theme. Override the following CSS:
+
+```css
+.adbutler-ad {
+  width: 728px;
+  height: 90px;
+}
+
+.adbutler-mobile-ad {
+  width: 320px;
+  height: 50px;
+}
+```
 
 ### Step 3 - See Your Ad
 
