@@ -151,9 +151,11 @@ Once you've configured your settings and your advertising platform has ads that 
 
 In this section, we go into more detail on:
 * Available Locations for Ad Display
-* Ad Sizes Supported
 * Trust Levels
-* Languages Supported
+* Personal messages
+* Groups
+* Categories
+* Tags
 
 ### Available Locations for Ad Display
 
@@ -169,23 +171,6 @@ The following are available locations along with a description and an image show
 
 ![](https://www.dropbox.com/sc/rm5bcn8c85niul1/AAAUVW-hn56XtCl_XTNlE19Ra?dl=1)
 
-### Advertisement Sizes Supported
-
-This plugin supports the following ad sizes for the following locations.
-
-All locations except post bottom | Post bottom location | Mobile
---- | --- | ---
-728 x 90 | 728 x 90 | 320 x 50
-336 x 280 | 336 x 280 |
-300 x 250 | 300 x 250 |
-970 x 90 | 970 x 90 |
-468 x 60 | 468 x 60 |
-234 x 60 | 234 x 60 |
-125 x 125 | |
-180 x 150 | |
-200 x 200 | |
-250 x 250 | |
-
 
 ### Trust Levels
 
@@ -199,12 +184,21 @@ You can use the ```ad_platform_through_trust_level``` dropdown to disable ads fo
 
 To find more about trust levels in Discourse, refer to [Discourse's posts on trust levels](https://meta.discourse.org/t/what-do-user-trust-levels-do/4924)
 
-### Languages Supported
+### Personal messages
 
-* Chinese (Simplified)
-* English
-* French
-* Spanish
+By default, ads won't be shown in personal messages. To enable ads in personal messages, use the "no ads for personal messages" setting.
+
+### Groups
+
+To give some users an ad-free experience, put the users in groups and add those groups to the "no ads for groups" setting.
+
+### Categories
+
+To disable ads in certain categories, add them to the "no ads for categories" setting. Also consider using the "no ads for restricted categories" to disable ads in all categories that have read access restrictions.
+
+### Tags
+
+Individual topics can have ads disabled by using tags, and entering those tags in the "no ads for tags" setting. This is useful if some topics violate ad network policies.
 
 ## Other Installation
 
