@@ -90,6 +90,26 @@
   margin: 0 auto;
 }
 
+.google-dfp-ad.dfp-ad-post-bottom {
+  .google-dfp-ad-label,
+  .dfp-ad-unit {
+    margin: 0 0 0 52px;
+  }
+}
+
+@include breakpoint(mobile-extra-large) {
+  .google-dfp-ad .google-dfp-ad-label {
+    width: 100%;
+    text-align: center;
+  }
+  .google-dfp-ad.dfp-ad-post-bottom {
+    .google-dfp-ad-label,
+    .dfp-ad-unit {
+      margin: 0 auto;
+    }
+  }
+}
+
 .google-dfp-ad .google-dfp-ad-label h2 {
   margin: 4px 0 !important;
   color: #858a8c;
@@ -99,13 +119,6 @@
   font-weight: normal;
 }
 
-.google-dfp-ad.dfp-ad-post-bottom {
-  .google-dfp-ad-label,
-  .dfp-ad-unit {
-    margin: 0 0 0 52px;
-  }
-}
-
 .house-creative {
   margin: 0 auto;
 }
@@ -113,6 +126,12 @@
 .house-creative.house-post-bottom {
   margin: 0 0 10px 52px;
   clear: both;
+}
+
+@include breakpoint(mobile-extra-large) {
+  .house-creative.house-post-bottom {
+    margin: 0 0 10px 0;
+  }
 }
 
 .codefund-wrapper {
@@ -255,11 +274,17 @@
 }
 
 .adbutler-topic-above-post-stream {
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0 10px 0;
 }
 
 .adbutler-post-bottom {
-  margin: 10px 0px 10px 56px;
+  margin: 10px 0 10px 56px;
+}
+
+@include breakpoint(mobile-extra-large) {
+  .adbutler-post-bottom {
+    margin: 10px 0;
+  }
 }
 
 .adplugin-mgmt {
