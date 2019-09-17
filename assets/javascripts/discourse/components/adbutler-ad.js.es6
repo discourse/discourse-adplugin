@@ -76,9 +76,9 @@ export default AdComponent.extend({
       function() {
         if (this.divs.length > 0) {
           let abkw = window.abkw || "";
-          AdButler.ads.push({
+          window.AdButler.ads.push({
             handler: function(opt) {
-              AdButler.register(
+              window.AdButler.register(
                 opt.place.publisherId,
                 opt.place.zoneId,
                 opt.place.dimensions,
