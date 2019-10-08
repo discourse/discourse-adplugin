@@ -34,8 +34,8 @@ export default Ember.Controller.extend(bufferedProperty("model"), {
 
         ajax(
           newRecord
-            ? `/admin/plugins/adplugin/house_ads`
-            : `/admin/plugins/adplugin/house_ads/${buffered.get("id")}`,
+            ? `/admin/plugins/pluginad/house_creatives`
+            : `/admin/plugins/pluginad/house_creatives/${buffered.get("id")}`,
           {
             type: newRecord ? "POST" : "PUT",
             data
@@ -80,7 +80,7 @@ export default Ember.Controller.extend(bufferedProperty("model"), {
         return;
       }
 
-      ajax(`/admin/plugins/adplugin/house_ads/${model.get("id")}`, {
+      ajax(`/admin/plugins/pluginad/house_creatives/${model.get("id")}`, {
         type: "DELETE"
       })
         .then(() => {

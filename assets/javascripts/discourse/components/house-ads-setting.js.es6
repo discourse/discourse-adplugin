@@ -25,7 +25,7 @@ export default Ember.Component.extend({
         });
 
         ajax(
-          `/admin/plugins/adplugin/house_ad_settings/${this.get("name")}.json`,
+          `/admin/plugins/pluginad/house_settings/${this.get("name")}.json`,
           {
             type: "PUT",
             data: { value: this.get("adValue") }

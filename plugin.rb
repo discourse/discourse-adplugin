@@ -71,12 +71,12 @@ after_initialize do
 
   AdPlugin::Engine.routes.draw do
     root to: 'house_ads#index'
-    resources :house_ads, only: [:index, :show, :create, :update, :destroy]
-    resources :house_ad_settings, only: [:update]
+    resources :house_creatives, only: [:index, :show, :create, :update, :destroy], controller: 'house_ads'
+    resources :house_settings, only: [:update], controller: 'house_ad_settings'
   end
 
   Discourse::Application.routes.append do
     get '/ads.txt' => "adstxt#index"
-    mount ::AdPlugin::Engine, at: '/admin/plugins/adplugin', constraints: AdminConstraint.new
+    mount ::AdPlugin::Engine, at: '/admin/plugins/pluginad', constraints: AdminConstraint.new
   end
 end
