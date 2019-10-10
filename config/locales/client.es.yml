@@ -8,7 +8,7 @@
 es:
   js:
     adplugin:
-      advertisement_label: 'ANUNCIO'
+      advertisement_label: 'PUBLICIDAD'
   admin_js:
     admin:
       site_settings:
@@ -19,27 +19,28 @@ es:
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
           carbonads_plugin: 'Carbon Ads'
+          adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
-          title: "House Ads"
+          title: "Publicidad interna"
           new: "Nuevo"
           settings: "Ajustes"
-          new_name: "House Ad Nuevo"
+          new_name: "Nueva publicidad interna"
           save: "Guardar"
-          delete: "Borrar"
-          description: "Defina sus propios anuncios y dónde deben mostrarse."
-          get_started: "Comienza creando un nuevo anuncio."
-          filter_placeholder: "Seleccionar anuncios..."
+          delete: "Eliminar"
+          description: "Define tus propias publicidades y dónde deben mostrarse."
+          get_started: "Comienza creando un nueva publicidad."
+          filter_placeholder: "Seleccionar publicidades..."
           more_settings: "Más ajustes"
           topic_list_top:
-            title: "Lista de temas top anuncios"
-            description: "Anuncios para mostrar en la parte superior de las páginas de la lista de temas."
+            title: "Publicidades destacadas de la lista de temas"
+            description: "Publicidades para mostrar en la parte superior de las páginas de la lista de temas."
           topic_above_post_stream:
-            title: "Tema encima de las publicaciones"
-            description: "Anuncios para mostrar encima del título de un tema en la página del tema."
+            title: "Tema arriba de la lista de publicaciones"
+            description: "Publicidades que se muestran arriba del título de un tema en la página de temas."
           topic_above_suggested:
-            title: "Tema sobre los sugeridos"
-            description: "Anuncios para mostrar después de la última publicación en un tema, por encima de los temas sugeridos."
+            title: "Tema de arriba sugerido"
+            description: "Publicidades que se muestran después de la última publicación en un tema, arriba de los temas sugeridos."
           post_bottom:
             title: "Entre publicaciones"
-            description: "Anuncios para mostrar entre publicaciones, después de cada N publicaciones."
+            description: "Publicidades que se muestran entre publicaciones, después de cada N publicaciones."

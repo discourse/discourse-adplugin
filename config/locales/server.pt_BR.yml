@@ -101,3 +101,5 @@ pt_BR:
     carbonads_through_trust_level: "Exibir seus anúncios para usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."
     carbonads_topic_list_top_enabled: "Mostrar um anúncio acima da lista de tópicos"
     carbonads_above_post_stream_enabled: "Mostrar um anúncio acima da stream de postagens"
+    adbutler_nth_post: "Mostrar um anúncio depois de cada N posts, onde N é este valor"
+    adbutler_through_trust_level: "Mostrar seus anúncios aos usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios"

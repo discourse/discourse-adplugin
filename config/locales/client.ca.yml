@@ -19,6 +19,7 @@ ca:
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
           carbonads_plugin: 'Carbon Ads'
+          adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
           title: "Anuncis propis"
@@ -27,7 +28,7 @@ ca:
           new_name: "Nou anunci propi"
           save: "Desa"
           delete: "Suprimeix"
-          description: "Definiu els vostres propis anuncis i on s’han de mostrar."
+          description: "Definiu els vostres propis anuncis i on s'han de mostrar."
           get_started: "Comenceu creant un anunci nou."
           filter_placeholder: "Selecciona anuncis ..."
           more_settings: "Més paràmetres"
@@ -38,8 +39,8 @@ ca:
             title: "Tema per damunt del flux de publicacions"
             description: "Anuncis que es mostraran per sobre del títol d'un tema en la pàgina del tema."
           topic_above_suggested:
-            title: "Tema per damunt dels suggerits"
-            description: "Anuncis que es mostraran de l'últim missatge d'un tema per sobre dels temes suggerits."
+            title: "Tema per damunt dels recomanats"
+            description: "Anuncis que es mostren després de l'última publicació d'un tema per sobre dels temes recomanats."
           post_bottom:
             title: "Entre publicacions"
             description: "Anuncis que es mostraran entre publicacions després de cada N missatges."

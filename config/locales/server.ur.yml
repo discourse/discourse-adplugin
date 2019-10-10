@@ -8,6 +8,7 @@
 ur:
   site_settings:
     no_ads_for_personal_messages: "ذاتی پیغامات دیکھتے وقت اشتہارات مت دکھائیں"
+    no_ads_for_restricted_categories: "اشتہارات ایسے زُمرہ جات میں نہ دکھائیں جو ہر ایک کو نظر نہیں آتے۔"
     no_ads_for_groups: "اِن گروپس میں صارفین کو اشتہارات مت دکھائیں۔"
     no_ads_for_categories: "اِن زُمرہ جات والے ٹاپک فہرست اور ٹاپک صفحات پر اشتھارات مت دکھائیں۔"
     no_ads_for_tags: "اِن ٹیگز والے ٹاپک فہرست اور ٹاپک صفحات پر اشتھارات مت دکھائیں۔"
@@ -102,3 +103,15 @@ ur:
     carbonads_through_trust_level: "اپنے صارفین کوٹرسٹ لَیول کی بنیاد پر اشتہارات دکھائیں۔ اس وَیلِیو سے زیادہ ٹرسٹ لَیول والے صارفین کو اشتہارات نہیں دکھاے جائیں گے۔"
     carbonads_topic_list_top_enabled: "ٹاپک فہرست کے اوپر اشتھار دکھائیں"
     carbonads_above_post_stream_enabled: "پوسٹ سٹریم کے اوپر اشتھار دکھائیں"
+    adbutler_publisher_id: "اَیڈ بَٹلَر پبلیشر آئی ڈی"
+    adbutler_mobile_topic_list_top_zone_id: "موبائل ٹاپک فہرست کے سب سے اوپر مقام کیلئے زَون آئی ڈی۔"
+    adbutler_mobile_topic_above_post_stream_zone_id: "پوسٹ سٹریم جگہ کے اوپر موبائل ٹاپک کیلئے زَون آئی ڈی"
+    adbutler_mobile_post_bottom_zone_id: "موبائل پوسٹ کے نیچے جگہ کیلئے زَون آئی ڈی"
+    adbutler_mobile_topic_above_suggested_zone_id: "تجویز کردہ کی جگہ کے اوپر موبائل ٹاپک کیلئے زَون آئی ڈی"
+    adbutler_topic_list_top_zone_id: "ٹاپک فہرست کی سب سے اوپر والی جگہ کیلئے زَون آئی ڈی"
+    adbutler_topic_above_post_stream_zone_id: "پوسٹ سٹریم جگہ کے اوپر ٹاپک کیلئے زَون آئی ڈی"
+    adbutler_post_bottom_zone_id: "پوسٹ کے نیچے جگہ کیلئے زَون آئی ڈی"
+    adbutler_topic_above_suggested_zone_id: "تجویز کردہ کی جگہ کے اوپر ٹاپک کیلئے زَون آئی ڈی"
+    adbutler_nth_post: "ہر N پوسٹس کے بعد ایک اشتھار دکھائیں، جہاں N کی یہ قدر ہے"
+    adbutler_through_trust_level: "صارفین کو ٹرسٹ لَیول کے حساب سے اشتہارات دکھائیں۔ اس قدر سے زیادہ ٹرسٹ لَیول والے صارفین کو اشتہارات نہیں دکھائے جائیں گے"
+    adbutler_adserver_hostname: "وہ ہَوسٹ نام جس سے اَیڈ بَٹلَر آپ کے اشتہارات پیش کررہا ہے"

@@ -8,6 +8,7 @@
 zh_CN:
   site_settings:
     no_ads_for_personal_messages: "查看个人消息时不显示广告"
+    no_ads_for_restricted_categories: "请勿在仅对特定用户开放的分类中显示广告。"
     no_ads_for_groups: "不对这些群组中的用户显示广告。"
     no_ads_for_categories: "不在属于这些分类的主题列表和主题页面上显示广告。"
     no_ads_for_tags: "不在含有这些标签的主题列表和主题页面上显示广告。"
@@ -102,3 +103,9 @@ zh_CN:
     carbonads_through_trust_level: "基于信任等级向用户展示广告。高于此等级的用户不会看到广告。"
     carbonads_topic_list_top_enabled: "在推主题列表以上展示广告"
     carbonads_above_post_stream_enabled: "在贴文流以上展示广告"
+    adbutler_publisher_id: "AdButler Publisher ID"
+    adbutler_mobile_topic_list_top_zone_id: "移动端主题列表顶部的Zone ID"
+    adbutler_mobile_topic_above_post_stream_zone_id: "移动端主题帖子流上端的Zone ID"
+    adbutler_mobile_post_bottom_zone_id: "移动端帖子底部的Zone ID"
+    adbutler_nth_post: "每这么多条帖子展示一条广告"
+    adbutler_through_trust_level: "基于信任等级向用户展示广告。高于此等级的用户不会看到广告。"

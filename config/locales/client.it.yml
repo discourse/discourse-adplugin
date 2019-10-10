@@ -21,25 +21,25 @@ it:
           carbonads_plugin: 'Carbon Ads'
       adplugin:
         house_ads:
-          title: "House Ads"
+          title: "Pubblicità"
           new: "Nuovo"
           settings: "Impostazioni"
-          new_name: "Nuovo House Ad"
+          new_name: "Nuova Pubblicità"
           save: "Salva"
           delete: "Elimina"
           description: "Definisci i tuoi annunci e dove saranno visualizzati."
           get_started: "Comincia creando un nuovo annuncio."
-          filter_placeholder: "Seleziona annuncio"
-          more_settings: "Altre impostazioni"
+          filter_placeholder: "Seleziona annunci..."
+          more_settings: "Altre Impostazioni"
           topic_list_top:
             title: "Annunci in testa alla lista Argomenti"
-            description: "Annunci da mostrare in testa alla pagina della lista Argomenti."
+            description: "Annunci da mostrare in testa alle pagine con gli elenchi di argomenti."
           topic_above_post_stream:
             title: "Argomento sopra la lista dei messaggi"
-            description: "Annunci da mostrare sopra al titolo di un Argomento, sulla pagina dell'Argomento."
+            description: "Annunci da mostrare sopra al titolo di un argomento, sulla pagina dell'argomento stesso."
           topic_above_suggested:
             title: "Argomento sopra i suggeriti"
-            description: "Annunci da mostrare dopo l'ultimo messaggio di un Argomento, sopra gli Argomenti suggeriti"
+            description: "Annunci da mostrare dopo l'ultimo messaggio di un argomento, sopra gli argomenti suggeriti."
           post_bottom:
             title: "Tra messaggi"
-            description: "Annunci da mostrare tra messaggi, ogni N messaggi."
+            description: "Annunci da mostrare tra i messaggi, ogni N messaggi."

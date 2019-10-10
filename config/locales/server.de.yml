@@ -8,6 +8,7 @@
 de:
   site_settings:
     no_ads_for_personal_messages: "Keine Werbung beim Lesen persönlicher Nachrichten zeigen"
+    no_ads_for_restricted_categories: "Zeige keine Anzeigen in Kategorien, die nicht für jeden sichtbar sind."
     no_ads_for_groups: "Zeige Anzeigen nicht den Benutzern dieser Gruppen."
     no_ads_for_categories: "Zeige keine Anzeigen auf der Themenliste und Themenseiten, die zu diesen Kategorien gehören."
     no_ads_for_tags: "Anzeigen nicht auf der Themenliste und Themenseiten zeigen, de zu diesen Tags gehören."
@@ -102,3 +103,15 @@ de:
     carbonads_through_trust_level: "Zeige Benutzern deine Werbung auf Grundlage von Vertrauensstufen. Benutzer mit einer höheren Vertrauensstufe als dieser Wert werden keine Werbung sehen."
     carbonads_topic_list_top_enabled: "Zeige eine Werbeanzeige über der Themenliste."
     carbonads_above_post_stream_enabled: "Zeige eine Werbeanzeige über jeder Beitragsliste."
+    adbutler_publisher_id: "AdButler Publisher ID"
+    adbutler_mobile_topic_list_top_zone_id: "Zonen ID für oberen Platz der mobilen Themenliste"
+    adbutler_mobile_topic_above_post_stream_zone_id: "Zonen-ID für mobile Thema über Beitragsverlauf-Positionierung"
+    adbutler_mobile_post_bottom_zone_id: "Zonen-ID für mobile Beitrag unten-Positionierung"
+    adbutler_mobile_topic_above_suggested_zone_id: "Zonen-ID für mobile Thema über vorgeschlagen-Positionierung"
+    adbutler_topic_list_top_zone_id: "Zonen-ID für Themenliste oben-Positionierung"
+    adbutler_topic_above_post_stream_zone_id: "Zonen-ID für Thema über Beitragsverlauf-Positionierung"
+    adbutler_post_bottom_zone_id: "Zonen-ID für Beitrag unten-Positionierung"
+    adbutler_topic_above_suggested_zone_id: "Zonen-ID für Beitrag unten-Positionierung"
+    adbutler_nth_post: "Zeige eine Werbeanzeige nach jedem N-ten Beitrag, wobei N dieser Wert ist."
+    adbutler_through_trust_level: "Zeige Benutzern deine Werbeanzeigen abhängig von ihrer Vertrauensstufe. Benutzer mit einer höheren Vertrauensstufe als dieser Wert werden deine Werbeanzeigen nicht sehen."
+    adbutler_adserver_hostname: "Der Hostname, von dem AdButler deine Anzeigen liefert."

@@ -7,10 +7,16 @@
 
 it:
   site_settings:
-    no_ads_for_groups: "Non mostrare pubblicità agli utenti di questi Gruppi"
+    no_ads_for_personal_messages: "Non mostrare pubblicità durante la visualizzazione dei messaggi personali"
+    no_ads_for_restricted_categories: "Non mostrare pubblicità nelle categorie che non sono visibili a tutti"
+    no_ads_for_groups: "Non mostrare pubblicità agli utenti in questi gruppi."
     no_ads_for_categories: "Non mostrare pubblicità sulla lista degli Argomenti e sulle pagine degli Argomenti che appartengono a queste categorie."
     no_ads_for_tags: "Non mostrare annunci sull'elenco degli argomenti e sulle pagine degli argomenti che appartengono a queste Etichette."
+    house_ads_after_nth_post: 'Se è impostata la pubblicità "intra-messaggi", mostra un annuncio ogni N messaggi, dove N è il numero di messaggi.'
+    house_ads_frequency: "Se sono configurate altre reti di annunci perché mostrino gli annunci in uno slot, quanto spesso tali pubblicità devono apparire, in percentuale."
+    ads_txt: "Contenuto del file ads.txt. Ulteriori dettagli sono disponibili a <a href=\"https://support.google.com/adsense/answer/7532444?hl=it\" target=\"_blank\">questa pagina della documentazione Google AdSense</a>"
     dfp_publisher_id: "Inserisci il codice di rete Google Ad Manager (noto precedentemente come DFP), che si trova nelle tue impostazioni di rete."
+    dfp_publisher_id_mobile: "(Facoltativo) Se vuoi usare un Ad Manager publisher id differente per la versione mobile del sito, inseriscilo qui. Lascia in bianco per usare dfp_publisher_id sul mobile."
     dfp_through_trust_level: "Mostra i tuoi annunci agli utenti in base ai livelli di esperienza. Gli utenti con livello di esperienza superiore a questo valore non vedranno gli annunci."
     dfp_topic_list_top_code: "Inserisci il Codice univoco dell'annuncio da mostrare sopra le liste argomenti. E' il codice breve (massimo 100 caratteri) dato all'annuncio quando è stato creato, non il codice JavaScript."
     dfp_topic_list_top_ad_sizes: "Scegli la dimensione dell'annuncio sopra le liste degli argomenti."
@@ -20,6 +26,7 @@ it:
     dfp_target_topic_list_top_value_code: "Inserisci i valori personalizzati di targeting - Livello inventario"
     dfp_topic_above_post_stream_code: "Inserisci il Codice univoco dell'annuncio da mostrare sopra il titolo sulla pagina dell'argomento. E' il codice breve (massimo 100 caratteri) dato all'annuncio quando è stato creato, non il codice JavaScript."
     dfp_topic_above_post_stream_ad_sizes: "Scegli la dimensione dell'annuncio in cima alla pagina dell'argomento."
+    dfp_mobile_topic_above_post_stream_code: "Inserisci il Codice univoco del ad unit da mostrare sopra il titolo dell'argomento sulla pagina degli argomenti nella vista mobile. È un codice breve (max 100 caratteri) dato alla ad unit quando è stata creata, non il codice JavaScript."
     dfp_mobile_topic_above_post_stream_ad_sizes: "Scegli la dimensione dell'annuncio per l'unità posta in cima alla pagina dell'argomento per la visualizzazione su telefoni."
     dfp_target_topic_above_post_stream_key_code: "Inserisci le chiavi personalizzate di targeting - Livello inventario"
     dfp_target_topic_above_post_stream_value_code: "Inserisci i valori personalizzati di targeting - Livello inventario"
@@ -96,3 +103,5 @@ it:
     carbonads_through_trust_level: "Mostra gli annunci agli utenti in base ai loro livelli di esperienza. Gli utenti con livello di esperienza superiore a questo valore non vedranno gli annunci."
     carbonads_topic_list_top_enabled: "Mostra un annuncio sopra l'elenco degli argomenti"
     carbonads_above_post_stream_enabled: "Mostra un annuncio sopra la lista dei messaggi"
+    adbutler_nth_post: "Mostra un annuncio dopo ogni post N, dove N è questo valore"
+    adbutler_through_trust_level: "Mostra i tuoi annunci agli utenti in base al Livello Esperienza. Gli utenti con un Livello Esperienza superiore a questo valore non vedranno annunci"

@@ -13,10 +13,33 @@ bs_BA:
     admin:
       site_settings:
         categories:
-          amazon_plugin: 'Amazon'
+          ad_plugin: 'Dodatak za oglase'
+          dfp_plugin: 'DFP / Upravitelj oglasa'
+          adsense_plugin: 'AdSense'
+          amazon_plugin: 'Amazona'
+          codefund_plugin: 'CodeFund'
+          carbonads_plugin: 'Carbon Oglasi'
       adplugin:
         house_ads:
-          new: "New"
+          title: "Kućni oglasi"
+          new: "Novo"
           settings: "Postavke"
+          new_name: "Novi Kućni Oglas"
           save: "Sačuvaj"
           delete: "Delete"
+          description: "Definirajte vlastite oglase i gdje ih treba prikazati."
+          get_started: "Počnite sa kreiranjem novog oglasa."
+          filter_placeholder: "Izaberi oglase ..."
+          more_settings: "Više Postavka"
+          topic_list_top:
+            title: "Top topic list top ads"
+            description: "Oglasi koji se prikazuju na vrhu liste tema."
+          topic_above_post_stream:
+            title: "Tema iznad post stream-a"
+            description: "Oglasi koji se prikazuju iznad naslova teme na stranici teme."
+          topic_above_suggested:
+            title: "Predložena tema"
+            description: "Oglasi koji se prikazuju nakon posljednjeg posta u temi, iznad predloženih tema."
+          post_bottom:
+            title: "Između postova"
+            description: "Oglasi koji se prikazuju između postova, nakon svakog N postova."

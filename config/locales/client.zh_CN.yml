@@ -19,6 +19,7 @@ zh_CN:
           amazon_plugin: '亚马逊网站联盟'
           codefund_plugin: 'CodeFund'
           carbonads_plugin: 'Carbon Ads'
+          adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
           title: "自定义广告"

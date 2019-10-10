@@ -19,6 +19,7 @@ ur:
           amazon_plugin: 'اَیمَیزَون'
           codefund_plugin: 'کَوڈفَنڈ'
           carbonads_plugin: 'کاربن اشتھارات'
+          adbutler_plugin: 'اَیڈ بَٹلَر'
       adplugin:
         house_ads:
           title: "ہائوز اشتھارات"

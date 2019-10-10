@@ -8,6 +8,7 @@
 he:
   site_settings:
     no_ads_for_personal_messages: "לא להציג פרסומות בעת צפייה בהודעות אישיות"
+    no_ads_for_restricted_categories: "לא להציג פרסומות בקטגוריות שאינן חשופות לכולם."
     no_ads_for_groups: "לא להציג פרסומות בפני משתמשים מהקבוצות האלו."
     no_ads_for_categories: "לא להציג פרסומות ברשימת הנושאים ובעמודי נושאים ששייכים לקטגוריות האלו."
     no_ads_for_tags: "לא להציג פרסומות ברשימת הנושאים ובעמודי נושאים ששייכים לתגיות האלו."
@@ -102,3 +103,15 @@ he:
     carbonads_through_trust_level: "הציגו את הפרסומות שלכם למשתמשים בהתאם לרמת האמון. משתמשים עם רמת אמון גבוהה יותר מערך זה לא יראו פרסומות."
     carbonads_topic_list_top_enabled: "הצגת פרסומת מעל לרשימת הנושאים"
     carbonads_above_post_stream_enabled: "הצגת פרסומת מעל שרשור הפוסט"
+    adbutler_publisher_id: "מזהה מפיץ AdButler"
+    adbutler_mobile_topic_list_top_zone_id: "מזהה Zone למיקום עליון ברשימת נושאים בנייד"
+    adbutler_mobile_topic_above_post_stream_zone_id: "מזהה Zone למיקום מעל תזרים פוסט בנייד"
+    adbutler_mobile_post_bottom_zone_id: "מזהה Zone למיקום מתחת לפוסט בנייד"
+    adbutler_mobile_topic_above_suggested_zone_id: "מזהה Zone למיקום מעל להצעות נושאים בנייד"
+    adbutler_topic_list_top_zone_id: "מזהה Zone למיקום עליון ברשימת נושאים"
+    adbutler_topic_above_post_stream_zone_id: "מזהה Zone למיקום מעל תזרים פוסט"
+    adbutler_post_bottom_zone_id: "מזהה Zone למיקום מתחת לפוסט"
+    adbutler_topic_above_suggested_zone_id: "מזהה Zone למיקום מעל להצעות נושאים"
+    adbutler_nth_post: "להציג פרסומת לאחר כל N פוסטים, כאשר N הוא הערך הזה."
+    adbutler_through_trust_level: "הצגת הפרסומות שלך למשתמשים בהתאם לדרגת האמון. משתמשים עם דרגת אמון שעולה על ערך זה לא יראו פרסומות."
+    adbutler_adserver_hostname: "שם המארח ממנו AdButler מגיש לך את הפרסומות"
