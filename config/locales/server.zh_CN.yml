@@ -107,5 +107,6 @@ zh_CN:
     adbutler_mobile_topic_list_top_zone_id: "移动端主题列表顶部的Zone ID"
     adbutler_mobile_topic_above_post_stream_zone_id: "移动端主题帖子流上端的Zone ID"
     adbutler_mobile_post_bottom_zone_id: "移动端帖子底部的Zone ID"
+    adbutler_mobile_topic_above_suggested_zone_id: "移动端建议区域上方的Zone ID"
     adbutler_nth_post: "每这么多条帖子展示一条广告"
     adbutler_through_trust_level: "基于信任等级向用户展示广告。高于此等级的用户不会看到广告。"
