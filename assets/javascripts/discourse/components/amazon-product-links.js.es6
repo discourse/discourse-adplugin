@@ -15,10 +15,12 @@ if (
   data["topic-list-top"]["user_input"] =
     Discourse.SiteSettings.amazon_topic_list_top_src_code;
   data["topic-list-top"]["amazon_width"] = parseInt(
-    Discourse.SiteSettings.amazon_topic_list_top_ad_width_code
+    Discourse.SiteSettings.amazon_topic_list_top_ad_width_code,
+    10
   );
   data["topic-list-top"]["amazon_height"] = parseInt(
-    Discourse.SiteSettings.amazon_topic_list_top_ad_height_code
+    Discourse.SiteSettings.amazon_topic_list_top_ad_height_code,
+    10
   );
 }
 
@@ -29,10 +31,12 @@ if (
   data["topic-list-top"]["user_input_mobile"] =
     Discourse.SiteSettings.amazon_mobile_topic_list_top_src_code;
   data["topic-list-top"]["mobile_amazon_width"] = parseInt(
-    Discourse.SiteSettings.amazon_mobile_topic_list_top_ad_width_code
+    Discourse.SiteSettings.amazon_mobile_topic_list_top_ad_width_code,
+    10
   );
   data["topic-list-top"]["mobile_amazon_height"] = parseInt(
-    Discourse.SiteSettings.amazon_mobile_topic_list_top_ad_height_code
+    Discourse.SiteSettings.amazon_mobile_topic_list_top_ad_height_code,
+    10
   );
 }
 
@@ -43,10 +47,12 @@ if (
   data["topic-above-post-stream"]["user_input"] =
     Discourse.SiteSettings.amazon_topic_above_post_stream_src_code;
   data["topic-above-post-stream"]["amazon_width"] = parseInt(
-    Discourse.SiteSettings.amazon_topic_above_post_stream_ad_width_code
+    Discourse.SiteSettings.amazon_topic_above_post_stream_ad_width_code,
+    10
   );
   data["topic-above-post-stream"]["amazon_height"] = parseInt(
-    Discourse.SiteSettings.amazon_topic_above_post_stream_ad_height_code
+    Discourse.SiteSettings.amazon_topic_above_post_stream_ad_height_code,
+    10
   );
 }
 
@@ -57,10 +63,12 @@ if (
   data["topic-above-post-stream"]["user_input_mobile"] =
     Discourse.SiteSettings.amazon_mobile_topic_above_post_stream_src_code;
   data["topic-above-post-stream"]["mobile_amazon_width"] = parseInt(
-    Discourse.SiteSettings.amazon_mobile_topic_above_post_stream_ad_width_code
+    Discourse.SiteSettings.amazon_mobile_topic_above_post_stream_ad_width_code,
+    10
   );
   data["topic-above-post-stream"]["mobile_amazon_height"] = parseInt(
-    Discourse.SiteSettings.amazon_mobile_topic_above_post_stream_ad_height_code
+    Discourse.SiteSettings.amazon_mobile_topic_above_post_stream_ad_height_code,
+    10
   );
 }
 
@@ -71,10 +79,12 @@ if (
   data["topic-above-suggested"]["user_input"] =
     Discourse.SiteSettings.amazon_topic_above_suggested_src_code;
   data["topic-above-suggested"]["amazon_width"] = parseInt(
-    Discourse.SiteSettings.amazon_topic_above_suggested_ad_width_code
+    Discourse.SiteSettings.amazon_topic_above_suggested_ad_width_code,
+    10
   );
   data["topic-above-suggested"]["amazon_height"] = parseInt(
-    Discourse.SiteSettings.amazon_topic_above_suggested_ad_height_code
+    Discourse.SiteSettings.amazon_topic_above_suggested_ad_height_code,
+    10
   );
 }
 
@@ -85,10 +95,12 @@ if (
   data["topic-above-suggested"]["user_input_mobile"] =
     Discourse.SiteSettings.amazon_mobile_topic_above_suggested_src_code;
   data["topic-above-suggested"]["mobile_amazon_width"] = parseInt(
-    Discourse.SiteSettings.amazon_mobile_topic_above_suggested_ad_width_code
+    Discourse.SiteSettings.amazon_mobile_topic_above_suggested_ad_width_code,
+    10
   );
   data["topic-above-suggested"]["mobile_amazon_height"] = parseInt(
-    Discourse.SiteSettings.amazon_mobile_topic_above_suggested_ad_height_code
+    Discourse.SiteSettings.amazon_mobile_topic_above_suggested_ad_height_code,
+    10
   );
 }
 
@@ -99,10 +111,12 @@ if (
   data["post-bottom"]["user_input"] =
     Discourse.SiteSettings.amazon_post_bottom_src_code;
   data["post-bottom"]["amazon_width"] = parseInt(
-    Discourse.SiteSettings.amazon_post_bottom_ad_width_code
+    Discourse.SiteSettings.amazon_post_bottom_ad_width_code,
+    10
   );
   data["post-bottom"]["amazon_height"] = parseInt(
-    Discourse.SiteSettings.amazon_post_bottom_ad_height_code
+    Discourse.SiteSettings.amazon_post_bottom_ad_height_code,
+    10
   );
 }
 
@@ -113,10 +127,12 @@ if (
   data["post-bottom"]["user_input_mobile"] =
     Discourse.SiteSettings.amazon_mobile_post_bottom_src_code;
   data["post-bottom"]["mobile_amazon_width"] = parseInt(
-    Discourse.SiteSettings.amazon_mobile_post_bottom_ad_width_code
+    Discourse.SiteSettings.amazon_mobile_post_bottom_ad_width_code,
+    10
   );
   data["post-bottom"]["mobile_amazon_height"] = parseInt(
-    Discourse.SiteSettings.amazon_mobile_post_bottom_ad_height_code
+    Discourse.SiteSettings.amazon_mobile_post_bottom_ad_height_code,
+    10
   );
 }
 
@@ -180,6 +196,6 @@ export default AdComponent.extend({
       return true;
     }
 
-    return this.isNthPost(parseInt(this.siteSettings.amazon_nth_post_code));
+    return this.isNthPost(parseInt(this.siteSettings.amazon_nth_post_code, 10));
   }
 });

@@ -14,7 +14,7 @@ function parseAdWidth(value) {
   if (value === "responsive") {
     return "auto";
   }
-  const w = parseInt(value.substring(0, 3).trim());
+  const w = parseInt(value.substring(0, 3).trim(), 10);
   if (isNaN(w)) {
     return "auto";
   } else {
@@ -26,7 +26,7 @@ function parseAdHeight(value) {
   if (value === "responsive") {
     return "auto";
   }
-  const h = parseInt(value.substring(4, 7).trim());
+  const h = parseInt(value.substring(4, 7).trim(), 10);
   if (isNaN(h)) {
     return "auto";
   } else {
@@ -225,6 +225,8 @@ export default AdComponent.extend({
       return true;
     }
 
-    return this.isNthPost(parseInt(this.siteSettings.adsense_nth_post_code));
+    return this.isNthPost(
+      parseInt(this.siteSettings.adsense_nth_post_code, 10)
+    );
   }
 });

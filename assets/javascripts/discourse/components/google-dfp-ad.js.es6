@@ -127,8 +127,8 @@ function getWidthAndHeight(placement, settings, isMobile) {
   }
 
   const sizeObj = {
-    width: parseInt(splitWidthInt(size)),
-    height: parseInt(splitHeightInt(size))
+    width: parseInt(splitWidthInt(size), 10),
+    height: parseInt(splitHeightInt(size), 10)
   };
 
   if (!isNaN(sizeObj.width) && !isNaN(sizeObj.height)) {
@@ -328,7 +328,7 @@ export default AdComponent.extend({
       return true;
     }
 
-    return this.isNthPost(parseInt(this.siteSettings.dfp_nth_post_code));
+    return this.isNthPost(parseInt(this.siteSettings.dfp_nth_post_code, 10));
   },
 
   // 3 second delay between calls to refresh ads in a component.

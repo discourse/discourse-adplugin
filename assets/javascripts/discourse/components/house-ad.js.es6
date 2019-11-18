@@ -33,7 +33,7 @@ export default AdComponent.extend({
     }
 
     return this.isNthPost(
-      parseInt(this.site.get("house_creatives.settings.after_nth_post"))
+      parseInt(this.site.get("house_creatives.settings.after_nth_post"), 10)
     );
   },
 

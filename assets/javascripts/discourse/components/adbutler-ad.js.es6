@@ -142,6 +142,6 @@ export default AdComponent.extend({
     if (!postNumber) {
       return true;
     }
-    return this.isNthPost(parseInt(this.siteSettings.adbutler_nth_post));
+    return this.isNthPost(parseInt(this.siteSettings.adbutler_nth_post, 10));
   }
 });

@@ -136,6 +136,6 @@ export default AdComponent.extend({
       return true;
     }
 
-    return this.isNthPost(parseInt(this.siteSettings.codefund_nth_post));
+    return this.isNthPost(parseInt(this.siteSettings.codefund_nth_post, 10));
   }
 });
