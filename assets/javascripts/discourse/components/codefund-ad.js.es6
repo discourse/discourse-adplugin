@@ -3,6 +3,7 @@ import {
   default as computed,
   observes
 } from "ember-addons/ember-computed-decorators";
+import { Promise } from "rsvp";
 
 let _loaded = false,
   _promise = null;
