@@ -18,7 +18,8 @@ acceptance("DFP Ads", {
     dfp_mobile_post_bottom_ad_size: "300*250 - medium rectangle",
     dfp_nth_post_code: 6,
     dfp_topic_above_post_stream_code: "list_top_ad_unit",
-    dfp_topic_above_post_stream_ad_sizes: "728*90 - leaderboard"
+    dfp_topic_above_post_stream_ad_sizes: "728*90 - leaderboard",
+    content_security_policy: false
   },
   site: {
     house_creatives: {
