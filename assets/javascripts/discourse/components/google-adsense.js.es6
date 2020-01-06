@@ -135,6 +135,10 @@ export default AdComponent.extend({
   },
 
   _triggerAds() {
+    if (Ember.testing) {
+      return; // Don't load external JS during tests
+    }
+
     this.set("adRequested", true);
     loadAdsense().then(function() {
       const adsbygoogle = window.adsbygoogle || [];

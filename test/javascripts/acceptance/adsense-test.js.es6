@@ -18,8 +18,7 @@ acceptance("AdSense", {
     adsense_mobile_post_bottom_ad_size: "300*250 - medium rectangle",
     adsense_nth_post_code: 6,
     adsense_topic_above_post_stream_code: "above_post_stream_ad_unit",
-    adsense_topic_above_post_stream_ad_sizes: "728*90 - leaderboard",
-    content_security_policy: false
+    adsense_topic_above_post_stream_ad_sizes: "728*90 - leaderboard"
   },
   site: {
     house_creatives: {

@@ -367,6 +367,10 @@ export default AdComponent.extend({
 
   @on("didInsertElement")
   _initGoogleDFP() {
+    if (Ember.testing) {
+      return; // Don't load external JS during tests
+    }
+
     if (!this.get("showAd")) {
       return;
     }
