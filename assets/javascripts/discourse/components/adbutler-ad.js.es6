@@ -72,6 +72,10 @@ export default AdComponent.extend({
   },
 
   _triggerAds() {
+    if (Ember.testing) {
+      return; // Don't load external JS during tests
+    }
+
     loadAdbutler().then(
       function() {
         if (this.divs.length > 0) {
