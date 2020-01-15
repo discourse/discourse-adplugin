@@ -163,6 +163,7 @@ dfp_plugin:
     default: "728*90 - leaderboard"
     type: list
     choices: &dfp_choices
+      - fluid
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
