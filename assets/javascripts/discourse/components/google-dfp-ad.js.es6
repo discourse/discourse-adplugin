@@ -127,7 +127,7 @@ function getWidthAndHeight(placement, settings, isMobile) {
   }
 
   if (size === "fluid") {
-    return { width: 'fluid', height: 'fluid' };
+    return { width: "fluid", height: "fluid" };
   }
 
   const sizeObj = {
@@ -285,14 +285,14 @@ export default AdComponent.extend({
 
   @computed("width", "height")
   adWrapperStyle(w, h) {
-    if (w !== 'fluid') {
+    if (w !== "fluid") {
       return `width: ${w}px; height: ${h}px;`.htmlSafe();
     }
   },
 
   @computed("width")
   adTitleStyleMobile(w) {
-    if (w !== 'fluid') {
+    if (w !== "fluid") {
       return `width: ${w}px;`.htmlSafe();
     }
   },
