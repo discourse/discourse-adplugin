@@ -5,4 +5,37 @@
 # To work with us on translations, join this project:
 # https://www.transifex.com/projects/p/discourse-org/
 
-sv: {}
+sv:
+  site_settings:
+    no_ads_for_personal_messages: "Visa inte annonser när du läser personliga meddelanden"
+    no_ads_for_restricted_categories: "Visa inte annonser i kategorier som inte är synliga för alla."
+    no_ads_for_groups: "Visa inte annonser för användare i dessa grupper."
+    no_ads_for_categories: "Visa inte annonser på ämneslista och ämnesidor som tillhör dessa kategorier."
+    no_ads_for_tags: "Visa inte annonser på ämneslista och ämnesidor som tillhör dessa etiketter."
+    house_ads_after_nth_post: 'Om husannonser "Mellan inlägg" har definierats, visa en annons efter var N:e inlägg, där N är detta värde.'
+    house_ads_frequency: "Hur ofta husannonser ska visas, uttryckt i procent, om andra annonsnätverk har konfigurerats för att visas på en annonsplats."
+    ads_txt: "Innehållet i din ads.txt-fil. Mer information finns på <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>den här Google AdSense-hjälpsidan</a>."
+    dfp_publisher_id: "Ange din nätverkskod för Google Ad Manager (tidigare kallad DFP). Den finns i dina nätverksinställningar."
+    dfp_publisher_id_mobile: "(Valfritt) Om du vill använda ett annat utgivar-ID för Ad Manager för webbplatsens mobila version anger du det här. Lämna tomt om du vill använda dfp_publisher_id på mobilen."
+    dfp_through_trust_level: "Visa dina annonser för användare baserat på förtroendenivåer. Användare med en förtroendenivå som är högre än detta värde ser inga annonser."
+    dfp_topic_above_suggested_ad_sizes: "Välj din annonsstorlek för annonsenheten efter det sista inlägget i ett ämne."
+    dfp_mobile_topic_above_suggested_ad_sizes: "Välj din annonsstorlek för annonsenheten efter det sista inlägget i ett ämne i mobilvyn."
+    adsense_through_trust_level: "Visa dina annonser för användare baserat på förtroendenivåer. Användare med en förtroendenivå som är högre än detta värde ser inga annonser."
+    amazon_through_trust_level: "Visa dina annonser för användare baserat på förtroendenivåer. Användare med en förtroendenivå som är högre än detta värde ser inga annonser."
+    amazon_topic_list_top_ad_width_code: "Ange din annonsbredd"
+    amazon_topic_list_top_ad_height_code: "Ange din annonshöjd"
+    amazon_mobile_topic_list_top_ad_width_code: "Ange din annonsbredd (mobil)"
+    amazon_mobile_topic_list_top_ad_height_code: "Ange din annonshöjd (mobil)"
+    amazon_topic_above_post_stream_ad_width_code: "Ange din annonsbredd"
+    amazon_topic_above_post_stream_ad_height_code: "Ange din annonshöjd"
+    amazon_mobile_topic_above_post_stream_ad_width_code: "Ange din annonsbredd (mobil)"
+    amazon_mobile_topic_above_post_stream_ad_height_code: "Ange din annonshöjd (mobil)"
+    amazon_topic_above_suggested_ad_width_code: "Ange din annonsbredd"
+    amazon_topic_above_suggested_ad_height_code: "Ange din annonshöjd"
+    amazon_mobile_topic_above_suggested_ad_width_code: "Ange din annonsbredd (mobil)"
+    amazon_mobile_topic_above_suggested_ad_height_code: "Ange din annonshöjd (mobil)"
+    amazon_post_bottom_ad_width_code: "Ange din annonsbredd"
+    amazon_post_bottom_ad_height_code: "Ange din annonshöjd"
+    amazon_mobile_post_bottom_ad_width_code: "Ange din annonsbredd (mobil)"
+    amazon_mobile_post_bottom_ad_height_code: "Ange din annonshöjd (mobil)"
+    carbonads_through_trust_level: "Visa dina annonser för användare baserat på förtroendenivåer. Användare med en förtroendenivå som är högre än detta värde ser inga annonser."

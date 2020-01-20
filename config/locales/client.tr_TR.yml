@@ -6,14 +6,41 @@
 # https://www.transifex.com/projects/p/discourse-org/
 
 tr_TR:
+  js:
+    adplugin:
+      advertisement_label: 'REKLAM'
   admin_js:
     admin:
       site_settings:
         categories:
+          ad_plugin: 'Reklam Plugini'
+          dfp_plugin: 'DFP/Reklam Yöneticisi'
+          adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
+          codefund_plugin: 'CodeFund'
+          carbonads_plugin: 'Carbon Reklamları'
+          adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
+          title: "House Ads"
           new: "Yeni"
           settings: "Ayarlar"
+          new_name: "New House Ad"
           save: "Kaydet"
           delete: "Sil"
+          description: "Kendi reklamlarınızı ve nerede gösterileceklerini tanımlayın."
+          get_started: "Yeni reklam oluşturmaya başlayın."
+          filter_placeholder: "Reklamları seçin..."
+          more_settings: "Gelişmiş Ayarlar"
+          topic_list_top:
+            title: "En popüler reklamların konu listesi"
+            description: "Sayfaların konu listesinin en üstünde gözükecek reklamlar."
+          topic_above_post_stream:
+            title: "Yayın akışının üzerindeki konu"
+            description: "Konu sayfasında bir konunun başlığının üzerinde gösterilecek reklamlar."
+          topic_above_suggested:
+            title: "Yukarıdaki konu önerildi"
+            description: "Bir konudaki son gönderiden sonra, önerilen konuların üstünde gösterilecek reklamlar."
+          post_bottom:
+            title: "Gönderiler arasında"
+            description: "Her N gönderiden sonra, gönderiler arasında gösterilecek reklamlar."
