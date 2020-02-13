@@ -30,7 +30,6 @@ el:
     dfp_mobile_post_bottom_ad_sizes: "Choose your ad size for the ad unit shown in between posts on mobile view."
     dfp_target_post_bottom_key_code: "Input custom targeting keys - inventory Level"
     dfp_target_post_bottom_value_code: "Input custom targeting values - inventory Level"
-    adsense_publisher_code: "Your publisher ID. Enter only the number, excluding 'pub-'."
     adsense_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
     adsense_topic_list_top_code: "Enter code of the ad unit to display at topic list top location. This is the number assigned to the ad unit, not the JavaScript code."
     adsense_mobile_topic_list_top_code: "Enter code of the ad unit to display mobile ads at topic list top location. This is the number assigned to the ad unit, not the JavaScript code."

@@ -13,7 +13,6 @@ pt_BR:
     house_ads_after_nth_post: 'Se anúncios internos "Entre postagens" forem definidos, mostrar um anúncio após cada N postagens, em que N é este valor.'
     house_ads_frequency: "Se outras redes de anúncios estiverem configuradas para serem exibidas em um espaço de anúncio, com que frequência os anúncios internos serão exibidos, como uma porcentagem."
     ads_txt: "Conteúdo do seu arquivo ads.txt. Mais detalhes disponíveis <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>nesta página de ajuda do Google AdSense</a>."
-    dfp_publisher_id: "Insira o código de rede do seu Google Ad Manager (anteriormente chamado de DFP), que é encontrado em suas configurações de rede."
     dfp_publisher_id_mobile: "(Opcional) Se você quer usar um Ad Manager publisher id diferente para a versão mobile do site, coloque aqui. Deixe em branco para usar dfp_publisher_id no mobile."
     dfp_through_trust_level: "Exibir seus anúncios para usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."
     dfp_topic_list_top_code: "Digite o Código único da unidade de anúncio para exibir em cima das listas de tópicos. Este é o código curto (máx. 100 caracteres) dado à unidade de anúncio quando ela foi criada, não o código JavaScript."
@@ -41,7 +40,6 @@ pt_BR:
     dfp_mobile_post_bottom_ad_sizes: "Escolha o tamanho do seu anúncio para a unidade de anúncio exibida entre postagens em dispositivos móveis."
     dfp_target_post_bottom_key_code: "Inserir chaves de segmentação personalizada - nível de inventário"
     dfp_target_post_bottom_value_code: "Inserir valores de segmentação personalizada - Nível de Inventário"
-    adsense_publisher_code: "Seu ID de publicador. Digite apenas o número, excluindo 'pub-'."
     adsense_through_trust_level: "Mostre seus anúncios aos usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."
     adsense_topic_list_top_code: "Insira o código da unidade de anúncio para exibir no topo da lista de tópicos. Este é o número atribuído à unidade de anúncio, não o código JavaScript."
     adsense_mobile_topic_list_top_code: "Insira o código da unidade de anúncio para exibir no topo da lista de tópicos em dispositivos móveis. Este é o número atribuído à unidade de anúncio, não o código JavaScript."

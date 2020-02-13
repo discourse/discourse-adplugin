@@ -15,7 +15,6 @@ zh_CN:
     house_ads_after_nth_post: '当定义了“帖子间”的自定义广告，在每N个帖子后显示一条广告，N为此值。'
     house_ads_frequency: "如果广告位配置其它广告网络，自定义广告的显示频率百分比。"
     ads_txt: "ads.txt 文件的内容。详情于<a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>Google Adsense帮助页面</a>。"
-    dfp_publisher_id: "输入谷歌广告管理器（曾用名 DFP）网络号码，可在广告网络设置中找到。"
     dfp_publisher_id_mobile: "（可选）如果你想为移动端的站点使用一个不一样的广告管理发布商id，在这里输入。留空则在移动端使用dfp_publisher_id。"
     dfp_through_trust_level: "按照信任等级向用户展示广告。高于此等级的用户不会看到广告。"
     dfp_topic_list_top_code: "主页.输入DFP广告代码"
@@ -43,7 +42,6 @@ zh_CN:
     dfp_mobile_post_bottom_ad_sizes: "移动端视图帖子间广告单元大小选择"
     dfp_target_post_bottom_key_code: "输入自定义广告导向键——清单级"
     dfp_target_post_bottom_value_code: "输入自定义广告导向值——清单级"
-    adsense_publisher_code: "输入出版者ID号码，不带 pub-"
     adsense_through_trust_level: "按照信任等级向用户展示广告。高于此等级的用户不会看到广告。"
     adsense_topic_list_top_code: "输入要在主题列表顶部位置显示的广告单元的代码。这是分配给广告单元的编号，非JavaScript代码。"
     adsense_mobile_topic_list_top_code: "输入广告单元的代码，以在主题列表顶部位置显示移动广告。这是分配给广告单元的编号，非JavaScript代码。"
@@ -103,7 +101,6 @@ zh_CN:
     carbonads_through_trust_level: "基于信任等级向用户展示广告。高于此等级的用户不会看到广告。"
     carbonads_topic_list_top_enabled: "在推主题列表以上展示广告"
     carbonads_above_post_stream_enabled: "在贴文流以上展示广告"
-    adbutler_publisher_id: "AdButler Publisher ID"
     adbutler_mobile_topic_list_top_zone_id: "移动端主题列表顶部的Zone ID"
     adbutler_mobile_topic_above_post_stream_zone_id: "移动端主题帖子流上端的Zone ID"
     adbutler_mobile_post_bottom_zone_id: "移动端帖子底部的Zone ID"

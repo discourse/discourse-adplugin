@@ -15,7 +15,6 @@ it:
     house_ads_after_nth_post: 'Se è impostata la pubblicità "intra-messaggi", mostra un annuncio ogni N messaggi, dove N è il numero di messaggi.'
     house_ads_frequency: "Se sono configurate altre reti di annunci perché mostrino gli annunci in uno slot, quanto spesso tali pubblicità devono apparire, in percentuale."
     ads_txt: "Contenuto del file ads.txt. Ulteriori dettagli sono disponibili a <a href=\"https://support.google.com/adsense/answer/7532444?hl=it\" target=\"_blank\">questa pagina della documentazione Google AdSense</a>"
-    dfp_publisher_id: "Inserisci il codice di rete Google Ad Manager (noto precedentemente come DFP), che si trova nelle tue impostazioni di rete."
     dfp_publisher_id_mobile: "(Facoltativo) Se vuoi usare un Ad Manager publisher id differente per la versione mobile del sito, inseriscilo qui. Lascia in bianco per usare dfp_publisher_id sul mobile."
     dfp_through_trust_level: "Mostra i tuoi annunci agli utenti in base ai livelli di esperienza. Gli utenti con livello di esperienza superiore a questo valore non vedranno gli annunci."
     dfp_topic_list_top_code: "Inserisci il Codice univoco dell'annuncio da mostrare sopra le liste argomenti. E' il codice breve (massimo 100 caratteri) dato all'annuncio quando è stato creato, non il codice JavaScript."
@@ -43,7 +42,6 @@ it:
     dfp_mobile_post_bottom_ad_sizes: "Scegli la dimensione dell'annuncio per il gruppo annunci mostrato tra i messaggi per la visualizzazione su telefono."
     dfp_target_post_bottom_key_code: "Inserisci le chiavi personalizzate di targeting - Livello inventario"
     dfp_target_post_bottom_value_code: "Inserisci i valori personalizzati di targeting - Livello inventario"
-    adsense_publisher_code: "Il tuo publisher ID. Inserisci solo il numero, escludendo 'pub-'."
     adsense_through_trust_level: "Mostra i tuoi annunci agli utenti in base ai livelli di esperienza. Gli utenti con livello di esperienza superiore a questo valore non vedranno gli annunci."
     adsense_topic_list_top_code: "Inserisci il codice del gruppo annunci da mostrare in cima alla lista degli argomenti. E' il numero assegnato al gruppo annunci, non il codice JavaScript."
     adsense_mobile_topic_list_top_code: "Inserisci il codice del gruppo annunci da mostrare in cima alla lista degli argomenti per la visualizzazione su telefoni. E' il numero assegnato all'annuncio, non il codice JavaScript."

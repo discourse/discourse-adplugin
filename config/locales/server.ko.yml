@@ -30,7 +30,6 @@ ko:
     dfp_mobile_post_bottom_ad_sizes: "모바일뷰에서 포스트 사이에 표시될 광고 유닛의 광고 사이즈를 선택하세요"
     dfp_target_post_bottom_key_code: "커스텀 타게팅 키를 입력하세요 - 인벤토리 레벨"
     dfp_target_post_bottom_value_code: "커스텀 타게팅 값을 입력하세요 - 인벤토리 레벨"
-    adsense_publisher_code: "퍼블리셔 ID를 입력하세요. 'pub-'를 제외한 숫자만 입력하세요."
     adsense_through_trust_level: "사용자 레벨에 맞추어 광고를 표시합니다. 지정된 레벨 이상의 사용자에게는 광고가 보이지 않습니다."
     adsense_topic_list_top_ad_sizes: "광고 사이즈를 선택하세요"
     adsense_mobile_topic_list_top_ad_size: "광고 사이즈를 선택하세요"
