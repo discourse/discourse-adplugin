@@ -11,4 +11,6 @@ id:
       adplugin:
         house_ads:
           new: "Baru"
+          settings: "Pengaturan"
+          save: "Simpan"
           delete: "Hapus"

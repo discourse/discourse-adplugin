@@ -103,6 +103,7 @@ es:
     carbonads_through_trust_level: "Mostrar tus anuncios a los usuarios basado en el nivel de confianza. Los usuarios con un nivel de confianza mayor a este valor no verán publicidades."
     carbonads_topic_list_top_enabled: "Mostrar un anuncio arriba de la lista de temas"
     carbonads_above_post_stream_enabled: "Mostrar un anuncio arriba de la lista de publicaciones"
+    adbutler_publisher_id: "ID de AdButler Publisher. NOTA: Podrías ser necesario que actualices la configuración del 'script src de política de seguridad de contenido'. Visita <a href='https://meta.discourse.org/t/33734' target='_blank'>este tema</a> para leer las últimas instrucciones."
     adbutler_mobile_topic_list_top_zone_id: "ID de Zone para la parte superior de la lista de temas en vista móvil"
     adbutler_mobile_topic_above_post_stream_zone_id: "ID de Zone para el tema arriba de la lista de publicaciones en vista móvil"
     adbutler_mobile_post_bottom_zone_id: "ID de Zone para la parte inferior de la publicación en vista móvil"
