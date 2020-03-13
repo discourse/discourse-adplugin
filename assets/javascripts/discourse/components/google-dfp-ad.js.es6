@@ -213,7 +213,7 @@ function loadGoogle() {
   // The boilerplate code
   var dfpSrc =
     ("https:" === document.location.protocol ? "https:" : "http:") +
-    "//www.googletagservices.com/tag/js/gpt.js";
+    "//securepubads.g.doubleclick.net/tag/js/gpt.js";
   _promise = loadScript(dfpSrc, { scriptTag: true }).then(function() {
     _loaded = true;
     if (window.googletag === undefined) {
