@@ -1,8 +1,5 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import {
-  default as computed,
-  observes
-} from "ember-addons/ember-computed-decorators";
+import discourseComputed, { observes } from "discourse-common/utils/decorators";
 
 const adConfig = Ember.Object.create({
   "google-adsense": {
@@ -85,7 +82,7 @@ export default AdComponent.extend({
    * For a given ad placement and optionally a post number if in between posts,
    * list all ad network names that are configured to show there.
    */
-  @computed("placement", "postNumber")
+  @discourseComputed("placement", "postNumber")
   availableAdTypes(placement, postNumber) {
     let types = [];
     const houseAds = this.site.get("house_creatives"),
@@ -167,7 +164,7 @@ export default AdComponent.extend({
    * in the given ad placement. It handles alternating between house ads
    * and other ad networks.
    */
-  @computed("placement", "availableAdTypes", "needsUpdate")
+  @discourseComputed("placement", "availableAdTypes", "needsUpdate")
   adComponents(placement, availableAdTypes) {
     if (
       !availableAdTypes.includes("house-ad") ||

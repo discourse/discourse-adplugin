@@ -1,4 +1,4 @@
-import computed from "ember-addons/ember-computed-decorators";
+import discourseComputed from "discourse-common/utils/decorators";
 
 export default Ember.Component.extend({
   router: Ember.inject.service(),
@@ -23,7 +23,7 @@ export default Ember.Component.extend({
     "router.currentRoute.parent.attributes.category.read_restricted"
   ),
 
-  @computed(
+  @discourseComputed(
     "router.currentRoute.attributes.__type",
     "router.currentRoute.attributes.id"
   )
@@ -33,12 +33,12 @@ export default Ember.Component.extend({
     }
   },
 
-  @computed("router.currentRoute.parent.attributes.archetype")
+  @discourseComputed("router.currentRoute.parent.attributes.archetype")
   isPersonalMessage(topicType) {
     return topicType === "private_message";
   },
 
-  @computed("currentUser.groups")
+  @discourseComputed("currentUser.groups")
   showToGroups(groups) {
     const currentUser = Discourse.User.current();
 
@@ -67,7 +67,7 @@ export default Ember.Component.extend({
     return !currentGroups.any(g => noAdsGroups.includes(g));
   },
 
-  @computed(
+  @discourseComputed(
     "currentCategoryId",
     "topicTagsDisableAds",
     "topicListTag",

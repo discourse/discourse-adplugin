@@ -1,8 +1,5 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import {
-  default as computed,
-  observes
-} from "ember-addons/ember-computed-decorators";
+import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import loadScript from "discourse/lib/load-script";
 
 let _loaded = false,
@@ -173,41 +170,41 @@ export default AdComponent.extend({
     }
   },
 
-  @computed("ad_width")
+  @discourseComputed("ad_width")
   isResponsive(adWidth) {
     return adWidth === "auto";
   },
 
-  @computed("placement", "showAd")
+  @discourseComputed("placement", "showAd")
   classForSlot(placement, showAd) {
     return showAd ? `adsense-${placement}`.htmlSafe() : "";
   },
 
-  @computed("isResponsive")
+  @discourseComputed("isResponsive")
   autoAdFormat(isResponsive) {
     return isResponsive ? "auto".htmlSafe() : false;
   },
 
-  @computed("ad_width", "ad_height", "isResponsive")
+  @discourseComputed("ad_width", "ad_height", "isResponsive")
   adWrapperStyle(w, h, isResponsive) {
     return (isResponsive ? "" : `width: ${w}; height: ${h};`).htmlSafe();
   },
 
-  @computed("adWrapperStyle", "isResponsive")
+  @discourseComputed("adWrapperStyle", "isResponsive")
   adInsStyle(adWrapperStyle, isResponsive) {
     return `display: ${
       isResponsive ? "block" : "inline-block"
     }; ${adWrapperStyle}`.htmlSafe();
   },
 
-  @computed("currentUser.trust_level")
+  @discourseComputed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
       trustLevel && trustLevel > this.siteSettings.adsense_through_trust_level
     );
   },
 
-  @computed(
+  @discourseComputed(
     "showToTrustLevel",
     "showToGroups",
     "showAfterPost",
@@ -223,7 +220,7 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("postNumber")
+  @discourseComputed("postNumber")
   showAfterPost(postNumber) {
     if (!postNumber) {
       return true;

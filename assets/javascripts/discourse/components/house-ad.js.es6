@@ -1,8 +1,5 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import {
-  default as computed,
-  observes
-} from "ember-addons/ember-computed-decorators";
+import discourseComputed, { observes } from "discourse-common/utils/decorators";
 
 const adIndex = {
   topic_list_top: null,
@@ -16,17 +13,17 @@ export default AdComponent.extend({
   classNameBindings: ["adUnitClass"],
   adHtml: "",
 
-  @computed("placement", "showAd")
+  @discourseComputed("placement", "showAd")
   adUnitClass(placement, showAd) {
     return showAd ? `house-${placement}` : "";
   },
 
-  @computed("showToGroups", "showAfterPost", "showOnCurrentPage")
+  @discourseComputed("showToGroups", "showAfterPost", "showOnCurrentPage")
   showAd(showToGroups, showAfterPost, showOnCurrentPage) {
     return showToGroups && showAfterPost && showOnCurrentPage;
   },
 
-  @computed("postNumber")
+  @discourseComputed("postNumber")
   showAfterPost(postNumber) {
     if (!postNumber) {
       return true;

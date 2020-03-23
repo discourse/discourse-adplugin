@@ -1,5 +1,5 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import computed from "ember-addons/ember-computed-decorators";
+import discourseComputed from "discourse-common/utils/decorators";
 
 const data = {
   "topic-list-top": {},
@@ -157,32 +157,32 @@ export default AdComponent.extend({
     this._super();
   },
 
-  @computed("amazon_width", "amazon_height")
+  @discourseComputed("amazon_width", "amazon_height")
   adWrapperStyle(w, h) {
     return `width: ${w}px; height: ${h}px;`.htmlSafe();
   },
 
-  @computed("mobile_amazon_width", "mobile_amazon_height")
+  @discourseComputed("mobile_amazon_width", "mobile_amazon_height")
   adWrapperStyleMobile(w, h) {
     return `width: ${w}px; height: ${h}px;`.htmlSafe();
   },
 
-  @computed("mobile_amazon_width")
+  @discourseComputed("mobile_amazon_width")
   adTitleStyleMobile(w) {
     return `width: ${w}px;`.htmlSafe();
   },
 
-  @computed("user_input")
+  @discourseComputed("user_input")
   userInput(userInput) {
     return `${userInput}`.htmlSafe();
   },
 
-  @computed("user_input_mobile")
+  @discourseComputed("user_input_mobile")
   userInputMobile(userInput) {
     return `${userInput}`.htmlSafe();
   },
 
-  @computed("currentUser.trust_level")
+  @discourseComputed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
       trustLevel &&
@@ -190,7 +190,7 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("postNumber")
+  @discourseComputed("postNumber")
   showAfterPost(postNumber) {
     if (!postNumber) {
       return true;
