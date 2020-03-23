@@ -1,0 +1,10 @@
+{
+  "name": "discourse-adplugin",
+  "version": "1.0.0",
+  "repository": "git@github.com:discourse/discourse-adplugin.git",
+  "author": "Discourse",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-discourse": "1.1.0"
+  }
+}

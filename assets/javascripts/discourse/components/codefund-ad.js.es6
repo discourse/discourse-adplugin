@@ -1,8 +1,5 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import {
-  default as computed,
-  observes
-} from "ember-addons/ember-computed-decorators";
+import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import { Promise } from "rsvp";
 
 let _loaded = false,
@@ -108,14 +105,14 @@ export default AdComponent.extend({
     }
   },
 
-  @computed("currentUser.trust_level")
+  @discourseComputed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
       trustLevel && trustLevel > this.siteSettings.codefund_through_trust_level
     );
   },
 
-  @computed(
+  @discourseComputed(
     "showToTrustLevel",
     "showToGroups",
     "showAfterPost",
@@ -131,7 +128,7 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("postNumber")
+  @discourseComputed("postNumber")
   showAfterPost(postNumber) {
     if (!postNumber) {
       return true;

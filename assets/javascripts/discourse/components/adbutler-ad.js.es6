@@ -1,8 +1,5 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import {
-  default as computed,
-  observes
-} from "ember-addons/ember-computed-decorators";
+import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import loadScript from "discourse/lib/load-script";
 
 const publisherId = Discourse.SiteSettings.adbutler_publisher_id;
@@ -117,7 +114,7 @@ export default AdComponent.extend({
     }
   },
 
-  @computed("currentUser.trust_level")
+  @discourseComputed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
       trustLevel &&
@@ -125,7 +122,7 @@ export default AdComponent.extend({
     );
   },
 
-  @computed(
+  @discourseComputed(
     "showToTrustLevel",
     "showToGroups",
     "showAfterPost",
@@ -141,7 +138,7 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("postNumber")
+  @discourseComputed("postNumber")
   showAfterPost(postNumber) {
     if (!postNumber) {
       return true;

@@ -1,8 +1,5 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import {
-  default as computed,
-  on
-} from "ember-addons/ember-computed-decorators";
+import discourseComputed, { on } from "discourse-common/utils/decorators";
 import loadScript from "discourse/lib/load-script";
 
 let _loaded = false,
@@ -246,7 +243,7 @@ export default AdComponent.extend({
   width: Ember.computed.alias("size.width"),
   height: Ember.computed.alias("size.height"),
 
-  @computed()
+  @discourseComputed
   size() {
     return getWidthAndHeight(
       this.get("placement"),
@@ -255,7 +252,7 @@ export default AdComponent.extend({
     );
   },
 
-  @computed(
+  @discourseComputed(
     "siteSettings.dfp_publisher_id",
     "siteSettings.dfp_publisher_id_mobile",
     "site.mobileView"
@@ -268,7 +265,7 @@ export default AdComponent.extend({
     }
   },
 
-  @computed("placement", "postNumber")
+  @discourseComputed("placement", "postNumber")
   divId(placement, postNumber) {
     let slotNum = getNextSlotNum();
     if (postNumber) {
@@ -278,26 +275,26 @@ export default AdComponent.extend({
     }
   },
 
-  @computed("placement", "showAd")
+  @discourseComputed("placement", "showAd")
   adUnitClass(placement, showAd) {
     return showAd ? `dfp-ad-${placement}` : "";
   },
 
-  @computed("width", "height")
+  @discourseComputed("width", "height")
   adWrapperStyle(w, h) {
     if (w !== "fluid") {
       return `width: ${w}px; height: ${h}px;`.htmlSafe();
     }
   },
 
-  @computed("width")
+  @discourseComputed("width")
   adTitleStyleMobile(w) {
     if (w !== "fluid") {
       return `width: ${w}px;`.htmlSafe();
     }
   },
 
-  @computed(
+  @discourseComputed(
     "publisherId",
     "showToTrustLevel",
     "showToGroups",
@@ -323,14 +320,14 @@ export default AdComponent.extend({
     );
   },
 
-  @computed("currentUser.trust_level")
+  @discourseComputed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
       trustLevel && trustLevel > this.siteSettings.dfp_through_trust_level
     );
   },
 
-  @computed("postNumber")
+  @discourseComputed("postNumber")
   showAfterPost(postNumber) {
     if (!postNumber) {
       return true;
