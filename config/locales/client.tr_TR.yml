@@ -22,10 +22,10 @@ tr_TR:
           adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
-          title: "House Ads"
+          title: "Yerel Reklamlar"
           new: "Yeni"
           settings: "Ayarlar"
-          new_name: "New House Ad"
+          new_name: "Yeni Yerel Reklam"
           save: "Kaydet"
           delete: "Sil"
           description: "Kendi reklamlarınızı ve nerede gösterileceklerini tanımlayın."
