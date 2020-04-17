@@ -35,7 +35,7 @@ For non-docker or local development installation (those with programming experie
 ### Step 1 - Install the Official Discourse Advertising Plugin
 
 
-As seen in a [how-to on meta.discourse.org](https://meta.discourse.org/t/advanced-troubleshooting-with-docker/15927#Example:%20Install%20a%20plugin), simply **add the plugin's repository url to your container's app.yml file**:
+As seen in a [how-to on meta.discourse.org](https://meta.discourse.org/t/install-plugins-in-discourse/19157), simply **add the plugin's repository url to your container's app.yml file**:
 
 ```yml
 hooks:
