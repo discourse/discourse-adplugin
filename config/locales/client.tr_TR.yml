@@ -13,7 +13,7 @@ tr_TR:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Reklam Plugini'
+          ad_plugin: 'Reklam Eklentisi'
           dfp_plugin: 'DFP/Reklam Yöneticisi'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
@@ -22,10 +22,10 @@ tr_TR:
           adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
-          title: "House Ads"
+          title: "Yerel Reklamlar"
           new: "Yeni"
           settings: "Ayarlar"
-          new_name: "New House Ad"
+          new_name: "Yeni Yerel Reklam"
           save: "Kaydet"
           delete: "Sil"
           description: "Kendi reklamlarınızı ve nerede gösterileceklerini tanımlayın."
@@ -33,13 +33,13 @@ tr_TR:
           filter_placeholder: "Reklamları seçin..."
           more_settings: "Gelişmiş Ayarlar"
           topic_list_top:
-            title: "En popüler reklamların konu listesi"
+            title: "Konu listesi üstü reklamlar"
             description: "Sayfaların konu listesinin en üstünde gözükecek reklamlar."
           topic_above_post_stream:
             title: "Yayın akışının üzerindeki konu"
             description: "Konu sayfasında bir konunun başlığının üzerinde gösterilecek reklamlar."
           topic_above_suggested:
-            title: "Yukarıdaki konu önerildi"
+            title: "Önerilen konular üstü"
             description: "Bir konudaki son gönderiden sonra, önerilen konuların üstünde gösterilecek reklamlar."
           post_bottom:
             title: "Gönderiler arasında"
