@@ -40,7 +40,7 @@ export default Ember.Component.extend({
 
   @discourseComputed("currentUser.groups")
   showToGroups(groups) {
-    const currentUser = Discourse.User.current();
+    const currentUser = this.currentUser;
 
     if (
       !currentUser ||
