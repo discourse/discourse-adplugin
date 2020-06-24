@@ -8,7 +8,7 @@
 fr:
   js:
     adplugin:
-      advertisement_label: 'PUBLICITE'
+      advertisement_label: 'PUBLICITÉ'
   admin_js:
     admin:
       site_settings:
@@ -19,6 +19,7 @@ fr:
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
           carbonads_plugin: 'Carbon Ads'
+          adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
           title: "Pubs maison"
@@ -29,7 +30,7 @@ fr:
           delete: "Supprimer"
           description: "Définir vos propres pubs et où elles devraient s'afficher."
           get_started: "Commencer par créer une nouvelle pub."
-          filter_placeholder: "Séléctionner pubs..."
+          filter_placeholder: "Sélectionner les pubs…"
           more_settings: "Plus de paramètres"
           topic_list_top:
             title: "Liste de sujets pubs haut de page"
