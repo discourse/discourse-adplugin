@@ -8,12 +8,9 @@ const data = {
   "post-bottom": {}
 };
 
-let mobileView = Discourse.Site.currentProp('mobileView');
+let mobileView = Discourse.Site.currentProp("mobileView");
 
-if (
-  !mobileView &&
-  Discourse.SiteSettings.amazon_topic_list_top_src_code
-) {
+if (!mobileView && Discourse.SiteSettings.amazon_topic_list_top_src_code) {
   data["topic-list-top"]["user_input"] =
     Discourse.SiteSettings.amazon_topic_list_top_src_code;
   data["topic-list-top"]["amazon_width"] = parseInt(
@@ -106,10 +103,7 @@ if (
   );
 }
 
-if (
-  !mobileView &&
-  Discourse.SiteSettings.amazon_post_bottom_src_code
-) {
+if (!mobileView && Discourse.SiteSettings.amazon_post_bottom_src_code) {
   data["post-bottom"]["user_input"] =
     Discourse.SiteSettings.amazon_post_bottom_src_code;
   data["post-bottom"]["amazon_width"] = parseInt(
@@ -122,10 +116,7 @@ if (
   );
 }
 
-if (
-  mobileView &&
-  Discourse.SiteSettings.amazon_mobile_post_bottom_src_code
-) {
+if (mobileView && Discourse.SiteSettings.amazon_mobile_post_bottom_src_code) {
   data["post-bottom"]["user_input_mobile"] =
     Discourse.SiteSettings.amazon_mobile_post_bottom_src_code;
   data["post-bottom"]["mobile_amazon_width"] = parseInt(
