@@ -8,8 +8,10 @@ const data = {
   "post-bottom": {}
 };
 
+let mobileView = Discourse.Site.currentProp('mobileView');
+
 if (
-  !Discourse.Mobile.mobileView &&
+  !mobileView &&
   Discourse.SiteSettings.amazon_topic_list_top_src_code
 ) {
   data["topic-list-top"]["user_input"] =
@@ -25,7 +27,7 @@ if (
 }
 
 if (
-  Discourse.Mobile.mobileView &&
+  mobileView &&
   Discourse.SiteSettings.amazon_mobile_topic_list_top_src_code
 ) {
   data["topic-list-top"]["user_input_mobile"] =
@@ -41,7 +43,7 @@ if (
 }
 
 if (
-  !Discourse.Mobile.mobileView &&
+  !mobileView &&
   Discourse.SiteSettings.amazon_topic_above_post_stream_src_code
 ) {
   data["topic-above-post-stream"]["user_input"] =
@@ -57,7 +59,7 @@ if (
 }
 
 if (
-  Discourse.Mobile.mobileView &&
+  mobileView &&
   Discourse.SiteSettings.amazon_mobile_topic_above_post_stream_src_code
 ) {
   data["topic-above-post-stream"]["user_input_mobile"] =
@@ -73,7 +75,7 @@ if (
 }
 
 if (
-  !Discourse.Mobile.mobileView &&
+  !mobileView &&
   Discourse.SiteSettings.amazon_topic_above_suggested_src_code
 ) {
   data["topic-above-suggested"]["user_input"] =
@@ -89,7 +91,7 @@ if (
 }
 
 if (
-  Discourse.Mobile.mobileView &&
+  mobileView &&
   Discourse.SiteSettings.amazon_mobile_topic_above_suggested_src_code
 ) {
   data["topic-above-suggested"]["user_input_mobile"] =
@@ -105,7 +107,7 @@ if (
 }
 
 if (
-  !Discourse.Mobile.mobileView &&
+  !mobileView &&
   Discourse.SiteSettings.amazon_post_bottom_src_code
 ) {
   data["post-bottom"]["user_input"] =
@@ -121,7 +123,7 @@ if (
 }
 
 if (
-  Discourse.Mobile.mobileView &&
+  mobileView &&
   Discourse.SiteSettings.amazon_mobile_post_bottom_src_code
 ) {
   data["post-bottom"]["user_input_mobile"] =
