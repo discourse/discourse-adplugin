@@ -30,17 +30,6 @@ const adConfig = Ember.Object.create({
       "topic-above-suggested": "amazon_mobile_topic_above_suggested_src_code"
     }
   },
-  "codefund-ad": {
-    settingPrefix: "codefund",
-    enabledSetting: "codefund_property_id",
-    nthPost: "codefund_nth_post",
-    desktop: {
-      "topic-list-top": "codefund_top_of_topic_list_enabled",
-      "post-bottom": "codefund_below_post_enabled",
-      "topic-above-post-stream": "codefund_above_post_stream_enabled",
-      "topic-above-suggested": "codefund_above_suggested_enabled"
-    }
-  },
   "carbonads-ad": {
     settingPrefix: "carbonads",
     enabledSetting: "carbonads_serve_id",

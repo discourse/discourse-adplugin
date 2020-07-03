@@ -17,7 +17,6 @@ This is the official Discourse advertising plugin.  It allows advertisements to 
 * [Google Adsense](http://www.google.com.au/adsense/start/why-adsense.html)
 * [Google Double Click for Publishers](https://www.google.com/dfp)
 * [Amazon Affiliates](http://affiliate-program.amazon.com) - Banner and Product Link Ads
-* [CodeFund](https://codefund.io) - Ethical Ad Platform for Developers
 * [Carbon Ads](https://www.carbonads.net/)
 * [AdButler](https://www.adbutler.com/)
 
@@ -80,7 +79,6 @@ the ad slots. The ads will start showing as soon as you add them to slots.
 <li>House Ads - if you want to create and serve ads from your Discourse instance.</li>
 <li>Adsense - if using Adsense as your advertisement platform.</li>
 <li>DFP - if using the DoubleClick for Publishers advertisement platform.</li>
-<li>CodeFund - if using the CodeFund ethical advertisement platform.</li>
 <li>Carbon Ads - if using the Carbon Ads advertisement platform.</li>
 <li>AdButler - if using the AdButler advertisement platform.</li>
 </ul>
@@ -106,10 +104,6 @@ the ad slots. The ads will start showing as soon as you add them to slots.
 Only for Product Link and Banner Ads.
 
 ![](https://www.dropbox.com/sc/l67fb5c3tl8bq3d/AAAAMmccMW3kkIeBR7cBdWoFa?dl=1)
-
-##### CodeFund Embed Tag to Discourse's Site Settings
-
-![CodeFund Instructions](https://s3-us-west-2.amazonaws.com/codesponsor/discourse-codefund-instructions.png)
 
 ##### Carbon Ads Script Tag to Discourse's Site Settings
 
