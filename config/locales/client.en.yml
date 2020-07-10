@@ -10,7 +10,6 @@ en:
           dfp_plugin: 'DFP/Ad Manager'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
-          codefund_plugin: 'CodeFund'
           carbonads_plugin: 'Carbon Ads'
           adbutler_plugin: 'AdButler'
       adplugin:
