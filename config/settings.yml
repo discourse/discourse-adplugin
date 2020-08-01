@@ -1,4 +1,7 @@
 ad_plugin:
+  discourse_adplugin_enabled:
+    client: true
+    default: true
   no_ads_for_personal_messages:
     client: true
     default: true

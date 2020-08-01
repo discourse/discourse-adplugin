@@ -1,5 +1,7 @@
 en:
   site_settings:
+    discourse_adplugin_enabled: Enable the discourse-adplugin.
+
     no_ads_for_personal_messages: "Don't show ads when viewing personal messages"
     no_ads_for_restricted_categories: "Don't show ads in categories that aren't visible to everyone."
     no_ads_for_groups: "Don't show ads to users in these groups."
