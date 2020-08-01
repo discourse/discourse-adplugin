@@ -28,12 +28,6 @@ module ::AdPlugin
   end
 end
 
-# TODO: Remove this once 2.4.0.beta3 is released.
-# HACK: Checking if the file exists, this means we can assume the migration happenned
-above_min_version = File.exist?(
-  File.expand_path('../../../db/migrate/20190717133743_migrate_group_list_site_settings.rb', __FILE__)
-)
-
 after_initialize do
   require_dependency File.expand_path('../app/models/house_ad', __FILE__)
   require_dependency File.expand_path('../app/models/house_ad_setting', __FILE__)
