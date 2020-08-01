@@ -35,9 +35,6 @@ after_initialize do
   require_dependency File.expand_path('../app/controllers/house_ad_settings_controller', __FILE__)
   require_dependency 'application_controller'
 
-  # TODO: remove when 2.4 becomes the new stable
-  add_to_serializer(:site, :group_list_use_ids) { above_min_version }
-
   add_to_serializer :site, :house_creatives do
     AdPlugin::HouseAdSetting.settings_and_ads
   end
