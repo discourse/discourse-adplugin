@@ -165,7 +165,10 @@
   float: left;
   max-width: calc(100% - 130px - 1em);
   text-align: left;
-  color: dark-light-choose($primary-medium, $secondary-medium);
+  color: var(
+    --primary-med-or-secondary-med,
+    dark-light-choose($primary-medium, $secondary-medium)
+  );
 }
 
 .carbon-poweredby {
@@ -177,7 +180,7 @@
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 1px;
-  color: $quaternary !important;
+  color: var(--quaternary, $quaternary) !important;
 }
 
 .adbutler-ad {
@@ -226,7 +229,7 @@
     p.help {
       margin: 0;
       margin-top: 5px;
-      color: $primary-medium;
+      color: var(--primary-medium, $primary-medium);
       font-size: $font-down-1;
       clear: both;
     }
