@@ -51,10 +51,19 @@ export default Ember.Component.extend({
       return true;
     }
 
-    let noAdsGroups = this.siteSettings.no_ads_for_groups
-      .split("|")
-      .filter(Boolean);
-    let currentGroups = groups.map(g => g.id.toString());
+    let noAdsGroups = this.siteSettings.no_ads_for_groups.split("|");
+
+    // TODO: Remove when 2.4 becomes the new stable. This is for backwards compatibility.
+    const groupListUseIDs = this.site.group_list_use_ids;
+
+    let currentGroups = groups;
+    if (groupListUseIDs) {
+      currentGroups = currentGroups.map(g => g.id.toString());
+    } else {
+      currentGroups = currentGroups.map(g => g.name.toLowerCase());
+      noAdsGroups = noAdsGroups.map(g => g.toLowerCase());
+    }
+
     return !currentGroups.any(g => noAdsGroups.includes(g));
   },
 
