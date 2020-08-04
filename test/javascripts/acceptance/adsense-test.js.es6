@@ -4,7 +4,7 @@ import groupFixtures from "fixtures/group-fixtures";
 acceptance("AdSense", {
   loggedIn: true,
   settings: {
-    no_ads_for_groups: "discourse",
+    no_ads_for_groups: "47",
     no_ads_for_categories: "1",
     adsense_publisher_code: "MYADSENSEID",
     adsense_through_trust_level: 2,

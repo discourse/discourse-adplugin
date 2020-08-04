@@ -4,7 +4,7 @@ import groupFixtures from "fixtures/group-fixtures";
 acceptance("DFP Ads", {
   loggedIn: true,
   settings: {
-    no_ads_for_groups: "discourse",
+    no_ads_for_groups: "47",
     no_ads_for_categories: "1",
     dfp_publisher_id: "MYdfpID",
     dfp_through_trust_level: 2,
