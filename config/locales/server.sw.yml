@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 sw:
   site_settings:
@@ -65,16 +64,6 @@ sw:
     amazon_mobile_post_bottom_ad_width_code: "Andika upana wa tangazo lako (kifaa cha kiganjani)"
     amazon_mobile_post_bottom_ad_height_code: "Andika urefu wa tangazo lako (kifaa cha kiganjani)"
     amazon_nth_post_code: "Onyesha tangazo kila baada ya machapisho N, ambapo N ni namba."
-    codefund_property_id: "Utambulisho wako kwenye CodeFund"
-    codefund_advertiser_label: "Lebo ya tangazo inayotokea kabla ya tangazo (mfano. Mtangazaji au Mtu anayekubaliana na wewe) "
-    codefund_advertiser_short_label: "Kifupi cha lebo kinachotokea kabla ya tangazo (mfano Tangazo)"
-    codefund_display_advertiser_labels: "Onyesha lebo ya tangazo (mfano. 'Mtangazaji') kwenye matangazo"
-    codefund_through_trust_level: "Onyesha matangazo yako kulingana na viwango vya uaminifu. Watumiaji wenye kiwango cha juu zaidi ya hiki hawatayaona matangazo"
-    codefund_nth_post: "Onyesha tangazo baada ya machapisho N, ambapo N ni namba"
-    codefund_below_post_enabled: "Onyesha tangazo chini ya kila chapisho"
-    codefund_above_post_stream_enabled: "Onyesha tangazo juu ya mfululizo wa machapisho"
-    codefund_above_suggested_enabled: "Onyesha tangazo juu ya orodha ya mada iliyopendekezwa"
-    codefund_top_of_topic_list_enabled: "Onyesha tangazo juu ya orodha ya mada "
     carbonads_through_trust_level: "Onyesha matangazo yako kulingana na uaminifu. Watumiaji ambao wanaaminika kiasi cha juu hawatayaona matangazo."
     carbonads_topic_list_top_enabled: "Onyesha tangazo juu ya orodha ya mada "
     carbonads_above_post_stream_enabled: "Onyesha tangazo juu ya mfululizo wa machapisho"

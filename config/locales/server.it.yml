@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 it:
   site_settings:
@@ -88,16 +87,6 @@ it:
     amazon_mobile_post_bottom_ad_width_code: "Inserisci la lunghezza dell'annuncio (su mobile)"
     amazon_mobile_post_bottom_ad_height_code: "Inserisci l'altezza dell'annuncio (su mobile)"
     amazon_nth_post_code: "Mostra un annuncio dopo ogni N messaggi, dove N è il valore."
-    codefund_property_id: "Il tuo CodeFund property ID"
-    codefund_advertiser_label: "Etichetta che appare prima dell'annuncio (ad es. Advertiser o Supporter)"
-    codefund_advertiser_short_label: "Etichetta abbreviata che appare prima dell'annuncio (ad esempio, annuncio)"
-    codefund_display_advertiser_labels: "Mostra l'etichetta dell'inserzionista (ad es. \"Inserzionista\") negli annunci"
-    codefund_through_trust_level: "Mostra i tuoi annunci agli utenti in base al Livello Esperienza. Gli utenti con un Livello Esperienza superiore a questo valore non vedranno annunci"
-    codefund_nth_post: "Mostra un annuncio dopo ogni post N, dove N è questo valore"
-    codefund_below_post_enabled: "Mostra un annuncio sotto ogni messaggio"
-    codefund_above_post_stream_enabled: "Mostra un annuncio sopra la lista dei messaggi"
-    codefund_above_suggested_enabled: "Mostra un annuncio sopra l'elenco degli argomenti suggeriti"
-    codefund_top_of_topic_list_enabled: "Mostra un annuncio sopra l'elenco degli argomenti"
     carbonads_serve_id: "Il tuo Carbon Ads Serve ID"
     carbonads_placement: "Il tuo posizionamento di Carbon Ads"
     carbonads_through_trust_level: "Mostra gli annunci agli utenti in base ai loro livelli di esperienza. Gli utenti con livello di esperienza superiore a questo valore non vedranno gli annunci."

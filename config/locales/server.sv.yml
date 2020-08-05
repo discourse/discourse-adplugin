@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 sv:
   site_settings:
@@ -88,16 +87,6 @@ sv:
     amazon_mobile_post_bottom_ad_width_code: "Ange din annonsbredd (mobil)"
     amazon_mobile_post_bottom_ad_height_code: "Ange din annonshöjd (mobil)"
     amazon_nth_post_code: "Visa en annons efter varje N:e inlägg, där N är detta värde."
-    codefund_property_id: "Din CodeFund egendoms-ID"
-    codefund_advertiser_label: "Etikett som visas före annonsen (t.ex. annonsör eller supporter)"
-    codefund_advertiser_short_label: "Förkortad etikett som visas före annonsen (t.ex. Ad)"
-    codefund_display_advertiser_labels: "Visa annonsörens etikett (t.ex. \"Annonsör\") i annonserna"
-    codefund_through_trust_level: "Visa dina annonser för användare baserat på förtroendenivåer. Användare med en förtroendenivå som är högre än detta värde ser inga annonser."
-    codefund_nth_post: "Visa en annons efter varje N:e inlägg, där N är detta värde."
-    codefund_below_post_enabled: "Visa en annons nedanför varje inlägg"
-    codefund_above_post_stream_enabled: "Visa en annons ovanför inläggsflödet"
-    codefund_above_suggested_enabled: "Visa en annons ovanför föreslagna ämneslistan"
-    codefund_top_of_topic_list_enabled: "Visa en annons ovanför ämneslistan"
     carbonads_serve_id: "Din Carbon Ads Serve ID"
     carbonads_placement: "Din Carbon Ads placering"
     carbonads_through_trust_level: "Visa dina annonser för användare baserat på förtroendenivåer. Användare med en förtroendenivå som är högre än detta värde ser inga annonser."

@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 zh_CN:
   site_settings:
@@ -88,16 +87,6 @@ zh_CN:
     amazon_mobile_post_bottom_ad_width_code: "输入手机版广告宽度"
     amazon_mobile_post_bottom_ad_height_code: "输入手机版广告高度"
     amazon_nth_post_code: "每这么多条帖子展示一条广告"
-    codefund_property_id: "你的 CodeFund property ID"
-    codefund_advertiser_label: "显示广告前的标签（例如：Advertiser或Supporter）"
-    codefund_advertiser_short_label: "显示广告前的缩写标签（例如：Ad）"
-    codefund_display_advertiser_labels: "在广告中显示广告标签（例如：“Advertiser”）"
-    codefund_through_trust_level: "基于信任等级向用户展示广告。高于此等级的用户不会看到广告。"
-    codefund_nth_post: "每这么多条帖子展示一条广告"
-    codefund_below_post_enabled: "每贴下面都展示一幅广告"
-    codefund_above_post_stream_enabled: "在贴文流以上展示广告"
-    codefund_above_suggested_enabled: "在推荐主题列表以上展示广告"
-    codefund_top_of_topic_list_enabled: "在推主题列表以上展示广告"
     carbonads_serve_id: "你的Carbon Ads Serve ID"
     carbonads_placement: "你的Carbon Ads位置"
     carbonads_through_trust_level: "基于信任等级向用户展示广告。高于此等级的用户不会看到广告。"

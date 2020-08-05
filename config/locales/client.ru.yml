@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 ru:
   js:
@@ -13,15 +12,18 @@ ru:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Рекламный Плагин'
+          ad_plugin: 'Рекламный плагин'
           dfp_plugin: 'DFP/Ad Manager'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
-          codefund_plugin: 'Плагин CodeFund'
+          carbonads_plugin: 'Carbon Ads'
+          adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
+          title: "House Ads"
           new: "Новые"
           settings: "Настройки"
+          new_name: "New House Ad"
           save: "Сохранить"
           delete: "Удалить"
           description: "Определить свои собственные объявления и где они должны отображаться."
@@ -35,6 +37,7 @@ ru:
             title: "Тема выше потока сообщений"
             description: "Объявления, отображаемые над заголовком темы на странице темы."
           topic_above_suggested:
+            title: "Предложенная тема выше"
             description: "Объявления показывать после последнего поста в теме, над предложенными темами."
           post_bottom:
             title: "Между постами"

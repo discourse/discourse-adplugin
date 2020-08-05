@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 uk:
   site_settings:
@@ -15,6 +14,7 @@ uk:
     house_ads_after_nth_post: 'Якщо визначено власні оголошення ''Між дописами'', показуйте оголошення після кожного N допису, де N - це значення.'
     house_ads_frequency: "Якщо в інших рекламних мережах налаштовано показ рекламного місця, як часто слід розміщувати рекламу у відсотках."
     ads_txt: "Зміст вашого файлу ads.txt. Більш детальна інформація доступна на <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>цій довідковій сторінці Google AdSense</a> ."
+    dfp_publisher_id: "Введіть мережевий код Google Ad Manager (раніше відомий як DFP), який можна знайти в налаштуваннях мережі. ЗАУВАЖТЕ: Вам доведеться оновити налаштування 'content security policy script src'. Див. <a href='https://meta.discourse.org/t/33734' target='_blank'>це обговорення</a> для подальших інструкцій."
     dfp_publisher_id_mobile: "(Необов’язково) Якщо ви хочете використовувати інший ідентифікатор видавця Ad Manager для мобільної версії сайту, введіть його тут. Залиште порожнім, щоб використовувати dfp_publisher_id на мобільному пристрої."
     dfp_through_trust_level: "Показуйте свої оголошення користувачам на основі рівня довіри. Користувачі із рівнем довіри, що перевищує цю величину, не побачать рекламу."
     dfp_topic_list_top_code: "Введіть унікальний код рекламного блоку для відображення над списками тем. Це короткий код (максимум 100 символів), наданий рекламному блоку під час його створення, а не код JavaScript."
@@ -86,16 +86,6 @@ uk:
     amazon_mobile_post_bottom_ad_width_code: "Введіть ширину оголошення (для мобільних пристроїв)"
     amazon_mobile_post_bottom_ad_height_code: "Введіть висоту оголошення (для мобільних пристроїв)"
     amazon_nth_post_code: "Показуйте оголошення після кожного N допису, де N - це значення."
-    codefund_property_id: "Ваш ID CodeFund"
-    codefund_advertiser_label: "Рекламна етикетка , яка з’являється перед рекламою (наприклад, Advertiser або Supporter)"
-    codefund_advertiser_short_label: "Скорочена етикетка, що з’являється перед рекламою (наприклад, Ad)"
-    codefund_display_advertiser_labels: "Показувати рекламну етикетку (наприклад, 'Advertiser')"
-    codefund_through_trust_level: "Показуйте свої оголошення користувачам на основі рівня довіри. Користувачі із рівнем довіри, що перевищує цю величину, не побачать рекламу"
-    codefund_nth_post: "Показуйте оголошення після кожного N допису, де N - це значення"
-    codefund_below_post_enabled: "Показуйте оголошення під кожним дописом"
-    codefund_above_post_stream_enabled: "Показуйте оголошення над потоком дописів"
-    codefund_above_suggested_enabled: "Покажіть оголошення над списком запропонованих тем"
-    codefund_top_of_topic_list_enabled: "Покажіть оголошення над списком тем"
     carbonads_serve_id: "Ваш Carbon Ads Serve ID"
     carbonads_placement: "Ваше Carbon Ads Placement"
     carbonads_through_trust_level: "Показуйте свої оголошення користувачам на основі рівня довіри. Користувачі із рівнем довіри, що перевищує цю величину, не побачать рекламу."

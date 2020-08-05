@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 ca:
   site_settings:
@@ -87,16 +86,6 @@ ca:
     amazon_mobile_post_bottom_ad_width_code: "Introduïu l'amplada de l'anunci (mòbil)"
     amazon_mobile_post_bottom_ad_height_code: "Introduïu l'alçada de l'anunci (mòbil)"
     amazon_nth_post_code: "Mostra un anunci després de cada N publicacions, on N és aquest valor."
-    codefund_property_id: "El vostre ID de propietat CodeFund"
-    codefund_advertiser_label: "Etiqueta que apareix abans de l'anunci (p. ex., \"anunciant\" o \"amb el suport de\")"
-    codefund_advertiser_short_label: "Etiqueta abreujada que apareix abans de l'anunci (p. ex. anunci)"
-    codefund_display_advertiser_labels: "Mostra l'etiqueta de l'anunciant (p. ex., \"Anunciant\") en els anuncis"
-    codefund_through_trust_level: "Mostra els anuncis als usuaris segons els nivells de confiança. Els usuaris amb un nivell de confiança superior a aquest valor no veuran anuncis."
-    codefund_nth_post: "Mostra un anunci després de cada N publicacions, on N és aquest valor"
-    codefund_below_post_enabled: "Mostra un anunci per sota de cada publicació"
-    codefund_above_post_stream_enabled: "Mostra un anunci per sobre del flux de publicacions"
-    codefund_above_suggested_enabled: "Mostra un anunci per sobre de la llista de temes recomanats"
-    codefund_top_of_topic_list_enabled: "Mostra un anunci per sobre de la llista de temes"
     carbonads_serve_id: "El vostre ID de Carbon Ads Serve"
     carbonads_placement: "La vostra ubicació de Carbon Ads"
     carbonads_through_trust_level: "Mostra els anuncis a usuaris segons els nivells de confiança. Els usuaris amb un nivell més alt que aquest valor no veuran anuncis."

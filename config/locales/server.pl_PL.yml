@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 pl_PL:
   site_settings:
@@ -88,16 +87,6 @@ pl_PL:
     amazon_mobile_post_bottom_ad_width_code: "Wprowadź szerokość reklamy (urządzenia mobilne)"
     amazon_mobile_post_bottom_ad_height_code: "Wprowadź wysokość reklamy (urządzenia mobilne)"
     amazon_nth_post_code: "Wyświetlaj reklamę po każdym N wpisów, gdzie N to ta wartość"
-    codefund_property_id: "Twoje property ID z CodeFund"
-    codefund_advertiser_label: "Etykieta, która pojawia się przed reklamą (np. „Reklamiarz” albo „Wspierający”)"
-    codefund_advertiser_short_label: "Skrócona etykieta pojawiająca się za reklamą (np. „rek”)"
-    codefund_display_advertiser_labels: "Wyświetlaj etykietę reklamiarza (np. „Reklamiarz”) na reklamach"
-    codefund_through_trust_level: "Pokazuj swoje reklamy użytkownikom w zależności od ich poziomu zaufania. Użytkownicy z wyższym poziomem zaufania nie będą widzieli reklam"
-    codefund_nth_post: "Pokazuj reklamę po każdych N postach, gdzie N to wartość"
-    codefund_below_post_enabled: "Wyświetlaj reklamę pod każdym wpisem"
-    codefund_above_post_stream_enabled: "Wyświetlaj reklamę nad strumieniem wpisów"
-    codefund_above_suggested_enabled: "Wyświetlaj reklamę nad listą sugerowanych wątków"
-    codefund_top_of_topic_list_enabled: "Wyświetlaj reklamę nad listą wątków"
     carbonads_serve_id: "Twoje Serve ID w Carbon Ads"
     carbonads_placement: "Umieszczenie reklam Carbon Ads"
     carbonads_through_trust_level: "Pokaż reklamy swoim użytkownikom na podstawie poziomu zaufania. Użytkownicy z poziomem zaufania wyższym niż ta wartość, nie zobaczą reklam."

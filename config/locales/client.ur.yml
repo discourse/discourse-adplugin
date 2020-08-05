@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 ur:
   js:
@@ -17,7 +16,6 @@ ur:
           dfp_plugin: 'ڈی ایف پی / اَیڈ مینیجر'
           adsense_plugin: 'ایڈسینس'
           amazon_plugin: 'اَیمَیزَون'
-          codefund_plugin: 'کَوڈفَنڈ'
           carbonads_plugin: 'کاربن اشتھارات'
           adbutler_plugin: 'اَیڈ بَٹلَر'
       adplugin:

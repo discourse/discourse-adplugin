@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 fr:
   site_settings:
@@ -87,16 +86,6 @@ fr:
     amazon_mobile_post_bottom_ad_width_code: "Entrez la largeur de la publicité Mobile"
     amazon_mobile_post_bottom_ad_height_code: "Entrez la hauteur de la publicité Mobile"
     amazon_nth_post_code: "Afficher une publicité après chaque N messages, où N est cette valeur."
-    codefund_property_id: "Votre identifiant de propriété CodeFund"
-    codefund_advertiser_label: "Etiquette affichée avant la publicité (p.ex. Annonceur ou Supporter)"
-    codefund_advertiser_short_label: "Abbréviation qui apparaît avant la publicité (p.ex. Pub)"
-    codefund_display_advertiser_labels: "Afficher l'étiquette d'annonceur (p.ex. 'Annonceur') sur les pubs"
-    codefund_through_trust_level: "Afficher vos publicités en fonction du niveau de confiance. Les utilisateurs avec un niveau de confiance plus élevé que cette valeur ne verront pas de pub"
-    codefund_nth_post: "Afficher une publicité tous les N messages, où N est cette valeur"
-    codefund_below_post_enabled: "Afficher une pub en dessous de chaque message"
-    codefund_above_post_stream_enabled: "Afficher une pub au dessus du flux de messages"
-    codefund_above_suggested_enabled: "Afficher une pub au dessus de la liste de sujets suggérés"
-    codefund_top_of_topic_list_enabled: "Afficher une pub au dessus de la liste de sujets"
     carbonads_serve_id: "Votre identifiant Carbon Ads"
     carbonads_placement: "Votre emplacement Carbon Ads"
     carbonads_through_trust_level: "Afficher les publicités aux utilisateurs en fonction de leurs niveaux de confiance. Les utilisateurs avec un niveau de confiance supérieur à celui-ci ne verront pas de publicité."

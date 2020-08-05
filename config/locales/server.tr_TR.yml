@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 tr_TR:
   site_settings:
@@ -88,16 +87,6 @@ tr_TR:
     amazon_mobile_post_bottom_ad_width_code: "Reklam genişliğinizi girin (mobil)"
     amazon_mobile_post_bottom_ad_height_code: "Reklam yüksekliğinizi girin (mobil)"
     amazon_nth_post_code: "Her N gönderiden sonra bir reklam gösterin; burada N bu değerdir."
-    codefund_property_id: "CodeFund varlık ID'niz"
-    codefund_advertiser_label: "Reklamdan önce görünen etiket (ör. Reklamveren veya Destekçi)"
-    codefund_advertiser_short_label: "Reklamdan önce görünen kısaltılmış etiket (ör. Reklam)"
-    codefund_display_advertiser_labels: "Reklamlarda reklamveren etiketini (ör. &#39;Reklamveren&#39;) gösterin"
-    codefund_through_trust_level: "Reklamlarınızı kullanıcılara güven düzeylerine göre gösterin. Güven düzeyi bu değerden yüksek olan kullanıcılar reklam görmez"
-    codefund_nth_post: "Her N gönderiden sonra bir reklam gösterin; burada N bu değerdir"
-    codefund_below_post_enabled: "Her gönderinin altında bir reklam göster"
-    codefund_above_post_stream_enabled: "Gönderi akışının üstünde bir reklam göster"
-    codefund_above_suggested_enabled: "Önerilen konu listesinin üstünde bir reklam göster"
-    codefund_top_of_topic_list_enabled: "Konu listesinin üstünde bir reklam göster"
     carbonads_serve_id: "Carbon Ads Hizmet ID'niz"
     carbonads_placement: "Karbon Reklam Yerleşiminiz"
     carbonads_through_trust_level: "Reklamlarınızı kullanıcılara güven düzeylerine göre gösterin. Bu değerden yüksek güven düzeyine sahip kullanıcılar reklam görmez."

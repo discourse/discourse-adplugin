@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 bs_BA:
   js:
@@ -17,7 +16,6 @@ bs_BA:
           dfp_plugin: 'DFP / Upravitelj oglasa'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazona'
-          codefund_plugin: 'CodeFund'
           carbonads_plugin: 'Carbon Oglasi'
       adplugin:
         house_ads:

@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 es:
   site_settings:
@@ -88,16 +87,6 @@ es:
     amazon_mobile_post_bottom_ad_width_code: "Ingresa la anchura de tu publicidad (móvil)"
     amazon_mobile_post_bottom_ad_height_code: "Ingresa la altura de tu publicidad (móvil)"
     amazon_nth_post_code: "Mostrar una publicidad luego de cada N publicaciones, donde N es este valor."
-    codefund_property_id: "Tu ID de propiedad de CodeFund"
-    codefund_advertiser_label: "Etiqueta que aparece antes del anuncio publicitario (por ejemplo, anunciante o colaborador)"
-    codefund_advertiser_short_label: "Etiqueta abreviada que aparece antes del anuncio (por ejemplo, Ad)"
-    codefund_display_advertiser_labels: "Mostrar la etiqueta del anunciante (por ejemplo, «anunciante») en los anuncios publicitarios"
-    codefund_through_trust_level: "Mostrar tus anuncios a los usuarios basado en el nivel de confianza. Los usuarios con un nivel de confianza mayor a este valor no verán publicidades."
-    codefund_nth_post: "Mostrar una publicidad luego de cada N publicaciones, donde N es este valor"
-    codefund_below_post_enabled: "Mostrar un anuncio publicitario debajo de cada publicación"
-    codefund_above_post_stream_enabled: "Mostrar un anuncio publicitario arriba de la lista de publicaciones"
-    codefund_above_suggested_enabled: "Mostrar un anuncio publicitario arriba de la lista de temas sugeridos"
-    codefund_top_of_topic_list_enabled: "Mostrar un anuncio publicitario arriba de la lista de temas"
     carbonads_serve_id: "Tu ID de Carbon Ads Serve"
     carbonads_placement: "Tu Carbon Ads Placement"
     carbonads_through_trust_level: "Mostrar tus anuncios a los usuarios basado en el nivel de confianza. Los usuarios con un nivel de confianza mayor a este valor no verán publicidades."

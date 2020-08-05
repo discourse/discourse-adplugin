@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 pt_BR:
   site_settings:
@@ -84,16 +83,6 @@ pt_BR:
     amazon_mobile_post_bottom_ad_width_code: "Insira a largura do seu anúncio (dispositivos móveis)"
     amazon_mobile_post_bottom_ad_height_code: "Insira a altura do seu anúncio (dispositivos móveis)"
     amazon_nth_post_code: "Mostrar um anúncio depois de cada N posts, onde N é este valor."
-    codefund_property_id: "O seu ID de propriedade do CodeFund"
-    codefund_advertiser_label: "Rótulo que aparece antes do anúncio (ex.: Anunciante ou Apoiador)"
-    codefund_advertiser_short_label: "Rótulo abreviado que aparece antes do anúncio (ex.: Ad)"
-    codefund_display_advertiser_labels: "Mostrar o rótulo do anunciante (ex.: 'Anunciante') nos anúncios"
-    codefund_through_trust_level: "Mostrar seus anúncios aos usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios"
-    codefund_nth_post: "Mostrar um anúncio depois de cada N posts, onde N é este valor"
-    codefund_below_post_enabled: "Mostrar um anúncio abaixo de cada postagem"
-    codefund_above_post_stream_enabled: "Mostrar um anúncio acima da stream de postagens"
-    codefund_above_suggested_enabled: "Mostrar um anúncio acima da lista de tópico sugeridos"
-    codefund_top_of_topic_list_enabled: "Mostrar um anúncio acima da lista de tópicos"
     carbonads_serve_id: "Seu \"Carbon Ads Serve ID\""
     carbonads_placement: "Seu \"Carbon Ads Placement\""
     carbonads_through_trust_level: "Exibir seus anúncios para usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."

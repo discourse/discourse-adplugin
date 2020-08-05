@@ -1,19 +1,31 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 fa_IR:
+  js:
+    adplugin:
+      advertisement_label: 'آگهی'
   admin_js:
     admin:
       site_settings:
         categories:
+          ad_plugin: 'پلاگین آگهی'
+          adsense_plugin: 'AdSense'
           amazon_plugin: 'آمازون'
+          carbonads_plugin: 'آگهی Carbon'
+          adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
+          title: "آگهی خانه"
           new: "جدید"
           settings: "تنظیمات"
+          new_name: "آگهی خانه جدید"
           save: "ذخیره"
           delete: "حذف"
+          filter_placeholder: "انتخاب آگهی..."
+          more_settings: "تنظیمات بیشتر"
+          post_bottom:
+            title: "بین پست‌ها"

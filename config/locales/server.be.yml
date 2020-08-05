@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 be:
   site_settings:
@@ -81,16 +80,6 @@ be:
     amazon_mobile_post_bottom_ad_width_code: "Увядзіце Ваша аб'яву шырыня (мабільны)"
     amazon_mobile_post_bottom_ad_height_code: "Увядзіце Ваша аб'яву вышыня (мабільны)"
     amazon_nth_post_code: "Паказаць аб'яву пасля кожных N паведамленняў, дзе N гэта значэнне."
-    codefund_property_id: "Ваш CodeFund ўласцівасць ID"
-    codefund_advertiser_label: "Этыкетка, якая з'яўляецца перад рэкламай (напрыклад Рэкламадавец або Прыхільнік)"
-    codefund_advertiser_short_label: "Скарочаная пазнака, якая з'яўляецца перад рэкламай (напрыклад, Ad)"
-    codefund_display_advertiser_labels: "Паказаць пазнаку рэкламадаўца (напрыклад, «Рэкламадавец») на абвестках"
-    codefund_through_trust_level: "Паказаць аб'явы карыстальнікам на аснове узроўняў даверу. Карыстальнікі з узроўнем даверу вышэй, чым гэта значэнне не будзе бачыць рэкламу"
-    codefund_nth_post: "Паказаць аб'яву пасля кожнага N паведамленняў, дзе N гэтым значэнне"
-    codefund_below_post_enabled: "Паказаць аб'яву ніжэй кожнай пасады"
-    codefund_above_post_stream_enabled: "Паказаць аб'яву вышэй паштовага патоку"
-    codefund_above_suggested_enabled: "Паказаць аб'яву вышэй прапанаванага спісу тэму"
-    codefund_top_of_topic_list_enabled: "Паказаць аб'яву над спісам тэмы"
     carbonads_serve_id: "Вашы Вугляродныя Аб'явы Падаваць ID"
     carbonads_placement: "Ваша аб'ява Carbon Размяшчэнне"
     carbonads_through_trust_level: "Паказаць аб'явы карыстальнікам на аснове узроўняў даверу. Карыстальнікі з узроўнем даверу вышэй гэтага значэння не будуць бачыць рэкламу."

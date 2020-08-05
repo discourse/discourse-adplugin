@@ -1,9 +1,8 @@
-# encoding: utf-8
-#
-# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
 #
 # To work with us on translations, join this project:
-# https://www.transifex.com/projects/p/discourse-org/
+# https://translate.discourse.org/
 
 fi:
   site_settings:
@@ -86,16 +85,6 @@ fi:
     amazon_mobile_post_bottom_ad_width_code: "Mainoksen leveys (mobiilissa)"
     amazon_mobile_post_bottom_ad_height_code: "Mainoksen korkeus (mobiilissa)"
     amazon_nth_post_code: "Näytä mainos N viestin välein, missä N on syöttämäsi luku."
-    codefund_property_id: "CodeFund tunnuksesi (property ID) "
-    codefund_advertiser_label: "Nimike, joka näkyy ennen mainostusta (esim. Mainostaja tai Tukija)"
-    codefund_advertiser_short_label: "Lyhennetty nimike, joka näkyy ennen mainostusta (esim. Mainos)"
-    codefund_display_advertiser_labels: "Näytä mainostaja nimike (esim. Mainostaja) mainoksissa"
-    codefund_through_trust_level: "Näytä mainoksiasiasi käyttäjille luottamustasoon perustuen. Käyttäjät, joiden luottamustaso on tätä korkeampi, eivät näe mainoksia."
-    codefund_nth_post: "Näytä mainos N viestin välein, missä N on syöttämäsi luku."
-    codefund_below_post_enabled: "Näytä mainos jokaisen viestin jälkeen"
-    codefund_above_post_stream_enabled: "Näytä mainos viestivirran yläpuolella"
-    codefund_above_suggested_enabled: "Näytä mainos suositeltujen ketjujen yläpuolella"
-    codefund_top_of_topic_list_enabled: "Näytä mainos ketjulistan yläpuolella"
     carbonads_serve_id: "Carbon Ads tunnuksesi (Serve ID) "
     carbonads_placement: "Carbon Ads elementtisi (Placement) "
     carbonads_through_trust_level: "Näytä mainoksia riippuen luottamustasosta. Käyttäjät joiden luottamustaso on tätä korkeampi eivät näe mainoksia."
