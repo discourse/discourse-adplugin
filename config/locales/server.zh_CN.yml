@@ -6,6 +6,7 @@
 
 zh_CN:
   site_settings:
+    discourse_adplugin_enabled: 启用discourse-adplugin。
     no_ads_for_personal_messages: "查看个人消息时不显示广告"
     no_ads_for_restricted_categories: "请勿在仅对特定用户开放的分类中显示广告。"
     no_ads_for_groups: "不对这些群组中的用户显示广告。"
