@@ -6,6 +6,7 @@
 
 sv:
   site_settings:
+    discourse_adplugin_enabled: Aktivera discourse reklamtillägg - adplugin.
     no_ads_for_personal_messages: "Visa inte annonser när du läser personliga meddelanden"
     no_ads_for_restricted_categories: "Visa inte annonser i kategorier som inte är synliga för alla."
     no_ads_for_groups: "Visa inte annonser för användare i dessa grupper."
