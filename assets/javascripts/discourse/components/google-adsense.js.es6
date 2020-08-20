@@ -11,6 +11,9 @@ function parseAdWidth(value) {
   if (value === "responsive") {
     return "auto";
   }
+  if (value.startsWith("fluid")) {
+    return "fluid";
+  }
   const w = parseInt(value.substring(0, 3).trim(), 10);
   if (isNaN(w)) {
     return "auto";
@@ -22,6 +25,9 @@ function parseAdWidth(value) {
 function parseAdHeight(value) {
   if (value === "responsive") {
     return "auto";
+  }
+  if (value.startsWith("fluid")) {
+    return "fluid";
   }
   const h = parseInt(value.substring(4, 7).trim(), 10);
   if (isNaN(h)) {
@@ -172,7 +178,12 @@ export default AdComponent.extend({
 
   @discourseComputed("ad_width")
   isResponsive(adWidth) {
-    return adWidth === "auto";
+    return ["auto", "fluid"].includes(adWidth);
+  },
+
+  @discourseComputed("ad_width")
+  isFluid(adWidth) {
+    return adWidth === "fluid";
   },
 
   @discourseComputed("placement", "showAd")
@@ -182,7 +193,7 @@ export default AdComponent.extend({
 
   @discourseComputed("isResponsive")
   autoAdFormat(isResponsive) {
-    return isResponsive ? "auto".htmlSafe() : false;
+    return isResponsive ? (isFluid ? "fluid".htmlSafe() : "auto".htmlSafe()) : false;
   },
 
   @discourseComputed("ad_width", "ad_height", "isResponsive")
