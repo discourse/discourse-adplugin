@@ -191,8 +191,8 @@ export default AdComponent.extend({
     return showAd ? `adsense-${placement}`.htmlSafe() : "";
   },
 
-  @discourseComputed("isResponsive")
-  autoAdFormat(isResponsive) {
+  @discourseComputed("isResponsive", "isFluid")
+  autoAdFormat(isResponsive, isFluid) {
     return isResponsive ? (isFluid ? "fluid".htmlSafe() : "auto".htmlSafe()) : false;
   },
 
