@@ -55,6 +55,7 @@ adsense_plugin:
     type: list
     choices: &adsense_choices
       - responsive
+      - fluid - for in-feed ad units
       - 728*90 - leaderboard
       - 336*280 - large rectangle
       - 300*250 - medium rectangle
