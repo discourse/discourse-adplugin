@@ -193,7 +193,11 @@ export default AdComponent.extend({
 
   @discourseComputed("isResponsive", "isFluid")
   autoAdFormat(isResponsive, isFluid) {
-    return isResponsive ? (isFluid ? "fluid".htmlSafe() : "auto".htmlSafe()) : false;
+    return isResponsive
+      ? isFluid
+        ? "fluid".htmlSafe()
+        : "auto".htmlSafe()
+      : false;
   },
 
   @discourseComputed("ad_width", "ad_height", "isResponsive")
