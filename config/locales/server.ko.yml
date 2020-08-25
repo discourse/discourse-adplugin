@@ -4,4 +4,8 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
-ko: 
+ko:
+  site_settings:
+    discourse_adplugin_enabled: discourse-adplugin을 활성화합니다.
+    no_ads_for_personal_messages: "개인 메시지를 볼 때 광고 표시 안 함"
+    no_ads_for_restricted_categories: "제한된 카테고리에는 광고 표시 안 함"

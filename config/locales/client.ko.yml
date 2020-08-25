@@ -5,8 +5,37 @@
 # https://translate.discourse.org/
 
 ko:
+  js:
+    adplugin:
+      advertisement_label: '광고'
   admin_js:
     admin:
       site_settings:
         categories:
-          amazon_plugin: '아마존'
+          ad_plugin: '광고 플러그인'
+          dfp_plugin: 'DFP/광고 관리자'
+          amazon_plugin: 'Amazon'
+      adplugin:
+        house_ads:
+          title: "자체 광고"
+          new: "새 광고 만들기"
+          settings: "설정"
+          new_name: "새로운 자체 광고"
+          save: "저장"
+          delete: "삭제"
+          description: "자체 광고를 정의하고 어디에 표시할 지 결정합니다."
+          get_started: "새로운 광고를 만들어보세요."
+          filter_placeholder: "광고 선택..."
+          more_settings: "더 많은 설정"
+          topic_list_top:
+            title: "토픽 목록 상단 광고"
+            description: "토픽 목록 페이지 상단에 표시할 광고입니다."
+          topic_above_post_stream:
+            title: "포스트 스트림 위의 토픽"
+            description: "토픽 페이지에서 토픽 제목 위에 표시할 광고입니다."
+          topic_above_suggested:
+            title: "위에 추천된 토픽"
+            description: "주제의 마지막 게시물 이후 추천 토픽 위에 표시할 광고입니다."
+          post_bottom:
+            title: "포스트 사이"
+            description: "N개의 게시물마다 게시물 사이에 표시할 광고입니다."
