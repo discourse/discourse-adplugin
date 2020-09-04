@@ -1,6 +1,7 @@
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import { i18n, propertyNotEqual } from "discourse/lib/computed";
+import I18n from "I18n";
 
 export default Ember.Component.extend({
   classNames: "house-ads-setting",
@@ -21,14 +22,14 @@ export default Ember.Component.extend({
       if (!this.get("saving")) {
         this.setProperties({
           saving: true,
-          savingStatus: I18n.t("saving")
+          savingStatus: I18n.t("saving"),
         });
 
         ajax(
           `/admin/plugins/pluginad/house_settings/${this.get("name")}.json`,
           {
             type: "PUT",
-            data: { value: this.get("adValue") }
+            data: { value: this.get("adValue") },
           }
         )
           .then(() => {
@@ -36,14 +37,14 @@ export default Ember.Component.extend({
             adSettings.set(this.get("name"), this.get("adValue"));
             this.setProperties({
               value: this.get("adValue"),
-              savingStatus: I18n.t("saved")
+              savingStatus: I18n.t("saved"),
             });
           })
           .catch(popupAjaxError)
           .finally(() => {
             this.setProperties({
               saving: false,
-              savingStatus: ""
+              savingStatus: "",
             });
           });
       }
@@ -51,6 +52,6 @@ export default Ember.Component.extend({
 
     cancel() {
       this.set("adValue", this.get("value"));
-    }
-  }
+    },
+  },
 });

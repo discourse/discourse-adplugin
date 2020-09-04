@@ -5,7 +5,7 @@ const adIndex = {
   topic_list_top: null,
   topic_above_post_stream: null,
   topic_above_suggested: null,
-  post_bottom: null
+  post_bottom: null,
 };
 
 export default AdComponent.extend({
@@ -92,12 +92,12 @@ export default AdComponent.extend({
 
     if (adIndex.topic_list_top === null) {
       // start at a random spot in the ad inventory
-      Object.keys(adIndex).forEach(placement => {
+      Object.keys(adIndex).forEach((placement) => {
         const adNames = this.adsNamesForSlot(placement);
         adIndex[placement] = Math.floor(Math.random() * adNames.length);
       });
     }
 
     this.refreshAd();
-  }
+  },
 });

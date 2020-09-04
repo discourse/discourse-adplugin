@@ -13,7 +13,7 @@ export default MultiSelectComponent.extend({
   valueAttribute: null,
   nameProperty: null,
 
-  value: computed("settingValue", function() {
+  value: computed("settingValue", function () {
     return this.settingValue
       .toString()
       .split(this.tokenSeparator)
@@ -28,7 +28,7 @@ export default MultiSelectComponent.extend({
     return this.settingValue.split(this.tokenSeparator).filter(Boolean);
   },
 
-  content: computed("choices", function() {
+  content: computed("choices", function () {
     return makeArray(this.choices);
   }),
 
@@ -36,6 +36,6 @@ export default MultiSelectComponent.extend({
     onChange(value) {
       const settingValue = makeArray(value).join(this.tokenSeparator);
       this.attrs.onChange && this.attrs.onChange(settingValue);
-    }
-  }
+    },
+  },
 });

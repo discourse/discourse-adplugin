@@ -54,9 +54,9 @@ export default Ember.Component.extend({
     let noAdsGroups = this.siteSettings.no_ads_for_groups
       .split("|")
       .filter(Boolean);
-    let currentGroups = groups.map(g => g.id.toString());
+    let currentGroups = groups.map((g) => g.id.toString());
 
-    return !currentGroups.any(g => noAdsGroups.includes(g));
+    return !currentGroups.any((g) => noAdsGroups.includes(g));
   },
 
   @discourseComputed(
@@ -95,5 +95,5 @@ export default Ember.Component.extend({
     } else {
       return false;
     }
-  }
+  },
 });

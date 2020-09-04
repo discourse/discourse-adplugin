@@ -5,7 +5,7 @@ const data = {
   "topic-list-top": {},
   "topic-above-post-stream": {},
   "topic-above-suggested": {},
-  "post-bottom": {}
+  "post-bottom": {},
 };
 
 let mobileView = Discourse.Site.currentProp("mobileView");
@@ -190,5 +190,5 @@ export default AdComponent.extend({
     }
 
     return this.isNthPost(parseInt(this.siteSettings.amazon_nth_post_code, 10));
-  }
+  },
 });

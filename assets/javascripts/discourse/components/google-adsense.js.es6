@@ -49,7 +49,7 @@ function loadAdsense() {
   const adsenseSrc =
     ("https:" === document.location.protocol ? "https:" : "http:") +
     "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-  _promise = loadScript(adsenseSrc, { scriptTag: true }).then(function() {
+  _promise = loadScript(adsenseSrc, { scriptTag: true }).then(function () {
     _loaded = true;
   });
 
@@ -59,46 +59,46 @@ function loadAdsense() {
 const DESKTOP_SETTINGS = {
   "topic-list-top": {
     code: "adsense_topic_list_top_code",
-    sizes: "adsense_topic_list_top_ad_sizes"
+    sizes: "adsense_topic_list_top_ad_sizes",
   },
   "topic-above-post-stream": {
     code: "adsense_topic_above_post_stream_code",
-    sizes: "adsense_topic_above_post_stream_ad_sizes"
+    sizes: "adsense_topic_above_post_stream_ad_sizes",
   },
   "topic-above-suggested": {
     code: "adsense_topic_above_suggested_code",
-    sizes: "adsense_topic_above_suggested_ad_sizes"
+    sizes: "adsense_topic_above_suggested_ad_sizes",
   },
   "post-bottom": {
     code: "adsense_post_bottom_code",
-    sizes: "adsense_post_bottom_ad_sizes"
-  }
+    sizes: "adsense_post_bottom_ad_sizes",
+  },
 };
 
 const MOBILE_SETTINGS = {
   "topic-list-top": {
     code: "adsense_mobile_topic_list_top_code",
-    sizes: "adsense_mobile_topic_list_top_ad_size"
+    sizes: "adsense_mobile_topic_list_top_ad_size",
   },
   "topic-above-post-stream": {
     code: "adsense_mobile_topic_above_post_stream_code",
-    sizes: "adsense_mobile_topic_above_post_stream_ad_size"
+    sizes: "adsense_mobile_topic_above_post_stream_ad_size",
   },
   "topic-above-suggested": {
     code: "adsense_mobile_topic_above_suggested_code",
-    sizes: "adsense_mobile_topic_above_suggested_ad_size"
+    sizes: "adsense_mobile_topic_above_suggested_ad_size",
   },
   "post-bottom": {
     code: "adsense_mobile_post_bottom_code",
-    sizes: "adsense_mobile_post_bottom_ad_size"
-  }
+    sizes: "adsense_mobile_post_bottom_ad_size",
+  },
 };
 
 export default AdComponent.extend({
   classNameBindings: [
     ":google-adsense",
     "classForSlot",
-    "isResponsive:adsense-responsive"
+    "isResponsive:adsense-responsive",
   ],
   loadedGoogletag: false,
 
@@ -143,7 +143,7 @@ export default AdComponent.extend({
     }
 
     this.set("adRequested", true);
-    loadAdsense().then(function() {
+    loadAdsense().then(function () {
       const adsbygoogle = window.adsbygoogle || [];
 
       try {
@@ -244,5 +244,5 @@ export default AdComponent.extend({
     return this.isNthPost(
       parseInt(this.siteSettings.adsense_nth_post_code, 10)
     );
-  }
+  },
 });
