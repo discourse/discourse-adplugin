@@ -3,20 +3,20 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 export default {
   name: "initialize-ad-plugin",
   initialize(container) {
-    withPluginApi("0.1", api => {
-      api.decorateWidget("post:after", dec => {
+    withPluginApi("0.1", (api) => {
+      api.decorateWidget("post:after", (dec) => {
         if (dec.canConnectComponent) {
           if (!dec.attrs.cloaked) {
             return dec.connect({
               component: "post-bottom-ad",
-              context: "model"
+              context: "model",
             });
           }
         } else {
           // Old way for backwards compatibility
           return dec.connect({
             templateName: "connectors/post-bottom/discourse-adplugin",
-            context: "model"
+            context: "model",
           });
         }
       });
@@ -27,8 +27,8 @@ export default {
       return;
     }
 
-    messageBus.subscribe("/site/house-creatives", function(houseAdsSettings) {
+    messageBus.subscribe("/site/house-creatives", function (houseAdsSettings) {
       Discourse.Site.currentProp("house_creatives", houseAdsSettings);
     });
-  }
+  },
 };

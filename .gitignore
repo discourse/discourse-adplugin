@@ -5,3 +5,5 @@ auto_generated
 .DS_Store
 *.swp
 node_modules
+yarn-error.log
+.rubocop-https---raw-githubusercontent-com-discourse-*

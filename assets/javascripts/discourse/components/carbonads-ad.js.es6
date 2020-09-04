@@ -32,5 +32,5 @@ export default AdComponent.extend({
       showToGroups &&
       showOnCurrentPage
     );
-  }
+  },
 });

@@ -19,8 +19,8 @@ function loadAdbutler() {
   }
 
   _promise = loadScript("https://" + adserverHostname + "/app.js", {
-    scriptTag: true
-  }).then(function() {
+    scriptTag: true,
+  }).then(function () {
     _loaded = true;
   });
 
@@ -61,7 +61,7 @@ export default AdComponent.extend({
       divId: divId,
       publisherId: publisherId,
       zoneId: zoneId,
-      dimensions: dimensions
+      dimensions: dimensions,
     });
 
     this.set("publisherId", publisherId);
@@ -74,11 +74,11 @@ export default AdComponent.extend({
     }
 
     loadAdbutler().then(
-      function() {
+      function () {
         if (this.divs.length > 0) {
           let abkw = window.abkw || "";
           window.AdButler.ads.push({
-            handler: function(opt) {
+            handler: function (opt) {
               window.AdButler.register(
                 opt.place.publisherId,
                 opt.place.zoneId,
@@ -91,8 +91,8 @@ export default AdComponent.extend({
               place: this.divs.pop(),
               keywords: abkw,
               domain: adserverHostname,
-              click: "CLICK_MACRO_PLACEHOLDER"
-            }
+              click: "CLICK_MACRO_PLACEHOLDER",
+            },
           });
         }
       }.bind(this)
@@ -144,5 +144,5 @@ export default AdComponent.extend({
       return true;
     }
     return this.isNthPost(parseInt(this.siteSettings.adbutler_nth_post, 10));
-  }
+  },
 });

@@ -18,7 +18,7 @@ acceptance("DFP Ads", {
     dfp_mobile_post_bottom_ad_size: "300*250 - medium rectangle",
     dfp_nth_post_code: 6,
     dfp_topic_above_post_stream_code: "list_top_ad_unit",
-    dfp_topic_above_post_stream_ad_sizes: "728*90 - leaderboard"
+    dfp_topic_above_post_stream_ad_sizes: "728*90 - leaderboard",
   },
   site: {
     house_creatives: {
@@ -27,14 +27,14 @@ acceptance("DFP Ads", {
         topic_above_post_stream: "",
         topic_above_suggested: "",
         post_bottom: "",
-        after_nth_post: 20
+        after_nth_post: 20,
       },
-      creatives: {}
-    }
-  }
+      creatives: {},
+    },
+  },
 });
 
-test("correct number of ads should show", async assert => {
+test("correct number of ads should show", async (assert) => {
   updateCurrentUser({ staff: false, trust_level: 1 });
   await visit("/t/280"); // 20 posts
   const ads = find(".google-dfp-ad.dfp-ad-post-bottom");
@@ -62,7 +62,7 @@ test("correct number of ads should show", async assert => {
   );
 });
 
-test("no ads for trust level 3", async assert => {
+test("no ads for trust level 3", async (assert) => {
   updateCurrentUser({ staff: false, trust_level: 3 });
   await visit("/t/280");
   assert.equal(
@@ -72,11 +72,11 @@ test("no ads for trust level 3", async assert => {
   );
 });
 
-test("can omit ads based on groups", async assert => {
+test("can omit ads based on groups", async (assert) => {
   updateCurrentUser({
     staff: false,
     trust_level: 1,
-    groups: [groupFixtures["/groups/discourse.json"].group]
+    groups: [groupFixtures["/groups/discourse.json"].group],
   });
   await visit("/t/280");
   assert.equal(
@@ -86,7 +86,7 @@ test("can omit ads based on groups", async assert => {
   );
 });
 
-test("can omit ads based on category", async assert => {
+test("can omit ads based on category", async (assert) => {
   updateCurrentUser({ staff: false, trust_level: 1 });
   await visit("/t/28830");
   assert.equal(

@@ -5,12 +5,12 @@ const adConfig = Ember.Object.create({
   "google-adsense": {
     settingPrefix: "adsense", // settings follow naming convention
     enabledSetting: "adsense_publisher_code",
-    nthPost: "adsense_nth_post_code"
+    nthPost: "adsense_nth_post_code",
   },
   "google-dfp-ad": {
     settingPrefix: "dfp", // settings follow naming convention
     enabledSetting: "dfp_publisher_id",
-    nthPost: "dfp_nth_post_code"
+    nthPost: "dfp_nth_post_code",
   },
   "amazon-product-links": {
     settingPrefix: "amazon",
@@ -20,15 +20,15 @@ const adConfig = Ember.Object.create({
       "topic-list-top": "amazon_topic_list_top_src_code",
       "post-bottom": "amazon_post_bottom_src_code",
       "topic-above-post-stream": "amazon_topic_above_post_stream_src_code",
-      "topic-above-suggested": "amazon_topic_above_suggested_src_code"
+      "topic-above-suggested": "amazon_topic_above_suggested_src_code",
     },
     mobile: {
       "topic-list-top": "amazon_mobile_topic_list_top_src_code",
       "post-bottom": "amazon_mobile_post_bottom_src_code",
       "topic-above-post-stream":
         "amazon_mobile_topic_above_post_stream_src_code",
-      "topic-above-suggested": "amazon_mobile_topic_above_suggested_src_code"
-    }
+      "topic-above-suggested": "amazon_mobile_topic_above_suggested_src_code",
+    },
   },
   "carbonads-ad": {
     settingPrefix: "carbonads",
@@ -37,8 +37,8 @@ const adConfig = Ember.Object.create({
       "topic-list-top": "carbonads_topic_list_top_enabled",
       "post-bottom": false,
       "topic-above-post-stream": "carbonads_above_post_stream_enabled",
-      "topic-above-suggested": false
-    }
+      "topic-above-suggested": false,
+    },
   },
   "adbutler-ad": {
     settingPrefix: "adbutler",
@@ -47,21 +47,21 @@ const adConfig = Ember.Object.create({
       "topic-list-top": "adbutler_topic_list_top_zone_id",
       "post-bottom": "adbutler_post_bottom_zone_id",
       "topic-above-post-stream": "adbutler_topic_above_post_stream_zone_id",
-      "topic-above-suggested": "adbutler_topic_above_suggested_zone_id"
+      "topic-above-suggested": "adbutler_topic_above_suggested_zone_id",
     },
     mobile: {
       "topic-list-top": "adbutler_mobile_topic_list_top_zone_id",
       "post-bottom": "adbutler_mobile_post_bottom_zone_id",
       "topic-above-post-stream":
         "adbutler_mobile_topic_above_post_stream_zone_id",
-      "topic-above-suggested": "adbutler_mobile_topic_above_suggested_zone_id"
-    }
-  }
+      "topic-above-suggested": "adbutler_mobile_topic_above_suggested_zone_id",
+    },
+  },
 });
 
 const displayCounts = {
   houseAds: 0,
-  allAds: 0
+  allAds: 0,
 };
 
 export default AdComponent.extend({
@@ -90,7 +90,7 @@ export default AdComponent.extend({
       }
     }
 
-    Object.keys(adConfig).forEach(adNetwork => {
+    Object.keys(adConfig).forEach((adNetwork) => {
       const config = adConfig[adNetwork];
       let settingNames = null,
         name;
@@ -185,12 +185,12 @@ export default AdComponent.extend({
       }
     }
 
-    const networkNames = availableAdTypes.filter(x => x !== "house-ad");
+    const networkNames = availableAdTypes.filter((x) => x !== "house-ad");
 
     if (houseAdsSkipped) {
       displayCounts.allAds += networkNames.length;
     }
 
     return networkNames;
-  }
+  },
 });

@@ -15,7 +15,7 @@ acceptance("Mixed Ads", {
     dfp_post_bottom_ad_sizes: "728*90 - leaderboard",
     dfp_mobile_post_bottom_code: "mobile_post_bottom_ad_unit",
     dfp_mobile_post_bottom_ad_size: "300*250 - medium rectangle",
-    dfp_nth_post_code: 6
+    dfp_nth_post_code: 6,
   },
   site: {
     house_creatives: {
@@ -24,7 +24,7 @@ acceptance("Mixed Ads", {
         topic_above_post_stream: "Above Post Stream",
         topic_above_suggested: "Above Suggested",
         post_bottom: "Post",
-        after_nth_post: 6
+        after_nth_post: 6,
       },
       creatives: {
         "Topic List": "<div class='h-topic-list'>TOPIC LIST</div>",
@@ -32,13 +32,13 @@ acceptance("Mixed Ads", {
           "<div class='h-above-post-stream'>ABOVE POST STREAM</div>",
         "Above Suggested":
           "<div class='h-above-suggested'>ABOVE SUGGESTED</div>",
-        Post: "<div class='h-post'>BELOW POST</div>"
-      }
-    }
-  }
+        Post: "<div class='h-post'>BELOW POST</div>",
+      },
+    },
+  },
 });
 
-test("correct ads show", async assert => {
+test("correct ads show", async (assert) => {
   updateCurrentUser({ staff: false, trust_level: 1 });
   await visit("/t/280"); // 20 posts
 

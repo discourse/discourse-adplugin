@@ -52,26 +52,26 @@ const DESKTOP_SETTINGS = {
     code: "dfp_topic_list_top_code",
     sizes: "dfp_topic_list_top_ad_sizes",
     targeting_keys: "dfp_target_topic_list_top_key_code",
-    targeting_values: "dfp_target_topic_list_top_value_code"
+    targeting_values: "dfp_target_topic_list_top_value_code",
   },
   "topic-above-post-stream": {
     code: "dfp_topic_above_post_stream_code",
     sizes: "dfp_topic_above_post_stream_ad_sizes",
     targeting_keys: "dfp_target_topic_above_post_stream_key_code",
-    targeting_values: "dfp_target_topic_above_post_stream_value_code"
+    targeting_values: "dfp_target_topic_above_post_stream_value_code",
   },
   "topic-above-suggested": {
     code: "dfp_topic_above_suggested_code",
     sizes: "dfp_topic_above_suggested_ad_sizes",
     targeting_keys: "dfp_target_topic_above_suggested_key_code",
-    targeting_values: "dfp_target_topic_above_suggested_value_code"
+    targeting_values: "dfp_target_topic_above_suggested_value_code",
   },
   "post-bottom": {
     code: "dfp_post_bottom_code",
     sizes: "dfp_post_bottom_ad_sizes",
     targeting_keys: "dfp_target_post_bottom_key_code",
-    targeting_values: "dfp_target_post_bottom_value_code"
-  }
+    targeting_values: "dfp_target_post_bottom_value_code",
+  },
 };
 
 const MOBILE_SETTINGS = {
@@ -79,26 +79,26 @@ const MOBILE_SETTINGS = {
     code: "dfp_mobile_topic_list_top_code",
     sizes: "dfp_mobile_topic_list_top_ad_sizes",
     targeting_keys: "dfp_target_topic_list_top_key_code",
-    targeting_values: "dfp_target_topic_list_top_value_code"
+    targeting_values: "dfp_target_topic_list_top_value_code",
   },
   "topic-above-post-stream": {
     code: "dfp_mobile_topic_above_post_stream_code",
     sizes: "dfp_mobile_topic_above_post_stream_ad_sizes",
     targeting_keys: "dfp_target_topic_above_post_stream_key_code",
-    targeting_values: "dfp_target_topic_above_post_stream_value_code"
+    targeting_values: "dfp_target_topic_above_post_stream_value_code",
   },
   "topic-above-suggested": {
     code: "dfp_mobile_topic_above_suggested_code",
     sizes: "dfp_mobile_topic_above_suggested_ad_sizes",
     targeting_keys: "dfp_target_topic_above_suggested_key_code",
-    targeting_values: "dfp_target_topic_above_suggested_value_code"
+    targeting_values: "dfp_target_topic_above_suggested_value_code",
   },
   "post-bottom": {
     code: "dfp_mobile_post_bottom_code",
     sizes: "dfp_mobile_post_bottom_ad_sizes",
     targeting_keys: "dfp_target_post_bottom_key_code",
-    targeting_values: "dfp_target_post_bottom_value_code"
-  }
+    targeting_values: "dfp_target_post_bottom_value_code",
+  },
 };
 
 function getWidthAndHeight(placement, settings, isMobile) {
@@ -129,7 +129,7 @@ function getWidthAndHeight(placement, settings, isMobile) {
 
   const sizeObj = {
     width: parseInt(splitWidthInt(size), 10),
-    height: parseInt(splitHeightInt(size), 10)
+    height: parseInt(splitHeightInt(size), 10),
   };
 
   if (!isNaN(sizeObj.width) && !isNaN(sizeObj.height)) {
@@ -211,14 +211,14 @@ function loadGoogle() {
   var dfpSrc =
     ("https:" === document.location.protocol ? "https:" : "http:") +
     "//securepubads.g.doubleclick.net/tag/js/gpt.js";
-  _promise = loadScript(dfpSrc, { scriptTag: true }).then(function() {
+  _promise = loadScript(dfpSrc, { scriptTag: true }).then(function () {
     _loaded = true;
     if (window.googletag === undefined) {
       // eslint-disable-next-line no-console
       console.log("googletag is undefined!");
     }
 
-    window.googletag.cmd.push(function() {
+    window.googletag.cmd.push(function () {
       // Infinite scroll requires SRA:
       window.googletag.pubads().enableSingleRequest();
 
@@ -415,5 +415,5 @@ export default AdComponent.extend({
   @on("willDestroyElement")
   cleanup() {
     destroySlot(this.get("divId"));
-  }
+  },
 });

@@ -1,3 +1,4 @@
+import I18n from "I18n";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import { propertyNotEqual } from "discourse/lib/computed";
@@ -19,7 +20,7 @@ export default Ember.Controller.extend(bufferedProperty("model"), {
       if (!this.get("saving")) {
         this.setProperties({
           saving: true,
-          savingStatus: I18n.t("saving")
+          savingStatus: I18n.t("saving"),
         });
 
         const data = {},
@@ -38,10 +39,10 @@ export default Ember.Controller.extend(bufferedProperty("model"), {
             : `/admin/plugins/pluginad/house_creatives/${buffered.get("id")}`,
           {
             type: newRecord ? "POST" : "PUT",
-            data
+            data,
           }
         )
-          .then(ajaxData => {
+          .then((ajaxData) => {
             this.commitBuffer();
             this.set("savingStatus", I18n.t("saved"));
             if (newRecord) {
@@ -61,7 +62,7 @@ export default Ember.Controller.extend(bufferedProperty("model"), {
           .finally(() => {
             this.setProperties({
               saving: false,
-              savingStatus: ""
+              savingStatus: "",
             });
           });
       }
@@ -81,13 +82,13 @@ export default Ember.Controller.extend(bufferedProperty("model"), {
       }
 
       ajax(`/admin/plugins/pluginad/house_creatives/${model.get("id")}`, {
-        type: "DELETE"
+        type: "DELETE",
       })
         .then(() => {
           houseAds.removeObject(model);
           this.transitionToRoute("adminPlugins.houseAds.index");
         })
         .catch(() => bootbox.alert(I18n.t("generic_error")));
-    }
-  }
+    },
+  },
 });
