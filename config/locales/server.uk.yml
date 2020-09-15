@@ -6,6 +6,7 @@
 
 uk:
   site_settings:
+    discourse_adplugin_enabled: Увімкнути Discourse Adplugin
     no_ads_for_personal_messages: "Не показуйте оголошення під час перегляду особистих повідомлень"
     no_ads_for_restricted_categories: "Не показуйте оголошення в категоріях, які не бачать усі."
     no_ads_for_groups: "Не показуйте рекламу користувачам цих груп."

@@ -7,7 +7,7 @@
 sk:
   js:
     adplugin:
-      advertisement_label: 'REKLAMA'
+      advertisement_label: 'РЕКЛАМА'
   admin_js:
     admin:
       site_settings:

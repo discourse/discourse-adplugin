@@ -6,6 +6,7 @@
 
 it:
   site_settings:
+    discourse_adplugin_enabled: Abilita il discourse-adplugin.
     no_ads_for_personal_messages: "Non mostrare annunci pubblicitari durante la visualizzazione dei messaggi personali"
     no_ads_for_restricted_categories: "Non mostrare pubblicità nelle categorie che non sono visibili a tutti"
     no_ads_for_groups: "Non mostrare pubblicità agli utenti in questi gruppi."
