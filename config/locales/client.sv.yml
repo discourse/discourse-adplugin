@@ -12,7 +12,7 @@ sv:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Lägg till tillägg'
+          ad_plugin: 'Annonseringstillägg'
           dfp_plugin: 'DFP/Annonshanterare'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
@@ -35,7 +35,7 @@ sv:
             description: "Annonser som visas i ämneslistans topp."
           topic_above_post_stream:
             title: "Annonser ovanför inläggsflödet"
-            description: "Annonser som visas ovanför titeln av ett ämne på ämnessidan."
+            description: "Annonser som visas ovanför titeln på ett ämne på ämnessidan."
           topic_above_suggested:
             title: "Annonser ovanför föreslagna"
             description: "Annonser som visas efter det sista inlägget i ett ämne, ovanför föreslagna ämnen."
