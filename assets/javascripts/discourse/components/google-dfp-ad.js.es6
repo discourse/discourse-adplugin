@@ -380,7 +380,7 @@ export default AdComponent.extend({
       return;
     }
 
-    loadGoogle(this.siteSettings).then(() => {
+    loadGoogle().then(() => {
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
 
