@@ -5,10 +5,14 @@
 # https://translate.discourse.org/
 
 ar:
+  js:
+    adplugin:
+      advertisement_label: 'إعلان'
   admin_js:
     admin:
       site_settings:
         categories:
+          ad_plugin: 'ملحقة الإعلانات'
           amazon_plugin: 'اعلانات امازون'
       adplugin:
         house_ads:
@@ -16,3 +20,12 @@ ar:
           settings: "إعدادات"
           save: "احفظ"
           delete: "أحذف"
+          get_started: "ابدأ بإنشاء إعلان جديد."
+          filter_placeholder: "حدّد الإعلانات..."
+          more_settings: "إعدادات أكثر"
+          topic_list_top:
+            title: "الإعلانات أعلى قائمة المواضيع"
+            description: "الإعلانات التي ستظهر أعلى صفحات قوائم المواضيع."
+          post_bottom:
+            title: "بين المشاركات"
+            description: "الإعلانات التي ستظهر بين المشاركات، بعد كلّ س مشاركة."
