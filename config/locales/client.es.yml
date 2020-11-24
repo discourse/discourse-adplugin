@@ -28,11 +28,11 @@ es:
           delete: "Eliminar"
           description: "Define tus propias publicidades y dónde deben mostrarse."
           get_started: "Comienza creando un nueva publicidad."
-          filter_placeholder: "Seleccionar publicidades..."
+          filter_placeholder: "Seleccionar anuncios..."
           more_settings: "Más ajustes"
           topic_list_top:
-            title: "Publicidades destacadas de la lista de temas"
-            description: "Publicidades para mostrar en la parte superior de las páginas de la lista de temas."
+            title: "Anuncios destacados de la lista de temas"
+            description: "Anuncios a mostrar en la parte superior de las listas de temas."
           topic_above_post_stream:
             title: "Tema arriba de la lista de publicaciones"
             description: "Publicidades que se muestran arriba del título de un tema en la página de temas."
