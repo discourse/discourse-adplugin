@@ -1,6 +1,6 @@
 import { acceptance, updateCurrentUser } from "helpers/qunit-helpers";
 
-acceptance("Mixed Ads", function(needs) {
+acceptance("Mixed Ads", function (needs) {
   needs.user();
   needs.settings({
     house_ads_after_nth_post: 6,
