@@ -9,15 +9,13 @@ on:
 
 jobs:
   build:
-    name: "${{ matrix.target }}-${{ matrix.build_types }}"
+    name: ${{ matrix.build_type }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
 
     env:
       DISCOURSE_HOSTNAME: www.example.com
       RUBY_GLOBAL_METHOD_CACHE_SIZE: 131072
-      BUILD_TYPE: ${{ matrix.build_types }}
-      TARGET: ${{ matrix.target }}
       RAILS_ENV: test
       PGHOST: localhost
       PGUSER: discourse
@@ -27,8 +25,7 @@ jobs:
       fail-fast: false
 
       matrix:
-        build_types: ["BACKEND", "FRONTEND"]
-        target: ["PLUGINS"]
+        build_type: ["backend", "frontend"]
         os: [ubuntu-latest]
         ruby: ["2.6"]
         postgres: ["12"]
@@ -85,7 +82,7 @@ jobs:
           wget -qO- https://raw.githubusercontent.com/discourse/discourse_docker/master/image/base/install-pngquant | sudo sh
 
       - name: Update imagemagick
-        if: env.BUILD_TYPE == 'BACKEND'
+        if: matrix.build_type == 'backend'
         run: |
           wget https://raw.githubusercontent.com/discourse/discourse_docker/master/image/base/install-imagemagick
           chmod +x install-imagemagick
@@ -140,28 +137,11 @@ jobs:
           bin/rake db:create
           bin/rake db:migrate
 
-      - name: Create parallel databases
-        if: env.BUILD_TYPE == 'BACKEND' && env.TARGET == 'CORE'
-        run: |
-          bin/rake parallel:create
-          bin/rake parallel:migrate
-
-      - name: Core RSpec
-        if: env.BUILD_TYPE == 'BACKEND' && env.TARGET == 'CORE'
-        run: |
-          bin/turbo_rspec
-          bin/rake plugin:spec
-
       - name: Plugin RSpec
-        if: env.BUILD_TYPE == 'BACKEND' && env.TARGET == 'PLUGINS' && steps.check_spec.outputs.files_exists == 'true'
+        if: matrix.build_type == 'backend' && steps.check_spec.outputs.files_exists == 'true'
         run: bin/rake plugin:spec[${{ github.event.repository.name }}]
 
-      - name: Core QUnit
-        if: env.BUILD_TYPE == 'FRONTEND' && env.TARGET == 'CORE'
-        run: bundle exec rake qunit:test['1200000']
-        timeout-minutes: 30
-
       - name: Plugin QUnit
-        if: env.BUILD_TYPE == 'FRONTEND' && env.TARGET == 'PLUGINS' && steps.check_qunit.outputs.files_exists == 'true'
+        if: matrix.build_type == 'frontend' && steps.check_qunit.outputs.files_exists == 'true'
         run: bundle exec rake plugin:qunit['${{ github.event.repository.name }}','1200000']
         timeout-minutes: 30
