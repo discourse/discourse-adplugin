@@ -1,7 +1,7 @@
 import { acceptance, updateCurrentUser } from "helpers/qunit-helpers";
 import groupFixtures from "fixtures/group-fixtures";
 
-acceptance("DFP Ads", function(needs) {
+acceptance("DFP Ads", function (needs) {
   needs.user();
   needs.settings({
     no_ads_for_groups: "47",
