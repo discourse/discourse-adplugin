@@ -17,6 +17,7 @@ bs_BA:
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazona'
           carbonads_plugin: 'Carbon Oglasi'
+          adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
           title: "Kućni oglasi"

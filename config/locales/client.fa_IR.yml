@@ -13,6 +13,7 @@ fa_IR:
       site_settings:
         categories:
           ad_plugin: 'پلاگین آگهی'
+          dfp_plugin: 'DFP/Ad Manager'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'آمازون'
           carbonads_plugin: 'آگهی Carbon'
@@ -25,7 +26,19 @@ fa_IR:
           new_name: "آگهی خانه جدید"
           save: "ذخیره"
           delete: "حذف"
+          description: "Define your own ads and where they should be displayed."
+          get_started: "Start by creating a new ad."
           filter_placeholder: "انتخاب آگهی..."
           more_settings: "تنظیمات بیشتر"
+          topic_list_top:
+            title: "Topic list top ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_above_post_stream:
+            title: "Topic above post stream"
+            description: "Ads to show above the title of a topic on the topic page."
+          topic_above_suggested:
+            title: "Topic above suggested"
+            description: "Ads to show after the last post in a topic, above the suggested topics."
           post_bottom:
             title: "بین پست‌ها"
+            description: "Ads to show in between posts, after every N posts."

@@ -6,6 +6,7 @@
 
 tr_TR:
   site_settings:
+    discourse_adplugin_enabled: Enable the discourse-adplugin.
     no_ads_for_personal_messages: "Kişisel mesajları görüntülerken reklam gösterme"
     no_ads_for_restricted_categories: "Kategoriler herkese görülür değilken reklam gösterme"
     no_ads_for_groups: "Bu gruplardaki kullanıcılara reklam gösterme"

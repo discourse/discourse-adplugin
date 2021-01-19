@@ -6,6 +6,7 @@
 
 de:
   site_settings:
+    discourse_adplugin_enabled: Enable the discourse-adplugin.
     no_ads_for_personal_messages: "Keine Werbung beim Lesen persönlicher Nachrichten zeigen"
     no_ads_for_restricted_categories: "Zeige keine Anzeigen in Kategorien, die nicht für jeden sichtbar sind."
     no_ads_for_groups: "Zeige Anzeigen nicht den Benutzern dieser Gruppen."
@@ -14,6 +15,7 @@ de:
     house_ads_after_nth_post: 'Falls "Zwischen Beiträgen" Haus Anzeigen definiert sind, zeige eine Anzeige nach jeweils N Beiträgen, wobei N dieser Wert ist.'
     house_ads_frequency: "Falls andere Werbenetzwerke zur Anzeige an einem Werbe-Platz konfiguriert sind, wie oft sollen Haus Anzeigen gezeigt werden, in Prozent."
     ads_txt: "Inhalt deiner Datei ads.txt. Mehr Information auf <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>dieser Google AdSense Hilfeseite verfügbar</a>. "
+    dfp_publisher_id: "Input your Google Ad Manager (formerly called DFP) network code, which is found in your network settings. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     dfp_publisher_id_mobile: "(Optional) Wenn du eine andere Ad Manager Veröffentlicher ID für die mobile Version der Seite verwenden willst, gibt sie hier ein. Leer lassen um dfp_publisher_id auf Mobilgeräten zu verwenden."
     dfp_through_trust_level: "Zeige Benutzern deine Werbung auf Grundlage der Vertrauensstufe. Benutzer mit einer höheren Vertrauensstufe als der angegebene Wert werden keine Werbung sehen."
     dfp_topic_list_top_code: "Gib den eindeutigen Code der Werbeeinheit an, die oberhalb von Themenlisten angezeigt werden soll. Das ist der Kurzcode (max. 100 Zeichen), den die Werbeeinheit bei ihrer Erstellung erhalten hat, nicht der JavaScript-Code."
@@ -41,6 +43,7 @@ de:
     dfp_mobile_post_bottom_ad_sizes: "Wähle die Größe deiner Werbung für die Werbeeinheit, die zwischen Beiträgen bei mobiler Darstellung angezeigt wird."
     dfp_target_post_bottom_key_code: "Benutzerdefinierte Zielschlüssel für die Eingabe - Bestandsebene"
     dfp_target_post_bottom_value_code: "Benutzerdefinierte Zielwerte für die Eingabe - Bestandsebene"
+    adsense_publisher_code: "Your publisher ID. Enter only the number, excluding 'pub-'. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     adsense_through_trust_level: "Zeige Benutzern deine Werbung auf Grundlage von Vertrauensstufen. Benutzer mit einer höheren Vertrauensstufe als dieser Wert werden keine Werbung sehen."
     adsense_topic_list_top_code: "Gib den Code der Werbeeinheit an, die auf Themenlisten oben angezeigt wird. Das ist die Nummer, die der Werbereinheit zugewiesen ist, nicht der JavaScript-Code."
     adsense_mobile_topic_list_top_code: "Gib den Code der Werbeeinheit an, die bei mobiler Darstellung auf Themenlisten oben angezeigt wird. Das ist die Nummer, die der Werbereinheit zugewiesen ist, nicht der JavaScript-Code."
@@ -90,6 +93,7 @@ de:
     carbonads_through_trust_level: "Zeige Benutzern deine Werbung auf Grundlage von Vertrauensstufen. Benutzer mit einer höheren Vertrauensstufe als dieser Wert werden keine Werbung sehen."
     carbonads_topic_list_top_enabled: "Zeige eine Werbeanzeige über der Themenliste."
     carbonads_above_post_stream_enabled: "Zeige eine Werbeanzeige über jeder Beitragsliste."
+    adbutler_publisher_id: "AdButler Publisher ID. NOTE: You may need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     adbutler_mobile_topic_list_top_zone_id: "Zonen ID für oberen Platz der mobilen Themenliste"
     adbutler_mobile_topic_above_post_stream_zone_id: "Zonen-ID für mobile Thema über Beitragsverlauf-Positionierung"
     adbutler_mobile_post_bottom_zone_id: "Zonen-ID für mobile Beitrag unten-Positionierung"

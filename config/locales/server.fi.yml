@@ -6,6 +6,7 @@
 
 fi:
   site_settings:
+    discourse_adplugin_enabled: Enable the discourse-adplugin.
     no_ads_for_personal_messages: "Älä näytä mainoksia yksityisviestejä katseltaessa"
     no_ads_for_restricted_categories: "Älä näytä mainoksia kategorioissa, jotka eivät näy kaikille. "
     no_ads_for_groups: "Älä näytä mainoksia näiden ryhmien käyttäjille. "
@@ -14,6 +15,7 @@ fi:
     house_ads_after_nth_post: 'Jos "Viestien välissä" omat mainokset ovat määritettynä, näytä mainos joka N viestin jälkeen, jossa N on tämä arvo.'
     house_ads_frequency: "Jos muita mainosverkostoja on määritetty näkymaan mainoskentässä, kuinka usein omien mainoksien pitäisi näkyä, prosenttimääränä."
     ads_txt: "Ads.txt tiedostosi sisältö. Lisää tietoa saatavilla <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>tällä Google AdSense ohjesivulla</a>."
+    dfp_publisher_id: "Input your Google Ad Manager (formerly called DFP) network code, which is found in your network settings. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     dfp_publisher_id_mobile: "(Valinnainen) Jos haluat käyttää eri Ad Manager toimittajatunnusta sivun mobiiliversiolle, syötä se tähän. Jos tämä jätetään tyhjäksi, käytetään dfp_publisher_id:tä mobiilissa. "
     dfp_through_trust_level: "Näytä mainoksia käyttäjälle luottamustasosta riippuen. Käyttäjät joiden luottamustaso on tätä korkeampi eivät näe mainoksia."
     dfp_topic_list_top_code: "Ketjulistausten yllä näytettävän mainosyksikön yksilöllinen koodi. Kyseessä on lyhyt koodi (enint. 100 merkkiä), joka annetaan mainosyksikölle kun sitä luodaan. Ei JavaScript-koodi."
@@ -41,6 +43,7 @@ fi:
     dfp_mobile_post_bottom_ad_sizes: "Mobiilinäkymässä viestien välissä näytettävän mainoksen koko."
     dfp_target_post_bottom_key_code: "Syötä mukautetut kohdistusavaimet - Varastotaso"
     dfp_target_post_bottom_value_code: "Syötä mukautetut kohdistusarvot - Varastotaso"
+    adsense_publisher_code: "Your publisher ID. Enter only the number, excluding 'pub-'. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     adsense_through_trust_level: "Näytä mainoksia riippuen luottamustasosta. Käyttäjät joiden luottamustaso on tätä korkeampi eivät näe mainoksia."
     adsense_topic_list_top_code: "Ketjulistausten yllä näytettävän mainosyksikön koodi. Kyseessä on mainosyksikköä symboloiva numero. Ei JavaScript-koodi."
     adsense_mobile_topic_list_top_code: "Mobiilinäkymässä ketjulistausten yllä näytettävän mainosyksikön koodi. Kyseessä on mainosyksikköä symboloiva numero. Ei JavaScript-koodi."
@@ -90,5 +93,15 @@ fi:
     carbonads_through_trust_level: "Näytä mainoksia riippuen luottamustasosta. Käyttäjät joiden luottamustaso on tätä korkeampi eivät näe mainoksia."
     carbonads_topic_list_top_enabled: "Näytä mainos ketjulistan yläpuolella"
     carbonads_above_post_stream_enabled: "Näytä mainos viestivirran yläpuolella"
+    adbutler_publisher_id: "AdButler Publisher ID. NOTE: You may need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
+    adbutler_mobile_topic_list_top_zone_id: "Zone ID for mobile topic list top location"
+    adbutler_mobile_topic_above_post_stream_zone_id: "Zone ID for mobile topic above post stream location"
+    adbutler_mobile_post_bottom_zone_id: "Zone ID for mobile post bottom location"
+    adbutler_mobile_topic_above_suggested_zone_id: "Zone ID for mobile topic above suggested location"
+    adbutler_topic_list_top_zone_id: "Zone ID for topic list top location"
+    adbutler_topic_above_post_stream_zone_id: "Zone ID for topic above post stream location"
+    adbutler_post_bottom_zone_id: "Zone ID for post bottom location"
+    adbutler_topic_above_suggested_zone_id: "Zone ID for topic above suggested location"
     adbutler_nth_post: "Näytä mainos N viestin välein, missä N on syöttämäsi luku."
     adbutler_through_trust_level: "Näytä mainoksiasiasi käyttäjille luottamustasoon perustuen. Käyttäjät, joiden luottamustaso on tätä korkeampi, eivät näe mainoksia."
+    adbutler_adserver_hostname: "The hostname that AdButler is serving your ads from"

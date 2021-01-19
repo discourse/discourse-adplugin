@@ -6,10 +6,17 @@
 
 be:
   site_settings:
+    discourse_adplugin_enabled: Enable the discourse-adplugin.
+    no_ads_for_personal_messages: "Don't show ads when viewing personal messages"
+    no_ads_for_restricted_categories: "Don't show ads in categories that aren't visible to everyone."
     no_ads_for_groups: "Не паказваць аб'явы для карыстальнікаў у гэтых групах."
+    no_ads_for_categories: "Don't show ads on topic list and topic pages belonging to these categories."
+    no_ads_for_tags: "Don't show ads on topic list and topic pages belonging to these tags."
     house_ads_after_nth_post: 'Калі «паміж слупамі» аб''явы дома вызначаны, паказаць аб''яву пасля кожнага N паведамленняў, дзе N гэтым значэнне.'
     house_ads_frequency: "Калі іншыя рэкламныя сеткі настроены паказаць у рэкламным месцы, як часта павінны дома аб'ява будзе паказана ў працэнтах."
     ads_txt: "Змест файла ads.txt. Больш падрабязна па адрасе <HTTPS A HREF = ':"
+    dfp_publisher_id: "Input your Google Ad Manager (formerly called DFP) network code, which is found in your network settings. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
+    dfp_publisher_id_mobile: "(Optional) If you want to use a different Ad Manager publisher id for the mobile version of the site, enter it here. Leave blank to use dfp_publisher_id on mobile."
     dfp_through_trust_level: "Паказаць аб'явы карыстальнікам на аснове узроўняў даверу. Карыстальнікі з узроўнем даверу вышэй гэтага значэння не будуць бачыць рэкламу."
     dfp_topic_list_top_code: "Увядзіце унікальны код рэкламнага блока, каб адлюстраваць вышэйпаказаныя спісы тэмы. Гэта кароткі код (не больш за 100 сімвалаў), дадзенае ў рэкламным блоку, калі ён быў створаны, а не кода JavaScript."
     dfp_topic_list_top_ad_sizes: "Выберыце памер аб'явы для рэкламнага блока вышэй спісу тэмы."
@@ -36,6 +43,7 @@ be:
     dfp_mobile_post_bottom_ad_sizes: "Выберыце памер аб'яваў для рэкламнага блока, паказанага на паміж слупамі на мабільным рэжыме."
     dfp_target_post_bottom_key_code: "Увод ключоў карыстацкага таргетынгу - Узровень інвентарызацыі"
     dfp_target_post_bottom_value_code: "Ўваходныя значэння карыстацкага таргетынгу - узровень запасаў"
+    adsense_publisher_code: "Your publisher ID. Enter only the number, excluding 'pub-'. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     adsense_through_trust_level: "Паказаць аб'явы карыстальнікам на аснове узроўняў даверу. Карыстальнікі з узроўнем даверу вышэй гэтага значэння не будуць бачыць рэкламу."
     adsense_topic_list_top_code: "Калі ласка, увядзіце код рэкламнага блока для адлюстравання ў спісе тэма верхняга размяшчэння. Гэта нумар, прысвоены рэкламны блок, а не кода JavaScript."
     adsense_mobile_topic_list_top_code: "Калі ласка, увядзіце код рэкламнага блока для паказу мабільных аб'яваў на спіс тэмы верхняга размяшчэнні. Гэта нумар, прысвоены рэкламны блок, а не кода JavaScript."
@@ -85,5 +93,15 @@ be:
     carbonads_through_trust_level: "Паказаць аб'явы карыстальнікам на аснове узроўняў даверу. Карыстальнікі з узроўнем даверу вышэй гэтага значэння не будуць бачыць рэкламу."
     carbonads_topic_list_top_enabled: "Паказаць аб'яву над спісам тэмы"
     carbonads_above_post_stream_enabled: "Паказаць аб'яву вышэй паштовага патоку"
+    adbutler_publisher_id: "AdButler Publisher ID. NOTE: You may need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
+    adbutler_mobile_topic_list_top_zone_id: "Zone ID for mobile topic list top location"
+    adbutler_mobile_topic_above_post_stream_zone_id: "Zone ID for mobile topic above post stream location"
+    adbutler_mobile_post_bottom_zone_id: "Zone ID for mobile post bottom location"
+    adbutler_mobile_topic_above_suggested_zone_id: "Zone ID for mobile topic above suggested location"
+    adbutler_topic_list_top_zone_id: "Zone ID for topic list top location"
+    adbutler_topic_above_post_stream_zone_id: "Zone ID for topic above post stream location"
+    adbutler_post_bottom_zone_id: "Zone ID for post bottom location"
+    adbutler_topic_above_suggested_zone_id: "Zone ID for topic above suggested location"
     adbutler_nth_post: "Паказаць аб'яву пасля кожнага N паведамленняў, дзе N гэтым значэнне"
     adbutler_through_trust_level: "Паказаць аб'явы карыстальнікам на аснове узроўняў даверу. Карыстальнікі з узроўнем даверу вышэй, чым гэта значэнне не будзе бачыць рэкламу"
+    adbutler_adserver_hostname: "The hostname that AdButler is serving your ads from"

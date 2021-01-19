@@ -6,12 +6,16 @@
 
 pt_BR:
   site_settings:
+    discourse_adplugin_enabled: Enable the discourse-adplugin.
+    no_ads_for_personal_messages: "Don't show ads when viewing personal messages"
+    no_ads_for_restricted_categories: "Don't show ads in categories that aren't visible to everyone."
     no_ads_for_groups: "Não mostrar anúncios para usuários nestes grupos."
     no_ads_for_categories: "Não mostrar anúncios na lista de tópicos e nas páginas de tópicos pertencentes a estas categorias."
     no_ads_for_tags: "Não mostrar anúncios na lista de tópicos e nas páginas de tópicos pertencentes a estas etiquetas."
     house_ads_after_nth_post: 'Se anúncios internos "Entre postagens" forem definidos, mostrar um anúncio após cada N postagens, em que N é este valor.'
     house_ads_frequency: "Se outras redes de anúncios estiverem configuradas para serem exibidas em um espaço de anúncio, com que frequência os anúncios internos serão exibidos, como uma porcentagem."
     ads_txt: "Conteúdo do seu arquivo ads.txt. Mais detalhes disponíveis <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>nesta página de ajuda do Google AdSense</a>."
+    dfp_publisher_id: "Input your Google Ad Manager (formerly called DFP) network code, which is found in your network settings. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     dfp_publisher_id_mobile: "(Opcional) Se você quer usar um Ad Manager publisher id diferente para a versão mobile do site, coloque aqui. Deixe em branco para usar dfp_publisher_id no mobile."
     dfp_through_trust_level: "Exibir seus anúncios para usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."
     dfp_topic_list_top_code: "Digite o Código único da unidade de anúncio para exibir em cima das listas de tópicos. Este é o código curto (máx. 100 caracteres) dado à unidade de anúncio quando ela foi criada, não o código JavaScript."
@@ -39,6 +43,7 @@ pt_BR:
     dfp_mobile_post_bottom_ad_sizes: "Escolha o tamanho do seu anúncio para a unidade de anúncio exibida entre postagens em dispositivos móveis."
     dfp_target_post_bottom_key_code: "Inserir chaves de segmentação personalizada - nível de inventário"
     dfp_target_post_bottom_value_code: "Inserir valores de segmentação personalizada - Nível de Inventário"
+    adsense_publisher_code: "Your publisher ID. Enter only the number, excluding 'pub-'. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     adsense_through_trust_level: "Mostre seus anúncios aos usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."
     adsense_topic_list_top_code: "Insira o código da unidade de anúncio para exibir no topo da lista de tópicos. Este é o número atribuído à unidade de anúncio, não o código JavaScript."
     adsense_mobile_topic_list_top_code: "Insira o código da unidade de anúncio para exibir no topo da lista de tópicos em dispositivos móveis. Este é o número atribuído à unidade de anúncio, não o código JavaScript."
@@ -88,5 +93,15 @@ pt_BR:
     carbonads_through_trust_level: "Exibir seus anúncios para usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios."
     carbonads_topic_list_top_enabled: "Mostrar um anúncio acima da lista de tópicos"
     carbonads_above_post_stream_enabled: "Mostrar um anúncio acima da stream de postagens"
+    adbutler_publisher_id: "AdButler Publisher ID. NOTE: You may need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
+    adbutler_mobile_topic_list_top_zone_id: "Zone ID for mobile topic list top location"
+    adbutler_mobile_topic_above_post_stream_zone_id: "Zone ID for mobile topic above post stream location"
+    adbutler_mobile_post_bottom_zone_id: "Zone ID for mobile post bottom location"
+    adbutler_mobile_topic_above_suggested_zone_id: "Zone ID for mobile topic above suggested location"
+    adbutler_topic_list_top_zone_id: "Zone ID for topic list top location"
+    adbutler_topic_above_post_stream_zone_id: "Zone ID for topic above post stream location"
+    adbutler_post_bottom_zone_id: "Zone ID for post bottom location"
+    adbutler_topic_above_suggested_zone_id: "Zone ID for topic above suggested location"
     adbutler_nth_post: "Mostrar um anúncio depois de cada N posts, onde N é este valor"
     adbutler_through_trust_level: "Mostrar seus anúncios aos usuários baseado nos níveis de confiança. Usuários com nível de confiança maior que este valor não verão anúncios"
+    adbutler_adserver_hostname: "The hostname that AdButler is serving your ads from"

@@ -6,6 +6,7 @@
 
 ca:
   site_settings:
+    discourse_adplugin_enabled: Enable the discourse-adplugin.
     no_ads_for_personal_messages: "No mostris anuncis quan es miren missatges personals"
     no_ads_for_restricted_categories: "No mostris anuncis en categories que no siguin visibles per a tothom."
     no_ads_for_groups: "No mostris anuncis als usuaris d'aquests grups."
@@ -14,6 +15,7 @@ ca:
     house_ads_after_nth_post: 'Si es defineixen els anuncis propis "entre publicacions", mostra un anunci després de cada N missatges, on N és aquest valor.'
     house_ads_frequency: "Si altres xarxes publicitàries són configurades per a mostrar-se en un espai publicitari, amb quina freqüència s'han de mostrar els anuncis propis en percentatge."
     ads_txt: "Continguts del fitxer ads.txt. Més informació disponible en <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>aquesta pàgina d'ajuda de Google AdSense</a>."
+    dfp_publisher_id: "Input your Google Ad Manager (formerly called DFP) network code, which is found in your network settings. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     dfp_publisher_id_mobile: "(Opcional) Si voleu utilitzar un identificador d'editor d'Ad Manager diferent per a la versió mòbil del lloc web, introduïu-lo aquí. Deixeu-ho en blanc per a utilitzar dfp_publisher_id en mòbil."
     dfp_through_trust_level: "Mostra els anuncis a usuaris segons els nivells de confiança. Els usuaris amb un nivell més alt que aquest valor no veuran anuncis."
     dfp_topic_list_top_code: "Introduïu el codi únic del bloc d'anuncis per a mostrar per damunt de les llistes de temes. Aquest és el codi curt (màxim de 100 caràcters) donat al bloc d'anuncis quan es va crear, no el codi JavaScript."
@@ -91,6 +93,7 @@ ca:
     carbonads_through_trust_level: "Mostra els anuncis a usuaris segons els nivells de confiança. Els usuaris amb un nivell més alt que aquest valor no veuran anuncis."
     carbonads_topic_list_top_enabled: "Mostra un anunci per sobre de la llista de temes"
     carbonads_above_post_stream_enabled: "Mostra un anunci per sobre del flux de publicacions"
+    adbutler_publisher_id: "AdButler Publisher ID. NOTE: You may need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     adbutler_mobile_topic_list_top_zone_id: "ID de zona de la ubicació superior de la llista de temes en mòbils"
     adbutler_mobile_topic_above_post_stream_zone_id: "ID de zona per la ubicació del tema per damunt del flux de publicació en mòbils"
     adbutler_mobile_post_bottom_zone_id: "ID de zona per a la ubicació de baix de la publicació en mòbils"
