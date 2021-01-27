@@ -13,12 +13,12 @@ function getNextSlotNum() {
 }
 
 function splitWidthInt(value) {
-  var str = value.substring(0, 3);
+  let str = value.substring(0, 3);
   return str.trim();
 }
 
 function splitHeightInt(value) {
-  var str = value.substring(4, 7);
+  let str = value.substring(4, 7);
   return str.trim();
 }
 
@@ -40,7 +40,7 @@ function keyParse(word) {
 
 // This should call adslot.setTargeting(key for that location, value for that location)
 function custom_targeting(key_array, value_array, adSlot) {
-  for (var i = 0; i < key_array.length; i++) {
+  for (let i = 0; i < key_array.length; i++) {
     if (key_array[i]) {
       adSlot.setTargeting(key_array[i], valueParse(value_array[i]));
     }
@@ -208,7 +208,7 @@ function loadGoogle() {
   }
 
   // The boilerplate code
-  var dfpSrc =
+  let dfpSrc =
     ("https:" === document.location.protocol ? "https:" : "http:") +
     "//securepubads.g.doubleclick.net/tag/js/gpt.js";
   _promise = loadScript(dfpSrc, { scriptTag: true }).then(function () {
