@@ -20,12 +20,9 @@ jobs:
           node-version: 12
 
       - name: Set up ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
-
-      - name: Setup bundler
-        run: gem install bundler -v 2.1.4 --no-doc
 
       - name: Setup gems
         run: bundle install --jobs 4
@@ -45,6 +42,9 @@ jobs:
           if [ -d "test" ]; then \
             yarn prettier --list-different "test/**/*.{js,es6}" ; \
           fi
+
+      - name: Ember template lint
+        run: yarn ember-template-lint assets/javascripts
 
       - name: Rubocop
         run: bundle exec rubocop .
