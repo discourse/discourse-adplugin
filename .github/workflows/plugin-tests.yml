@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: ${{ matrix.build_type }}
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     timeout-minutes: 60
 
     env:
@@ -26,8 +26,7 @@ jobs:
 
       matrix:
         build_type: ["backend", "frontend"]
-        os: [ubuntu-latest]
-        ruby: ["2.6"]
+        ruby: ["2.7"]
         postgres: ["12"]
         redis: ["4.x"]
 
@@ -47,13 +46,13 @@ jobs:
           --health-retries 5
 
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
         with:
           repository: discourse/discourse
           fetch-depth: 1
 
       - name: Install plugin
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
           path: plugins/${{ github.event.repository.name }}
           fetch-depth: 1
@@ -94,27 +93,14 @@ jobs:
           redis-version: ${{ matrix.redis }}
 
       - name: Setup ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
 
-      - name: Setup bundler
-        run: |
-          gem install bundler -v 2.1.4 --no-doc
-          bundle config deployment 'true'
-          bundle config without 'development'
-
-      - name: Bundler cache
-        uses: actions/cache@v2
-        id: bundler-cache
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gem-
-
-      - name: Setup gems
-        run: bundle install --jobs 4
+      - name: Lint English locale
+        if: matrix.build_type == 'backend'
+        run: bundle exec ruby script/i18n_lint.rb "plugins/${{ github.event.repository.name }}/locales/{client,server}.en.yml"
 
       - name: Get yarn cache directory
         id: yarn-cache-dir
