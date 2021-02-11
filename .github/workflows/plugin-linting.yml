@@ -23,12 +23,10 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
-
-      - name: Setup gems
-        run: bundle install --jobs 4
+          bundler-cache: true
 
       - name: Yarn install
-        run: yarn install --dev
+        run: yarn install
 
       - name: ESLint
         run: yarn eslint --ext .js,.js.es6 --no-error-on-unmatched-pattern {test,assets}/javascripts
