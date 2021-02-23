@@ -1,5 +1,7 @@
 # Official Discourse Advertising Plugin
 
+Official Plugin Topic & Documentation: https://meta.discourse.org/t/official-advertising-ad-plugin-for-discourse/33734
+
 This is the official Discourse advertising plugin.  It allows advertisements to be served by supported advertising platforms for users with a Discourse forum.
 
 **Authors**: 		[Sarah Ni](https://github.com/cyberkoi) & [Vi Nguyen](https://github.com/ladydanger)
