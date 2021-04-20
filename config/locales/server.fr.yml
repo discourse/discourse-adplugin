@@ -6,6 +6,7 @@
 
 fr:
   site_settings:
+    discourse_adplugin_enabled: Activez le discourse-adplugin.
     no_ads_for_personal_messages: "Ne pas diffuser d'annonces lors de la visualisation de messages personnels"
     no_ads_for_restricted_categories: "Ne diffusez pas d'annonces dans des catégories inaccessibles à tout le monde."
     no_ads_for_groups: "Ne pas montrer de pub aux utilisateurs de ces groupes."
@@ -42,6 +43,7 @@ fr:
     dfp_mobile_post_bottom_ad_sizes: "Choisir la taille de l'unité de publicité affiché entre les messages en vue mobile."
     dfp_target_post_bottom_key_code: "Entrez vos clés pour le ciblage personnalisé - niveau des stocks"
     dfp_target_post_bottom_value_code: "Entrez vos valeurs pour le ciblage personnalisé - niveau des stocks"
+    adsense_publisher_code: "Votre référence éditeur. Saisissez uniquement le numéro, à l'exclusion de «pub-». REMARQUE: vous devrez mettre à jour le paramètre «script de stratégie de sécurité du contenu src». Voir <a href='https://meta.discourse.org/t/33734' target='_blank'>ce sujet</a> pour les dernières instructions."
     adsense_through_trust_level: "Afficher les publicités aux utilisateurs en fonction de leurs niveaux de confiance. Les utilisateurs avec un niveau de confiance supérieur à celui-ci ne verront pas de publicité."
     adsense_topic_list_top_code: "ID de la publicité pour l'emplacement au dessus de la liste des sujets. Ceci est le chiffre assigné à l'unité de publicité, et non le code JavaScript."
     adsense_mobile_topic_list_top_code: "ID de la publicité Mobile pour l'emplacement au dessus de la liste des sujets. Ceci est le chiffre assigné à l'unité de publicité, et non le code JavaScript."
@@ -91,6 +93,15 @@ fr:
     carbonads_through_trust_level: "Afficher les publicités aux utilisateurs en fonction de leurs niveaux de confiance. Les utilisateurs avec un niveau de confiance supérieur à celui-ci ne verront pas de publicité."
     carbonads_topic_list_top_enabled: "Afficher une pub au dessus de la liste de sujets"
     carbonads_above_post_stream_enabled: "Afficher une pub au dessus du flux de messages"
+    adbutler_publisher_id: "ID éditeur AdButler. REMARQUE: vous devrez peut-être mettre à jour le paramètre «script de stratégie de sécurité du contenu src». Voir <a href='https://meta.discourse.org/t/33734' target='_blank'>ce sujet</a> pour les dernières instructions."
+    adbutler_mobile_topic_list_top_zone_id: "ID de zone pour l'emplacement le haut de l'article"
+    adbutler_mobile_topic_above_post_stream_zone_id: "ID de zone pour le sujet mobile au-dessus de l'emplacement suggéré"
+    adbutler_mobile_post_bottom_zone_id: "ID de zone pour l'emplacement inférieur du poste mobile"
+    adbutler_mobile_topic_above_suggested_zone_id: "ID de zone pour le sujet mobile au-dessus de l'emplacement suggéré"
+    adbutler_topic_list_top_zone_id: "ID de zone pour l'emplacement le haut de l'article"
+    adbutler_topic_above_post_stream_zone_id: "ID de zone pour le sujet au-dessus de l'emplacement du flux de publication"
+    adbutler_post_bottom_zone_id: "ID de zone pour l'emplacement du bas de l'article"
+    adbutler_topic_above_suggested_zone_id: "ID de zone pour le sujet au-dessus de l'emplacement suggéré"
     adbutler_nth_post: "Afficher une publicité tous les N messages, où N est cette valeur"
     adbutler_through_trust_level: "Afficher vos publicités en fonction du niveau de confiance. Les utilisateurs avec un niveau de confiance plus élevé que cette valeur ne verront pas de pub"
     adbutler_adserver_hostname: "Le nom d'hôte depuis lequel AdButler fournit vos publicités"
