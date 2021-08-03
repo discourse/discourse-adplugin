@@ -6,6 +6,7 @@
 
 pl_PL:
   site_settings:
+    discourse_adplugin_enabled: Włącz wtyczkę discourse-adplugin.
     no_ads_for_personal_messages: "Nie pokazuj reklam podczas przeglądania prywatnych wiadomości"
     no_ads_for_restricted_categories: "Nie pokazuj reklam w kategoriach, które nie są widoczne dla wszystkich."
     no_ads_for_groups: "Nie pokazuj reklam użytkownikom z tych grup."
