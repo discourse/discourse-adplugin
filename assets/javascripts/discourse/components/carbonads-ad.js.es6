@@ -18,8 +18,7 @@ export default AdComponent.extend({
   @discourseComputed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
-      trustLevel &&
-      trustLevel > this.siteSettings.carbonads_through_trust_level
+      trustLevel && trustLevel > this.siteSettings.carbonads_through_trust_level
     );
   },
 
