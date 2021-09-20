@@ -1,8 +1,8 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed from "discourse-common/utils/decorators";
 
-const serve_id = Discourse.SiteSettings.carbonads_serve_id,
-  placement = Discourse.SiteSettings.carbonads_placement;
+const serve_id = this.siteSettings.carbonads_serve_id,
+  placement = this.siteSettings.carbonads_placement;
 
 export default AdComponent.extend({
   init() {
@@ -19,7 +19,7 @@ export default AdComponent.extend({
   showToTrustLevel(trustLevel) {
     return !(
       trustLevel &&
-      trustLevel > Discourse.SiteSettings.carbonads_through_trust_level
+      trustLevel > this.siteSettings.carbonads_through_trust_level
     );
   },
 

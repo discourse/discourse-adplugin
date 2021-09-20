@@ -2,8 +2,8 @@ import AdComponent from "discourse/plugins/discourse-adplugin/discourse/componen
 import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import loadScript from "discourse/lib/load-script";
 
-const publisherId = Discourse.SiteSettings.adbutler_publisher_id;
-const adserverHostname = Discourse.SiteSettings.adbutler_adserver_hostname;
+const publisherId = this.siteSettings.adbutler_publisher_id;
+const adserverHostname = this.siteSettings.adbutler_adserver_hostname;
 
 let _loaded = false,
   _promise = null,
@@ -118,7 +118,7 @@ export default AdComponent.extend({
   showToTrustLevel(trustLevel) {
     return !(
       trustLevel &&
-      trustLevel > Discourse.SiteSettings.adbutler_through_trust_level
+      trustLevel > this.siteSettings.adbutler_through_trust_level
     );
   },
 

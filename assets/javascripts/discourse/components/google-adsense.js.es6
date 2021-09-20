@@ -5,7 +5,7 @@ import loadScript from "discourse/lib/load-script";
 let _loaded = false,
   _promise = null,
   renderCounts = {},
-  publisher_id = Discourse.SiteSettings.adsense_publisher_code;
+  publisher_id = this.siteSettings.adsense_publisher_code;
 
 function parseAdWidth(value) {
   if (value === "responsive") {
