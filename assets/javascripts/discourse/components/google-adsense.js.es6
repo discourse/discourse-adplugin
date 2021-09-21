@@ -4,8 +4,7 @@ import loadScript from "discourse/lib/load-script";
 
 let _loaded = false,
   _promise = null,
-  renderCounts = {},
-  publisher_id = this.siteSettings.adsense_publisher_code;
+  renderCounts = {};
 
 function parseAdWidth(value) {
   if (value === "responsive") {
@@ -102,7 +101,7 @@ export default AdComponent.extend({
   ],
   loadedGoogletag: false,
 
-  publisher_id: publisher_id,
+  publisher_id: this.siteSettings.adsense_publisher_code,
   ad_width: null,
   ad_height: null,
 

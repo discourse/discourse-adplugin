@@ -1,9 +1,6 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed from "discourse-common/utils/decorators";
 
-const serve_id = this.siteSettings.carbonads_serve_id,
-  placement = this.siteSettings.carbonads_placement;
-
 export default AdComponent.extend({
   init() {
     this.set("serve_id", serve_id);
@@ -25,8 +22,8 @@ export default AdComponent.extend({
   @discourseComputed("showToTrustLevel", "showToGroups", "showOnCurrentPage")
   showAd(showToTrustLevel, showToGroups, showOnCurrentPage) {
     return (
-      placement &&
-      serve_id &&
+      this.siteSettings.carbonads_placement &&
+      this.siteSettings.carbonads_serve_id &&
       showToTrustLevel &&
       showToGroups &&
       showOnCurrentPage
