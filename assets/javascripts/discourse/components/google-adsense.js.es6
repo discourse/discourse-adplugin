@@ -4,8 +4,7 @@ import loadScript from "discourse/lib/load-script";
 
 let _loaded = false,
   _promise = null,
-  renderCounts = {},
-  publisher_id = Discourse.SiteSettings.adsense_publisher_code;
+  renderCounts = {};
 
 function parseAdWidth(value) {
   if (value === "responsive") {
@@ -102,7 +101,7 @@ export default AdComponent.extend({
   ],
   loadedGoogletag: false,
 
-  publisher_id: publisher_id,
+  publisher_id: null,
   ad_width: null,
   ad_height: null,
 
@@ -134,6 +133,7 @@ export default AdComponent.extend({
     this.set("ad_width", parseAdWidth(size));
     this.set("ad_height", parseAdHeight(size));
     this.set("ad_code", this.siteSettings[config.code]);
+    this.set("publisher_id", this.siteSettings.adsense_publisher_code);
     this._super();
   },
 
@@ -220,14 +220,21 @@ export default AdComponent.extend({
   },
 
   @discourseComputed(
+    "publisher_id",
     "showToTrustLevel",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
-  showAd(showToTrustLevel, showToGroups, showAfterPost, showOnCurrentPage) {
+  showAd(
+    publisherId,
+    showToTrustLevel,
+    showToGroups,
+    showAfterPost,
+    showOnCurrentPage
+  ) {
     return (
-      this.siteSettings.adsense_publisher_code &&
+      publisherId &&
       showToTrustLevel &&
       showToGroups &&
       showAfterPost &&

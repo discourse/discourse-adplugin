@@ -1,4 +1,5 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+import Site from "discourse/models/site";
 
 export default {
   name: "initialize-ad-plugin",
@@ -28,7 +29,7 @@ export default {
     }
 
     messageBus.subscribe("/site/house-creatives", function (houseAdsSettings) {
-      Discourse.Site.currentProp("house_creatives", houseAdsSettings);
+      Site.currentProp("house_creatives", houseAdsSettings);
     });
   },
 };

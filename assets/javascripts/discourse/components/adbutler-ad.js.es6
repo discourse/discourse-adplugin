@@ -2,14 +2,11 @@ import AdComponent from "discourse/plugins/discourse-adplugin/discourse/componen
 import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import loadScript from "discourse/lib/load-script";
 
-const publisherId = Discourse.SiteSettings.adbutler_publisher_id;
-const adserverHostname = Discourse.SiteSettings.adbutler_adserver_hostname;
-
 let _loaded = false,
   _promise = null,
   _c = 0;
 
-function loadAdbutler() {
+function loadAdbutler(adserverHostname) {
   if (_loaded) {
     return Ember.RSVP.resolve();
   }
@@ -29,6 +26,7 @@ function loadAdbutler() {
 
 export default AdComponent.extend({
   divs: null,
+  publisherId: null,
 
   init() {
     let dimensions = [728, 90];
@@ -56,7 +54,12 @@ export default AdComponent.extend({
 
     let divId = "placement-" + zoneId + "-" + _c;
     this.set("divId", divId);
+
+    let publisherId = this.siteSettings.adbutler_publisher_id;
+    this.set("publisherId", publisherId);
+
     _c++;
+
     this.divs.push({
       divId: divId,
       publisherId: publisherId,
@@ -64,7 +67,6 @@ export default AdComponent.extend({
       dimensions: dimensions,
     });
 
-    this.set("publisherId", publisherId);
     this._super();
   },
 
@@ -73,7 +75,9 @@ export default AdComponent.extend({
       return; // Don't load external JS during tests
     }
 
-    loadAdbutler().then(
+    const adserverHostname = this.siteSettings.adbutler_adserver_hostname;
+
+    loadAdbutler(adserverHostname).then(
       function () {
         if (this.divs.length > 0) {
           let abkw = window.abkw || "";
@@ -117,18 +121,24 @@ export default AdComponent.extend({
   @discourseComputed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
-      trustLevel &&
-      trustLevel > Discourse.SiteSettings.adbutler_through_trust_level
+      trustLevel && trustLevel > this.siteSettings.adbutler_through_trust_level
     );
   },
 
   @discourseComputed(
+    "publisherId",
     "showToTrustLevel",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
-  showAd(showToTrustLevel, showToGroups, showAfterPost, showOnCurrentPage) {
+  showAd(
+    publisherId,
+    showToTrustLevel,
+    showToGroups,
+    showAfterPost,
+    showOnCurrentPage
+  ) {
     return (
       publisherId &&
       showToTrustLevel &&

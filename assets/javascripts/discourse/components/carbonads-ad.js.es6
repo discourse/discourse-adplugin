@@ -1,33 +1,45 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed from "discourse-common/utils/decorators";
 
-const serve_id = Discourse.SiteSettings.carbonads_serve_id,
-  placement = Discourse.SiteSettings.carbonads_placement;
-
 export default AdComponent.extend({
+  serve_id: null,
+  placement: null,
+
   init() {
-    this.set("serve_id", serve_id);
+    this.set("serve_id", this.siteSettings.carbonads_serve_id);
+    this.set("placement", this.siteSettings.carbonads_placement);
     this._super();
   },
 
-  @discourseComputed("serve_id")
-  url(serveId) {
+  @discourseComputed("serve_id", "placement")
+  url(serveId, placement) {
     return `//cdn.carbonads.com/carbon.js?serve=${serveId}&placement=${placement}`.htmlSafe();
   },
 
   @discourseComputed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
-      trustLevel &&
-      trustLevel > Discourse.SiteSettings.carbonads_through_trust_level
+      trustLevel && trustLevel > this.siteSettings.carbonads_through_trust_level
     );
   },
 
-  @discourseComputed("showToTrustLevel", "showToGroups", "showOnCurrentPage")
-  showAd(showToTrustLevel, showToGroups, showOnCurrentPage) {
+  @discourseComputed(
+    "placement",
+    "serve_id",
+    "showToTrustLevel",
+    "showToGroups",
+    "showOnCurrentPage"
+  )
+  showAd(
+    placement,
+    serveId,
+    showToTrustLevel,
+    showToGroups,
+    showOnCurrentPage
+  ) {
     return (
       placement &&
-      serve_id &&
+      serveId &&
       showToTrustLevel &&
       showToGroups &&
       showOnCurrentPage
