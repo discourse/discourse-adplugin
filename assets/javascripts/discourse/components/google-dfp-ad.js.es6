@@ -182,7 +182,7 @@ function defineSlot(
 
   ad.addService(window.googletag.pubads());
 
-  ads[divId] = { ad: ad, width: width, height: height };
+  ads[divId] = { ad, width, height };
   return ads[divId];
 }
 
