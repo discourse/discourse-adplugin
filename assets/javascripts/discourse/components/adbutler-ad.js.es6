@@ -61,10 +61,10 @@ export default AdComponent.extend({
     _c++;
 
     this.divs.push({
-      divId: divId,
-      publisherId: publisherId,
-      zoneId: zoneId,
-      dimensions: dimensions,
+      divId,
+      publisherId,
+      zoneId,
+      dimensions,
     });
 
     this._super();
