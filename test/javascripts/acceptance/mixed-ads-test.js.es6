@@ -1,4 +1,7 @@
-import { acceptance, updateCurrentUser } from "helpers/qunit-helpers";
+import {
+  acceptance,
+  updateCurrentUser,
+} from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Mixed Ads", function (needs) {
   needs.user();
