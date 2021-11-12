@@ -1,5 +1,8 @@
-import { acceptance, updateCurrentUser } from "helpers/qunit-helpers";
-import groupFixtures from "fixtures/group-fixtures";
+import {
+  acceptance,
+  updateCurrentUser,
+} from "discourse/tests/helpers/qunit-helpers";
+import groupFixtures from "discourse/tests/fixtures/group-fixtures";
 
 acceptance("AdSense", function (needs) {
   needs.user();
