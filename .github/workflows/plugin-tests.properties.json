@@ -1,0 +1,5 @@
+{
+    "name": "Discourse Plugin Test Workflow",
+    "description": "Runs front-end and back-end plugin tests standalone and against core Discourse",
+    "iconName": "discourse"
+}
