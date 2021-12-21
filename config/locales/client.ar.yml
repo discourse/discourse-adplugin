@@ -13,19 +13,32 @@ ar:
       site_settings:
         categories:
           ad_plugin: 'ملحقة الإعلانات'
+          dfp_plugin: 'DFP Ad Manager'
+          adsense_plugin: 'AdSense'
           amazon_plugin: 'اعلانات امازون'
+          carbonads_plugin: 'Carbon Ads'
+          adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
+          title: "House Ads"
           new: "جديد"
           settings: "إعدادات"
+          new_name: "New House Ad"
           save: "احفظ"
           delete: "أحذف"
+          description: "حدِّد إعلاناتك الخاصة ومكان عرضها."
           get_started: "ابدأ بإنشاء إعلان جديد."
           filter_placeholder: "حدّد الإعلانات..."
           more_settings: "إعدادات أكثر"
           topic_list_top:
             title: "الإعلانات أعلى قائمة المواضيع"
             description: "الإعلانات التي ستظهر أعلى صفحات قوائم المواضيع."
+          topic_above_post_stream:
+            title: "الموضوع فوق تدفُّق المنشورات"
+            description: "تظهر الإعلانات فوق عنوان موضوع في صفحة الموضوعات."
+          topic_above_suggested:
+            title: "الموضوع فوق الموضوعات المقترحة"
+            description: "تظهر الإعلانات بعد المنشور الأخير في موضوع، فوق الموضوعات المقترحة"
           post_bottom:
             title: "بين المشاركات"
             description: "الإعلانات التي ستظهر بين المشاركات، بعد كلّ س مشاركة."
