@@ -12,7 +12,7 @@ de:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Anzeigen Plugin'
+          ad_plugin: 'Anzeigen-Plug-in'
           dfp_plugin: 'DFP/Ad Manager'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
@@ -20,25 +20,25 @@ de:
           adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
-          title: "Haus Anzeigen"
+          title: "Eigenanzeigen"
           new: "Neu"
           settings: "Einstellungen"
-          new_name: "Neue Haus Anzeigen"
+          new_name: "Neue Eigenanzeige"
           save: "Speichern"
           delete: "Löschen"
-          description: "Definiere deine eigenen Anzeige und wo sie angezeigt werden sollen."
-          get_started: "Starte mit dem Erstellen einer neuen Anzeige."
-          filter_placeholder: "Anzeigen auswählen"
+          description: "Definiere deine eigenen Anzeigen und wo sie angezeigt werden sollen."
+          get_started: "Beginne damit, eine neue Anzeige zu erstellen."
+          filter_placeholder: "Anzeigen auswählen …"
           more_settings: "Weitere Einstellungen"
           topic_list_top:
-            title: "Themenliste der Top Anzeigen"
+            title: "Anzeigen oben bei der Themenliste"
             description: "Anzeigen, die oben auf den Themenlisten-Seiten gezeigt werden sollen."
           topic_above_post_stream:
-            title: "Thema oberhalb Beitragsfluss"
+            title: "Thema – oberhalb des Beitragsverlaufs"
             description: "Anzeigen, die oberhalb des Titels eines Themas auf der Themenseite gezeigt werden sollen."
           topic_above_suggested:
-            title: "Thema oberhalb Vorgeschlagen"
-            description: "Anzeigen, die nach dem letzten Beitrag in einem Thema, oberhalb der vorgeschlagenen Themen angezeigt werden sollen."
+            title: "Thema – oberhalb von „Vorgeschlagen“"
+            description: "Anzeigen, die nach dem letzten Beitrag in einem Thema oberhalb der vorgeschlagenen Themen angezeigt werden sollen."
           post_bottom:
             title: "Zwischen Beiträgen"
-            description: "Anzeigen zwischen Beiträgen anzeigen, nach je N Beiträgen."
+            description: "Anzeigen, die zwischen den Beiträgen gezeigt werden, nach jeweils N Beiträgen."

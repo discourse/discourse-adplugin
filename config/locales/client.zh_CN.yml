@@ -13,32 +13,32 @@ zh_CN:
       site_settings:
         categories:
           ad_plugin: '广告插件'
-          dfp_plugin: '谷歌 DFP/广告管理器'
-          adsense_plugin: '谷歌Adsense'
-          amazon_plugin: '亚马逊网站联盟'
+          dfp_plugin: 'DFP/Ad Manager'
+          adsense_plugin: 'AdSense'
+          amazon_plugin: 'Amazon'
           carbonads_plugin: 'Carbon Ads'
           adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
-          title: "自定义广告"
+          title: "自家广告"
           new: "新建"
           settings: "设置"
-          new_name: "新建自定义广告"
+          new_name: "新建自家广告"
           save: "保存"
           delete: "删除"
-          description: "定义你自己的广告和显示的位置。"
-          get_started: "开始创建一个新的广告"
-          filter_placeholder: "选择广告"
+          description: "定义您自己的广告和显示位置。"
+          get_started: "首先创建一个新广告。"
+          filter_placeholder: "选择广告…"
           more_settings: "更多设置"
           topic_list_top:
-            title: "主题列表顶部广告"
-            description: "在主题列表页面的顶部显示广告。"
+            title: "话题列表顶部广告"
+            description: "在话题列表页面顶部显示的广告。"
           topic_above_post_stream:
-            title: "主题的贴子之前"
-            description: "在主题页面中的主题标题之上显示广告"
+            title: "帖子流上方话题"
+            description: "在话题页面的话题标题上方显示的广告。"
           topic_above_suggested:
-            title: "主题推荐之前"
-            description: "在主题的最后一个帖子后，主题推荐之前显示广告"
+            title: "推荐话题上方"
+            description: "在话题的最后一条帖子后、推荐话题上方显示的广告。"
           post_bottom:
             title: "帖子之间"
-            description: "在每N个帖子之间显示广告。"
+            description: "在每 N 条帖子之间显示的广告。"
