@@ -12,7 +12,7 @@ it:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Ad Plugin'
+          ad_plugin: 'Plugin di annunci'
           dfp_plugin: 'DFP/Gestore Annunci'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
@@ -20,10 +20,10 @@ it:
           adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
-          title: "Pubblicità"
+          title: "Annunci interni"
           new: "Nuovo"
           settings: "Impostazioni"
-          new_name: "Nuova Pubblicità"
+          new_name: "Nuovi annunci interni"
           save: "Salva"
           delete: "Elimina"
           description: "Definisci i tuoi annunci e dove saranno visualizzati."
@@ -31,13 +31,13 @@ it:
           filter_placeholder: "Seleziona annunci..."
           more_settings: "Altre Impostazioni"
           topic_list_top:
-            title: "Annunci in testa alla lista Argomenti"
-            description: "Annunci da mostrare in testa alle pagine con gli elenchi di argomenti."
+            title: "Annunci in cima all'elenco argomenti"
+            description: "Annunci da mostrare in cima alle pagine con gli elenchi di argomenti."
           topic_above_post_stream:
-            title: "Argomento sopra la lista dei messaggi"
+            title: "Argomento sopra il flusso dei messaggi"
             description: "Annunci da mostrare sopra al titolo di un argomento, sulla pagina dell'argomento stesso."
           topic_above_suggested:
-            title: "Argomento sopra i suggeriti"
+            title: "Argomento sopra i suggerimenti"
             description: "Annunci da mostrare dopo l'ultimo messaggio di un argomento, sopra gli argomenti suggeriti."
           post_bottom:
             title: "Tra messaggi"
