@@ -20,7 +20,7 @@ fr:
           adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
-          title: "Annonces maison"
+          title: "Annonces personnalisées"
           new: "Nouveau"
           settings: "Paramètres"
           new_name: "Nouvelle annonce maison"
