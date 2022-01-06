@@ -1,9 +1,9 @@
 import DiscourseRoute from "discourse/routes/discourse";
+import { action } from "@ember/object";
 
 export default DiscourseRoute.extend({
-  actions: {
-    moreSettings() {
-      this.transitionTo("adminSiteSettingsCategory", "ad_plugin");
-    },
+  @action
+  moreSettings() {
+    this.transitionTo("adminSiteSettingsCategory", "ad_plugin");
   },
 });
