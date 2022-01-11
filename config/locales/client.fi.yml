@@ -12,7 +12,7 @@ fi:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Mainos lisäosa'
+          ad_plugin: 'Mainoslisäosa'
           dfp_plugin: 'DFP/Ad Manager'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
@@ -26,19 +26,19 @@ fi:
           new_name: "Uusi oma mainos"
           save: "Tallenna"
           delete: "Poista"
-          description: "Määritä omat mainoksesi ja missä ne tulisi näyttää. "
-          get_started: "Aloita luomalla uusi mainos. "
-          filter_placeholder: "Valitse mainokset... "
+          description: "Määritä omat mainoksesi ja missä ne tulisi näyttää."
+          get_started: "Aloita luomalla uusi mainos."
+          filter_placeholder: "Valitse mainokset..."
           more_settings: "Lisää asetuksia"
           topic_list_top:
-            title: "Ketjulistan yläpuoliset mainokset"
-            description: "Mainokset, jotka näytetään aihelistaus-sivun yläreunassa. "
+            title: "Ketjuluettelon ylämainokset"
+            description: "Mainokset, jotka näytetään aiheluettelosivun yläreunassa."
           topic_above_post_stream:
             title: "Mainoskenttä viestivirran yläpuolella"
             description: "Mainokset, jotka näytetään ketjun otsikon yläpuolella ketjussa"
           topic_above_suggested:
             title: "Mainoskenttä ehdotettujen yläpuolella"
-            description: "Mainokset, jotka näytetään viimeisen kirjoituksen jälkeen ketjussa, ehdotettujen ketjujen yläpuolella. "
+            description: "Mainokset, jotka näytetään viimeisen kirjoituksen jälkeen ketjussa, ehdotettujen ketjujen yläpuolella."
           post_bottom:
-            title: "Kirjoitusten välissä "
-            description: "Mainokset, jotka näytetään kirjoitusten välissä joka N kirjoituksen välein. "
+            title: "Viestien välissä"
+            description: "Mainokset, jotka näytetään viestien välissä joka N. kirjoituksen välein."

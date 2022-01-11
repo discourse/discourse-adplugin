@@ -7,7 +7,7 @@
 it:
   js:
     adplugin:
-      advertisement_label: 'ANNUNCIO'
+      advertisement_label: 'ADVERTISEMENT'
   admin_js:
     admin:
       site_settings:

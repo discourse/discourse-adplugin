@@ -12,7 +12,7 @@ it:
     no_ads_for_groups: "Non mostrare annunci agli utenti in questi gruppi."
     no_ads_for_categories: "Non mostrare annunci sulla lista degli Argomenti e sulle pagine degli Argomenti che appartengono a queste categorie."
     no_ads_for_tags: "Non mostrare annunci sull'elenco degli argomenti e sulle pagine degli argomenti che appartengono a queste Etichette."
-    house_ads_after_nth_post: 'Se è impostata la pubblicità "intra-messaggi", mostra un annuncio ogni N messaggi, dove N è il numero di messaggi.'
+    house_ads_after_nth_post: 'Se sono impostati gli annunci "tra messaggi", il sistema mostra un annuncio ogni N messaggi, dove N è il valore di questo parametro.'
     house_ads_frequency: "Se sono configurate altre reti di annunci perché mostrino gli annunci in uno slot, indica quanto spesso tali pubblicità devono apparire, in percentuale."
     ads_txt: "Contenuto del file ads.txt. Ulteriori dettagli sono disponibili in <a href=\"https://support.google.com/adsense/answer/7532444?hl=it\" target=\"_blank\">questa pagina della documentazione Google AdSense</a>"
     dfp_publisher_id: "Inserisci il codice di rete Google Ad Manager (precedentemente chiamato DFP), che si trova nelle impostazioni di rete. NOTA: sarà necessario aggiornare l'impostazione 'content security policy script src'. Vedi <a href='https://meta.discourse.org/t/33734' target='_blank'>questo argomento</a> per le ultime istruzioni."
@@ -50,7 +50,7 @@ it:
     adsense_topic_list_top_ad_sizes: "Scegli le dimensioni dell'annuncio"
     adsense_mobile_topic_list_top_ad_size: "Scegli le dimensioni dell'annuncio"
     adsense_topic_above_post_stream_code: "Inserisci il codice dell'annuncio da mostrare in un argomento, sopra tutti i messaggi. Si tratta del numero assegnato all'annuncio, non del codice JavaScript."
-    adsense_mobile_topic_above_post_stream_code: "Inserisci il codice del gruppo annunci da mostrare sull'argomento sopra tutti i messaggi, per la visualizzazione su telefoni. E' il numero assegnato all'annuncio, non il codice JavaScript."
+    adsense_mobile_topic_above_post_stream_code: "Inserisci il codice dell'annuncio da mostrare sull'argomento sopra tutti i messaggi, per la visualizzazione su dispositivi mobili. Si tratta del numero assegnato all'annuncio, non del codice JavaScript."
     adsense_topic_above_post_stream_ad_sizes: "Scegli le dimensioni dell'annuncio"
     adsense_mobile_topic_above_post_stream_ad_size: "Scegli le dimensioni dell'annuncio"
     adsense_topic_above_suggested_code: "Inserisci il codice dell'annuncio da mostrare sull'argomento sopra la posizione suggerita. Si tratta del numero assegnato al gruppo annunci, non del codice JavaScript."
