@@ -6,7 +6,7 @@
 
 he:
   site_settings:
-    discourse_adplugin_enabled: הפעלת discourse-adplugin.
+    discourse_adplugin_enabled: הפעל את התוספת של השיח.
     no_ads_for_personal_messages: "לא להציג פרסומות בעת צפייה בהודעות אישיות"
     no_ads_for_restricted_categories: "לא להציג פרסומות בקטגוריות שאינן חשופות לכולם."
     no_ads_for_groups: "לא להציג פרסומות בפני משתמשים מהקבוצות האלו."
