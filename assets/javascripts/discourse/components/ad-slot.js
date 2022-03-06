@@ -1,7 +1,9 @@
+import EmberObject from "@ember/object";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed, { observes } from "discourse-common/utils/decorators";
+import { isBlank } from "@ember/utils";
 
-const adConfig = Ember.Object.create({
+const adConfig = EmberObject.create({
   "google-adsense": {
     settingPrefix: "adsense", // settings follow naming convention
     enabledSetting: "adsense_publisher_code",
@@ -82,7 +84,7 @@ export default AdComponent.extend({
 
       if (
         Object.keys(houseAds.creatives).length > 0 &&
-        !Ember.isBlank(adsForSlot) &&
+        !isBlank(adsForSlot) &&
         (!postNumber ||
           this.isNthPost(parseInt(houseAds.settings.after_nth_post, 10)))
       ) {
@@ -97,7 +99,7 @@ export default AdComponent.extend({
 
       if (
         ((config.enabledSetting &&
-          !Ember.isBlank(this.siteSettings[config.enabledSetting])) ||
+          !isBlank(this.siteSettings[config.enabledSetting])) ||
           config.enabledSetting === false) &&
         (!postNumber ||
           !config.nthPost ||
@@ -123,7 +125,7 @@ export default AdComponent.extend({
         if (
           name !== false &&
           this.siteSettings[name] !== false &&
-          !Ember.isBlank(this.siteSettings[name])
+          !isBlank(this.siteSettings[name])
         ) {
           types.push(adNetwork);
         }

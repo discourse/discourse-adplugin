@@ -1,24 +1,27 @@
+import Component from "@ember/component";
+import { inject as service } from "@ember/service";
+import { alias, or } from "@ember/object/computed";
 import discourseComputed from "discourse-common/utils/decorators";
 
-export default Ember.Component.extend({
-  router: Ember.inject.service(),
+export default Component.extend({
+  router: service(),
 
-  currentCategoryId: Ember.computed.or(
+  currentCategoryId: or(
     "router.currentRoute.attributes.category.id",
     "router.currentRoute.parent.attributes.category_id"
   ),
 
-  currentCategorySlug: Ember.computed.or(
+  currentCategorySlug: or(
     "router.currentRoute.attributes.category.slug",
     "router.currentRoute.parent.attributes.category.slug"
   ),
 
   // Server needs to compute this in case hidden tags are being used.
-  topicTagsDisableAds: Ember.computed.alias(
+  topicTagsDisableAds: alias(
     "router.currentRoute.parent.attributes.tags_disable_ads"
   ),
 
-  isRestrictedCategory: Ember.computed.or(
+  isRestrictedCategory: or(
     "router.currentRoute.attributes.category.read_restricted",
     "router.currentRoute.parent.attributes.category.read_restricted"
   ),

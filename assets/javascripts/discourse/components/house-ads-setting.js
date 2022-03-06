@@ -1,9 +1,10 @@
+import Component from "@ember/component";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import { i18n, propertyNotEqual } from "discourse/lib/computed";
 import I18n from "I18n";
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: "house-ads-setting",
   adValue: "",
   saving: false,
