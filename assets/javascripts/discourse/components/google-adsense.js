@@ -1,6 +1,9 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import loadScript from "discourse/lib/load-script";
+import RSVP from "rsvp";
+import { scheduleOnce } from "@ember/runloop";
+import { isTesting } from "discourse-common/config/environment";
 
 let _loaded = false,
   _promise = null,
@@ -38,7 +41,7 @@ function parseAdHeight(value) {
 
 function loadAdsense() {
   if (_loaded) {
-    return Ember.RSVP.resolve();
+    return RSVP.resolve();
   }
 
   if (_promise) {
@@ -138,7 +141,7 @@ export default AdComponent.extend({
   },
 
   _triggerAds() {
-    if (Ember.testing) {
+    if (isTesting()) {
       return; // Don't load external JS during tests
     }
 
@@ -163,7 +166,7 @@ export default AdComponent.extend({
       return;
     }
 
-    Ember.run.scheduleOnce("afterRender", this, this._triggerAds);
+    scheduleOnce("afterRender", this, this._triggerAds);
   },
 
   @observes("listLoading")
@@ -172,7 +175,7 @@ export default AdComponent.extend({
       return;
     } // already requested that this ad unit be populated
     if (!this.get("listLoading")) {
-      Ember.run.scheduleOnce("afterRender", this, this._triggerAds);
+      scheduleOnce("afterRender", this, this._triggerAds);
     }
   },
 

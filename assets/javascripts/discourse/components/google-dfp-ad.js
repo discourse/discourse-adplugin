@@ -1,6 +1,9 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed, { on } from "discourse-common/utils/decorators";
 import loadScript from "discourse/lib/load-script";
+import { alias } from "@ember/object/computed";
+import RSVP from "rsvp";
+import { isTesting } from "discourse-common/config/environment";
 
 let _loaded = false,
   _promise = null,
@@ -200,7 +203,7 @@ function loadGoogle() {
    */
 
   if (_loaded) {
-    return Ember.RSVP.resolve();
+    return RSVP.resolve();
   }
 
   if (_promise) {
@@ -240,8 +243,8 @@ export default AdComponent.extend({
   loadedGoogletag: false,
   refreshOnChange: null,
   lastAdRefresh: null,
-  width: Ember.computed.alias("size.width"),
-  height: Ember.computed.alias("size.height"),
+  width: alias("size.width"),
+  height: alias("size.height"),
 
   @discourseComputed
   size() {
@@ -372,7 +375,7 @@ export default AdComponent.extend({
 
   @on("didInsertElement")
   _initGoogleDFP() {
-    if (Ember.testing) {
+    if (isTesting()) {
       return; // Don't load external JS during tests
     }
 

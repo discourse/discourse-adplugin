@@ -1,10 +1,11 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed from "discourse-common/utils/decorators";
+import { and } from "@ember/object/computed";
 
 export default AdComponent.extend({
   classNames: ["amazon-product-links"],
 
-  showAd: Ember.computed.and(
+  showAd: and(
     "showToTrustLevel",
     "showToGroups",
     "showAfterPost",

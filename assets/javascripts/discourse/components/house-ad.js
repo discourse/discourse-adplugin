@@ -1,5 +1,6 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed, { observes } from "discourse-common/utils/decorators";
+import { isBlank } from "@ember/utils";
 
 const adIndex = {
   topic_list_top: null,
@@ -60,10 +61,7 @@ export default AdComponent.extend({
 
     const adsForSlot = houseAds.settings[placement];
 
-    if (
-      Object.keys(houseAds.creatives).length > 0 &&
-      !Ember.isBlank(adsForSlot)
-    ) {
+    if (Object.keys(houseAds.creatives).length > 0 && !isBlank(adsForSlot)) {
       return adsForSlot.split("|");
     } else {
       return [];
