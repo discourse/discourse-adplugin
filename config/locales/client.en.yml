@@ -37,3 +37,6 @@ en:
           post_bottom:
             title: "Between posts"
             description: "Ads to show in between posts, after every N posts."
+          topic_list:
+            title: "Between topics"
+            description: "Ads to show in between topics, after every N topics."

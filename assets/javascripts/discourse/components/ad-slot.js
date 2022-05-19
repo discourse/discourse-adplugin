@@ -81,12 +81,14 @@ export default AdComponent.extend({
 
     if (houseAds && houseAds.settings) {
       const adsForSlot = houseAds.settings[placeUnderscored];
-
       if (
         Object.keys(houseAds.creatives).length > 0 &&
         !isBlank(adsForSlot) &&
-        (!postNumber ||
-          this.isNthPost(parseInt(houseAds.settings.after_nth_post, 10)))
+        ((placeUnderscored === "post_bottom" &&
+          (!postNumber ||
+            this.isNthPost(parseInt(houseAds.settings.after_nth_post, 10)))) ||
+          (placeUnderscored === "topic_list" &&
+            this.isNthPost(parseInt(houseAds.settings.after_nth_topic, 10))))
       ) {
         types.push("house-ad");
       }

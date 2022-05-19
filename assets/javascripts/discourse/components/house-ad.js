@@ -7,6 +7,7 @@ const adIndex = {
   topic_above_post_stream: null,
   topic_above_suggested: null,
   post_bottom: null,
+  topic_list: null,
 };
 
 export default AdComponent.extend({
