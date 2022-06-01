@@ -1,6 +1,7 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed from "discourse-common/utils/decorators";
 import { and } from "@ember/object/computed";
+import { htmlSafe } from "@ember/template";
 
 export default AdComponent.extend({
   classNames: ["amazon-product-links"],
@@ -157,27 +158,27 @@ export default AdComponent.extend({
 
   @discourseComputed("amazon_width", "amazon_height")
   adWrapperStyle(w, h) {
-    return `width: ${w}px; height: ${h}px;`.htmlSafe();
+    return htmlSafe(`width: ${w}px; height: ${h}px;`);
   },
 
   @discourseComputed("mobile_amazon_width", "mobile_amazon_height")
   adWrapperStyleMobile(w, h) {
-    return `width: ${w}px; height: ${h}px;`.htmlSafe();
+    return htmlSafe(`width: ${w}px; height: ${h}px;`);
   },
 
   @discourseComputed("mobile_amazon_width")
   adTitleStyleMobile(w) {
-    return `width: ${w}px;`.htmlSafe();
+    return htmlSafe(`width: ${w}px;`);
   },
 
   @discourseComputed("user_input")
   userInput(userInput) {
-    return `${userInput}`.htmlSafe();
+    return htmlSafe(`${userInput}`);
   },
 
   @discourseComputed("user_input_mobile")
   userInputMobile(userInput) {
-    return `${userInput}`.htmlSafe();
+    return htmlSafe(`${userInput}`);
   },
 
   @discourseComputed("currentUser.trust_level")
