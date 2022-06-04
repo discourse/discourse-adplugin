@@ -68,6 +68,7 @@ const displayCounts = {
 
 export default AdComponent.extend({
   needsUpdate: false,
+  tagName: "",
 
   /**
    * For a given ad placement and optionally a post number if in between posts,
