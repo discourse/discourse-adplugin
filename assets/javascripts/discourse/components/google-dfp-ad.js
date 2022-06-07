@@ -4,6 +4,7 @@ import loadScript from "discourse/lib/load-script";
 import { alias } from "@ember/object/computed";
 import RSVP from "rsvp";
 import { isTesting } from "discourse-common/config/environment";
+import { htmlSafe } from "@ember/template";
 
 let _loaded = false,
   _promise = null,
@@ -286,14 +287,14 @@ export default AdComponent.extend({
   @discourseComputed("width", "height")
   adWrapperStyle(w, h) {
     if (w !== "fluid") {
-      return `width: ${w}px; height: ${h}px;`.htmlSafe();
+      return htmlSafe(`width: ${w}px; height: ${h}px;`);
     }
   },
 
   @discourseComputed("width")
   adTitleStyleMobile(w) {
     if (w !== "fluid") {
-      return `width: ${w}px;`.htmlSafe();
+      return htmlSafe(`width: ${w}px;`);
     }
   },
 

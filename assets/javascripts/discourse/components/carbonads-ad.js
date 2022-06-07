@@ -1,5 +1,6 @@
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed from "discourse-common/utils/decorators";
+import { htmlSafe } from "@ember/template";
 
 export default AdComponent.extend({
   serve_id: null,
@@ -13,7 +14,9 @@ export default AdComponent.extend({
 
   @discourseComputed("serve_id", "placement")
   url(serveId, placement) {
-    return `//cdn.carbonads.com/carbon.js?serve=${serveId}&placement=${placement}`.htmlSafe();
+    return htmlSafe(
+      `//cdn.carbonads.com/carbon.js?serve=${serveId}&placement=${placement}`
+    );
   },
 
   @discourseComputed("currentUser.trust_level")
