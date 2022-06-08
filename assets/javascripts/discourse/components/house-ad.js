@@ -13,7 +13,13 @@ const adIndex = {
 export default AdComponent.extend({
   classNames: ["house-creative"],
   classNameBindings: ["adUnitClass"],
+  attributeBindings: ["colspanAttribute:colspan"],
   adHtml: "",
+
+  @discourseComputed
+  colspanAttribute() {
+    return this.tagName === "td" ? "5" : null;
+  },
 
   @discourseComputed("placement", "showAd")
   adUnitClass(placement, showAd) {
