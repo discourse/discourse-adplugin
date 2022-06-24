@@ -93,8 +93,18 @@ export default Component.extend({
   },
 
   isNthPost(n) {
-    if (n && n > 0 && this.get("postNumber") > 0) {
+    if (n && n > 0) {
       return this.get("postNumber") % n === 0;
+    } else {
+      return false;
+    }
+  },
+
+  isNthTopicListItem(n) {
+    let indexNumber = this.get("indexNumber");
+    indexNumber = indexNumber + 1;
+    if (n && n > 0 && indexNumber > 0) {
+      return indexNumber % n === 0;
     } else {
       return false;
     }

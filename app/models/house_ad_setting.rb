@@ -7,7 +7,7 @@ module ::AdPlugin
       topic_above_post_stream: '',
       topic_above_suggested: '',
       post_bottom: '',
-      topic_list: ''
+      topic_list_between: ''
     }
 
     def self.all

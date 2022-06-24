@@ -74,8 +74,8 @@ export default AdComponent.extend({
    * For a given ad placement and optionally a post number if in between posts,
    * list all ad network names that are configured to show there.
    */
-  @discourseComputed("placement", "postNumber")
-  availableAdTypes(placement, postNumber) {
+  @discourseComputed("placement", "postNumber", "indexNumber")
+  availableAdTypes(placement, postNumber, indexNumber) {
     let types = [];
     const houseAds = this.site.get("house_creatives"),
       placeUnderscored = placement.replace(/-/g, "_");
@@ -85,11 +85,12 @@ export default AdComponent.extend({
       if (
         Object.keys(houseAds.creatives).length > 0 &&
         !isBlank(adsForSlot) &&
-        ((placeUnderscored === "post_bottom" &&
-          (!postNumber ||
-            this.isNthPost(parseInt(houseAds.settings.after_nth_post, 10)))) ||
-          (placeUnderscored === "topic_list" &&
-            this.isNthPost(parseInt(houseAds.settings.after_nth_topic, 10))))
+        ((!postNumber && !indexNumber) ||
+          this.isNthPost(parseInt(houseAds.settings.after_nth_post, 10)) ||
+          (placeUnderscored === "topic_list_between" &&
+            this.isNthTopicListItem(
+              parseInt(houseAds.settings.after_nth_topic, 10)
+            )))
       ) {
         types.push("house-ad");
       }
