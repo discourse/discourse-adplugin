@@ -6,7 +6,8 @@ module ::AdPlugin
       topic_list_top: '',
       topic_above_post_stream: '',
       topic_above_suggested: '',
-      post_bottom: ''
+      post_bottom: '',
+      topic_list_between: ''
     }
 
     def self.all
@@ -28,6 +29,7 @@ module ::AdPlugin
       {
         settings: settings.merge(
           after_nth_post: SiteSetting.house_ads_after_nth_post,
+          after_nth_topic: SiteSetting.house_ads_after_nth_topic,
           house_ads_frequency: SiteSetting.house_ads_frequency
         ),
         creatives: ads.inject({}) { |h, ad| h[ad.name] = ad.html; h }

@@ -68,13 +68,14 @@ const displayCounts = {
 
 export default AdComponent.extend({
   needsUpdate: false,
+  tagName: "",
 
   /**
    * For a given ad placement and optionally a post number if in between posts,
    * list all ad network names that are configured to show there.
    */
-  @discourseComputed("placement", "postNumber")
-  availableAdTypes(placement, postNumber) {
+  @discourseComputed("placement", "postNumber", "indexNumber")
+  availableAdTypes(placement, postNumber, indexNumber) {
     let types = [];
     const houseAds = this.site.get("house_creatives"),
       placeUnderscored = placement.replace(/-/g, "_");
@@ -82,11 +83,24 @@ export default AdComponent.extend({
     if (houseAds && houseAds.settings) {
       const adsForSlot = houseAds.settings[placeUnderscored];
 
+      const adAvailable =
+        Object.keys(houseAds.creatives).length > 0 && !isBlank(adsForSlot);
+
+      // postNumber and indexNumber are both null for topic-list-top, topic-above-post-stream,
+      // and topic-above-suggested placements. Assume we want to place an ad outside the topic list.
+      const notPlacingBetweenTopics = !postNumber && !indexNumber;
+
+      const canBePlacedInBetweenTopics =
+        placeUnderscored === "topic_list_between" &&
+        this.isNthTopicListItem(
+          parseInt(houseAds.settings.after_nth_topic, 10)
+        );
+
       if (
-        Object.keys(houseAds.creatives).length > 0 &&
-        !isBlank(adsForSlot) &&
-        (!postNumber ||
-          this.isNthPost(parseInt(houseAds.settings.after_nth_post, 10)))
+        adAvailable &&
+        (notPlacingBetweenTopics ||
+          this.isNthPost(parseInt(houseAds.settings.after_nth_post, 10)) ||
+          canBePlacedInBetweenTopics)
       ) {
         types.push("house-ad");
       }
@@ -98,12 +112,8 @@ export default AdComponent.extend({
         name;
 
       if (
-        ((config.enabledSetting &&
-          !isBlank(this.siteSettings[config.enabledSetting])) ||
-          config.enabledSetting === false) &&
-        (!postNumber ||
-          !config.nthPost ||
-          this.isNthPost(parseInt(this.siteSettings[config.nthPost], 10)))
+        this._isNetworkAvailable(config.enabledSetting) &&
+        this._shouldPlaceAdInSlot(postNumber, config.nthPost)
       ) {
         if (this.site.mobileView) {
           settingNames = config.mobile || config.desktop;
@@ -194,5 +204,26 @@ export default AdComponent.extend({
     }
 
     return networkNames;
+  },
+
+  _isNetworkAvailable(enabledNetworkSettingName) {
+    // False means there's no setting to enable or disable this ad network.
+    // Assume it's always enabled.
+    if (enabledNetworkSettingName === false) {
+      return true;
+    } else {
+      return (
+        enabledNetworkSettingName &&
+        !isBlank(this.siteSettings[enabledNetworkSettingName])
+      );
+    }
+  },
+
+  _shouldPlaceAdInSlot(currentPostNumber, positionToPlace) {
+    return (
+      !currentPostNumber ||
+      !positionToPlace ||
+      this.isNthPost(parseInt(this.siteSettings[positionToPlace], 10))
+    );
   },
 });

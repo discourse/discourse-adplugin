@@ -99,4 +99,14 @@ export default Component.extend({
       return false;
     }
   },
+
+  isNthTopicListItem(n) {
+    let indexNumber = this.get("indexNumber");
+    indexNumber = indexNumber + 1;
+    if (n && n > 0 && indexNumber > 0) {
+      return indexNumber % n === 0;
+    } else {
+      return false;
+    }
+  },
 });

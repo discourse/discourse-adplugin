@@ -7,31 +7,63 @@ const adIndex = {
   topic_above_post_stream: null,
   topic_above_suggested: null,
   post_bottom: null,
+  topic_list_between: null,
 };
 
 export default AdComponent.extend({
   classNames: ["house-creative"],
   classNameBindings: ["adUnitClass"],
+  attributeBindings: ["colspanAttribute:colspan"],
   adHtml: "",
+
+  @discourseComputed
+  colspanAttribute() {
+    return this.tagName === "td" ? "5" : null;
+  },
 
   @discourseComputed("placement", "showAd")
   adUnitClass(placement, showAd) {
     return showAd ? `house-${placement}` : "";
   },
 
-  @discourseComputed("showToGroups", "showAfterPost", "showOnCurrentPage")
-  showAd(showToGroups, showAfterPost, showOnCurrentPage) {
-    return showToGroups && showAfterPost && showOnCurrentPage;
+  @discourseComputed(
+    "showToGroups",
+    "showAfterPost",
+    "showAfterTopicListItem",
+    "showOnCurrentPage"
+  )
+  showAd(
+    showToGroups,
+    showAfterPost,
+    showAfterTopicListItem,
+    showOnCurrentPage
+  ) {
+    return (
+      showToGroups &&
+      (showAfterPost || showAfterTopicListItem) &&
+      showOnCurrentPage
+    );
   },
 
-  @discourseComputed("postNumber")
-  showAfterPost(postNumber) {
-    if (!postNumber) {
+  @discourseComputed("postNumber", "placement")
+  showAfterPost(postNumber, placement) {
+    if (!postNumber && placement !== "topic-list-between") {
       return true;
     }
 
     return this.isNthPost(
       parseInt(this.site.get("house_creatives.settings.after_nth_post"), 10)
+    );
+  },
+
+  @discourseComputed("placement")
+  showAfterTopicListItem(placement) {
+    if (placement !== "topic-list-between") {
+      return true;
+    }
+
+    return this.isNthTopicListItem(
+      parseInt(this.site.get("house_creatives.settings.after_nth_topic"), 10)
     );
   },
 
