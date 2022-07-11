@@ -2,6 +2,10 @@ import Component from "@ember/component";
 import { inject as service } from "@ember/service";
 import { alias, or } from "@ember/object/computed";
 import discourseComputed from "discourse-common/utils/decorators";
+import {
+  isNthPost,
+  isNthTopicListItem,
+} from "discourse/plugins/discourse-adplugin/discourse/helpers/slot-position";
 
 export default Component.extend({
   router: service(),
@@ -93,20 +97,10 @@ export default Component.extend({
   },
 
   isNthPost(n) {
-    if (n && n > 0) {
-      return this.get("postNumber") % n === 0;
-    } else {
-      return false;
-    }
+    return isNthPost(n, this.get("postNumber"));
   },
 
   isNthTopicListItem(n) {
-    let indexNumber = this.get("indexNumber");
-    indexNumber = indexNumber + 1;
-    if (n && n > 0 && indexNumber > 0) {
-      return indexNumber % n === 0;
-    } else {
-      return false;
-    }
+    return isNthTopicListItem(n, this.get("indexNumber"));
   },
 });

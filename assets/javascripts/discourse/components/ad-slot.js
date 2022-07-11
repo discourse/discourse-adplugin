@@ -2,6 +2,10 @@ import EmberObject from "@ember/object";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import { isBlank } from "@ember/utils";
+import {
+  isNthPost,
+  isNthTopicListItem,
+} from "discourse/plugins/discourse-adplugin/discourse/helpers/slot-position";
 
 const adConfig = EmberObject.create({
   "google-adsense": {
@@ -66,6 +70,108 @@ const displayCounts = {
   allAds: 0,
 };
 
+function _isNetworkAvailable(siteSettings, enabledNetworkSettingName) {
+  // False means there's no setting to enable or disable this ad network.
+  // Assume it's always enabled.
+  if (enabledNetworkSettingName === false) {
+    return true;
+  } else {
+    return (
+      enabledNetworkSettingName &&
+      !isBlank(siteSettings[enabledNetworkSettingName])
+    );
+  }
+}
+
+function _shouldPlaceAdInSlot(
+  siteSettings,
+  currentPostNumber,
+  positionToPlace
+) {
+  return (
+    !currentPostNumber ||
+    !positionToPlace ||
+    isNthPost(parseInt(siteSettings[positionToPlace], 10), currentPostNumber)
+  );
+}
+
+export function slotContenders(
+  site,
+  siteSettings,
+  placement,
+  postNumber,
+  indexNumber
+) {
+  let types = [];
+  const houseAds = site.get("house_creatives"),
+    placeUnderscored = placement.replace(/-/g, "_");
+
+  if (houseAds && houseAds.settings) {
+    const adsForSlot = houseAds.settings[placeUnderscored];
+
+    const adAvailable =
+      Object.keys(houseAds.creatives).length > 0 && !isBlank(adsForSlot);
+
+    // postNumber and indexNumber are both null for topic-list-top, topic-above-post-stream,
+    // and topic-above-suggested placements. Assume we want to place an ad outside the topic list.
+    const notPlacingBetweenTopics = !postNumber && !indexNumber;
+
+    const canBePlacedInBetweenTopics =
+      placeUnderscored === "topic_list_between" &&
+      isNthTopicListItem(
+        parseInt(houseAds.settings.after_nth_topic, 10),
+        indexNumber
+      );
+
+    if (
+      adAvailable &&
+      (notPlacingBetweenTopics ||
+        canBePlacedInBetweenTopics ||
+        isNthPost(parseInt(houseAds.settings.after_nth_post, 10), postNumber))
+    ) {
+      types.push("house-ad");
+    }
+  }
+
+  Object.keys(adConfig).forEach((adNetwork) => {
+    const config = adConfig[adNetwork];
+    let settingNames = null,
+      name;
+
+    if (
+      _isNetworkAvailable(siteSettings, config.enabledSetting) &&
+      _shouldPlaceAdInSlot(siteSettings, postNumber, config.nthPost)
+    ) {
+      if (site.mobileView) {
+        settingNames = config.mobile || config.desktop;
+      } else {
+        settingNames = config.desktop;
+      }
+
+      if (settingNames) {
+        name = settingNames[placement];
+      }
+
+      if (name === undefined) {
+        // follows naming convention: prefix_(mobile_)_{placement}_code
+        name = `${config.settingPrefix}_${
+          site.mobileView ? "mobile_" : ""
+        }${placeUnderscored}_code`;
+      }
+
+      if (
+        name !== false &&
+        siteSettings[name] !== false &&
+        !isBlank(siteSettings[name])
+      ) {
+        types.push(adNetwork);
+      }
+    }
+  });
+
+  return types;
+}
+
 export default AdComponent.extend({
   needsUpdate: false,
   tagName: "",
@@ -76,73 +182,13 @@ export default AdComponent.extend({
    */
   @discourseComputed("placement", "postNumber", "indexNumber")
   availableAdTypes(placement, postNumber, indexNumber) {
-    let types = [];
-    const houseAds = this.site.get("house_creatives"),
-      placeUnderscored = placement.replace(/-/g, "_");
-
-    if (houseAds && houseAds.settings) {
-      const adsForSlot = houseAds.settings[placeUnderscored];
-
-      const adAvailable =
-        Object.keys(houseAds.creatives).length > 0 && !isBlank(adsForSlot);
-
-      // postNumber and indexNumber are both null for topic-list-top, topic-above-post-stream,
-      // and topic-above-suggested placements. Assume we want to place an ad outside the topic list.
-      const notPlacingBetweenTopics = !postNumber && !indexNumber;
-
-      const canBePlacedInBetweenTopics =
-        placeUnderscored === "topic_list_between" &&
-        this.isNthTopicListItem(
-          parseInt(houseAds.settings.after_nth_topic, 10)
-        );
-
-      if (
-        adAvailable &&
-        (notPlacingBetweenTopics ||
-          this.isNthPost(parseInt(houseAds.settings.after_nth_post, 10)) ||
-          canBePlacedInBetweenTopics)
-      ) {
-        types.push("house-ad");
-      }
-    }
-
-    Object.keys(adConfig).forEach((adNetwork) => {
-      const config = adConfig[adNetwork];
-      let settingNames = null,
-        name;
-
-      if (
-        this._isNetworkAvailable(config.enabledSetting) &&
-        this._shouldPlaceAdInSlot(postNumber, config.nthPost)
-      ) {
-        if (this.site.mobileView) {
-          settingNames = config.mobile || config.desktop;
-        } else {
-          settingNames = config.desktop;
-        }
-
-        if (settingNames) {
-          name = settingNames[placement];
-        }
-
-        if (name === undefined) {
-          // follows naming convention: prefix_(mobile_)_{placement}_code
-          name = `${config.settingPrefix}_${
-            this.site.mobileView ? "mobile_" : ""
-          }${placeUnderscored}_code`;
-        }
-
-        if (
-          name !== false &&
-          this.siteSettings[name] !== false &&
-          !isBlank(this.siteSettings[name])
-        ) {
-          types.push(adNetwork);
-        }
-      }
-    });
-
-    return types;
+    return slotContenders(
+      this.site,
+      this.siteSettings,
+      placement,
+      postNumber,
+      indexNumber
+    );
   },
 
   /**
@@ -204,26 +250,5 @@ export default AdComponent.extend({
     }
 
     return networkNames;
-  },
-
-  _isNetworkAvailable(enabledNetworkSettingName) {
-    // False means there's no setting to enable or disable this ad network.
-    // Assume it's always enabled.
-    if (enabledNetworkSettingName === false) {
-      return true;
-    } else {
-      return (
-        enabledNetworkSettingName &&
-        !isBlank(this.siteSettings[enabledNetworkSettingName])
-      );
-    }
-  },
-
-  _shouldPlaceAdInSlot(currentPostNumber, positionToPlace) {
-    return (
-      !currentPostNumber ||
-      !positionToPlace ||
-      this.isNthPost(parseInt(this.siteSettings[positionToPlace], 10))
-    );
   },
 });
