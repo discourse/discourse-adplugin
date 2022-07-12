@@ -12,6 +12,7 @@ sv:
     no_ads_for_groups: "Visa inte annonser för användare i dessa grupper."
     no_ads_for_categories: "Visa inte annonser på ämneslista och ämnessidor som tillhör dessa kategorier."
     no_ads_for_tags: "Visa inte annonser på ämneslista och ämnessidor som tillhör dessa taggar."
+    house_ads_after_nth_topic: 'Om egna annonser "Mellan ämnen" har definierats, visa en annons efter var N:e ämne, där N är detta värde.'
     house_ads_after_nth_post: 'Om egna annonser "Mellan inlägg" har definierats, visa en annons efter var N:e inlägg, där N är detta värde.'
     house_ads_frequency: "Hur ofta husannonser ska visas, uttryckt i procent, om andra annonsnätverk har konfigurerats för att visas på en annonsplats."
     ads_txt: "Innehållet i din ads.txt-fil. Mer information finns på <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>den här Google AdSense-hjälpsidan</a>."

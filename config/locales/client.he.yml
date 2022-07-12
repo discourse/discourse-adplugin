@@ -42,3 +42,6 @@ he:
           post_bottom:
             title: "בין פוסטים"
             description: "פרסומות שתופענה בין פוסטים, לאחר כל N פוסטים."
+          topic_list_between:
+            title: "בין נושאים"
+            description: "פרסומות שתופענה בין נושאים, לאחר כל N נושאים."
