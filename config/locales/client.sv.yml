@@ -42,3 +42,6 @@ sv:
           post_bottom:
             title: "Annonser mellan inlägg"
             description: "Annonser som visas mellan inlägg, efter varje N antal inlägg."
+          topic_list_between:
+            title: "Mellan ämnen"
+            description: "Annonser att visa mellan ämnen, efter varje N antal ämnen."
