@@ -99,8 +99,8 @@ export function slotContenders(
   site,
   siteSettings,
   placement,
-  postNumber,
-  indexNumber
+  indexNumber,
+  postNumber
 ) {
   let types = [];
   const houseAds = site.get("house_creatives"),
@@ -186,8 +186,8 @@ export default AdComponent.extend({
       this.site,
       this.siteSettings,
       placement,
-      postNumber,
-      indexNumber
+      indexNumber,
+      postNumber
     );
   },
 

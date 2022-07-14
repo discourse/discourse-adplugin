@@ -3,12 +3,13 @@ import { slotContenders } from "discourse/plugins/discourse-adplugin/discourse/c
 export default {
   shouldRender(args, component) {
     return (
+      args.index &&
       slotContenders(
         component.site,
         component.siteSettings,
         "topic-list-between",
         args.index
-      ).length === 0
+      ).length > 0
     );
   },
 };
