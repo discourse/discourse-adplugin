@@ -6,6 +6,7 @@
 
 pt:
   site_settings:
+    discourse_adplugin_enabled: Habilite o plug-in do discurso.
     dfp_through_trust_level: "Mostre os seus anúncios aos utilizadores com base nos níveis de confiança. Os utilizadores com nível de confiança superior a este valor não irão ver anúncios."
     dfp_topic_list_top_ad_sizes: "Escolha o tamanho do bloco publicitário acima da lista dos tópicos. "
     dfp_mobile_topic_list_top_ad_sizes: "Escolha o seu tamanho do anúncio para a unidade do anúncio por cima das listas do tópico na visualização de móvel. "
