@@ -23,7 +23,7 @@ describe AdPlugin::HouseAdSettingsController do
       expect(response.status).to eq(404)
     end
 
-    context "logged in as admin" do
+    context "when logged in as admin" do
       before do
         sign_in(admin)
       end
