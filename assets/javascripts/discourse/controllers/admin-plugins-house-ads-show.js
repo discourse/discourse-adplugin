@@ -3,7 +3,6 @@ import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import { propertyNotEqual } from "discourse/lib/computed";
 import { bufferedProperty } from "discourse/mixins/buffered-content";
-import bootbox from "bootbox";
 import Controller, { inject as controller } from "@ember/controller";
 import { not, or } from "@ember/object/computed";
 
@@ -91,7 +90,7 @@ export default Controller.extend(bufferedProperty("model"), {
           houseAds.removeObject(model);
           this.transitionToRoute("adminPlugins.houseAds.index");
         })
-        .catch(() => bootbox.alert(I18n.t("generic_error")));
+        .catch(popupAjaxError);
     },
   },
 });
