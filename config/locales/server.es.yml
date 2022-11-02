@@ -12,6 +12,7 @@ es:
     no_ads_for_groups: "No mostrar publicidad a los usuarios en estos grupos."
     no_ads_for_categories: "No mostrar anuncios en la lista de temas y en las páginas de temas que pertenezcan a estas categorías."
     no_ads_for_tags: "No mostrar anuncios en la lista de temas y en las páginas de temas que pertenezcan a estas etiquetas."
+    house_ads_after_nth_topic: 'Si se definen anuncios internos «Entre temas», mostrar un anuncio después de cada N temas, donde N es este valor.'
     house_ads_after_nth_post: 'Si se definen anuncios internos «Entre publicaciones», mostrar un anuncio después de cada N publicaciones, donde N es este valor.'
     house_ads_frequency: "Si otras redes publicitarias están configuradas para mostrarse en un espacio publicitario, con qué frecuencia deben mostrarse los anuncios internos, en forma de porcentaje."
     ads_txt: "Contenido del archivo ads.txt. Más información disponible en <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>esta página de ayuda de Google AdSense</a>."

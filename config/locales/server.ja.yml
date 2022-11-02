@@ -12,6 +12,7 @@ ja:
     no_ads_for_groups: "これらのグループのユーザーに広告を表示しない。"
     no_ads_for_categories: "これらのカテゴリに属するトピックリストとトピックページに広告を表示しない。"
     no_ads_for_tags: "これらのタグに属するトピックリストとトピックページに広告を表示しない。"
+    house_ads_after_nth_topic: '「トピックとトピックの間」に自社広告が表示されるように定義されている場合、N 件のトピックごとに広告を表示します。N はこの値です。'
     house_ads_after_nth_post: '「投稿と投稿の間」に表示される自社広告が定義されている場合、Ｎ 件の投稿ごとに広告を表示します。N はこの値です。'
     house_ads_frequency: "ほかの広告ネットワークが広告スロットに表示されるように構成されている場合に、自社広告が表示される頻度をパーセンテージで表します。"
     ads_txt: "ads.txt ファイルのコンテンツです。詳細は、<a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>こちらの Google AdSense ヘルプページ</a>をご覧ください。"

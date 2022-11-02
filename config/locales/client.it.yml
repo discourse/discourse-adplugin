@@ -42,3 +42,6 @@ it:
           post_bottom:
             title: "Tra messaggi"
             description: "Annunci da mostrare tra i messaggi, ogni N messaggi."
+          topic_list_between:
+            title: "Tra argomenti"
+            description: "Annunci da mostrare tra gli argomenti, ogni N argomenti."

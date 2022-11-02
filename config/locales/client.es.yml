@@ -42,3 +42,6 @@ es:
           post_bottom:
             title: "Entre publicaciones"
             description: "Anuncios que se mostrarán entre publicaciones, después de cada N publicaciones."
+          topic_list_between:
+            title: "Entre temas"
+            description: "Anuncios que se mostrarán entre temas, después de cada N temas."

@@ -42,3 +42,6 @@ zh_CN:
           post_bottom:
             title: "帖子之间"
             description: "在每 N 条帖子之间显示的广告。"
+          topic_list_between:
+            title: "话题之间"
+            description: "在每 N 个话题之间显示的广告。"
