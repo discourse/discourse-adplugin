@@ -12,6 +12,7 @@ fi:
     no_ads_for_groups: "Älä näytä mainoksia näiden ryhmien käyttäjille."
     no_ads_for_categories: "Älä näytä mainoksia ketjuluetteloissa ja ketjusivuilla, jotka kuuluvat näihin alueisiin."
     no_ads_for_tags: "Älä näytä mainoksia ketjuluetteloissa ja ketjusivuilla, joissa on nämä tunnisteet."
+    house_ads_after_nth_topic: 'Jos "ketjujen väliset" omat mainokset ovat määritettynä, näytä mainos joka N. ketjun jälkeen, jossa N on tämä arvo.'
     house_ads_after_nth_post: 'Jos "viestien väliset" omat mainokset ovat määritettynä, näytä mainos joka N. viestin jälkeen, jossa N on tämä arvo.'
     house_ads_frequency: "Jos muita mainosverkostoja on määritetty näkymaan mainoskentässä, kuinka usein omien mainoksien pitäisi näkyä, prosenttimääränä."
     ads_txt: "Ads.txt tiedostosi sisältö. Lisää tietoa on saatavilla <a href='https://support.google.com/adsense/answer/7532444?hl=fi' target='_blank'>tällä Google AdSensen ohjesivulla</a>."

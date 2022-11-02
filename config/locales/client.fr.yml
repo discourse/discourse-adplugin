@@ -42,3 +42,6 @@ fr:
           post_bottom:
             title: "Entre les messages"
             description: "Annonces à afficher entre les messages, tous les N messages."
+          topic_list_between:
+            title: "Entre les sujets"
+            description: "Annonces à afficher entre les sujets, tous les N sujets."

@@ -12,6 +12,7 @@ de:
     no_ads_for_groups: "Zeige den Benutzern in diesen Gruppen keine Anzeigen."
     no_ads_for_categories: "Zeige keine Anzeigen auf der Themenliste und Themenseiten, die zu diesen Kategorien gehören."
     no_ads_for_tags: "Zeige keine Anzeigen auf der Themenliste und Themenseiten, die zu diesen Schlagworten gehören."
+    house_ads_after_nth_topic: 'Falls Eigenanzeigen für „Zwischen Themen“ definiert sind, zeige eine Anzeige nach jeweils N Thema, wobei N dieser Wert ist.'
     house_ads_after_nth_post: 'Falls Eigenanzeigen für „Zwischen Beiträgen“ definiert sind, zeige eine Anzeige nach jeweils N Beiträgen, wobei N dieser Wert ist.'
     house_ads_frequency: "Falls andere Werbenetzwerke zur Anzeige an einem Werbeplatz konfiguriert sind: die Häufigkeit in Prozent, mit der Eigenanzeigen dargestellt werden sollen."
     ads_txt: "Inhalt deiner Datei „ads.txt“. Mehr Information sind auf <a href='https://support.google.com/adsense/answer/7532444?hl=de' target='_blank'>dieser Google-AdSense-Hilfeseite</a> verfügbar."

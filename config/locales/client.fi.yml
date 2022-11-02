@@ -42,3 +42,6 @@ fi:
           post_bottom:
             title: "Viestien välissä"
             description: "Mainokset, jotka näytetään viestien välissä joka N. kirjoituksen välein."
+          topic_list_between:
+            title: "Ketjujen välissä"
+            description: "Mainokset, jotka näytetään viestien välissä joka N. ketjun välein."

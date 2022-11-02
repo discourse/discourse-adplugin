@@ -12,6 +12,7 @@ fr:
     no_ads_for_groups: "Ne pas afficher les annonces aux utilisateurs de ces groupes."
     no_ads_for_categories: "Ne pas afficher les annonces sur la liste des sujets et les pages des sujets appartenant à ces catégories."
     no_ads_for_tags: "Ne pas afficher les annonces sur la liste des sujets et les pages des sujets associés à ces étiquettes."
+    house_ads_after_nth_topic: 'Si des annonces maison « Entre les sujets » sont définies, afficher une annonce tous les N sujets, où N représente la valeur souhaitée.'
     house_ads_after_nth_post: 'Si des annonces maison « Entre les messages » sont définies, afficher une annonce tous les N messages, où N représente la valeur souhaitée.'
     house_ads_frequency: "Si d'autres réseaux publicitaires sont configurés pour afficher des annonces dans un emplacement publicitaire, à quelle fréquence les annonces doivent-elles être affichées, en pourcentage."
     ads_txt: "Contenu du fichier ads.txt. De plus amples détails sont disponibles sur <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>la page d'aide de Google AdSense</a>."

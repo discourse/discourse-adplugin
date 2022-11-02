@@ -42,3 +42,6 @@ ja:
           post_bottom:
             title: "投稿と投稿の間"
             description: "Ｎ 件の投稿ごとに表示される広告です。"
+          topic_list_between:
+            title: "トピックとトピックの間"
+            description: "N 件のトピックごとに、トピックとトピックの間に表示される広告です。"

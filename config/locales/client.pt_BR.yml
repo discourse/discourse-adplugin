@@ -42,3 +42,6 @@ pt_BR:
           post_bottom:
             title: "Entre postagens"
             description: "Anúncios para mostrar entre postagens, após cada N postagens."
+          topic_list_between:
+            title: "Entre tópicos"
+            description: "Anúncios para mostrar entre tópicos, após cada N tópicos."
