@@ -31,7 +31,7 @@ fr:
           filter_placeholder: "Sélectionnez les annonces…"
           more_settings: "Plus de paramètres"
           topic_list_top:
-            title: "Meilleures annonces de la liste des sujets"
+            title: "Annonces de la liste des sujets"
             description: "Annonces à afficher en haut des pages de la liste des sujets"
           topic_above_post_stream:
             title: "Sujet en haut du flux de messages"
