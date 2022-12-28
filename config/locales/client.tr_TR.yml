@@ -16,28 +16,28 @@ tr_TR:
           dfp_plugin: 'DFP/Reklam Yöneticisi'
           adsense_plugin: 'AdSense'
           amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Reklamları'
+          carbonads_plugin: 'Carbon Ads'
           adbutler_plugin: 'AdButler'
       adplugin:
         house_ads:
-          title: "Yerel Reklamlar"
+          title: "Şirket İçi Reklamlar"
           new: "Yeni"
           settings: "Ayarlar"
-          new_name: "Yeni Yerel Reklam"
+          new_name: "Yeni Şirket İçi Reklam"
           save: "Kaydet"
           delete: "Sil"
           description: "Kendi reklamlarınızı ve nerede gösterileceklerini tanımlayın."
           get_started: "Yeni reklam oluşturmaya başlayın."
           filter_placeholder: "Reklamları seçin..."
-          more_settings: "Gelişmiş Ayarlar"
+          more_settings: "Daha Fazla Ayar"
           topic_list_top:
-            title: "Konu listesi üstü reklamlar"
-            description: "Sayfaların konu listesinin en üstünde gözükecek reklamlar."
+            title: "Konu listesi üstü reklamları"
+            description: "Konu listesi sayfalarının en üstünde gösterilecek reklamlar."
           topic_above_post_stream:
-            title: "Yayın akışının üzerindeki konu"
-            description: "Konu sayfasında bir konunun başlığının üzerinde gösterilecek reklamlar."
+            title: "Yayın akışının üstündeki konu"
+            description: "Konu sayfasında bir konunun başlığının üstünde gösterilecek reklamlar."
           topic_above_suggested:
-            title: "Önerilen konular üstü"
+            title: "Önerilen konunun üstünde"
             description: "Bir konudaki son gönderiden sonra, önerilen konuların üstünde gösterilecek reklamlar."
           post_bottom:
             title: "Gönderiler arasında"
