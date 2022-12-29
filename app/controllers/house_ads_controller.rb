@@ -5,10 +5,7 @@ module ::AdPlugin
     requires_plugin AdPlugin.plugin_name
 
     def index
-      render_json_dump(
-        house_ads: HouseAd.all.map(&:to_hash),
-        settings: HouseAdSetting.all
-      )
+      render_json_dump(house_ads: HouseAd.all.map(&:to_hash), settings: HouseAdSetting.all)
     end
 
     def show
@@ -17,11 +14,7 @@ module ::AdPlugin
 
     def create
       ad = HouseAd.create(house_ad_params)
-      if ad.valid?
-        render_json_dump(house_ad: ad.to_hash)
-      else
-        render_json_error(ad)
-      end
+      ad.valid? ? render_json_dump(house_ad: ad.to_hash) : render_json_error(ad)
     end
 
     def update
@@ -31,18 +24,14 @@ module ::AdPlugin
         ad = HouseAd.create(house_ad_params.except(:id))
       end
 
-      if ad.valid?
-        render_json_dump(house_ad: ad.to_hash)
-      else
-        render_json_error(ad)
-      end
+      ad.valid? ? render_json_dump(house_ad: ad.to_hash) : render_json_error(ad)
     end
 
     def destroy
       if ad = HouseAd.find(house_ad_params[:id])
         ad.destroy
       else
-        render_json_error(I18n.t('not_found'), status: 404)
+        render_json_error(I18n.t("not_found"), status: 404)
       end
     end
 
