@@ -37,7 +37,7 @@ module ::AdPlugin
     end
 
     def self.alloc_id
-      DistributedMutex.synchronize('adplugin-house-ad-id') do
+      DistributedMutex.synchronize("adplugin-house-ad-id") do
         max_id = AdPlugin.pstore_get("ad:_id")
         max_id = 1 unless max_id
         AdPlugin.pstore_set("ad:_id", max_id + 1)
@@ -46,7 +46,7 @@ module ::AdPlugin
     end
 
     def self.find(id)
-      if r = AdPlugin::pstore_get("ad:#{id}")
+      if r = AdPlugin.pstore_get("ad:#{id}")
         from_hash(r)
       else
         nil
@@ -54,18 +54,18 @@ module ::AdPlugin
     end
 
     def self.all
-      PluginStoreRow.where(plugin_name: AdPlugin.plugin_name)
+      PluginStoreRow
+        .where(plugin_name: AdPlugin.plugin_name)
         .where("key LIKE 'ad:%'")
         .where("key != 'ad:_id'")
-        .map do |psr|
-          from_hash(PluginStore.cast_value(psr.type_name, psr.value))
-        end.sort_by { |ad| ad.id }
+        .map { |psr| from_hash(PluginStore.cast_value(psr.type_name, psr.value)) }
+        .sort_by { |ad| ad.id }
     end
 
     def save
       if self.valid?
         self.id = self.class.alloc_id if self.id.to_i <= 0
-        AdPlugin::pstore_set("ad:#{id}", to_hash)
+        AdPlugin.pstore_set("ad:#{id}", to_hash)
         self.class.publish_if_ads_enabled
         true
       else
@@ -80,15 +80,11 @@ module ::AdPlugin
     end
 
     def to_hash
-      {
-        id: @id,
-        name: @name,
-        html: @html
-      }
+      { id: @id, name: @name, html: @html }
     end
 
     def destroy
-      AdPlugin::pstore_delete("ad:#{id}")
+      AdPlugin.pstore_delete("ad:#{id}")
       self.class.publish_if_ads_enabled
     end
 
@@ -97,6 +93,5 @@ module ::AdPlugin
         AdPlugin::HouseAdSetting.publish_settings
       end
     end
-
   end
 end
