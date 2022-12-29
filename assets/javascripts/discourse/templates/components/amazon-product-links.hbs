@@ -1,6 +1,7 @@
 {{#if showAd}}
   {{#if site.mobileView}}
-    <div class="amazon-product-links-label" style={{adTitleStyleMobile}}><h2>{{i18n "adplugin.advertisement_label"}}</h2></div>
+    <div class="amazon-product-links-label" style={{adTitleStyleMobile}}><h2
+      >{{i18n "adplugin.advertisement_label"}}</h2></div>
     <iframe
       style={{adWrapperStyleMobile}}
       marginwidth="0"
@@ -12,7 +13,9 @@
     >
     </iframe>
   {{else}}
-    <div class="amazon-product-links-label"><h2>{{i18n "adplugin.advertisement_label"}}</h2></div>
+    <div class="amazon-product-links-label"><h2>{{i18n
+          "adplugin.advertisement_label"
+        }}</h2></div>
     <div class="container" align="center">
       <iframe
         style={{adWrapperStyle}}
