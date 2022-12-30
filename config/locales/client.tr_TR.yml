@@ -42,3 +42,6 @@ tr_TR:
           post_bottom:
             title: "Gönderiler arasında"
             description: "Her N gönderiden sonra, gönderiler arasında gösterilecek reklamlar."
+          topic_list_between:
+            title: "Konular arasında"
+            description: "Her N konudan sonra konular arasında gösterilecek reklamlar."
