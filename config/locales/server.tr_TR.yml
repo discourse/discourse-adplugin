@@ -6,11 +6,13 @@
 
 tr_TR:
   site_settings:
+    discourse_adplugin_enabled: Discourse-adplugin'i etkinleştirin.
     no_ads_for_personal_messages: "Kişisel mesajları görüntülerken reklam gösterme"
     no_ads_for_restricted_categories: "Herkese görünür olmayan kategorilerde reklam gösterme"
     no_ads_for_groups: "Bu gruplardaki kullanıcılara reklam gösterme."
     no_ads_for_categories: "Bu kategorilere ait konu listesi ve sayfalarında reklam gösterme."
     no_ads_for_tags: "Bu etiketlere ait konu listesi ve sayfalarında reklam gösterme."
+    house_ads_after_nth_topic: '"Konular arasında" şirket içi reklamları tanımlanmışsa her N konudan sonra bir reklam gösterin, burada N bu değerdir.'
     house_ads_after_nth_post: '"Gönderiler arasında" şirket içi reklamları tanımlanmışsa her N gönderiden sonra bir reklam göster; burada N bu değerdir.'
     house_ads_frequency: "Diğer reklam ağları bir reklam alanında gösterilecek şekilde yapılandırılmışsa şirket içi reklamlarının yüzde olarak ne sıklıkta gösterilmesi gerektiği."
     ads_txt: "Ads.txt dosyanızın içeriği. <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>Bu Google AdSense yardım sayfasından </a> daha fazla bilgi alabilirsiniz."
