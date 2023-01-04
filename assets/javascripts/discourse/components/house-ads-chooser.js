@@ -1,4 +1,5 @@
 import MultiSelectComponent from "select-kit/components/multi-select";
+import Ember from "ember";
 const { makeArray } = Ember;
 import { computed } from "@ember/object";
 
