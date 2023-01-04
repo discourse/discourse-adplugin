@@ -1,11 +1,15 @@
 {{#if showAd}}
-  <div class="google-adsense-label"><h2>{{i18n "adplugin.advertisement_label"}}</h2></div>
+  <div class="google-adsense-label"><h2>{{i18n
+        "adplugin.advertisement_label"
+      }}</h2></div>
   <div class="google-adsense-content" style={{adWrapperStyle}}>
-    <ins class="adsbygoogle"
+    <ins
+      class="adsbygoogle"
       style={{adInsStyle}}
       data-ad-client="ca-pub-{{publisher_id}}"
       data-ad-slot={{ad_code}}
-      data-ad-format={{autoAdFormat}}>
+      data-ad-format={{autoAdFormat}}
+    >
     </ins>
   </div>
 {{/if}}
