@@ -96,20 +96,20 @@ the ad slots. The ads will start showing as soon as you add them to slots.
 
 ##### Adsense Advertisement Tag to Discourse's Site Settings
 
-![](https://www.dropbox.com/sc/pguxq17zo2rovyd/AAD--LTH_IIgVhgczoaY1Ljva?dl=1)
+![image](https://user-images.githubusercontent.com/5862206/214489271-32ce230f-9f79-441e-9d7a-c5488ebb8c8a.png)
 
 ##### DoubleClick for Publishers' Advertisement Tag to Discourse's Site Settings
 
-![](https://www.dropbox.com/sc/0inoc1iduux0gsf/AADi8tfKX9S6Tx9S8RndcUE8a?dl=1)
+![image](https://user-images.githubusercontent.com/5862206/214489324-8554a996-1876-432b-a686-e1add3b96ec4.png)
 
 ##### Amazon Affiliates' Advertisement Tag to Discourse's Site Settings
 Only for Product Link and Banner Ads.
 
-![](https://www.dropbox.com/sc/l67fb5c3tl8bq3d/AAAAMmccMW3kkIeBR7cBdWoFa?dl=1)
+![image](https://user-images.githubusercontent.com/5862206/214489360-8829291b-8571-4deb-a867-139e823ebdea.png)
 
 ##### Carbon Ads Script Tag to Discourse's Site Settings
 
-![Carbon Ads](https://d11a6trkgmumsb.cloudfront.net/original/3X/3/a/3acc7488db2b53733cdd427d3cb1b76361c786e1.png)
+![adpluginexample](https://user-images.githubusercontent.com/5862206/214489455-234a3812-3606-47bf-9e49-cdaa3d1e3b9c.png)
 
 ##### AdButler Ads Zone URL to Discourse's Site Settings
 
@@ -164,9 +164,7 @@ The following are available locations along with a description and an image show
 | Topic Above Suggested | Ad will appear in the footer above suggested topics of all Discourse forum topics |
 | Post Bottom & Nth Post | Ad will appear on the stipulated nth post within a topic.  So if you have 5 posts in a topic and you want the ad to display after on the 2nd post, put 2 in ```ad_platform_nth_post_code```. |
 
-
-![](https://www.dropbox.com/sc/rm5bcn8c85niul1/AAAUVW-hn56XtCl_XTNlE19Ra?dl=1)
-
+![adplugin2](https://user-images.githubusercontent.com/5862206/214489128-2e0a9520-ffa5-47a9-81f8-27609b2c9975.jpeg)
 
 ### Trust Levels
 
