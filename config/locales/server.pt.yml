@@ -52,3 +52,5 @@ pt:
     amazon_mobile_post_bottom_ad_height_code: "Insira a altura do seu anúncio (móvel)"
     amazon_nth_post_code: "Mostre um anúncio depois de cada N mensagens, onde N é este valor."
     carbonads_through_trust_level: "Mostre os seus anúncios aos utilizadores com base nos níveis de confiança. Os utilizadores com nível de confiança superior a este valor não irão ver anúncios."
+    adbutler_nth_post: "Mostre um anúncio depois de cada N mensagens, onde N é este valor"
+    adbutler_through_trust_level: "Mostre os seus anúncios aos utilizadores com base nos níveis de confiança. Os utilizadores com nível de confiança superior a este valor não irão ver anúncios"

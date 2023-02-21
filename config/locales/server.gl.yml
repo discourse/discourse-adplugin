@@ -24,3 +24,4 @@ gl:
     adsense_through_trust_level: "Amose os anuncios aos usuarios baseándose nos niveis de confianza. Aqueles con niveis superiores a este valor non verán anuncios."
     amazon_through_trust_level: "Amose os anuncios aos usuarios baseándose nos niveis de confianza. Aqueles con niveis superiores a este valor non verán anuncios."
     carbonads_through_trust_level: "Amose os anuncios aos usuarios baseándose nos niveis de confianza. Aqueles con niveis superiores a este valor non verán anuncios."
+    adbutler_through_trust_level: "Amose os anuncios aos usuarios baseándose nos niveis de confianza. Aqueles con niveis superiores a este valor non verán anuncios"
