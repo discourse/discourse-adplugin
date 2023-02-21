@@ -26,3 +26,5 @@ cs:
     amazon_through_trust_level: "Zobrazit reklamy uživatelům podle jejich důvěryhodnosti. Uživatelé s důvěryhodností vyšší než tato hodnota reklamy neuvidí."
     amazon_nth_post_code: "Zobrazit reklamu po každém N-tém příspěvku, kde N je tato hodnota."
     carbonads_through_trust_level: "Zobrazit reklamy uživatelům podle jejich důvěryhodnosti. Uživatelé s důvěryhodností vyšší než tato hodnota reklamy neuvidí."
+    adbutler_nth_post: "Zobrazit reklamu po každém N-tém příspěvku, kde N je tato hodnota"
+    adbutler_through_trust_level: "Zobrazit reklamy uživatelům podle jejich důvěryhodnosti. Uživatelé s důvěryhodností vyšší než tato hodnota reklamy neuvidí"
