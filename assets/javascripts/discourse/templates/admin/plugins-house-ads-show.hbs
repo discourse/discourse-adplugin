@@ -4,10 +4,30 @@
     {{ace-editor content=buffered.html mode="html"}}
   </div>
   <div class="controls">
+    <div class="visibility-settings">
+      <div>
+        <Input
+          class="visible-to-logged-in-checkbox"
+          @type="checkbox"
+          @checked={{this.buffered.visible_to_logged_in_users}}
+        />
+        <span>{{i18n "admin.adplugin.house_ads.show_to_logged_in_users"}}</span>
+      </div>
+
+      <div>
+        <Input
+          class="visible-to-anonymous-checkbox"
+          @type="checkbox"
+          @checked={{this.buffered.visible_to_anons}}
+        />
+        <span>{{i18n "admin.adplugin.house_ads.show_to_anons"}}</span>
+      </div>
+    </div>
+
     {{d-button
       action=(action "save")
       disabled=disableSave
-      class="btn-primary"
+      class="btn-primary save-button"
       label="admin.adplugin.house_ads.save"
     }}
 

@@ -8,6 +8,8 @@ export default DiscourseRoute.extend({
       return EmberObject.create({
         name: I18n.t("admin.adplugin.house_ads.new_name"),
         html: "",
+        visible_to_logged_in_users: true,
+        visible_to_anons: true,
       });
     } else {
       return this.modelFor("adminPlugins.houseAds").findBy(

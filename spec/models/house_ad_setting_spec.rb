@@ -5,7 +5,7 @@ require "rails_helper"
 describe AdPlugin::HouseAdSetting do
   let(:defaults) { AdPlugin::HouseAdSetting::DEFAULTS }
 
-  describe "#all" do
+  describe ".all" do
     subject { AdPlugin::HouseAdSetting.all }
 
     it "returns defaults when nothing has been set" do
@@ -19,7 +19,7 @@ describe AdPlugin::HouseAdSetting do
     end
   end
 
-  describe "#update" do
+  describe ".update" do
     before do
       AdPlugin::HouseAd.create(name: "Banner", html: "<p>Banner</p>")
       AdPlugin::HouseAd.create(name: "Donate", html: "<p>Donate</p>")
@@ -65,6 +65,44 @@ describe AdPlugin::HouseAdSetting do
         Discourse::InvalidParameters,
       )
       expect(AdPlugin::HouseAdSetting.all[:topic_list_top]).to eq("")
+    end
+  end
+
+  describe ".publish_settings" do
+    let!(:anon_ad) do
+      AdPlugin::HouseAd.create(
+        name: "anon-ad",
+        html: "<whatever-anon>",
+        visible_to_anons: true,
+        visible_to_logged_in_users: false,
+      )
+    end
+
+    let!(:logged_in_ad) do
+      AdPlugin::HouseAd.create(
+        name: "logged-in-ad",
+        html: "<whatever-logged-in>",
+        visible_to_anons: false,
+        visible_to_logged_in_users: true,
+      )
+    end
+
+    before { AdPlugin::HouseAdSetting.update("topic_list_top", "logged-in-ad|anon-ad") }
+
+    it "publishes different payloads to different channels for anons and logged in users" do
+      messages = MessageBus.track_publish { AdPlugin::HouseAdSetting.publish_settings }
+      expect(messages.size).to eq(2)
+
+      anon_message = messages.find { |m| m.channel == "/site/house-creatives/anonymous" }
+      logged_in_message = messages.find { |m| m.channel == "/site/house-creatives/logged-in" }
+
+      expect(anon_message.data[:creatives]).to eq("anon-ad" => "<whatever-anon>")
+      expect(anon_message.group_ids).to eq(nil)
+      expect(anon_message.user_ids).to eq(nil)
+
+      expect(logged_in_message.data[:creatives]).to eq("logged-in-ad" => "<whatever-logged-in>")
+      expect(logged_in_message.group_ids).to eq([Group::AUTO_GROUPS[:trust_level_0]])
+      expect(logged_in_message.user_ids).to eq(nil)
     end
   end
 end

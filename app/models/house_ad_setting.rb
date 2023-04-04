@@ -21,10 +21,17 @@ module ::AdPlugin
       settings
     end
 
-    def self.settings_and_ads
+    def self.settings_and_ads(for_anons: true)
       settings = AdPlugin::HouseAdSetting.all
       ad_names = settings.values.map { |v| v.split("|") }.flatten.uniq
-      ads = AdPlugin::HouseAd.all.select { |ad| ad_names.include?(ad.name) }
+
+      if for_anons
+        ads = AdPlugin::HouseAd.all_for_anons
+      else
+        ads = AdPlugin::HouseAd.all_for_logged_in_users
+      end
+      ads = ads.select { |ad| ad_names.include?(ad.name) }
+
       {
         settings:
           settings.merge(
@@ -56,12 +63,18 @@ module ::AdPlugin
       else
         AdPlugin.pstore_set("ad-setting:#{setting_name}", new_value)
       end
+      Site.clear_anon_cache!
 
       publish_settings
     end
 
     def self.publish_settings
-      MessageBus.publish("/site/house-creatives", settings_and_ads)
+      MessageBus.publish("/site/house-creatives/anonymous", settings_and_ads(for_anons: true))
+      MessageBus.publish(
+        "/site/house-creatives/logged-in",
+        settings_and_ads(for_anons: false),
+        group_ids: [Group::AUTO_GROUPS[:trust_level_0]],
+      )
     end
   end
 end

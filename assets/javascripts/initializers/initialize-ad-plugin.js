@@ -28,7 +28,14 @@ export default {
       return;
     }
 
-    messageBus.subscribe("/site/house-creatives", function (houseAdsSettings) {
+    const currentUser = container.lookup("service:current-user");
+    let channel;
+    if (currentUser) {
+      channel = "/site/house-creatives/logged-in";
+    } else {
+      channel = "/site/house-creatives/anonymous";
+    }
+    messageBus.subscribe(channel, function (houseAdsSettings) {
       Site.currentProp("house_creatives", houseAdsSettings);
     });
   },
