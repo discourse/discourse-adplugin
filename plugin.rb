@@ -39,7 +39,7 @@ after_initialize do
   require_dependency "application_controller"
 
   add_to_serializer :site, :house_creatives do
-    AdPlugin::HouseAdSetting.settings_and_ads
+    AdPlugin::HouseAdSetting.settings_and_ads(for_anons: scope.anonymous?)
   end
 
   add_to_serializer :topic_view, :tags_disable_ads do

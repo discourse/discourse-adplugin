@@ -11,7 +11,25 @@ describe AdPlugin::HouseAd do
     }
   end
 
-  describe "#find" do
+  def create_anon_ad
+    AdPlugin::HouseAd.create(
+      name: "anon-ad",
+      html: "<div>ANON</div>",
+      visible_to_logged_in_users: false,
+      visible_to_anons: true,
+    )
+  end
+
+  def create_logged_in_ad
+    AdPlugin::HouseAd.create(
+      name: "logged-in-ad",
+      html: "<div>LOGGED IN</div>",
+      visible_to_logged_in_users: true,
+      visible_to_anons: false,
+    )
+  end
+
+  describe ".find" do
     let!(:ad) { AdPlugin::HouseAd.create(valid_attrs) }
 
     it "returns nil if no match" do
@@ -25,7 +43,7 @@ describe AdPlugin::HouseAd do
     end
   end
 
-  describe "#all" do
+  describe ".all" do
     it "returns empty array if no records" do
       expect(AdPlugin::HouseAd.all).to eq([])
     end
@@ -40,7 +58,27 @@ describe AdPlugin::HouseAd do
     end
   end
 
-  describe "save" do
+  describe ".all_for_anons" do
+    let!(:anon_ad) { create_anon_ad }
+    let!(:logged_in_ad) { create_logged_in_ad }
+
+    it "doesn't include ads for logged in users" do
+      expect(AdPlugin::HouseAd.all_for_anons.map(&:id)).to contain_exactly(anon_ad.id)
+    end
+  end
+
+  describe ".all_for_logged_in_users" do
+    let!(:anon_ad) { create_anon_ad }
+    let!(:logged_in_ad) { create_logged_in_ad }
+
+    it "doesn't include ads for anonymous users" do
+      expect(AdPlugin::HouseAd.all_for_logged_in_users.map(&:id)).to contain_exactly(
+        logged_in_ad.id,
+      )
+    end
+  end
+
+  describe "#save" do
     it "assigns an id and attrs for new record" do
       ad = AdPlugin::HouseAd.from_hash(valid_attrs)
       expect(ad.save).to eq(true)
@@ -112,7 +150,7 @@ describe AdPlugin::HouseAd do
     end
   end
 
-  describe "create" do
+  describe ".create" do
     it "can create new records" do
       ad = AdPlugin::HouseAd.create(valid_attrs)
       expect(ad).to be_a(AdPlugin::HouseAd)
@@ -130,7 +168,7 @@ describe AdPlugin::HouseAd do
     end
   end
 
-  describe "destroy" do
+  describe "#destroy" do
     it "can delete a record" do
       ad = AdPlugin::HouseAd.create(valid_attrs)
       ad.destroy
@@ -138,7 +176,7 @@ describe AdPlugin::HouseAd do
     end
   end
 
-  describe "update" do
+  describe "#update" do
     let(:ad) { AdPlugin::HouseAd.create(valid_attrs) }
 
     it "updates existing record" do

@@ -24,6 +24,8 @@ en:
           get_started: "Start by creating a new ad."
           filter_placeholder: "Select ads..."
           more_settings: "More Settings"
+          show_to_anons: "Show to anonymous users"
+          show_to_logged_in_users: "Show to logged in users"
 
           topic_list_top:
             title: "Topic list top ads"

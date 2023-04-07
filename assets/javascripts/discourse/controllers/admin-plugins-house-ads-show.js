@@ -14,7 +14,20 @@ export default Controller.extend(bufferedProperty("model"), {
 
   nameDirty: propertyNotEqual("buffered.name", "model.name"),
   htmlDirty: propertyNotEqual("buffered.html", "model.html"),
-  dirty: or("nameDirty", "htmlDirty"),
+  visibleToAnonsDirty: propertyNotEqual(
+    "buffered.visible_to_anons",
+    "model.visible_to_anons"
+  ),
+  visibleToLoggedInDirty: propertyNotEqual(
+    "buffered.visible_to_logged_in_users",
+    "model.visible_to_logged_in_users"
+  ),
+  dirty: or(
+    "nameDirty",
+    "htmlDirty",
+    "visibleToLoggedInDirty",
+    "visibleToAnonsDirty"
+  ),
   disableSave: not("dirty"),
 
   actions: {
@@ -34,6 +47,10 @@ export default Controller.extend(bufferedProperty("model"), {
         }
         data.name = buffered.get("name");
         data.html = buffered.get("html");
+        data.visible_to_logged_in_users = buffered.get(
+          "visible_to_logged_in_users"
+        );
+        data.visible_to_anons = buffered.get("visible_to_anons");
 
         ajax(
           newRecord

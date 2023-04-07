@@ -38,7 +38,18 @@ module ::AdPlugin
     private
 
     def house_ad_params
-      params.permit(:id, :name, :html)
+      @permitted ||=
+        begin
+          permitted =
+            params.permit(:id, :name, :html, :visible_to_anons, :visible_to_logged_in_users)
+          permitted[:visible_to_logged_in_users] = ActiveModel::Type::Boolean.new.cast(
+            permitted[:visible_to_logged_in_users],
+          )
+          permitted[:visible_to_anons] = ActiveModel::Type::Boolean.new.cast(
+            permitted[:visible_to_anons],
+          )
+          permitted
+        end
     end
   end
 end
