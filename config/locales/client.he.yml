@@ -30,6 +30,8 @@ he:
           get_started: "ניתן להתחיל ביצירת פרסומת חדשה."
           filter_placeholder: "בחירת פרסומות…"
           more_settings: "הגדרות נוספות"
+          show_to_anons: "הצגה למשתמשים אלמוניים"
+          show_to_logged_in_users: "הצגה למשתמשים שנכנסו למערכת"
           topic_list_top:
             title: "פרסומות בראש רשימת הנושאים"
             description: "פרסומות שתופענה בראש עמוד רשימת הנושים."
