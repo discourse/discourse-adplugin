@@ -1,5 +1,5 @@
 <label for={{name}}>{{title}}</label>
-{{text-field value=adValue classNames="house-ads-text-input"}}
+<TextField @value={{adValue}} @classNames="house-ads-text-input" />
 <div class="setting-controls">
   {{#if changed}}
     {{d-button class="ok" action=(action "save") icon="check"}}
