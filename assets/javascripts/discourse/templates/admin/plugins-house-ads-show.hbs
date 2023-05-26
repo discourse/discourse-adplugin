@@ -1,7 +1,7 @@
-{{#d-section class="edit-house-ad content-body"}}
-  <h1>{{text-field class="house-ad-name" value=buffered.name}}</h1>
+<DSection @class="edit-house-ad content-body">
+  <h1><TextField @class="house-ad-name" @value={{buffered.name}} /></h1>
   <div class="controls">
-    {{ace-editor content=buffered.html mode="html"}}
+    <AceEditor @content={{buffered.html}} @mode="html" />
   </div>
   <div class="controls">
     <div class="visibility-settings">
@@ -24,12 +24,12 @@
       </div>
     </div>
 
-    {{d-button
-      action=(action "save")
-      disabled=disableSave
+    <DButton
+      @action={{action "save"}}
+      @disabled={{disableSave}}
       class="btn-primary save-button"
-      label="admin.adplugin.house_ads.save"
-    }}
+      @label="admin.adplugin.house_ads.save"
+    />
 
     {{#if saving}}
       {{savingStatus}}
@@ -39,10 +39,10 @@
       {{/if}}
     {{/if}}
 
-    {{d-button
-      action=(action "destroy")
+    <DButton
+      @action={{action "destroy"}}
       class="btn-danger delete-button"
-      label="admin.adplugin.house_ads.delete"
-    }}
+      @label="admin.adplugin.house_ads.delete"
+    />
   </div>
-{{/d-section}}
+</DSection>
