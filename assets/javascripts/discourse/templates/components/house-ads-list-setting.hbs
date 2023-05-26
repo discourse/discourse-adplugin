@@ -1,9 +1,9 @@
 <label for={{name}}>{{title}}</label>
-{{house-ads-chooser
-  settingValue=adValue
-  choices=adNames
-  onChange=(action (mut adValue))
-}}
+<HouseAdsChooser
+  @settingValue={{adValue}}
+  @choices={{adNames}}
+  @onChange={{action (mut adValue)}}
+/>
 <div class="setting-controls">
   {{#if changed}}
     <DButton class="ok" @action={{action "save"}} @icon="check" />

@@ -3,21 +3,25 @@
   {{#if model.length}}
     <div class="content-list">
       <div class="house-ads-actions">
-        {{#link-to "adminPlugins.houseAds.show" "new" class="btn btn-primary"}}
+        <LinkTo
+          @route="adminPlugins.houseAds.show"
+          @model="new"
+          class="btn btn-primary"
+        >
           {{d-icon "plus"}}
           <span>{{i18n "admin.adplugin.house_ads.new"}}</span>
-        {{/link-to}}
-        {{#link-to "adminPlugins.houseAds.index" class="btn btn-default"}}
+        </LinkTo>
+        <LinkTo @route="adminPlugins.houseAds.index" class="btn btn-default">
           {{d-icon "cog"}}
           <span>{{i18n "admin.adplugin.house_ads.settings"}}</span>
-        {{/link-to}}
+        </LinkTo>
       </div>
       <ul class="house-ads-list">
         {{#each model as |ad|}}
           <li class="house-ads-list-item">
-            {{#link-to "adminPlugins.houseAds.show" ad.id}}
+            <LinkTo @route="adminPlugins.houseAds.show" @model={{ad.id}}>
               {{ad.name}}
-            {{/link-to}}
+            </LinkTo>
           </li>
         {{/each}}
       </ul>

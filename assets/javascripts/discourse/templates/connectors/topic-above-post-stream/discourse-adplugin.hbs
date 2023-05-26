@@ -1,5 +1,5 @@
-{{ad-slot
-  placement="topic-above-post-stream"
-  refreshOnChange=model.id
-  category=model.category.slug
-}}
+<AdSlot
+  @placement="topic-above-post-stream"
+  @refreshOnChange={{model.id}}
+  @category={{model.category.slug}}
+/>
