@@ -2,8 +2,8 @@
 <TextField @value={{adValue}} @classNames="house-ads-text-input" />
 <div class="setting-controls">
   {{#if changed}}
-    <DButton @class="ok" @action={{action "save"}} @icon="check" />
-    <DButton @class="cancel" @action={{action "cancel"}} @icon="times" />
+    <DButton class="ok" @action={{action "save"}} @icon="check" />
+    <DButton class="cancel" @action={{action "cancel"}} @icon="times" />
   {{/if}}
 </div>
 <p class="help">{{help}}</p>
