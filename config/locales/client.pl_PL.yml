@@ -30,6 +30,7 @@ pl_PL:
           get_started: "Rozpocznij, tworząc nową reklamę."
           filter_placeholder: "Wybierz reklamy…"
           more_settings: "Więcej utsawień"
+          show_to_anons: "Pokaż anonimowym użytkownikom"
           topic_list_top:
             title: "Reklama nad listą tematów"
             description: "Reklamy do wyświetlania na górze listy tematów."
