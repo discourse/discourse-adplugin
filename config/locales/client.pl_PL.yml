@@ -29,7 +29,7 @@ pl_PL:
           description: "Zdefiniuj własne reklamy oraz to, gdzie mają być wyświetlane."
           get_started: "Rozpocznij, tworząc nową reklamę."
           filter_placeholder: "Wybierz reklamy…"
-          more_settings: "Więcej utsawień"
+          more_settings: "Więcej ustawień"
           show_to_anons: "Pokaż anonimowym użytkownikom"
           topic_list_top:
             title: "Reklama nad listą tematów"
