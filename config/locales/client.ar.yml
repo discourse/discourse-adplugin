@@ -30,6 +30,8 @@ ar:
           get_started: "ابدأ بإنشاء إعلان جديد."
           filter_placeholder: "حدِّد الإعلانات..."
           more_settings: "إعدادات إضافية"
+          show_to_anons: "العرض للمستخدمين المجهولين"
+          show_to_logged_in_users: "العرض للمستخدمين الذين سجَّلوا الدخول"
           topic_list_top:
             title: "الإعلانات أعلى قائمة الموضوعات"
             description: "إعلانات لعرضها في أعلى صفحات قائمة الموضوعات"

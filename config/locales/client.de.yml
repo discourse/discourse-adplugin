@@ -30,6 +30,8 @@ de:
           get_started: "Beginne damit, eine neue Anzeige zu erstellen."
           filter_placeholder: "Anzeigen auswählen …"
           more_settings: "Weitere Einstellungen"
+          show_to_anons: "Für anonyme Benutzer anzeigen"
+          show_to_logged_in_users: "Für angemeldete Benutzer anzeigen"
           topic_list_top:
             title: "Anzeigen oben bei der Themenliste"
             description: "Anzeigen, die oben auf den Themenlisten-Seiten gezeigt werden sollen."

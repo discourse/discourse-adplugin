@@ -30,6 +30,8 @@ nl:
           get_started: "Begin met het maken van een nieuwe advertentie."
           filter_placeholder: "Selecteer advertenties..."
           more_settings: "Meer instellingen"
+          show_to_anons: "Weergeven voor anonieme gebruikers"
+          show_to_logged_in_users: "Weergegeven voor ingelogde gebruikers"
           topic_list_top:
             title: "Advertenteis boven topicslijst"
             description: "Advertenties die worden weergegeven bovenaan pagina's met topicslijsten."

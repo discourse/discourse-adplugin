@@ -30,6 +30,8 @@ fr:
           get_started: "Commencez par créer une nouvelle annonce."
           filter_placeholder: "Sélectionnez les annonces…"
           more_settings: "Plus de paramètres"
+          show_to_anons: "Afficher aux utilisateurs anonymes"
+          show_to_logged_in_users: "Afficher aux utilisateurs connectés"
           topic_list_top:
             title: "Annonces de la liste des sujets"
             description: "Annonces à afficher en haut des pages de la liste des sujets"

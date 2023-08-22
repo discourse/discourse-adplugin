@@ -30,8 +30,8 @@ pt_BR:
           get_started: "Comece criando um novo anúncio."
           filter_placeholder: "Selecionar anúncios…"
           more_settings: "Mais Configurações"
-          show_to_anons: "Mostrar para usuários anônimos"
-          show_to_logged_in_users: "Mostrar para usuários logados"
+          show_to_anons: "Mostrar para usuários(as) anônimos(as)"
+          show_to_logged_in_users: "Mostrar para usuários(as) logados(as)"
           topic_list_top:
             title: "Principais anúncios da lista de tópicos"
             description: "Anúncios para mostrar no topo das páginas da lista de tópicos."
