@@ -30,6 +30,8 @@ es:
           get_started: "Comienza creando un nuevo anuncio."
           filter_placeholder: "Seleccionar anuncios..."
           more_settings: "Más ajustes"
+          show_to_anons: "Mostrar a usuarios anónimos"
+          show_to_logged_in_users: "Mostrar a los usuarios que han iniciado sesión"
           topic_list_top:
             title: "Anuncios destacados de la lista de temas"
             description: "Anuncios a mostrar en la parte superior de las listas de temas."

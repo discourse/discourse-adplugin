@@ -30,6 +30,8 @@ tr_TR:
           get_started: "Yeni reklam oluşturmaya başlayın."
           filter_placeholder: "Reklamları seçin..."
           more_settings: "Daha Fazla Ayar"
+          show_to_anons: "Anonim kullanıcılara göster"
+          show_to_logged_in_users: "Giriş yapmış kullanıcılara göster"
           topic_list_top:
             title: "Konu listesi üstü reklamları"
             description: "Konu listesi sayfalarının en üstünde gösterilecek reklamlar."

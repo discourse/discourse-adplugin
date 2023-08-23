@@ -30,6 +30,8 @@ it:
           get_started: "Comincia creando un nuovo annuncio."
           filter_placeholder: "Seleziona annunci..."
           more_settings: "Altre Impostazioni"
+          show_to_anons: "Mostra agli utenti anonimi"
+          show_to_logged_in_users: "Mostra agli utenti registrati"
           topic_list_top:
             title: "Annunci in cima all'elenco argomenti"
             description: "Annunci da mostrare in cima alle pagine con gli elenchi di argomenti."
