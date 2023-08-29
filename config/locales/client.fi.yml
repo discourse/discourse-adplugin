@@ -30,6 +30,8 @@ fi:
           get_started: "Aloita luomalla uusi mainos."
           filter_placeholder: "Valitse mainokset..."
           more_settings: "Lisää asetuksia"
+          show_to_anons: "Näytä anonyymeille käyttäjille"
+          show_to_logged_in_users: "Näytä kirjautuneille käyttäjille"
           topic_list_top:
             title: "Ketjuluettelon ylämainokset"
             description: "Mainokset, jotka näytetään aiheluettelosivun yläreunassa."
