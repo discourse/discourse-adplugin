@@ -1,40 +1,30 @@
+import { hbs } from "ember-cli-htmlbars";
 import { withPluginApi } from "discourse/lib/plugin-api";
 import Site from "discourse/models/site";
+import { registerWidgetShim } from "discourse/widgets/render-glimmer";
 
 export default {
   name: "initialize-ad-plugin",
   initialize(container) {
+    registerWidgetShim(
+      "after-post-ad",
+      "div.widget-connector",
+      hbs`<PostBottomAd @model={{@data}} />`
+    );
+
     withPluginApi("0.1", (api) => {
-      api.decorateWidget("post:after", (dec) => {
-        if (dec.canConnectComponent) {
-          if (!dec.attrs.cloaked) {
-            return dec.connect({
-              component: "post-bottom-ad",
-              context: "model",
-            });
-          }
-        } else {
-          // Old way for backwards compatibility
-          return dec.connect({
-            templateName: "connectors/post-bottom/discourse-adplugin",
-            context: "model",
-          });
-        }
+      api.decorateWidget("post:after", (helper) => {
+        return helper.attach("after-post-ad", helper.attrs);
       });
     });
 
-    const messageBus = container.lookup("message-bus:main");
-    if (!messageBus) {
-      return;
-    }
-
+    const messageBus = container.lookup("service:message-bus");
     const currentUser = container.lookup("service:current-user");
-    let channel;
-    if (currentUser) {
-      channel = "/site/house-creatives/logged-in";
-    } else {
-      channel = "/site/house-creatives/anonymous";
-    }
+
+    const channel = currentUser
+      ? "/site/house-creatives/logged-in"
+      : "/site/house-creatives/anonymous";
+
     messageBus.subscribe(channel, function (houseAdsSettings) {
       Site.currentProp("house_creatives", houseAdsSettings);
     });
