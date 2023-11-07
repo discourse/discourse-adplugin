@@ -152,7 +152,10 @@ export default AdComponent.extend({
 
       try {
         adsbygoogle.push({}); // ask AdSense to fill one ad unit
-      } catch (ex) {}
+      } catch (ex) {
+        // eslint-disable-next-line no-console
+        console.error("Adsense error:", ex);
+      }
     });
   },
 
