@@ -5,6 +5,9 @@
   "author": "Discourse",
   "license": "MIT",
   "devDependencies": {
-    "eslint-config-discourse": "^2.0.0"
+    "@discourse/lint-configs": "^1.0.0",
+    "ember-template-lint": "^5.11.2",
+    "eslint": "^8.52.0",
+    "prettier": "^2.8.8"
   }
 }
