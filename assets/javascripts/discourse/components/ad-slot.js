@@ -1,7 +1,7 @@
 import EmberObject from "@ember/object";
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import { isBlank } from "@ember/utils";
+import discourseComputed, { observes } from "discourse-common/utils/decorators";
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
   isNthPost,
   isNthTopicListItem,

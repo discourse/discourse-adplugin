@@ -1,5 +1,5 @@
-import DiscourseRoute from "discourse/routes/discourse";
 import { action } from "@ember/object";
+import DiscourseRoute from "discourse/routes/discourse";
 
 export default DiscourseRoute.extend({
   @action
