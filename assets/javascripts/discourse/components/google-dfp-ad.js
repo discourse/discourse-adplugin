@@ -242,7 +242,6 @@ export default AdComponent.extend({
   classNameBindings: ["adUnitClass"],
   classNames: ["google-dfp-ad"],
   loadedGoogletag: false,
-  refreshOnChange: null,
   lastAdRefresh: null,
   width: alias("size.width"),
   height: alias("size.height"),
@@ -353,7 +352,7 @@ export default AdComponent.extend({
 
   @on("didUpdate")
   updated() {
-    if (this.get("listLoading") || !this.shouldRefreshAd()) {
+    if (!this.shouldRefreshAd()) {
       return;
     }
 

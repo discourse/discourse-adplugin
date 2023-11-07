@@ -1,5 +1,5 @@
 import { isBlank } from "@ember/utils";
-import discourseComputed, { observes } from "discourse-common/utils/decorators";
+import discourseComputed from "discourse-common/utils/decorators";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 
 const adIndex = {
@@ -100,12 +100,7 @@ export default AdComponent.extend({
     }
   },
 
-  @observes("refreshOnChange")
   refreshAd() {
-    if (this.get("listLoading")) {
-      return;
-    }
-
     this.set("adHtml", this.chooseAdHtml());
   },
 
@@ -113,10 +108,6 @@ export default AdComponent.extend({
     this._super(...arguments);
 
     if (!this.get("showAd")) {
-      return;
-    }
-
-    if (this.get("listLoading")) {
       return;
     }
 
