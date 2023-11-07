@@ -141,22 +141,27 @@ export default AdComponent.extend({
     this._super();
   },
 
-  _triggerAds() {
+  async _triggerAds() {
     if (isTesting()) {
       return; // Don't load external JS during tests
     }
 
     this.set("adRequested", true);
-    loadAdsense().then(function () {
-      const adsbygoogle = window.adsbygoogle || [];
 
-      try {
-        adsbygoogle.push({}); // ask AdSense to fill one ad unit
-      } catch (ex) {
-        // eslint-disable-next-line no-console
-        console.error("Adsense error:", ex);
-      }
-    });
+    await loadAdsense();
+
+    if (this.isDestroyed || this.isDestroying) {
+      // Component removed from DOM before script loaded
+      return;
+    }
+
+    try {
+      const adsbygoogle = (window.adsbygoogle ||= []);
+      adsbygoogle.push({}); // ask AdSense to fill one ad unit
+    } catch (ex) {
+      // eslint-disable-next-line no-console
+      console.error("Adsense error:", ex);
+    }
   },
 
   didInsertElement() {
