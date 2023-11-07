@@ -1,10 +1,10 @@
+import { visit } from "@ember/test-helpers";
+import { test } from "qunit";
+import groupFixtures from "discourse/tests/fixtures/group-fixtures";
 import {
   acceptance,
   updateCurrentUser,
 } from "discourse/tests/helpers/qunit-helpers";
-import { test } from "qunit";
-import groupFixtures from "discourse/tests/fixtures/group-fixtures";
-import { visit } from "@ember/test-helpers";
 
 acceptance("AdSense", function (needs) {
   needs.user();

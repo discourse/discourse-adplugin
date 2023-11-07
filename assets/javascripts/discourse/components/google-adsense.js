@@ -1,10 +1,10 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import discourseComputed, { observes } from "discourse-common/utils/decorators";
-import loadScript from "discourse/lib/load-script";
-import RSVP from "rsvp";
 import { scheduleOnce } from "@ember/runloop";
-import { isTesting } from "discourse-common/config/environment";
 import { htmlSafe } from "@ember/template";
+import RSVP from "rsvp";
+import loadScript from "discourse/lib/load-script";
+import { isTesting } from "discourse-common/config/environment";
+import discourseComputed, { observes } from "discourse-common/utils/decorators";
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 
 let _loaded = false,
   _promise = null,

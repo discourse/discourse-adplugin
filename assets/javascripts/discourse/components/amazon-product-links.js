@@ -1,7 +1,7 @@
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import discourseComputed from "discourse-common/utils/decorators";
 import { and } from "@ember/object/computed";
 import { htmlSafe } from "@ember/template";
+import discourseComputed from "discourse-common/utils/decorators";
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 
 export default AdComponent.extend({
   classNames: ["amazon-product-links"],
