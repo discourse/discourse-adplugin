@@ -3,7 +3,7 @@ import { htmlSafe } from "@ember/template";
 import RSVP from "rsvp";
 import loadScript from "discourse/lib/load-script";
 import { isTesting } from "discourse-common/config/environment";
-import discourseComputed, { observes } from "discourse-common/utils/decorators";
+import discourseComputed from "discourse-common/utils/decorators";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 
 let _loaded = false,
@@ -163,21 +163,7 @@ export default AdComponent.extend({
       return;
     }
 
-    if (this.get("listLoading")) {
-      return;
-    }
-
     scheduleOnce("afterRender", this, this._triggerAds);
-  },
-
-  @observes("listLoading")
-  waitForLoad() {
-    if (this.get("adRequested")) {
-      return;
-    } // already requested that this ad unit be populated
-    if (!this.get("listLoading")) {
-      scheduleOnce("afterRender", this, this._triggerAds);
-    }
   },
 
   @discourseComputed("ad_width")

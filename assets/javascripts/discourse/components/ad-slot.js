@@ -1,6 +1,7 @@
 import EmberObject from "@ember/object";
+import { inject as service } from "@ember/service";
 import { isBlank } from "@ember/utils";
-import discourseComputed, { observes } from "discourse-common/utils/decorators";
+import discourseComputed from "discourse-common/utils/decorators";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
   isNthPost,
@@ -173,7 +174,7 @@ export function slotContenders(
 }
 
 export default AdComponent.extend({
-  needsUpdate: false,
+  router: service(),
   tagName: "",
 
   /**
@@ -192,26 +193,13 @@ export default AdComponent.extend({
   },
 
   /**
-   * When house ads are configured to alternate with other ad networks, we
-   * need to trigger an update of which ad component is shown after
-   * navigating between topic lists or topics.
-   */
-  @observes("refreshOnChange")
-  changed() {
-    if (this.get("listLoading")) {
-      return;
-    }
-
-    // force adComponents to be recomputed
-    this.notifyPropertyChange("needsUpdate");
-  },
-
-  /**
    * Returns a list of the names of ad components that should be rendered
    * in the given ad placement. It handles alternating between house ads
    * and other ad networks.
+   *
+   * Depends on `router.currentRoute` so that we refresh ads when navigating around.
    */
-  @discourseComputed("placement", "availableAdTypes", "needsUpdate")
+  @discourseComputed("placement", "availableAdTypes", "router.currentRoute")
   adComponents(placement, availableAdTypes) {
     if (
       !availableAdTypes.includes("house-ad") ||

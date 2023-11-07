@@ -2,6 +2,7 @@ import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
 import {
   acceptance,
+  query,
   updateCurrentUser,
 } from "discourse/tests/helpers/qunit-helpers";
 
@@ -69,11 +70,20 @@ acceptance("House Ads", function (needs) {
     assert
       .dom(".h-topic-list")
       .exists({ count: 1 }, "it should render ad above topic list");
+    const originalTopAdElement = query(".h-topic-list");
 
-    await visit("/latest");
     assert
       .dom(".h-between-topic-list")
       .exists({ count: 5 }, "it should render 5 ads between topics");
+
+    await visit("/top");
+    const newTopAdElement = query(".h-topic-list");
+
+    assert.notStrictEqual(
+      originalTopAdElement,
+      newTopAdElement,
+      "ad is fully re-rendered when changing pages"
+    );
 
     await visit("/t/28830");
 
