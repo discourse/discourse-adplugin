@@ -42,45 +42,33 @@ acceptance("AdSense", function (needs) {
     updateCurrentUser({ staff: false, trust_level: 1 });
     await visit("/t/280"); // 20 posts
 
-    assert.equal(
-      find(".google-adsense.adsense-topic-above-post-stream").length,
-      1,
-      "it should render 1 ad"
-    );
+    assert
+      .dom(".google-adsense.adsense-topic-above-post-stream")
+      .exists({ count: 1 }, "it should render 1 ad above post stream");
 
-    const ads = find(".google-adsense.adsense-post-bottom");
-    assert.equal(ads.length, 3, "it should render 3 ads");
-    assert.equal(
-      find("#post_6 + .widget-connector").find(
-        ".google-adsense.adsense-post-bottom"
-      ).length,
-      1,
-      "ad after 6th post"
-    );
-    assert.equal(
-      find("#post_12 + .widget-connector").find(
-        ".google-adsense.adsense-post-bottom"
-      ).length,
-      1,
-      "ad after 12th post"
-    );
-    assert.equal(
-      find("#post_18 + .widget-connector").find(
-        ".google-adsense.adsense-post-bottom"
-      ).length,
-      1,
-      "ad after 18th post"
-    );
+    assert
+      .dom(".google-adsense.adsense-post-bottom")
+      .exists({ count: 3 }, "it should render 3 ads");
+
+    assert
+      .dom("#post_6 + .widget-connector .google-adsense.adsense-post-bottom")
+      .exists({ count: 1 }, "ad after 6th post");
+
+    assert
+      .dom("#post_12 + .widget-connector .google-adsense.adsense-post-bottom")
+      .exists({ count: 1 }, "ad after 12th post");
+
+    assert
+      .dom("#post_18 + .widget-connector .google-adsense.adsense-post-bottom")
+      .exists({ count: 1 }, "ad after 18th post");
   });
 
   test("no ads for trust level 3", async (assert) => {
     updateCurrentUser({ staff: false, trust_level: 3 });
     await visit("/t/280");
-    assert.equal(
-      find(".google-adsense.adsense-post-bottom").length,
-      0,
-      "it should render 0 ads"
-    );
+    assert
+      .dom(".google-adsense.adsense-post-bottom")
+      .doesNotExist("it should render 0 ads");
   });
 
   test("can omit ads based on groups", async (assert) => {
@@ -90,20 +78,16 @@ acceptance("AdSense", function (needs) {
       groups: [groupFixtures["/groups/discourse.json"].group],
     });
     await visit("/t/280");
-    assert.equal(
-      find(".google-adsense.adsense-post-bottom").length,
-      0,
-      "it should render 0 ads"
-    );
+    assert
+      .dom(".google-adsense.adsense-post-bottom")
+      .doesNotExist("it should render 0 ads");
   });
 
   test("can omit ads based on category", async (assert) => {
     updateCurrentUser({ staff: false, trust_level: 1 });
     await visit("/t/28830");
-    assert.equal(
-      find(".google-adsense.adsense-topic-above-post-stream").length,
-      0,
-      "it should render 0 ads"
-    );
+    assert
+      .dom(".google-adsense.adsense-topic-above-post-stream")
+      .doesNotExist("it should render 0 ads");
   });
 });
