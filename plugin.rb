@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 # name: discourse-adplugin
-# about: Ad Plugin for Discourse
+# about: Allows admins to configure advertisements, and integrates with external ad platforms.
+# meta_topic_id: 33734
 # version: 1.2.5
 # authors: Vi and Sarah (@ladydanger and @cyberkoi)
 # url: https://github.com/discourse/discourse-adplugin
