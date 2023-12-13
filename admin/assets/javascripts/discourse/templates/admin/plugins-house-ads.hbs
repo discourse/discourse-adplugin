@@ -3,7 +3,9 @@
   {{#if model.length}}
     <div class="content-list">
       <div class="house-ads-actions">
-        {{#link-to route="adminPlugins.houseAds.show" model="new" class="btn btn-primary"}}
+        {{#link-to
+          route="adminPlugins.houseAds.show" model="new" class="btn btn-primary"
+        }}
           {{d-icon "plus"}}
           <span>{{i18n "admin.adplugin.house_ads.new"}}</span>
         {{/link-to}}
