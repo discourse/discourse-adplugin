@@ -1,4 +1,4 @@
-<DSection @class="house-ads-settings content-body">
+<section class="house-ads-settings content-body">
   <div>{{i18n "admin.adplugin.house_ads.description"}}</div>
 
   {{#if houseAds.length}}
@@ -37,8 +37,8 @@
       <DButton
         @label="admin.adplugin.house_ads.more_settings"
         @icon="cog"
-        class="btn-default"
         @action={{route-action "moreSettings"}}
+        class="btn-default"
       />
     </form>
   {{else}}
@@ -48,4 +48,4 @@
       {{/link-to}}
     </p>
   {{/if}}
-</DSection>
+</section>

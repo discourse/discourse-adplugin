@@ -1,5 +1,6 @@
 import Controller, { inject as controller } from "@ember/controller";
 import { not, or } from "@ember/object/computed";
+import { inject as service } from "@ember/service";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import { propertyNotEqual } from "discourse/lib/computed";
@@ -8,6 +9,7 @@ import I18n from "I18n";
 
 export default Controller.extend(bufferedProperty("model"), {
   adminPluginsHouseAds: controller("adminPlugins.houseAds"),
+  router: service(),
 
   saving: false,
   savingStatus: "",
@@ -71,7 +73,7 @@ export default Controller.extend(bufferedProperty("model"), {
               if (!houseAds.includes(model)) {
                 houseAds.pushObject(model);
               }
-              this.transitionToRoute(
+              this.router.transitionTo(
                 "adminPlugins.houseAds.show",
                 model.get("id")
               );
@@ -96,7 +98,7 @@ export default Controller.extend(bufferedProperty("model"), {
       const model = this.get("model");
 
       if (!model.get("id")) {
-        this.transitionToRoute("adminPlugins.houseAds.index");
+        this.router.transitionTo("adminPlugins.houseAds.index");
         return;
       }
 
@@ -105,7 +107,7 @@ export default Controller.extend(bufferedProperty("model"), {
       })
         .then(() => {
           houseAds.removeObject(model);
-          this.transitionToRoute("adminPlugins.houseAds.index");
+          this.router.transitionTo("adminPlugins.houseAds.index");
         })
         .catch(popupAjaxError);
     },

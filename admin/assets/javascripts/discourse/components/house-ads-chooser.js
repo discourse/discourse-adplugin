@@ -1,7 +1,6 @@
-import Ember from "ember";
-import MultiSelectComponent from "select-kit/components/multi-select";
-const { makeArray } = Ember;
 import { computed } from "@ember/object";
+import { makeArray } from "discourse-common/lib/helpers";
+import MultiSelectComponent from "select-kit/components/multi-select";
 
 export default MultiSelectComponent.extend({
   classNames: ["house-ads-chooser"],
@@ -36,7 +35,7 @@ export default MultiSelectComponent.extend({
   actions: {
     onChange(value) {
       const settingValue = makeArray(value).join(this.tokenSeparator);
-      this.attrs.onChange && this.attrs.onChange(settingValue);
+      this.onChange?.(settingValue);
     },
   },
 });

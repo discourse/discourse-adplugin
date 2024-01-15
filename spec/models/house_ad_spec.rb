@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "rails_helper"
-
 describe AdPlugin::HouseAd do
   let(:valid_attrs) do
     {

@@ -6,7 +6,6 @@
 # version: 1.2.5
 # authors: Vi and Sarah (@ladydanger and @cyberkoi)
 # url: https://github.com/discourse/discourse-adplugin
-# transpile_js: true
 
 register_asset "stylesheets/adplugin.scss"
 

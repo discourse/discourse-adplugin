@@ -1,13 +1,10 @@
 {
   "name": "discourse-adplugin",
-  "version": "1.0.0",
-  "repository": "git@github.com:discourse/discourse-adplugin.git",
-  "author": "Discourse",
-  "license": "MIT",
+  "private": true,
   "devDependencies": {
-    "@discourse/lint-configs": "^1.0.0",
-    "ember-template-lint": "^5.11.2",
-    "eslint": "^8.52.0",
+    "@discourse/lint-configs": "^1.3.5",
+    "ember-template-lint": "^5.13.0",
+    "eslint": "^8.56.0",
     "prettier": "^2.8.8"
   }
 }
