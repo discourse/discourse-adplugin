@@ -25,6 +25,7 @@ fa_IR:
           new_name: "آگهی خانه جدید"
           save: "ذخیره"
           delete: "حذف"
+          get_started: "با ایجاد یک تبلیغ جدید شروع کنید.\nچگونه تست پرژگ"
           filter_placeholder: "انتخاب آگهی..."
           more_settings: "تنظیمات بیشتر"
           post_bottom:
