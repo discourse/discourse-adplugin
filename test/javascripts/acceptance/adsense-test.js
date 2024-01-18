@@ -1,11 +1,11 @@
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
+import { AUTO_GROUPS } from "discourse/lib/constants";
 import groupFixtures from "discourse/tests/fixtures/group-fixtures";
 import {
   acceptance,
   updateCurrentUser,
 } from "discourse/tests/helpers/qunit-helpers";
-import { AUTO_GROUPS } from "discourse/lib/constants";
 
 acceptance("AdSense", function (needs) {
   needs.user();
