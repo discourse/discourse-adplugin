@@ -226,7 +226,9 @@ export default AdComponent.extend({
       return true;
     }
     return groups.some((group) =>
-      this.siteSettings.adsense_through_allowed_groups.map(g => g.id).includes(group.id)
+      this.siteSettings.adsense_through_allowed_groups
+        .map((g) => g.id)
+        .includes(group.id)
     );
   },
 
