@@ -213,23 +213,40 @@ export default AdComponent.extend({
     );
   },
 
+  @discourseComputed("currentUser.groups")
+  showToAllowedGroups(groups) {
+    const currentUser = this.currentUser;
+
+    if (
+      !currentUser ||
+      !groups ||
+      !this.siteSettings.adsense_through_allowed_groups ||
+      this.siteSettings.adsense_through_allowed_groups.length === 0
+    ) {
+      return true;
+    }
+    return groups.some((group) =>
+      this.siteSettings.adsense_through_allowed_groups.map(g => g.id).includes(group.id)
+    );
+  },
+
   @discourseComputed(
     "publisher_id",
-    "showToTrustLevel",
+    "showToAllowedGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
-    showToTrustLevel,
+    showToAllowedGroups,
     showToGroups,
     showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
-      showToTrustLevel &&
+      showToAllowedGroups &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage
