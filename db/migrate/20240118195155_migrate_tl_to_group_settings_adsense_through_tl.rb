@@ -11,7 +11,7 @@ class MigrateTlToGroupSettingsAdsenseThroughTl < ActiveRecord::Migration[7.0]
       adsense_through_allowed_groups =
         case adsense_through_trust_level_raw
         when "0"
-          "0"
+          "10"
         when "1"
           "10|11"
         when "2"
