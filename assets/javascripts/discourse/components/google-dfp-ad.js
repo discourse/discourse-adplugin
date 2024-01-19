@@ -299,7 +299,7 @@ export default AdComponent.extend({
 
   @discourseComputed(
     "publisherId",
-    "showToTrustLevel",
+    "showToThroughAllowedGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage",
@@ -307,7 +307,7 @@ export default AdComponent.extend({
   )
   showAd(
     publisherId,
-    showToTrustLevel,
+    showToThroughAllowedGroups,
     showToGroups,
     showAfterPost,
     showOnCurrentPage,
@@ -315,7 +315,7 @@ export default AdComponent.extend({
   ) {
     return (
       publisherId &&
-      showToTrustLevel &&
+      showToThroughAllowedGroups &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage &&
@@ -323,10 +323,22 @@ export default AdComponent.extend({
     );
   },
 
-  @discourseComputed("currentUser.trust_level")
-  showToTrustLevel(trustLevel) {
-    return !(
-      trustLevel && trustLevel > this.siteSettings.dfp_through_trust_level
+  @discourseComputed("currentUser.groups")
+  showToThroughAllowedGroups(groups) {
+    const currentUser = this.currentUser;
+
+    if (
+      !currentUser ||
+      !groups ||
+      !this.siteSettings.dfp_through_allowed_groups ||
+      this.siteSettings.dfp_through_allowed_groups.length === 0
+    ) {
+      return true;
+    }
+    return groups.some((group) =>
+      this.siteSettings.dfp_through_allowed_groups
+        .map((g) => g.id)
+        .includes(group.id)
     );
   },
 

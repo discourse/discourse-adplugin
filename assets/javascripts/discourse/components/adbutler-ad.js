@@ -111,30 +111,42 @@ export default AdComponent.extend({
     scheduleOnce("afterRender", this, this._triggerAds);
   },
 
-  @discourseComputed("currentUser.trust_level")
-  showToTrustLevel(trustLevel) {
-    return !(
-      trustLevel && trustLevel > this.siteSettings.adbutler_through_trust_level
+  @discourseComputed("currentUser.groups")
+  showToThroughAllowedGroups(groups) {
+    const currentUser = this.currentUser;
+
+    if (
+      !currentUser ||
+      !groups ||
+      !this.siteSettings.adbutler_through_allowed_groups ||
+      this.siteSettings.adbutler_through_allowed_groups.length === 0
+    ) {
+      return true;
+    }
+    return groups.some((group) =>
+      this.siteSettings.adbutler_through_allowed_groups
+        .map((g) => g.id)
+        .includes(group.id)
     );
   },
 
   @discourseComputed(
     "publisherId",
-    "showToTrustLevel",
+    "showToThroughAllowedGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
-    showToTrustLevel,
+    showToThroughAllowedGroups,
     showToGroups,
     showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
-      showToTrustLevel &&
+      showToThroughAllowedGroups &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage

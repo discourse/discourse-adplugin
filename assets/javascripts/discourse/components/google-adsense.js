@@ -206,15 +206,8 @@ export default AdComponent.extend({
     );
   },
 
-  @discourseComputed("currentUser.trust_level")
-  showToTrustLevel(trustLevel) {
-    return !(
-      trustLevel && trustLevel > this.siteSettings.adsense_through_trust_level
-    );
-  },
-
   @discourseComputed("currentUser.groups")
-  showToAllowedGroups(groups) {
+  showToThroughAllowedGroups(groups) {
     const currentUser = this.currentUser;
 
     if (
@@ -234,21 +227,21 @@ export default AdComponent.extend({
 
   @discourseComputed(
     "publisher_id",
-    "showToAllowedGroups",
+    "showToThroughAllowedGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
-    showToAllowedGroups,
+    showToThroughAllowedGroups,
     showToGroups,
     showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
-      showToAllowedGroups &&
+      showToThroughAllowedGroups &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage

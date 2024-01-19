@@ -7,7 +7,7 @@ export default AdComponent.extend({
   classNames: ["amazon-product-links"],
 
   showAd: and(
-    "showToTrustLevel",
+    "showToThroughAllowedGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
@@ -173,10 +173,22 @@ export default AdComponent.extend({
     return htmlSafe(`${userInput}`);
   },
 
-  @discourseComputed("currentUser.trust_level")
-  showToTrustLevel(trustLevel) {
-    return !(
-      trustLevel && trustLevel > this.siteSettings.amazon_through_trust_level
+  @discourseComputed("currentUser.groups")
+  showToThroughAllowedGroups(groups) {
+    const currentUser = this.currentUser;
+
+    if (
+      !currentUser ||
+      !groups ||
+      !this.siteSettings.amazon_through_allowed_groups ||
+      this.siteSettings.amazon_through_allowed_groups.length === 0
+    ) {
+      return true;
+    }
+    return groups.some((group) =>
+      this.siteSettings.amazon_through_allowed_groups
+        .map((g) => g.id)
+        .includes(group.id)
     );
   },
 

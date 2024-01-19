@@ -19,31 +19,43 @@ export default AdComponent.extend({
     );
   },
 
-  @discourseComputed("currentUser.trust_level")
-  showToTrustLevel(trustLevel) {
-    return !(
-      trustLevel && trustLevel > this.siteSettings.carbonads_through_trust_level
+  @discourseComputed("currentUser.groups")
+  showToThroughAllowedGroups(groups) {
+    const currentUser = this.currentUser;
+
+    if (
+      !currentUser ||
+      !groups ||
+      !this.siteSettings.carbonads_through_allowed_groups ||
+      this.siteSettings.carbonads_through_allowed_groups.length === 0
+    ) {
+      return true;
+    }
+    return groups.some((group) =>
+      this.siteSettings.carbonads_through_allowed_groups
+        .map((g) => g.id)
+        .includes(group.id)
     );
   },
 
   @discourseComputed(
     "placement",
     "serve_id",
-    "showToTrustLevel",
+    "showToThroughAllowedGroups",
     "showToGroups",
     "showOnCurrentPage"
   )
   showAd(
     placement,
     serveId,
-    showToTrustLevel,
+    showToThroughAllowedGroups,
     showToGroups,
     showOnCurrentPage
   ) {
     return (
       placement &&
       serveId &&
-      showToTrustLevel &&
+      showToThroughAllowedGroups &&
       showToGroups &&
       showOnCurrentPage
     );

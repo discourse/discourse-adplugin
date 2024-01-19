@@ -1,5 +1,6 @@
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
+import { AUTO_GROUPS } from "discourse/lib/constants";
 import groupFixtures from "discourse/tests/fixtures/group-fixtures";
 import {
   acceptance,
@@ -13,6 +14,10 @@ acceptance("DFP Ads", function (needs) {
     no_ads_for_categories: "1",
     dfp_publisher_id: "MYdfpID",
     dfp_through_trust_level: 2,
+    dfp_through_allowed_groups: [
+      AUTO_GROUPS.trust_level_1,
+      AUTO_GROUPS.trust_level_2,
+    ],
     dfp_topic_list_top_code: "list_top_ad_unit",
     dfp_topic_list_top_ad_sizes: "728*90 - leaderboard",
     dfp_mobile_topic_list_top_code: "mobile_list_top_ad_unit",
@@ -60,7 +65,11 @@ acceptance("DFP Ads", function (needs) {
   });
 
   test("no ads for trust level 3", async (assert) => {
-    updateCurrentUser({ staff: false, trust_level: 3 });
+    updateCurrentUser({
+      staff: false,
+      trust_level: 3,
+      groups: [AUTO_GROUPS.trust_level_3],
+    });
     await visit("/t/280");
     assert
       .dom(".google-dfp-ad.dfp-ad-post-bottom")
