@@ -51,7 +51,6 @@ adsense_plugin:
     enum: "TrustLevelSetting"
     hidden: true
   adsense_through_allowed_groups:
-    client: true
     default: "10|11|12"
     type: group_list
     allow_any: false
@@ -173,7 +172,6 @@ dfp_plugin:
     enum: "TrustLevelSetting"
     hidden: true
   dfp_through_allowed_groups:
-    client: true
     default: "10|11|12"
     type: group_list
     allow_any: false

@@ -36,6 +36,7 @@ after_initialize do
   require_dependency File.expand_path("../app/models/house_ad_setting", __FILE__)
   require_dependency File.expand_path("../app/controllers/house_ads_controller", __FILE__)
   require_dependency File.expand_path("../app/controllers/house_ad_settings_controller", __FILE__)
+  require_dependency File.expand_path("../lib/adplugin/guardian_extension", __FILE__)
   require_dependency "application_controller"
 
   add_to_serializer :site, :house_creatives do
@@ -46,6 +47,14 @@ after_initialize do
     return false if !SiteSetting.tagging_enabled || !SiteSetting.no_ads_for_tags.present?
     return false if object.topic.tags.empty?
     !(SiteSetting.no_ads_for_tags.split("|") & object.topic.tags.map(&:name)).empty?
+  end
+
+  add_to_serializer :current_user, :dfp_show_to_through_allowed_groups do
+    scope.dfp_show_to_through_allowed_groups?
+  end
+
+  add_to_serializer :current_user, :adsense_show_to_through_allowed_groups do
+    scope.adsense_show_to_through_allowed_groups?
   end
 
   class ::AdstxtController < ::ApplicationController

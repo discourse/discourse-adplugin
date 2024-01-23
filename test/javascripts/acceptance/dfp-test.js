@@ -68,7 +68,11 @@ acceptance("DFP Ads", function (needs) {
     updateCurrentUser({
       staff: false,
       trust_level: 3,
-      groups: [AUTO_GROUPS.trust_level_3],
+      groups: [
+        AUTO_GROUPS.trust_level_1,
+        AUTO_GROUPS.trust_level_2,
+        AUTO_GROUPS.trust_level_3,
+      ],
     });
     await visit("/t/280");
     assert
