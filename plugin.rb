@@ -36,8 +36,10 @@ after_initialize do
   require_dependency File.expand_path("../app/models/house_ad_setting", __FILE__)
   require_dependency File.expand_path("../app/controllers/house_ads_controller", __FILE__)
   require_dependency File.expand_path("../app/controllers/house_ad_settings_controller", __FILE__)
-  require_dependency File.expand_path("../lib/adplugin/guardian_extension", __FILE__)
+  require_dependency File.expand_path("../lib/adplugin/guardian_extensions", __FILE__)
   require_dependency "application_controller"
+
+  reloadable_patch { Guardian.prepend ::AdPlugin::GuardianExtensions }
 
   add_to_serializer :site, :house_creatives do
     AdPlugin::HouseAdSetting.settings_and_ads(for_anons: scope.anonymous?)
