@@ -47,6 +47,7 @@ acceptance("AdSense", function (needs) {
       staff: false,
       trust_level: 1,
       groups: [AUTO_GROUPS.trust_level_1],
+      adsense_show_to_through_allowed_groups: true,
     });
     await visit("/t/280"); // 20 posts
 

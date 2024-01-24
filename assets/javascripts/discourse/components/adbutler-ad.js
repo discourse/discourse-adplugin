@@ -111,23 +111,13 @@ export default AdComponent.extend({
     scheduleOnce("afterRender", this, this._triggerAds);
   },
 
-  @discourseComputed("currentUser.groups")
-  showToThroughAllowedGroups(groups) {
-    const currentUser = this.currentUser;
-
-    if (
-      !currentUser ||
-      !groups ||
-      !this.siteSettings.adbutler_through_allowed_groups ||
-      this.siteSettings.adbutler_through_allowed_groups.length === 0
-    ) {
+  @discourseComputed
+  showToThroughAllowedGroups() {
+    if (!this.currentUser) {
       return true;
     }
-    return groups.some((group) =>
-      this.siteSettings.adbutler_through_allowed_groups
-        .map((g) => g.id)
-        .includes(group.id)
-    );
+
+    return this.currentUser.adbutler_show_to_through_allowed_groups;
   },
 
   @discourseComputed(

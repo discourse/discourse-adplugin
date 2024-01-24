@@ -44,7 +44,11 @@ acceptance("DFP Ads", function (needs) {
   });
 
   test("correct number of ads should show", async (assert) => {
-    updateCurrentUser({ staff: false, trust_level: 1 });
+    updateCurrentUser({
+      staff: false,
+      trust_level: 1,
+      dfp_show_to_through_allowed_groups: true,
+    });
     await visit("/t/280"); // 20 posts
 
     assert

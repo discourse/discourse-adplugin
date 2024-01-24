@@ -59,6 +59,18 @@ after_initialize do
     scope.adsense_show_to_through_allowed_groups?
   end
 
+  add_to_serializer :current_user, :carbonads_show_to_through_allowed_groups do
+    scope.carbonads_show_to_through_allowed_groups?
+  end
+
+  add_to_serializer :current_user, :amazon_show_to_through_allowed_groups do
+    scope.amazon_show_to_through_allowed_groups?
+  end
+
+  add_to_serializer :current_user, :adbutler_show_to_through_allowed_groups do
+    scope.adbutler_show_to_through_allowed_groups?
+  end
+
   class ::AdstxtController < ::ApplicationController
     skip_before_action :preload_json, :check_xhr, :redirect_to_login_if_required
 

@@ -173,23 +173,13 @@ export default AdComponent.extend({
     return htmlSafe(`${userInput}`);
   },
 
-  @discourseComputed("currentUser.groups")
-  showToThroughAllowedGroups(groups) {
-    const currentUser = this.currentUser;
-
-    if (
-      !currentUser ||
-      !groups ||
-      !this.siteSettings.amazon_through_allowed_groups ||
-      this.siteSettings.amazon_through_allowed_groups.length === 0
-    ) {
+  @discourseComputed
+  showToThroughAllowedGroups() {
+    if (!this.currentUser) {
       return true;
     }
-    return groups.some((group) =>
-      this.siteSettings.amazon_through_allowed_groups
-        .map((g) => g.id)
-        .includes(group.id)
-    );
+
+    return this.currentUser.amazon_show_to_through_allowed_groups;
   },
 
   @discourseComputed("postNumber")
