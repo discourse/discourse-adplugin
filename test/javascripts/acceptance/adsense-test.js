@@ -13,7 +13,7 @@ acceptance("AdSense", function (needs) {
     no_ads_for_groups: "47",
     no_ads_for_categories: "1",
     adsense_publisher_code: "MYADSENSEID",
-    adsense_through_allowed_groups: [
+    adsense_display_groups: [
       AUTO_GROUPS.trust_level_1,
       AUTO_GROUPS.trust_level_2,
     ],
@@ -47,7 +47,7 @@ acceptance("AdSense", function (needs) {
       staff: false,
       trust_level: 1,
       groups: [AUTO_GROUPS.trust_level_1],
-      adsense_show_to_through_allowed_groups: true,
+      show_adsense_ads: true,
     });
     await visit("/t/280"); // 20 posts
 

@@ -2,24 +2,24 @@
 
 module ::AdPlugin
   module GuardianExtensions
-    def dfp_show_to_through_allowed_groups?
-      self.user.in_any_groups?(SiteSetting.dfp_through_allowed_groups_map)
+    def show_dfp_ads?
+      self.user.in_any_groups?(SiteSetting.dfp_display_groups_map)
     end
 
-    def adsense_show_to_through_allowed_groups?
-      self.user.in_any_groups?(SiteSetting.adsense_through_allowed_groups_map)
+    def show_adsense_ads?
+      self.user.in_any_groups?(SiteSetting.adsense_display_groups_map)
     end
 
-    def carbonads_show_to_through_allowed_groups?
-      self.user.in_any_groups?(SiteSetting.carbonads_through_allowed_groups_map)
+    def show_carbon_ads?
+      self.user.in_any_groups?(SiteSetting.carbonads_display_groups_map)
     end
 
-    def amazon_show_to_through_allowed_groups?
-      self.user.in_any_groups?(SiteSetting.amazon_through_allowed_groups_map)
+    def show_amazon_ads?
+      self.user.in_any_groups?(SiteSetting.amazon_display_groups_map)
     end
 
-    def adbutler_show_to_through_allowed_groups?
-      self.user.in_any_groups?(SiteSetting.adbutler_through_allowed_groups_map)
+    def show_adbutler_ads?
+      self.user.in_any_groups?(SiteSetting.adbutler_display_groups_map)
     end
   end
 end

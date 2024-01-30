@@ -299,7 +299,7 @@ export default AdComponent.extend({
 
   @discourseComputed(
     "publisherId",
-    "showToThroughAllowedGroups",
+    "showToDisplayGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage",
@@ -307,7 +307,7 @@ export default AdComponent.extend({
   )
   showAd(
     publisherId,
-    showToThroughAllowedGroups,
+    showToDisplayGroups,
     showToGroups,
     showAfterPost,
     showOnCurrentPage,
@@ -315,7 +315,7 @@ export default AdComponent.extend({
   ) {
     return (
       publisherId &&
-      showToThroughAllowedGroups &&
+      showToDisplayGroups &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage &&
@@ -324,12 +324,12 @@ export default AdComponent.extend({
   },
 
   @discourseComputed
-  showToThroughAllowedGroups() {
+  showToDisplayGroups() {
     if (!this.currentUser) {
       return true;
     }
 
-    return this.currentUser.dfp_show_to_through_allowed_groups;
+    return this.currentUser.show_dfp_ads;
   },
 
   @discourseComputed("postNumber")

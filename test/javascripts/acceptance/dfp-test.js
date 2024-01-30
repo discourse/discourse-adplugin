@@ -14,10 +14,7 @@ acceptance("DFP Ads", function (needs) {
     no_ads_for_categories: "1",
     dfp_publisher_id: "MYdfpID",
     dfp_through_trust_level: 2,
-    dfp_through_allowed_groups: [
-      AUTO_GROUPS.trust_level_1,
-      AUTO_GROUPS.trust_level_2,
-    ],
+    dfp_display_groups: [AUTO_GROUPS.trust_level_1, AUTO_GROUPS.trust_level_2],
     dfp_topic_list_top_code: "list_top_ad_unit",
     dfp_topic_list_top_ad_sizes: "728*90 - leaderboard",
     dfp_mobile_topic_list_top_code: "mobile_list_top_ad_unit",
@@ -47,7 +44,7 @@ acceptance("DFP Ads", function (needs) {
     updateCurrentUser({
       staff: false,
       trust_level: 1,
-      dfp_show_to_through_allowed_groups: true,
+      show_dfp_ads: true,
     });
     await visit("/t/280"); // 20 posts
 

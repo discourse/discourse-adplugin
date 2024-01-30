@@ -51,24 +51,24 @@ after_initialize do
     !(SiteSetting.no_ads_for_tags.split("|") & object.topic.tags.map(&:name)).empty?
   end
 
-  add_to_serializer :current_user, :dfp_show_to_through_allowed_groups do
-    scope.dfp_show_to_through_allowed_groups?
+  add_to_serializer :current_user, :show_dfp_ads do
+    scope.show_dfp_ads?
   end
 
-  add_to_serializer :current_user, :adsense_show_to_through_allowed_groups do
-    scope.adsense_show_to_through_allowed_groups?
+  add_to_serializer :current_user, :show_adsense_ads do
+    scope.show_adsense_ads?
   end
 
-  add_to_serializer :current_user, :carbonads_show_to_through_allowed_groups do
-    scope.carbonads_show_to_through_allowed_groups?
+  add_to_serializer :current_user, :show_carbon_ads do
+    scope.show_carbon_ads?
   end
 
-  add_to_serializer :current_user, :amazon_show_to_through_allowed_groups do
-    scope.amazon_show_to_through_allowed_groups?
+  add_to_serializer :current_user, :show_amazon_ads do
+    scope.show_amazon_ads?
   end
 
-  add_to_serializer :current_user, :adbutler_show_to_through_allowed_groups do
-    scope.adbutler_show_to_through_allowed_groups?
+  add_to_serializer :current_user, :show_adbutler_ads do
+    scope.show_adbutler_ads?
   end
 
   class ::AdstxtController < ::ApplicationController

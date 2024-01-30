@@ -7,7 +7,7 @@ export default AdComponent.extend({
   classNames: ["amazon-product-links"],
 
   showAd: and(
-    "showToThroughAllowedGroups",
+    "showToDisplayGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
@@ -174,12 +174,12 @@ export default AdComponent.extend({
   },
 
   @discourseComputed
-  showToThroughAllowedGroups() {
+  showToDisplayGroups() {
     if (!this.currentUser) {
       return true;
     }
 
-    return this.currentUser.amazon_show_to_through_allowed_groups;
+    return this.currentUser.show_amazon_ads;
   },
 
   @discourseComputed("postNumber")

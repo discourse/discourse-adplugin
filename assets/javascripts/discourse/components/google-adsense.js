@@ -207,31 +207,31 @@ export default AdComponent.extend({
   },
 
   @discourseComputed
-  showToThroughAllowedGroups() {
+  showToDisplayGroups() {
     if (!this.currentUser) {
       return true;
     }
 
-    return this.currentUser.adsense_show_to_through_allowed_groups;
+    return this.currentUser.show_adsense_ads;
   },
 
   @discourseComputed(
     "publisher_id",
-    "showToThroughAllowedGroups",
+    "showToDisplayGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
-    showToThroughAllowedGroups,
+    showToDisplayGroups,
     showToGroups,
     showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
-      showToThroughAllowedGroups &&
+      showToDisplayGroups &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage

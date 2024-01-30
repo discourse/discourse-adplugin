@@ -20,32 +20,32 @@ export default AdComponent.extend({
   },
 
   @discourseComputed
-  showToThroughAllowedGroups() {
+  showToDisplayGroups() {
     if (!this.currentUser) {
       return true;
     }
 
-    return this.currentUser.carbonads_show_to_through_allowed_groups;
+    return this.currentUser.show_carbon_ads;
   },
 
   @discourseComputed(
     "placement",
     "serve_id",
-    "showToThroughAllowedGroups",
+    "showToDisplayGroups",
     "showToGroups",
     "showOnCurrentPage"
   )
   showAd(
     placement,
     serveId,
-    showToThroughAllowedGroups,
+    showToDisplayGroups,
     showToGroups,
     showOnCurrentPage
   ) {
     return (
       placement &&
       serveId &&
-      showToThroughAllowedGroups &&
+      showToDisplayGroups &&
       showToGroups &&
       showOnCurrentPage
     );

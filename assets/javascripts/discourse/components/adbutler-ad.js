@@ -112,31 +112,31 @@ export default AdComponent.extend({
   },
 
   @discourseComputed
-  showToThroughAllowedGroups() {
+  showToDisplayGroups() {
     if (!this.currentUser) {
       return true;
     }
 
-    return this.currentUser.adbutler_show_to_through_allowed_groups;
+    return this.currentUser.show_adbutler_ads;
   },
 
   @discourseComputed(
     "publisherId",
-    "showToThroughAllowedGroups",
+    "showToDisplayGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
-    showToThroughAllowedGroups,
+    showToDisplayGroups,
     showToGroups,
     showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
-      showToThroughAllowedGroups &&
+      showToDisplayGroups &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage

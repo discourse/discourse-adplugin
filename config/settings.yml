@@ -50,7 +50,7 @@ adsense_plugin:
     default: 2
     enum: "TrustLevelSetting"
     hidden: true
-  adsense_through_allowed_groups:
+  adsense_display_groups:
     default: "10|11|12"
     type: group_list
     allow_any: false
@@ -171,7 +171,7 @@ dfp_plugin:
     default: 2
     enum: "TrustLevelSetting"
     hidden: true
-  dfp_through_allowed_groups:
+  dfp_display_groups:
     default: "10|11|12"
     type: group_list
     allow_any: false
@@ -327,7 +327,7 @@ amazon_plugin:
     default: 2
     enum: "TrustLevelSetting"
     hidden: true
-  amazon_through_allowed_groups:
+  amazon_display_groups:
     client: true
     default: "10|11|12"
     type: group_list
@@ -423,7 +423,7 @@ carbonads_plugin:
     default: 2
     enum: "TrustLevelSetting"
     hidden: true
-  carbonads_through_allowed_groups:
+  carbonads_display_groups:
     client: true
     default: "10|11|12"
     type: group_list
@@ -446,7 +446,7 @@ adbutler_plugin:
     default: 2
     enum: "TrustLevelSetting"
     hidden: true
-  adbutler_through_allowed_groups:
+  adbutler_display_groups:
     client: true
     default: "10|11|12"
     type: group_list
