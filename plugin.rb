@@ -36,7 +36,10 @@ after_initialize do
   require_dependency File.expand_path("../app/models/house_ad_setting", __FILE__)
   require_dependency File.expand_path("../app/controllers/house_ads_controller", __FILE__)
   require_dependency File.expand_path("../app/controllers/house_ad_settings_controller", __FILE__)
+  require_dependency File.expand_path("../lib/adplugin/guardian_extensions", __FILE__)
   require_dependency "application_controller"
+
+  reloadable_patch { Guardian.prepend ::AdPlugin::GuardianExtensions }
 
   add_to_serializer :site, :house_creatives do
     AdPlugin::HouseAdSetting.settings_and_ads(for_anons: scope.anonymous?)
@@ -46,6 +49,26 @@ after_initialize do
     return false if !SiteSetting.tagging_enabled || !SiteSetting.no_ads_for_tags.present?
     return false if object.topic.tags.empty?
     !(SiteSetting.no_ads_for_tags.split("|") & object.topic.tags.map(&:name)).empty?
+  end
+
+  add_to_serializer :current_user, :show_dfp_ads do
+    scope.show_dfp_ads?
+  end
+
+  add_to_serializer :current_user, :show_adsense_ads do
+    scope.show_adsense_ads?
+  end
+
+  add_to_serializer :current_user, :show_carbon_ads do
+    scope.show_carbon_ads?
+  end
+
+  add_to_serializer :current_user, :show_amazon_ads do
+    scope.show_amazon_ads?
+  end
+
+  add_to_serializer :current_user, :show_adbutler_ads do
+    scope.show_adbutler_ads?
   end
 
   class ::AdstxtController < ::ApplicationController

@@ -206,30 +206,32 @@ export default AdComponent.extend({
     );
   },
 
-  @discourseComputed("currentUser.trust_level")
-  showToTrustLevel(trustLevel) {
-    return !(
-      trustLevel && trustLevel > this.siteSettings.adsense_through_trust_level
-    );
+  @discourseComputed
+  showToDisplayGroups() {
+    if (!this.currentUser) {
+      return true;
+    }
+
+    return this.currentUser.show_adsense_ads;
   },
 
   @discourseComputed(
     "publisher_id",
-    "showToTrustLevel",
+    "showToDisplayGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
-    showToTrustLevel,
+    showToDisplayGroups,
     showToGroups,
     showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
-      showToTrustLevel &&
+      showToDisplayGroups &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage

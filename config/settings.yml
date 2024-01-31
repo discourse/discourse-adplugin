@@ -49,6 +49,13 @@ adsense_plugin:
     client: true
     default: 2
     enum: "TrustLevelSetting"
+    hidden: true
+  adsense_display_groups:
+    default: "10|11|12"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
   adsense_topic_list_top_code:
     client: true
     default: ""
@@ -163,6 +170,13 @@ dfp_plugin:
     client: true
     default: 2
     enum: "TrustLevelSetting"
+    hidden: true
+  dfp_display_groups:
+    default: "10|11|12"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
   dfp_topic_list_top_code:
     client: true
     default: ""
@@ -312,6 +326,14 @@ amazon_plugin:
     client: true
     default: 2
     enum: "TrustLevelSetting"
+    hidden: true
+  amazon_display_groups:
+    client: true
+    default: "10|11|12"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
   amazon_topic_list_top_src_code:
     client: true
     default: ""
@@ -400,6 +422,14 @@ carbonads_plugin:
     client: true
     default: 2
     enum: "TrustLevelSetting"
+    hidden: true
+  carbonads_display_groups:
+    client: true
+    default: "10|11|12"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
   carbonads_topic_list_top_enabled:
     client: true
     default: false
@@ -415,6 +445,14 @@ adbutler_plugin:
     client: true
     default: 2
     enum: "TrustLevelSetting"
+    hidden: true
+  adbutler_display_groups:
+    client: true
+    default: "10|11|12"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
   adbutler_topic_list_top_zone_id:
     client: true
     default: ""

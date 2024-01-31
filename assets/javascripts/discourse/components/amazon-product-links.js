@@ -7,7 +7,7 @@ export default AdComponent.extend({
   classNames: ["amazon-product-links"],
 
   showAd: and(
-    "showToTrustLevel",
+    "showToDisplayGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
@@ -173,11 +173,13 @@ export default AdComponent.extend({
     return htmlSafe(`${userInput}`);
   },
 
-  @discourseComputed("currentUser.trust_level")
-  showToTrustLevel(trustLevel) {
-    return !(
-      trustLevel && trustLevel > this.siteSettings.amazon_through_trust_level
-    );
+  @discourseComputed
+  showToDisplayGroups() {
+    if (!this.currentUser) {
+      return true;
+    }
+
+    return this.currentUser.show_amazon_ads;
   },
 
   @discourseComputed("postNumber")

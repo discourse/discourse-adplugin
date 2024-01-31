@@ -111,30 +111,32 @@ export default AdComponent.extend({
     scheduleOnce("afterRender", this, this._triggerAds);
   },
 
-  @discourseComputed("currentUser.trust_level")
-  showToTrustLevel(trustLevel) {
-    return !(
-      trustLevel && trustLevel > this.siteSettings.adbutler_through_trust_level
-    );
+  @discourseComputed
+  showToDisplayGroups() {
+    if (!this.currentUser) {
+      return true;
+    }
+
+    return this.currentUser.show_adbutler_ads;
   },
 
   @discourseComputed(
     "publisherId",
-    "showToTrustLevel",
+    "showToDisplayGroups",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
-    showToTrustLevel,
+    showToDisplayGroups,
     showToGroups,
     showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
-      showToTrustLevel &&
+      showToDisplayGroups &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage

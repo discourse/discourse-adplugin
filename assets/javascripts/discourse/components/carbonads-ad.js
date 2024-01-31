@@ -19,31 +19,33 @@ export default AdComponent.extend({
     );
   },
 
-  @discourseComputed("currentUser.trust_level")
-  showToTrustLevel(trustLevel) {
-    return !(
-      trustLevel && trustLevel > this.siteSettings.carbonads_through_trust_level
-    );
+  @discourseComputed
+  showToDisplayGroups() {
+    if (!this.currentUser) {
+      return true;
+    }
+
+    return this.currentUser.show_carbon_ads;
   },
 
   @discourseComputed(
     "placement",
     "serve_id",
-    "showToTrustLevel",
+    "showToDisplayGroups",
     "showToGroups",
     "showOnCurrentPage"
   )
   showAd(
     placement,
     serveId,
-    showToTrustLevel,
+    showToDisplayGroups,
     showToGroups,
     showOnCurrentPage
   ) {
     return (
       placement &&
       serveId &&
-      showToTrustLevel &&
+      showToDisplayGroups &&
       showToGroups &&
       showOnCurrentPage
     );

@@ -1,5 +1,6 @@
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
+import { AUTO_GROUPS } from "discourse/lib/constants";
 import {
   acceptance,
   count,
@@ -12,7 +13,7 @@ acceptance("Mixed Ads", function (needs) {
     house_ads_after_nth_post: 6,
     house_ads_frequency: 50,
     dfp_publisher_id: "MYdfpID",
-    dfp_through_trust_level: 2,
+    dfp_display_groups: [AUTO_GROUPS.trust_level_1, AUTO_GROUPS.trust_level_2],
     dfp_topic_list_top_code: "list_top_ad_unit",
     dfp_topic_list_top_ad_sizes: "728*90 - leaderboard",
     dfp_mobile_topic_list_top_code: "mobile_list_top_ad_unit",
@@ -44,7 +45,11 @@ acceptance("Mixed Ads", function (needs) {
   });
 
   test("correct ads show", async (assert) => {
-    updateCurrentUser({ staff: false, trust_level: 1 });
+    updateCurrentUser({
+      staff: false,
+      trust_level: 1,
+      show_dfp_ads: true,
+    });
     await visit("/t/280"); // 20 posts
 
     const houseAdsCount = count(".house-creative");

@@ -1,5 +1,6 @@
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
+import { AUTO_GROUPS } from "discourse/lib/constants";
 import groupFixtures from "discourse/tests/fixtures/group-fixtures";
 import {
   acceptance,
@@ -12,7 +13,10 @@ acceptance("AdSense", function (needs) {
     no_ads_for_groups: "47",
     no_ads_for_categories: "1",
     adsense_publisher_code: "MYADSENSEID",
-    adsense_through_trust_level: 2,
+    adsense_display_groups: [
+      AUTO_GROUPS.trust_level_1,
+      AUTO_GROUPS.trust_level_2,
+    ],
     adsense_topic_list_top_code: "list_top_ad_unit",
     adsense_topic_list_top_ad_sizes: "728*90 - leaderboard",
     adsense_mobile_topic_list_top_code: "mobile_list_top_ad_unit",
@@ -39,7 +43,12 @@ acceptance("AdSense", function (needs) {
   });
 
   test("correct number of ads should show", async (assert) => {
-    updateCurrentUser({ staff: false, trust_level: 1 });
+    updateCurrentUser({
+      staff: false,
+      trust_level: 1,
+      groups: [AUTO_GROUPS.trust_level_1],
+      show_adsense_ads: true,
+    });
     await visit("/t/280"); // 20 posts
 
     assert
@@ -64,7 +73,11 @@ acceptance("AdSense", function (needs) {
   });
 
   test("no ads for trust level 3", async (assert) => {
-    updateCurrentUser({ staff: false, trust_level: 3 });
+    updateCurrentUser({
+      staff: false,
+      trust_level: 3,
+      groups: [AUTO_GROUPS.trust_level_3],
+    });
     await visit("/t/280");
     assert
       .dom(".google-adsense.adsense-post-bottom")
