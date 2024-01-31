@@ -8,7 +8,7 @@ class MigrateTlToGroupSettingsCarbonadsThroughTl < ActiveRecord::Migration[7.0]
       ).first
 
     if carbonads_through_trust_level_raw.present?
-      carbonads_through_allowed_groups =
+      carbonads_display_groups =
         case carbonads_through_trust_level_raw
         when "0"
           "10"
@@ -22,9 +22,9 @@ class MigrateTlToGroupSettingsCarbonadsThroughTl < ActiveRecord::Migration[7.0]
           "10|11|12|13|14"
         end
 
-      DB.exec(<<~SQL, setting: carbonads_through_allowed_groups)
+      DB.exec(<<~SQL, setting: carbonads_display_groups)
         INSERT INTO site_settings(name, value, data_type, created_at, updated_at)
-        VALUES('carbonads_through_allowed_groups', :setting, '20', NOW(), NOW())
+        VALUES('carbonads_display_groups', :setting, '20', NOW(), NOW())
       SQL
     end
   end

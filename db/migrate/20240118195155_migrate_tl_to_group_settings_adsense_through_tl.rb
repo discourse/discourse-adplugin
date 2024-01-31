@@ -8,7 +8,7 @@ class MigrateTlToGroupSettingsAdsenseThroughTl < ActiveRecord::Migration[7.0]
       ).first
 
     if adsense_through_trust_level_raw.present?
-      adsense_through_allowed_groups =
+      adsense_display_groups =
         case adsense_through_trust_level_raw
         when "0"
           "10"
@@ -22,9 +22,9 @@ class MigrateTlToGroupSettingsAdsenseThroughTl < ActiveRecord::Migration[7.0]
           "10|11|12|13|14"
         end
 
-      DB.exec(<<~SQL, setting: adsense_through_allowed_groups)
+      DB.exec(<<~SQL, setting: adsense_display_groups)
         INSERT INTO site_settings(name, value, data_type, created_at, updated_at)
-        VALUES('adsense_through_allowed_groups', :setting, '20', NOW(), NOW())
+        VALUES('adsense_display_groups', :setting, '20', NOW(), NOW())
       SQL
     end
   end

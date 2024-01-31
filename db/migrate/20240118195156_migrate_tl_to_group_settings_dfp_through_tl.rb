@@ -8,7 +8,7 @@ class MigrateTlToGroupSettingsDfpThroughTl < ActiveRecord::Migration[7.0]
       ).first
 
     if dfp_through_trust_level_raw.present?
-      dfp_through_allowed_groups =
+      dfp_display_groups =
         case dfp_through_trust_level_raw
         when "0"
           "10"
@@ -22,9 +22,9 @@ class MigrateTlToGroupSettingsDfpThroughTl < ActiveRecord::Migration[7.0]
           "10|11|12|13|14"
         end
 
-      DB.exec(<<~SQL, setting: dfp_through_allowed_groups)
+      DB.exec(<<~SQL, setting: dfp_display_groups)
         INSERT INTO site_settings(name, value, data_type, created_at, updated_at)
-        VALUES('dfp_through_allowed_groups', :setting, '20', NOW(), NOW())
+        VALUES('dfp_display_groups', :setting, '20', NOW(), NOW())
       SQL
     end
   end
