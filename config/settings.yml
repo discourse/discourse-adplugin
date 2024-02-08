@@ -56,6 +56,7 @@ adsense_plugin:
     allow_any: false
     refresh: true
     validator: "AtLeastOneGroupValidator"
+    hidden: true
   adsense_exclude_groups:
     default: "3|13|14"
     type: group_list
@@ -183,6 +184,7 @@ dfp_plugin:
     allow_any: false
     refresh: true
     validator: "AtLeastOneGroupValidator"
+    hidden: true
   dfp_exclude_groups:
     default: "3|13|14"
     type: group_list
@@ -346,6 +348,7 @@ amazon_plugin:
     allow_any: false
     refresh: true
     validator: "AtLeastOneGroupValidator"
+    hidden: true
   amazon_exclude_groups:
     default: "3|13|14"
     type: group_list
@@ -448,6 +451,7 @@ carbonads_plugin:
     allow_any: false
     refresh: true
     validator: "AtLeastOneGroupValidator"
+    hidden: true
   carbonads_exclude_groups:
     default: "3|13|14"
     type: group_list
@@ -477,6 +481,7 @@ adbutler_plugin:
     allow_any: false
     refresh: true
     validator: "AtLeastOneGroupValidator"
+    hidden: true
   adbutler_exclude_groups:
     default: "3|13|14"
     type: group_list

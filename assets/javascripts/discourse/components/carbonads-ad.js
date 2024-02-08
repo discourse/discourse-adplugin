@@ -20,7 +20,7 @@ export default AdComponent.extend({
   },
 
   @discourseComputed
-  showToDisplayGroups() {
+  showCarbonAds() {
     if (!this.currentUser) {
       return true;
     }
@@ -31,14 +31,14 @@ export default AdComponent.extend({
   @discourseComputed(
     "placement",
     "serve_id",
-    "showToDisplayGroups",
+    "showCarbonAds",
     "showToGroups",
     "showOnCurrentPage"
   )
   showAd(
     placement,
     serveId,
-    showToDisplayGroups,
+    showCarbonAds,
     showToGroups,
     showOnCurrentPage
   ) {
