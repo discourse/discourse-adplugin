@@ -3,9 +3,7 @@
 class MigrateDfpToExcludeGroups < ActiveRecord::Migration[7.0]
   def up
     dfp_display_groups_raw =
-      DB.query_single(
-        "SELECT value FROM site_settings WHERE name = 'dfp_display_groups'",
-      ).first
+      DB.query_single("SELECT value FROM site_settings WHERE name = 'dfp_display_groups'").first
 
     if dfp_display_groups_raw.present?
       dfp_exclude_groups =

@@ -3,9 +3,7 @@
 class MigrateCarbonToExcludeGroups < ActiveRecord::Migration[7.0]
   def up
     carbon_display_groups_raw =
-      DB.query_single(
-        "SELECT value FROM site_settings WHERE name = 'carbon_display_groups'",
-      ).first
+      DB.query_single("SELECT value FROM site_settings WHERE name = 'carbon_display_groups'").first
 
     if carbon_display_groups_raw.present?
       carbon_exclude_groups =

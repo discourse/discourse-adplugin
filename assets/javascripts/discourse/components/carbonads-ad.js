@@ -35,17 +35,11 @@ export default AdComponent.extend({
     "showToGroups",
     "showOnCurrentPage"
   )
-  showAd(
-    placement,
-    serveId,
-    showCarbonAds,
-    showToGroups,
-    showOnCurrentPage
-  ) {
+  showAd(placement, serveId, showCarbonAds, showToGroups, showOnCurrentPage) {
     return (
       placement &&
       serveId &&
-      showToDisplayGroups &&
+      showCarbonAds &&
       showToGroups &&
       showOnCurrentPage
     );

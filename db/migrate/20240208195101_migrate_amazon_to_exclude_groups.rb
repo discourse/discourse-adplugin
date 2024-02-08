@@ -3,9 +3,7 @@
 class MigrateAmazonToExcludeGroups < ActiveRecord::Migration[7.0]
   def up
     amazon_display_groups_raw =
-      DB.query_single(
-        "SELECT value FROM site_settings WHERE name = 'amazon_display_groups'",
-      ).first
+      DB.query_single("SELECT value FROM site_settings WHERE name = 'amazon_display_groups'").first
 
     if amazon_display_groups_raw.present?
       amazon_exclude_groups =

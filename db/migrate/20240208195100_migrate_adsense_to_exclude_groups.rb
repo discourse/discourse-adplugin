@@ -3,9 +3,7 @@
 class MigrateAdsenseToExcludeGroups < ActiveRecord::Migration[7.0]
   def up
     adsense_display_groups_raw =
-      DB.query_single(
-        "SELECT value FROM site_settings WHERE name = 'adsense_display_groups'",
-      ).first
+      DB.query_single("SELECT value FROM site_settings WHERE name = 'adsense_display_groups'").first
 
     if adsense_display_groups_raw.present?
       adsense_exclude_groups =
