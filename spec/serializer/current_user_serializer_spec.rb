@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe CurrentUserSerializer do
   fab!(:tl0_user) { Fabricate(:user, trust_level: 0, refresh_auto_groups: true) }
   fab!(:tl2_user) { Fabricate(:user, trust_level: 2, refresh_auto_groups: true) }
