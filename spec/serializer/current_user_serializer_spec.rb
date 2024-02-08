@@ -4,25 +4,15 @@ RSpec.describe CurrentUserSerializer do
   fab!(:tl3_user) { Fabricate(:user, trust_level: 3, refresh_auto_groups: true) }
   fab!(:admin) { Fabricate(:admin) }
 
-  let(:tl0_serializer) do
-    described_class.new(tl0_user, scope: Guardian.new(tl0_user), root: false)
-  end
+  let(:tl0_serializer) { described_class.new(tl0_user, scope: Guardian.new(tl0_user), root: false) }
 
-  let(:tl2_serializer) do
-    described_class.new(tl2_user, scope: Guardian.new(tl2_user), root: false)
-  end
+  let(:tl2_serializer) { described_class.new(tl2_user, scope: Guardian.new(tl2_user), root: false) }
 
-  let(:tl3_serializer) do
-    described_class.new(tl3_user, scope: Guardian.new(tl3_user), root: false)
-  end
+  let(:tl3_serializer) { described_class.new(tl3_user, scope: Guardian.new(tl3_user), root: false) }
 
-  let(:admin_serializer) do
-    described_class.new(admin, scope: Guardian.new(admin), root: false)
-  end
+  let(:admin_serializer) { described_class.new(admin, scope: Guardian.new(admin), root: false) }
 
-  before do
-    SiteSetting.discourse_adplugin_enabled = true
-  end
+  before { SiteSetting.discourse_adplugin_enabled = true }
 
   describe "#adsense" do
     it "is displayed for TL0 by default" do
