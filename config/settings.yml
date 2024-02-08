@@ -56,6 +56,12 @@ adsense_plugin:
     allow_any: false
     refresh: true
     validator: "AtLeastOneGroupValidator"
+  adsense_exclude_groups:
+    default: "3|13|14"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
   adsense_topic_list_top_code:
     client: true
     default: ""
@@ -173,6 +179,12 @@ dfp_plugin:
     hidden: true
   dfp_display_groups:
     default: "10|11|12"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
+  dfp_exclude_groups:
+    default: "3|13|14"
     type: group_list
     allow_any: false
     refresh: true
@@ -334,6 +346,12 @@ amazon_plugin:
     allow_any: false
     refresh: true
     validator: "AtLeastOneGroupValidator"
+  amazon_exclude_groups:
+    default: "3|13|14"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
   amazon_topic_list_top_src_code:
     client: true
     default: ""
@@ -430,6 +448,12 @@ carbonads_plugin:
     allow_any: false
     refresh: true
     validator: "AtLeastOneGroupValidator"
+  carbonads_exclude_groups:
+    default: "3|13|14"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
   carbonads_topic_list_top_enabled:
     client: true
     default: false
@@ -449,6 +473,12 @@ adbutler_plugin:
   adbutler_display_groups:
     client: true
     default: "10|11|12"
+    type: group_list
+    allow_any: false
+    refresh: true
+    validator: "AtLeastOneGroupValidator"
+  adbutler_exclude_groups:
+    default: "3|13|14"
     type: group_list
     allow_any: false
     refresh: true
