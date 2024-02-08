@@ -37,11 +37,7 @@ export default AdComponent.extend({
   )
   showAd(placement, serveId, showCarbonAds, showToGroups, showOnCurrentPage) {
     return (
-      placement &&
-      serveId &&
-      showCarbonAds &&
-      showToGroups &&
-      showOnCurrentPage
+      placement && serveId && showCarbonAds && showToGroups && showOnCurrentPage
     );
   },
 });
