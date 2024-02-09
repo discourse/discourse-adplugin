@@ -299,7 +299,7 @@ export default AdComponent.extend({
 
   @discourseComputed(
     "publisherId",
-    "showToDisplayGroups",
+    "showDfpAds",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage",
@@ -307,7 +307,7 @@ export default AdComponent.extend({
   )
   showAd(
     publisherId,
-    showToDisplayGroups,
+    showDfpAds,
     showToGroups,
     showAfterPost,
     showOnCurrentPage,
@@ -315,7 +315,7 @@ export default AdComponent.extend({
   ) {
     return (
       publisherId &&
-      showToDisplayGroups &&
+      showDfpAds &&
       showToGroups &&
       showAfterPost &&
       showOnCurrentPage &&
@@ -324,7 +324,7 @@ export default AdComponent.extend({
   },
 
   @discourseComputed
-  showToDisplayGroups() {
+  showDfpAds() {
     if (!this.currentUser) {
       return true;
     }

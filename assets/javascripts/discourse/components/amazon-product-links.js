@@ -7,7 +7,7 @@ export default AdComponent.extend({
   classNames: ["amazon-product-links"],
 
   showAd: and(
-    "showToDisplayGroups",
+    "showAmazonAds",
     "showToGroups",
     "showAfterPost",
     "showOnCurrentPage"
@@ -174,7 +174,7 @@ export default AdComponent.extend({
   },
 
   @discourseComputed
-  showToDisplayGroups() {
+  showAmazonAds() {
     if (!this.currentUser) {
       return true;
     }

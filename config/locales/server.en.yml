@@ -15,6 +15,7 @@ en:
     dfp_publisher_id: "Input your Google Ad Manager (formerly called DFP) network code, which is found in your network settings. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     dfp_publisher_id_mobile: "(Optional) If you want to use a different Ad Manager publisher id for the mobile version of the site, enter it here. Leave blank to use dfp_publisher_id on mobile."
     dfp_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
+    dfp_exclude_groups: "Ads will not be shown to members of these groups"
 
     dfp_topic_list_top_code: "Enter the unique Code of the ad unit to display above topic lists. This is the short code (max 100 chars) given to the ad unit when it was created, not the JavaScript code."
     dfp_topic_list_top_ad_sizes: "Choose your ad size for the ad unit above topic lists."
@@ -47,6 +48,7 @@ en:
 
     adsense_publisher_code: "Your publisher ID. Enter only the number, excluding 'pub-'. NOTE: You will need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     adsense_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
+    adsense_exclude_groups: "Ads will not be shown to members of these groups"
     adsense_topic_list_top_code: "Enter code of the ad unit to display at topic list top location. This is the number assigned to the ad unit, not the JavaScript code."
     adsense_mobile_topic_list_top_code: "Enter code of the ad unit to display mobile ads at topic list top location. This is the number assigned to the ad unit, not the JavaScript code."
     adsense_topic_list_top_ad_sizes: "Choose your ad size"
@@ -66,6 +68,7 @@ en:
     adsense_nth_post_code: "Show an ad after every N posts, where N is this value."
 
     amazon_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
+    amazon_exclude_groups: "Ads will not be shown to members of these groups"
     amazon_topic_list_top_src_code: "Enter src code to display at topic list top location"
     amazon_topic_list_top_ad_width_code: "Input your ad width"
     amazon_topic_list_top_ad_height_code: "Input your ad height"
@@ -95,6 +98,7 @@ en:
     carbonads_serve_id: "Your Carbon Ads Serve ID"
     carbonads_placement: "Your Carbon Ads Placement"
     carbonads_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
+    carbonads_exclude_groups: "Ads will not be shown to members of these groups"
     carbonads_topic_list_top_enabled: "Show an ad above the topic list"
     carbonads_above_post_stream_enabled: "Show an ad above the post stream"
 
@@ -109,4 +113,5 @@ en:
     adbutler_topic_above_suggested_zone_id: "Zone ID for topic above suggested location"
     adbutler_nth_post: "Show an ad after every N posts, where N is this value"
     adbutler_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads"
+    adbutler_exclude_groups: "Ads will not be shown to members of these groups"
     adbutler_adserver_hostname: "The hostname that AdButler is serving your ads from"

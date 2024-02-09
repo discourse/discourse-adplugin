@@ -20,7 +20,7 @@ export default AdComponent.extend({
   },
 
   @discourseComputed
-  showToDisplayGroups() {
+  showCarbonAds() {
     if (!this.currentUser) {
       return true;
     }
@@ -31,23 +31,13 @@ export default AdComponent.extend({
   @discourseComputed(
     "placement",
     "serve_id",
-    "showToDisplayGroups",
+    "showCarbonAds",
     "showToGroups",
     "showOnCurrentPage"
   )
-  showAd(
-    placement,
-    serveId,
-    showToDisplayGroups,
-    showToGroups,
-    showOnCurrentPage
-  ) {
+  showAd(placement, serveId, showCarbonAds, showToGroups, showOnCurrentPage) {
     return (
-      placement &&
-      serveId &&
-      showToDisplayGroups &&
-      showToGroups &&
-      showOnCurrentPage
+      placement && serveId && showCarbonAds && showToGroups && showOnCurrentPage
     );
   },
 });
