@@ -6,4 +6,9 @@
 
 ro:
   site_settings:
+    dfp_exclude_groups: "Anunțurile nu vor fi afișate membrilor acestor grupuri"
+    adsense_exclude_groups: "Anunțurile nu vor fi afișate membrilor acestor grupuri"
+    amazon_exclude_groups: "Anunțurile nu vor fi afișate membrilor acestor grupuri"
+    carbonads_exclude_groups: "Anunțurile nu vor fi afișate membrilor acestor grupuri"
     carbonads_topic_list_top_enabled: "Afișează o reclamă deasupra listei de discuții"
+    adbutler_exclude_groups: "Anunțurile nu vor fi afișate membrilor acestor grupuri"
