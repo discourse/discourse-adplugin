@@ -14,7 +14,7 @@ export default {
 
     withPluginApi("0.1", (api) => {
       api.decorateWidget("post:after", (helper) => {
-        return helper.attach("after-post-ad", helper.attrs);
+        return helper.attach("after-post-ad", helper.widget.model);
       });
     });
 
