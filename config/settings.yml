@@ -9,7 +9,6 @@ ad_plugin:
     client: true
     default: false
   no_ads_for_groups:
-    client: true
     default: ""
     type: group_list
   no_ads_for_categories:
