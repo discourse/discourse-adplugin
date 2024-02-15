@@ -45,6 +45,7 @@ acceptance("DFP Ads", function (needs) {
       staff: false,
       trust_level: 1,
       show_dfp_ads: true,
+      show_to_groups: true,
     });
     await visit("/t/280"); // 20 posts
 
