@@ -21,5 +21,9 @@ module ::AdPlugin
     def show_adbutler_ads?
       !self.user.in_any_groups?(SiteSetting.adbutler_exclude_groups_map)
     end
+
+    def show_to_groups?
+      !self.user.in_any_groups?(SiteSetting.no_ads_for_groups_map)
+    end
   end
 end

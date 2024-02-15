@@ -38,7 +38,7 @@ acceptance("House Ads", function (needs) {
   });
 
   test("correct ads show", async (assert) => {
-    updateCurrentUser({ staff: false, trust_level: 1 });
+    updateCurrentUser({ staff: false, trust_level: 1, show_to_groups: true });
     await visit("/t/280"); // 20 posts
 
     assert
