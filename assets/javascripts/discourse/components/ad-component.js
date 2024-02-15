@@ -45,25 +45,13 @@ export default Component.extend({
     return topicType === "private_message";
   },
 
-  @discourseComputed("currentUser.groups")
-  showToGroups(groups) {
-    const currentUser = this.currentUser;
-
-    if (
-      !currentUser ||
-      !groups ||
-      !this.siteSettings.no_ads_for_groups ||
-      this.siteSettings.no_ads_for_groups.length === 0
-    ) {
+  @discourseComputed
+  showToGroups() {
+    if (!this.currentUser) {
       return true;
     }
 
-    let noAdsGroups = this.siteSettings.no_ads_for_groups
-      .split("|")
-      .filter(Boolean);
-    let currentGroups = groups.map((g) => g.id.toString());
-
-    return !currentGroups.any((g) => noAdsGroups.includes(g));
+    return this.currentUser.show_to_groups;
   },
 
   @discourseComputed(

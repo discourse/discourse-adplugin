@@ -71,6 +71,10 @@ after_initialize do
     scope.show_adbutler_ads?
   end
 
+  add_to_serializer :current_user, :show_to_groups do
+    scope.show_to_groups?
+  end
+
   class ::AdstxtController < ::ApplicationController
     skip_before_action :preload_json, :check_xhr, :redirect_to_login_if_required
 
