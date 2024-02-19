@@ -229,6 +229,9 @@ function loadGoogle() {
       // we always use refresh() to fetch the ads:
       window.googletag.pubads().disableInitialLoad();
 
+      // Improve CSP compatibility (https://developers.google.com/publisher-tag/guides/content-security-policy)
+      window.googletag.pubads().setForceSafeFrame(true);
+
       window.googletag.enableServices();
     });
   });
