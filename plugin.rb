@@ -32,12 +32,12 @@ module ::AdPlugin
 end
 
 after_initialize do
-  require_dependency File.expand_path("../app/models/house_ad", __FILE__)
-  require_dependency File.expand_path("../app/models/house_ad_setting", __FILE__)
-  require_dependency File.expand_path("../app/controllers/house_ads_controller", __FILE__)
-  require_dependency File.expand_path("../app/controllers/house_ad_settings_controller", __FILE__)
-  require_dependency File.expand_path("../lib/adplugin/guardian_extensions", __FILE__)
-  require_dependency "application_controller"
+  require_relative "app/models/house_ad"
+  require_relative "app/models/house_ad_setting"
+  require_relative "app/controllers/house_ads_controller"
+  require_relative "app/controllers/house_ad_settings_controller"
+  require_relative "app/controllers/adstxt_controller"
+  require_relative "lib/adplugin/guardian_extensions"
 
   reloadable_patch { Guardian.prepend ::AdPlugin::GuardianExtensions }
 
@@ -73,16 +73,6 @@ after_initialize do
 
   add_to_serializer :current_user, :show_to_groups do
     scope.show_to_groups?
-  end
-
-  class ::AdstxtController < ::ApplicationController
-    skip_before_action :preload_json, :check_xhr, :redirect_to_login_if_required
-
-    def index
-      raise Discourse::NotFound unless SiteSetting.ads_txt.present?
-
-      render plain: SiteSetting.ads_txt
-    end
   end
 
   class AdPlugin::Engine < ::Rails::Engine

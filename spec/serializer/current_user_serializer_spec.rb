@@ -4,7 +4,7 @@ RSpec.describe CurrentUserSerializer do
   fab!(:tl0_user) { Fabricate(:user, trust_level: 0, refresh_auto_groups: true) }
   fab!(:tl2_user) { Fabricate(:user, trust_level: 2, refresh_auto_groups: true) }
   fab!(:tl3_user) { Fabricate(:user, trust_level: 3, refresh_auto_groups: true) }
-  fab!(:admin) { Fabricate(:admin) }
+  fab!(:admin)
 
   let(:tl0_serializer) { described_class.new(tl0_user, scope: Guardian.new(tl0_user), root: false) }
 
