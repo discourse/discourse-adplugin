@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe "Admin House Ad", type: :system, js: true do
-  fab!(:admin) { Fabricate(:admin) }
+  fab!(:admin)
   let(:house_ad) do
     AdPlugin::HouseAd.create(
       name: "some-name",

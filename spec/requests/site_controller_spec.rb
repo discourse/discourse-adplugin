@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe SiteController do
-  fab!(:user) { Fabricate(:user) }
+  fab!(:user)
 
   let!(:anon_ad) do
     AdPlugin::HouseAd.create(
