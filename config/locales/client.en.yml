@@ -1,17 +1,17 @@
 en:
   js:
     adplugin:
-      advertisement_label: 'ADVERTISEMENT'
+      advertisement_label: "ADVERTISEMENT"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Ad Plugin'
-          dfp_plugin: 'DFP/Ad Manager'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Ad Plugin"
+          dfp_plugin: "DFP/Ad Manager"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "House Ads"
@@ -26,6 +26,8 @@ en:
           more_settings: "More Settings"
           show_to_anons: "Show to anonymous users"
           show_to_logged_in_users: "Show to logged in users"
+          category_chooser_description: "Choose the categories where this ad should be displayed or leave empty to show the ad everywhere. The `no_ads_for_categories` site setting has priority over this setting."
+          group_chooser_description: "Choose the groups that can view this ad or leave empty to show the ad to all signed in users."
 
           topic_list_top:
             title: "Topic list top ads"

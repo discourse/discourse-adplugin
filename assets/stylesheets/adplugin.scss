@@ -214,6 +214,9 @@
 }
 
 .adplugin-mgmt {
+  .house-ad-name {
+    width: 100%;
+  }
   .house-ads-actions {
     .btn {
       margin-right: 8px;
@@ -249,6 +252,16 @@
     padding-left: 2%;
     .visibility-settings {
       margin-bottom: 1em;
+
+      .description {
+        color: var(--primary-medium);
+        font-size: $font-down-1;
+      }
+
+      .category-selector,
+      .group-chooser {
+        margin-top: 1em;
+      }
     }
     .controls {
       margin-bottom: 1em;

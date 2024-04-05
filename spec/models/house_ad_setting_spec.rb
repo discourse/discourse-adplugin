@@ -73,6 +73,8 @@ describe AdPlugin::HouseAdSetting do
         html: "<whatever-anon>",
         visible_to_anons: true,
         visible_to_logged_in_users: false,
+        group_ids: [],
+        category_ids: [],
       )
     end
 
@@ -82,6 +84,8 @@ describe AdPlugin::HouseAdSetting do
         html: "<whatever-logged-in>",
         visible_to_anons: false,
         visible_to_logged_in_users: true,
+        group_ids: [],
+        category_ids: [],
       )
     end
 
@@ -94,11 +98,21 @@ describe AdPlugin::HouseAdSetting do
       anon_message = messages.find { |m| m.channel == "/site/house-creatives/anonymous" }
       logged_in_message = messages.find { |m| m.channel == "/site/house-creatives/logged-in" }
 
-      expect(anon_message.data[:creatives]).to eq("anon-ad" => "<whatever-anon>")
+      expect(anon_message.data[:creatives]).to eq(
+        "anon-ad" => {
+          html: "<whatever-anon>",
+          category_ids: [],
+        },
+      )
       expect(anon_message.group_ids).to eq(nil)
       expect(anon_message.user_ids).to eq(nil)
 
-      expect(logged_in_message.data[:creatives]).to eq("logged-in-ad" => "<whatever-logged-in>")
+      expect(logged_in_message.data[:creatives]).to eq(
+        "logged-in-ad" => {
+          html: "<whatever-logged-in>",
+          category_ids: [],
+        },
+      )
       expect(logged_in_message.group_ids).to eq([Group::AUTO_GROUPS[:trust_level_0]])
       expect(logged_in_message.user_ids).to eq(nil)
     end

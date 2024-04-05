@@ -1,115 +1,145 @@
+import { tracked } from "@glimmer/tracking";
 import Controller, { inject as controller } from "@ember/controller";
-import { not, or } from "@ember/object/computed";
-import { inject as service } from "@ember/service";
+import EmberObject, { action } from "@ember/object";
+import { service } from "@ember/service";
+import { TrackedObject } from "@ember-compat/tracked-built-ins";
+import { observes } from "@ember-decorators/object";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
-import { propertyNotEqual } from "discourse/lib/computed";
-import { bufferedProperty } from "discourse/mixins/buffered-content";
+import Category from "discourse/models/category";
 import I18n from "I18n";
 
-export default Controller.extend(bufferedProperty("model"), {
-  adminPluginsHouseAds: controller("adminPlugins.houseAds"),
-  router: service(),
+export default class adminPluginsHouseAdsShow extends Controller {
+  @service router;
 
-  saving: false,
-  savingStatus: "",
+  @controller("adminPlugins.houseAds") houseAdsController;
 
-  nameDirty: propertyNotEqual("buffered.name", "model.name"),
-  htmlDirty: propertyNotEqual("buffered.html", "model.html"),
-  visibleToAnonsDirty: propertyNotEqual(
-    "buffered.visible_to_anons",
-    "model.visible_to_anons"
-  ),
-  visibleToLoggedInDirty: propertyNotEqual(
-    "buffered.visible_to_logged_in_users",
-    "model.visible_to_logged_in_users"
-  ),
-  dirty: or(
-    "nameDirty",
-    "htmlDirty",
-    "visibleToLoggedInDirty",
-    "visibleToAnonsDirty"
-  ),
-  disableSave: not("dirty"),
+  @tracked selectedCategories = [];
+  @tracked selectedGroups = [];
+  @tracked saving = false;
+  @tracked savingStatus = "";
+  @tracked buffered;
 
-  actions: {
-    save() {
-      if (!this.get("saving")) {
-        this.setProperties({
-          saving: true,
-          savingStatus: I18n.t("saving"),
-        });
+  @observes("model")
+  modelChanged() {
+    this.buffered = new TrackedObject({ ...this.model });
+    this.selectedCategories = this.model.categories || [];
+    this.selectedGroups = this.model.group_ids || [];
+  }
 
-        const data = {},
-          buffered = this.get("buffered"),
-          newRecord = !buffered.get("id");
+  get disabledSave() {
+    for (const key in this.buffered) {
+      // we don't want to compare the categories array
+      if (key !== "categories" && this.buffered[key] !== this.model[key]) {
+        return false;
+      }
+    }
+    return true;
+  }
 
-        if (!newRecord) {
-          data.id = buffered.get("id");
-        }
-        data.name = buffered.get("name");
-        data.html = buffered.get("html");
-        data.visible_to_logged_in_users = buffered.get(
-          "visible_to_logged_in_users"
-        );
-        data.visible_to_anons = buffered.get("visible_to_anons");
-
-        ajax(
+  @action
+  async save() {
+    if (!this.saving) {
+      this.saving = true;
+      this.savingStatus = I18n.t("saving");
+      const data = {};
+      const newRecord = !this.buffered.id;
+      if (!newRecord) {
+        data.id = this.buffered.id;
+      }
+      data.name = this.buffered.name;
+      data.html = this.buffered.html;
+      data.visible_to_logged_in_users =
+        this.buffered.visible_to_logged_in_users;
+      data.visible_to_anons = this.buffered.visible_to_anons;
+      data.category_ids = this.buffered.category_ids;
+      data.group_ids = this.buffered.group_ids;
+      try {
+        const ajaxData = await ajax(
           newRecord
             ? `/admin/plugins/pluginad/house_creatives`
-            : `/admin/plugins/pluginad/house_creatives/${buffered.get("id")}`,
+            : `/admin/plugins/pluginad/house_creatives/${this.buffered.id}`,
           {
             type: newRecord ? "POST" : "PUT",
             data,
           }
+        );
+        this.savingStatus = I18n.t("saved");
+        const houseAds = this.houseAdsController.model;
+        if (newRecord) {
+          this.buffered.id = ajaxData.house_ad.id;
+          if (!houseAds.includes(this.buffered)) {
+            houseAds.pushObject(EmberObject.create(this.buffered));
+          }
+          this.router.transitionTo(
+            "adminPlugins.houseAds.show",
+            this.buffered.id
+          );
+        } else {
+          houseAds
+            .find((ad) => ad.id === this.buffered.id)
+            .setProperties(this.buffered);
+        }
+      } catch (error) {
+        popupAjaxError(error);
+      } finally {
+        this.set("model", this.buffered);
+        this.saving = false;
+        this.savingStatus = "";
+      }
+    }
+  }
+
+  @action
+  setCategoryIds(categoryArray) {
+    this.selectedCategories = categoryArray;
+    this.buffered.category_ids = categoryArray.map((c) => c.id);
+    this.setCategoriesForBuffered();
+  }
+
+  @action
+  setGroupIds(groupIds) {
+    this.selectedGroups = groupIds;
+    this.buffered.group_ids = groupIds.map((id) => id);
+  }
+
+  @action
+  cancel() {
+    this.buffered = new TrackedObject({ ...this.model });
+    this.selectedCategories = this.model.categories || [];
+    this.selectedGroups = this.model.group_ids || [];
+    this.setCategoriesForBuffered();
+  }
+
+  @action
+  async destroy() {
+    if (!this.buffered.id) {
+      this.router.transitionTo("adminPlugins.houseAds.index");
+      return;
+    }
+    try {
+      await ajax(
+        `/admin/plugins/pluginad/house_creatives/${this.buffered.id}`,
+        {
+          type: "DELETE",
+        }
+      );
+      this.houseAdsController.model.removeObject(
+        this.houseAdsController.model.findBy("id", this.buffered.id)
+      );
+      this.router.transitionTo("adminPlugins.houseAds.index");
+    } catch (error) {
+      popupAjaxError(error);
+    }
+  }
+
+  setCategoriesForBuffered() {
+    // we need to fetch the categories because the serializer is not being used
+    // to attach the category object to the house ads
+    this.buffered.categories = this.buffered.category_ids
+      ? this.buffered.category_ids.map((categoryId) =>
+          Category.findById(categoryId)
         )
-          .then((ajaxData) => {
-            this.commitBuffer();
-            this.set("savingStatus", I18n.t("saved"));
-            if (newRecord) {
-              const model = this.get("model");
-              model.set("id", ajaxData.house_ad.id);
-              const houseAds = this.get("adminPluginsHouseAds.model");
-              if (!houseAds.includes(model)) {
-                houseAds.pushObject(model);
-              }
-              this.router.transitionTo(
-                "adminPlugins.houseAds.show",
-                model.get("id")
-              );
-            }
-          })
-          .catch(popupAjaxError)
-          .finally(() => {
-            this.setProperties({
-              saving: false,
-              savingStatus: "",
-            });
-          });
-      }
-    },
-
-    cancel() {
-      this.rollbackBuffer();
-    },
-
-    destroy() {
-      const houseAds = this.get("adminPluginsHouseAds.model");
-      const model = this.get("model");
-
-      if (!model.get("id")) {
-        this.router.transitionTo("adminPlugins.houseAds.index");
-        return;
-      }
-
-      ajax(`/admin/plugins/pluginad/house_creatives/${model.get("id")}`, {
-        type: "DELETE",
-      })
-        .then(() => {
-          houseAds.removeObject(model);
-          this.router.transitionTo("adminPlugins.houseAds.index");
-        })
-        .catch(popupAjaxError);
-    },
-  },
-});
+      : [];
+  }
+}

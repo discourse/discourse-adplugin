@@ -78,7 +78,14 @@ export default AdComponent.extend({
       }
       let ad = houseAds.creatives[adNames[adIndex[placement]]] || "";
       adIndex[placement] = (adIndex[placement] + 1) % adNames.length;
-      return ad;
+      // check if the ad includes the current category, or if no category restrictions are set for the ad
+      // otherwise don't show it
+      if (
+        !ad.category_ids?.length ||
+        ad.category_ids.includes(this.currentCategoryId)
+      ) {
+        return ad.html;
+      }
     } else {
       return "";
     }

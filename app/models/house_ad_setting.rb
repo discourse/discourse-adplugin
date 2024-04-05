@@ -21,14 +21,14 @@ module ::AdPlugin
       settings
     end
 
-    def self.settings_and_ads(for_anons: true)
+    def self.settings_and_ads(for_anons: true, scope: nil)
       settings = AdPlugin::HouseAdSetting.all
       ad_names = settings.values.map { |v| v.split("|") }.flatten.uniq
 
       if for_anons
         ads = AdPlugin::HouseAd.all_for_anons
       else
-        ads = AdPlugin::HouseAd.all_for_logged_in_users
+        ads = AdPlugin::HouseAd.all_for_logged_in_users(scope)
       end
       ads = ads.select { |ad| ad_names.include?(ad.name) }
 
@@ -41,7 +41,7 @@ module ::AdPlugin
           ),
         creatives:
           ads.inject({}) do |h, ad|
-            h[ad.name] = ad.html
+            h[ad.name] = { html: ad.html, category_ids: ad.category_ids }
             h
           end,
       }

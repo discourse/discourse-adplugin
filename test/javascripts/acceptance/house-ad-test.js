@@ -25,14 +25,26 @@ acceptance("House Ads", function (needs) {
         after_nth_topic: 6,
       },
       creatives: {
-        "Topic List Top": "<div class='h-topic-list'>TOPIC LIST TOP</div>",
-        "Above Post Stream":
-          "<div class='h-above-post-stream'>ABOVE POST STREAM</div>",
-        "Above Suggested":
-          "<div class='h-above-suggested'>ABOVE SUGGESTED</div>",
-        Post: "<div class='h-post'>BELOW POST</div>",
-        "Between Topic List":
-          "<div class='h-between-topic-list'>BETWEEN TOPIC LIST</div>",
+        "Topic List Top": {
+          html: "<div class='h-topic-list'>TOPIC LIST TOP</div>",
+          category_ids: [],
+        },
+        "Above Post Stream": {
+          html: "<div class='h-above-post-stream'>ABOVE POST STREAM</div>",
+          category_ids: [],
+        },
+        "Above Suggested": {
+          html: "<div class='h-above-suggested'>ABOVE SUGGESTED</div>",
+          category_ids: [],
+        },
+        Post: {
+          html: "<div class='h-post'>BELOW POST</div>",
+          category_ids: [],
+        },
+        "Between Topic List": {
+          html: "<div class='h-between-topic-list'>BETWEEN TOPIC LIST</div>",
+          category_ids: [],
+        },
       },
     },
   });
@@ -114,3 +126,79 @@ acceptance("House Ads", function (needs) {
       );
   });
 });
+
+acceptance(
+  "House Ads | Category and Group Permissions | Display Ad",
+  function (needs) {
+    needs.user();
+    needs.settings({
+      no_ads_for_categories: "",
+    });
+    needs.site({
+      house_creatives: {
+        settings: {
+          topic_list_top: "Topic List Top",
+        },
+        creatives: {
+          "Topic List Top": {
+            html: "<div class='h-topic-list'>TOPIC LIST TOP</div>",
+            // match /c/bug/1
+            category_ids: [1],
+          },
+        },
+      },
+    });
+
+    test("displays ad to users when current category id is included in ad category_ids", async (assert) => {
+      updateCurrentUser({
+        staff: false,
+        trust_level: 1,
+        show_to_groups: true,
+      });
+      await visit("/c/bug/1");
+      assert
+        .dom(".h-topic-list")
+        .exists(
+          "ad is displayed above the topic list because the current category id is included in the ad category_ids"
+        );
+    });
+  }
+);
+
+acceptance(
+  "House Ads | Category and Group Permissions | Hide Ad",
+  function (needs) {
+    needs.user();
+    needs.settings({
+      no_ads_for_categories: "",
+    });
+    needs.site({
+      house_creatives: {
+        settings: {
+          topic_list_top: "Topic List Top",
+        },
+        creatives: {
+          "Topic List Top": {
+            html: "<div class='h-topic-list'>TOPIC LIST TOP</div>",
+            // restrict ad to a different category than /c/bug/1
+            category_ids: [2],
+          },
+        },
+      },
+    });
+
+    test("hides ad to users when current category id is not included in ad category_ids", async (assert) => {
+      updateCurrentUser({
+        staff: false,
+        trust_level: 1,
+        show_to_groups: true,
+      });
+      await visit("/c/bug/1");
+      assert
+        .dom(".h-topic-list")
+        .doesNotExist(
+          "ad is not displayed because the current category id is included in the ad category_ids"
+        );
+    });
+  }
+);
