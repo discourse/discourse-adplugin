@@ -8,9 +8,11 @@ import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import Category from "discourse/models/category";
 import I18n from "I18n";
+import Preview from "../components/modal/preview";
 
 export default class adminPluginsHouseAdsShow extends Controller {
   @service router;
+  @service modal;
 
   @controller("adminPlugins.houseAds") houseAdsController;
 
@@ -131,6 +133,15 @@ export default class adminPluginsHouseAdsShow extends Controller {
     } catch (error) {
       popupAjaxError(error);
     }
+  }
+
+  @action
+  openPreview() {
+    this.modal.show(Preview, {
+      model: {
+        html: this.buffered.html,
+      },
+    });
   }
 
   setCategoriesForBuffered() {

@@ -61,6 +61,11 @@
     {{/if}}
 
     <DButton
+      @action={{this.openPreview}}
+      @label="admin.adplugin.house_ads.preview"
+    />
+
+    <DButton
       @action={{this.destroy}}
       @label="admin.adplugin.house_ads.delete"
       class="btn-danger delete-button"

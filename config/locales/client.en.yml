@@ -28,6 +28,7 @@ en:
           show_to_logged_in_users: "Show to logged in users"
           category_chooser_description: "Choose the categories where this ad should be displayed or leave empty to show the ad everywhere. The `no_ads_for_categories` site setting has priority over this setting."
           group_chooser_description: "Choose the groups that can view this ad or leave empty to show the ad to all signed in users."
+          preview: "Preview"
 
           topic_list_top:
             title: "Topic list top ads"
