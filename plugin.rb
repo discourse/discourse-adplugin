@@ -42,7 +42,7 @@ after_initialize do
   reloadable_patch { Guardian.prepend ::AdPlugin::GuardianExtensions }
 
   add_to_serializer :site, :house_creatives do
-    AdPlugin::HouseAdSetting.settings_and_ads(for_anons: scope.anonymous?)
+    AdPlugin::HouseAdSetting.settings_and_ads(for_anons: scope.anonymous?, scope: scope)
   end
 
   add_to_serializer :topic_view, :tags_disable_ads do

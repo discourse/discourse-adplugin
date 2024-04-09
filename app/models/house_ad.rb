@@ -4,7 +4,13 @@ module ::AdPlugin
   class HouseAd
     include ActiveModel::Validations
 
-    attr_accessor :id, :name, :html, :visible_to_logged_in_users, :visible_to_anons
+    attr_accessor :id,
+                  :name,
+                  :html,
+                  :visible_to_logged_in_users,
+                  :visible_to_anons,
+                  :category_ids,
+                  :group_ids
 
     NAME_REGEX = /\A[[:alnum:]\s\.,'!@#$%&\*\-\+\=:]*\z/i
 
@@ -22,6 +28,8 @@ module ::AdPlugin
       @html = "<div class='house-ad'>New Ad</div>"
       @visible_to_logged_in_users = true
       @visible_to_anons = true
+      @group_ids = []
+      @category_ids = []
     end
 
     def self.from_hash(h)
@@ -29,10 +37,12 @@ module ::AdPlugin
       ad.name = h[:name]
       ad.html = h[:html]
       ad.id = h[:id].to_i if h[:id]
-      if h.key?(:visible_to_logged_in_users)
-        ad.visible_to_logged_in_users = h[:visible_to_logged_in_users]
-      end
+      ad.visible_to_logged_in_users = h[:visible_to_logged_in_users] if h.key?(
+        :visible_to_logged_in_users,
+      )
       ad.visible_to_anons = h[:visible_to_anons] if h.key?(:visible_to_anons)
+      ad.group_ids = h[:group_ids].map(&:to_i) if h.key?(:group_ids)
+      ad.category_ids = h[:category_ids].map(&:to_i) if h.key?(:category_ids)
       ad
     end
 
@@ -72,8 +82,24 @@ module ::AdPlugin
       self.all.select(&:visible_to_anons)
     end
 
-    def self.all_for_logged_in_users
-      self.all.select(&:visible_to_logged_in_users)
+    def self.all_for_logged_in_users(scope)
+      if scope.nil?
+        # this is for our admin page, so we don't need to filter by group
+        self.all.select(&:visible_to_logged_in_users)
+      else
+        # otherwise, filter by group and visible categories
+        self.all.select do |ad|
+          (
+            ad.group_ids.any? { |group_id| scope.user.groups.pluck(:id).include?(group_id) } ||
+              ad.group_ids.include?(Group::AUTO_GROUPS[:everyone]) || ad.group_ids.empty?
+          ) && ad.visible_to_logged_in_users &&
+            (
+              ad.category_ids.any? do |category_id|
+                Category.secured(scope).pluck(:id).include?(category_id)
+              end || true
+            )
+        end
+      end
     end
 
     def save
@@ -91,10 +117,13 @@ module ::AdPlugin
     def update(attrs)
       self.name = attrs[:name]
       self.html = attrs[:html]
-      if attrs.key?(:visible_to_logged_in_users)
-        self.visible_to_logged_in_users = attrs[:visible_to_logged_in_users]
-      end
+      self.visible_to_logged_in_users = attrs[:visible_to_logged_in_users] if attrs.key?(
+        :visible_to_logged_in_users,
+      )
       self.visible_to_anons = attrs[:visible_to_anons] if attrs.key?(:visible_to_anons)
+      # ensure that group_ids and category_ids can be set to an empty array
+      self.group_ids = attrs.key?(:group_ids) ? attrs[:group_ids].map(&:to_i) : []
+      self.category_ids = attrs.key?(:category_ids) ? attrs[:category_ids].map(&:to_i) : []
       self.save
     end
 
@@ -105,6 +134,8 @@ module ::AdPlugin
         html: @html,
         visible_to_logged_in_users: @visible_to_logged_in_users,
         visible_to_anons: @visible_to_anons,
+        group_ids: @group_ids,
+        category_ids: @category_ids,
       }
     end
 

@@ -15,6 +15,8 @@ describe AdPlugin::HouseAd do
       html: "<div>ANON</div>",
       visible_to_logged_in_users: false,
       visible_to_anons: true,
+      group_ids: [],
+      category_ids: [],
     )
   end
 
@@ -24,6 +26,8 @@ describe AdPlugin::HouseAd do
       html: "<div>LOGGED IN</div>",
       visible_to_logged_in_users: true,
       visible_to_anons: false,
+      group_ids: [],
+      category_ids: [],
     )
   end
 
@@ -68,11 +72,12 @@ describe AdPlugin::HouseAd do
   describe ".all_for_logged_in_users" do
     let!(:anon_ad) { create_anon_ad }
     let!(:logged_in_ad) { create_logged_in_ad }
+    let!(:user) { Fabricate(:user) }
 
     it "doesn't include ads for anonymous users" do
-      expect(AdPlugin::HouseAd.all_for_logged_in_users.map(&:id)).to contain_exactly(
-        logged_in_ad.id,
-      )
+      expect(
+        AdPlugin::HouseAd.all_for_logged_in_users(Guardian.new(user)).map(&:id),
+      ).to contain_exactly(logged_in_ad.id)
     end
   end
 

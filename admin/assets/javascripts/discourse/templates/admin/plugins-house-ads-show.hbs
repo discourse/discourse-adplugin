@@ -1,7 +1,7 @@
 <section class="edit-house-ad content-body">
-  <h1><TextField @value={{buffered.name}} class="house-ad-name" /></h1>
+  <h1><TextField @value={{this.buffered.name}} class="house-ad-name" /></h1>
   <div class="controls">
-    <AceEditor @content={{buffered.html}} @mode="html" />
+    <AceEditor @content={{this.buffered.html}} @mode="html" />
   </div>
   <div class="controls">
     <div class="visibility-settings">
@@ -22,25 +22,51 @@
         />
         <span>{{i18n "admin.adplugin.house_ads.show_to_anons"}}</span>
       </div>
+
+      <HouseAdsCategorySelector
+        @categories={{this.site.categories}}
+        @selectedCategories={{this.selectedCategories}}
+        @onChange={{this.setCategoryIds}}
+        @options={{hash allowAny=true}}
+        class="house-ads-categories"
+      />
+      <div class="description">
+        {{i18n "admin.adplugin.house_ads.category_chooser_description"}}
+      </div>
+
+      <GroupChooser
+        @content={{this.site.groups}}
+        @onChange={{this.setGroupIds}}
+        @value={{this.selectedGroups}}
+        class="banner-groups"
+      />
+      <div class="description">
+        {{i18n "admin.adplugin.house_ads.group_chooser_description"}}
+      </div>
     </div>
 
     <DButton
-      @action={{action "save"}}
-      @disabled={{disableSave}}
+      @action={{this.save}}
+      @disabled={{this.disabledSave}}
       @label="admin.adplugin.house_ads.save"
       class="btn-primary save-button"
     />
 
-    {{#if saving}}
-      {{savingStatus}}
+    {{#if this.saving}}
+      {{this.savingStatus}}
     {{else}}
-      {{#if dirty}}
-        <a href {{action "cancel"}}>{{i18n "cancel"}}</a>
-      {{/if}}
+      {{#unless this.disabledSave}}
+        <DButton @action={{this.cancel}} @label="cancel" />
+      {{/unless}}
     {{/if}}
 
     <DButton
-      @action={{action "destroy"}}
+      @action={{this.openPreview}}
+      @label="admin.adplugin.house_ads.preview"
+    />
+
+    <DButton
+      @action={{this.destroy}}
       @label="admin.adplugin.house_ads.delete"
       class="btn-danger delete-button"
     />
