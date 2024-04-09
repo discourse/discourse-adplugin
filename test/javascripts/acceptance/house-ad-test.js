@@ -128,7 +128,7 @@ acceptance("House Ads", function (needs) {
 });
 
 acceptance(
-  "House Ads | Category and Group Permissions | Display Ad",
+  "House Ads | Category and Group Permissions | Authenticated | Display Ad",
   function (needs) {
     needs.user();
     needs.settings({
@@ -166,7 +166,7 @@ acceptance(
 );
 
 acceptance(
-  "House Ads | Category and Group Permissions | Hide Ad",
+  "House Ads | Category and Group Permissions | Authenticated | Hide Ad",
   function (needs) {
     needs.user();
     needs.settings({
@@ -198,6 +198,102 @@ acceptance(
         .dom(".h-topic-list")
         .doesNotExist(
           "ad is not displayed because the current category id is included in the ad category_ids"
+        );
+    });
+  }
+);
+
+acceptance(
+  "House Ads | Category and Group Permissions | Anonymous | Hide Ad",
+  function (needs) {
+    needs.settings({
+      no_ads_for_categories: "",
+    });
+    needs.site({
+      house_creatives: {
+        settings: {
+          topic_list_top: "Topic List Top",
+        },
+        creatives: {
+          "Topic List Top": {
+            html: "<div class='h-topic-list'>TOPIC LIST TOP</div>",
+            // restrict ad to a different category than /c/bug/1
+            category_ids: [2],
+          },
+        },
+      },
+    });
+
+    test("hides ad to anon users when current category id is not included in ad category_ids", async (assert) => {
+      await visit("/c/bug/1");
+      assert
+        .dom(".h-topic-list")
+        .doesNotExist(
+          "ad is not displayed because the current category id is included in the ad category_ids"
+        );
+    });
+  }
+);
+
+acceptance(
+  "House Ads | Category and Group Permissions | Anonymous | Hide Ad",
+  function (needs) {
+    needs.settings({
+      no_ads_for_categories: "",
+    });
+    needs.site({
+      house_creatives: {
+        settings: {
+          topic_list_top: "Topic List Top",
+        },
+        creatives: {
+          "Topic List Top": {
+            html: "<div class='h-topic-list'>TOPIC LIST TOP</div>",
+            // restrict ad to a different category than /c/bug/1
+            category_ids: [2],
+          },
+        },
+      },
+    });
+
+    test("hides ad to anon users when current category id is not included in ad category_ids", async (assert) => {
+      await visit("/c/bug/1");
+      assert
+        .dom(".h-topic-list")
+        .doesNotExist(
+          "ad is not displayed because the current category id is included in the ad category_ids"
+        );
+    });
+  }
+);
+
+acceptance(
+  "House Ads | Category and Group Permissions | Anonymous | Show Ad",
+  function (needs) {
+    needs.settings({
+      no_ads_for_categories: "",
+    });
+    needs.site({
+      house_creatives: {
+        settings: {
+          topic_list_top: "Topic List Top",
+        },
+        creatives: {
+          "Topic List Top": {
+            html: "<div class='h-topic-list'>TOPIC LIST TOP</div>",
+            // match /c/bug/1
+            category_ids: [1],
+          },
+        },
+      },
+    });
+
+    test("hides ad to anon users when current category id is not included in ad category_ids", async (assert) => {
+      await visit("/c/bug/1");
+      assert
+        .dom(".h-topic-list")
+        .exists(
+          "ad is displayed because the current category id is included in the ad category_ids"
         );
     });
   }
