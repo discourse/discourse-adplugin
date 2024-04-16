@@ -7,17 +7,17 @@
 he:
   js:
     adplugin:
-      advertisement_label: 'פרסום'
+      advertisement_label: "פרסום"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'תוסף פרסום'
-          dfp_plugin: 'DFP/Ad Manager'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'אמזון'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "תוסף פרסום"
+          dfp_plugin: "DFP/Ad Manager"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "אמזון"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "מודעות הבית"
@@ -32,6 +32,9 @@ he:
           more_settings: "הגדרות נוספות"
           show_to_anons: "הצגה למשתמשים אלמוניים"
           show_to_logged_in_users: "הצגה למשתמשים שנכנסו למערכת"
+          category_chooser_description: "נא לבחור את הקטגוריות בהן תופיע המודעה הזאת או להשאיר ריק כדי להציג את ההודעה איפשהו. להגדרת האתר `no_ads_for_categories` (אין מודעות בקטגוריות) יש עדיפות על פני ההגדרה הזאת."
+          group_chooser_description: "נא לבחור קבוצות שיכולות לצפות במודעה הזאת או להשאיר ריק כדי להציג את המודעה לכל המשתמשים שנכנסים למערכת."
+          preview: "תצוגה מקדימה"
           topic_list_top:
             title: "פרסומות בראש רשימת הנושאים"
             description: "פרסומות שתופענה בראש עמוד רשימת הנושים."

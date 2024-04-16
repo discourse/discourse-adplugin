@@ -7,16 +7,16 @@
 fa_IR:
   js:
     adplugin:
-      advertisement_label: 'آگهی'
+      advertisement_label: "آگهی"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'پلاگین آگهی'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'آمازون'
-          carbonads_plugin: 'آگهی Carbon'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "پلاگین آگهی"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "آمازون"
+          carbonads_plugin: "آگهی Carbon"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "آگهی خانه"
@@ -28,6 +28,7 @@ fa_IR:
           get_started: "با ایجاد یک تبلیغ جدید شروع کنید.\nچگونه تست پرژگ"
           filter_placeholder: "انتخاب آگهی..."
           more_settings: "تنظیمات بیشتر"
+          preview: "پیش‌نمایش"
           post_bottom:
             title: "بین پست‌ها"
           topic_list_between:

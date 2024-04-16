@@ -7,17 +7,18 @@
 vi:
   js:
     adplugin:
-      advertisement_label: 'QUẢNG CÁO'
+      advertisement_label: "QUẢNG CÁO"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Ad Plugin'
-          dfp_plugin: 'Trình quản lý quảng cáo DFP/Ad'
-          adsense_plugin: 'AdSense'
+          ad_plugin: "Ad Plugin"
+          dfp_plugin: "Trình quản lý quảng cáo DFP/Ad"
+          adsense_plugin: "AdSense"
       adplugin:
         house_ads:
           new: "Mới"
           settings: "Xác lập"
           save: "Lưu"
           delete: "Xóa"
+          preview: "Xem trước"

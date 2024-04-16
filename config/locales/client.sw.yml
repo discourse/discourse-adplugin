@@ -7,15 +7,16 @@
 sw:
   js:
     adplugin:
-      advertisement_label: 'TANGAZO'
+      advertisement_label: "TANGAZO"
   admin_js:
     admin:
       site_settings:
         categories:
-          amazon_plugin: 'Amazon'
+          amazon_plugin: "Amazon"
       adplugin:
         house_ads:
           new: "Mpya"
           settings: "Mpangilio"
           save: "hifadhi"
           delete: "Futa"
+          preview: "Kihakiki"

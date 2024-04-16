@@ -7,17 +7,17 @@
 ar:
   js:
     adplugin:
-      advertisement_label: 'إعلان'
+      advertisement_label: "إعلان"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'المكوِّن الإضافي للإعلان'
-          dfp_plugin: 'DFP/مدير الإعلانات'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "المكوِّن الإضافي للإعلان"
+          dfp_plugin: "DFP/مدير الإعلانات"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "House Ads"
@@ -32,6 +32,7 @@ ar:
           more_settings: "إعدادات إضافية"
           show_to_anons: "العرض للمستخدمين المجهولين"
           show_to_logged_in_users: "العرض للمستخدمين الذين سجَّلوا الدخول"
+          preview: "معاينة"
           topic_list_top:
             title: "الإعلانات أعلى قائمة الموضوعات"
             description: "إعلانات لعرضها في أعلى صفحات قائمة الموضوعات"

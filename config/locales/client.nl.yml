@@ -7,17 +7,17 @@
 nl:
   js:
     adplugin:
-      advertisement_label: 'ADVERTENTIE'
+      advertisement_label: "ADVERTENTIE"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Advertentieplug-in'
-          dfp_plugin: 'DFP/Ad Manager'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Advertentieplug-in"
+          dfp_plugin: "DFP/Ad Manager"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "House Ads"
@@ -32,6 +32,7 @@ nl:
           more_settings: "Meer instellingen"
           show_to_anons: "Weergeven voor anonieme gebruikers"
           show_to_logged_in_users: "Weergegeven voor ingelogde gebruikers"
+          preview: "Voorbeeld"
           topic_list_top:
             title: "Advertenteis boven topicslijst"
             description: "Advertenties die worden weergegeven bovenaan pagina's met topicslijsten."

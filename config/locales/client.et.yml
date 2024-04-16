@@ -7,16 +7,17 @@
 et:
   js:
     adplugin:
-      advertisement_label: 'REKLAAM'
+      advertisement_label: "REKLAAM"
   admin_js:
     admin:
       site_settings:
         categories:
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
       adplugin:
         house_ads:
           new: "Uus"
           settings: "Seaded"
           save: "Salvesta"
           delete: "Kustuta"
+          preview: "Eelvaade"

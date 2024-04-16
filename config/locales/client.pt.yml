@@ -7,17 +7,18 @@
 pt:
   js:
     adplugin:
-      advertisement_label: 'Publicidade'
+      advertisement_label: "Publicidade"
   admin_js:
     admin:
       site_settings:
         categories:
-          dfp_plugin: 'Gestor de DFP/Ad'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
+          dfp_plugin: "Gestor de DFP/Ad"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
       adplugin:
         house_ads:
           new: "Novo"
           settings: "Configurações"
           save: "Guardar"
           delete: "Eliminar"
+          preview: "Pré-visualização"

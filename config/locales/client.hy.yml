@@ -7,19 +7,20 @@
 hy:
   js:
     adplugin:
-      advertisement_label: 'ՀԱՅՏԱՐԱՐՈՒԹՅՈՒՆ'
+      advertisement_label: "ՀԱՅՏԱՐԱՐՈՒԹՅՈՒՆ"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Ad Plugin'
-          dfp_plugin: 'DFP/Ad Manager'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Ածխածնի գովազդ'
+          ad_plugin: "Ad Plugin"
+          dfp_plugin: "DFP/Ad Manager"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Ածխածնի գովազդ"
       adplugin:
         house_ads:
           new: "Նոր"
           settings: "Կարգավորումներ"
           save: "Պահպանել"
           delete: "Ջնջել"
+          preview: "Նախադիտում"

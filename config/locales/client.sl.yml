@@ -7,7 +7,7 @@
 sl:
   js:
     adplugin:
-      advertisement_label: 'OGLAS'
+      advertisement_label: "OGLAS"
   admin_js:
     admin:
       adplugin:
@@ -16,3 +16,4 @@ sl:
           settings: "Nastavitve"
           save: "Shrani"
           delete: "Izbriši"
+          preview: "Predogled"

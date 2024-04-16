@@ -7,17 +7,17 @@
 tr_TR:
   js:
     adplugin:
-      advertisement_label: 'REKLAM'
+      advertisement_label: "REKLAM"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Reklam Eklentisi'
-          dfp_plugin: 'DFP/Reklam Yöneticisi'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Reklam Eklentisi"
+          dfp_plugin: "DFP/Reklam Yöneticisi"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "Şirket İçi Reklamlar"
@@ -32,6 +32,7 @@ tr_TR:
           more_settings: "Daha Fazla Ayar"
           show_to_anons: "Anonim kullanıcılara göster"
           show_to_logged_in_users: "Giriş yapmış kullanıcılara göster"
+          preview: "Ön izle"
           topic_list_top:
             title: "Konu listesi üstü reklamları"
             description: "Konu listesi sayfalarının en üstünde gösterilecek reklamlar."

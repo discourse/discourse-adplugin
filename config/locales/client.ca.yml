@@ -7,17 +7,17 @@
 ca:
   js:
     adplugin:
-      advertisement_label: 'PUBLICITAT'
+      advertisement_label: "PUBLICITAT"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Connector d''anuncis'
-          dfp_plugin: 'Gestor d''anuncis/DFP'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Connector d'anuncis"
+          dfp_plugin: "Gestor d'anuncis/DFP"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "Anuncis propis"
@@ -30,6 +30,7 @@ ca:
           get_started: "Comenceu creant un anunci nou."
           filter_placeholder: "Selecciona anuncis ..."
           more_settings: "Més paràmetres"
+          preview: "Previsualitza"
           topic_list_top:
             title: "Anuncis principals en la llista de temes"
             description: "Anuncis que es mostraran a la part superior de les pàgines de la llista de temes."
