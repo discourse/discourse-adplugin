@@ -7,15 +7,16 @@
 nb_NO:
   js:
     adplugin:
-      advertisement_label: 'REKLAME'
+      advertisement_label: "REKLAME"
   admin_js:
     admin:
       site_settings:
         categories:
-          amazon_plugin: 'Amazon'
+          amazon_plugin: "Amazon"
       adplugin:
         house_ads:
           new: "Ny"
           settings: "Innstillinger"
           save: "Lagre"
           delete: "Slett"
+          preview: "Forhåndsvis"

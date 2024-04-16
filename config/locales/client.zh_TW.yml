@@ -7,15 +7,15 @@
 zh_TW:
   js:
     adplugin:
-      advertisement_label: '廣告'
+      advertisement_label: "廣告"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: '廣告插件'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon 廣告'
+          ad_plugin: "廣告插件"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon 廣告"
       adplugin:
         house_ads:
           new: "新使用者"
@@ -24,6 +24,7 @@ zh_TW:
           delete: "刪除"
           filter_placeholder: "選擇廣告..."
           more_settings: "更多設置"
+          preview: "預覽"
           topic_list_top:
             title: "主題列表頂部廣告"
             description: "顯示在主題列表頁面頂部的廣告。"

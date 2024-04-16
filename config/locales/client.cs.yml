@@ -7,19 +7,20 @@
 cs:
   js:
     adplugin:
-      advertisement_label: 'REKLAMA'
+      advertisement_label: "REKLAMA"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Plugin pro reklamu'
-          dfp_plugin: 'Správce DFP/AD'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Uhlíkové reklamy'
+          ad_plugin: "Plugin pro reklamu"
+          dfp_plugin: "Správce DFP/AD"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Uhlíkové reklamy"
       adplugin:
         house_ads:
           new: "Noví"
           settings: "Nastavení"
           save: "Uložit"
           delete: "Smazat"
+          preview: "Náhled"

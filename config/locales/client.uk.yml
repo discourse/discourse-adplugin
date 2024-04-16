@@ -7,17 +7,17 @@
 uk:
   js:
     adplugin:
-      advertisement_label: 'РЕКЛАМА'
+      advertisement_label: "РЕКЛАМА"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Рекламний плагін'
-          dfp_plugin: 'DFP/Ad Manager'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Рекламний плагін"
+          dfp_plugin: "DFP/Ad Manager"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "House Ads"
@@ -30,6 +30,7 @@ uk:
           get_started: "Почніть зі створення нової реклами."
           filter_placeholder: "Виберіть рекламу..."
           more_settings: "Більше налаштувань"
+          preview: "Попередній перегляд"
           topic_list_top:
             title: "Перелік тем найкращих оголошень"
             description: "Оголошення для показу вгорі сторінок списку тем."

@@ -7,15 +7,15 @@
 th:
   js:
     adplugin:
-      advertisement_label: 'โฆษณา'
+      advertisement_label: "โฆษณา"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'ปลั๊กอินโฆษณา'
-          dfp_plugin: 'DFP/ตัวจัดการโฆษณา'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'อเมซอน'
+          ad_plugin: "ปลั๊กอินโฆษณา"
+          dfp_plugin: "DFP/ตัวจัดการโฆษณา"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "อเมซอน"
       adplugin:
         house_ads:
           new: "ใหม่"
@@ -26,6 +26,7 @@ th:
           get_started: "เริ่มต้นด้วยการสร้างโฆษณาใหม่"
           filter_placeholder: "เลือกโฆษณา ..."
           more_settings: "การตั้งค่าเพิ่มเติม"
+          preview: "แสดงตัวอย่าง"
           topic_list_top:
             title: "หัวข้อรายการโฆษณายอดนิยม"
             description: "โฆษณาที่จะแสดงที่ด้านบนสุดของหน้ารายการหัวข้อ"

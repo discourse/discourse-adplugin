@@ -7,17 +7,17 @@
 es:
   js:
     adplugin:
-      advertisement_label: 'PUBLICIDAD'
+      advertisement_label: "PUBLICIDAD"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Complemento de anuncios'
-          dfp_plugin: 'DFP/Administrador de anuncios'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Complemento de anuncios"
+          dfp_plugin: "DFP/Administrador de anuncios"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "Publicidad interna"
@@ -32,6 +32,7 @@ es:
           more_settings: "Más ajustes"
           show_to_anons: "Mostrar a usuarios anónimos"
           show_to_logged_in_users: "Mostrar a los usuarios que han iniciado sesión"
+          preview: "Vista previa"
           topic_list_top:
             title: "Anuncios destacados de la lista de temas"
             description: "Anuncios a mostrar en la parte superior de las listas de temas."

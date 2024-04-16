@@ -7,17 +7,17 @@
 sv:
   js:
     adplugin:
-      advertisement_label: 'ANNONSERING'
+      advertisement_label: "ANNONSERING"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Annonseringstillägg'
-          dfp_plugin: 'DFP/Annonshanterare'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Annonseringstillägg"
+          dfp_plugin: "DFP/Annonshanterare"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "Egna annonser"
@@ -30,6 +30,7 @@ sv:
           get_started: "Börja med att skapa en ny annons."
           filter_placeholder: "Välj annonser..."
           more_settings: "Fler inställningar"
+          preview: "Förhandsgranska"
           topic_list_top:
             title: "Annonser i ämneslistans topp"
             description: "Annonser som visas i ämneslistans topp."

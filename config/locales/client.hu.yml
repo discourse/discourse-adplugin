@@ -7,15 +7,16 @@
 hu:
   js:
     adplugin:
-      advertisement_label: 'HIRDETÉS'
+      advertisement_label: "HIRDETÉS"
   admin_js:
     admin:
       site_settings:
         categories:
-          amazon_plugin: 'Amazon'
+          amazon_plugin: "Amazon"
       adplugin:
         house_ads:
           new: "Új"
           settings: "Beállítások"
           save: "Mentés"
           delete: "Töröl"
+          preview: "Előnézet"

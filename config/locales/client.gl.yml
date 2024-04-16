@@ -9,10 +9,11 @@ gl:
     admin:
       site_settings:
         categories:
-          amazon_plugin: 'Amazon'
+          amazon_plugin: "Amazon"
       adplugin:
         house_ads:
           new: "Novo"
           settings: "Axustes"
           save: "Gardar"
           delete: "Eliminar"
+          preview: "Visualizar"

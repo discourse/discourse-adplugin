@@ -7,17 +7,17 @@
 fr:
   js:
     adplugin:
-      advertisement_label: 'PUBLICITÉ'
+      advertisement_label: "PUBLICITÉ"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Plugin publicitaire'
-          dfp_plugin: 'Gestionnaire DFP/Ad'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Plugin publicitaire"
+          dfp_plugin: "Gestionnaire DFP/Ad"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "Annonces personnalisées"
@@ -32,6 +32,7 @@ fr:
           more_settings: "Plus de paramètres"
           show_to_anons: "Afficher aux utilisateurs anonymes"
           show_to_logged_in_users: "Afficher aux utilisateurs connectés"
+          preview: "Aperçu"
           topic_list_top:
             title: "Annonces de la liste des sujets"
             description: "Annonces à afficher en haut des pages de la liste des sujets"

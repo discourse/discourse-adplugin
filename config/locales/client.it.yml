@@ -7,17 +7,17 @@
 it:
   js:
     adplugin:
-      advertisement_label: 'ADVERTISEMENT'
+      advertisement_label: "ADVERTISEMENT"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Plugin di annunci'
-          dfp_plugin: 'DFP/Gestore Annunci'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Plugin di annunci"
+          dfp_plugin: "DFP/Gestore Annunci"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "Annunci interni"
@@ -32,6 +32,7 @@ it:
           more_settings: "Altre Impostazioni"
           show_to_anons: "Mostra agli utenti anonimi"
           show_to_logged_in_users: "Mostra agli utenti registrati"
+          preview: "Anteprima"
           topic_list_top:
             title: "Annunci in cima all'elenco argomenti"
             description: "Annunci da mostrare in cima alle pagine con gli elenchi di argomenti."

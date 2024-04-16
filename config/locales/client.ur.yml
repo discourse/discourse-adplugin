@@ -7,17 +7,17 @@
 ur:
   js:
     adplugin:
-      advertisement_label: 'اشتہار'
+      advertisement_label: "اشتہار"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'اشتھاراتی پلَگ اِن'
-          dfp_plugin: 'ڈی ایف پی / اَیڈ مینیجر'
-          adsense_plugin: 'ایڈسینس'
-          amazon_plugin: 'اَیمَیزَون'
-          carbonads_plugin: 'کاربن اشتھارات'
-          adbutler_plugin: 'اَیڈ بَٹلَر'
+          ad_plugin: "اشتھاراتی پلَگ اِن"
+          dfp_plugin: "ڈی ایف پی / اَیڈ مینیجر"
+          adsense_plugin: "ایڈسینس"
+          amazon_plugin: "اَیمَیزَون"
+          carbonads_plugin: "کاربن اشتھارات"
+          adbutler_plugin: "اَیڈ بَٹلَر"
       adplugin:
         house_ads:
           title: "ہائوز اشتھارات"
@@ -30,6 +30,7 @@ ur:
           get_started: "ایک نیا اشتھار بنا کر شروعات کریں۔"
           filter_placeholder: "اشتھارات منتخب کریں..."
           more_settings: "مزید ترتیبات"
+          preview: "پیشگی دیکھیں"
           topic_list_top:
             title: "ٹاپک فہرست ٹاپ اشتھارات"
             description: "ٹاپک فہرست صفحات کے سب سے اوپر ظاہر کرنے کیلئے اشتھارات۔"

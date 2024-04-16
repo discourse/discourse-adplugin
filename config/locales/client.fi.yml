@@ -7,17 +7,17 @@
 fi:
   js:
     adplugin:
-      advertisement_label: 'MAINOS'
+      advertisement_label: "MAINOS"
   admin_js:
     admin:
       site_settings:
         categories:
-          ad_plugin: 'Mainoslisäosa'
-          dfp_plugin: 'DFP/Ad Manager'
-          adsense_plugin: 'AdSense'
-          amazon_plugin: 'Amazon'
-          carbonads_plugin: 'Carbon Ads'
-          adbutler_plugin: 'AdButler'
+          ad_plugin: "Mainoslisäosa"
+          dfp_plugin: "DFP/Ad Manager"
+          adsense_plugin: "AdSense"
+          amazon_plugin: "Amazon"
+          carbonads_plugin: "Carbon Ads"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           title: "Omat mainokset"
@@ -32,6 +32,7 @@ fi:
           more_settings: "Lisää asetuksia"
           show_to_anons: "Näytä anonyymeille käyttäjille"
           show_to_logged_in_users: "Näytä kirjautuneille käyttäjille"
+          preview: "Esikatselu"
           topic_list_top:
             title: "Ketjuluettelon ylämainokset"
             description: "Mainokset, jotka näytetään aiheluettelosivun yläreunassa."
