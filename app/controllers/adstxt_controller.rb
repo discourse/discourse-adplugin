@@ -6,7 +6,7 @@ class AdstxtController < ::ApplicationController
   skip_before_action :preload_json, :check_xhr, :redirect_to_login_if_required
 
   def index
-    raise Discourse::NotFound unless SiteSetting.ads_txt.present?
+    raise Discourse::NotFound if SiteSetting.ads_txt.blank?
 
     render plain: SiteSetting.ads_txt
   end
