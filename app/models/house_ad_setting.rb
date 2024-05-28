@@ -48,7 +48,7 @@ module ::AdPlugin
     end
 
     def self.update(setting_name, value)
-      raise Discourse::NotFound unless DEFAULTS.keys.include?(setting_name.to_sym)
+      raise Discourse::NotFound if DEFAULTS.keys.exclude?(setting_name.to_sym)
 
       ad_names = value&.split("|") || []
 
