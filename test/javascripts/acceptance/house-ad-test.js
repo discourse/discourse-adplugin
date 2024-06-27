@@ -197,7 +197,7 @@ acceptance(
       assert
         .dom(".h-topic-list")
         .doesNotExist(
-          "ad is not displayed because the current category id is included in the ad category_ids"
+          "ad is not displayed because the current category id is not included in the ad category_ids"
         );
     });
   }
@@ -229,7 +229,7 @@ acceptance(
       assert
         .dom(".h-topic-list")
         .doesNotExist(
-          "ad is not displayed because the current category id is included in the ad category_ids"
+          "ad is not displayed because the current category id is not included in the ad category_ids"
         );
     });
   }
@@ -261,7 +261,7 @@ acceptance(
       assert
         .dom(".h-topic-list")
         .doesNotExist(
-          "ad is not displayed because the current category id is included in the ad category_ids"
+          "ad is not displayed because the current category id is not included in the ad category_ids"
         );
     });
   }
@@ -288,13 +288,44 @@ acceptance(
       },
     });
 
-    test("hides ad to anon users when current category id is not included in ad category_ids", async (assert) => {
+    test("shows ad to anon users when current category id is included in ad category_ids", async (assert) => {
       await visit("/c/bug/1");
       assert
         .dom(".h-topic-list")
         .exists(
           "ad is displayed because the current category id is included in the ad category_ids"
         );
+    });
+  }
+);
+
+acceptance(
+  "House Ads | Category and Group Permissions | Anonymous | Show non-restricted ads",
+  function (needs) {
+    needs.settings({
+      no_ads_for_categories: "",
+    });
+    needs.site({
+      house_creatives: {
+        settings: {
+          topic_list_top: "Topic List Top One|Topic List Top Two",
+        },
+        creatives: {
+          "Topic List Top One": {
+            html: "<div class='h-topic-list-one'>TOPIC LIST TOP ONE</div>",
+            category_ids: [2],
+          },
+          "Topic List Top Two": {
+            html: "<div class='h-topic-list-two'>TOPIC LIST TOP TWO</div>",
+            category_ids: [],
+          },
+        },
+      },
+    });
+
+    test("shows non-restricted ad to anon users", async (assert) => {
+      await visit("/c/bug/1");
+      assert.dom(".h-topic-list-two").exists("non-restricted ad is displayed");
     });
   }
 );

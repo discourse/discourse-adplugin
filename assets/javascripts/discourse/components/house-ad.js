@@ -72,22 +72,21 @@ export default AdComponent.extend({
       placement = this.get("placement").replace(/-/g, "_"),
       adNames = this.adsNamesForSlot(placement);
 
-    if (adNames.length > 0) {
+    // filter out ads that should not be shown on the current page
+    const filteredAds = adNames.filter((adName) => {
+      const ad = houseAds.creatives[adName];
+      return (
+        !ad.category_ids?.length ||
+        ad.category_ids.includes(this.currentCategoryId)
+      );
+    });
+    if (filteredAds.length > 0) {
       if (!adIndex[placement]) {
         adIndex[placement] = 0;
       }
-      let ad = houseAds.creatives[adNames[adIndex[placement]]] || "";
-      adIndex[placement] = (adIndex[placement] + 1) % adNames.length;
-      // check if the ad includes the current category, or if no category restrictions are set for the ad
-      // otherwise don't show it
-      if (
-        !ad.category_ids?.length ||
-        ad.category_ids.includes(this.currentCategoryId)
-      ) {
-        return ad.html;
-      }
-    } else {
-      return "";
+      let ad = houseAds.creatives[filteredAds[adIndex[placement]]] || "";
+      adIndex[placement] = (adIndex[placement] + 1) % filteredAds.length;
+      return ad.html;
     }
   },
 
@@ -120,9 +119,21 @@ export default AdComponent.extend({
 
     if (adIndex.topic_list_top === null) {
       // start at a random spot in the ad inventory
+      const houseAds = this.site.get("house_creatives");
       Object.keys(adIndex).forEach((placement) => {
         const adNames = this.adsNamesForSlot(placement);
-        adIndex[placement] = Math.floor(Math.random() * adNames.length);
+        if (adNames.length === 0) {
+          return;
+        }
+        // filter out ads that should not be shown on the current page
+        const filteredAds = adNames.filter((adName) => {
+          const ad = houseAds.creatives[adName];
+          return (
+            !ad.category_ids?.length ||
+            ad.category_ids.includes(this.currentCategoryId)
+          );
+        });
+        adIndex[placement] = Math.floor(Math.random() * filteredAds.length);
       });
     }
 
