@@ -76,8 +76,9 @@ export default AdComponent.extend({
     const filteredAds = adNames.filter((adName) => {
       const ad = houseAds.creatives[adName];
       return (
-        !ad.category_ids?.length ||
-        ad.category_ids.includes(this.currentCategoryId)
+        ad &&
+        (!ad.category_ids?.length ||
+          ad.category_ids.includes(this.currentCategoryId))
       );
     });
     if (filteredAds.length > 0) {
@@ -129,8 +130,9 @@ export default AdComponent.extend({
         const filteredAds = adNames.filter((adName) => {
           const ad = houseAds.creatives[adName];
           return (
-            !ad.category_ids?.length ||
-            ad.category_ids.includes(this.currentCategoryId)
+            ad &&
+            (!ad.category_ids?.length ||
+              ad.category_ids.includes(this.currentCategoryId))
           );
         });
         adIndex[placement] = Math.floor(Math.random() * filteredAds.length);
