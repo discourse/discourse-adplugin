@@ -33,7 +33,7 @@ tr_TR:
           show_to_anons: "Anonim kullanıcılara göster"
           show_to_logged_in_users: "Giriş yapmış kullanıcılara göster"
           category_chooser_description: "Bu reklamın gösterileceği kategorileri seçin veya reklamı her yerde göstermek için boş bırakın. `no_ads_for_categories` site ayarının bu ayar üzerinde önceliği vardır."
-          group_chooser_description: "Bu reklamı görüntüleyebilecek grupları seçin veya reklamı oturum açmış tüm kullanıcılara göstermek için boş bırakabilirsiniz."
+          group_chooser_description: "Bu reklamı görüntüleyebilecek grupları seçin veya reklamı oturum açmış tüm kullanıcılara göstermek için boş bırakın."
           preview: "Ön izle"
           topic_list_top:
             title: "Konu listesi üstü reklamları"
