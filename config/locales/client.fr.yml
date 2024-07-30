@@ -32,6 +32,8 @@ fr:
           more_settings: "Plus de paramètres"
           show_to_anons: "Afficher aux utilisateurs anonymes"
           show_to_logged_in_users: "Afficher aux utilisateurs connectés"
+          category_chooser_description: "Choisissez les catégories dans lesquelles cette annonce doit être affichée ou laissez ce champ vide pour diffuser l'annonce partout. Le paramètre de site « no_ads_for_categories » a la priorité sur ce paramètre."
+          group_chooser_description: "Choisissez les groupes qui peuvent voir cette annonce ou laissez ce champ vide pour diffuser l'annonce à tous les utilisateurs connectés."
           preview: "Aperçu"
           topic_list_top:
             title: "Annonces de la liste des sujets"

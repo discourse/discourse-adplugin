@@ -32,6 +32,8 @@ nl:
           more_settings: "Meer instellingen"
           show_to_anons: "Weergeven voor anonieme gebruikers"
           show_to_logged_in_users: "Weergegeven voor ingelogde gebruikers"
+          category_chooser_description: "Kies de categorieën waarin deze advertentie moet worden weergegeven of laat dit leeg om de advertentie overal weer te geven. De site-instelling 'no_ads_for_categories' heeft voorrang op deze instelling."
+          group_chooser_description: "Kies de groepen die deze advertentie kunnen bekijken of laat dit leeg om de advertentie aan alle aangemelde gebruikers te tonen."
           preview: "Voorbeeld"
           topic_list_top:
             title: "Advertenteis boven topicslijst"

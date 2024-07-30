@@ -32,6 +32,8 @@ fi:
           more_settings: "Lisää asetuksia"
           show_to_anons: "Näytä anonyymeille käyttäjille"
           show_to_logged_in_users: "Näytä kirjautuneille käyttäjille"
+          category_chooser_description: "Valitse alueet, joissa tämä mainos näytetään, tai jätä tyhjäksi, jos haluat näyttää mainoksen kaikkialla. \"No_ads_for_categories\"-sivustoasetuksella on etusija tähän asetukseen nähden."
+          group_chooser_description: "Valitse ryhmät, jotka voivat nähdä tämän mainoksen, tai jätä tyhjäksi, jos haluat näyttää mainoksen kaikille kirjautuneille käyttäjille."
           preview: "Esikatselu"
           topic_list_top:
             title: "Ketjuluettelon ylämainokset"

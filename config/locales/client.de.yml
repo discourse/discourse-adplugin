@@ -33,7 +33,7 @@ de:
           show_to_anons: "Für anonyme Benutzer anzeigen"
           show_to_logged_in_users: "Für angemeldete Benutzer anzeigen"
           category_chooser_description: "Wähle die Kategorien aus, in denen diese Anzeige angezeigt werden soll, oder lass das Feld leer, um die Anzeige überall anzuzeigen. Die Seiteneinstellung `no_ads_for_categories` hat Vorrang vor dieser Einstellung."
-          group_chooser_description: "Wähle die Gruppen aus, die diese Anzeige sehen können, oder lass das Feld leer, um die Anzeige allen angemeldeten Nutzern zu zeigen."
+          group_chooser_description: "Wähle die Gruppen aus, die diese Anzeige sehen können, oder lass das Feld leer, um die Anzeige allen angemeldeten Benutzern zu zeigen."
           preview: "Vorschau"
           topic_list_top:
             title: "Anzeigen oben bei der Themenliste"

@@ -32,6 +32,8 @@ it:
           more_settings: "Altre Impostazioni"
           show_to_anons: "Mostra agli utenti anonimi"
           show_to_logged_in_users: "Mostra agli utenti registrati"
+          category_chooser_description: "Scegli le categorie in cui visualizzare questo annuncio o lascia vuoto per mostrare l'annuncio ovunque. L'impostazione del sito \"no_ads_for_categories\" ha la priorità su questa impostazione."
+          group_chooser_description: "Scegli i gruppi che possono visualizzare questo annuncio o lascia vuoto per mostrare l'annuncio a tutti gli utenti che hanno effettuato l'accesso."
           preview: "Anteprima"
           topic_list_top:
             title: "Annunci in cima all'elenco argomenti"
