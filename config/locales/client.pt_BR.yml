@@ -32,6 +32,8 @@ pt_BR:
           more_settings: "Mais Configurações"
           show_to_anons: "Mostrar para usuários(as) anônimos(as)"
           show_to_logged_in_users: "Mostrar para usuários(as) logados(as)"
+          category_chooser_description: "Escolha as categorias nas quais este anúncio deve ser exibido ou deixe vazio para exibir em todos os lugares. A configuração do site \"no_ads_for_categories\" tem prioridade em relação a esta configuração."
+          group_chooser_description: "Escolha os grupos que podem visualizar este anúncio ou deixe vazio para exibir o anúncio a todos(as) os(as) usuários(as) que entraram com a conta."
           preview: "Pré-visualizar"
           topic_list_top:
             title: "Principais anúncios da lista de tópicos"
