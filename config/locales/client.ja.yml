@@ -32,6 +32,8 @@ ja:
           more_settings: "その他の設定"
           show_to_anons: "匿名ユーザーに表示する"
           show_to_logged_in_users: "ログインユーザーに表示する"
+          category_chooser_description: "この広告が表示されるカテゴリを選択するか、すべての場所に広告を表示する場合には空白のままにします。`no_ads_for_categories` サイト設定はこの設定より優先されます。"
+          group_chooser_description: "この広告を表示できるグループを選択するか、サインイン中のすべてのユーザーに広告を表示するには空白のままにします。"
           preview: "プレビュー"
           topic_list_top:
             title: "トピックリストのトップ広告"
