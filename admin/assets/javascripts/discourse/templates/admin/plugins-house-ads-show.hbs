@@ -1,7 +1,11 @@
 <section class="edit-house-ad content-body">
   <h1><TextField @value={{this.buffered.name}} class="house-ad-name" /></h1>
   <div class="controls">
-    <AceEditor @content={{this.buffered.html}} @mode="html" />
+    <AceEditor
+      @content={{this.buffered.html}}
+      @onChange={{fn (mut this.buffered.html)}}
+      @mode="html"
+    />
   </div>
   <div class="controls">
     <div class="visibility-settings">
