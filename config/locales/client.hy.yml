@@ -17,6 +17,7 @@ hy:
           adsense_plugin: "AdSense"
           amazon_plugin: "Amazon"
           carbonads_plugin: "Ածխածնի գովազդ"
+          adbutler_plugin: "AdButler"
       adplugin:
         house_ads:
           new: "Նոր"
