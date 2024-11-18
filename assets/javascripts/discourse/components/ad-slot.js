@@ -1,5 +1,5 @@
 import EmberObject from "@ember/object";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 import { isBlank } from "@ember/utils";
 import discourseComputed from "discourse-common/utils/decorators";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
