@@ -1,6 +1,6 @@
 import Component from "@ember/component";
 import { alias, or } from "@ember/object/computed";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 import discourseComputed from "discourse-common/utils/decorators";
 import {
   isNthPost,
