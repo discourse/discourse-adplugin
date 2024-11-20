@@ -1,14 +1,16 @@
-{{#if showAd}}
-  {{#if site.mobileView}}
-    <div class="amazon-product-links-label" style={{adTitleStyleMobile}}><h2
-      >{{i18n "adplugin.advertisement_label"}}</h2></div>
+{{#if this.showAd}}
+  {{#if this.site.mobileView}}
+    <div
+      class="amazon-product-links-label"
+      style={{this.adTitleStyleMobile}}
+    ><h2>{{i18n "adplugin.advertisement_label"}}</h2></div>
     <iframe
-      style={{adWrapperStyleMobile}}
+      style={{this.adWrapperStyleMobile}}
       marginwidth="0"
       marginheight="0"
       scrolling="no"
       frameborder="0"
-      src={{userInputMobile}}
+      src={{this.userInputMobile}}
       title={{i18n "adplugin.advertisement_label"}}
     >
     </iframe>
@@ -18,12 +20,12 @@
         }}</h2></div>
     <div class="container" align="center">
       <iframe
-        style={{adWrapperStyle}}
+        style={{this.adWrapperStyle}}
         marginwidth="0"
         marginheight="0"
         scrolling="no"
         frameborder="0"
-        src={{userInput}}
+        src={{this.userInput}}
         title={{i18n "adplugin.advertisement_label"}}
       >
       </iframe>
