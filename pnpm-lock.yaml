@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@discourse/lint-configs':
-        specifier: 2.2.0
-        version: 2.2.0(ember-template-lint@6.0.0)(eslint@9.14.0)(prettier@2.8.8)
+        specifier: 2.2.1
+        version: 2.2.1(ember-template-lint@6.0.0)(eslint@9.14.0)(prettier@2.8.8)
       ember-template-lint:
         specifier: 6.0.0
         version: 6.0.0
@@ -141,8 +141,8 @@ packages:
     resolution: {integrity: sha512-Z/yiTPj+lDVnF7lWeKCIJzaIkI0vYO87dMpZ4bg4TDrFe4XXLFWL1TbXU27gBP3QccxV9mZICCrnjnYlJjXHOA==}
     engines: {node: '>=6.9.0'}
 
-  '@discourse/lint-configs@2.2.0':
-    resolution: {integrity: sha512-lj13X+3/DRV2ZBQe3eJvxOO23e87DPfUSSqm0UPfP04VJ7141BHwWn9VVF0rOr+bMe2eiirsqlg2AbMn7gMb+A==}
+  '@discourse/lint-configs@2.2.1':
+    resolution: {integrity: sha512-cXA6erpwaN9/wX+pNHUeDws6hdQEewfPb+nmWQNAaD72FTDKpjNmwxKDaVH1p65yVsF8SdNRZGKdAnOjkH42aw==}
     peerDependencies:
       ember-template-lint: 6.0.0
       eslint: ^9.14.0
@@ -1941,7 +1941,7 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@discourse/lint-configs@2.2.0(ember-template-lint@6.0.0)(eslint@9.14.0)(prettier@2.8.8)':
+  '@discourse/lint-configs@2.2.1(ember-template-lint@6.0.0)(eslint@9.14.0)(prettier@2.8.8)':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/eslint-parser': 7.25.9(@babel/core@7.26.0)(eslint@9.14.0)
