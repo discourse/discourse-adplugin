@@ -1,11 +1,10 @@
-{{#if showAd}}
-  {{#if site.mobileView}}
-    <div class="google-dfp-ad-label" style={{adTitleStyleMobile}}><h2>{{i18n
-          "adplugin.advertisement_label"
-        }}</h2></div>
+{{#if this.showAd}}
+  {{#if this.site.mobileView}}
+    <div class="google-dfp-ad-label" style={{this.adTitleStyleMobile}}><h2
+      >{{i18n "adplugin.advertisement_label"}}</h2></div>
     <div
-      id={{divId}}
-      style={{adWrapperStyle}}
+      id={{this.divId}}
+      style={{this.adWrapperStyle}}
       class="dfp-ad-unit"
       align="center"
     ></div>
@@ -14,8 +13,8 @@
           "adplugin.advertisement_label"
         }}</h2></div>
     <div
-      id={{divId}}
-      style={{adWrapperStyle}}
+      id={{this.divId}}
+      style={{this.adWrapperStyle}}
       class="dfp-ad-unit"
       align="center"
     ></div>

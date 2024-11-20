@@ -1,13 +1,13 @@
-{{#each adComponents as |adComponent|}}
+{{#each this.adComponents as |adComponent|}}
   {{! Trick to force full destroy/re-render of component when route changes }}
   {{#each (array this.router.currentRoute)}}
     {{component
       adComponent
-      placement=placement
-      category=category
-      postNumber=postNumber
-      indexNumber=indexNumber
-      tagName=childTagName
+      placement=this.placement
+      category=this.category
+      postNumber=this.postNumber
+      indexNumber=this.indexNumber
+      tagName=this.childTagName
     }}
   {{/each}}
 {{/each}}

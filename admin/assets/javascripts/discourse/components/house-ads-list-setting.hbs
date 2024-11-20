@@ -1,13 +1,13 @@
-<label for={{name}}>{{title}}</label>
+<label for={{this.name}}>{{this.title}}</label>
 {{house-ads-chooser
-  settingValue=adValue
-  choices=adNames
-  onChange=(action (mut adValue))
+  settingValue=this.adValue
+  choices=this.adNames
+  onChange=(action (mut this.adValue))
 }}
 <div class="setting-controls">
-  {{#if changed}}
+  {{#if this.changed}}
     <DButton class="ok" @action={{action "save"}} @icon="check" />
     <DButton class="cancel" @action={{action "cancel"}} @icon="times" />
   {{/if}}
 </div>
-<p class="help">{{help}}</p>
+<p class="help">{{this.help}}</p>

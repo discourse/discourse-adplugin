@@ -1,6 +1,6 @@
 <div class="adplugin-mgmt">
   <h1>{{i18n "admin.adplugin.house_ads.title"}}</h1>
-  {{#if model.length}}
+  {{#if this.model.length}}
     <div class="content-list">
       <div class="house-ads-actions">
         <LinkTo
@@ -17,7 +17,7 @@
         </LinkTo>
       </div>
       <ul class="house-ads-list">
-        {{#each model as |ad|}}
+        {{#each this.model as |ad|}}
           <li class="house-ads-list-item">
             {{#link-to route="adminPlugins.houseAds.show" model=ad.id}}
               {{ad.name}}
