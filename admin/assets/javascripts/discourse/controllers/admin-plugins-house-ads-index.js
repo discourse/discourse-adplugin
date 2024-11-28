@@ -1,8 +1,8 @@
 import Controller, { inject as controller } from "@ember/controller";
 import { alias } from "@ember/object/computed";
 
-export default Controller.extend({
-  adminPluginsHouseAds: controller("adminPlugins.houseAds"),
-  houseAds: alias("adminPluginsHouseAds.model"),
-  adSettings: alias("adminPluginsHouseAds.houseAdsSettings"),
-});
+export default class AdminPluginsHouseAdsIndexController extends Controller {
+  @controller("adminPlugins.houseAds") adminPluginsHouseAds;
+  @alias("adminPluginsHouseAds.model") houseAds;
+  @alias("adminPluginsHouseAds.houseAdsSettings") adSettings;
+}

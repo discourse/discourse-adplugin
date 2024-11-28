@@ -27,9 +27,9 @@ function loadAdbutler(adserverHostname) {
   return _promise;
 }
 
-export default AdComponent.extend({
-  divs: null,
-  publisherId: null,
+export default class AdbutlerAd extends AdComponent {
+  divs = null;
+  publisherId = null;
 
   init() {
     let dimensions = [728, 90];
@@ -70,8 +70,8 @@ export default AdComponent.extend({
       dimensions,
     });
 
-    this._super();
-  },
+    super.init();
+  }
 
   _triggerAds() {
     if (isTesting()) {
@@ -104,12 +104,12 @@ export default AdComponent.extend({
         }
       }.bind(this)
     );
-  },
+  }
 
   didInsertElement() {
-    this._super();
+    super.didInsertElement();
     scheduleOnce("afterRender", this, this._triggerAds);
-  },
+  }
 
   @discourseComputed
   showAdbutlerAds() {
@@ -118,7 +118,7 @@ export default AdComponent.extend({
     }
 
     return this.currentUser.show_adbutler_ads;
-  },
+  }
 
   @discourseComputed(
     "publisherId",
@@ -141,7 +141,7 @@ export default AdComponent.extend({
       showAfterPost &&
       showOnCurrentPage
     );
-  },
+  }
 
   @discourseComputed("postNumber")
   showAfterPost(postNumber) {
@@ -149,5 +149,5 @@ export default AdComponent.extend({
       return true;
     }
     return this.isNthPost(parseInt(this.siteSettings.adbutler_nth_post, 10));
-  },
-});
+  }
+}

@@ -1,6 +1,7 @@
 import EmberObject from "@ember/object";
 import { service } from "@ember/service";
 import { isBlank } from "@ember/utils";
+import { tagName } from "@ember-decorators/component";
 import discourseComputed from "discourse-common/utils/decorators";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
@@ -173,9 +174,9 @@ export function slotContenders(
   return types;
 }
 
-export default AdComponent.extend({
-  router: service(),
-  tagName: "",
+@tagName("")
+export default class AdSlot extends AdComponent {
+  @service router;
 
   /**
    * For a given ad placement and optionally a post number if in between posts,
@@ -190,7 +191,7 @@ export default AdComponent.extend({
       indexNumber,
       postNumber
     );
-  },
+  }
 
   /**
    * Returns a list of the names of ad components that should be rendered
@@ -238,5 +239,5 @@ export default AdComponent.extend({
     }
 
     return networkNames;
-  },
-});
+  }
+}

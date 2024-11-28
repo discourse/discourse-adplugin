@@ -1,5 +1,5 @@
 import Controller from "@ember/controller";
 
-export default Controller.extend({
-  loadingAds: true,
-});
+export default class AdminPluginsHouseAdsController extends Controller {
+  loadingAds = true;
+}
