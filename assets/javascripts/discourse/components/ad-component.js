@@ -7,28 +7,30 @@ import {
   isNthTopicListItem,
 } from "discourse/plugins/discourse-adplugin/discourse/helpers/slot-position";
 
-export default Component.extend({
-  router: service(),
+export default class AdComponent extends Component {
+  @service router;
 
-  currentCategoryId: or(
+  @or(
     "router.currentRoute.attributes.category.id",
     "router.currentRoute.parent.attributes.category_id"
-  ),
+  )
+  currentCategoryId;
 
-  currentCategorySlug: or(
+  @or(
     "router.currentRoute.attributes.category.slug",
     "router.currentRoute.parent.attributes.category.slug"
-  ),
+  )
+  currentCategorySlug;
 
   // Server needs to compute this in case hidden tags are being used.
-  topicTagsDisableAds: alias(
-    "router.currentRoute.parent.attributes.tags_disable_ads"
-  ),
+  @alias("router.currentRoute.parent.attributes.tags_disable_ads")
+  topicTagsDisableAds;
 
-  isRestrictedCategory: or(
+  @or(
     "router.currentRoute.attributes.category.read_restricted",
     "router.currentRoute.parent.attributes.category.read_restricted"
-  ),
+  )
+  isRestrictedCategory;
 
   @discourseComputed(
     "router.currentRoute.attributes.__type",
@@ -38,12 +40,12 @@ export default Component.extend({
     if (type === "tag" && tag) {
       return tag;
     }
-  },
+  }
 
   @discourseComputed("router.currentRoute.parent.attributes.archetype")
   isPersonalMessage(topicType) {
     return topicType === "private_message";
-  },
+  }
 
   @discourseComputed
   showToGroups() {
@@ -52,7 +54,7 @@ export default Component.extend({
     }
 
     return this.currentUser.show_to_groups;
-  },
+  }
 
   @discourseComputed(
     "currentCategoryId",
@@ -82,13 +84,13 @@ export default Component.extend({
       (!isRestrictedCategory ||
         !this.siteSettings.no_ads_for_restricted_categories)
     );
-  },
+  }
 
   isNthPost(n) {
     return isNthPost(n, this.get("postNumber"));
-  },
+  }
 
   isNthTopicListItem(n) {
     return isNthTopicListItem(n, this.get("indexNumber"));
-  },
-});
+  }
+}

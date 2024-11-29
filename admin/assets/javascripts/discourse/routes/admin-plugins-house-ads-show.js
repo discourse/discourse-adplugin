@@ -2,7 +2,7 @@ import { TrackedObject } from "@ember-compat/tracked-built-ins";
 import DiscourseRoute from "discourse/routes/discourse";
 import I18n from "I18n";
 
-export default DiscourseRoute.extend({
+export default class AdminPluginsHouseAdsShow extends DiscourseRoute {
   model(params) {
     if (params.ad_id === "new") {
       return new TrackedObject({
@@ -19,5 +19,5 @@ export default DiscourseRoute.extend({
         )
       );
     }
-  },
-});
+  }
+}

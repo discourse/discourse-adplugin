@@ -1,4 +1,9 @@
 import { isBlank } from "@ember/utils";
+import {
+  attributeBindings,
+  classNameBindings,
+  classNames,
+} from "@ember-decorators/component";
 import discourseComputed from "discourse-common/utils/decorators";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 
@@ -10,21 +15,21 @@ const adIndex = {
   topic_list_between: null,
 };
 
-export default AdComponent.extend({
-  classNames: ["house-creative"],
-  classNameBindings: ["adUnitClass"],
-  attributeBindings: ["colspanAttribute:colspan"],
-  adHtml: "",
+@classNames("house-creative")
+@classNameBindings("adUnitClass")
+@attributeBindings("colspanAttribute:colspan")
+export default class HouseAd extends AdComponent {
+  adHtml = "";
 
   @discourseComputed
   colspanAttribute() {
     return this.tagName === "td" ? "5" : null;
-  },
+  }
 
   @discourseComputed("placement", "showAd")
   adUnitClass(placement, showAd) {
     return showAd ? `house-${placement}` : "";
-  },
+  }
 
   @discourseComputed(
     "showToGroups",
@@ -43,7 +48,7 @@ export default AdComponent.extend({
       (showAfterPost || showAfterTopicListItem) &&
       showOnCurrentPage
     );
-  },
+  }
 
   @discourseComputed("postNumber", "placement")
   showAfterPost(postNumber, placement) {
@@ -54,7 +59,7 @@ export default AdComponent.extend({
     return this.isNthPost(
       parseInt(this.site.get("house_creatives.settings.after_nth_post"), 10)
     );
-  },
+  }
 
   @discourseComputed("placement")
   showAfterTopicListItem(placement) {
@@ -65,7 +70,7 @@ export default AdComponent.extend({
     return this.isNthTopicListItem(
       parseInt(this.site.get("house_creatives.settings.after_nth_topic"), 10)
     );
-  },
+  }
 
   chooseAdHtml() {
     const houseAds = this.site.get("house_creatives"),
@@ -89,7 +94,7 @@ export default AdComponent.extend({
       adIndex[placement] = (adIndex[placement] + 1) % filteredAds.length;
       return ad.html;
     }
-  },
+  }
 
   adsNamesForSlot(placement) {
     const houseAds = this.site.get("house_creatives");
@@ -105,14 +110,14 @@ export default AdComponent.extend({
     } else {
       return [];
     }
-  },
+  }
 
   refreshAd() {
     this.set("adHtml", this.chooseAdHtml());
-  },
+  }
 
   didInsertElement() {
-    this._super(...arguments);
+    super.didInsertElement(...arguments);
 
     if (!this.get("showAd")) {
       return;
@@ -140,5 +145,5 @@ export default AdComponent.extend({
     }
 
     this.refreshAd();
-  },
-});
+  }
+}

@@ -1,5 +1,6 @@
 import { scheduleOnce } from "@ember/runloop";
 import { htmlSafe } from "@ember/template";
+import { classNameBindings } from "@ember-decorators/component";
 import RSVP from "rsvp";
 import loadScript from "discourse/lib/load-script";
 import { isTesting } from "discourse-common/config/environment";
@@ -97,19 +98,17 @@ const MOBILE_SETTINGS = {
   },
 };
 
-export default AdComponent.extend({
-  classNameBindings: [
-    ":google-adsense",
-    "classForSlot",
-    "isResponsive:adsense-responsive",
-  ],
-  loadedGoogletag: false,
-
-  publisher_id: null,
-  ad_width: null,
-  ad_height: null,
-
-  adRequested: false,
+@classNameBindings(
+  ":google-adsense",
+  "classForSlot",
+  "isResponsive:adsense-responsive"
+)
+export default class GoogleAdsense extends AdComponent {
+  loadedGoogletag = false;
+  publisher_id = null;
+  ad_width = null;
+  ad_height = null;
+  adRequested = false;
 
   init() {
     let config, size;
@@ -138,8 +137,8 @@ export default AdComponent.extend({
     this.set("ad_height", parseAdHeight(size));
     this.set("ad_code", this.siteSettings[config.code]);
     this.set("publisher_id", this.siteSettings.adsense_publisher_code);
-    this._super();
-  },
+    super.init();
+  }
 
   async _triggerAds() {
     if (isTesting()) {
@@ -162,49 +161,49 @@ export default AdComponent.extend({
       // eslint-disable-next-line no-console
       console.error("Adsense error:", ex);
     }
-  },
+  }
 
   didInsertElement() {
-    this._super();
+    super.didInsertElement();
 
     if (!this.get("showAd")) {
       return;
     }
 
     scheduleOnce("afterRender", this, this._triggerAds);
-  },
+  }
 
   @discourseComputed("ad_width")
   isResponsive(adWidth) {
     return ["auto", "fluid"].includes(adWidth);
-  },
+  }
 
   @discourseComputed("ad_width")
   isFluid(adWidth) {
     return adWidth === "fluid";
-  },
+  }
 
   @discourseComputed("placement", "showAd")
   classForSlot(placement, showAd) {
     return showAd ? htmlSafe(`adsense-${placement}`) : "";
-  },
+  }
 
   @discourseComputed("isResponsive", "isFluid")
   autoAdFormat(isResponsive, isFluid) {
     return isResponsive ? htmlSafe(isFluid ? "fluid" : "auto") : false;
-  },
+  }
 
   @discourseComputed("ad_width", "ad_height", "isResponsive")
   adWrapperStyle(w, h, isResponsive) {
     return htmlSafe(isResponsive ? "" : `width: ${w}; height: ${h};`);
-  },
+  }
 
   @discourseComputed("adWrapperStyle", "isResponsive")
   adInsStyle(adWrapperStyle, isResponsive) {
     return htmlSafe(
       `display: ${isResponsive ? "block" : "inline-block"}; ${adWrapperStyle}`
     );
-  },
+  }
 
   @discourseComputed
   showAdsenseAds() {
@@ -213,7 +212,7 @@ export default AdComponent.extend({
     }
 
     return this.currentUser.show_adsense_ads;
-  },
+  }
 
   @discourseComputed(
     "publisher_id",
@@ -236,7 +235,7 @@ export default AdComponent.extend({
       showAfterPost &&
       showOnCurrentPage
     );
-  },
+  }
 
   @discourseComputed("postNumber")
   showAfterPost(postNumber) {
@@ -247,5 +246,5 @@ export default AdComponent.extend({
     return this.isNthPost(
       parseInt(this.siteSettings.adsense_nth_post_code, 10)
     );
-  },
-});
+  }
+}

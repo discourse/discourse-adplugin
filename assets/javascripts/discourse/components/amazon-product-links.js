@@ -1,17 +1,13 @@
 import { and } from "@ember/object/computed";
 import { htmlSafe } from "@ember/template";
+import { classNames } from "@ember-decorators/component";
 import discourseComputed from "discourse-common/utils/decorators";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 
-export default AdComponent.extend({
-  classNames: ["amazon-product-links"],
-
-  showAd: and(
-    "showAmazonAds",
-    "showToGroups",
-    "showAfterPost",
-    "showOnCurrentPage"
-  ),
+@classNames("amazon-product-links")
+export default class AmazonProductLinks extends AdComponent {
+  @and("showAmazonAds", "showToGroups", "showAfterPost", "showOnCurrentPage")
+  showAd;
 
   init() {
     const data = {
@@ -145,33 +141,33 @@ export default AdComponent.extend({
     this.set("user_input_mobile", data[placement]["user_input_mobile"]);
     this.set("mobile_amazon_height", data[placement]["mobile_amazon_height"]);
     this.set("mobile_amazon_width", data[placement]["mobile_amazon_width"]);
-    this._super();
-  },
+    super.init();
+  }
 
   @discourseComputed("amazon_width", "amazon_height")
   adWrapperStyle(w, h) {
     return htmlSafe(`width: ${w}px; height: ${h}px;`);
-  },
+  }
 
   @discourseComputed("mobile_amazon_width", "mobile_amazon_height")
   adWrapperStyleMobile(w, h) {
     return htmlSafe(`width: ${w}px; height: ${h}px;`);
-  },
+  }
 
   @discourseComputed("mobile_amazon_width")
   adTitleStyleMobile(w) {
     return htmlSafe(`width: ${w}px;`);
-  },
+  }
 
   @discourseComputed("user_input")
   userInput(userInput) {
     return htmlSafe(`${userInput}`);
-  },
+  }
 
   @discourseComputed("user_input_mobile")
   userInputMobile(userInput) {
     return htmlSafe(`${userInput}`);
-  },
+  }
 
   @discourseComputed
   showAmazonAds() {
@@ -180,7 +176,7 @@ export default AdComponent.extend({
     }
 
     return this.currentUser.show_amazon_ads;
-  },
+  }
 
   @discourseComputed("postNumber")
   showAfterPost(postNumber) {
@@ -189,5 +185,5 @@ export default AdComponent.extend({
     }
 
     return this.isNthPost(parseInt(this.siteSettings.amazon_nth_post_code, 10));
-  },
-});
+  }
+}

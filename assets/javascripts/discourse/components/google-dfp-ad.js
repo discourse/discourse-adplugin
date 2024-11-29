@@ -1,5 +1,6 @@
 import { alias } from "@ember/object/computed";
 import { htmlSafe } from "@ember/template";
+import { classNameBindings, classNames } from "@ember-decorators/component";
 import RSVP from "rsvp";
 import loadScript from "discourse/lib/load-script";
 import { isTesting } from "discourse-common/config/environment";
@@ -241,13 +242,15 @@ function loadGoogle() {
   return _promise;
 }
 
-export default AdComponent.extend({
-  classNameBindings: ["adUnitClass"],
-  classNames: ["google-dfp-ad"],
-  loadedGoogletag: false,
-  lastAdRefresh: null,
-  width: alias("size.width"),
-  height: alias("size.height"),
+@classNameBindings("adUnitClass")
+@classNames("google-dfp-ad")
+export default class GoogleDfpAd extends AdComponent {
+  loadedGoogletag = false;
+  lastAdRefresh = null;
+
+  @alias("size.width") width;
+
+  @alias("size.height") height;
 
   @discourseComputed
   size() {
@@ -256,7 +259,7 @@ export default AdComponent.extend({
       this.siteSettings,
       this.site.mobileView
     );
-  },
+  }
 
   @discourseComputed(
     "siteSettings.dfp_publisher_id",
@@ -269,7 +272,7 @@ export default AdComponent.extend({
     } else {
       return globalId;
     }
-  },
+  }
 
   @discourseComputed("placement", "postNumber")
   divId(placement, postNumber) {
@@ -279,26 +282,26 @@ export default AdComponent.extend({
     } else {
       return `div-gpt-ad-${slotNum}-${placement}`;
     }
-  },
+  }
 
   @discourseComputed("placement", "showAd")
   adUnitClass(placement, showAd) {
     return showAd ? `dfp-ad-${placement}` : "";
-  },
+  }
 
   @discourseComputed("width", "height")
   adWrapperStyle(w, h) {
     if (w !== "fluid") {
       return htmlSafe(`width: ${w}px; height: ${h}px;`);
     }
-  },
+  }
 
   @discourseComputed("width")
   adTitleStyleMobile(w) {
     if (w !== "fluid") {
       return htmlSafe(`width: ${w}px;`);
     }
-  },
+  }
 
   @discourseComputed(
     "publisherId",
@@ -324,7 +327,7 @@ export default AdComponent.extend({
       showOnCurrentPage &&
       size
     );
-  },
+  }
 
   @discourseComputed
   showDfpAds() {
@@ -333,7 +336,7 @@ export default AdComponent.extend({
     }
 
     return this.currentUser.show_dfp_ads;
-  },
+  }
 
   @discourseComputed("postNumber")
   showAfterPost(postNumber) {
@@ -342,7 +345,7 @@ export default AdComponent.extend({
     }
 
     return this.isNthPost(parseInt(this.siteSettings.dfp_nth_post_code, 10));
-  },
+  }
 
   // 3 second delay between calls to refresh ads in a component.
   // Ember often calls updated() more than once, and *sometimes*
@@ -353,7 +356,7 @@ export default AdComponent.extend({
       return true;
     }
     return new Date() - lastAdRefresh > 3000;
-  },
+  }
 
   @on("didUpdate")
   updated() {
@@ -376,7 +379,7 @@ export default AdComponent.extend({
         window.googletag.pubads().refresh([ad]);
       });
     }
-  },
+  }
 
   @on("didInsertElement")
   _initGoogleDFP() {
@@ -410,18 +413,18 @@ export default AdComponent.extend({
         }
       });
     });
-  },
+  }
 
   willRender() {
-    this._super(...arguments);
+    super.willRender(...arguments);
 
     if (!this.get("showAd")) {
       return;
     }
-  },
+  }
 
   @on("willDestroyElement")
   cleanup() {
     destroySlot(this.get("divId"));
-  },
-});
+  }
+}
