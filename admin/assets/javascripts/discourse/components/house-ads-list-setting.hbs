@@ -2,7 +2,7 @@
 {{house-ads-chooser
   settingValue=this.adValue
   choices=this.adNames
-  onChange=(action (mut this.adValue))
+  onChange=this.changeAdValue
 }}
 <div class="setting-controls">
   {{#if this.changed}}
