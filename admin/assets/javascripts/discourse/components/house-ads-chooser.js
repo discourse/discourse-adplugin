@@ -1,4 +1,4 @@
-import { action, computed } from "@ember/object";
+import { computed } from "@ember/object";
 import { classNames } from "@ember-decorators/component";
 import { makeArray } from "discourse-common/lib/helpers";
 import MultiSelectComponent from "select-kit/components/multi-select";
