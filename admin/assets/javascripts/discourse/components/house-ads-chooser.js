@@ -1,4 +1,4 @@
-import { action, computed } from "@ember/object";
+import { computed } from "@ember/object";
 import { classNames } from "@ember-decorators/component";
 import { makeArray } from "discourse-common/lib/helpers";
 import MultiSelectComponent from "select-kit/components/multi-select";
@@ -22,11 +22,6 @@ export default class HouseAdsChooser extends MultiSelectComponent {
       .filter(Boolean);
   }
 
-  // TODO: kept for legacy, remove when Discourse is 2.5
-  mutateValues(values) {
-    this.set("settingValue", values.join(this.tokenSeparator));
-  }
-
   computeValues() {
     return this.settingValue.split(this.tokenSeparator).filter(Boolean);
   }
@@ -34,11 +29,5 @@ export default class HouseAdsChooser extends MultiSelectComponent {
   @computed("choices")
   get content() {
     return makeArray(this.choices);
-  }
-
-  @action
-  onChange(value) {
-    const settingValue = makeArray(value).join(this.tokenSeparator);
-    this.onChange?.(settingValue);
   }
 }
