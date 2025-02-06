@@ -1,8 +1,8 @@
 import { scheduleOnce } from "@ember/runloop";
 import RSVP from "rsvp";
+import discourseComputed from "discourse/lib/decorators";
+import { isTesting } from "discourse/lib/environment";
 import loadScript from "discourse/lib/load-script";
-import { isTesting } from "discourse-common/config/environment";
-import discourseComputed from "discourse-common/utils/decorators";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 
 let _loaded = false,

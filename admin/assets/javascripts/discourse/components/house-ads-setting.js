@@ -3,8 +3,8 @@ import { action } from "@ember/object";
 import { classNames } from "@ember-decorators/component";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
-import { i18n, propertyNotEqual } from "discourse/lib/computed";
-import I18n from "I18n";
+import { i18n as computedI18n, propertyNotEqual } from "discourse/lib/computed";
+import { i18n } from "discourse-i18n";
 
 @classNames("house-ads-setting")
 export default class HouseAdsSetting extends Component {
@@ -12,8 +12,8 @@ export default class HouseAdsSetting extends Component {
   saving = false;
   savingStatus = "";
 
-  @i18n("name", "admin.adplugin.house_ads.%@.title") title;
-  @i18n("name", "admin.adplugin.house_ads.%@.description") help;
+  @computedI18n("name", "admin.adplugin.house_ads.%@.title") title;
+  @computedI18n("name", "admin.adplugin.house_ads.%@.description") help;
   @propertyNotEqual("adValue", "value") changed;
 
   init() {
@@ -26,7 +26,7 @@ export default class HouseAdsSetting extends Component {
     if (!this.get("saving")) {
       this.setProperties({
         saving: true,
-        savingStatus: I18n.t("saving"),
+        savingStatus: i18n("saving"),
       });
 
       ajax(`/admin/plugins/pluginad/house_settings/${this.get("name")}.json`, {
@@ -38,7 +38,7 @@ export default class HouseAdsSetting extends Component {
           adSettings.set(this.get("name"), this.get("adValue"));
           this.setProperties({
             value: this.get("adValue"),
-            savingStatus: I18n.t("saved"),
+            savingStatus: i18n("saved"),
           });
         })
         .catch(popupAjaxError)
