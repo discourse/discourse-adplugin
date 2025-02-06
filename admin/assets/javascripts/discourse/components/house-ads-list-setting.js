@@ -1,7 +1,7 @@
 import { action } from "@ember/object";
 import { mapBy } from "@ember/object/computed";
 import { classNames } from "@ember-decorators/component";
-import { makeArray } from "discourse-common/lib/helpers";
+import { makeArray } from "discourse/lib/helpers";
 import HouseAdsSetting from "discourse/plugins/discourse-adplugin/discourse/components/house-ads-setting";
 
 @classNames("house-ads-setting house-ads-list-setting")

@@ -4,7 +4,7 @@ import {
   classNameBindings,
   classNames,
 } from "@ember-decorators/component";
-import discourseComputed from "discourse-common/utils/decorators";
+import discourseComputed from "discourse/lib/decorators";
 import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 
 const adIndex = {

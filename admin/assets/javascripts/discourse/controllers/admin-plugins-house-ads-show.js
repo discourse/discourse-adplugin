@@ -7,7 +7,7 @@ import { observes } from "@ember-decorators/object";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import Category from "discourse/models/category";
-import I18n from "I18n";
+import { i18n } from "discourse-i18n";
 import Preview from "../components/modal/preview";
 
 export default class adminPluginsHouseAdsShow extends Controller {
@@ -43,7 +43,7 @@ export default class adminPluginsHouseAdsShow extends Controller {
   async save() {
     if (!this.saving) {
       this.saving = true;
-      this.savingStatus = I18n.t("saving");
+      this.savingStatus = i18n("saving");
       const data = {};
       const newRecord = !this.buffered.id;
       if (!newRecord) {
@@ -66,7 +66,7 @@ export default class adminPluginsHouseAdsShow extends Controller {
             data,
           }
         );
-        this.savingStatus = I18n.t("saved");
+        this.savingStatus = i18n("saved");
         const houseAds = this.houseAdsController.model;
         if (newRecord) {
           this.buffered.id = ajaxData.house_ad.id;
