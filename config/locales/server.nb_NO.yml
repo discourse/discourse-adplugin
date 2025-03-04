@@ -1,10 +1,4 @@
-# WARNING: Never edit this file.
-# It will be overwritten when translations are pulled from Crowdin.
-#
-# To work with us on translations, join this project:
-# https://translate.discourse.org/
-
-nb_NO:
+nb:
   site_settings:
     dfp_through_trust_level: "Vis dine reklamer til brukere basert på tillitsnivå. Brukere med tillitsnivå høyere enn denne verdien vil ikke se reklamer."
     dfp_nth_post_code: "Vis en reklame etter hver N post, der N er denne verdien."

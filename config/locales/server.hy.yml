@@ -1,9 +1,3 @@
-# WARNING: Never edit this file.
-# It will be overwritten when translations are pulled from Crowdin.
-#
-# To work with us on translations, join this project:
-# https://translate.discourse.org/
-
 hy:
   site_settings:
     ads_txt: "Ձեր ads.txt ֆայլի պարունակությունը: Մանրամասները հասանելի են <a href='https://support.google.com/adsense/answer/7532444?hl=en' target='_blank'>այս Google AdSense օգնության էջում</a>:"

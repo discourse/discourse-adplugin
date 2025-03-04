@@ -1,10 +1,4 @@
-# WARNING: Never edit this file.
-# It will be overwritten when translations are pulled from Crowdin.
-#
-# To work with us on translations, join this project:
-# https://translate.discourse.org/
-
-zh_TW:
+zh-TW:
   site_settings:
     dfp_through_trust_level: "根據信任級別向用戶展示您的廣告。信任級別高於此值的用戶將不會看到廣告。"
     dfp_nth_post_code: "在每 N 個帖子後顯示一個廣告，其中 N 是這個值。"

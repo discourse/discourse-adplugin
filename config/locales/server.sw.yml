@@ -1,9 +1,3 @@
-# WARNING: Never edit this file.
-# It will be overwritten when translations are pulled from Crowdin.
-#
-# To work with us on translations, join this project:
-# https://translate.discourse.org/
-
 sw:
   site_settings:
     dfp_through_trust_level: "Onyesha matangazo yako kulingana na uaminifu. Watumiaji ambao wanaaminika kiasii cha juu hawatayaona matangazo."

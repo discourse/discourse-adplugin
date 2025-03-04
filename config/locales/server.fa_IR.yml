@@ -1,10 +1,4 @@
-# WARNING: Never edit this file.
-# It will be overwritten when translations are pulled from Crowdin.
-#
-# To work with us on translations, join this project:
-# https://translate.discourse.org/
-
-fa_IR:
+fa:
   site_settings:
     dfp_through_trust_level: "تبلیغات خود را به کاربران بر اساس سطح اعتماد نمایش دهید. کاربرانی با سطح اعتماد بالاتر از این مقدار نمی توانند تبلیغات شما را ببینند."
     dfp_topic_list_top_code: "کد منحصر بفرد واحد تبلیغ خود را وارد کنید تا بالای لیست مباحث نمایش داده شود. این کد، یک کد کوتاه (با حداکثر طول 100 کاراکتر) می باشد که هنگام ساختن واحد تبلیغ اختصاص داده شده است، کد جاوا اسکریپت نیست."
