@@ -105,6 +105,7 @@
     width: 100%;
     text-align: center;
   }
+
   .google-dfp-ad.dfp-ad-post-bottom {
     .google-dfp-ad-label,
     .dfp-ad-unit {
@@ -217,18 +218,22 @@
   .house-ad-name {
     width: 100%;
   }
+
   .house-ads-actions {
     .btn {
       margin-right: 8px;
     }
   }
+
   .house-ads-list {
     margin-top: 1em;
   }
+
   .house-ads-settings {
     .form-horizontal {
       margin-top: 1em;
     }
+
     p.help {
       margin: 0;
       margin-top: 5px;
@@ -236,20 +241,25 @@
       font-size: $font-down-1;
       clear: both;
     }
+
     .house-ads-chooser,
     .house-ads-text-input {
       float: left;
       margin-right: 20px;
     }
+
     .setting-controls {
       float: left;
     }
   }
+
   .house-ads-list-setting {
     margin-bottom: 1.5em;
   }
+
   .content-body {
     padding-left: 2%;
+
     .visibility-settings {
       margin-bottom: 1em;
 
@@ -263,15 +273,19 @@
         margin-top: 1em;
       }
     }
+
     .controls {
       margin-bottom: 1em;
     }
+
     .delete-button {
       float: right;
     }
+
     .ace-wrapper {
       position: relative;
       height: 270px;
+
       .ace_editor {
         position: absolute;
         left: 0;
