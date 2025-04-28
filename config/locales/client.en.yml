@@ -33,6 +33,33 @@ en:
           topic_list_top:
             title: "Topic list top ads"
             description: "Ads to show at the top of topic list pages."
+          topic_list_top2:
+            title: "Topic list top 2 ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_list_top3:
+            title: "Topic list top 3 ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_list_top4:
+            title: "Topic list top 4 ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_list_top5:
+            title: "Topic list top 5 ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_list_top6:
+            title: "Topic list top 6 ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_list_top7:
+            title: "Topic list top 7 ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_list_top8:
+            title: "Topic list top 8 ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_list_top9:
+            title: "Topic list top 9 ads"
+            description: "Ads to show at the top of topic list pages."
+          topic_list_top10:
+            title: "Topic list top 10 ads"
+            description: "Ads to show at the top of topic list pages."
           topic_above_post_stream:
             title: "Topic above post stream"
             description: "Ads to show above the title of a topic on the topic page."

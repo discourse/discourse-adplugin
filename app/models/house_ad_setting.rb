@@ -4,6 +4,15 @@ module ::AdPlugin
   class HouseAdSetting
     DEFAULTS = {
       topic_list_top: "",
+      topic_list_top2: "",
+      topic_list_top3: "",
+      topic_list_top4: "",
+      topic_list_top5: "",
+      topic_list_top6: "",
+      topic_list_top7: "",
+      topic_list_top8: "",
+      topic_list_top9: "",
+      topic_list_top10: "",
       topic_above_post_stream: "",
       topic_above_suggested: "",
       post_bottom: "",
