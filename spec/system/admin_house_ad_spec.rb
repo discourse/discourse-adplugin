@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "Admin House Ad", type: :system, js: true do
+describe "Admin House Ad", type: :system do
   fab!(:admin)
   let(:house_ad) do
     AdPlugin::HouseAd.create(
@@ -14,7 +14,7 @@ describe "Admin House Ad", type: :system, js: true do
   before { sign_in(admin) }
 
   describe "when visiting the page for creating new ads" do
-    it "should have the visibility checkboxes on by default" do
+    it "has the visibility checkboxes on by default" do
       visit("/admin/plugins/pluginad/house_creatives/new")
 
       expect(find("input.visible-to-anonymous-checkbox").checked?).to eq(true)
