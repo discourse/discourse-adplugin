@@ -3,7 +3,7 @@ import RouteTemplate from "ember-route-template";
 import DButton from "discourse/components/d-button";
 import routeAction from "discourse/helpers/route-action";
 import { i18n } from "discourse-i18n";
-import HouseAdsListSetting from "../../components/house-ads-list-setting";
+import HouseAdsListSetting from "../components/house-ads-list-setting";
 
 export default RouteTemplate(
   <template>

@@ -6,7 +6,7 @@ import DButton from "discourse/components/d-button";
 import TextField from "discourse/components/text-field";
 import { i18n } from "discourse-i18n";
 import GroupChooser from "select-kit/components/group-chooser";
-import HouseAdsCategorySelector from "../../components/house-ads-category-selector";
+import HouseAdsCategorySelector from "../components/house-ads-category-selector";
 
 export default RouteTemplate(
   <template>
