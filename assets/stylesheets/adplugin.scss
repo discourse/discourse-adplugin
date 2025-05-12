@@ -1,3 +1,5 @@
+@use "lib/viewport";
+
 .google-dfp-ad {
   padding: 3px 0;
   margin-bottom: 10px;
@@ -57,7 +59,7 @@
   padding: 0 11px;
 }
 
-@media all and (max-width: 775px) {
+@media all and (width <= 775px) {
   .google-adsense.adsense-post-bottom {
     box-sizing: border-box;
     width: 100%;
@@ -100,7 +102,7 @@
   }
 }
 
-@include breakpoint(mobile-extra-large) {
+@include viewport.until(sm) {
   .google-dfp-ad .google-dfp-ad-label {
     width: 100%;
     text-align: center;
@@ -132,7 +134,7 @@
   clear: both;
 }
 
-@include breakpoint(mobile-extra-large) {
+@include viewport.until(sm) {
   .house-creative.house-post-bottom {
     margin: 0 0 10px 0;
   }
@@ -208,7 +210,7 @@
   margin: 10px 0 10px 56px;
 }
 
-@include breakpoint(mobile-extra-large) {
+@include viewport.until(sm) {
   .adbutler-post-bottom {
     margin: 10px 0;
   }

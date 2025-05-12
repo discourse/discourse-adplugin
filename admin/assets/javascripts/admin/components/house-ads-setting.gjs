@@ -1,6 +1,8 @@
 import Component from "@ember/component";
 import { action } from "@ember/object";
 import { classNames } from "@ember-decorators/component";
+import DButton from "discourse/components/d-button";
+import TextField from "discourse/components/text-field";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import { i18n as computedI18n, propertyNotEqual } from "discourse/lib/computed";
@@ -55,4 +57,16 @@ export default class HouseAdsSetting extends Component {
   cancel() {
     this.set("adValue", this.get("value"));
   }
+
+  <template>
+    <label for={{this.name}}>{{this.title}}</label>
+    <TextField @value={{this.adValue}} @classNames="house-ads-text-input" />
+    <div class="setting-controls">
+      {{#if this.changed}}
+        <DButton class="ok" @action={{action "save"}} @icon="check" />
+        <DButton class="cancel" @action={{action "cancel"}} @icon="xmark" />
+      {{/if}}
+    </div>
+    <p class="help">{{this.help}}</p>
+  </template>
 }

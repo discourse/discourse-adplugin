@@ -5,7 +5,8 @@ import RSVP from "rsvp";
 import discourseComputed, { on } from "discourse/lib/decorators";
 import { isTesting } from "discourse/lib/environment";
 import loadScript from "discourse/lib/load-script";
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
+import { i18n } from "discourse-i18n";
+import AdComponent from "./ad-component";
 
 let _loaded = false,
   _promise = null,
@@ -427,4 +428,29 @@ export default class GoogleDfpAd extends AdComponent {
   cleanup() {
     destroySlot(this.get("divId"));
   }
+
+  <template>
+    {{#if this.showAd}}
+      {{#if this.site.mobileView}}
+        <div class="google-dfp-ad-label" style={{this.adTitleStyleMobile}}><h2
+          >{{i18n "adplugin.advertisement_label"}}</h2></div>
+        <div
+          id={{this.divId}}
+          style={{this.adWrapperStyle}}
+          class="dfp-ad-unit"
+          align="center"
+        ></div>
+      {{else}}
+        <div class="google-dfp-ad-label"><h2>{{i18n
+              "adplugin.advertisement_label"
+            }}</h2></div>
+        <div
+          id={{this.divId}}
+          style={{this.adWrapperStyle}}
+          class="dfp-ad-unit"
+          align="center"
+        ></div>
+      {{/if}}
+    {{/if}}
+  </template>
 }

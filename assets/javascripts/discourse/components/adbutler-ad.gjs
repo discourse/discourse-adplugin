@@ -3,7 +3,7 @@ import RSVP from "rsvp";
 import discourseComputed from "discourse/lib/decorators";
 import { isTesting } from "discourse/lib/environment";
 import loadScript from "discourse/lib/load-script";
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
+import AdComponent from "./ad-component";
 
 let _loaded = false,
   _promise = null,
@@ -150,4 +150,10 @@ export default class AdbutlerAd extends AdComponent {
     }
     return this.isNthPost(parseInt(this.siteSettings.adbutler_nth_post, 10));
   }
+
+  <template>
+    {{#if this.showAd}}
+      <div id={{this.divId}} class={{this.className}}></div>
+    {{/if}}
+  </template>
 }

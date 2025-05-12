@@ -4,8 +4,9 @@ import {
   classNameBindings,
   classNames,
 } from "@ember-decorators/component";
+import htmlSafe from "discourse/helpers/html-safe";
 import discourseComputed from "discourse/lib/decorators";
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
+import AdComponent from "./ad-component";
 
 const adIndex = {
   topic_list_top: null,
@@ -146,4 +147,10 @@ export default class HouseAd extends AdComponent {
 
     this.refreshAd();
   }
+
+  <template>
+    {{#if this.showAd}}
+      {{htmlSafe this.adHtml}}
+    {{/if}}
+  </template>
 }
