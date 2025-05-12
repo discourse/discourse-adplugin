@@ -5,7 +5,8 @@ import RSVP from "rsvp";
 import discourseComputed from "discourse/lib/decorators";
 import { isTesting } from "discourse/lib/environment";
 import loadScript from "discourse/lib/load-script";
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
+import { i18n } from "discourse-i18n";
+import AdComponent from "./ad-component";
 
 let _loaded = false,
   _promise = null,
@@ -247,4 +248,26 @@ export default class GoogleAdsense extends AdComponent {
       parseInt(this.siteSettings.adsense_nth_post_code, 10)
     );
   }
+
+  <template>
+    {{#if this.showAd}}
+      <div class="google-adsense-label"><h2>{{i18n
+            "adplugin.advertisement_label"
+          }}</h2></div>
+      <div
+        class="google-adsense-content"
+        id={{if this.isResponsive "google-adsense__responsive"}}
+        style={{this.adWrapperStyle}}
+      >
+        <ins
+          class="adsbygoogle"
+          style={{this.adInsStyle}}
+          data-ad-client="ca-pub-{{this.publisher_id}}"
+          data-ad-slot={{this.ad_code}}
+          data-ad-format={{this.autoAdFormat}}
+        >
+        </ins>
+      </div>
+    {{/if}}
+  </template>
 }

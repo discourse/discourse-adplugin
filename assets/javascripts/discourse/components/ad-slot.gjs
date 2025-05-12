@@ -1,13 +1,26 @@
+import { array } from "@ember/helper";
 import EmberObject from "@ember/object";
 import { service } from "@ember/service";
 import { isBlank } from "@ember/utils";
 import { tagName } from "@ember-decorators/component";
 import discourseComputed from "discourse/lib/decorators";
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
-import {
-  isNthPost,
-  isNthTopicListItem,
-} from "discourse/plugins/discourse-adplugin/discourse/helpers/slot-position";
+import { isNthPost, isNthTopicListItem } from "../helpers/slot-position";
+import AdComponent from "./ad-component";
+import AdbutlerAd from "./adbutler-ad";
+import AmazonProductLinks from "./amazon-product-links";
+import CarbonadsAd from "./carbonads-ad";
+import GoogleAdsense from "./google-adsense";
+import GoogleDfpAd from "./google-dfp-ad";
+import HouseAd from "./house-ad";
+
+const AD_COMPONENTS = {
+  "house-ad": HouseAd,
+  "google-adsense": GoogleAdsense,
+  "google-dfp-ad": GoogleDfpAd,
+  "amazon-product-links": AmazonProductLinks,
+  "carbonads-ad": CarbonadsAd,
+  "adbutler-ad": AdbutlerAd,
+};
 
 const adConfig = EmberObject.create({
   "google-adsense": {
@@ -201,7 +214,7 @@ export default class AdSlot extends AdComponent {
    * Depends on `router.currentRoute` so that we refresh ads when navigating around.
    */
   @discourseComputed("placement", "availableAdTypes", "router.currentRoute")
-  adComponents(placement, availableAdTypes) {
+  adComponentNames(placement, availableAdTypes) {
     if (
       !availableAdTypes.includes("house-ad") ||
       availableAdTypes.length === 1
@@ -240,4 +253,23 @@ export default class AdSlot extends AdComponent {
 
     return networkNames;
   }
+
+  get adComponents() {
+    return this.adComponentNames.map((name) => AD_COMPONENTS[name]);
+  }
+
+  <template>
+    {{#each this.adComponents as |Ad|}}
+      {{! Trick to force full destroy/re-render of component when route changes }}
+      {{#each (array this.router.currentRoute)}}
+        <Ad
+          @placement={{this.placement}}
+          @category={{this.category}}
+          @postNumber={{this.postNumber}}
+          @indexNumber={{this.indexNumber}}
+          @tagName={{this.childTagName}}
+        />
+      {{/each}}
+    {{/each}}
+  </template>
 }

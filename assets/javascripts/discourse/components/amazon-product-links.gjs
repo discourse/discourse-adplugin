@@ -2,7 +2,8 @@ import { and } from "@ember/object/computed";
 import { htmlSafe } from "@ember/template";
 import { classNames } from "@ember-decorators/component";
 import discourseComputed from "discourse/lib/decorators";
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
+import { i18n } from "discourse-i18n";
+import AdComponent from "./ad-component";
 
 @classNames("amazon-product-links")
 export default class AmazonProductLinks extends AdComponent {
@@ -186,4 +187,41 @@ export default class AmazonProductLinks extends AdComponent {
 
     return this.isNthPost(parseInt(this.siteSettings.amazon_nth_post_code, 10));
   }
+
+  <template>
+    {{#if this.showAd}}
+      {{#if this.site.mobileView}}
+        <div
+          class="amazon-product-links-label"
+          style={{this.adTitleStyleMobile}}
+        ><h2>{{i18n "adplugin.advertisement_label"}}</h2></div>
+        <iframe
+          style={{this.adWrapperStyleMobile}}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src={{this.userInputMobile}}
+          title={{i18n "adplugin.advertisement_label"}}
+        >
+        </iframe>
+      {{else}}
+        <div class="amazon-product-links-label"><h2>{{i18n
+              "adplugin.advertisement_label"
+            }}</h2></div>
+        <div class="container" align="center">
+          <iframe
+            style={{this.adWrapperStyle}}
+            marginwidth="0"
+            marginheight="0"
+            scrolling="no"
+            frameborder="0"
+            src={{this.userInput}}
+            title={{i18n "adplugin.advertisement_label"}}
+          >
+          </iframe>
+        </div>
+      {{/if}}
+    {{/if}}
+  </template>
 }
