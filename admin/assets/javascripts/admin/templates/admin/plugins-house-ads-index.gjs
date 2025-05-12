@@ -3,7 +3,7 @@ import RouteTemplate from "ember-route-template";
 import DButton from "discourse/components/d-button";
 import routeAction from "discourse/helpers/route-action";
 import { i18n } from "discourse-i18n";
-import houseAdsListSetting from "../../components/house-ads-list-setting";
+import HouseAdsListSetting from "../../components/house-ads-list-setting";
 
 export default RouteTemplate(
   <template>
@@ -12,36 +12,36 @@ export default RouteTemplate(
 
       {{#if @controller.houseAds.length}}
         <form class="form-horizontal">
-          {{houseAdsListSetting
-            name="topic_list_top"
-            value=@controller.adSettings.topic_list_top
-            allAds=@controller.houseAds
-            adSettings=@controller.adSettings
-          }}
-          {{houseAdsListSetting
-            name="topic_above_post_stream"
-            value=@controller.adSettings.topic_above_post_stream
-            allAds=@controller.houseAds
-            adSettings=@controller.adSettings
-          }}
-          {{houseAdsListSetting
-            name="topic_above_suggested"
-            value=@controller.adSettings.topic_above_suggested
-            allAds=@controller.houseAds
-            adSettings=@controller.adSettings
-          }}
-          {{houseAdsListSetting
-            name="post_bottom"
-            value=@controller.adSettings.post_bottom
-            allAds=@controller.houseAds
-            adSettings=@controller.adSettings
-          }}
-          {{houseAdsListSetting
-            name="topic_list_between"
-            value=@controller.adSettings.topic_list_between
-            allAds=@controller.houseAds
-            adSettings=@controller.adSettings
-          }}
+          <HouseAdsListSetting
+            @name="topic_list_top"
+            @value={{@controller.adSettings.topic_list_top}}
+            @allAds={{@controller.houseAds}}
+            @adSettings={{@controller.adSettings}}
+          />
+          <HouseAdsListSetting
+            @name="topic_above_post_stream"
+            @value={{@controller.adSettings.topic_above_post_stream}}
+            @allAds={{@controller.houseAds}}
+            @adSettings={{@controller.adSettings}}
+          />
+          <HouseAdsListSetting
+            @name="topic_above_suggested"
+            @value={{@controller.adSettings.topic_above_suggested}}
+            @allAds={{@controller.houseAds}}
+            @adSettings={{@controller.adSettings}}
+          />
+          <HouseAdsListSetting
+            @name="post_bottom"
+            @value={{@controller.adSettings.post_bottom}}
+            @allAds={{@controller.houseAds}}
+            @adSettings={{@controller.adSettings}}
+          />
+          <HouseAdsListSetting
+            @name="topic_list_between"
+            @value={{@controller.adSettings.topic_list_between}}
+            @allAds={{@controller.houseAds}}
+            @adSettings={{@controller.adSettings}}
+          />
 
           <DButton
             @label="admin.adplugin.house_ads.more_settings"

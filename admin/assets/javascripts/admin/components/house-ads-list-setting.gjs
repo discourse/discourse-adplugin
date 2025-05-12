@@ -3,8 +3,8 @@ import { mapBy } from "@ember/object/computed";
 import { classNames } from "@ember-decorators/component";
 import DButton from "discourse/components/d-button";
 import { makeArray } from "discourse/lib/helpers";
-import HouseAdsSetting from "discourse/plugins/discourse-adplugin/admin/components/house-ads-setting";
-import houseAdsChooser from "./house-ads-chooser";
+import HouseAdsChooser from "./house-ads-chooser";
+import HouseAdsSetting from "./house-ads-setting";
 
 @classNames("house-ads-setting house-ads-list-setting")
 export default class HouseAdsListSetting extends HouseAdsSetting {
@@ -18,11 +18,11 @@ export default class HouseAdsListSetting extends HouseAdsSetting {
 
   <template>
     <label for={{this.name}}>{{this.title}}</label>
-    {{houseAdsChooser
-      settingValue=this.adValue
-      choices=this.adNames
-      onChange=this.changeAdValue
-    }}
+    <HouseAdsChooser
+      @settingValue={{this.adValue}}
+      @choices={{this.adNames}}
+      @onChange={{this.changeAdValue}}
+    />
     <div class="setting-controls">
       {{#if this.changed}}
         <DButton class="ok" @action={{action "save"}} @icon="check" />
