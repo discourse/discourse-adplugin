@@ -1,6 +1,6 @@
 import { htmlSafe } from "@ember/template";
 import discourseComputed from "discourse/lib/decorators";
-import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
+import AdComponent from "./ad-component";
 
 export default class CarbonadsAd extends AdComponent {
   serve_id = null;
@@ -40,4 +40,12 @@ export default class CarbonadsAd extends AdComponent {
       placement && serveId && showCarbonAds && showToGroups && showOnCurrentPage
     );
   }
+
+  <template>
+    {{#if this.showAd}}
+      {{! template-lint-disable no-forbidden-elements }}
+      <script src={{this.url}} id="_carbonads_js" async type="text/javascript">
+      </script>
+    {{/if}}
+  </template>
 }
