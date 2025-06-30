@@ -2,20 +2,14 @@ import { hbs } from "ember-cli-htmlbars";
 import { withPluginApi } from "discourse/lib/plugin-api";
 import Site from "discourse/models/site";
 import { registerWidgetShim } from "discourse/widgets/render-glimmer";
+import { withSilencedDeprecations } from "discourse/lib/deprecated";
+import PostBottomAd from "../components/post-bottom-ad";
 
 export default {
   name: "initialize-ad-plugin",
   initialize(container) {
-    registerWidgetShim(
-      "after-post-ad",
-      "div.widget-connector",
-      hbs`<PostBottomAd @model={{@data}} />`
-    );
-
     withPluginApi("0.1", (api) => {
-      api.decorateWidget("post:after", (helper) => {
-        return helper.attach("after-post-ad", helper.widget.model);
-      });
+      customizePost(api);
     });
 
     const messageBus = container.lookup("service:message-bus");
@@ -30,3 +24,26 @@ export default {
     });
   },
 };
+
+function customizePost(api) {
+  api.renderAfterWrapperOutlet(
+    "post-article",
+    <template><PostBottomAd @model={{@post}} /></template>
+  );
+
+  withSilencedDeprecations("discourse.post-stream-widget-overrides", () =>
+    customizeWidgetPost(api)
+  );
+}
+
+function customizeWidgetPost(api) {
+  registerWidgetShim(
+    "after-post-ad",
+    "div.widget-connector",
+    hbs`<PostBottomAd @model={{@data}} />`
+  );
+
+  api.decorateWidget("post:after", (helper) => {
+    return helper.attach("after-post-ad", helper.widget.model);
+  });
+}
