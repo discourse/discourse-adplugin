@@ -438,6 +438,12 @@ carbonads_plugin:
   carbonads_placement:
     client: true
     default: ""
+  carbonads_format:
+    client: true
+    default: "responsive"
+    choices:
+      - responsive
+      - cover
   carbonads_through_trust_level:
     client: true
     default: 2

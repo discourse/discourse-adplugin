@@ -97,6 +97,7 @@ en:
 
     carbonads_serve_id: "Your Carbon Ads Serve ID"
     carbonads_placement: "Your Carbon Ads Placement"
+    carbonads_format: "Your Carbon Ads Format"
     carbonads_through_trust_level: "Show your ads to users based on trust levels. Users with trust level higher than this value will not see ads."
     carbonads_exclude_groups: "Ads will not be shown to members of these groups"
     carbonads_topic_list_top_enabled: "Show an ad above the topic list"
