@@ -440,7 +440,9 @@ carbonads_plugin:
     default: ""
   carbonads_format:
     client: true
+    type: enum
     default: "responsive"
+    allow_any: false
     choices:
       - responsive
       - cover
@@ -467,6 +469,12 @@ carbonads_plugin:
     client: true
     default: false
   carbonads_above_post_stream_enabled:
+    client: true
+    default: false
+  carbonads_post_bottom_enabled:
+    client: true
+    default: false
+  carbonads_above_suggested_enabled:
     client: true
     default: false
 

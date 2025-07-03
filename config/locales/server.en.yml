@@ -102,6 +102,8 @@ en:
     carbonads_exclude_groups: "Ads will not be shown to members of these groups"
     carbonads_topic_list_top_enabled: "Show an ad above the topic list"
     carbonads_above_post_stream_enabled: "Show an ad above the post stream"
+    carbonads_post_bottom_enabled: "Show an ad above at post bottom"
+    carbonads_above_suggested_enabled: "Show an ad above the above suggested topics"
 
     adbutler_publisher_id: "AdButler Publisher ID. NOTE: You may need to update the 'content security policy script src' setting. See <a href='https://meta.discourse.org/t/33734' target='_blank'>this topic</a> for the latest instructions."
     adbutler_mobile_topic_list_top_zone_id: "Zone ID for mobile topic list top location"
