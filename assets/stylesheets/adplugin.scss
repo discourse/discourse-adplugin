@@ -140,7 +140,7 @@
   }
 }
 
-#carbonads {
+#carbonads:not(#carbon-cover *) {
   display: block;
   overflow: hidden;
   padding: 1em;
@@ -150,23 +150,23 @@
   margin-bottom: 15px;
 }
 
-#carbonads span {
+#carbonads:not(#carbon-cover *) span {
   position: relative;
   display: block;
   overflow: hidden;
 }
 
-.carbon-img {
+.carbon-img:not(#carbon-cover *) {
   float: left;
   margin-right: 1em;
 }
 
-.carbon-img img {
+.carbon-img:not(#carbon-cover *) img {
   display: block;
   line-height: 1;
 }
 
-.carbon-text {
+.carbon-text:not(#carbon-cover *) {
   display: block;
   float: left;
   max-width: calc(100% - 130px - 1em);
@@ -174,7 +174,7 @@
   color: var(--primary-med-or-secondary-med);
 }
 
-.carbon-poweredby {
+.carbon-poweredby:not(#carbon-cover *) {
   position: absolute;
   right: 0; // You can also set the position to the "left" with the value of calc(130px + carbon-text’s font size). If the font-size is 12px, you’ll want to set the left value as 142px. It’ll align the .carbon-text with .carbon-poweredby
   bottom: 0;
