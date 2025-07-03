@@ -56,9 +56,9 @@ const adConfig = EmberObject.create({
     enabledSetting: "carbonads_serve_id",
     desktop: {
       "topic-list-top": "carbonads_topic_list_top_enabled",
-      "post-bottom": false,
+      "post-bottom": "carbonads_post_bottom_enabled",
       "topic-above-post-stream": "carbonads_above_post_stream_enabled",
-      "topic-above-suggested": false,
+      "topic-above-suggested": "carbonads_above_suggested_enabled",
     },
   },
   "adbutler-ad": {

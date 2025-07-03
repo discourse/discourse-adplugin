@@ -5,18 +5,23 @@ import AdComponent from "./ad-component";
 export default class CarbonadsAd extends AdComponent {
   serve_id = null;
   placement = null;
+  format = null;
 
   init() {
     this.set("serve_id", this.siteSettings.carbonads_serve_id);
     this.set("placement", this.siteSettings.carbonads_placement);
+    this.set("format", this.siteSettings.carbonads_format);
     super.init();
   }
 
-  @discourseComputed("serve_id", "placement")
-  url(serveId, placement) {
-    return htmlSafe(
-      `//cdn.carbonads.com/carbon.js?serve=${serveId}&placement=${placement}`
-    );
+  @discourseComputed("serve_id", "placement", "format")
+  url(serveId, placement, format) {
+    let baseUrl = `//cdn.carbonads.com/carbon.js?serve=${serveId}&placement=${placement}`;
+    if (format) {
+      baseUrl += `&format=${format}`;
+    }
+
+    return htmlSafe(baseUrl);
   }
 
   @discourseComputed
