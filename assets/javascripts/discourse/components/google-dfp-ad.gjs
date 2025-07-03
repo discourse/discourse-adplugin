@@ -1,8 +1,9 @@
 import { alias } from "@ember/object/computed";
 import { htmlSafe } from "@ember/template";
 import { classNameBindings, classNames } from "@ember-decorators/component";
+import { on } from "@ember-decorators/object";
 import RSVP from "rsvp";
-import discourseComputed, { on } from "discourse/lib/decorators";
+import discourseComputed from "discourse/lib/decorators";
 import { isTesting } from "discourse/lib/environment";
 import loadScript from "discourse/lib/load-script";
 import { i18n } from "discourse-i18n";
