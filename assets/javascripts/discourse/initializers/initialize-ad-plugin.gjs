@@ -28,7 +28,11 @@ export default {
 function customizePost(api) {
   api.renderAfterWrapperOutlet(
     "post-article",
-    <template><PostBottomAd @model={{@post}} /></template>
+    <template>
+      <div class="ad-connector">
+        <PostBottomAd @model={{@post}} />
+      </div>
+    </template>
   );
 
   withSilencedDeprecations("discourse.post-stream-widget-overrides", () =>
@@ -39,7 +43,7 @@ function customizePost(api) {
 function customizeWidgetPost(api) {
   registerWidgetShim(
     "after-post-ad",
-    "div.widget-connector",
+    "div.ad-connector",
     hbs`<PostBottomAd @model={{@data}} />`
   );
 
