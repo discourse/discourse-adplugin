@@ -1,14 +1,14 @@
 import { hbs } from "ember-cli-htmlbars";
+import { withSilencedDeprecations } from "discourse/lib/deprecated";
 import { withPluginApi } from "discourse/lib/plugin-api";
 import Site from "discourse/models/site";
 import { registerWidgetShim } from "discourse/widgets/render-glimmer";
-import { withSilencedDeprecations } from "discourse/lib/deprecated";
 import PostBottomAd from "../components/post-bottom-ad";
 
 export default {
   name: "initialize-ad-plugin",
   initialize(container) {
-    withPluginApi("0.1", (api) => {
+    withPluginApi((api) => {
       customizePost(api);
     });
 
