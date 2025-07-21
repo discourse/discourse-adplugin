@@ -14,7 +14,7 @@ RSpec.describe CurrentUserSerializer do
 
   let(:admin_serializer) { described_class.new(admin, scope: Guardian.new(admin), root: false) }
 
-  before { SiteSetting.discourse_adplugin_enabled = true }
+  before { enable_current_plugin }
 
   describe "#adsense" do
     it "is displayed for TL0 by default" do

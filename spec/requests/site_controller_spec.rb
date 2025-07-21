@@ -3,7 +3,6 @@
 RSpec.describe SiteController do
   fab!(:group)
   fab!(:private_category) { Fabricate(:private_category, group: group) }
-
   fab!(:user)
   fab!(:group_2) { Fabricate(:group) }
   fab!(:user_with_group) { Fabricate(:user, group_ids: [group.id]) }
@@ -75,6 +74,7 @@ RSpec.describe SiteController do
   end
 
   before do
+    enable_current_plugin
     AdPlugin::HouseAdSetting.update(
       "topic_list_top",
       "logged-in-ad|anon-ad|everyone-ad|logged-in-ad-with-category|logged-in-ad-with-group|everyone-group-ad",

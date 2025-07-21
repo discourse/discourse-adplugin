@@ -9,6 +9,8 @@ describe AdPlugin::HouseAd do
     }
   end
 
+  before { enable_current_plugin }
+
   def create_anon_ad
     AdPlugin::HouseAd.create(
       name: "anon-ad",
