@@ -3,7 +3,10 @@
 describe AdPlugin::HouseAdSettingsController do
   let(:admin) { Fabricate(:admin) }
 
-  before { AdPlugin::HouseAd.create(name: "Banner", html: "<p>Banner</p>") }
+  before do
+    enable_current_plugin
+    AdPlugin::HouseAd.create(name: "Banner", html: "<p>Banner</p>")
+  end
 
   describe "update" do
     let(:valid_params) { { value: "Banner" } }

@@ -16,6 +16,8 @@ describe AdPlugin::HouseAdsController do
     )
   end
 
+  before { enable_current_plugin }
+
   describe "#update" do
     context "when used by admins" do
       before { sign_in(admin) }

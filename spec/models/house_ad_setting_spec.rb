@@ -3,6 +3,8 @@
 describe AdPlugin::HouseAdSetting do
   let(:defaults) { AdPlugin::HouseAdSetting::DEFAULTS }
 
+  before { enable_current_plugin }
+
   describe ".all" do
     subject { AdPlugin::HouseAdSetting.all }
 

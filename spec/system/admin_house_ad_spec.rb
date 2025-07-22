@@ -11,7 +11,10 @@ describe "Admin House Ad", type: :system do
     )
   end
 
-  before { sign_in(admin) }
+  before do
+    enable_current_plugin
+    sign_in(admin)
+  end
 
   describe "when visiting the page for creating new ads" do
     it "has the visibility checkboxes on by default" do
